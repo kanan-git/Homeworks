@@ -1,0 +1,10 @@
+a{
+    text-decoration: none;
+    color: chocolate;
+    background-color: antiquewhite;
+    font: times;
+    font-size: 40px;
+}
+li{
+    display: box;
+}
