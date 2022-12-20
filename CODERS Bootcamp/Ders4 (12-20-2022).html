@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>heh he boi</title>
+        <style>
+            /* HEADER STYLES CSS */
+            form{
+                background-color: aquamarine;
+                border: 2px solid black;
+                border-radius: 8px;
+                margin: 5px;
+                padding: 5px;
+                width: fit-content;
+            }
+            header{
+                background-color: gray;
+                border: 4px solid black;
+                padding: 5px;
+            }
+            label{
+                font-size: 20px;
+            }
+            /* NAVIGATOR STYLES CSS */
+            nav{
+                background-color: grey;
+                border: 4px solid black;
+                padding: 5px;
+            }
+            /* SECTIONS STYLES CSS */
+            section{
+                background-color: #cccccc;
+                border: 4px solid black;
+                padding: 5px;
+            }
+            /* FOOTER STYLES CSS */
+            footer{
+                background-color: rgba(8,8,8,1.0);
+                border: 4px solid black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HEADER PART | change language, sign in boxes, sign up link, image, logo -->
+        <header>
+            <!-- method=post because we will send account information -->
+            <form method="post" action="./Ders3 tapsiriq A.html">
+                <label for="email">Email: </label>
+                <input 
+                type="email" 
+                id="email" 
+                name="email"
+                placeholder="example@gmail.com"
+                required
+                >
+
+                <br>
+
+                <label for="password">Password: </label>
+                <input 
+                type="password" 
+                id="password" 
+                name="password"
+                placeholder="••••••••"
+                required
+                >
+
+                <br>
+
+                <label for="gender">Gender: </label>
+                <input type="radio"
+                id="gender"
+                name="gender"
+                value="Male"
+                >
+                <span>Male</span>
+                <input type="radio"
+                id="gender"
+                name="gender"
+                value="Female"
+                >
+                <span>Female</span>
+
+                <br>
+
+                <label for="car">Cars: </label>
+                <select name="car" id="car">
+                    <option value="mercedes">Mercedes</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="bmw">BMW</option>
+                </select>
+
+                <br>
+
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                
+                <br>
+
+                <label for="lorem-but-not-ipsum">LOREM IPSUM OR IPSUM LOREM: </label>
+                <input 
+                list="lorem-but-not-ipsum"
+                id="lorem-but-not-ipsum"
+                name="lorem-but-not-ipsum"
+                >
+                <datalist id="lorem-but-not-ipsum">
+                    <option value="Lorem">
+                    <option value="Ipsum">
+                    <option value="Dolor">
+                    <option value="Sit">
+                </datalist>
+
+                <br>
+                
+                <input 
+                type="submit" 
+                value="Submit"
+                >
+            </form>
+        </header>
+
+        <!-- NAVIGATION PART | headers and listers, search bar -->
+        <nav></nav>
+
+        <!-- SECTION 1 | contents -->
+        <section>
+            <article>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe quisquam expedita architecto reprehenderit quas, porro qui recusandae sit, voluptatem, enim aperiam. Sequi quam consequatur rerum corporis ducimus tenetur porro.
+            </article>
+        </section>
+
+        <!-- FOOTER PART | about contactus privacypolicy references, sponsors logos, date, bg image -->
+        <footer></footer>
+    </body>
+</html>
