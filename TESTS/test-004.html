@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <form method="get">
+                <label for="languages">Language: </label>
+                <input 
+                list="languages"
+                id="languages" 
+                name="languages"
+                value="AZ">
+                <datalist id="languages">
+                  <option value="EN">
+                  <option value="RU">
+                </datalist>
+                <input type="submit">
+            </form>
+
+            <form method="get">
+                <label for="browser">Choose your browser from the list: </label>
+                <input 
+                list="browsers" 
+                id="browser"
+                name="browser"> 
+                <datalist id="browsers">
+                  <option value="Edge">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+                <input type="submit">
+              </form>
+        </header>
+    </body>
+</html>
