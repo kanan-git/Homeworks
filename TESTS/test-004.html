@@ -9,34 +9,18 @@
     <body>
         <header>
             <form method="get">
-                <label for="languages">Language: </label>
+                <label for="browser">Language: </label>
                 <input 
-                list="languages"
-                id="languages" 
-                name="languages"
-                value="AZ">
-                <datalist id="languages">
+                list="browsers"
+                id="browser" 
+                name="browser">
+                <datalist id="browsers">
+                  <option value="AZ">
                   <option value="EN">
                   <option value="RU">
                 </datalist>
                 <input type="submit">
             </form>
-
-            <form method="get">
-                <label for="browser">Choose your browser from the list: </label>
-                <input 
-                list="browsers" 
-                id="browser"
-                name="browser"> 
-                <datalist id="browsers">
-                  <option value="Edge">
-                  <option value="Firefox">
-                  <option value="Chrome">
-                  <option value="Opera">
-                  <option value="Safari">
-                </datalist>
-                <input type="submit">
-              </form>
         </header>
     </body>
 </html>
