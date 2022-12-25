@@ -1,7 +1,95 @@
 body, html {
     font-family: 'Montserrat', sans-serif;
-    color: black;
-    letter-spacing: 1.2px;
     font-weight: 900;
+    font-size: 14px;
 }
 
+section {
+    footer {
+        #social-media {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+
+            h1 {
+                margin-right: 250px;
+            }
+
+            a {
+                text-decoration: none;
+
+                img {
+                margin-right: 18px;
+                }
+            }
+        }
+
+        #links {
+            display: flex;
+            justify-content: center;
+            
+            ul {
+                border-top: 1px solid rgb(230,230,230);
+                width: 180px;
+                padding: 0px;
+
+                h3 {
+                    margin-top: 50px;
+                    margin-bottom: 20px;
+                }
+
+                li {
+                    list-style: none;
+                    margin-top: 10px;
+                    opacity: 0.75;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
+            ul[id="form"] {
+                width: 300px;
+
+                input[type="email"] {
+                    margin: 0px;
+                    width: 160px;
+                    height: 40px;
+                    outline: none;
+                    border: 1px solid rgb(230,230,230);
+                    border-radius: 2px;
+                    background-color: rgb(250,250,250);
+                    padding: 5px;
+                }
+
+                input[type="submit"] {
+                    margin: 0px;
+                    width: 120px;
+                    height: 50px;
+                    border: none;
+                    border-radius: 2px;
+                    color: white;
+                    background-color: rgb(10,180,250,0.8);
+                }
+            }
+        }
+
+        #bottom-side {
+            opacity: 0.75;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            min-height: 80px;
+            background-color: rgb(250,250,250);
+
+            p {
+                margin-left: 200px;
+            }
+        }
+    }
+}

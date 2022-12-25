@@ -3,4 +3,75 @@ body, html {
   color: black;
   letter-spacing: 1.2px;
   font-weight: 900;
+}
+
+body {
+  background-color: white;
+}
+body #block1 {
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+body #block1 h1 {
+  text-transform: capitalize;
+  font-size: 24px;
+  margin: 0px;
+}
+body #block1 p {
+  margin: 0px;
+  opacity: 0.8;
+}
+body #block1 input[type=submit] {
+  margin-left: 340px;
+  width: 160px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  background-color: rgb(10, 170, 240);
+}
+body #block2 {
+  color: white;
+  padding-top: 20px;
+  min-height: 240px;
+  background-color: rgb(37, 43, 66);
+}
+body #block2 span {
+  margin-left: 110px;
+  display: flex;
+}
+body #block2 ul {
+  margin-right: 14px;
+}
+body #block2 ul h3 {
+  margin-bottom: 14px;
+}
+body #block2 ul li {
+  margin-bottom: 8px;
+  list-style: none;
+  font-weight: lighter;
+}
+body #block2 ul li img {
+  background-color: white;
+}
+body #block2 ul li a {
+  text-decoration: none;
+  color: white;
+}
+body #block3 {
+  display: flex;
+  margin-left: 150px;
+  align-items: center;
+  min-height: 80px;
+}
+body #block3 p {
+  text-transform: capitalize;
+  margin-right: 360px;
+  opacity: 0.8;
+}
+body #block3 img {
+  margin-right: 20px;
 }/*# sourceMappingURL=hw_009.css.map */
