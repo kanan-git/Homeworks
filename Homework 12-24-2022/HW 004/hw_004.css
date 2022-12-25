@@ -1,0 +1,65 @@
+body, html {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.2px;
+  font-weight: 900;
+  color: black;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#sm {
+  display: flex;
+  margin-top: 20px;
+  min-height: 200px;
+  padding: 20px;
+  align-items: center;
+}
+#sm li {
+  list-style: none;
+  margin-top: 14px;
+  opacity: 0.8;
+}
+#sm li h1 {
+  margin-bottom: 8px;
+  opacity: 1;
+  font-weight: bolder;
+}
+#sm span[id="1"] {
+  width: 320px;
+  margin-left: 100px;
+  margin-right: 200px;
+}
+#sm span[id="1"] a {
+  margin-right: 20px;
+}
+#sm span[id="1"] a img {
+  margin-top: 10px;
+  opacity: 1;
+}
+#sm span[id="1"] p {
+  opacity: 0.8;
+}
+#sm span[id="2and3"] {
+  display: flex;
+}
+#sm span[id="2and3"] ul {
+  margin-left: 50px;
+}
+
+#bs {
+  background-color: rgb(250, 250, 250);
+}
+#bs p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+}/*# sourceMappingURL=hw_004.css.map */

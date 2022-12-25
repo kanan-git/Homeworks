@@ -1,0 +1,73 @@
+body, html {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  letter-spacing: 1.2px;
+  font-weight: 900;
+}
+
+#buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(250, 250, 250);
+}
+#buttons div {
+  width: 20%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  max-height: 90%;
+}
+#buttons div h4 {
+  padding: 0;
+  margin: 0;
+}
+#buttons div img {
+  margin: 1px;
+}
+
+#lists {
+  display: flex;
+  margin-left: 100px;
+}
+#lists ul {
+  list-style: none;
+  margin-right: 45px;
+  font-weight: lighter;
+}
+#lists ul li {
+  margin-top: 15px;
+}
+#lists ul li h3 {
+  margin-bottom: 25px;
+  font-weight: bolder;
+}
+#lists ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+#bottom {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(250, 250, 250);
+}
+#bottom span {
+  margin-right: 440px;
+  margin-top: 40px;
+  font-weight: lighter;
+}
+#bottom input[type=submit] {
+  margin: 80px;
+  padding: 0px;
+  width: 160px;
+  height: 50px;
+  border: none;
+  border-radius: 9px;
+  background-color: rgb(0, 180, 250);
+  color: white;
+}
+#bottom h1 {
+  text-transform: capitalize;
+  font-weight: bolder;
+}/*# sourceMappingURL=hw_003.css.map */
