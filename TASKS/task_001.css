@@ -1,0 +1,74 @@
+body, html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: rgb(250, 250, 250);
+  margin: 0px;
+  padding: 0px;
+}
+
+footer .container1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(34, 34, 34);
+  padding: 80px;
+  opacity: 1;
+}
+footer .container1 ul {
+  opacity: 0.7;
+}
+footer .container1 ul p {
+  opacity: 0.7;
+}
+footer .container1 ul li {
+  list-style: none;
+  font-weight: 400;
+}
+footer .container1 ul li a {
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+}
+footer .container1 h1 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 1;
+}
+footer .container1 .block1 {
+  width: 403px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer .container1 .block2 {
+  width: 403px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer .container1 .block2 .date {
+  color: rgb(128, 128, 128);
+}
+footer .container1 .block3 {
+  width: 403px;
+}
+footer .container2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(17, 17, 17);
+  min-height: 80px;
+}
+footer .container2 .info {
+  margin-left: 700px;
+}
+footer .container2 i {
+  margin-right: 20px;
+}
+footer .container2 p {
+  opacity: 0.7;
+}
+footer .container2 p a {
+  text-decoration: none;
+  color: rgb(250, 250, 250);
+}/*# sourceMappingURL=task_001.css.map */
