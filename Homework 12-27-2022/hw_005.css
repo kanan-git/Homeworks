@@ -1,3 +1,46 @@
 body, html {
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  margin-top: 50px;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+}
+#products .cards {
+  text-transform: capitalize;
+  text-align: center;
+  width: 300px;
+  margin: 15px 30px 15px;
+}
+#products .cards__img {
+  width: 100%;
+  height: 300px;
+  border-radius: 6px;
+}
+#products .cards__img--colors {
+  margin: 10px 0px 0px;
+}
+#products .cards__title--header {
+  font-size: larger;
+  font-weight: bolder;
+  margin: 20px 0px 0px;
+}
+#products .cards__title--describe {
+  margin: 10px 0px 0px;
+}
+#products .cards__title__product--price__oldprice {
+  opacity: 0.7;
+  font-weight: lighter;
+}
+#products .cards__title__product--price__newprice {
+  color: green;
+}
+
+.bg-image img {
+  width: 600px;
+  height: 500px;
 }/*# sourceMappingURL=hw_005.css.map */
