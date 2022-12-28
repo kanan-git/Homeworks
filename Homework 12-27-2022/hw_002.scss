@@ -1,0 +1,76 @@
+body, html {
+    font-family: 'Montserrat', sans-serif;
+}
+#top {
+    margin: 0px 0px 50px;
+    .top__text {
+        font-size: 20px;
+        text-align: center;
+        &__title {
+            text-transform: capitalize;
+            opacity: .8;
+        }
+        &__header {
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        &__describe {
+            text-transform: capitalize;
+        }
+    }
+    .buttons {
+        padding: 0px;
+        text-align: center;
+        button {
+            margin-right: 10px;
+            border: 1px solid rgb(0,160,250);
+            background-color: white;
+            border-radius: 10px;
+            width: auto;
+            height: 40px;
+        }
+        a {
+            text-decoration: none;
+            color: rgb(0,160,250);
+            margin: 25px;
+            font-weight: 900;
+        }
+    }
+}
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    .cards {
+        text-transform: capitalize;
+        text-align: center;
+        width: 300px;
+        margin: 15px 30px 15px;
+        &__img {
+            width: 100%;
+            height: 300px;
+            border-radius: 6px;
+        }
+        &__img--colors {
+            margin: 10px 0px 0px;
+        }
+        &__title--header {
+            font-size: larger;
+            font-weight: bolder;
+            margin: 20px 0px 0px;
+        }
+        &__title--describe {
+            margin: 10px 0px 0px;
+        }
+        &__title__product--price {
+            &__oldprice {
+                opacity: .7;
+                font-weight: lighter;
+            }
+            &__newprice {
+                color: green;
+            }
+        }
+    }
+}
