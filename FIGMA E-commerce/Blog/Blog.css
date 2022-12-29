@@ -1,0 +1,90 @@
+body, html {
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+section .cards {
+  width: 300px;
+  height: 360px;
+  margin: 40px 100px 40px;
+}
+section .cards__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 150px;
+  margin: 0px 0px 10px;
+  transition-timing-function: linear;
+  transition: 0.35s;
+}
+section .cards__image img:hover {
+  scale: 1.1;
+  filter: brightness(50%) blur(2px);
+}
+section .cards__text {
+  font-size: 12px;
+  margin: 0 10px 0;
+}
+section .cards__text :not(div[class=cards__text__title]) {
+  opacity: 0.9;
+}
+section .cards__text__filters {
+  margin: 0 0 10px;
+}
+section .cards__text__filters a {
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+}
+section .cards__text__filters a:hover {
+  color: rgb(5, 120, 250);
+}
+section .cards__text__title {
+  margin: 0 0 10px;
+  font-size: larger;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+section .cards__text__title p {
+  box-shadow: inset 0 0 0 0 #3d4eec;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+section .cards__text__title p:hover {
+  box-shadow: inset 250px 0 0 0 #2fadd3;
+  color: white;
+}
+section .cards__text__describe {
+  margin: 0 0 10px;
+}
+section .cards__text__info {
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+section .cards__text__info .fa-clock {
+  color: rgb(10, 180, 250);
+}
+section .cards__text__info .fa-chart-area {
+  color: rgb(20, 180, 30);
+}
+section .cards__text__more button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+section .cards__text__more button a {
+  text-decoration: none;
+  color: black;
+}
+section .cards__text__more button a .fa-chevron-right {
+  color: rgb(5, 120, 250);
+}/*# sourceMappingURL=Blog.css.map */
