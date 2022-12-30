@@ -1,21 +1,38 @@
 .index {
-    background-color: rgb(64,64,64);
-    border: 1px solid white;
-    min-height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &__button {
-        margin-right: 10px;
-        width: 140px;
-        height: 60px;
-        background-color: rgb(16,16,16);
-        border: 1px solid white;
-        border-radius: 20px;
-        a {
-            text-decoration: none;
-            font-size: 20px;
-            color: white;
-        }
-    }
+  background-color: rgb(16, 16, 16);
+  border: 1px solid black;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px;
 }
+.index__button {
+  margin-right: 10px;
+  width: 140px;
+  height: 60px;
+  background-color: rgb(28, 28, 28);
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.index__button a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+.index__button:hover {
+  transition: linear 0.35s;
+  scale: 1.2;
+  border-radius: 100px;
+  z-index: 10px;
+  box-shadow: 3px 2px 10px 8px;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(250, 170, 10);
+  font-size: larger;
+}
+.index__button:hover a {
+  color: rgb(250, 170, 10);
+  transition-duration: 3s;
+  filter: hue-rotate(360deg);
+}/*# sourceMappingURL=index.css.map */
