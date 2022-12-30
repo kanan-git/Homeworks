@@ -5,4 +5,223 @@
 html, body, h1, h2, h3, h4, h5, h6, ul {
   margin: 0px;
   padding: 0px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .container__cards__card__no1-img_button1 {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(221, 80, 80);
+  width: 60px;
+  height: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -230px;
+  left: 15px;
+}
+section .container__cards__card__no1-img_button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  margin-left: 30px;
+  position: relative;
+  top: -140px;
+  opacity: 0;
+  color: rgb(128, 128, 128);
+}
+section .container__cards__card__no1-img_button2:hover {
+  opacity: 0.7;
+}
+section .fa-heart:hover {
+  opacity: 0.9;
+  scale: 1.1;
+  color: rgb(250, 180, 10);
+}
+section .fa-cart-arrow-down:hover {
+  opacity: 0.9;
+  scale: 1.1;
+  color: rgb(250, 180, 10);
+}
+section .fa-eye:hover {
+  opacity: 0.9;
+  scale: 1.1;
+  color: rgb(250, 180, 10);
+}
+section .fa-3x {
+  margin-right: -18px;
+  background-color: rgba(250, 250, 250, 0.9);
+  border-radius: 100px;
+  padding: 15px;
+  scale: 0.7;
+  opacity: 0.85;
+}
+section .poster {
+  width: 600px;
+}
+section .poster img {
+  width: 100%;
+}
+section .container {
+  width: 600px;
+}
+section .container__top {
+  text-align: center;
+}
+section .container__cards {
+  display: flex;
+  justify-content: center;
+}
+section .container__cards__card__no1 {
+  border: 1px solid #000;
+  border-radius: 2px;
+  width: 40%;
+  margin-right: 10px;
+  min-height: 600px;
+}
+section .container__cards__card__no1-img {
+  width: 240px;
+}
+section .container__cards__card__no1-pnl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -110px 20px 10px;
+}
+section .container__cards__card__no1-pnl-lang {
+  color: rgb(10, 180, 250);
+}
+section .container__cards__card__no1-pnl-rating {
+  background-color: rgba(8, 0, 48, 0.85);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section i[class="fa-solid fa-star fa-1x"] {
+  color: rgb(250, 180, 10);
+}
+section .container__cards__card__no1-name {
+  font-size: 20px;
+}
+section .container__cards__card__no1-descr {
+  opacity: 0.8;
+}
+section .additionalMargin {
+  margin-left: 18px;
+}
+section .container__cards__card__no1-sales {
+  opacity: 0.8;
+}
+section i[class="fa-solid fa-cart-arrow-down fa-1x"] {
+  margin-right: 5px;
+}
+section .container__cards__card__no1-price {
+  margin-bottom: 10px;
+}
+section .container__cards__card__no1-price-old {
+  color: rgb(128, 128, 128);
+  font-weight: lighter;
+}
+section .container__cards__card__no1-price-new {
+  color: rgba(0, 128, 0, 0.85);
+  font-weight: bolder;
+}
+section .container__cards__card__no1-colorSelect {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+section .container__cards__card__no1-colorSelect-tb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50px;
+  margin-right: 5px;
+  background-color: rgb(0, 128, 255);
+}
+section .container__cards__card__no1-colorSelect-gr {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50px;
+  margin-right: 5px;
+  background-color: rgb(0, 128, 0);
+}
+section .container__cards__card__no1-colorSelect-or {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50px;
+  margin-right: 5px;
+  background-color: rgb(255, 128, 0);
+}
+section .container__cards__card__no1-colorSelect-na {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50px;
+  margin-right: 5px;
+  background-color: rgb(10, 0, 80);
+}
+section .container__cards__card__no1-colorSelect-tb:hover {
+  scale: 1.2;
+  border: 1px solid rgb(116, 199, 255);
+}
+section .container__cards__card__no1-colorSelect-gr:hover {
+  scale: 1.2;
+  border: 1px solid rgb(141, 255, 141);
+}
+section .container__cards__card__no1-colorSelect-or:hover {
+  scale: 1.2;
+  border: 1px solid rgb(255, 202, 87);
+}
+section .container__cards__card__no1-colorSelect-na:hover {
+  scale: 1.2;
+  border: 1px solid rgb(80, 54, 255);
+}
+section .container__cards__card__no1-someData {
+  display: flex;
+  justify-content: space-evenly;
+  opacity: 0.8;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+section .fa-1x {
+  margin-right: 3px;
+}
+section .fa-clock {
+  color: rgb(10, 180, 250);
+}
+section .fa-chart-column {
+  color: rgba(240, 140, 20, 0.9);
+}
+section .container__cards__card__no1-learnMore {
+  border-radius: 16px;
+  width: 160px;
+  height: 45px;
+  border: 1px solid rgb(10, 180, 250);
+  background-color: transparent;
+  color: rgb(10, 180, 250);
+}
+section .container__cards__card__no1-learnMore a {
+  text-decoration: none;
+  color: rgb(10, 180, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .fa-chevron-right {
+  color: rgb(10, 180, 250);
 }/*# sourceMappingURL=product_03.css.map */
