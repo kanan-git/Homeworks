@@ -1,0 +1,60 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#leftside div img {
+  overflow: hidden;
+  width: 400px;
+  height: 720px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: -288px 0px;
+     object-position: -288px 0px;
+}
+
+#main .container {
+  padding: 50px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#main .container__title {
+  margin: 0px 0px 50px;
+}
+#main .container__title-header {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: bolder;
+}
+#main .container__form-label {
+  font-size: larger;
+}
+#main .container__form-input, #main .container__form-submit {
+  width: 100%;
+  min-height: 30px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+#main .container__form-submit {
+  height: 50px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(10, 140, 250);
+}/*# sourceMappingURL=book-appointment.css.map */

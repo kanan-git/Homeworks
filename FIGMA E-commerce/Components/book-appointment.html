@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment</title>
+        <!-- Google Fonts Links / Montserrat -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <!-- Style Sheets Link -->
+        <link rel="stylesheet" href="./book-appointment.css">
+    </head>
+    <body>
+        <aside id="leftside">
+            <div>
+                <img src="/ASSETS/Images/real-sunset.jfif.jpg" alt="cover-img">
+            </div>
+        </aside>
+        <main id="main">
+            <section class="container">
+                <div class="container__title">
+                    <h1 class="container__title-header">Book Appointment</h1>
+                </div>
+                <div class="container__form">
+                    <form method="post">
+                        <label class="container__form-label" for="name">Name *</label>
+                            <input class="container__form-input" type="text" id="name" name="name" required placeholder="Full Name *">
+                        <label class="container__form-label" for="">Email address *</label>
+                            <input class="container__form-input" type="email" id="email" name="email" required placeholder="example@gmail.com">
+                        <label class="container__form-label" for="dep">Department *</label>
+                            <input class="container__form-input" list="deps" id="dep" name="dep" required placeholder="Please Select">
+                            <datalist id="deps">
+                                <option value="Denmark">
+                                <option value="Russia">
+                                <option value="United States">
+                                <option value="Azerbaijan">
+                                <option value="Turkey">
+                            </datalist>
+                        <label class="container__form-label" for="datetime">Time *</label>
+                            <select class="container__form-input" id="datetime" name="datetime">
+                                <option value="10:00 Available">10:00 Available</option>
+                                <option value="12:00 Available">12:00 Available</option>
+                                <option value="14:00 Available">14:00 Available</option>
+                                <option value="16:00 Available">16:00 Available</option>
+                                <option value="18:00 Available">18:00 Available</option>
+                                <option value="20:00 Available">20:00 Available</option>
+                                <option value="22:00 Available">22:00 Available</option>
+                            </select>
+                        <input class="container__form-submit" type="submit" value="Book Appointment">
+                    </form>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
