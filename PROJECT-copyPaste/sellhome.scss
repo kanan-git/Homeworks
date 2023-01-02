@@ -1,0 +1,371 @@
+// FONT SETTINGS
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: rgb(0,0,0);
+}
+// OVERALL ZEROING MARGINS & PADDINGS
+p, h1, h2, h3, h4, h5, h6, ul, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+// SECTION ► DROPDOWN MENU | METBEX VE MASA
+.dropdown__metbexmasa {
+    position: absolute;
+    z-index: 50;
+    display: none; // display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: 1px solid rgb(0,0,0);
+    width: 1000px;
+    min-height: 300px;
+    padding: 80px 0px 80px;
+}
+.dropdown__metbexmasa-col {
+    width: 30%;
+    list-style: none;
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        opacity: 0.9;
+        color: rgb(0,0,0);
+    }
+    li {
+        margin: 0px 0px 10px 5px;
+    }
+    img {
+        width: 140%;
+        margin: 80px 0px 0px -40px;
+        rotate: 90deg;
+        // CENTERING FAILED ? USED PIXELS
+    }
+}
+
+// SECTION ► DROPDOWN MENU | HAMAM OTAGI
+.dropdown__hamamotagi {
+    position: absolute;
+    z-index: 50;
+    display: none; // display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: 1px solid rgb(0,0,0);
+    width: 600px;
+    min-height: 200px;
+    padding: 80px 0px 80px;
+}
+.dropdown__hamamotagi-col {
+    width: 45%;
+    list-style: none;
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        opacity: 0.9;
+        color: rgb(0,0,0);
+    }
+    li {
+        margin: 0px 0px 10px 5px;
+    }
+    img {
+        width: 100%;
+        height: 250px;
+        margin: 10px 0px 0px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+// SECTION ► DROPDOWN MENU | YATAQ OTAGI
+.dropdown__yataqotagi {
+    position: absolute;
+    z-index: 50;
+    display: none; // display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: 1px solid rgb(0,0,0);
+    width: 500px;
+    min-height: 180px;
+    padding: 80px 0px 80px;
+}
+.dropdown__yataqotagi-col {
+    width: 45%;
+    list-style: none;
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        opacity: 0.9;
+        color: rgb(0,0,0);
+    }
+    li {
+        margin: 0px 0px 10px 5px;
+    }
+    img {
+        width: 100%;
+        height: 250px;
+        margin: 10px 0px 0px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+// SECTION ► DROPDOWN MENU | DEKOR
+.dropdown__dekor {
+    position: absolute;
+    z-index: 50;
+    display: none; // display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: 1px solid rgb(0,0,0);
+    width: 1000px;
+    min-height: 200px;
+    padding: 80px 0px 80px;
+}
+.dropdown__dekor-col {
+    width: 30%;
+    list-style: none;
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        opacity: 0.9;
+        color: rgb(0,0,0);
+    }
+    li {
+        margin: 0px 0px 10px 5px;
+    }
+    img {
+        width: 100%;
+        height: 250px;
+        margin: 5px 0px 0px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+// MENU LIST
+.navmenus {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 80px;
+    min-height: 60px;
+}
+.navmenus__buttons {
+    list-style: none;
+    margin-right: 40px;
+    i {
+        margin-left: 5px;
+    }
+}
+
+// NAVIGATION PANEL & LOGO | SEARCHBAR
+#mlist {
+    background-color: rgb(250,250,250);
+}
+#navbar {
+    // NAVBAR GENERAL PARAMETERS
+    position: relative;
+    width: 100%;
+    background-color: rgb(200,200,200);
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    // FORM OVERALL
+    form {
+        position: relative;
+    }
+    // LOGO
+    img {
+        margin-left: 40px;
+        height: 60px;
+        border: 1px solid black;
+    }
+    // SEARCHBAR
+    input[type="text"] {
+        width: 420px;
+        height: 36px;
+        border: none;
+        outline: none;
+        margin: 0px 150px 0px;
+        padding-left: 15px;
+    }
+    // HITBOX OF THE SEARCHBAR
+    input[type="submit"] {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        border-radius: 30px;
+        position: absolute;
+        top: 4px;
+        left: 550px;
+        z-index: 11;
+    }
+    // CHOOSE LANGUAGE
+    select {
+        width: 170px;
+        height: 30px;
+        background-color: transparent;
+        border: 1px solid rgb(250,250,250);
+        outline: none;
+    }
+    // FONT-AWESOME ICONS
+    #magnifier {
+        position: absolute;
+        top: 11px;
+        left: 557px;
+        z-index: 10;
+        color: rgb(0,0,0);
+    }
+    #globe {
+        position: absolute;
+        top: 21px;
+        left: 1146px;
+        color: rgb(250,250,250);
+    }
+    #cart {
+        scale: 2;
+        color: rgb(250,250,250);
+        margin: 0px 30px 0px;
+    }
+    #fav {
+        scale: 2;
+        color: rgb(250,250,250);
+        margin-right: 30px;
+    }
+    #user {
+        scale: 2;
+        color: rgb(250,250,250);
+        margin-right: 30px;
+    }
+}
+
+// SECTION ► DROPDOWN MENU | CART
+.dropdown__cart {
+    border: 1px solid rgb(0,0,0);
+    background-color: rgb(200,200,200);
+    padding: 10px;
+    position: absolute;
+    z-index: 20;
+    display: none; // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 300px;
+    p {
+        margin-bottom: 10px;
+    }
+    a {
+        button {
+            width: 300px;
+            border: 1px solid rgb(250,250,250);
+            background-color: rgb(200,200,200);
+            color: rgb(250,250,250);
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    }
+    a:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+// SECTION ► DROPDOWN MENU | USER
+.dropdown__user {
+    border: 1px solid rgb(0,0,0);
+    background-color: rgb(200,200,200);
+    padding: 10px;
+    position: absolute;
+    z-index: 20;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+    text-align: center;
+    a {
+        text-decoration: none;
+        button {
+            border: 1px solid rgb(0,0,0);
+            border-radius: 5px;
+            width: 80%;
+        }
+    }
+}
+
+// FOOTER - HIDDEN & CONTAIN ICONS FOR NOW
+#hiddenForNow {
+    display: none;
+}
+
+// NAVIGATION SECTION ► POSITION ADJUSTMENT
+nav {
+    position: relative;
+}
+
+// MENU 1 METBEX & MASA
+
+.navmenus__buttons-metmas:hover ~ .dropdown__metbexmasa-metmas {
+    display: flex;
+    background-color: rgb(250,250,250);
+    transition: ease 0.35s;
+}
+.dropdown__metbexmasa-metmas:hover {
+    display: flex;
+    background-color: rgb(250,250,250);
+}
+
+// MENU 2 HAMAM OTAGI
+.navmenus__buttons-hamamot:hover ~ .dropdown__hamamotagi-hamamot {
+    display: flex;
+    background-color: rgb(250,250,250);
+    transition: ease 0.35s;
+}
+.dropdown__hamamotagi-hamamot:hover {
+    display: flex;
+    background-color: rgb(250,250,250);
+}
+
+// MENU 3 YATAQ OTAGI
+.navmenus__buttons-yataqot:hover ~ .dropdown__yataqotagi-yataqot {
+    display: flex;
+    background-color: rgb(250,250,250);
+    transition: ease 0.35s;
+}
+.dropdown__yataqotagi-yataqot:hover {
+    display: flex;
+    background-color: rgb(250,250,250);
+}
+
+// MENU 4 DEKOR
+.navmenus__buttons-dekor:hover ~ .dropdown__dekor-dek {
+    display: flex;
+    background-color: rgb(250,250,250);
+    transition: ease 0.35s;
+}
+.dropdown__dekor-dek:hover {
+    display: flex;
+    background-color: rgb(250,250,250);
+}
