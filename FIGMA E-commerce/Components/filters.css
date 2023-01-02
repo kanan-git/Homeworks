@@ -1,0 +1,73 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  padding: 50px 0px 50px;
+}
+
+.container__form {
+  display: flex;
+  justify-content: center;
+}
+
+.container__form-columns {
+  width: 20%;
+  list-style: none;
+}
+.container__form-columns h2 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.container__form-columns li {
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+}
+.container__form-columns li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.container__form-columns input[type=checkbox] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: rgb(16, 16, 16);
+}
+.container__form-columns input[value=Blue] {
+  accent-color: rgb(10, 180, 250);
+}
+.container__form-columns input[value=Green] {
+  accent-color: rgb(0, 160, 0);
+}
+.container__form-columns input[value=Orange] {
+  accent-color: rgb(250, 120, 0);
+}
+.container__form-columns input[value=Dark-Blue] {
+  accent-color: rgb(0, 20, 100);
+}
+.container__form-columns input[type=number] {
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 4px;
+  padding: 0px 10px 0px;
+  margin: 10px 5px 10px;
+  width: 100px;
+}
+.container__form-columns input[type=submit] {
+  width: 260px;
+  height: 40px;
+  letter-spacing: 1px;
+  margin: 10px 5px 10px;
+  background-color: rgb(10, 180, 250);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+}/*# sourceMappingURL=filters.css.map */

@@ -1,0 +1,93 @@
+// FONT PARAMETERS
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+// ZEROING DEFAULT MARGIN & PADDINGS
+body, p, h1, h2, h3, h4, h5, h6, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+// OVERALL MENU
+.container {
+    padding: 50px 0px 50px;
+}
+
+// FORM FRAME
+.container__form {
+    display: flex;
+    justify-content: center;
+}
+
+// LIST COLUMNS
+.container__form-columns {
+    width: 20%;
+    list-style: none;
+
+    // HEADERS OF COLUMNS
+    h2 {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    // LISTS OF COLUMNS
+    li {
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+    }
+
+    // ADJUSTING BOTTOM MARGINS
+    li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    // CHECKBOX STYLES
+    input[type="checkbox"] {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        accent-color: rgb(16,16,16);
+    }
+
+    // COLOR FILTERS
+    input[value="Blue"] {
+        accent-color: rgb(10,180,250);
+    }
+    input[value="Green"] {
+        accent-color: rgb(0,160,0);
+    }
+    input[value="Orange"] {
+        accent-color: rgb(250,120,0);
+    }
+    input[value="Dark-Blue"] {
+        accent-color: rgb(0, 20, 100);
+    }
+
+    // PRICE BOXES
+    input[type="number"] {
+        border: 1px solid rgb(128,128,128);
+        border-radius: 4px;
+        padding: 0px 10px 0px;
+        margin: 10px 5px 10px;
+        width: 100px;
+    }
+
+    // SUBMIT BUTTON
+    input[type="submit"] {
+        width: 260px;
+        height: 40px;
+        letter-spacing: 1px;
+        margin: 10px 5px 10px;
+        background-color: rgb(10,180,250);
+        color: rgb(255,255,255);
+        border: none;
+        border-radius: 10px;
+        
+    }
+}
