@@ -1,9 +1,9 @@
 // OVERALL FONT PARAMETERS ►
 * {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
-    color: rgb(0,0,0);
+    color: rgb(255,255,255);
 }
 
 // GENERAL AJDUSTMENT OF MARGIN & PADDING ►
@@ -12,4 +12,70 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     padding: 0px;
 }
 
-// . ►
+// CARD CONTAINER ►
+.card {
+    position: relative;
+    z-index: 0;
+    width: 400px;
+    height: 560px;
+    border: 1px solid rgb(0,0,0);
+}
+
+// CARD IMAGE ►
+.card__img {
+    z-index: 1;
+    object-fit: cover;
+    width: 395px;
+    height: 560px;
+}
+
+// CARD DESCRIPTION ►
+.card__desc {
+    visibility: hidden;
+    transform: translateY(50%) scaleY(0.0);
+    transition: linear 0.15s;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(
+        to top,
+        rgb(8,8,8),
+        transparent
+    );
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    ul {
+        padding: 60px;
+        :not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    li {
+        opacity: 0.8;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(110, 210, 250);
+        margin-right: 15px;
+        font-weight: 800;
+    }
+}
+
+// HOVER ANIMATION ►
+.card:hover .card__desc {
+    visibility: visible;
+    transform: translateY(0%) scaleY(1.0);
+    transition: linear 0.15s;
+}
