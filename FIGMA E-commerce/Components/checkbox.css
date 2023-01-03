@@ -8,4 +8,26 @@
 body, h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0px;
   padding: 0px;
+}
+
+.container {
+  background: linear-gradient(to right, rgb(128, 255, 0), rgb(0, 255, 128));
+  width: 400px;
+  height: 150px;
+  border: 1px dotted black;
+  padding: 20px;
+}
+.container__buttons-1, .container__buttons-2, .container__buttons-3, .container__buttons-4 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.container__buttons-1 label:not(:nth-of-type(3)), .container__buttons-2 label:not(:nth-of-type(3)), .container__buttons-3 label:not(:nth-of-type(3)), .container__buttons-4 label:not(:nth-of-type(3)) {
+  margin-right: 60px;
+}
+.container__buttons-1 input, .container__buttons-2 input, .container__buttons-3 input, .container__buttons-4 input {
+  scale: 2;
+  accent-color: red;
 }/*# sourceMappingURL=checkbox.css.map */

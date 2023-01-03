@@ -214,7 +214,7 @@ p, h1, h2, h3, h4, h5, h6, ul, body {
         border: 1px solid black;
     }
     // SEARCHBAR
-    input[type="text"] {
+    input[type="search"] {
         width: 420px;
         height: 36px;
         border: none;
@@ -230,8 +230,8 @@ p, h1, h2, h3, h4, h5, h6, ul, body {
         background-color: transparent;
         border-radius: 30px;
         position: absolute;
-        top: 4px;
-        left: 550px;
+        top: 3px;
+        left: 537px;
         z-index: 11;
     }
     // CHOOSE LANGUAGE
@@ -245,15 +245,15 @@ p, h1, h2, h3, h4, h5, h6, ul, body {
     // FONT-AWESOME ICONS
     #magnifier {
         position: absolute;
-        top: 11px;
-        left: 557px;
+        top: 10px;
+        left: 544px;
         z-index: 10;
         color: rgb(0,0,0);
     }
     #globe {
         position: absolute;
         top: 21px;
-        left: 1146px;
+        left: 1130px;
         color: rgb(250,250,250);
     }
     #cart {
