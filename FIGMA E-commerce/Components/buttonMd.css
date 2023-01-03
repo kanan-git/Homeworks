@@ -1,0 +1,87 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  border: 2px dashed rgb(128, 0, 255);
+  background-color: transparent;
+  width: 1140px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container__vA button {
+  margin: 5px 10px 5px 10px;
+  padding: 18px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(10, 180, 250);
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+}
+.container__vA a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.container__vA i {
+  margin: 5px;
+  color: rgb(255, 255, 255);
+}
+.container__vB button {
+  margin: 5px 10px 5px 10px;
+  padding: 18px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(10, 180, 250);
+  border-radius: 32px;
+  color: rgb(255, 255, 255);
+}
+.container__vB a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.container__vB i {
+  margin: 5px;
+  color: rgb(255, 255, 255);
+}
+.container__vC button {
+  margin: 5px 10px 5px 10px;
+  padding: 18px;
+  border: 1px solid rgb(10, 180, 250);
+  background-color: transparent;
+  border-radius: 6px;
+  color: rgb(10, 180, 250);
+}
+.container__vC a {
+  text-decoration: none;
+  color: rgb(10, 180, 250);
+}
+.container__vC i {
+  margin: 5px;
+  color: rgb(10, 180, 250);
+}
+.container__vD button {
+  margin: 5px 10px 5px 10px;
+  padding: 18px;
+  border: 1px solid rgb(10, 180, 250);
+  background-color: transparent;
+  border-radius: 32px;
+  color: rgb(10, 180, 250);
+}
+.container__vD a {
+  text-decoration: none;
+  color: rgb(10, 180, 250);
+}
+.container__vD i {
+  margin: 5px;
+  color: rgb(10, 180, 250);
+}/*# sourceMappingURL=buttonMd.css.map */

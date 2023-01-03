@@ -1,0 +1,101 @@
+// OVERALL FONT PARAMETERS ►
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(0,0,0);
+}
+
+// GENERAL AJDUSTMENT OF MARGIN & PADDING ►
+body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+// CONTAINER ►
+.container {
+    border: 2px dashed rgb(128,0,255);
+    background-color: transparent;
+    width: 1140px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+// BUTTON VERSIONS
+.container {
+    &__vA {
+        button {
+            margin: 5px 10px 5px 10px;
+            padding: 18px;
+            border: 1px solid rgb(255,255,255);
+            background-color: rgb(10,180,250);
+            border-radius: 6px;
+            color: rgb(255,255,255);
+        }
+        a {
+            text-decoration: none;
+            color: rgb(255,255,255);
+        }
+        i {
+            margin: 5px;
+            color: rgb(255,255,255);
+        }
+    }
+    &__vB {
+        button {
+            margin: 5px 10px 5px 10px;
+            padding: 18px;
+            border: 1px solid rgb(255,255,255);
+            background-color: rgb(10,180,250);
+            border-radius: 32px;
+            color: rgb(255,255,255);
+        }
+        a {
+            text-decoration: none;
+            color: rgb(255,255,255);
+        }
+        i {
+            margin: 5px;
+            color: rgb(255,255,255);
+        }
+    }
+    &__vC {
+        button {
+            margin: 5px 10px 5px 10px;
+            padding: 18px;
+            border: 1px solid rgb(10,180,250);
+            background-color: transparent;
+            border-radius: 6px;
+            color: rgb(10,180,250);
+        }
+        a {
+            text-decoration: none;
+            color: rgb(10,180,250);
+        }
+        i {
+            margin: 5px;
+            color: rgb(10,180,250);
+        }
+    }
+    &__vD {
+        button {
+            margin: 5px 10px 5px 10px;
+            padding: 18px;
+            border: 1px solid rgb(10,180,250);
+            background-color: transparent;
+            border-radius: 32px;
+            color: rgb(10,180,250);
+        }
+        a {
+            text-decoration: none;
+            color: rgb(10,180,250);
+        }
+        i {
+            margin: 5px;
+            color: rgb(10,180,250);
+        }
+    }
+}
