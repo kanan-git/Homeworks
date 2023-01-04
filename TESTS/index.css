@@ -1,0 +1,154 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#temporary-folder-for-icons {
+  display: none;
+}
+
+#navigation-sector {
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgb(128, 128, 128);
+  background: linear-gradient(to right, rgb(255, 128, 0), rgb(64, 0, 255));
+}
+
+.navbar {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgb(128, 128, 128);
+  background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 255, 0));
+  display: flex;
+  align-items: center;
+}
+.navbar__logo {
+  margin: 0px 40px 0px;
+  padding-right: 40px;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+}
+.navbar input[type=search] {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  outline: 1px solid rgb(128, 255, 0);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navbar select[id=lang] {
+  padding-left: 10px;
+  width: 180px;
+  height: 20px;
+  border: 1px solid rgb(8, 8, 8);
+}
+.navbar__search {
+  margin-right: 40px;
+  padding-right: 40px;
+  border-right: 1px solid rgb(255, 255, 255);
+  position: relative;
+}
+.navbar__search i {
+  color: rgb(0, 0, 0);
+}
+.navbar__search button {
+  position: absolute;
+  top: 0px;
+  left: 270px;
+  border: 1px solid rgb(0, 0, 0);
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+#footer-sector {
+  z-index: 0;
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgb(128, 128, 128);
+  background: linear-gradient(to right, rgb(8, 8, 8), rgb(32, 32, 32));
+}
+
+.footer-lists {
+  width: 100%;
+  height: 190px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+.footer-lists_social, .footer-lists_contact {
+  list-style: none;
+}
+.footer-lists_social h1, .footer-lists_contact h1 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+.footer-lists_social li:not(:last-of-type), .footer-lists_contact li:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+.footer-lists_social a, .footer-lists_contact a {
+  text-decoration: none;
+}
+.footer-lists_social i, .footer-lists_contact i {
+  margin-right: 4px;
+  color: rgb(255, 255, 255);
+}
+.footer-lists_social b, .footer-lists_contact b {
+  font-weight: 500;
+  opacity: 0.85;
+  color: rgb(255, 255, 255);
+}
+.footer-lists_social strong, .footer-lists_contact strong {
+  color: rgb(255, 255, 255);
+}
+.footer-lists_contact ::-moz-selection:not(h1) {
+  color: rgb(8, 8, 8);
+  background: rgb(255, 128, 0);
+}
+.footer-lists_contact ::selection:not(h1) {
+  color: rgb(8, 8, 8);
+  background: rgb(255, 128, 0);
+}
+.footer-lists_social li:hover {
+  transition: linear 0.15s;
+  transform: translateX(8px) scaleX(1.1);
+}
+.footer-lists_social li:hover a, .footer-lists_social li:hover i, .footer-lists_social li:hover b {
+  color: rgb(255, 255, 0);
+  font-weight: 900;
+}
+
+.footer-bottom {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid rgb(128, 128, 128);
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-bottom p {
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=index.css.map */
