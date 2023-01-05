@@ -1,3 +1,7 @@
+// ◄-------------------- NOTE --------------------►
+// FAILED, START AGAIN WITH NEW FILE, THIS TIME, MAKE NAV FIRST
+// DROPDOWN MENUS, NAVIGATION AND HEADER CONTENTS, THEN FOOTER, IN THE LAST MAIN
+
 // GENERAL FONT SETTINGS ►
 * {
     font-family: 'Montserrat', sans-serif;
@@ -12,7 +16,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     padding: 0px;
 }
 
-// ◄---------- NAVIGATION ----------►
+// ◄-------------------- NAVIGATION --------------------►
 #temporary-folder-for-icons {
     display: none;
 }
@@ -27,17 +31,95 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     height: 50px;
     border: 1px solid rgb(128,128,128);
     background: linear-gradient(to right, rgb(255,128,0), rgb(64,0,255));
+    display: flex;
+    align-items: center;
+    &__menu {
+        position: relative;
+        display: flex;
+        align-items: center;
+        li {
+            border: 1px solid rgb(255,255,255);
+            width: 240px;
+            height: 40px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            margin-left: 5px;
+            font-size: 26px;
+            font-weight: 900;
+            color: rgb(255,255,255);
+            border-radius: 4px;
+            background: linear-gradient(to bottom, rgb(128,128,128), rgb(32,32,32));
+        }
+        // DROPDOWN MENU 1 EFFECT
+        &-tab1:hover ~ .dropdown1_main {
+            display: block;
+            visibility: visible;
+            transition: linear 0.2s;
+            transform: translateY(0%) scaleY(1.0);
+        }
+        &-tab1:hover {
+            color: rgb(255,255,0);
+        }
+        // DROPDOWN MENUS
+        .dropdown1_main {
+            position: absolute;
+            z-index: 0;
+            top: 42px;
+            left: 5px;
+            border: none;
+            background-color: aqua; // transparent
+            width: 250px;
+            height: 200px;
+            padding: 5px;
+            text-align: left;
+            display: none;
+            transition: linear 0.2s;
+            transform: translateY(50%) scaleY(0.0);
+            visibility: hidden;
+            li {
+                position: relative;
+                border: 1px solid rgb(0,0,0);
+                color: rgb(0,0,0);
+                width: 240px;
+                margin-bottom: 4px;
+                font-size: smaller;
+                background: linear-gradient(to top, rgb(128,128,128), rgb(255,255,0));
+                letter-spacing: 2px;
+                left: -10px;
+                z-index: 9;
+            }
+        }
+        .dropdown1_main:hover {
+            display: block;
+            transition: linear 0.2s;
+            background-color: red;
+        }
+    }
 }
 // NAVBAR →
 .navbar {
     position: relative;
-    z-index: 0;
+    z-index: -1;
     width: 100%;
     height: 50px;
     border: 1px solid rgb(128,128,128);
     background: linear-gradient(to right, rgb(255,0,0), rgb(0,255,0));
     display: flex;
     align-items: center;
+    button:nth-of-type(1) {
+        margin-left: 40px;
+    }
+    button {
+        width: 75px;
+        height: 35px;
+        border: 1px solid rgb(0,0,0);
+        border-radius: 5px;
+        margin-right: 5px;
+        background-color: rgb(255,255,255);
+
+    }
     &__logo {
         margin: 0px 40px 0px;
         padding-right: 40px;
@@ -52,13 +134,15 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
         border-radius: 6px;
         outline: 1px solid rgb(128,255,0);
         padding-left: 20px;
-        padding-right: 20px;
+        padding-right: 34px;
     }
     select[id="lang"] {
         padding-left: 10px;
         width: 180px;
         height: 20px;
         border: 1px solid rgb(8,8,8);
+        margin-right: 40px;
+        padding-right: 40px;
     }
     &__search {
         margin-right: 40px;
@@ -67,15 +151,30 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
         position: relative;
         i {
             color: rgb(0,0,0);
+            position: relative;
+            left: -1px;
         }
         button {
             position: absolute;
-            top: 0px;
-            left: 270px;
+            top: 3px;
+            left: 232px;
             border: 1px solid rgb(0,0,0);
-            width: 30px;
-            height: 30px;
+            background: radial-gradient(rgb(255,0,255), rgb(0,255,255));
+            width: 24px;
+            height: 24px;
             border-radius: 30px;
+        }
+    }
+    &__langpanel {
+        border-right: 1px solid rgb(255,255,255);
+        i {
+            position: relative;
+            scale: 1.2;
+            margin-right: 5px;
+            color: rgb(255,255,255);
+            background-color: rgb(32,32,32);
+            padding: 4px;
+            border-radius: 20px;
         }
     }
 }
@@ -87,7 +186,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 
 // ◄---------- FOOTER ----------►
 #footer-sector {
-    z-index: 0;
+    z-index: -1;
     width: 100%;
     height: 300px;
     border: 1px solid rgb(128,128,128);
@@ -95,6 +194,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 // SOCIAL →
 .footer-lists {
+    z-index: -1;
     width: 100%;
     height: 190px;
     background-color: transparent;
@@ -116,6 +216,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
         }
         a {
             text-decoration: none;
+            z-index: -2;
         }
         i {
             margin-right: 4px;

@@ -25,17 +25,92 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
   height: 50px;
   border: 1px solid rgb(128, 128, 128);
   background: linear-gradient(to right, rgb(255, 128, 0), rgb(64, 0, 255));
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header__menu li {
+  border: 1px solid rgb(255, 255, 255);
+  width: 240px;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-left: 5px;
+  font-size: 26px;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  background: linear-gradient(to bottom, rgb(128, 128, 128), rgb(32, 32, 32));
+}
+.header__menu-tab1:hover ~ .dropdown1_main {
+  display: block;
+  visibility: visible;
+  transition: linear 0.2s;
+  transform: translateY(0%) scaleY(1);
+}
+.header__menu-tab1:hover {
+  color: rgb(255, 255, 0);
+}
+.header__menu .dropdown1_main {
+  position: absolute;
+  z-index: 0;
+  top: 42px;
+  left: 5px;
+  border: none;
+  background-color: aqua;
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  text-align: left;
+  display: none;
+  transition: linear 0.2s;
+  transform: translateY(50%) scaleY(0);
+  visibility: hidden;
+}
+.header__menu .dropdown1_main li {
+  position: relative;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  width: 240px;
+  margin-bottom: 4px;
+  font-size: smaller;
+  background: linear-gradient(to top, rgb(128, 128, 128), rgb(255, 255, 0));
+  letter-spacing: 2px;
+  left: -10px;
+  z-index: 9;
+}
+.header__menu .dropdown1_main:hover {
+  display: block;
+  transition: linear 0.2s;
+  background-color: red;
 }
 
 .navbar {
   position: relative;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 50px;
   border: 1px solid rgb(128, 128, 128);
   background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 255, 0));
   display: flex;
   align-items: center;
+}
+.navbar button:nth-of-type(1) {
+  margin-left: 40px;
+}
+.navbar button {
+  width: 75px;
+  height: 35px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin-right: 5px;
+  background-color: rgb(255, 255, 255);
 }
 .navbar__logo {
   margin: 0px 40px 0px;
@@ -51,13 +126,15 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
   border-radius: 6px;
   outline: 1px solid rgb(128, 255, 0);
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 34px;
 }
 .navbar select[id=lang] {
   padding-left: 10px;
   width: 180px;
   height: 20px;
   border: 1px solid rgb(8, 8, 8);
+  margin-right: 40px;
+  padding-right: 40px;
 }
 .navbar__search {
   margin-right: 40px;
@@ -67,19 +144,34 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 .navbar__search i {
   color: rgb(0, 0, 0);
+  position: relative;
+  left: -1px;
 }
 .navbar__search button {
   position: absolute;
-  top: 0px;
-  left: 270px;
+  top: 3px;
+  left: 232px;
   border: 1px solid rgb(0, 0, 0);
-  width: 30px;
-  height: 30px;
+  background: radial-gradient(rgb(255, 0, 255), rgb(0, 255, 255));
+  width: 24px;
+  height: 24px;
   border-radius: 30px;
+}
+.navbar__langpanel {
+  border-right: 1px solid rgb(255, 255, 255);
+}
+.navbar__langpanel i {
+  position: relative;
+  scale: 1.2;
+  margin-right: 5px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(32, 32, 32);
+  padding: 4px;
+  border-radius: 20px;
 }
 
 #footer-sector {
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 300px;
   border: 1px solid rgb(128, 128, 128);
@@ -87,6 +179,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 .footer-lists {
+  z-index: -1;
   width: 100%;
   height: 190px;
   background-color: transparent;
@@ -110,6 +203,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 .footer-lists_social a, .footer-lists_contact a {
   text-decoration: none;
+  z-index: -2;
 }
 .footer-lists_social i, .footer-lists_contact i {
   margin-right: 4px;
