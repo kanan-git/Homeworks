@@ -1,0 +1,403 @@
+// ---------- CUSTOM VALUES ----------
+$extra_small_device: 575px;
+$mobile_device: 767px;
+$tablet_device: 991px;
+$desktop_device: 1199px;
+$selhome_default_color: #ba958b;
+
+// ---------- MOBILE RESPONSIVE ----------
+@mixin extra_small () {
+    @media screen and (max-width: #{$extra_small_device}) {
+        @content;
+    }
+}
+@mixin mobile () {
+    @media screen and (max-width: #{$mobile_device}) {
+        @content;
+    }
+}
+@mixin tablet () {
+    @media screen and (max-width: #{$tablet_device}) {
+        @content;
+    }
+}
+@mixin desktop () {
+    @media screen and (max-width: #{$desktop_device}) {
+        @content;
+    }
+}
+
+// ---------- FONT PARAMETERS ----------
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: rgb(0,0,0);
+}
+
+// ---------- ZEROING FOR DEFAULT MARGINS & PADDINGS ----------
+body, h1, h2, h3, h4, h5, h6, ul, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+// ◄---------- NAVIGATION ----------►
+nav {
+    // ----- MENU PANEL
+    .menu {
+        width: 100%;
+    }
+
+    // ----- Menu list
+    .menu__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255,255,255);
+        // border: 1px solid red;
+    }
+
+    // ----- Menu chevrons
+    .menu__list--chevrons {
+        list-style: none;
+        // border: 1px solid red;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 25px 5px 25px;
+        transition: linear 0.05s;
+
+        &:last-of-type {
+            color: rgb(255,0,0);
+        }
+    }
+
+    // ----- Menu chevron icons
+    .fa-chevron-down {
+        margin-left: 5px;
+        opacity: 0.7;
+        transition: linear 0.15s;
+    }
+
+    // ----- Dropdown "MƏTBƏX"
+    .menu__list--dropdown_metbex {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 1000px;
+        height: 500px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "HAMAM"
+    .menu__list--dropdown_hamam {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 600px;
+        height: 350px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "YATAQ"
+    .menu__list--dropdown_yataq {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 600px;
+        height: 350px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "DEKOR"
+    .menu__list--dropdown_dekor {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 800px;
+        height: 400px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "UŞAQ"
+    .menu__list--dropdown_usaq {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 700px;
+        height: 200px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "MILLI"
+    .menu__list--dropdown_milli {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 600px;
+        height: 350px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "MEBEL"
+    .menu__list--dropdown_mebel {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 250px;
+        height: 300px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "HƏDIYYƏ"
+    .menu__list--dropdown_hediyye {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 260px;
+        height: 130px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "YENI"
+    .menu__list--dropdown_yeni {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 260px;
+        height: 130px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- Dropdown "ENDIRIM"
+    .menu__list--dropdown_endirim {
+        visibility: hidden;
+        transition: linear 0.15s;
+        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        opacity: 0;
+        display: flex; // flex - none
+        justify-content: center;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        z-index: 2;
+        border: 1px solid rgb(128,128,128);
+        width: 200px;
+        height: 130px;
+        background-color: rgb(255,255,255);
+    }
+
+    // ----- DDMenu Columns
+    .dropdown-columns {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0px 20px 0px;
+    }
+
+    // ----- DDMenu Header list paddings
+    .ul-padding {
+        margin-left: 10px;
+    }
+
+    // ----- DDMenu List
+    .dropdown-list {
+        list-style: none;
+    }
+
+    // ----- DDMenu Link
+    .dropdown-link {
+        text-decoration: none;
+        font-weight: 500;
+        transition: linear 0.05s;
+        padding: 10px;
+    }
+
+    // ----- DDMenu Headers
+    .dropdown-header {
+        font-weight: 900;
+    }
+
+    // ----- DDMenu Images
+    .dropdown__image-metbex {
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+    .dropdown__image-hamam {
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+    .dropdown__image-yataq {
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+    .dropdown__image-dekor {
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+    .dropdown__image-usaq {
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+    .dropdown__image-milli {
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+
+    // ----- SEARCH PANEL
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+        width: 100%;
+        position: relative;
+        background-color: #{$selhome_default_color};
+        border: 1px solid red;
+        height: 60px;
+    }
+
+    // ----- LOGO
+    .search__logo {
+        width: 160px;
+    }
+
+    // ◄----- ANIMATION EFFECTS -----►
+    // ----- Dropdown effects
+    .menu__list--chevrons:hover {
+        color: #{$selhome_default_color};
+        transition: linear 0.05s;
+
+        &:last-of-type {
+            color: rgb(255,0,0);
+        }
+
+        .menu__list--dropdown {
+            &_metbex, &_hamam, &_yataq, &_dekor, &_usaq, &_milli,
+            &_mebel, &_hediyye, &_yeni, &_endirim {
+                visibility: visible;
+                transition: linear 0.15s;
+                transform: translateX(0px) scaleX(1.0) translateY(0px) scaleY(1.0);
+                opacity: 1;
+            }
+        }
+        .fa-chevron-down {
+            transition: linear 0.15s;
+            transform: rotate(180deg);
+        }
+    }
+
+    // ----- Hover over the links
+    .dropdown-link:hover {
+        color: #{$selhome_default_color};
+        background-color: rgb(250,250,250);
+        transition: linear 0.05s;
+    }
+
+    // ----- Highlight headers
+    .highlight-list_cay:hover ~ .highlight-header_cay {
+        color: #{$selhome_default_color};
+        background-color: rgb(250,250,250);
+        transition: linear 0.05s;
+    }
+    .highlight-list_suse:hover ~ .highlight-header_suse {
+        color: #{$selhome_default_color};
+        background-color: rgb(250,250,250);
+        transition: linear 0.05s;
+    }
+    .highlight-list_qazan:hover ~ .highlight-header_qazan {
+        color: #{$selhome_default_color};
+        background-color: rgb(250,250,250);
+        transition: linear 0.05s;
+    }
+    .highlight-list_sam:hover ~ .highlight-header_sam {
+        color: #{$selhome_default_color};
+        background-color: rgb(250,250,250);
+        transition: linear 0.05s;
+    }
+}
+
+// ◄---------- MAIN ----------►
+main {}
+
+// ◄---------- FOOTER ----------►
+footer {}
