@@ -1023,4 +1023,53 @@ main .topsells .topsells__cardscontainer--card a strong {
   scale: 2;
   color: rgb(255, 255, 255);
   margin: 0px 10px 0px;
+}
+
+@media only screen and (max-width: 575px) {
+  nav {
+    width: 119%;
+  }
+  nav .menu__list--chevrons {
+    font-size: 10px;
+  }
+  nav .menu__list--dropdown_metbex {
+    width: 400px;
+  }
+  nav .menu__list--dropdown_metbex ul {
+    font-size: 10px;
+    margin: 0px;
+    padding: 20px 0px 20px;
+  }
+  nav .menu__list--dropdown_metbex ul li {
+    margin-bottom: 2px;
+  }
+  nav .menu__list--dropdown_metbex ul img {
+    width: 100px;
+    height: 60px;
+  }
+  nav .search__searchbar--panel {
+    width: 300px;
+    position: relative;
+    top: 17px;
+    padding-right: 40px;
+  }
+  nav .search__searchbar--button {
+    position: relative;
+    top: -20px;
+    left: 260px;
+  }
+  nav .search__langbar--selector {
+    width: 116px;
+  }
+  nav .fa-globe {
+    position: relative;
+    top: -17px;
+    left: -22px;
+  }
+  main .collections, main .topsells {
+    width: 119%;
+  }
+  .footer {
+    width: 119%;
+  }
 }/*# sourceMappingURL=selhome.css.map */

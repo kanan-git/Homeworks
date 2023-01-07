@@ -6,26 +6,26 @@ $desktop_device: 1199px;
 $selhome_default_color: #ba958b;
 
 // ---------- MOBILE RESPONSIVE ----------
-@mixin extra_small () {
-    @media screen and (max-width: #{$extra_small_device}) {
-        @content;
-    }
-}
-@mixin mobile () {
-    @media screen and (max-width: #{$mobile_device}) {
-        @content;
-    }
-}
-@mixin tablet () {
-    @media screen and (max-width: #{$tablet_device}) {
-        @content;
-    }
-}
-@mixin desktop () {
-    @media screen and (max-width: #{$desktop_device}) {
-        @content;
-    }
-}
+// @mixin extra_small () {
+//     @media screen and (max-width: #{$extra_small_device}) {
+//         @content;
+//     }
+// }
+// @mixin mobile () {
+//     @media screen and (max-width: #{$mobile_device}) {
+//         @content;
+//     }
+// }
+// @mixin tablet () {
+//     @media screen and (max-width: #{$tablet_device}) {
+//         @content;
+//     }
+// }
+// @mixin desktop () {
+//     @media screen and (max-width: #{$desktop_device}) {
+//         @content;
+//     }
+// }
 
 // ---------- FONT PARAMETERS ----------
 * {
@@ -1213,3 +1213,72 @@ main {
         }
     }
 }
+
+// ----- EXTRA SMALL DEVICES | MOBILE RESPONSIVE SETTINGS -----
+@media only screen and (max-width: 575px) {
+    nav {
+        // border: 1px solid red;
+        width: 119%;
+        .menu {
+            &__list {
+                &--chevrons {
+                    font-size: 10px;
+                }
+                &--dropdown_metbex {
+                    width: 400px;
+                    ul {
+                        font-size: 10px;
+                        margin: 0px;
+                        padding: 20px 0px 20px;
+                        li {
+                            margin-bottom: 2px;
+                        }
+                        img {
+                            width: 100px;
+                            height: 60px;
+                        }
+                    }
+                }
+            }
+        }
+        .search__searchbar--panel {
+            width: 300px;
+            position: relative;
+            top: 17px;
+            padding-right: 40px;
+        }
+        .search__searchbar--button {
+            position: relative;
+            top: -20px;
+            left: 260px;
+        }
+        .search__langbar--selector {
+            width: 116px;
+        }
+        .fa-globe {
+            position: relative;
+            top: -17px;
+            left: -22px;
+        }
+    }
+    main {
+        .collections, .topsells {
+            // border: 1px solid red;
+            width: 119%;
+        }
+    }
+    .footer {
+        // border: 1px solid red;
+        width: 119%;
+    }
+}
+// ------------------------------------------------------------
+// ----- MOBILE DEVICES | MOBILE RESPONSIVE SETTINGS -----
+@media only screen and (max-width: 767px) {}
+// ------------------------------------------------------------
+// ----- TABLET DEVICES | MOBILE RESPONSIVE SETTINGS -----
+@media only screen and (max-width: 991px) {}
+// ------------------------------------------------------------
+// ----- DESKTOP DEVICES | MOBILE RESPONSIVE SETTINGS -----
+@media only screen and (max-width: 1199px) {}
+// ------------------------------------------------------------

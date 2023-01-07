@@ -1,0 +1,38 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(0,0,0);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    border: 1px solid rgb(255,0,0);
+    width: 99.85%;
+    height: 200px;
+    position: relative;
+    background-color: rgb(255,128,128);
+    z-index: 2;
+}
+
+main {
+    border: 1px solid rgb(0,255,0);
+    width: 99.85%;
+    height: 1000px;
+    position: relative;
+    background-color: rgb(128,255,128);
+    z-index: 1;
+}
+
+footer {
+    border: 1px solid rgb(0,0,255);
+    width: 99.85%;
+    height: 400px;
+    position: relative;
+    background-color: rgb(128,128,255);
+    z-index: 3;
+}
