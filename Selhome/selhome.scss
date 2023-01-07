@@ -29,10 +29,11 @@ $selhome_default_color: #ba958b;
 
 // ---------- FONT PARAMETERS ----------
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    // font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 900;
-    letter-spacing: -1px;
+    letter-spacing: 0px;
     color: rgb(0,0,0);
 }
 
@@ -46,7 +47,9 @@ body, h1, h2, h3, h4, h5, h6, ul, p {
 nav {
     // ----- MENU PANEL
     .menu {
-        width: 100%;
+        width: 99.8%;
+        position: relative; // sticky, fixed, relative
+        z-index: 99;
     }
 
     // ----- Menu list
@@ -175,7 +178,7 @@ nav {
     .menu__list--dropdown_milli {
         visibility: hidden;
         transition: linear 0.15s;
-        transform: translateX(-200px) scaleX(0.1) translateY(-200px) scaleY(0.1);
+        transform: translateX(-50px) scaleX(0.1) translateY(-50px) scaleY(0.1);
         opacity: 0;
         display: flex; // flex - none
         justify-content: center;
@@ -256,7 +259,7 @@ nav {
         left: 0px;
         z-index: 2;
         border: 1px solid rgb(128,128,128);
-        width: 200px;
+        width: 210px;
         height: 130px;
         background-color: rgb(255,255,255);
     }
@@ -265,7 +268,10 @@ nav {
     .dropdown-columns {
         padding-left: 5px;
         padding-right: 5px;
-        margin: 0px 20px 0px;
+        margin: 0px 10px 0px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px 20px;
     }
 
     // ----- DDMenu Header list paddings
@@ -276,6 +282,7 @@ nav {
     // ----- DDMenu List
     .dropdown-list {
         list-style: none;
+        margin-bottom: 10px;
     }
 
     // ----- DDMenu Link
@@ -289,38 +296,39 @@ nav {
     // ----- DDMenu Headers
     .dropdown-header {
         font-weight: 900;
+        margin-bottom: 10px;
     }
 
     // ----- DDMenu Images
     .dropdown__image-metbex {
         object-fit: cover;
         width: 100%;
-        height: 100px;
+        height: 400px;
     }
     .dropdown__image-hamam {
         object-fit: cover;
         width: 100%;
-        height: 100px;
+        height: 250px;
     }
     .dropdown__image-yataq {
         object-fit: cover;
         width: 100%;
-        height: 100px;
+        height: 250px;
     }
     .dropdown__image-dekor {
         object-fit: cover;
         width: 100%;
-        height: 100px;
+        height: 350px;
     }
     .dropdown__image-usaq {
         object-fit: cover;
         width: 100%;
-        height: 100px;
+        height: 120px;
     }
     .dropdown__image-milli {
         object-fit: cover;
         width: 100%;
-        height: 100px;
+        height: 200px;
     }
 
     // ----- SEARCH PANEL
@@ -328,17 +336,209 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
-        column-gap: 10px;
-        width: 100%;
+        column-gap: 100px;
+        width: 99.8%;
         position: relative;
         background-color: #{$selhome_default_color};
-        border: 1px solid red;
+        // border: 1px solid red;
         height: 60px;
     }
 
     // ----- LOGO
     .search__logo {
-        width: 160px;
+        width: 200px;
+    }
+
+    // ----- Search bar
+    .search__searchbar {
+        &--panel {
+            width: 450px;
+            height: 40px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding-left: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        &--button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            background-color: transparent;
+            position: relative;
+            left: -40px;
+
+            &:hover {
+                .fa-magnifying-glass {
+                    color: $selhome_default_color;
+                }
+            }
+        }
+        .fa-magnifying-glass {
+            scale: 2;
+        }
+    }
+
+    // ----- Language bar
+    .search__langbar {
+        &--selector {
+            width: 140px;
+            height: 25px;
+            background-color: $selhome_default_color;
+            filter: brightness(1.05);
+            border: none;
+            border-radius: 2px;
+            color: rgb(255,255,255);
+            font-weight: 500;
+            outline: none;
+        }
+        .fa-globe {
+            position: relative;
+            left: -40px;
+            color: rgb(128,128,128);
+        }
+    }
+
+    // ----- User panel
+    .search__userpanel {
+        display: flex;
+        column-gap: 20px;
+        position: relative;
+        left: -95px;
+
+        .dropdown--shopping {
+            visibility: hidden; // hidden - visible
+            width: 260px;
+            height: 160px;
+            position: absolute;
+            border: 1px solid rgb(128,128,128);
+            background-color: rgb(255,255,255);
+            top: 63px;
+            left: -180px;
+            z-index: 1;
+            transition: linear 0.15s;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &_info {
+                // border: 1px solid red;
+                width: 90%;
+                height: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &_cart {
+                border: 1px solid $selhome_default_color;
+                color: $selhome_default_color;
+                border-radius: 3px;
+                width: 90%;
+                height: 30px;
+                margin-bottom: 10px;
+                padding-top: 10px;
+                text-align: center;
+                text-decoration: none;
+            }
+            &_purchase {
+                border: 1px solid $selhome_default_color;
+                color: $selhome_default_color;
+                border-radius: 3px;
+                width: 90%;
+                height: 30px;
+                padding-top: 10px;
+                text-align: center;
+                text-decoration: none;
+            }
+        }
+
+        .dropdown--user {
+            visibility: hidden; // hidden - visible
+            width: 260px;
+            height: 120px;
+            position: absolute;
+            border: 1px solid rgb(128,128,128);
+            background-color: rgb(255,255,255);
+            top: 63px;
+            left: -25px;
+            z-index: 1;
+            transition: linear 0.15s;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            a {
+                border: 1px solid $selhome_default_color;
+                text-decoration: none;
+                color: $selhome_default_color;
+                padding: 20px 10px 20px;
+                border-radius: 3px;
+            }
+        }
+
+        .fa-cart-shopping {
+            color: rgb(255,255,255);
+            position: relative;
+            padding: 20px 0px 20px;
+            transition: linear 0.15s;
+            transition: linear 0.15s;
+
+            &:hover {
+                color: rgb(255,255,128);
+                transition: linear 0.15s;
+
+                ~ .dropdown--shopping {
+                    visibility: visible;
+                    transition: linear 0.15s;
+                    opacity: 1;
+                }
+            }
+
+            &__count {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                color: rgb(255,255,255);
+                background-color: $selhome_default_color;
+                border: none;
+                position: absolute;
+                top: 34px;
+                left: 17px;
+            }
+        }
+        .fa-heart {
+            color: rgb(255,255,255);
+            padding: 20px 0px 20px;
+
+            &:hover {
+                color: rgb(255,255,128);
+                transition: linear 0.15s;
+            }
+        }
+        .fa-user {
+            color: rgb(255,255,255);
+            padding: 20px 0px 20px;
+            transition: linear 0.15s;
+
+            &:hover {
+                color: rgb(255,255,128);
+                transition: linear 0.15s;
+
+                ~ .dropdown--user {
+                    visibility: visible;
+                    transition: linear 0.15s;
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     // ◄----- ANIMATION EFFECTS -----►
@@ -397,7 +597,484 @@ nav {
 }
 
 // ◄---------- MAIN ----------►
-main {}
+main {
+    // ----- COLLECTIONS SECTION
+    .collections {
+        // border: 1px solid red;
+        width: 99.8%;
+        height: 740px;
+        position: relative;
+
+        // Purchase buttons
+        #btn-purchase:hover {
+            transition: ease 0.15s;
+            color: $selhome_default_color;
+            background-color: white;
+            border: 1px solid $selhome_default_color;
+        }
+
+        // carousel tab
+        &__carousel {
+            // border: 1px solid red;
+            width: 100%;
+            height: 65%;
+
+            // slideshow no 1
+            &--bagkolleksiyasi {
+                position: relative;
+                display: none; // block - none
+                transition: linear 0.2s;
+                opacity: 0;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 481px;
+                }
+
+                div {
+                    position: absolute;
+                    top: 50%;
+                    left: 10%;
+
+                    strong {
+                        text-transform: uppercase;
+                        font-size: 48px;
+                        color: rgb(255,255,255);
+                        font-weight: 900;
+                    }
+                    a {
+                        text-decoration: none;
+
+                        button {
+                            background-color: $selhome_default_color;
+                            border: none;
+                            border-radius: 3px;
+                            color: rgb(255,255,255);
+                            width: 140px;
+                            height: 40px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+
+            // slideshow no 2
+            &--organikkolleksiyasi {
+                position: relative;
+                display: none; // block - none
+                transition: linear 0.2s;
+                opacity: 0;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 481px;
+                }
+
+                div {
+                    position: absolute;
+                    top: 50%;
+                    left: 10%;
+
+                    strong {
+                        text-transform: uppercase;
+                        font-size: 48px;
+                        color: rgb(255,255,255);
+                        font-weight: 900;
+                    }
+                    p {
+                        font-size: 20px;
+                        color: rgb(255,255,255);
+                        font-weight: 500;
+                    }
+                    a {
+                        text-decoration: none;
+
+                        button {
+                            background-color: $selhome_default_color;
+                            border: none;
+                            border-radius: 3px;
+                            color: rgb(255,255,255);
+                            width: 140px;
+                            height: 40px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+
+            // slideshow no 3
+            &--agrengincazibesi {
+                position: relative;
+                display: none; // block - none
+                transition: linear 0.2s;
+                opacity: 0;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 481px;
+                }
+
+                div {
+                    position: absolute;
+                    top: 50%;
+                    left: 10%;
+
+                    strong {
+                        text-transform: uppercase;
+                        font-size: 48px;
+                        color: rgb(255,255,255);
+                        font-weight: 900;
+                    }
+                    a {
+                        text-decoration: none;
+
+                        button {
+                            background-color: $selhome_default_color;
+                            border: none;
+                            border-radius: 3px;
+                            color: rgb(255,255,255);
+                            width: 140px;
+                            height: 40px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+
+            // ----- BUTTONS CAROUSEL SLIDESHOW 1
+            .bag:checked ~ .collections__carousel--bagkolleksiyasi {
+                display: block;
+                transition: linear 0.2s;
+                opacity: 1;
+                + .collections__carousel--organikkolleksiyasi {
+                    display: none;
+                }
+                + .collections__carousel--agrengincazibesi {
+                    display: none;
+                }
+            }
+            // ----- BUTTONS CAROUSEL SLIDESHOW 2
+            .org:checked ~ .collections__carousel--organikkolleksiyasi {
+                display: block;
+                transition: linear 0.2s;
+                opacity: 1;
+                + .collections__carousel--bagkolleksiyasi {
+                    display: none;
+                }
+                + .collections__carousel--agrengincazibesi {
+                    display: none;
+                }
+            }
+            // ----- BUTTONS CAROUSEL SLIDESHOW 3
+            .ag:checked ~ .collections__carousel--agrengincazibesi {
+                display: block;
+                transition: linear 0.2s;
+                opacity: 1;
+                + .collections__carousel--bagkolleksiyasi {
+                    display: none;
+                }
+                + .collections__carousel--organikkolleksiyasi {
+                    display: none;
+                }
+            }
+
+            #bag {
+                position: absolute;
+                top: 60%;
+                left: 47%;
+                z-index: 5;
+                accent-color: $selhome_default_color;
+                transition: linear 0.2s;
+                scale: 2;
+            }
+            #org {
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                z-index: 5;
+                accent-color: $selhome_default_color;
+                transition: linear 0.2s;
+                scale: 2;
+            }
+            #ag {
+                position: absolute;
+                top: 60%;
+                left: 53%;
+                z-index: 5;
+                accent-color: $selhome_default_color;
+                transition: linear 0.2s;
+                scale: 2;
+            }
+        }
+
+        // container
+        &__container {
+                // border: 1px solid red;
+                width: 100%;
+                height: 35%;
+                display: flex;
+                column-gap: 0.5%;
+
+            // yataq desti tab
+            &--yataqdesti {
+                // border: 1px solid red;
+                width: 33%;
+                margin: 0.5% 0% 0.5%;
+                position: relative;
+                a {
+                    width: 100%;
+                    text-decoration: none;
+                    z-index: 2;
+                    div {
+                        position: absolute;
+                        top: 46%;
+                        left: 38%;
+                        strong {
+                            color: rgb(255,255,255);
+                            font-weight: 900;
+                            font-size: 20px;
+                            text-transform: uppercase;
+                        }
+                        button {
+                            background-color: $selhome_default_color;
+                            border: none;
+                            border-radius: 3px;
+                            color: rgb(255,255,255);
+                            width: 140px;
+                            height: 40px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                            visibility: hidden;
+                        }
+                    }
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 243px;
+                        z-index: 1;
+                    }
+                    &:hover {
+                        div {
+                            button {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // hamak tab
+            &--hamak {
+                // border: 1px solid red;
+                width: 33%;
+                margin: 0.5% 0% 0.5%;
+                position: relative;
+                a {
+                    width: 100%;
+                    text-decoration: none;
+                    z-index: 2;
+                    div {
+                        position: absolute;
+                        top: 46%;
+                        left: 38%;
+                        strong {
+                            color: rgb(255,255,255);
+                            font-weight: 900;
+                            font-size: 20px;
+                            text-transform: uppercase;
+                        }
+                        button {
+                            background-color: $selhome_default_color;
+                            border: none;
+                            border-radius: 3px;
+                            color: rgb(255,255,255);
+                            width: 140px;
+                            height: 40px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                            visibility: hidden;
+                        }
+                    }
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 243px;
+                        z-index: 1;
+                    }
+                    &:hover {
+                        div {
+                            button {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // yemek desti tab
+            &--yemekdesti {
+                // border: 1px solid red;
+                width: 33%;
+                margin: 0.5% 0% 0.5%;
+                position: relative;
+                a {
+                    width: 100%;
+                    text-decoration: none;
+                    z-index: 2;
+                    div {
+                        position: absolute;
+                        top: 46%;
+                        left: 38%;
+                        strong {
+                            color: rgb(255,255,255);
+                            font-weight: 900;
+                            font-size: 20px;
+                            text-transform: uppercase;
+                        }
+                        button {
+                            background-color: $selhome_default_color;
+                            border: none;
+                            border-radius: 3px;
+                            color: rgb(255,255,255);
+                            width: 140px;
+                            height: 40px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                            visibility: hidden;
+                        }
+                    }
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 243px;
+                        z-index: 1;
+                    }
+                    &:hover {
+                        div {
+                            button {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ----- TOP SELLS SECTION
+    .topsells {
+        // border: 1px solid red;
+        width: 99.8%;
+        height: 640px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .topsells__title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 20px;
+
+            h1 {
+                font-size: 30px;
+                font-weight: 800;
+                letter-spacing: 1px;
+            }
+            p {
+                letter-spacing: 1px;
+                font-weight: 500;
+            }
+        }
+
+        .topsells__cardscontainer {
+            display: flex;
+            width: 90%;
+            justify-content: center;
+            column-gap: 10px;
+
+            &--card {
+                position: relative;
+
+                a {
+                    text-decoration: none;
+
+                    :hover ~ .fa-heart{
+                        display: block;
+                        position: absolute;
+                        top: 18px;
+                        left: 256px;
+                        scale: 2;
+                        background-color: rgb(250,250,250);
+                        padding: 2px;
+                        opacity: 0.8;
+                    }
+                    :hover ~ .fa-cart-plus {
+                        display: block;
+                        position: absolute;
+                        top: 60px;
+                        left: 255px;
+                        scale: 2;
+                        background-color: rgb(250,250,250);
+                        padding: 2px;
+                        opacity: 0.8;
+                    }
+
+                    img {
+                        width: 290px;
+                        height: 285px;
+                    }
+                    .fa-heart {
+                        display: none;
+                        &:hover {
+                            display: block;
+                            color: rgb(255,255,128);
+                            position: absolute;
+                            top: 60px;
+                            left: 256px;
+                            scale: 2;
+                            background-color: rgb(250,250,250);
+                            padding: 2px;
+                            opacity: 0.8;
+                            }
+                    }
+                    .fa-cart-plus {
+                        display: none;
+                        &:hover {
+                            display: block;
+                            color: rgb(255,255,128);
+                            position: absolute;
+                            top: 60px;
+                            left: 255px;
+                            scale: 2;
+                            background-color: rgb(250,250,250);
+                            padding: 2px;
+                            opacity: 0.8;
+                            }
+                    }
+                    h3 {
+                        font-weight: 500;
+                        font-size: larger;
+                        text-align: center;
+                    }
+                    strong {
+                        color: $selhome_default_color;
+                        font-size: larger;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
 
 // ◄---------- FOOTER ----------►
 footer {}
