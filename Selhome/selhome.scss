@@ -598,6 +598,8 @@ nav {
 
 // ◄---------- MAIN ----------►
 main {
+    z-index: 2;
+
     // ----- COLLECTIONS SECTION
     .collections {
         // border: 1px solid red;
@@ -1077,4 +1079,137 @@ main {
 }
 
 // ◄---------- FOOTER ----------►
-footer {}
+.footer {
+    background-color: rgb(23,33,52);
+    width: 99.8%;
+    height: 400px;
+    // border: 1px solid red;
+    // position: fixed;
+    object-position: bottom;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 70px 0px 0px;
+    z-index: 1;
+
+    &__upside {
+        width: 85%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        color: rgb(255,255,255);
+        padding: 0px 0px 50px;
+
+        ul {
+            color: rgb(255,255,255);
+            margin-top: 40px;
+
+            h2 {
+                color: rgb(255,255,255);
+                margin-bottom: 20px;
+            }
+
+            li {
+                list-style: none;
+                color: rgb(255,255,255);
+                opacity: 0.8;
+                font-weight: 500;
+                margin-bottom: 10px;
+                
+                
+                a {
+                    text-decoration: none;
+                    color: rgb(255,255,255);
+                    opacity: 0.8;
+                    font-weight: 500;
+                }
+            }
+
+            i, label, p {
+                color: rgb(255,255,255);
+            }
+
+            .fa-brands {
+                color: rgb(200,200,200);
+                scale: 2;
+                margin: 10px 10px 0px;
+            }
+
+            p {
+                margin-top: 20px;
+            }
+
+            input[type="email"] {
+                border-radius: 2px;
+                border: none;
+                outline: none;
+                background-color: rgb(46,66,104);
+                height: 36px;
+                width: 240px;
+                margin-top: 10px;
+            }
+
+            .fa-angles-right {
+                scale: 1.2;
+                color: rgb(200,200,200);
+            }
+
+            button {
+                background-color: $selhome_default_color;
+                border: none;
+                border-radius: 2px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid rgb(128,128,128);
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        height: 100px;
+        font-weight: 500;
+        padding-top: 20px;
+
+        div {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+
+            select {
+                width: 130px;
+                height: 25px;
+                outline: none;
+                border: none;
+                background-color: rgb(46,66,104);
+                color: rgb(255,255,255);
+                font-weight: 500;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(255,255,255);
+            }
+
+            p {
+                color: rgb(255,255,255);
+                opacity: 0.8;
+                font-weight: 500;
+            }
+
+            .fa-globe {
+                color: rgb(255,255,255);
+                position: relative;
+                left: -35px;
+            }
+
+            .fa-cc-visa, .fa-cc-mastercard {
+                scale: 2;
+                color: rgb(255,255,255);
+                margin: 0px 10px 0px;
+            }
+        }
+    }
+}

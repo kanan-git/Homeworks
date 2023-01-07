@@ -485,6 +485,9 @@ nav .highlight-list_sam:hover ~ .highlight-header_sam {
   transition: linear 0.05s;
 }
 
+main {
+  z-index: 2;
+}
 main .collections {
   width: 99.8%;
   height: 740px;
@@ -904,4 +907,120 @@ main .topsells .topsells__cardscontainer--card a strong {
   font-size: larger;
   display: flex;
   justify-content: center;
+}
+
+.footer {
+  background-color: rgb(23, 33, 52);
+  width: 99.8%;
+  height: 400px;
+  -o-object-position: bottom;
+     object-position: bottom;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 70px 0px 0px;
+  z-index: 1;
+}
+.footer__upside {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: rgb(255, 255, 255);
+  padding: 0px 0px 50px;
+}
+.footer__upside ul {
+  color: rgb(255, 255, 255);
+  margin-top: 40px;
+}
+.footer__upside ul h2 {
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+.footer__upside ul li {
+  list-style: none;
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.footer__upside ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+  font-weight: 500;
+}
+.footer__upside ul i, .footer__upside ul label, .footer__upside ul p {
+  color: rgb(255, 255, 255);
+}
+.footer__upside ul .fa-brands {
+  color: rgb(200, 200, 200);
+  scale: 2;
+  margin: 10px 10px 0px;
+}
+.footer__upside ul p {
+  margin-top: 20px;
+}
+.footer__upside ul input[type=email] {
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  background-color: rgb(46, 66, 104);
+  height: 36px;
+  width: 240px;
+  margin-top: 10px;
+}
+.footer__upside ul .fa-angles-right {
+  scale: 1.2;
+  color: rgb(200, 200, 200);
+}
+.footer__upside ul button {
+  background-color: #ba958b;
+  border: none;
+  border-radius: 2px;
+  width: 36px;
+  height: 36px;
+}
+.footer__bottom {
+  border-top: 1px solid rgb(128, 128, 128);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 100px;
+  font-weight: 500;
+  padding-top: 20px;
+}
+.footer__bottom div {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.footer__bottom div select {
+  width: 130px;
+  height: 25px;
+  outline: none;
+  border: none;
+  background-color: rgb(46, 66, 104);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+.footer__bottom div a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.footer__bottom div p {
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+  font-weight: 500;
+}
+.footer__bottom div .fa-globe {
+  color: rgb(255, 255, 255);
+  position: relative;
+  left: -35px;
+}
+.footer__bottom div .fa-cc-visa, .footer__bottom div .fa-cc-mastercard {
+  scale: 2;
+  color: rgb(255, 255, 255);
+  margin: 0px 10px 0px;
 }/*# sourceMappingURL=selhome.css.map */
