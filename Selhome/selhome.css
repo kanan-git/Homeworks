@@ -1027,49 +1027,162 @@ main .topsells .topsells__cardscontainer--card a strong {
 
 @media only screen and (max-width: 575px) {
   nav {
-    width: 119%;
+    width: 99.7%;
   }
-  nav .menu__list--chevrons {
-    font-size: 10px;
+  nav .extra-small-menu__button:hover ~ .extra-small-menu__dropdown {
+    display: block;
   }
-  nav .menu__list--dropdown_metbex {
-    width: 400px;
+  nav .extra-small-menu__button:hover ~ .extra-small-menu__dropdown .extra-small-menu__dropdown-close {
+    display: flex;
   }
-  nav .menu__list--dropdown_metbex ul {
-    font-size: 10px;
-    margin: 0px;
-    padding: 20px 0px 20px;
+  nav .menu {
+    height: 40px;
   }
-  nav .menu__list--dropdown_metbex ul li {
+  nav .dropdown-logo {
+    width: 180px;
+    position: relative;
+    left: 195px;
+  }
+  nav .search__logo {
+    position: relative;
+    left: -76px;
+  }
+  nav .extra-small-menu__dropdown-close {
+    position: absolute;
+    top: 10px;
+    left: 547px;
+    border: none;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    z-index: 102;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .extra-small-menu__dropdown-close .fa-xmark {
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    scale: 2;
+  }
+  nav .extra-small-menu__button {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    left: 30px;
+    z-index: 100;
+  }
+  nav .extra-small-menu__button .fa-bars {
+    color: #ba958b;
+    scale: 2;
+  }
+  nav .extra-small-menu__dropdown {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 101;
+    background-color: rgb(255, 255, 255);
+    width: 99.7%;
+    height: 696px;
+  }
+  nav .extra-small-menu__dropdown--list .menu__list--chevrons {
+    padding: 15px 20px 15px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    font-size: 12px;
+  }
+  nav .menu__list {
+    display: none;
+  }
+  nav .menu__list--dropdown_metbex, nav .menu__list--dropdown_hamam, nav .menu__list--dropdown_yataq, nav .menu__list--dropdown_dekor, nav .menu__list--dropdown_usaq, nav .menu__list--dropdown_milli, nav .menu__list--dropdown_mebel, nav .menu__list--dropdown_hediyye, nav .menu__list--dropdown_yeni, nav .menu__list--dropdown_endirim {
+    display: none;
+    position: relative;
+    top: 0px;
+    left: -152px;
+  }
+  nav .menu__list--dropdown_metbex li, nav .menu__list--dropdown_hamam li, nav .menu__list--dropdown_yataq li, nav .menu__list--dropdown_dekor li, nav .menu__list--dropdown_usaq li, nav .menu__list--dropdown_milli li, nav .menu__list--dropdown_mebel li, nav .menu__list--dropdown_hediyye li, nav .menu__list--dropdown_yeni li, nav .menu__list--dropdown_endirim li {
     margin-bottom: 2px;
   }
-  nav .menu__list--dropdown_metbex ul img {
-    width: 100px;
-    height: 60px;
+  nav .menu__list--dropdown_metbex li a, nav .menu__list--dropdown_hamam li a, nav .menu__list--dropdown_yataq li a, nav .menu__list--dropdown_dekor li a, nav .menu__list--dropdown_usaq li a, nav .menu__list--dropdown_milli li a, nav .menu__list--dropdown_mebel li a, nav .menu__list--dropdown_hediyye li a, nav .menu__list--dropdown_yeni li a, nav .menu__list--dropdown_endirim li a {
+    padding: 3px 10px 3px;
   }
-  nav .search__searchbar--panel {
-    width: 300px;
+  nav .menu__list--chevrons:hover .menu__list--dropdown_metbex, nav .menu__list--chevrons:hover .menu__list--dropdown_hamam, nav .menu__list--chevrons:hover .menu__list--dropdown_yataq, nav .menu__list--chevrons:hover .menu__list--dropdown_dekor, nav .menu__list--chevrons:hover .menu__list--dropdown_usaq, nav .menu__list--chevrons:hover .menu__list--dropdown_milli, nav .menu__list--chevrons:hover .menu__list--dropdown_mebel, nav .menu__list--chevrons:hover .menu__list--dropdown_hediyye, nav .menu__list--chevrons:hover .menu__list--dropdown_yeni, nav .menu__list--chevrons:hover .menu__list--dropdown_endirim {
+    display: block;
+  }
+  nav .menu__list--chevrons:hover .menu__list--dropdown_metbex img, nav .menu__list--chevrons:hover .menu__list--dropdown_hamam img, nav .menu__list--chevrons:hover .menu__list--dropdown_yataq img, nav .menu__list--chevrons:hover .menu__list--dropdown_dekor img, nav .menu__list--chevrons:hover .menu__list--dropdown_usaq img, nav .menu__list--chevrons:hover .menu__list--dropdown_milli img, nav .menu__list--chevrons:hover .menu__list--dropdown_mebel img, nav .menu__list--chevrons:hover .menu__list--dropdown_hediyye img, nav .menu__list--chevrons:hover .menu__list--dropdown_yeni img, nav .menu__list--chevrons:hover .menu__list--dropdown_endirim img {
+    display: none;
+  }
+  nav .search__searchbar, nav .search__langbar {
+    display: none;
+  }
+  nav .search__userpanel {
     position: relative;
-    top: 17px;
-    padding-right: 40px;
-  }
-  nav .search__searchbar--button {
-    position: relative;
-    top: -20px;
-    left: 260px;
-  }
-  nav .search__langbar--selector {
-    width: 116px;
-  }
-  nav .fa-globe {
-    position: relative;
-    top: -17px;
-    left: -22px;
+    left: 63px;
+    z-index: 100;
   }
   main .collections, main .topsells {
-    width: 119%;
+    width: 99.7%;
+  }
+  main .collections__carousel #bag {
+    left: 44%;
+  }
+  main .collections__carousel #org {
+    left: 50%;
+  }
+  main .collections__carousel #ag {
+    left: 56%;
+  }
+  main .topsells {
+    height: auto;
+  }
+  main .topsells .topsells__cardscontainer {
+    flex-wrap: wrap;
+  }
+  main .topsells .topsells__cardscontainer--card {
+    width: 100%;
+  }
+  main .topsells .topsells__cardscontainer--card a img {
+    width: 100%;
+    height: 285px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .footer {
-    width: 119%;
+    width: 99.7%;
+    height: auto;
+  }
+  .footer .footer__upside {
+    display: block;
+  }
+  .footer ul {
+    width: 100%;
+    margin: 0px;
+  }
+  .footer ul input[type=email] {
+    width: 90%;
+  }
+  .footer .footer__bottom {
+    display: block;
+  }
+  .footer .footer__bottom #first {
+    display: block;
+    margin-bottom: 15px;
+  }
+  .footer .footer__bottom #first form {
+    margin: 10px 0px 10px;
+  }
+  .footer .footer__bottom #first .fa-globe {
+    top: 0px;
+    left: -35px;
+  }
+}
+@media only screen and (min-width: 1199px) {
+  .extra-small-menu__dropdown {
+    display: none;
   }
 }/*# sourceMappingURL=selhome.css.map */
