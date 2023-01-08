@@ -1,0 +1,44 @@
+// ◄--------------- CUSTOM VALUES StarT ---------------►
+$default_color: rgb(255,128,0);
+// ◄--------------- CUSTOM VALUES enD ---------------►
+// =======================================================================
+// ◄--------------- DEFAULT PARAMETERS StarT ---------------►
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(255,255,255);
+    body, p, h1, h2, h3, h4, h5, h6, ul {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+// ◄--------------- DEFAULT PARAMETERS enD ---------------►
+// =======================================================================
+// ◄--------------- NAVIGATION SECTIONS StarT ---------------►
+#nav {
+    section {
+        .abc123 {
+            border: 1px solid red;
+            width: 99.85%;
+            height: 300px;
+            background-color: $default_color;
+        }
+    }
+}
+// ◄--------------- NAVIGATION SECTIONS enD ---------------►
+// =======================================================================
+// ◄--------------- MAIN SECTIONS StarT ---------------►
+#main {}
+// ◄--------------- MAIN SECTIONS enD ---------------►
+// =======================================================================
+// ◄--------------- FOOTER SECTIONS StarT ---------------►
+#footer {}
+// ◄--------------- FOOTER SECTIONS enD ---------------►
+// =======================================================================
+// ◄--------------- MOBILE RESPONSIVE StarT ---------------►
+@media only screen and (max-width: 575px) {}
+@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 991px) {}
+@media only screen and (max-width: 1199px) {}
+// ◄--------------- MOBILE RESPONSIVE enD ---------------►

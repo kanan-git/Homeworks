@@ -1,0 +1,17 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+* body, * p, * h1, * h2, * h3, * h4, * h5, * h6, * ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#nav section .abc123 {
+  border: 1px solid red;
+  width: 99.85%;
+  height: 300px;
+  background-color: rgb(255, 128, 0);
+}/*# sourceMappingURL=ady.css.map */
