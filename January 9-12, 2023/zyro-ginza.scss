@@ -2,13 +2,11 @@
 * {
     font-size: 14px;
     font-weight: 500;
-    color: $default-text-color;
 }
 
 // default link parameters
 a {
     text-decoration: none;
-    color: $default-text-color;
 }
 
 // default list parameters
@@ -23,7 +21,6 @@ body, ul, h1, h2, h3, h4, h5, h6, p {
 }
 // ======================================== ►
 // value & mixins
-$default-text-color: rgb(0,0,0);
 
 // @mixin name {}
 // ======================================== ►
@@ -38,10 +35,14 @@ $default-text-color: rgb(0,0,0);
         top: 50%;
         left: 50%;
 
-        &--image {}
+        &--image {
+            object-fit: cover;
+        }
     }
 
     .nav__mcontainer {
+        background-color: aqua;
+
         &--menus {
 
             &_list {
@@ -56,13 +57,20 @@ $default-text-color: rgb(0,0,0);
     }
 
     .nav__text {
-
-        &--icons {}
-
-        .fa-brands {}
+        width: 100%;
     }
 
-    .nav__social {}
+    .nav__social {
+        width: auto;
+
+        &--icons {
+            @extend .nav__mcontainer--menus_link;
+        }
+
+        .fa-brands {
+            scale: 1.1;
+        }
+    }
 }
 
 // @include name; --> linked @mixin value | @extend copy from a class
