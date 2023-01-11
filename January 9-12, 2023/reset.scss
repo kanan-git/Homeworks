@@ -1,0 +1,23 @@
+// default font parameters
+* {
+    font-size: 14px;
+    font-weight: 500;
+    color: $default-text-color;
+}
+
+// default link parameters
+a {
+    text-decoration: none;
+    color: $default-text-color;
+}
+
+// default list parameters
+li {
+    list-style: none;
+}
+
+// default margin & padding parameters
+body, ul, h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
+    padding: 0px;
+}

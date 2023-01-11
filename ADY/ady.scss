@@ -7,7 +7,7 @@ $default_color: rgb(255,128,0);
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: rgb(255,255,255);
+    color: $default_color;
     body, p, h1, h2, h3, h4, h5, h6, ul {
         margin: 0px;
         padding: 0px;
@@ -17,23 +17,20 @@ $default_color: rgb(255,128,0);
 // =======================================================================
 // ◄--------------- NAVIGATION SECTIONS StarT ---------------►
 #nav {
-    section {
-        .abc123 {
-            border: 1px solid red;
-            width: 99.85%;
-            height: 300px;
-            background-color: $default_color;
-        }
-    }
+    width: 99.85%;
 }
 // ◄--------------- NAVIGATION SECTIONS enD ---------------►
 // =======================================================================
 // ◄--------------- MAIN SECTIONS StarT ---------------►
-#main {}
+#main {
+    width: 99.85%;
+}
 // ◄--------------- MAIN SECTIONS enD ---------------►
 // =======================================================================
 // ◄--------------- FOOTER SECTIONS StarT ---------------►
-#footer {}
+#footer {
+    width: 99.85%;
+}
 // ◄--------------- FOOTER SECTIONS enD ---------------►
 // =======================================================================
 // ◄--------------- MOBILE RESPONSIVE StarT ---------------►
