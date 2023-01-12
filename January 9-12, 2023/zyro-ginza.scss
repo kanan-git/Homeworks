@@ -31,7 +31,7 @@ li {
 // ================================================== ►
 // navigation start
 #nav {
-    display: none;
+    // display: none;
 
     .nav-bgimage {
         width: 99.85%;
@@ -167,15 +167,308 @@ li {
 #main {
     // display: none;
 
-    .main {
+    .sections {
         width: 99.85%;
         height: auto;
+        @include test-boxes;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .memories {
+        width: 90%;
+        height: auto;
+        @include test-boxes;
+        position: relative;
+        left: 5%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 100px 0px;
+        column-gap: 80px;
+
+        @media only screen and (max-width: 575px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .memories__image {
+        @include test-boxes;
+        width: 48%;
+        height: auto;
+
+        @media only screen and (max-width: 575px) {
+            object-fit: cover;
+            width: 100%;
+            height: 500px;
+        }
+    }
+
+    .memories__textcontainer {
+        @include test-boxes;
+        width: 35%;
+
+        @media only screen and (max-width: 575px) {
+            width: 100%;
+        }
+    }
+
+    .memories__textcontainer--header {
+        font-size: 60px;
+        font-weight: 900;
+        line-height: 70px;
+        color: rgb(0,0,0);
+        margin-bottom: 60px;
+
+        @media only screen and (max-width: 575px) {
+            width: 70%;
+            font-size: 50px;
+            line-height: 60px;
+        }
+    }
+
+    .memories__textcontainer--description {
+        width: 85%;
+        color: rgb(0,0,0);
+        @include test-boxes;
+        margin-bottom: 50px;
+
+        @media only screen and (max-width: 575px) {
+            width: 100%;
+            font-size: 24px;
+        }
+    }
+
+    .memories__textcontainer--link {}
+
+    .memories__textcontainer--button {
+        border: 1px solid rgb(0,0,0);
+        color: rgb(0,0,0);
+        width: 140px;
+        height: 45px;
+        background-color: transparent;
+        cursor: pointer;
+
+        @media only screen and (max-width: 575px) {
+            scale: 1.2;
+            position: relative;
+            left: 3%;
+        }
+    }
+
+    .popular {
+        width: 90%;
+        position: relative;
+        left: 5%;
+        @include test-boxes;
+        padding: 80px 0px 40px;
+        background-color: rgb(245,245,245);
+    }
+
+    .popular__header {
+        text-align: center;
+        color: rgb(0,0,0);
+        margin-bottom: 60px;
+        font-size: 60px;
+
+        @media only screen and (max-width: 575px) {
+            font-size: 40px;
+        }
+    }
+
+    .popular__container {
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 575px) {
+            flex-direction: column;
+        }
+    }
+
+    .popular__container--cards {
+        width: 40%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 575px) {
+            width: 80%;
+            justify-content: space-around;
+        }
+    }
+
+    .popular__container--cards_image {
+        object-fit: cover;
+        width: 100%;
+
+        @media only screen and (max-width: 575px) {
+            margin-left: 19%;
+            width: 86%;
+        }
+    }
+
+    .popular__container--cards_header {
+        color: rgb(0,0,0);
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 575px) {
+            margin-left: 19%;
+            width: 86%;
+            position: relative;
+        }
+    }
+
+    .product-name {
+        color: rgb(0,0,0);
+        font-size: 30px;
+    }
+
+    .popular__container--cards_price {
+        color: rgb(0,0,0);
+        font-size: 30px;
+
+        @media only screen and (max-width: 575px) {
+            position: absolute;
+            top: 160px;
+        }
+    }
+
+    .popular__container--cards_text {
+        color: rgb(0,0,0);
+        
+        @media only screen and (max-width: 575px) {
+            margin-left: 19%;
+            width: 86%;
+            font-size: larger;
+            margin-bottom: 100px;
+        }
+    }
+
+    .popular__buttonlink {
+        position: relative;
+        left: 44%;
+
+        @media only screen and (max-width: 575px) {
+            left: 34%;
+        }
+    }
+
+    .popular__button {
+        margin-top: 100px;
+        @extend .memories__textcontainer--button;
+
+        @media only screen and (max-width: 575px) {
+            margin-top: 40px;
+        }
+    }
+
+    .gallery {
+        @include test-boxes;
+        display: flex;
+        justify-content: space-between;
+        padding: 140px 0px 10px;
+        width: 90%;
+        height: auto;
+        position: relative;
+        left: 5%;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .gallery__column {
+        width: 50%;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .gallery__header {
+        margin: 160px 0px 40px;
+        color: rgb(0,0,0);
+        font-size: 60px;
+        width: 80%;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .gallery__text {
+        color: rgb(0,0,0);
+        font-size: 16px;
+        width: 70%;
+        line-height: 20px;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .gallery__img{
+        width: 100%;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .spec-edit {
+        width: 45%;
+        margin-bottom: 50px;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .last-img {
+        width: 80%;
+        position: relative;
+        left: 20%;
+
+        @media only screen and (max-width: 575px) {}
+    }
+
+    .booking {
+        @include test-boxes;
+        width: 90%;
+        height: 660px;
+        position: relative;
+        left: 5%;
+        @include flex-cc;
+        flex-direction: column;
+        row-gap: 70px;
+        background-color: rgb(245,245,245);
+
+        @media only screen and (max-width: 575px) {
+            height: 500px;
+        }
+    }
+
+    .booking__header {
+        color: rgb(0,0,0);
+        font-size: 60px;
+
+        @media only screen and (max-width: 575px) {
+            margin-top: 40px;
+        }
+    }
+
+    .booking__text {
+        @include test-boxes;
+        color: rgb(0,0,0);
+        width: 25%;
+        line-height: 30px;
+
+        @media only screen and (max-width: 575px) {
+            font-size: 20px;
+            width: 75%;
+        }
+    }
+
+    .booking__link {}
+
+    .booking__button {
+        @extend .memories__textcontainer--button;
     }
 }
 // ================================================== ►
 // footer start
 #footer {
-    display: none;
+    // display: none;
 
     .footer {
         @include test-boxes;
