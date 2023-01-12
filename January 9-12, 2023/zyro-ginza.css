@@ -1,1 +1,234 @@
-/*# sourceMappingURL=zyro-ginza.css.map */
+* {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+body, ul, h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+#nav {
+  display: none;
+}
+#nav .nav-bgimage {
+  width: 99.85%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  border: 1px solid red;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav-bgimage {
+    -o-object-position: center;
+       object-position: center;
+    height: 700px;
+  }
+}
+#nav .nav {
+  position: relative;
+  padding: 50px 20px;
+  border: 1px solid red;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav {
+    height: 600px;
+  }
+}
+#nav .nav__tab {
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav__tab {
+    justify-content: space-between;
+  }
+}
+#nav .nav__logo--link {
+  border: 1px solid red;
+}
+#nav .nav__logo--img {
+  border: 1px solid red;
+}
+#nav .nav__menubutton {
+  display: none;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid red;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav__menubutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#nav .fa-bars {
+  border: 1px solid red;
+  scale: 3.2 2.8;
+}
+#nav .nav__menucontainer {
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+#nav .nav__menucontainer--list {
+  border: 1px solid red;
+}
+#nav .nav__menucontainer--link {
+  border: 1px solid red;
+}
+#nav .nav__text {
+  border: 1px solid red;
+  font-size: 80px;
+  font-weight: 800;
+  width: 60%;
+  position: relative;
+  left: 20%;
+  text-align: center;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav__text {
+    font-size: 50px;
+    font-weight: 500;
+    width: 65%;
+    left: 15%;
+  }
+}
+#nav .nav__social {
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav__social {
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+  }
+}
+#nav .nav__social--links {
+  border: 1px solid red;
+  scale: 1.5;
+}
+@media only screen and (max-width: 575px) {
+  #nav .nav__social--links {
+    scale: 2;
+  }
+}
+#nav .fa-brands {
+  border: 1px solid red;
+}
+
+#main .main {
+  width: 99.85%;
+  height: auto;
+}
+
+#footer {
+  display: none;
+}
+#footer .footer {
+  border: 1px solid red;
+  width: 99.85%;
+  height: 400px;
+  background-color: rgb(16, 16, 16);
+  display: flex;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  justify-content: center;
+}
+@media only screen and (max-width: 575px) {
+  #footer .footer {
+    width: 94.5%;
+    height: 1100px;
+    flex-direction: column;
+    padding: 0px 15px;
+  }
+}
+#footer .footer__logocolumn {
+  margin-top: 110px;
+  border: 1px solid red;
+  width: 17%;
+  margin-right: 150px;
+  height: 200px;
+}
+@media only screen and (max-width: 575px) {
+  #footer .footer__logocolumn {
+    margin-top: 70px;
+    width: 99.85%;
+    margin-right: 0px;
+  }
+}
+#footer .footer__columns {
+  margin-top: 140px;
+  border: 1px solid red;
+  width: 13%;
+  height: 200px;
+}
+@media only screen and (max-width: 575px) {
+  #footer .footer__columns {
+    margin-top: 50px;
+    width: 99.85%;
+  }
+}
+#footer .footer__columns--ginza {
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+}
+@media only screen and (max-width: 575px) {
+  #footer .footer__columns--ginza {
+    text-align: left;
+  }
+}
+#footer .footer__columns--social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 575px) {
+  #footer .footer__columns--social {
+    justify-content: left;
+  }
+}
+#footer .social_links {
+  scale: 1.5;
+}
+#footer .footer__columns--header {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}/*# sourceMappingURL=zyro-ginza.css.map */

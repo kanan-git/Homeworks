@@ -5,57 +5,113 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Zyro | Ginza</title>
+        <!-- google fonts links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <!-- fontawesome kit link -->
         <script src="https://kit.fontawesome.com/26c3179b26.js" crossorigin="anonymous"></script>
         <!-- style sheet link -->
         <link rel="stylesheet" href="./zyro-ginza.css">
     </head>
     <body>
-        <!-- ======================================== -->
+        <!-- ================================================== -->
         <!-- navigation start -->
         <nav id="nav">
-            <img class="nav__bgimage" src="./zyro-ginza-assets/1.png" alt="bgimage">
-            <a class="nav__logo" href="#">
-                <img class="nav__logo--image" src="./zyro-ginza-assets/logo.png" alt="logo">
-            </a>
-            <div class="nav__mcontainer">
-                <ul class="nav__mcontainer--menus">
-                    <li class="nav__mcontainer--menus_list">
-                        <a class="nav__mcontainer--menus_link" href="#">Home</a>
+            <img class="nav-bgimage" src="./zyro-ginza-assets/1.png" alt="bg-image">
+            <div class="nav">
+                <div class="nav__tab">
+                    <a class="nav__logo--link" href="#">
+                        <img class="nav__logo--img" src="./zyro-ginza-assets/logo.png" alt="logo">
+                    </a>
+                    <button class="nav__menubutton">
+                        <i class="fa-solid fa-bars fa-1x"></i>
+                    </button>
+                </div>
+                <ul class="nav__menucontainer">
+                    <li class="nav__menucontainer--list">
+                        <a class="nav__menucontainer--link" href="#">Home</a>
                     </li>
-                    <li class="nav__mcontainer--menus_list">
-                        <a class="nav__mcontainer--menus_link" href="#">Menu</a>
+                    <li class="nav__menucontainer--list">
+                        <a class="nav__menucontainer--link" href="#">Menu</a>
                     </li>
-                    <li class="nav__mcontainer--menus_list">
-                        <a class="nav__mcontainer--menus_link" href="#">Our story</a>
+                    <li class="nav__menucontainer--list">
+                        <a class="nav__menucontainer--link" href="#">Our story</a>
                     </li>
-                    <li class="nav__mcontainer--menus_list">
-                        <a class="nav__mcontainer--menus_link" href="#">Reviews</a>
+                    <li class="nav__menucontainer--list">
+                        <a class="nav__menucontainer--link" href="#">Reviews</a>
                     </li>
-                    <li class="nav__mcontainer--menus_list">
-                        <a class="nav__mcontainer--menus_link" href="#">Contact</a>
+                    <li class="nav__menucontainer--list">
+                        <a class="nav__menucontainer--link" href="#">Contact</a>
                     </li>
                 </ul>
-            </div>
-            <h1 class="nav__text">Authentic cuisine, made entirely from scratch.</h1>
-            <div class="nav__social">
-                <a class="nav__social--icons" href="#">
-                    <i class="fa-brands fa-twitter fa-1x"></i>
-                </a>
-                <a class="nav__social--icons" href="#">
-                    <i class="fa-brands fa-facebook fa-1x"></i>
-                </a>
-                <a class="nav__social--icons" href="#">
-                    <i class="fa-brands fa-instagram fa-1x"></i>
-                </a>
+                <h1 class="nav__text">
+                    Authentic cuisine, made entirely from scratch.
+                </h1>
+                <div class="nav__social">
+                    <a class="nav__social--links" href="#">
+                        <i class="fa-brands fa-twitter fa-1x"></i>
+                    </a>
+                    <a class="nav__social--links" href="#">
+                        <i class="fa-brands fa-facebook fa-1x"></i>
+                    </a>
+                    <a class="nav__social--links" href="#">
+                        <i class="fa-brands fa-instagram fa-1x"></i>
+                    </a>
+                </div>
             </div>
         </nav>
-        <!-- ======================================== -->
+        <!-- ================================================== -->
         <!-- main start -->
         <main id="main"></main>
-        <!-- ======================================== -->
+        <!-- ================================================== -->
         <!-- footer start -->
-        <footer id="footer"></footer>
-        <!-- ======================================== -->
+        <footer id="footer">
+            <div class="footer">
+                <ul class="footer__logocolumn">
+                    <h1 class="footer__columns--ginza">Ginza</h1>
+                    <div class="footer__columns--social">
+                        <a class="footer__columns--social_links" href="#">
+                            <i class="fa-brands fa-twitter fa-1x social_links"></i>
+                        </a>
+                        <a class="footer__columns--social_links" href="#">
+                            <i class="fa-brands fa-facebook fa-1x social_links"></i>
+                        </a>
+                        <a class="footer__columns--social_links" href="#">
+                            <i class="fa-brands fa-instagram fa-1x social_links"></i>
+                        </a>
+                    </div>
+                </ul>
+                <ul class="footer__columns">
+                    <h1 class="footer__columns--header">Links</h1>
+                    <li class="footer__columns--lists">
+                        <a class="footer__columns--links" href="#">
+                            Menu
+                        </a>
+                    </li>
+                    <li class="footer__columns--lists">
+                        <a class="footer__columns--links" href="#">
+                            Allergens 
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__columns">
+                    <h1 class="footer__columns--header">Contact</h1>
+                    <li class="footer__columns--lists">701-931-6988</li>
+                    <li class="footer__columns--lists">info@ginza.com</li>
+                </ul>
+                <ul class="footer__columns">
+                    <h1 class="footer__columns--header">Hours</h1>
+                    <li class="footer__columns--lists">Monday - Sunday</li>
+                    <li class="footer__columns--lists">10 am - 10 pm</li>
+                </ul>
+                <ul class="footer__columns">
+                    <h1 class="footer__columns--header">Location</h1>
+                    <li class="footer__columns--lists">1420 Willis Avenue</li>
+                    <li class="footer__columns--lists">Jacksonville, FL 32216</li>
+                </ul>
+            </div>
+        </footer>
+        <!-- ================================================== -->
     </body>
 </html>

@@ -1,84 +1,259 @@
-// default font parameters
+// ================================================== ►
+// custom values start
+$default_color: rgb(255,255,255);
+
+// adjusting default values start
 * {
+    font-family: 'Montserrat', 'sans-serif';
     font-size: 14px;
     font-weight: 500;
+    color: $default_color;
 }
-
-// default link parameters
-a {
-    text-decoration: none;
-}
-
-// default list parameters
-li {
-    list-style: none;
-}
-
-// default margin & padding parameters
 body, ul, h1, h2, h3, h4, h5, h6, p {
     margin: 0px;
     padding: 0px;
 }
-// ======================================== ►
-// value & mixins
-
-// @mixin name {}
-// ======================================== ►
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+@mixin test-boxes {
+    border: 1px solid red;
+    // border: none;
+}
+@mixin flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// ================================================== ►
 // navigation start
 #nav {
-    .nav__bgimage {
-        position: relative;
-    }
+    display: none;
 
-    .nav__logo {
+    .nav-bgimage {
+        width: 99.85%;
+        object-fit: cover;
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 0%;
+        left: 0%;
+        z-index: -1;
+        @include test-boxes;
 
-        &--image {
-            object-fit: cover;
+        @media only screen and (max-width: 575px) {
+            object-position: center;
+            height: 700px;
         }
     }
 
-    .nav__mcontainer {
-        background-color: aqua;
+    .nav {
+        position: relative;
+        padding: 50px 20px;
+        @include test-boxes;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-        &--menus {
-
-            &_list {
-                list-style: none;
-            }
-
-            &_link {
-                text-decoration: none;
-                color: $default-text-color;
-            }
+        @media only screen and (max-width: 575px) {
+            height: 600px;
         }
+    }
+
+    .nav__tab {
+        @include test-boxes;
+        width: 100%;
+        @include flex-cc;
+
+        @media only screen and (max-width: 575px) {
+            justify-content: space-between;
+        }
+    }
+
+    .nav__logo--link {
+        @include test-boxes;
+
+        @media only screen and (max-width: 575px) {
+        }
+    }
+
+    .nav__logo--img {
+        @include test-boxes;
+
+        @media only screen and (max-width: 575px) {
+        }
+    }
+
+    .nav__menubutton {
+        display: none;
+        background-color: transparent;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        @include test-boxes;
+
+        @media only screen and (max-width: 575px) {
+            @include flex-cc;
+        }
+    }
+
+    .fa-bars {
+        @include test-boxes;
+        scale: 3.2 2.8;
+    }
+
+    .nav__menucontainer {
+        @include test-boxes;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+    }
+
+    .nav__menucontainer--list {
+        @include test-boxes;
+    }
+
+    .nav__menucontainer--link {
+        @include test-boxes;
     }
 
     .nav__text {
-        width: 100%;
+        @include test-boxes;
+        font-size: 80px;
+        font-weight: 800;
+        width: 60%;
+        position: relative;
+        left: 20%;
+        text-align: center;
+
+        @media only screen and (max-width: 575px) {
+            font-size: 50px;
+            font-weight: 500;
+            width: 65%;
+            left: 15%;
+        }
     }
 
     .nav__social {
-        width: auto;
+        @include test-boxes;
+        width: 100%;
+        @include flex-cc;
+        column-gap: 60px;
 
-        &--icons {
-            @extend .nav__mcontainer--menus_link;
-        }
-
-        .fa-brands {
-            scale: 1.1;
+        @media only screen and (max-width: 575px) {
+            column-gap: 100px;
         }
     }
-}
 
-// @include name; --> linked @mixin value | @extend copy from a class
-@media only screen and (max-width: 575px) {}
-@media only screen and (max-width: 767px) {}
-@media only screen and (max-width: 991px) {}
-@media only screen and (max-width: 1199px) {}
-// ======================================== ►
+    .nav__social--links {
+        @include test-boxes;
+        scale: 1.5;
+
+        @media only screen and (max-width: 575px) {
+            scale: 2.0;
+        }
+    }
+
+    .fa-brands {
+        @include test-boxes;
+    }
+}
+// ================================================== ►
 // main start
-// ======================================== ►
+#main {
+    // display: none;
+
+    .main {
+        width: 99.85%;
+        height: auto;
+    }
+}
+// ================================================== ►
 // footer start
+#footer {
+    display: none;
+
+    .footer {
+        @include test-boxes;
+        width: 99.85%;
+        height: 400px;
+        background-color: rgb(16,16,16);
+        display: flex;
+        column-gap: 30px;
+        justify-content: center;
+
+        @media only screen and (max-width: 575px) {
+            width: 94.5%;
+            height: 1100px;
+            flex-direction: column;
+            padding: 0px 15px;
+        }
+    }
+
+    .footer__logocolumn {
+        margin-top: 110px;
+        @include test-boxes;
+        width: 17%;
+        margin-right: 150px;
+        height: 200px;
+
+        @media only screen and (max-width: 575px) {
+            margin-top: 70px;
+            width: 99.85%;
+            margin-right: 0px;
+        }
+    }
+
+    .footer__columns {
+        margin-top: 140px;
+        @include test-boxes;
+        width: 13%;
+        height: 200px;
+
+        @media only screen and (max-width: 575px) {
+            margin-top: 50px;
+            width: 99.85%;
+        }
+    }
+
+    .footer__columns--ginza {
+        font-size: 60px;
+        font-weight: 900;
+        text-align: center;
+
+        @media only screen and (max-width: 575px) {
+            text-align: left;
+        }
+    }
+
+    .footer__columns--social {
+        @include flex-cc();
+        column-gap: 30px;
+        margin-top: 40px;
+
+        @media only screen and (max-width: 575px) {
+            justify-content: left;
+        }
+    }
+
+    .footer__columns--social_links {}
+
+    .social_links {
+        scale: 1.5;
+    }
+
+    .footer__columns--header {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .footer__columns--links {}
+
+    .footer__columns--lists {}
+}
+// ================================================== ►
