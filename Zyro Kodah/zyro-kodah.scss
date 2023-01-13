@@ -50,6 +50,7 @@
             @media only screen and (max-width: 767px) {}
             @media only screen and (max-width: 991px) {}
         }
+        .fa-bars {}
     }
 }
 // navigation - end ◄
@@ -58,14 +59,35 @@
 #main {
     .section {
         .travelling {
+            &__columns {
+                &--image {}
+                &--h1 {}
+                &--h6 {}
+                &--paragraph {}
+            }
+
             @media only screen and (max-width: 575px) {}
             @media only screen and (max-width: 991px) {}
         }
         .most-routes {
+            &__header {}
+            &__container {
+                &--cards {
+                    &_photo {}
+                    &_title {}
+                    &_description {}
+                    &_date {}
+                }
+            }
+            &__links {}
+            &__button {}
+
             @media only screen and (max-width: 575px) {}
             @media only screen and (max-width: 991px) {}
         }
         .gallery {
+            &__images {}
+
             @media only screen and (max-width: 575px) {}
             @media only screen and (max-width: 991px) {}
         }
@@ -76,6 +98,18 @@
 // footer - end ◄
 #footer {
     .footer {
+        .footer--column {
+            &__form {
+                &--label {}
+                &--input {}
+                &--button {}
+            }
+            &__social {
+                &--link {}
+            }
+        }
+        .fa-brands {}
+
         @media only screen and (max-width: 575px) {}
         @media only screen and (max-width: 991px) {}
     }
