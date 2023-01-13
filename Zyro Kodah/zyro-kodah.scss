@@ -1,0 +1,69 @@
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// ajdusting some default parameters - start ►
+* {
+    $default_color: rgb(0,0,0);
+
+    font-family: 'Montserrat', 'sans-serif';
+    border: 1px solid greenyellow;
+    color: $default_color;
+
+    body, ul, h1, h2, h3, h4, h5, h6, p {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    @mixin flex-cc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+// ajdusting some default parameters - end ◄
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// navigation - start ►
+#nav {
+    .nav {
+        @media only screen and (max-width: 575px) {}
+        @media only screen and (max-width: 767px) {}
+        @media only screen and (max-width: 991px) {}
+        @media only screen and (max-width: 1199px) {}
+    }
+}
+// navigation - end ◄
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// main sections - start ►
+#main {
+    .section {
+        .travelling {
+            @media only screen and (max-width: 575px) {}
+            @media only screen and (max-width: 991px) {}
+        }
+        .most-routes {
+            @media only screen and (max-width: 575px) {}
+            @media only screen and (max-width: 991px) {}
+        }
+        .gallery {
+            @media only screen and (max-width: 575px) {}
+            @media only screen and (max-width: 991px) {}
+        }
+    }
+}
+// main sections - end ◄
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// footer - end ◄
+#footer {
+    .footer {
+        @media only screen and (max-width: 575px) {}
+        @media only screen and (max-width: 991px) {}
+    }
+}
+// footer - start ►
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

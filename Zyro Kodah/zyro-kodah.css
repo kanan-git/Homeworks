@@ -1,0 +1,15 @@
+* {
+  font-family: "Montserrat", "sans-serif";
+  border: 1px solid greenyellow;
+  color: rgb(0, 0, 0);
+}
+* body, * ul, * h1, * h2, * h3, * h4, * h5, * h6, * p {
+  margin: 0px;
+  padding: 0px;
+}
+* a {
+  text-decoration: none;
+}
+* li {
+  list-style: none;
+}/*# sourceMappingURL=zyro-kodah.css.map */
