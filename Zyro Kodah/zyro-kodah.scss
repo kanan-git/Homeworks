@@ -3,7 +3,7 @@
 * {
     $default_color: rgb(0,0,0);
 
-    font-family: 'Montserrat', 'sans-serif';
+    font-family: 'Josefin Slab', serif;
     border: 1px solid greenyellow;
     color: $default_color;
 
@@ -31,10 +31,25 @@
 // navigation - start ►
 #nav {
     .nav {
-        @media only screen and (max-width: 575px) {}
         @media only screen and (max-width: 767px) {}
         @media only screen and (max-width: 991px) {}
-        @media only screen and (max-width: 1199px) {}
+
+        &--link {
+            @media only screen and (max-width: 767px) {}
+            @media only screen and (max-width: 991px) {}
+        }
+        &--logo {
+            @media only screen and (max-width: 767px) {}
+            @media only screen and (max-width: 991px) {}
+        }
+        &--button {
+            @media only screen and (max-width: 767px) {}
+            @media only screen and (max-width: 991px) {}
+        }
+        &--menu {
+            @media only screen and (max-width: 767px) {}
+            @media only screen and (max-width: 991px) {}
+        }
     }
 }
 // navigation - end ◄
