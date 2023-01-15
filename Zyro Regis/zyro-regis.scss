@@ -1,0 +1,95 @@
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+* {
+    $default_color: rgb(0,0,0);
+    border: 1px solid red;
+    color: $default_color;
+    body, h1, h2, h3, h4, h5, h6, ul, p {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: $default_color;
+    }
+    // @mixin mobile {
+    //     @media only screen and (max-width: 767px) {}
+    // }
+    // @mixin tablet {
+    //     @media only screen and (max-width: 991px) {}
+    // }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#nav {
+    padding: 0 6%;
+    height: 100px;
+    position: sticky;
+    top: 0%;
+    background-color: rgb(255,255,255);
+    .nav {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 20%;
+        flex-direction: column;
+        &__logo {
+            width: 80px;
+        }
+        &__button {
+            display: none;
+            @media only screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+        &__menus {
+            display: flex;
+            flex-direction: row;
+            column-gap: 50px;
+            @media only screen and (max-width: 767px) {
+                background-color: red;
+            }
+            &--link {
+                font-size: 20px;
+                transition: linear 0.2s;
+                &:hover {
+                    border-bottom: 1px solid black;
+                    transition: linear 0.2s;
+                }
+            }
+        }
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#main {
+    padding: 0 6%;
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5px;
+        &__images {
+            object-fit: contain;
+        }
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#footer {
+    padding: 0 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 140px;
+        &__links {
+            scale: 2;
+        }
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
