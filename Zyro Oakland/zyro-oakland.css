@@ -151,6 +151,7 @@
   width: 100%;
   height: 400px;
   background-image: url(./zyro-oakland-assets/alex-suprun-N60_1zpWNtU-unsplash.avif);
+  background-attachment: fixed;
 }
 #main .main__aboutus {
   padding: 150px 0 50px;
@@ -200,6 +201,7 @@
   width: 100%;
   height: 400px;
   background-image: url(./zyro-oakland-assets/alex-suprun-AHnhdjyTNGM-unsplash.avif);
+  background-attachment: fixed;
 }
 #main .main__projects {
   padding: 150px 0 150px;
