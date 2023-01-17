@@ -1,0 +1,135 @@
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ ►
+// default parameters start
+* {
+    $default_colur: rgb(30,11,9);
+    // border: 1px solid yellow;
+    color: rgb(255,255,255);
+    body, h1, h2, h3, h4, h5, h6, ul, p {
+        margin: 0px;
+        padding: 0px;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ ►
+// navigation start
+#nav {
+    // display: none;
+    position: sticky;
+    top: 0;
+    .nav {
+        padding: 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(30,11,9);
+        height: 80px;
+        @media only screen and (max-width: 991px) {}
+        @media only screen and (max-width: 767px) {}
+    }
+    .nav__logo {
+        width: 100px;
+    }
+    .nav__button {
+        display: none;
+        width: 30px;
+        height: 30px;
+
+    }
+    .fa-bars {
+        color: rgb(255,255,255);
+        background-color: transparent;
+        border: none;
+        scale: 2.5 2.0;
+    }
+    .nav__menus {
+        display: block;
+    }
+    .nav__menus--links {
+        &:hover {
+            transition: linear 0.15s;
+            border-bottom: 1px solid rgb(255,255,255);
+        }
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ ►
+// main start
+#main {
+    // display: none;
+    .main {
+        background-image: url(./zyro-marlow-assets/Group\ 4291.avif);
+        height: 490px;
+    }
+    .main__title {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .main__header {
+        font-size: 60px;
+        text-align: center;
+        padding: 180px 400px 0;
+    }
+    .main__text {
+        font-size: 16px;
+        text-align: center;
+        padding-top: 80px;
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ ►
+// footer start
+#footer {
+    // display: none;
+    .footer {
+        height: 400px;
+        background-color: rgb(30,11,9);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 80px 5% 0;
+    }
+    .footer__title {
+        width: 60%;
+    }
+    .footer__title--list {}
+    .footer__container {
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+    }
+    .footer__container--contacts {
+        width: 40%;
+    }
+    .footer__container--contacts_header {
+        margin-bottom: 40px;
+        font-size: 24px;
+        font-size: larger;
+    }
+    .footer__container--contacts_list {
+        margin-bottom: 10px;
+    }
+    .footer__container--studio {
+        width: 40%;
+    }
+    .footer__container--studio_header {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+    .footer__container--studio_list {}
+    .footer__social {
+        position: relative;
+        left: 60%;
+    }
+    .footer__social--header {
+        font-size: 24px;
+    }
+    .fa-brands {
+        scale: 1.2;
+        margin-top: 40px;
+        margin-right: 40px;
+    }
+}
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ ►
