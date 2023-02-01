@@ -71,6 +71,7 @@
             top: 100%;
             left: 0%;
             width: 100%;
+            
         }
         @media only screen and (max-width: 767px) {
             visibility: hidden;
@@ -80,6 +81,7 @@
             top: 100%;
             left: 0%;
             width: 100%;
+            background-color: rgb(255,255,255);
         }
     }
     .nav__menus--links {
