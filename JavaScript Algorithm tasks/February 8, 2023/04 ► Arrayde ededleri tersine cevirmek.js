@@ -8,7 +8,5 @@ for (var i = 0; i < array.length; i++) {
     array[i] = Math.trunc(array[i] / 10)
     eded += mod
    }
-   if (eded == z) {
-      console.log("Guzgu ededler: ", z)
-   }
+   console.log("Ededler: ", z, "Guzgu ededleri: ", eded)
 }

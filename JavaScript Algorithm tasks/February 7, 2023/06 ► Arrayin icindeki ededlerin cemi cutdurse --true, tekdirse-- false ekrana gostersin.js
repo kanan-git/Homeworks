@@ -8,8 +8,8 @@ for (var i = 0; i < array.length; i++) {
 var mod = sum % 2
 
 if (mod == 0) {
-   console.log("True")
+   console.log("True", sum)
 }
 else {
-   console.log("False")
+   console.log("False", sum)
 }
