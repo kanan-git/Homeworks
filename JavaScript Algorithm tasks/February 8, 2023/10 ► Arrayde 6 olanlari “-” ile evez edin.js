@@ -1,10 +1,23 @@
 var arr = [666, 16, 20, 1036, 60]
+var newArr = []
 
 for (var i = 0; i < arr.length; i++) {
-    for (var j = 0; array[i].length-1; j++) {
-        if (array[i][j] == 6) {
-            array[i][j] = "-"
+    var numbers = ""
+    while (arr[i] > 0) {
+        var mod = arr[i] % 10
+        if (mod == 6) {
+            numbers += "-"
         }
+        else {
+            numbers += mod
+        }
+        arr[i] = Math.trunc(arr[i] / 10)
     }
-    console.log(array[i])
+    var x = ""
+    for (var j = numbers.length-1; j >= 0; j--) {
+        x += numbers[j]
+    }
+    newArr.push(x)
 }
+
+console.log(newArr)

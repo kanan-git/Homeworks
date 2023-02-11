@@ -1,4 +1,4 @@
-var tex = "Loremipsum"
+var text = "Loremipsum"
 var reversedText = ""
 
 for (var i = text.length-1; i >= 0; i--) {

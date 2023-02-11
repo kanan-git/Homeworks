@@ -1,5 +1,16 @@
-var array = [6, 15, 24, 33]
+// var array = [6, 15, 24, 33]
+// var arr = []
 
-for (var i = 0; i < array.length; i++) {
-    .
-}
+// for (var i = 0; i < array.length; i++) {
+//     arr.push(array[i] + 5)
+// }
+
+// console.log(arr)
+
+// ◄ --------------------------------------------- ►
+
+// var array = [6, 15, 24, 33]
+
+// ◄ --------------------------------------------- ►
+
+// var array = [6, 15, 24, 33]
