@@ -1,9 +1,14 @@
-var Palindrome = ["AbcdeedcbA"]
-var reversedText = Palindrome.reverse()
+var Palindrome = "AbcdeedcbA"
+// var Palindrome = "AbcdeedcbAc"
+var reversedText = ""
+
+for (var i = Palindrome.length-1; i >= 0; i--) {
+    reversedText += Palindrome[i]
+}
 
 if (reversedText == Palindrome) {
-    console.log("TRUE")
+    console.log(Palindrome, "=", reversedText, "TRUE")
 }
 else {
-    console.log("FALSE")
+    console.log(Palindrome, "x", reversedText, "FALSE")
 }
