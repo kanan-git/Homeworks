@@ -45,3 +45,4 @@
 // ◄ ———————————————————————————————————————————————————— ►
 
 var numbers = [666, 16, 20, 1036, 60]
+console.log("En kicik eded: ", Math.min(...numbers), " En boyuk eded: ", Math.max(...numbers))
