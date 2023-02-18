@@ -1,0 +1,3 @@
+// Data types neçə dənədir və hansılardır?
+
+// Null, Object, Undifined, String, Boolean, Number ...
