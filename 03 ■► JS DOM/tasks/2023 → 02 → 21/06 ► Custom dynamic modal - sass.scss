@@ -1,1 +1,197 @@
-#btn-open {}
+* {
+    body, html, h1, h2, h3, h4, h5, h6, ul, p {
+        margin: 0px;
+        padding: 0px;
+    }
+    a {
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+  }
+
+  .posBtn {
+    border: 1px solid rgb(12,12,12);
+    border-radius: 50%;
+    background-color: rgb(255,255,255);
+    color: rgb(12,12,12);
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    &__pos-tl {
+        top: 20%;
+        left: 20%;
+    }
+    &__pos-tr {
+        top: 20%;
+        left: 80%;
+    }
+    &__pos-c {
+        top: 50%;
+        left: 50%;
+    }
+    &__pos-bl {
+        top: 80%;
+        left: 20%;
+    }
+    &__pos-br {
+        top: 80%;
+        left: 80%;
+    }
+  }
+
+  .customization {
+    z-index: 2;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    border: 1px solid rgb(12,12,12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 480px;
+    height: 80px;
+    background-color: rgb(230,230,230);
+    margin-top: 20px;
+    &__positions {
+        width: 25%;
+        height: 100%;
+        position: relative;
+        border-right: 1px solid rgb(12,12,12);
+    }
+  }
+  
+  .modal {
+    z-index: 2;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb(12,12,12);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 580px;
+    height: 340px;
+    background-color: rgb(200,200,200);
+    &__top {
+        &--userimage {
+            position: absolute;
+            top: 4%;
+            left: 2%;
+            border: 1px solid rgb(0,0,0);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgb(255,255,255);
+        }
+        &--cross {
+            position: absolute;
+            top: 4%;
+            right: 2%;
+            border: 1px solid rgb(12,12,12);
+            background-color: rgb(255,255,255);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: rgb(12,12,12);
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+    &__information {
+        position: relative;
+        top: 10%;
+        &--header {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        &--text {
+            opacity: 0.8;
+        }
+    }
+    &__bar {
+        border: none;
+        outline: none;
+        background-color: rgb(255,255,255);
+        border-radius: 6px;
+        position: relative;
+        padding-left: 20px;
+        width: 70%;
+        height: 40px;
+        font-size: 16px;
+        margin-top: 40px;
+    }
+  }
+  
+  .btn {
+    border: 1px solid rgb(12,12,12);
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(12,12,12);
+    background: linear-gradient(to right, rgb(128,255,0), rgb(255,255,0));
+    cursor: pointer;
+    width: 140px;
+    height: 40px;
+    transition: ease 0.4s;
+    margin-top: 20px;
+  }
+  
+  .btn-open {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb(12,12,12);
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(12,12,12);
+    background: linear-gradient(to right, rgb(128,255,0), rgb(255,255,0));
+    cursor: pointer;
+    width: 140px;
+    height: 40px;
+    transition: ease 0.4s;
+    &:hover {
+        background: linear-gradient(to right, rgb(255,255,0), rgb(255,128,0));
+        transition: ease 0.4s;
+    }
+  }
+  
+  .overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    width: 99.8%;
+    height: 99.8%;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .top-left {
+    top: 25%;
+    left: 22%;
+  }
+  .top-right {
+    top: 25%;
+    left: 78%;
+  }
+  .center {
+    top: 50%;
+    left: 50%;
+  }
+  .bottom-left {
+    top: 75%;
+    left: 22%;
+  }
+  .bottom-right {
+    top: 75%;
+    left: 78%;
+  }

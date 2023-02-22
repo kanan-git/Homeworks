@@ -4,11 +4,41 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CSA</title>
-        <link rel="stylesheet" href="./06 ► Custom dynamic alert - styles.css">
+        <title>Customizable Pop-up</title>
+        <link rel="stylesheet" href="./06 ► Custom dynamic modal - sass.css">
     </head>
     <body>
-        <button id="btn-open">CLICK HERE</button>
-        <script src="./06 ► Custom dynamic alert - algorithms.js"></script>
+        <section class="modal hidden center">
+            <div class="modal__top">
+                <div class="modal__top--userimage"></div>
+                <button class="modal__top--cross btn-close">x</button>
+            </div>
+            <div class="modal__information">
+                <h3 class="modal__information--header">
+                Stay in touch
+                </h3>
+                <p class="modal__information--text">
+                Lorem ipsum, dolor sit amet consectetur 
+                adipisicing elit.
+                </p>
+            </div>
+            <input class="modal__bar" type="email" id="email" placeholder="kb.coders@gmail.com">
+            <button class="btn btn-close">Submit</button>
+
+            <div class="customization">
+                <div class="customization__positions">
+                    <button class="posBtn posBtn__pos-tl">◤</button>
+                    <button class="posBtn posBtn__pos-tr">◥</button>
+                    <button class="posBtn posBtn__pos-c">■</button>
+                    <button class="posBtn posBtn__pos-bl">◣</button>
+                    <button class="posBtn posBtn__pos-br">◢</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="overlay hidden"></section>
+        <button class="btn-open">Click here</button>
+
+        <script src="./06 ► Custom dynamic modal - algorithms.js"></script>
     </body>
 </html>

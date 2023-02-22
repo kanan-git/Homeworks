@@ -4,11 +4,31 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BASIC ALERT</title>
-        <link rel="stylesheet" href="./01 ► A basic message - styles.css">
+        <title>Basic Pop-up</title>
+        <link rel="stylesheet" href="./01 ► A basic message - sass.css">
     </head>
     <body>
-        <p></p>
+        <section class="modal hidden">
+            <div class="modal__top">
+                <div class="modal__top--userimage"></div>
+                <button class="modal__top--cross btn-close">x</button>
+            </div>
+            <div class="modal__information">
+                <h3 class="modal__information--header">
+                Stay in touch
+                </h3>
+                <p class="modal__information--text">
+                Lorem ipsum, dolor sit amet consectetur 
+                adipisicing elit.
+                </p>
+            </div>
+            <input class="modal__bar" type="email" id="email" placeholder="kb.coders@gmail.com">
+            <button class="btn btn-close">Submit</button>
+        </section>
+
+        <section class="overlay hidden"></section>
+        <button class="btn-open">Click here</button>
+
         <script src="./01 ► A basic message - algorithms.js"></script>
     </body>
 </html>
