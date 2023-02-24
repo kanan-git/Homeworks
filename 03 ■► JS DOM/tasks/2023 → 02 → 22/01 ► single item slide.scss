@@ -11,6 +11,19 @@
     }
 }
 
+.dots {
+    position: absolute;
+    top: 96.8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &__radios {
+        accent-color: rgb(0,0,0);
+        &:checked {
+            transform: scale(1.4);
+        }
+    }
+}
+
 .btn {
     border: 1px solid rgb(128,128,128);
     color: rgb(128,128,128);
@@ -38,15 +51,18 @@
 }
 
 .slider {
-    width: 99.82%;
-    height: 99.82%;
-    border: 1px solid red;
-    // position: relative;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 1px solid rgb(0,0,0);
+    overflow: hidden;
 }
 
 .slide {
-    width: 80%;
+    width: 70%;
     position: absolute;
+    padding: 3% 15%;
+    transition: all 0.4s;
 
     img {
         width: 100%;
