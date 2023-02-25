@@ -54,10 +54,53 @@
   margin-top: 20px;
 }
 .customization__positions {
-  width: 25%;
+  width: 33.33%;
   height: 100%;
   position: relative;
   border-right: 1px solid rgb(12, 12, 12);
+}
+.customization__color {
+  width: 33.33%;
+  height: 100%;
+  position: relative;
+  border-right: 1px solid rgb(12, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.customization__input-text {
+  width: 33.33%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+.customization__input-text--eh {
+  border: 1px solid rgb(0, 0, 0);
+  width: 65%;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: ease 0.35s;
+}
+.customization__input-text--eh:hover {
+  filter: invert(1);
+}
+.customization__input-text--et {
+  border: 1px solid rgb(0, 0, 0);
+  width: 65%;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: ease 0.35s;
+}
+.customization__input-text--et:hover {
+  filter: invert(1);
 }
 
 .modal {
@@ -71,7 +114,8 @@
   align-items: center;
   width: 580px;
   height: 340px;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(255, 255, 255);
+  transition: ease 0.35s;
 }
 .modal__top--userimage {
   position: absolute;
@@ -99,6 +143,8 @@
 .modal__information {
   position: relative;
   top: 10%;
+  overflow: hidden;
+  width: 70%;
 }
 .modal__information--header {
   font-size: 40px;
@@ -110,8 +156,7 @@
   opacity: 0.8;
 }
 .modal__bar {
-  border: none;
-  outline: none;
+  border: 1px solid rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   border-radius: 6px;
   position: relative;
@@ -160,8 +205,9 @@
 .overlay {
   z-index: 1;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   width: 99.8%;

@@ -55,13 +55,55 @@
     background-color: rgb(230,230,230);
     margin-top: 20px;
     &__positions {
-        width: 25%;
+        width: 33.33%;
         height: 100%;
         position: relative;
         border-right: 1px solid rgb(12,12,12);
     }
+    &__color {
+      width: 33.33%;
+      height: 100%;
+      position: relative;
+      border-right: 1px solid rgb(12,12,12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 5px;
+    }
+    &__input-text {
+      width: 33.33%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 10px;
+      &--eh {
+        border: 1px solid rgb(0,0,0);
+        width: 65%;
+        border-radius: 4px;
+        background-color: rgb(255,255,255);
+        cursor: pointer;
+        transition: ease 0.35s;
+        &:hover{
+          filter: invert(1);
+        }
+      }
+      &--et {
+        border: 1px solid rgb(0,0,0);
+        width: 65%;
+        border-radius: 4px;
+        background-color: rgb(255,255,255);
+        cursor: pointer;
+        transition: ease 0.35s;
+        &:hover{
+          filter: invert(1);
+        }
+      }
+    }
   }
-  
+
   .modal {
     z-index: 2;
     position: absolute;
@@ -73,7 +115,8 @@
     align-items: center;
     width: 580px;
     height: 340px;
-    background-color: rgb(200,200,200);
+    background-color: rgb(255,255,255);
+    transition: ease 0.35s;
     &__top {
         &--userimage {
             position: absolute;
@@ -102,6 +145,8 @@
     &__information {
         position: relative;
         top: 10%;
+        overflow: hidden;
+        width: 70%;
         &--header {
             font-size: 40px;
             font-weight: 700;
@@ -113,8 +158,8 @@
         }
     }
     &__bar {
-        border: none;
-        outline: none;
+        border: 1px solid rgb(0,0,0);
+        // outline: none;
         background-color: rgb(255,255,255);
         border-radius: 6px;
         position: relative;
@@ -164,8 +209,9 @@
   .overlay {
     z-index: 1;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     backdrop-filter: blur(3px);
     width: 99.8%;
     height: 99.8%;

@@ -9,6 +9,17 @@ const posBtnC = document.querySelector(".posBtn__pos-c")
 const posBtnBL = document.querySelector(".posBtn__pos-bl")
 const posBtnBR = document.querySelector(".posBtn__pos-br")
 
+// variable html input color pick value in js (with .value)
+var ColorPick = document.querySelector(".color-pick")
+
+// anonymous function with event listener for changing bg color
+ColorPick.addEventListener("change", 
+() => {
+    modal.style.backgroundColor = ColorPick.value
+    console.log(defClr)
+}
+)
+
 // function for open the popup
 const openPopup = () => {
     modal.classList.remove("hidden")
@@ -72,3 +83,24 @@ posBtnTR.addEventListener("click", moveTR)
 posBtnC.addEventListener("click", moveC)
 posBtnBL.addEventListener("click", moveBL)
 posBtnBR.addEventListener("click", moveBR)
+
+// editing texts with prompts
+const headerTextBtn = document.querySelector(".customization__input-text--eh")
+const paragraphTextBtn = document.querySelector(".customization__input-text--et")
+var header = document.querySelector(".modal__information--header")
+var paragraph = document.querySelector(".modal__information--text")
+var headerText
+var paragraphText
+
+headerTextBtn.addEventListener("click", 
+() => {
+    headerText = prompt("Enter header text:")
+    header.textContent = headerText
+}
+)
+paragraphTextBtn.addEventListener("click", 
+() => {
+    paragraphText = prompt("Enter paragraph text:")
+    paragraph.textContent = paragraphText
+}
+)

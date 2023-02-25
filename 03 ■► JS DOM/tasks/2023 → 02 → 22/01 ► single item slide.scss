@@ -69,3 +69,30 @@
         border-radius: 18px;
     }
 }
+
+.test-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid red;
+    background-color: black;
+    color: red;
+    font-size: 25px;
+    transition: all 0.3s;
+    &:hover {
+        border: 1px solid greenyellow;
+        background-color: grey;
+        color: greenyellow;
+        transition: all 0.3s;
+    }
+    &:active {
+        border: 1px solid blue;
+        background-color: white;
+        color: blue;
+    }
+}

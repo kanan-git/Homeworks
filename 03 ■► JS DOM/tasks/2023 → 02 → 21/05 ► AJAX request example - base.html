@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Request</title>
+        <link rel="stylesheet" href="./05 ► AJAX request example - sass.css">
+    </head>
+    <body>
+        <!-- first popup screen -->
+        <div class="reqscrn hidden">
+            <h3 class="reqscrn__header">Submit your Github username</h3>
+            <input class="reqscrn__bar" type="text" name="username" id="username">
+            <br>
+            <button class="reqscrn__request">Look up</button>
+            <button class="reqscrn__cancel">Cancel</button>
+        </div>
+
+        <!-- second overlay screen -->
+        <div class="overlay hidden"></div>
+
+        <!-- third result screen -->
+        <div class="random hidden">
+            <div class="random__image">
+                <img id="image" src="" alt="">
+            </div>
+            <h3 class="random__text">...</h3>
+            <button class="random__ok">Ok</button>
+        </div>
+
+        <!-- button -->
+        <button class="btn">OPEN POP-UP</button>
+
+        <!-- script -->
+        <script src="./05 ► AJAX request example - algorithms.js"></script>
+    </body>
+</html>

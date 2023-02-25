@@ -1,19 +1,21 @@
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                                                                                                      February 25, 2023 (VI)
 
-Pop-up modals (completed 2 of 6):
+Pop-up modals (completed 6 of 6):
 + 01 a basic message (done)
-- 02 a dialog with three buttons (save, dont save, cancel - autoclose new info modals will be added)
++ 02 a dialog with three buttons (save, dont save, cancel - autoclose new info modals will be added)
 + 03 custom positioned autoclose (done)
-- 04 a message with auto close timer (same as task 3, but in paragraph countdown we will see)
-- 05 AJAX request example (???)
-~ 06 fully custom (with input prompt H1, p, button, position, bg color, color, transitions)
-Carousel images (completed 0 of 5):
-~ 01 single item (make sync radio buttons with slides)
++ 04 a message with auto close timer (same as task 3, but in paragraph countdown we will see — FAILED)
++ 05 AJAX request example (without url, bring random image from folder — FAILED)
++ 06 fully custom (with input prompt H1, p, button, position, bg color, color, transitions)
+
+Carousel images (completed 1 of 5):
++ 01 single item (make sync radio buttons with slides — FAILED)
 - 02 multiple items with autoplay (width = 33.3% for each 3 slides, in function, fit index 0, 0+1, 0+2 to screen)
 - 05 center mode (like single item, less sizes 4 slides, scale 1.2 index 0 | make autoplay with function like setTimeout)
 - 06 add & remove slides (???)
 - 07 slider sync (make an empty div or iframe to preview choosen slide (index 0) without scale)
+
 Get teacher's data as a JSON file from him GitHub (completed 0 of 1):
 - 01 task (???)
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./02 ► A dialog with three buttons - sass.css">
+    </head>
+    <body>
+        <img src="/03 ■► JS DOM/tasks/2023 → 02 → 22/asset-library/img-03.jpg" alt="img-03">
+
+        <div class="modal hidden">
+            <h3 class="modal__header">Do you want to save the changes?</h3>
+            <button class="btn modal__save">Save</button>
+            <button class="btn modal__dont-save">Don't save</button>
+            <button class="btn modal__cancel">Cancel</button>
+        </div>
+
+        <div class="overlay hidden"></div>
+
+        <div class="successfully-saved hidden">
+            <div class="successfully-saved__ssgreen">✓</div>
+            <p class="successfully-saved__text">Successfully saved !</p>
+        </div>
+
+        <div class="didnt-save hidden">
+            <div class="didnt-save__dsred">✖</div>
+            <p class="didnt-save__text">Changes are not saved !</p>
+        </div>
+
+        <button class="btn click">YOU HAVE A MESSAGE</button>
+
+        <script src="./02 ► A dialog with three buttons - algorithms.js"></script>
+    </body>
+</html>
