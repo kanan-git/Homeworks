@@ -1,1 +1,134 @@
-/*# sourceMappingURL=04 ► multiple items with autoplay - sass - Copy.css.map */
+* html, * body, * h1, * h2, * h3, * h4, * h5, * h6, * ul, * p {
+  margin: 0;
+  padding: 0;
+}
+* li {
+  list-style: none;
+}
+* a {
+  text-decoration: none;
+}
+
+.cover-left {
+  left: 0%;
+}
+
+.cover-right {
+  left: 95%;
+}
+
+.container {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 375px;
+  border: 5px solid rgb(0, 0, 0);
+  background: linear-gradient(to top, rgb(0, 255, 128), rgb(0, 128, 255), rgb(0, 255, 128));
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container__cover {
+  z-index: 3;
+  width: 5%;
+  height: 99%;
+  margin-top: 3px;
+  background: linear-gradient(to top, rgb(0, 255, 128), rgb(0, 128, 255), rgb(0, 255, 128));
+  position: absolute;
+  top: 0;
+}
+.container__triplebox {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4.5%;
+       column-gap: 4.5%;
+  box-sizing: border-box;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  transition: ease 0.35s;
+}
+.container__triplebox--slides {
+  z-index: 3;
+  border: 1px solid rgb(0, 0, 0);
+  width: 30%;
+  height: 80%;
+}
+.container__triplebox--slides-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  z-index: 4;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(128, 128, 128);
+  color: rgb(128, 128, 128);
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  transition: ease 0.35s;
+  opacity: 0.5;
+}
+.btn:hover {
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  transition: ease 0.35s;
+  opacity: 0.9;
+}
+.btn:active {
+  background: radial-gradient(rgb(255, 255, 0), rgb(255, 128, 0));
+  transition: ease 0.35s;
+  opacity: 1;
+}
+
+.btn-prev {
+  left: 5%;
+}
+
+.btn-next {
+  left: 95%;
+}
+
+.dots {
+  z-index: 4;
+  width: 500px;
+  height: 40px;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 1%;
+       column-gap: 1%;
+}
+.dots__disc {
+  border: 1px solid rgb(0, 0, 0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.selected {
+  scale: 1.1;
+  border: 1px solid rgb(255, 80, 80);
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 10, 10));
+  filter: drop-shadow(0px 0px 3px rgb(255, 0, 0));
+}/*# sourceMappingURL=04 ► multiple items with autoplay - sass - Copy.css.map */
