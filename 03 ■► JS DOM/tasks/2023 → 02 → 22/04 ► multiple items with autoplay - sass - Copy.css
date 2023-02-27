@@ -124,9 +124,12 @@
   height: 10px;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .selected {
+  opacity: 1;
   scale: 1.1;
   border: 1px solid rgb(255, 80, 80);
   background: radial-gradient(rgb(255, 255, 255), rgb(255, 10, 10));
