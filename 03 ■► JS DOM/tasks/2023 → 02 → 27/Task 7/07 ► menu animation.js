@@ -1,0 +1,1 @@
+// 07 => Creating a menu animation: Create a simple menu animation that expands and collapses when clicked. Use CSS to style the menu and JavaScript to animate it.

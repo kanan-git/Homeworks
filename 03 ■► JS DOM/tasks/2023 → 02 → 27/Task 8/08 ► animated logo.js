@@ -1,0 +1,1 @@
+// 08 => Creating an animated logo: Use JavaScript to create an animated logo. The logo can rotate, change color, or move across the screen.

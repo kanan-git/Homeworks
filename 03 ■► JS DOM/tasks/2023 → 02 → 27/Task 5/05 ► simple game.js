@@ -1,0 +1,1 @@
+// 05 => Creating a simple game: Use the basic animation loop to create a simple game, such as a "catch the falling object" game. Make sure to include collision detection to detect when the object is caught.

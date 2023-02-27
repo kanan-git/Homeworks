@@ -1,0 +1,1 @@
+// 06 => Creating a hover effect: Use JavaScript to create a hover effect on an element. When the mouse is over the element, the element should move or change color.

@@ -1,0 +1,1 @@
+// 10 => Creating an animated infographic: Use JavaScript to create an animated infographic that displays data in a visually appealing way. Use animations to make the data more engaging and easier to understand.
