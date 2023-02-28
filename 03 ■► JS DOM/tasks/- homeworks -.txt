@@ -27,7 +27,7 @@ Get teacher's data as a JSON file from him GitHub (completed 0 of 1):
 - 02 
 - 03 
 - 04 
-- 05 
++ 05 
 - 06 
 - 07 
 - 08 
