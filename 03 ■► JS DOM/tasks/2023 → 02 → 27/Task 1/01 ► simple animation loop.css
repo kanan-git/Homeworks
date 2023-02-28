@@ -1,0 +1,19 @@
+* body, * html, * h1, * h2, * h3, * h4, * h5, * h6, * p, * ul {
+  margin: 0px;
+  padding: 0px;
+}
+* li {
+  list-style: none;
+}
+* a {
+  text-decoration: none;
+}
+
+.container {
+  z-index: 1;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 750px;
+  box-sizing: border-box;
+}/*# sourceMappingURL=01 ► simple animation loop.css.map */

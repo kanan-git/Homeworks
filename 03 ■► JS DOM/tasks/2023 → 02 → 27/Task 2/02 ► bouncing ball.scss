@@ -1,0 +1,64 @@
+// zeroing defaults
+* {
+    body, html, h1, h2, h3, h4, h5, h6, p, ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+// space container
+.container {
+    z-index: 1;
+    border: 2px solid rgb(0,0,0);
+    background-color: rgb(255,255,255);
+    width: 100%;
+    height: 750px;
+    box-sizing: border-box;
+    &__ball {
+        z-index: 2;
+        position: absolute;
+        top: 47%;
+        border-radius: 50%;
+        border: 1px solid rgb(0,0,0);
+        width: 60px;
+        height: 60px;
+        background-color: rgb(255,128,0);
+        transform: translateY(-355px);
+        // animation: bouncingToRight 3s ease-in 0s 1 normal forwards;
+        // animation: riseToRight 3s ease-out 0s 1 normal forwards;
+    }
+    &__floor {
+        z-index: 3;
+        position: absolute;
+        top: 55%;
+        left: 0px;
+        border-top: 5px solid rgb(0,0,0);
+        width: 100%;
+        height: 0;
+    }
+}
+
+@keyframes bouncingToRight {
+    0% {rotate: 0deg;}
+    25% {rotate: 90deg;}
+}
+@keyframes riseToRight {
+    25% {transform: translate(355px, -355px);rotate: -90deg;}
+    50% {transform: translate(710px, -355px);rotate: 0deg;}
+}
+
+.tbn {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+.testbtn2 {
+    left: 50px;
+}
