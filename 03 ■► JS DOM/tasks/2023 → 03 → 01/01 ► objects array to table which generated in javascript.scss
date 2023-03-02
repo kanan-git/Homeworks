@@ -1,6 +1,4 @@
-// ZEROING DEFAULTS
 * {
-    font-family: 'Montserrat', sans-serif;
     html, body, h1, h2, h3, h4, h5, h6, p, ul {
         margin: 0;
         padding: 0;
@@ -13,4 +11,11 @@
     }
 }
 
-// 
+.table-design {
+    border: 1px solid rgb(0,0,0);
+    border-collapse: collapse;
+}
+
+.panels {
+    padding: 10px;
+}
