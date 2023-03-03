@@ -1,0 +1,101 @@
+* html, * body, * h1, * h2, * h3, * h4, * h5, * h6, * ul, * p {
+  margin: 0;
+  padding: 0;
+}
+* li {
+  list-style: none;
+}
+* a {
+  text-decoration: none;
+  color: rgb(16, 16, 16);
+}
+* a:hover {
+  color: rgb(255, 255, 0);
+}
+
+body {
+  background-color: rgb(16, 16, 16);
+}
+
+.hmenu {
+  z-index: 2;
+  background-color: rgb(250, 80, 80);
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease-in-out 0.35s;
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hmenu__button {
+  z-index: 3;
+  color: rgb(230, 230, 230);
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 45px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  transition: ease-in-out 0.35s;
+}
+
+.hmenu__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.hmenu__list--links {
+  font-size: 30px;
+  font-weight: 600;
+  transition: ease-in-out 0.35s;
+}
+.hmenu__list--links:hover {
+  transform: translateX(40px);
+  transition: ease-in-out 0.35s;
+}
+.hmenu__list--links:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.button-active {
+  color: rgb(16, 16, 16);
+  rotate: 90deg;
+  transition: ease-in-out 0.35s;
+}
+
+.close-menu {
+  top: -170px;
+  left: -170px;
+  transition: ease-in-out 0.35s;
+  scale: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay {
+  z-index: 1;
+  width: 100%;
+  height: 600px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.hmenu__opacity {
+  rotate: -90deg;
+  position: absolute;
+  top: 45%;
+  left: 67%;
+  accent-color: rgb(16, 16, 16);
+}/*# sourceMappingURL=02 ► Toggle the visibility of the hamburger menu when the user clicks on it.css.map */
