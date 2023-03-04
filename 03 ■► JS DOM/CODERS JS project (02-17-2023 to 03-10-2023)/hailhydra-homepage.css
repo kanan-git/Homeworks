@@ -1,0 +1,23 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+* html, * body, * h1, * h2, * h3, * h4, * h5, * h6, * p, * ul {
+  margin: 0;
+  padding: 0;
+}
+* li {
+  list-style: none;
+}
+* a {
+  text-decoration: none;
+  color: rgb(8, 8, 8);
+}
+* a:hover {
+  color: rgb(255, 0, 0);
+  transform: translateX(20px);
+  transition: ease-in-out 0.3s;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=hailhydra-homepage.css.map */

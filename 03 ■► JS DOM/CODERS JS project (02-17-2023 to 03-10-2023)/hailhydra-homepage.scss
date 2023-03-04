@@ -1,0 +1,37 @@
+// ————————————————————► CUSTOM VALUES start ◄————————————————————
+.empty-class {
+    $default_color: rgb(8,8,8);
+    $links_color: rgb(255,0,0);
+}
+// ————————————————————► CUSTOM VALUES end ◄————————————————————
+
+// ————————————————————► ZEROING DEFAULTS start ◄————————————————————
+* {
+    font-family: 'Montserrat', sans-serif;
+    html, body, h1, h2, h3, h4, h5, h6, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: $default_color;
+        &:hover {
+            color: $links_color;
+            transform: translateX(20px);
+            transition: ease-in-out 0.3s;
+        }
+    }
+}
+// ————————————————————► ZEROING DEFAULTS end ◄————————————————————
+
+// ————————————————————► . start ◄————————————————————
+// ————————————————————► . end ◄————————————————————
+
+// ————————————————————► HIDING CLASS start ◄————————————————————
+.hidden {
+    display: none;
+}
+// ————————————————————► HIDING CLASS end ◄————————————————————
