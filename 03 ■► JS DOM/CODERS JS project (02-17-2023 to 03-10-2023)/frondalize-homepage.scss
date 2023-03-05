@@ -3,12 +3,18 @@
 .empty-class {
     // COLOR OPTIONS
     $default_color: rgb(8,8,8) !global;
-    $links_color: rgb(255,0,0) !global;
+    $links_color: rgb(128,0,255) !global;
+    $test-color-1: rgb(64,0,255) !global;
+    $test-color-2: rgb(0,64,255) !global;
+    // GRADIENT PATTERNS
+    $violet-wave-test-texture: linear-gradient(to right, $test-color-1, $test-color-2) !global;
     // RESPONSIVITY PARAMETERS
     $extra_small_device: 575px !global;
     $mobile_device: 767px !global;
     $tablet_device: 991px !global;
     $desktop_device: 1199px !global;
+    // TRANSITION DEFAULT TIMING
+    $slowfx: ease-in-out 0.2s !global;
 }
 // ► CUSTOM VALUES end ◄
 // ========== ========== ========== ========== ========== ========== ==========
@@ -27,11 +33,74 @@
         color: $default_color;
         &:hover {
             color: $links_color;
-            transition: ease-in-out 0.2s;
+            transition: $slowfx;
         }
     }
 }
 // ► ZEROING DEFAULTS end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► HEADER start ◄
+#header {
+    .header {
+        border: 1px solid maroon;
+        box-sizing: border-box;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        background: $violet-wave-test-texture;
+        &__logo {
+            // border: 1px solid violet;
+            box-sizing: border-box;
+            width: 16%; // logo + search bar + rest of them == 80%
+            filter: invert(0);
+            cursor: pointer;
+            height: 100%;
+            &--image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__search {
+            width: 34%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &--bar {
+                position: relative;
+                border: 1px solid $links_color;
+                border-radius: 5px;
+                width: 80%;
+                height: 30px;
+                outline: none;
+                padding-left: 5%;
+            }
+            &--find {
+                position: absolute;
+                top: 50%;
+                left: 85%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                width: 28px;
+                height: 28px;
+                border: none;
+                border-radius: 50%;
+                background-color: transparent;
+                color: $default_color;
+            }
+        }
+        &__userpanel {
+            width: 30%;
+            // border: 1px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    }
+}
+// ► HEADER end ◄
 // ========== ========== ========== ========== ========== ========== ==========
 // ► NAVIGATION BAR start ◄
 #nav {
@@ -43,28 +112,6 @@
     }
 }
 // ► NAVIGATION BAR end ◄
-// ========== ========== ========== ========== ========== ========== ==========
-// ► HEADER start ◄
-#header {
-    .header {
-        border: 1px solid maroon;
-        box-sizing: border-box;
-        width: 100%;
-        height: 60px;
-        &__logo {
-            border: 1px solid violet;
-            box-sizing: border-box;
-            width: 20%;
-            height: 100%;
-            &--image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-}
-// ► HEADER end ◄
 // ========== ========== ========== ========== ========== ========== ==========
 // ► SECTION 1 start ◄
 #section1 {}
@@ -82,7 +129,7 @@
     .footer {
         box-sizing: border-box;
         width: 100%;
-        height: 240px;
+        height: 220px;
         // border: 1px solid red;
         // background-color: midnightblue;
         // overflow: hidden;
@@ -95,7 +142,7 @@
         &__columns {
             // border: 1px solid gold;
             // background-color: midnightblue;
-            width: 20%;
+            width: 16%;
             &--logo {
                 position: relative;
                 top: 50%;
@@ -107,20 +154,20 @@
                 // background-color: midnightblue;
             }
             &--headers {
-                font-size: 30px;
+                font-size: 24px;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 margin: 20px 0px 20px 0px;
             }
             &--lists {
                 width: fit-content;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 500;
-                transition: ease-in-out 0.2s;
+                transition: $slowfx;
                 // border: 1px solid aqua;
                 &:nth-child(n):hover {
                     transform: translateX(10px);
-                    transition: ease-in-out 0.2s;
+                    transition: $slowfx;
                 }
                 &:not(:last-of-type) {
                     margin: 0px 0px 10px 0px;
@@ -132,20 +179,23 @@
         box-sizing: border-box;
         width: 100%;
         height: 30px;
-        // border: 1px solid blueviolet;
+        border: 1px solid blueviolet;
         // background-color: midnightblue;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0px 40px 0px;
-        font-size: 16px;
+        justify-content: center;
+        // padding: 0px 40px 0px;
+        font-size: 14px;
         font-weight: 500;
-        &__rights {}
+        &__rights {
+            width: 40%;
+            // border: 1px solid magenta;
+        }
         &__conditions {
-            width: 35%;
+            width: 40%;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
             // border: 1px solid orange;
         }
     }
