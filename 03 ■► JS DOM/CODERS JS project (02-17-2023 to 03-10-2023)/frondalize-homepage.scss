@@ -1,0 +1,164 @@
+// ========== ========== ========== ========== ========== ========== ==========
+// ► CUSTOM VALUES start ◄
+.empty-class {
+    // COLOR OPTIONS
+    $default_color: rgb(8,8,8) !global;
+    $links_color: rgb(255,0,0) !global;
+    // RESPONSIVITY PARAMETERS
+    $extra_small_device: 575px !global;
+    $mobile_device: 767px !global;
+    $tablet_device: 991px !global;
+    $desktop_device: 1199px !global;
+}
+// ► CUSTOM VALUES end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► ZEROING DEFAULTS start ◄
+* {
+    font-family: 'Montserrat', sans-serif;
+    html, body, h1, h2, h3, h4, h5, h6, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: $default_color;
+        &:hover {
+            color: $links_color;
+            transition: ease-in-out 0.2s;
+        }
+    }
+}
+// ► ZEROING DEFAULTS end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► NAVIGATION BAR start ◄
+#nav {
+    .nav {
+        border: 1px solid gray;
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+    }
+}
+// ► NAVIGATION BAR end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► HEADER start ◄
+#header {
+    .header {
+        border: 1px solid maroon;
+        box-sizing: border-box;
+        width: 100%;
+        height: 60px;
+        &__logo {
+            border: 1px solid violet;
+            box-sizing: border-box;
+            width: 20%;
+            height: 100%;
+            &--image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+// ► HEADER end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► SECTION 1 start ◄
+#section1 {}
+// ► SECTION 1 end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► SECTION 2 start ◄
+#section2 {}
+// ► SECTION 2 end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► FOOTER start ◄
+#footer {
+    box-sizing: border-box;
+    border: 1px solid royalblue;
+    background-color: white;
+    .footer {
+        box-sizing: border-box;
+        width: 100%;
+        height: 240px;
+        // border: 1px solid red;
+        // background-color: midnightblue;
+        // overflow: hidden;
+        display: flex;
+        justify-content: center;
+        // @media only screen and (max-width: $desktop_device) {}
+        // @media only screen and (max-width: $tablet_device) {}
+        // @media only screen and (max-width: $mobile_device) {}
+        // @media only screen and (max-width: $extra_small_device) {}
+        &__columns {
+            // border: 1px solid gold;
+            // background-color: midnightblue;
+            width: 20%;
+            &--logo {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                height: auto;
+                // border: 1px solid green;
+                // background-color: midnightblue;
+            }
+            &--headers {
+                font-size: 30px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin: 20px 0px 20px 0px;
+            }
+            &--lists {
+                width: fit-content;
+                font-size: 16px;
+                font-weight: 500;
+                transition: ease-in-out 0.2s;
+                // border: 1px solid aqua;
+                &:nth-child(n):hover {
+                    transform: translateX(10px);
+                    transition: ease-in-out 0.2s;
+                }
+                &:not(:last-of-type) {
+                    margin: 0px 0px 10px 0px;
+                }
+            }
+        }
+    }
+    .bottom {
+        box-sizing: border-box;
+        width: 100%;
+        height: 30px;
+        // border: 1px solid blueviolet;
+        // background-color: midnightblue;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 40px 0px;
+        font-size: 16px;
+        font-weight: 500;
+        &__rights {}
+        &__conditions {
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // border: 1px solid orange;
+        }
+    }
+}
+// ► FOOTER end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► POPUP WINDOWS start ◄
+#popups {}
+// ► POPUP WINDOWS end ◄
+// ========== ========== ========== ========== ========== ========== ==========
+// ► HIDING CLASS start ◄
+.hidden {
+    display: none;
+}
+// ► HIDING CLASS end ◄
+// ========== ========== ========== ========== ========== ========== ==========
