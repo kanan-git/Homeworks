@@ -18,6 +18,20 @@
 }
 // ► CUSTOM VALUES end ◄
 // ========== ========== ========== ========== ========== ========== ==========
+// ► SASS MIXINS start ◄
+@mixin df-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+// ► SASS MIXINS end ◄
+// ========== ========== ========== ========== ========== ========== ==========
 // ► ZEROING DEFAULTS start ◄
 * {
     font-family: 'Montserrat', sans-serif;
@@ -41,21 +55,45 @@
 // ========== ========== ========== ========== ========== ========== ==========
 // ► HEADER start ◄
 #header {
+    background: $violet-wave-test-texture;
+    display: flex;
+    justify-content: center;
     .header {
         border: 1px solid maroon;
+        background-color: white;
         box-sizing: border-box;
-        width: 100%;
+        width: 80%;
         height: 60px;
         display: flex;
         justify-content: center;
-        background: $violet-wave-test-texture;
+        // background: $violet-wave-test-texture;
+        &__visualmodes {
+            // border: 1px solid navajowhite;
+            width: 6%;
+            @include df-center;
+            &--circle {
+                // border: 1px solid red;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                @include df-center;
+                cursor: pointer;
+                .fa-sun {
+                    scale: 2;
+                }
+                .fa-moon {
+                    scale: 2;
+                }
+            }
+        }
         &__logo {
             // border: 1px solid violet;
             box-sizing: border-box;
-            width: 16%; // logo + search bar + rest of them == 80%
+            width: 16%; // logo + search bar + rest of them == 100%, container is 80%
             filter: invert(0);
             cursor: pointer;
             height: 100%;
+            transition: $slowfx;
             &--image {
                 width: 100%;
                 height: 100%;
@@ -63,24 +101,23 @@
             }
         }
         &__search {
+            // border: 1px solid black;
             width: 34%;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include df-center;
             &--bar {
                 position: relative;
                 border: 1px solid $links_color;
                 border-radius: 5px;
-                width: 80%;
-                height: 30px;
+                width: 90%;
+                height: 36px;
                 outline: none;
                 padding-left: 5%;
             }
             &--find {
                 position: absolute;
                 top: 50%;
-                left: 85%;
+                left: 90%;
                 transform: translate(-50%, -50%);
                 cursor: pointer;
                 width: 28px;
@@ -92,11 +129,67 @@
             }
         }
         &__userpanel {
-            width: 30%;
+            width: 34%;
             // border: 1px solid navy;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
+            position: relative;
+            .fa-1x {
+                padding-right: 5px;
+            }
+            &--dropdown {
+                z-index: 2;
+                position: absolute;
+                width: 160px;
+                height: 100px;
+                border: 1px solid red;
+                background-color: white;
+                top: 100%;
+                left: 0;
+                @include df-center;
+                flex-direction: column;
+                row-gap: 20px;
+                &-login {
+                    @include df-center;
+                    cursor: pointer;
+                    width: 60%;
+                    height: 30px;
+                    border: 1px solid red;
+                    background-color: white;
+                    transition: $slowfx;
+                    &:hover {
+                        filter: drop-shadow(0px 0px 5px rgb(0,0,0));
+                        scale: 1.01;
+                        transition: $slowfx;
+                    }
+                }
+            }
+            a {
+                @include df-center;
+                box-sizing: border-box;
+                // border: 1px solid red;
+                height: 100%;
+            }
+        }
+        &__langbar {
+            // border: 1px solid red;
+            width: 8%;
+            @include df-center;
+            .fa-globe {
+                margin-right: 5px;
+            }
+            &--selector {
+                width: 50px;
+                outline: none;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 1px solid black;
+                background-color: transparent;
+                color: black;
+                padding-left: 4px;
+            }
         }
     }
 }
@@ -104,11 +197,127 @@
 // ========== ========== ========== ========== ========== ========== ==========
 // ► NAVIGATION BAR start ◄
 #nav {
+    background: greenyellow;
+    @include df-center;
     .nav {
         border: 1px solid gray;
+        background-color: white;
         box-sizing: border-box;
-        width: 100%;
+        width: 80%;
         height: 40px;
+        position: relative;
+        @include df-center;
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            // border: 1px solid yellow;
+            width: 100%;
+            height: 100%;
+            &--menus {
+                @include df-center;
+                // border: 1px solid black;
+                box-sizing: border-box;
+                height: 100%;
+                padding: 0px 20px;
+            }
+        }
+        &__dropdown-woman {
+            position: absolute;
+            top: 100%;
+            left: 3%;
+            width: 800px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-man {
+            position: absolute;
+            top: 100%;
+            left: 15%;
+            width: 840px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-kid {
+            position: absolute;
+            top: 100%;
+            left: 25%;
+            width: 650px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-accessories {
+            position: absolute;
+            top: 100%;
+            left: 30%;
+            width: 700px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-electronics {
+            position: absolute;
+            top: 100%;
+            left: 40%;
+            width: 680px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-sport {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-furniture {
+            position: absolute;
+            top: 100%;
+            left: 55%;
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        &__dropdown-software {
+            position: absolute;
+            top: 100%;
+            left: 62%;
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
     }
 }
 // ► NAVIGATION BAR end ◄
@@ -123,14 +332,17 @@
 // ========== ========== ========== ========== ========== ========== ==========
 // ► FOOTER start ◄
 #footer {
-    box-sizing: border-box;
-    border: 1px solid royalblue;
-    background-color: white;
+    @include df-center;
+    flex-direction: column;
+    // box-sizing: border-box;
+    // border: 1px solid royalblue;
+    background-color: orange;
     .footer {
         box-sizing: border-box;
-        width: 100%;
+        width: 80%;
         height: 220px;
-        // border: 1px solid red;
+        border: 1px solid red;
+        background-color: white;
         // background-color: midnightblue;
         // overflow: hidden;
         display: flex;
@@ -142,14 +354,15 @@
         &__columns {
             // border: 1px solid gold;
             // background-color: midnightblue;
-            width: 16%;
+            width: 20%;
             &--logo {
-                position: relative;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 80%;
-                height: auto;
+                // position: relative;
+                // top: 50%;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
                 // border: 1px solid green;
                 // background-color: midnightblue;
             }
@@ -177,25 +390,26 @@
     }
     .bottom {
         box-sizing: border-box;
-        width: 100%;
+        width: 80%;
         height: 30px;
         border: 1px solid blueviolet;
+        background-color: white;
         // background-color: midnightblue;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         // padding: 0px 40px 0px;
         font-size: 14px;
         font-weight: 500;
         &__rights {
-            width: 40%;
+            width: 60%;
             // border: 1px solid magenta;
         }
         &__conditions {
-            width: 40%;
+            width: 30%;
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-between;
             // border: 1px solid orange;
         }
     }
@@ -203,12 +417,18 @@
 // ► FOOTER end ◄
 // ========== ========== ========== ========== ========== ========== ==========
 // ► POPUP WINDOWS start ◄
-#popups {}
+#popups {
+    .overlay-bolder {}
+    .overlay-blurbg {}
+    .weeklydicounts {}
+    .privacypolicy {}
+    .termsofuse {}
+}
 // ► POPUP WINDOWS end ◄
 // ========== ========== ========== ========== ========== ========== ==========
 // ► HIDING CLASS start ◄
 .hidden {
-    display: none;
+    display: none !important;
 }
 // ► HIDING CLASS end ◄
 // ========== ========== ========== ========== ========== ========== ==========

@@ -30,6 +30,12 @@
         <!-- HEADER start -->
         <header id="header">
             <div class="header">
+                <div class="header__visualmodes"> <!-- sun: light mode; moon: dark mode -->
+                    <div class="header__visualmodes--circle">
+                        <i class="fa-solid fa-sun fa-1x"></i> <!-- /w JS, classList fa-solid fa-regular fa-sun fa-moon -->
+                        <!-- <i class="fa-regular fa-moon fa-1x"></i> -->
+                    </div>
+                </div>
                 <div class="header__logo">
                     <img class="header__logo--image" 
                     src="./frondalize-assets/icons/frondalize-logo.png" 
@@ -54,7 +60,19 @@
                         <i class="fa-solid fa-cart-shopping fa-1x"></i>
                         Cart
                     </a>
+                    <div class="header__userpanel--dropdown hidden">
+                        <span class="header__userpanel--dropdown-login">Log in</span>
+                        <span class="header__userpanel--dropdown-login">Register</span>
+                    </div>
                 </div>
+                <form class="header__langbar" action="#" method="get">
+                    <i class="fa-solid fa-globe fa-1x"></i>
+                    <select class="header__langbar--selector" name="languages" id="languages">
+                        <option value="english">EN</option>
+                        <option value="azerbaijani">AZ</option>
+                        <option value="turkish">TR</option>
+                    </select>
+                </form>
             </div>
         </header>
         <!-- HEADER end -->
@@ -70,7 +88,7 @@
                         <a href="#">Man</a>
                     </li>
                     <li class="nav__list--menus">
-                        <a href="#">Kids</a>
+                        <a href="#">Kid</a>
                     </li>
                     <li class="nav__list--menus">
                         <a href="#">Accessories</a>
@@ -88,6 +106,366 @@
                         <a href="#">Software</a>
                     </li>
                 </ul>
+                <div class="nav__dropdown-woman hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-woman">
+                    </div>
+                </div>
+                <div class="nav__dropdown-man hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-man">
+                    </div>
+                </div>
+                <div class="nav__dropdown-kid hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-kid">
+                    </div>
+                </div>
+                <div class="nav__dropdown-accessories hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-accessories">
+                    </div>
+                </div>
+                <div class="nav__dropdown-electronics hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-electronics">
+                    </div>
+                </div>
+                <div class="nav__dropdown-sport hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-sport">
+                    </div>
+                </div>
+                <div class="nav__dropdown-furniture hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-furniture">
+                    </div>
+                </div>
+                <div class="nav__dropdown-software hidden">
+                    <ul>
+                        <h4>
+                            HEADER 1 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h4>
+                            HEADER 2 HERE
+                        </h4>
+                        <li>
+                            <a href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a href="#">ipsum</a>
+                        </li>
+                        <li>
+                            <a href="#">dolor</a>
+                        </li>
+                        <li>
+                            <a href="#">sit</a>
+                        </li>
+                        <li>
+                            <a href="#">amet</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <img src="" alt="dropdownimg-software">
+                    </div>
+                </div>
             </div>
         </nav>
         <!-- NAVIGATION BAR end -->
@@ -251,14 +629,12 @@
             <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i> <!-- log out -->
             <i class="fa-solid fa-thumbs-up fa-1x"></i> <!-- like -->
             <i class="fa-solid fa-thumbs-down fa-1x"></i> <!-- dislike -->
-            
             <i class="fa-solid fa-star fa-1x"></i> <!-- 5 start filled -->
             <i class="fa-solid fa-star-half-stroke fa-1x"></i> <!-- 5 start half -->
             <i class="fa-regular fa-star fa-1x"></i> <!-- 5 start empty -->
             <i class="fa-solid fa-square-share-nodes fa-1x"></i> <!-- share on social network -->
             <i class="fa-regular fa-comment fa-1x"></i> <!-- comments -->
             <i class="fa-solid fa-bell fa-1x"></i> <!-- notifications -->
-            
             <i class="fa-brands fa-linkedin fa-1x"></i> <!-- linkedin -->
             <i class="fa-brands fa-discord fa-1x"></i> <!-- discord -->
             <i class="fa-solid fa-eye fa-1x"></i> <!-- visible -->
@@ -270,20 +646,15 @@
             <i class="fa-solid fa-magnifying-glass-plus fa-1x"></i> <!-- zoom in -->
             <i class="fa-solid fa-magnifying-glass-minus fa-1x"></i> <!-- zoom out -->
             <i class="fa-solid fa-circle-check fa-1x"></i> <!-- verified seller -->
-            
             <i class="fa-solid fa-chevron-left fa-1x"></i> <!-- pagination previous page -->
             <i class="fa-solid fa-chevron-right fa-1x"></i> <!-- pagination next page -->
             <i class="fa-solid fa-list fa-1x"></i> <!-- menu list view -->
             <i class="fa-solid fa-grip fa-1x"></i> <!-- menu blocks view -->
             <i class="fa-solid fa-gear fa-1x"></i> <!-- account preferences -->
             <i class="fa-solid fa-house-chimney fa-1x"></i> <!-- go to homepage -->
-            <i class="fa-solid fa-sun fa-1x"></i> <!-- light mode -->
-            <i class="fa-regular fa-moon fa-1x"></i> <!-- dark mode -->
             <i class="fa-regular fa-copyright fa-1x"></i> <!-- copyright -->
             <i class="fa-solid fa-play fa-1x"></i> <!-- play button -->
             <i class="fa-solid fa-sliders fa-1x"></i> <!-- filtering products -->
-            <i class="fa-solid fa-globe fa-1x"></i> <!-- language change of page -->
-            
             <i class="fa-solid fa-dollar-sign fa-1x"></i> <!-- usd -->
             <i class="fa-solid fa-layer-group fa-1x"></i> <!-- layers -->
             <i class="fa-regular fa-calendar fa-1x"></i> <!-- calendar -->
