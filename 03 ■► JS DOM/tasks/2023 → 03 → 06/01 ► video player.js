@@ -11,18 +11,27 @@ var progressionPos = document.querySelector(".videoplayer__progressbar--progress
 var progressionDot = document.querySelector(".videoplayer__progressbar--position")
 var volInpValArr = []
 var prevTime = video.currentTime
-var videoDuration = 155.225397
+// var videoDuration = 155.225397
 var playbackSpeed = document.querySelector(".toolbar__speed")
 var ppBtn = document.querySelector(".toolbar__pp")
 var btnIconPLAY = document.querySelector(".fa-play")
 var btnIconPAUSE = document.querySelector(".fa-pause")
 var btnIconRESTART = document.querySelector(".fa-retweet")
+var skip = document.querySelectorAll("[data-skip]")
+var moreDots = document.querySelector(".toolbar__more")
+var moreDropdown = document.querySelector(".toolbar__more-dropdown")
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ------------ - - → | STARTING VALUES
-video.volume = volumeSlider.value
-video.playbackRate = 1
-volInpValArr.push(video.volume)
-volInpValArr.push(video.volume)
+{
+    video.volume = volumeSlider.value
+    video.playbackRate = 1
+    volInpValArr.push(video.volume)
+    volInpValArr.push(video.volume)
+    var percentOfProgBar = 0
+    progressionPos.style.width = `${percentOfProgBar}%`
+    progressionDot.style.left = `${percentOfProgBar}%`
+    var endOfClip = video.duration
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ------------ - - → | VOLUME PARAMETERS
 {
@@ -83,11 +92,20 @@ volumeButton.addEventListener("click",
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ------------ - - → | PROGRESS BAR PARAMETERS
 {
-    video.addEventListener("play", () => {
-        var percentOfProgBar = (video.currentTime/videoDuration)
+    video.addEventListener("timeupdate", () => {
+        var percentOfProgBar = (video.currentTime/video.duration)
         percentOfProgBar *= 100
         progressionPos.style.width = `${percentOfProgBar}%`
-        // console.log(percentOfProgBar, video.currentTime)
+        progressionDot.style.left = `${percentOfProgBar}%`
+        // console.log(percentOfProgBar)
+        if (video.currentTime == video.duration) {
+            video.pause()
+            btnIconPAUSE.classList.add("hidden")
+            btnIconPLAY.classList.add("hidden")
+            btnIconRESTART.classList.remove("hidden")
+            console.log("VIDEO CLIP ENDED NOW")
+        }
+        // video.ended event listener ...
     })
     toolBar.addEventListener("mouseover", 
     () => {
@@ -151,19 +169,24 @@ ppBtn.addEventListener("click", () => {
         btnIconPLAY.classList.remove("hidden")
         btnIconRESTART.classList.add("hidden")
     }
-    if (video.currentTime == videoDuration) {
+    if (video.currentTime == endOfClip) {
         currentTime = 0
         video.play()
     }
 })
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ------------ - - → | .
+// ------------ - - → | MORE BUTTON
+moreDots.addEventListener("click", () => {
+    moreDropdown.classList.toggle("hidden")
+})
+video.addEventListener("mouseout", () => {
+    moreDropdown.classList.add("hidden")
+})
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ------------ - - → | VIDEO RESTART
-// if (video.currentTime == videoDuration) {
-//     video.pause()
-//     btnIconPAUSE.classList.add("hidden")
-//     btnIconPLAY.classList.add("hidden")
-//     btnIconRESTART.classList.remove("hidden")
-// }
+// ------------ - - → | SKIP BUTTONS
+
+skip.forEach(btn => {
+    btn.addEventListener("click", updateTime)
+    console.log(Number(this.dataset.skip))
+  })
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
