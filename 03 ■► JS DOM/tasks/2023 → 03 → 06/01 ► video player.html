@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./01 ► video player.css">
     </head>
     <body>
-        <!-- <i class="fa-solid fa-expand fa-1x"></i> ► big screen / back button -->
+        <!-- VIDEO CONTAINER -->
         <div class="videoplayer">
             <video class="videoplayer__content"
             src="./asset library/mp4/Coffin Dance (Official Music Video HD).mp4"
@@ -20,18 +20,22 @@
                 <div class="videoplayer__progressbar--progression"></div>
                 <div class="videoplayer__progressbar--position"></div>
             </div>
+            <!-- VIDEOPLAYER TOOLBAR -->
             <div class="toolbar">
+                <!-- PLAY BUTTON -->
                 <button class="toolbar__pp">
                     <i class="fa-solid fa-play fa-1x"></i>
                     <i class="fa-solid fa-pause fa-1x hidden"></i>
                     <i class="fa-solid fa-retweet fa-1x hidden"></i>
                 </button>
+                <!-- SKIP BUTTONS -->
                 <button class="toolbar__skip" data-skip="-10" id="leftbtn">
                     <i class="fa-solid fa-rotate-left fa-1x"></i>
                 </button>
                 <button class="toolbar__skip" data-skip="10" id="rightbtn">
                     <i class="fa-solid fa-rotate-right fa-1x"></i>
                 </button>
+                <!-- VOLUME SLIDER AND BUTTON -->
                 <div class="toolbar__volume">
                     <span class="toolbar__volume--symbols">
                         <i class="fa-solid fa-volume-xmark fa-1x hidden"></i> 
@@ -43,6 +47,7 @@
                         min="0" max="1" value="0.95" step="0.01">
                     </span>
                 </div>
+                <!-- VIDEO PLAYBACK SPEED -->
                 <select class="toolbar__speed" name="playback-speed" id="playback-speed">
                     <option value="2">2.0x</option>
                     <option value="1.5">1.5x</option>
@@ -50,6 +55,7 @@
                     <option value="0.5">0.5x</option>
                     <option value="0.25">0.25x</option>
                 </select>
+                <!-- RESOLUTION PARAMETERS -->
                 <select name="vid-res" id="vid-res" class="toolbar__resolution">
                     <option value="1440">1440p</option>
                     <option value="1080">1080p</option>
@@ -60,6 +66,7 @@
                     <option value="144">144p</option>
                     <option value="auto" selected>Auto</option>
                 </select>
+                <!-- MORE FEATURES FOR DOWNLOAD MENU -->
                 <button class="toolbar__more">
                     <i class="fa-solid fa-ellipsis-vertical fa-1x"></i>
                 </button>
@@ -67,6 +74,26 @@
                     <a href="./asset library/mp4/Coffin Dance (Official Music Video HD).mp4" 
                     download>Download</a>
                 </div>
+                <!-- FULLSCREEN MODE BUTTON -->
+                <button class="toolbar__expand">
+                    <i class="fa-solid fa-expand fa-1x"></i>
+                    <i class="fa-solid fa-down-left-and-up-right-to-center fa-1x hidden"></i>
+                </button>
+            </div>
+            <!-- TOUCH SCREEN BUTTONS -->
+            <div class="videoplayer__touchbuttons hidden">
+                <button class="videoplayer__touchbuttons--backward hidden">
+                    <i class="fa-solid fa-angles-right fa-1x"></i>
+                </button>
+                <button class="videoplayer__touchbuttons--forward hidden">
+                    <i class="fa-solid fa-angles-left fa-1x"></i>
+                </button>
+                <button class="videoplayer__touchbuttons--pause hidden">
+                    <i class="fa-solid fa-circle-pause fa-1x"></i>
+                </button>
+                <button class="videoplayer__touchbuttons--play hidden">
+                    <i class="fa-solid fa-circle-play fa-1x"></i>
+                </button>
             </div>
         </div>
         <script src="./01 ► video player.js"></script>

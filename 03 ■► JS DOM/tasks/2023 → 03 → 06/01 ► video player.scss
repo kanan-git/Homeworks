@@ -1,3 +1,4 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> • DEFAULTS
 * {
     html, body, h1, h2, h3, h4, h5, h6, ul, p {
         margin: 0;
@@ -11,7 +12,7 @@
         color: black;
     }
 }
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> • BACKGROUND COLOR
 body {
     background: linear-gradient(
         to right,
@@ -20,7 +21,7 @@ body {
         rgb(16,16,16)
     )
 }
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> • VIDEO CONTAINER
 .videoplayer {
     z-index: 1;
     margin-top: 10%;
@@ -44,6 +45,9 @@ body {
             top: 100%;
             transition: ease-in-out 0.2s;
         }
+        // &:fullscreen {
+        //     display: none;
+        // }
     }
     &__progressbar {
         z-index: 5;
@@ -81,8 +85,86 @@ body {
             cursor: pointer;
         }
     }
+    // ——————————► TOUCH SCREEN BUTTONS
+    &__touchbuttons {
+        z-index: 6;
+        position: absolute;
+        box-sizing: border-box;
+        // border: 5px solid red;
+        width: 100%;
+        height: 100%;
+        &--backward {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transform: translateX(-100%);
+            width: 150px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            // background-color: transparent;
+            border: none;
+            // color: rgb(255,255,255);
+            color: rgb(16,16,16);
+            opacity: 0.35;
+        }
+        &--forward {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(0%);
+            width: 150px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            // background-color: transparent;
+            border: none;
+            // color: rgb(255,255,255);
+            color: rgb(16,16,16);
+            opacity: 0.35;
+        }
+        &--pause {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: none;
+            color: rgb(255,255,255);
+            opacity: 0.45;
+        }
+        &--play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: none;
+            color: rgb(255,255,255);
+            opacity: 0.45;
+            transition: linear 0.1s;
+        }
+    }
 }
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> • VIDEO TOOLBAR
 .toolbar {
     z-index: 1;
     position: absolute;
@@ -104,6 +186,7 @@ body {
         top: 100%;
         transition: ease-in-out 0.2s;
     }
+    // ——————————► PLAY AND PAUSE BUTTONS
     &__pp {
         z-index: 4;
         box-sizing: border-box;
@@ -126,6 +209,7 @@ body {
             transition: linear 0s;
         }
     }
+    // ——————————► SKIP BUTTONS
     #leftbtn {
         left: 10%;
     }
@@ -153,6 +237,7 @@ body {
             transition: linear 0s;
         }
     }
+    // ——————————► VOLUME STYLES SHEET
     &__volume {
         z-index: 4;
         box-sizing: border-box;
@@ -192,6 +277,7 @@ body {
             }
         }
     }
+    // ——————————► VIDEO PLAYBACK SPEED
     &__speed {
         z-index: 4;
         box-sizing: border-box;
@@ -201,8 +287,9 @@ body {
         height: 20px;
         width: 12%;
         position: absolute;
-        left: 70%;
+        left: 65%;
     }
+    // ——————————► CHANGING RESOLUTION
     &__resolution {
         z-index: 4;
         box-sizing: border-box;
@@ -212,8 +299,9 @@ body {
         height: 20px;
         width: 11%;
         position: absolute;
-        left: 83%;
+        left: 78%;
     }
+    // ——————————► VERITICAL DOTS BUTTON
     &__more {
         z-index: 4;
         box-sizing: border-box;
@@ -223,7 +311,7 @@ body {
         height: 20px;
         width: 3%;
         position: absolute;
-        left: 95%;
+        left: 90%;
         cursor: pointer;
         transition: ease-in 0.15s;
         &:hover {
@@ -236,13 +324,14 @@ body {
             transition: linear 0s;
         }
     }
+    // ——————————► DROPDOWN MENU OF VERITICAL DOTS
     &__more-dropdown {
         z-index: 5;
         width: 100px;
         height: 50px;
         position: absolute;
         top: -180%;
-        left: 82%;
+        left: 78%;
         background-color: rgb(255,255,255);
         // border: 1px solid red;
         filter: drop-shadow(0px 0px 5px rgb(0,0,0));
@@ -254,8 +343,32 @@ body {
             transition: linear 0.15s;
         }
     }
+    // ——————————► FULLSCREEN/BACK BUTTON
+    &__expand {
+        z-index: 4;
+        box-sizing: border-box;
+        // border: 1px solid red;
+        border: none;
+        background: transparent;
+        height: 20px;
+        width: 4%;
+        position: absolute;
+        left: 94%;
+        cursor: pointer;
+        transition: ease-in 0.15s;
+        scale: 1.1;
+        &:hover {
+            scale: 1.4;
+            transition: ease-in 0.15s;
+            filter: drop-shadow(0px 0px 3px rgb(255,255,255)) invert(1);
+        }
+        &:active {
+            color: rgb(0,128,255);
+            transition: linear 0s;
+        }
+    }
 }
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> • HIDE ITEMS CLASS
 .hidden {
     display: none !important;
 }
