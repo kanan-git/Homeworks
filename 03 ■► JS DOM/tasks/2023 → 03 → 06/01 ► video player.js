@@ -31,6 +31,8 @@
     var forwardTSbtn = document.querySelector(".videoplayer__touchbuttons--forward")
     var pauseTSbtn = document.querySelector(".videoplayer__touchbuttons--pause")
     var playTSbtn = document.querySelector(".videoplayer__touchbuttons--play")
+    var isMouseDown = false
+    // let, const not working in different cell in {} ???
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ------------ - - → | STARTING VALUES
@@ -262,5 +264,21 @@
             console.log("window mode")
         }
     })
+}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ------------ - - → | SLIDEABLE PROGRESS BAR
+{
+    // FUNCTION FOR PROGRESS BAR
+    function changeStatus(propsArg) {
+        isMouseDown = propsArg
+    }
+    function scrub(e) {
+        let clickedTime = (e.offsetX/progressBar.offsetWidth) * video.duration
+        video.currentTime = clickedTime
+    }
+    // ACTIONS FOR PROGRESS BAR
+    progressBar.addEventListener("mousedown", () => changeStatus(true))
+    progressBar.addEventListener("mouseup", () => changeStatus(false))
+    progressBar.addEventListener("mousemove", (e) => isMouseDown && scrub(e))
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
