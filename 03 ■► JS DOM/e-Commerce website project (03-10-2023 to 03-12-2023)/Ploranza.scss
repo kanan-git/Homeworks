@@ -1,0 +1,88 @@
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(ZEROINGS) start |•
+// * {
+//     // default margin and paddings
+//     font-family: 'Montserrat', sans-serif;
+//     html, body, h1, h2, h3, h4, h5, h6, p, ul {
+//         margin: 0;
+//         padding: 0;
+//     }
+//     // lists
+//     li {
+//         list-style: none;
+//     }
+//     // links
+//     a {
+//         text-decoration: none;
+//         color: $text_color;
+//         &:hover {
+//             color: $hover-text_color;
+//         }
+//     }
+// }
+// •| #(ZEROINGS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(CUSTOM VALUES) start |•
+// .custom-values-class {
+//     // light mode defaults
+//     $text_color: rgb(0,0,0) !global;
+//     $hover-text_color: rgb(0,255,128) !global;
+//     // dark mode defaults
+//     $text_color: rgb(255,255,255) !global;
+//     $hover-text_color: rgb(0,128,255) !global;
+//     // responsivity lengths for devices
+//     $extra_small_device: 575px !global;
+//     $mobile_device: 767px !global;
+//     $tablet_device: 991px !global;
+//     $desktop_device: 1199px !global;
+// }
+// •| #(CUSTOM VALUES) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(@MIXINS FOR @INCLUDE CALLS) start |•
+// // display flex 2 center center
+// @mixin df-center {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// // display flex 2 center center
+// @mixin absolute-center {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+// •| #(@MIXINS FOR @INCLUDE CALLS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(...) start |•
+
+// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
