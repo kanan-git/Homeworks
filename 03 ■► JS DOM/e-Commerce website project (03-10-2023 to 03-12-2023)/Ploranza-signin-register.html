@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(TITLE) start |• -->
+        <title>Ploranza | Authentication</title>
+        <!-- •| #(TITLE) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(GOOGLE FONTS) start |• -->
+            <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <!-- •| #(GOOGLE FONTS) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(FONTAWESOME SCRIPT) start |• -->
+        <script src="https://kit.fontawesome.com/26c3179b26.js" crossorigin="anonymous"></script>
+        <!-- •| #(FONTAWESOME SCRIPT) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(SASS STYLE SHEETS) start |• -->
+        <link rel="stylesheet" href="./Ploranza.css">
+        <!-- •| #(SASS STYLE SHEETS) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+    </head>
+    <body>
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(SECTION - Authentication) start |• -->
+        <section id="breadcrumb"></section>
+        <section id="section-auth">
+            <button class="section-auth__gobackhome">
+                <i class="fa-solid fa-house-chimney fa-1x"></i> 
+            </button>
+            <div class="section-auth__buttons">
+                <button class="section-auth__buttons--login">LOGIN</button>
+                <button class="section-auth__buttons--register">REGISTER</button>
+            </div>
+            <!-- switch between login or register container -->
+            <div class="section-auth__container--">
+                <!-- sign in panel -->
+                <form class="section-auth__container--login hidden" action="#" method="post">
+                    <!-- email -->
+                    <label for="login--email" class="section-auth__container--login_email">
+                        Email:
+                        <input type="email" id="login--email" name="email" placeholder="Enter your email" class="login--email" required>
+                    </label>
+                    <!-- password -->
+                    <label for="login--password" class="section-auth__container--login_password">
+                        Password:
+                        <input type="password" id="login--password" name="password" placeholder="Enter your password" class="login--password" required>
+                    </label>
+                    <!-- submit for sign in -->
+                    <input type="submit" value="Sign in" class="login--submit">
+                    <!-- recover id -->
+                    <a href="#" class="login--recoverid">Forgot username or password.</a>
+                </form>
+                <!-- sign up panel -->
+                <form class="section-auth__container--register" action="#" method="post">
+                    <!-- name -->
+                    <label for="register--name" class="section-auth__container--register_name">
+                        Name:
+                        <input type="text" id="register--name" name="name" placeholder="Your name" class="register--name" required>
+                    </label>
+                    <!-- last name -->
+                    <label for="register--lastname" class="section-auth__container--register_lastname">
+                        Last name:
+                        <input type="text" id="register--lastname" name="lastname" placeholder="Your last name" class="register--lastname" required>
+                    </label>
+                    <!-- email -->
+                    <label for="register--email" class="section-auth__container--register_email">
+                        Email address:
+                        <input type="email" id="register--email" name="email" placeholder="Your email" class="register--email" required>
+                    </label>
+                    <!-- phone number -->
+                    <label for="register--phonenumber" class="section-auth__container--register_phonenumber">
+                        Phone number:
+                        <input type="tel" id="register--phonenumber" name="phonenumber" placeholder="Your phone number" class="register--phonenumber" required>
+                    </label>
+                    <!-- date of birth -->
+                    <label for="register--dateofbirth" class="section-auth__container--register_dateofbirth">
+                        Date of birth:
+                        <span class="mm-dd-yyyy">
+                            Month: <select name="month" id="month">
+                                <option value="-1">- - -</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                            </select>
+                            Day: <select name="day" id="day">
+                                <option value="-1">- - -</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            Year: <select name="year" id="year">
+                                <option value="-1">- - - -</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="...">...</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                            </select>
+                        </span>
+                    </label>
+                    <!-- gender -->
+                    <label for="register--gender" class="section-auth__container--register_gender">
+                        Gender:
+                        <span class="register--genders">
+                            <input type="radio" id="register--gender-male" name="register--gender" checked> Male
+                            <input type="radio" id="register--gender-female" name="register--gender"> Female
+                            <input type="radio" id="register--gender-ipdnt" name="register--gender"> I prefer don't tell
+                        </span>
+                    </label>
+                    <!-- password -->
+                    <label for="register--password" class="section-auth__container--register_password">
+                        Password:
+                        <input type="password" id="register--password" name="password" placeholder="Your password" class="register--password" required>
+                    </label>
+                    <!-- country -->
+                    <label for="register--country" class="section-auth__container--register_country">
+                        Country:
+                        <select name="countries" id="countries">
+                            <option value="-1">-Choose-</option>
+                            <option value="az">Azerbaijan</option>
+                            <option value="tr">Turkey</option>
+                            <option value="us">United States</option>
+                            <option value="it">Italy</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                        </select>
+                    </label>
+                    <!-- terms and conditions -->
+                    <label for="register--terms" class="section-auth__container--register_terms">
+                        <input type="checkbox" id="register--terms">
+                        I have read and agree with the terms and conditions:
+                    </label>
+                    <!-- submit for sign up -->
+                    <input type="submit" value="Sign up" class="register--submit">
+                </form>
+            </div>
+        </section>
+        <!-- •| #(SECTION 1 - ?) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(JAVASCRIPT LINK) start |• -->
+        <script src="./Ploranza.js"></script>
+        <!-- •| #(JAVASCRIPT LINK) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(TEMPORARY HIDDEN LABEL FOR FONTAWESOME ICONS) start |• -->
+        <div class="hidden">
+            <i class="fa-solid fa-sun fa-1x"></i>
+            <i class="fa-regular fa-moon fa-1x"></i>
+            <i class="fa-solid fa-magnifying-glass fa-1x"></i>
+            <i class="fa-solid fa-circle-user fa-1x"></i>
+            <i class="fa-solid fa-heart fa-1x"></i>
+            <i class="fa-solid fa-cart-shopping fa-1x"></i>
+            <i class="fa-solid fa-globe fa-1x"></i>
+            <i class="fa-brands fa-cc-visa fa-1x"></i>
+            <i class="fa-brands fa-cc-mastercard fa-1x"></i>
+            <i class="fa-brands fa-cc-paypal fa-1x"></i>
+            <i class="fa-brands fa-bitcoin fa-1x"></i>
+            <i class="fa-regular fa-credit-card fa-1x"></i>
+            <i class="fa-solid fa-circle-info fa-1x"></i>
+            <i class="fa-solid fa-laptop-code fa-1x"></i>
+            <i class="fa-solid fa-headset fa-1x"></i>
+            <i class="fa-solid fa-hand-holding-dollar fa-1x"></i>
+            <i class="fa-solid fa-map-location-dot fa-1x"></i>
+            <i class="fa-brands fa-facebook fa-1x"></i>
+            <i class="fa-brands fa-twitter fa-1x"></i>
+            <i class="fa-brands fa-square-instagram fa-1x"></i>
+            <i class="fa-brands fa-youtube fa-1x"></i>
+            <i class="fa-solid fa-envelope fa-1x"></i>
+            <i class="fa-solid fa-question fa-1x"></i>
+            <i class="fa-brands fa-rocketchat fa-1x"></i>
+            <i class="fa-solid fa-shield-halved fa-1x"></i>
+            <i class="fa-solid fa-share-from-square fa-1x"></i> <!-- share product link with friends -->
+            <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i> <!-- log out -->
+            <i class="fa-solid fa-thumbs-up fa-1x"></i> <!-- like -->
+            <i class="fa-solid fa-thumbs-down fa-1x"></i> <!-- dislike -->
+            <i class="fa-solid fa-star fa-1x"></i> <!-- 5 start filled -->
+            <i class="fa-solid fa-star-half-stroke fa-1x"></i> <!-- 5 start half -->
+            <i class="fa-regular fa-star fa-1x"></i> <!-- 5 start empty -->
+            <i class="fa-solid fa-square-share-nodes fa-1x"></i> <!-- share on social network -->
+            <i class="fa-regular fa-comment fa-1x"></i> <!-- comments -->
+            <i class="fa-solid fa-bell fa-1x"></i> <!-- notifications -->
+            <i class="fa-brands fa-linkedin fa-1x"></i> <!-- linkedin -->
+            <i class="fa-brands fa-discord fa-1x"></i> <!-- discord -->
+            <i class="fa-solid fa-eye fa-1x"></i> <!-- visible -->
+            <i class="fa-solid fa-eye-slash fa-1x"></i> <!-- invisible -->
+            <i class="fa-solid fa-bars fa-1x"></i> <!-- menu bars -->
+            <i class="fa-solid fa-x fa-1x"></i> <!-- menu close -->
+            <i class="fa-solid fa-ellipsis-vertical fa-1x"></i> <!-- item options dots -->
+            <i class="fa-solid fa-clock fa-1x"></i> <!-- clock -->
+            <i class="fa-solid fa-magnifying-glass-plus fa-1x"></i> <!-- zoom in -->
+            <i class="fa-solid fa-magnifying-glass-minus fa-1x"></i> <!-- zoom out -->
+            <i class="fa-solid fa-circle-check fa-1x"></i> <!-- verified seller -->
+            <i class="fa-solid fa-chevron-left fa-1x"></i> <!-- pagination previous page -->
+            <i class="fa-solid fa-chevron-right fa-1x"></i> <!-- pagination next page -->
+            <i class="fa-solid fa-list fa-1x"></i> <!-- menu list view -->
+            <i class="fa-solid fa-grip fa-1x"></i> <!-- menu blocks view -->
+            <i class="fa-solid fa-gear fa-1x"></i> <!-- account preferences -->
+            <i class="fa-regular fa-copyright fa-1x"></i> <!-- copyright -->
+            <i class="fa-solid fa-play fa-1x"></i> <!-- play button -->
+            <i class="fa-solid fa-sliders fa-1x"></i> <!-- filtering products -->
+            <i class="fa-solid fa-dollar-sign fa-1x"></i> <!-- usd -->
+            <i class="fa-solid fa-layer-group fa-1x"></i> <!-- layers -->
+            <i class="fa-regular fa-calendar fa-1x"></i> <!-- calendar -->
+            <i class="fa-solid fa-sort fa-1x"></i> <!-- sorting button maybe -->
+        </div>
+        <!-- •| #(TEMPORARY HIDDEN LABEL FOR FONTAWESOME ICONS) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+    </body>
+</html>

@@ -1,25 +1,26 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(ZEROINGS) start |•
-// * {
-//     // default margin and paddings
-//     font-family: 'Montserrat', sans-serif;
-//     html, body, h1, h2, h3, h4, h5, h6, p, ul {
-//         margin: 0;
-//         padding: 0;
-//     }
-//     // lists
-//     li {
-//         list-style: none;
-//     }
-//     // links
-//     a {
-//         text-decoration: none;
-//         color: $text_color;
-//         &:hover {
-//             color: $hover-text_color;
-//         }
-//     }
-// }
+* {
+    // default margin and paddings
+    font-family: 'Josefin Sans', sans-serif;
+    // font-family: 'Montserrat', sans-serif;
+    html, body, h1, h2, h3, h4, h5, h6, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+    // lists
+    li {
+        list-style: none;
+    }
+    // links
+    a {
+        text-decoration: none;
+        // color: $text_color;
+        // &:hover {
+        //     color: $hover-text_color;
+        // }
+    }
+}
 // •| #(ZEROINGS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(CUSTOM VALUES) start |•
@@ -82,7 +83,12 @@
 
 // •| #(...) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(EXTRA CLASSES) start |•
+.hidden {
+    display: none;
+}
+.checked {
+    transition: ease-in-out 0.3s;
+}
+// •| #(EXTRA CLASSES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
