@@ -446,7 +446,61 @@
             </div>
             <!-- filters aside panel which opens from left on click -->
             <aside class="filters_panel">
-                <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+                <!-- filter by price between -->
+                <div class="filters_panel--byprice">
+                    <h3 class="filters_panel--byprice_header">Price</h3>
+                    <a href="#" class="filters_panel--byprice_value">Under $500</a> <br>
+                    <a href="#" class="filters_panel--byprice_value">$500 to $600</a> <br>
+                    <a href="#" class="filters_panel--byprice_value">$600 to $700</a> <br>
+                    <a href="#" class="filters_panel--byprice_value">$700 to $800</a> <br>
+                    <a href="#" class="filters_panel--byprice_value">$800 to $1000</a> <br>
+                    <a href="#" class="filters_panel--byprice_value">$1000 & Above</a> <br>
+                    <input class="filters_panel--byprice_min" type="number" placeholder="$ Min">
+                    <input class="filters_panel--byprice_max" type="number" placeholder="$ Max">
+                    <button class="filters_panel--byprice_submit">Go</button>
+                </div>
+                <!-- filter by rating -->
+                <div class="filters_panel--bycustomerreview">
+                    <h3 class="filters_panel--bycustomerreview_header">Customer Review</h3>
+                    <!-- 4 star or more -->
+                    <a href="#" class="filters_panel--bycustomerreview_nstarandmore">
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        & Up
+                    </a>
+                    <!-- 3 star or more -->
+                    <a href="#" class="filters_panel--bycustomerreview_nstarandmore">
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        & Up
+                    </a>
+                    <!-- 2 star or more -->
+                    <a href="#" class="filters_panel--bycustomerreview_nstarandmore">
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        & Up
+                    </a>
+                    <!-- 1 star or more -->
+                    <a href="#" class="filters_panel--bycustomerreview_nstarandmore">
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                        & Up
+                    </a>
+                </div>
+                <!-- reset filters -->
+                <button class="filters_panel--reset">Reset filter</button>
             </aside>
             <!-- container of product cards -->
             <div class="container"> <!-- NOTE: get product info by object from folder or fetch data API -->

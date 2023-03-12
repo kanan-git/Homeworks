@@ -3,7 +3,6 @@
 
 •=> Ploranza (HTML):
 - 1. the page witch will be opened with clicked products, carousel images, etc ==> Homepage/Pagination/Productpage
-~ 2. complete pagination page filtering panel
 
 •=> Ploranza (CSS):
 - 1. copy all classes with eCSS tracktor to SCSS, move classes to their places
