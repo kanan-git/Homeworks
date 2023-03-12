@@ -411,14 +411,149 @@
         </section>
         <!-- •| #(SECTION 0 - BREADCRUMB) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
-        <!-- ►►►►►►►►►►| #($$$$$) start |• -->
-        <section id="$$$$$">
-            <div class="$$$$$">.
-                <i class="fa-solid fa-heart fa-1x"></i> <!-- add product to favorites -->
-                <i class="fa-solid fa-cart-shopping fa-1x"></i> <!-- add product to cart -->
+        <!-- ►►►►►►►►►►| #(PRODUCT PAGE) start |• -->
+        <section id="productpage">
+            <!-- image components part -->
+            <div class="productpage__images">
+                <!-- selected image big screen -->
+                <div class="productpage__images--activebig"></div>
+                <!-- thumbnail container -->
+                <div class="productpage__images--thumbnailsmall">
+                    <!-- each image of product 1 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                    <!-- each image of product 2 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                    <!-- each image of product 3 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                    <!-- each image of product 4 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                    <!-- each image of product 5 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                    <!-- each image of product 6 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                    <!-- each image of product 7 -->
+                    <div class="productpage__images--thumbnailsmall_images">
+                        <img src="." alt="thumbnails" class="productpage__images--thumbnailsmall_images-img">
+                    </div>
+                </div>
+            </div>
+            <!-- main components combined part -->
+            <div class="productpage__main">
+                <!-- title of the product -->
+                <h3 class="productpage__main--title">
+                    Lorem Ipsum But Not MSI Gaming Laptop GF64
+                </h3>
+                <!-- rating of the product -->
+                <div class="productpage__main--rating">
+                    <!-- rating with digits -->
+                    <span class="productpage__main--rating_point">
+                        4.2
+                    </span>
+                    <!-- rating with symbols -->
+                    <span class="productpage__main--rating_stars">
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star fa-1x"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-1x"></i>
+                        <i class="fa-regular fa-star fa-1x"></i>
+                    </span>
+                    <!-- count of votes -->
+                    <span class="productpage__main--rating_votes">
+                        (123)
+                    </span>
+                </div>
+                <!-- price of the product -->
+                <div class="productpage__main--price">
+                    <sup class="productpage__main--price_currency">$</sup>
+                    <strong class="productpage__main--price_currentprice">599</strong>
+                    <sup class="productpage__main--price_centofprice">99</sup>
+                    <span class="productpage__main--price_was">Was:</span>
+                    <del class="productpage__main--price_oldprice">$219.00</del>
+                </div>
+                <!-- general information of the product -->
+                <ul class="productpage__main--information">
+                    <!-- brand -->
+                    <li class="productpage__main--information_brand">
+                        <span class="productpage__main--information_brand-name">Brand</span>
+                        <span class="productpage__main--information_brand-input">MSI</span>
+                    </li>
+                    <!-- series -->
+                    <li class="productpage__main--information_series">
+                        <span class="productpage__main--information_series-name">Series</span>
+                        <span class="productpage__main--information_series-input">GF65</span>
+                    </li>
+                    <!-- screensize -->
+                    <li class="productpage__main--information_screensize">
+                        <span class="productpage__main--information_screensize-name">Screen Size</span>
+                        <span class="productpage__main--information_screensize-input">15.6 inches</span>
+                    </li>
+                    <!-- disksize -->
+                    <li class="productpage__main--information_disksize">
+                        <span class="productpage__main--information_disksize-name">Disk Size</span>
+                        <span class="productpage__main--information_disksize-input">512 GB</span>
+                    </li>
+                </ul>
+                <!-- unavailable feature see more about product button -->
+                <div class="productpage__main--seemore">
+                    <a href="#">▼ See more</a>
+                </div>
+                <!-- quantity -->
+                <div class="productpage__main--quantity">
+                    Quantity
+                    <select class="productpage__main--quantity_selector" name="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <!-- buttons -->
+                <div class="productpage__main--buttons">
+                    <!-- add to fav -->
+                    <button class="productpage__main--buttons_fav">
+                        <i class="fa-solid fa-heart fa-1x"></i>
+                        Add to favorites
+                    </button>
+                    <!-- add to cart -->
+                    <button class="productpage__main--buttons_cart">
+                        <i class="fa-solid fa-cart-shopping fa-1x"></i>
+                        Add to cart
+                    </button>
+                    <!-- buy now -->
+                    <button class="productpage__main--buttons_buynow">
+                        <i class="fa-solid fa-bag-shopping fa-1x"></i>
+                        Buy now
+                    </button>
+                </div>
+                <!-- about this item -->
+                <ul class="productpage__main--aboutthisitem">
+                    <h3 class="productpage__main--aboutthisitem_header">About this item</h3>
+                    <li class="productpage__main--aboutthisitem_lists">• Lorem ipsum dolor sit amet</li>
+                    <li class="productpage__main--aboutthisitem_lists">• Lorem ipsum but not dolor</li>
+                    <li class="productpage__main--aboutthisitem_lists">• The quick fox jumps over</li>
+                    <li class="productpage__main--aboutthisitem_lists">• Test 123</li>
+                </ul>
             </div>
         </section>
-        <!-- •| #($$$$$) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- •| #(PRODUCT PAGE) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(FOOTER) start |• -->
         <footer id="footer">

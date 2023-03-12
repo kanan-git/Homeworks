@@ -1,8 +1,5 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-2023-03-11
-
-•=> Ploranza (HTML):
-- 1. the page witch will be opened with clicked products, carousel images, etc ==> Homepage/Pagination/Productpage
+2023-03-12
 
 •=> Ploranza (CSS):
 - 1. copy all classes with eCSS tracktor to SCSS, move classes to their places
