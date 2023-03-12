@@ -41,7 +41,7 @@
                 <button class="section-auth__buttons--register">REGISTER</button>
             </div>
             <!-- switch between login or register container -->
-            <div class="section-auth__container--">
+            <div class="section-auth__container">
                 <!-- sign in panel -->
                 <form class="section-auth__container--login hidden" action="#" method="post">
                     <!-- email -->
@@ -164,7 +164,7 @@
                     <!-- country -->
                     <label for="register--country" class="section-auth__container--register_country">
                         Country:
-                        <select name="countries" id="countries">
+                        <select name="countries" id="countries" class="register--country">
                             <option value="-1">-Choose-</option>
                             <option value="az">Azerbaijan</option>
                             <option value="tr">Turkey</option>
@@ -176,7 +176,7 @@
                     </label>
                     <!-- terms and conditions -->
                     <label for="register--terms" class="section-auth__container--register_terms">
-                        <input type="checkbox" id="register--terms">
+                        <input type="checkbox" id="register--terms" class="register--terms">
                         I have read and agree with the terms and conditions:
                     </label>
                     <!-- submit for sign up -->

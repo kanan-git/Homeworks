@@ -1,10 +1,9 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-2023-03-12
+2023-03-13 (I)
 
 •=> Ploranza (CSS):
-- 1. copy all classes with eCSS tracktor to SCSS, move classes to their places
-- 2. design all of the pages
-- 3. media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc
+- 1. design all of the pages
+- 2. media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
 
 •=> Ploranza (JS):
 - 1. begin to complete algorithms

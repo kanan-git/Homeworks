@@ -1,4 +1,23 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(CUSTOM VALUES) start |•
+.custom-values-class {
+    // light mode defaults
+    $text_color: rgb(0,0,0) !global;
+    $hover-text_color: rgb(0,255,128) !global;
+    // // dark mode defaults
+    // $text_color: rgb(255,255,255) !global;
+    // $hover-text_color: rgb(0,128,255) !global;
+    // responsivity lengths for devices
+    $extra_small_device: 575px !global;
+    $mobile_device: 767px !global;
+    $tablet_device: 991px !global;
+    $desktop_device: 1199px !global;
+    // transition values
+    $slow-fx: linear 0.35s !global;
+    $ease-fx: ease-in-out 0.2s !global;
+}
+// •| #(CUSTOM VALUES) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(ZEROINGS) start |•
 * {
     // default margin and paddings
@@ -15,80 +34,427 @@
     // links
     a {
         text-decoration: none;
-        // color: $text_color;
-        // &:hover {
-        //     color: $hover-text_color;
-        // }
+        color: $text_color;
+        transition: $ease-fx;
+        &:hover {
+            color: $hover-text_color;
+        }
+    }
+    button {
+        cursor: pointer;
     }
 }
 // •| #(ZEROINGS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(CUSTOM VALUES) start |•
-// .custom-values-class {
-//     // light mode defaults
-//     $text_color: rgb(0,0,0) !global;
-//     $hover-text_color: rgb(0,255,128) !global;
-//     // dark mode defaults
-//     $text_color: rgb(255,255,255) !global;
-//     $hover-text_color: rgb(0,128,255) !global;
-//     // responsivity lengths for devices
-//     $extra_small_device: 575px !global;
-//     $mobile_device: 767px !global;
-//     $tablet_device: 991px !global;
-//     $desktop_device: 1199px !global;
-// }
-// •| #(CUSTOM VALUES) end |◄◄◄◄◄◄◄◄◄◄
-// ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(@MIXINS FOR @INCLUDE CALLS) start |•
-// // display flex 2 center center
-// @mixin df-center {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-// // display flex 2 center center
-// @mixin absolute-center {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-// }
+// display flex 2 center center
+@mixin df-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// display flex 2 center center
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 // •| #(@MIXINS FOR @INCLUDE CALLS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(HEADER) start |•
+#header {
+    .header {
+        &__logo {
+            &--image {}
+        }
+        &__search {
+            &--bar {}
+            &--find {}
+        }
+        &__langbar {
+            &--selector {}
+        }
+        &__userpanel {
+            &--image {}
+            .red-dot-notification {}
+            &--dropdown {
+                &_column {
+                    &-switch-visual {
+                        .switch {
+                            &__button {}
+                            .checked {}
+                        }
+                    }
+                    &-cart {}
+                    &-fav {}
+                    &-pref {}
+                    &-logout {}
+                    &-signin {}
+                }
+            }
+        }
+    }
+}
+// •| #(HEADER) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(MIXED) start |•
+.mobile-menu {}
+.scroll-top {}
+.breadcrumb {}
+// •| #(MIXED) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(NAVIGATION BAR) start |•
+#nav {
+    .nav {
+        &__woman {}
+        &__man {}
+        &__kid {}
+        &__accessories {}
+        &__electronics {}
+        &__sport {}
+        &__furniture {}
+        &__software {}
+        &__dropdown {
+            &--categories {
+                &_columns {
+                    &-header {}
+                    &-lists {}
+                }
+                
+            }
+            &--images {
+                &_top {}
+                &_bottom {}
+            }
+        }
+        .woman {}
+        .man {}
+        .kid {}
+        .accessories {}
+        .electronics {}
+        .sport {}
+        .furniture {}
+        .software {}
+    }
+}
+// •| #(NAVIGATION BAR) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(HOMEPAGE | SECTION 1 CAROUSEL) start |•
+#section1-categories {
+    .section1-carousels {
+        &__slides {
+            &--image {}
+            &--info {
+                &_header {}
+            }
+        }
+    }
+    .section1-radios {
+        &__dots {}
+    }
+    .section1-right {}
+    .section1-left {}
+}
+// •| #(HOMEPAGE | SECTION 1 CAROUSEL) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(SECTION 2 EXPLORE POPULAR CATEGORIES) start |•
+#section2-exppopcateg {
+    .section2-exppopcateg {
+        &__header {}
+        &__container {
+            &--cards {
+                &_cover {
+                    &-img {}
+                }
+                &_name {}
+            }
+        }
+    }
+}
+// •| #(SECTION 2 EXPLORE POPULAR CATEGORIES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(SECTION 3 TOP SELL BOOKS) start |•
+#section3-topsellbooks {
+    .section3-topsellbooks {
+        &__header {}
+        &__cards {
+            &--img {}
+        }
+    }
+}
+// •| #(SECTION 3 TOP SELL BOOKS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(...) start |•
-
-// •| #(...) end |◄◄◄◄◄◄◄◄◄◄
+// ►►►►►►►►►►| #(SECTION 4 EXPLORE POPULAR BRANDS) start |•
+#section4-exppopbrands {
+    .section4-exppopbrands {
+        &__header {}
+        &__container {
+            &--cards {
+                &_cover {
+                    &-img {}
+                }
+                &_name {}
+            }
+        }
+    }
+}
+// •| #(SECTION 4 EXPLORE POPULAR BRANDS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(FOOTER AND BOTTOM) start |•
+#footer {
+    .footer {
+        &__columns {
+            &--headers {}
+            &--lists {}
+        }
+    }
+    .bottom {
+        &__rights {}
+        &__conditions {}
+    }
+}
+// •| #(FOOTER AND BOTTOM) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(POP-UP WINDOWS) start |•
+#popups {
+    .overlay-bolder {}
+    .overlay-blurbg {}
+    .privacypolicy {
+        &__cross {}
+        &__text {}
+    }
+    .termsofuse {
+        &__cross {}
+        &__text {}
+    }
+    .comingsoon {
+        &__cross {}
+        &__image {
+            &--symbol {}
+        }
+        &__text {}
+        &__ok {}
+    }
+}
+// •| #(POP-UP WINDOWS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(SECTION - AUTHENTICATION) start |•
+#section-auth {
+    .section-auth__gobackhome {}
+    .section-auth__buttons {
+        &--login {}
+        &--register {}
+    }
+    .section-auth__container {
+        &--login {
+            &_email {
+                .login--email {}
+            }
+            &_password {
+                .login--password {}
+            }
+            .login--submit {}
+            .login--recoverid {}
+        }
+        &--register {
+            &_name {
+                .register--name {}
+            }
+            &_lastname {
+                .register--lastname {}
+            }
+            &_email {
+                .register--email {}
+            }
+            &_phonenumber {
+                .register--phonenumber {}
+            }
+            &_dateofbirth {
+                .mm-dd-yyyy {}
+            }
+            &_gender {
+                .register--genders {}
+            }
+            &_password {
+                .register--password {}
+            }
+            &_country {
+                .register--country {}
+            }
+            &_terms {
+                .register--terms {}
+            }
+            .register--submit {}
+        }
+    }
+}
+// •| #(SECTION - AUTHENTICATION) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(ABOUT US) start |•
+#aboutus {
+    .aboutus {
+        &__header {}
+        &__description {}
+        &__gallery {
+            &--imgcards {
+                &_image {}
+            }
+        }
+    }
+}
+// •| #(ABOUT US) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(F-A-Q) start |•
+#faq {
+    .faq {
+        &__header {}
+        &__aandq {
+            &--questions {}
+            &--answers {}
+        }
+        &__trouble {}
+    }
+}
+// •| #(F-A-Q) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(LOCATIONS) start |•
+#locations {
+    .locations {
+        &__header {}
+        &__description {}
+        &__map {
+            &--image {}
+            &--mark {}
+        }
+    }
+}
+// •| #(LOCATIONS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(PRODUCTS PAGINATION PAGE) start |•
+#pages_of_products {
+    .top_panel {
+        &__filtersbtn {}
+        &__tags {}
+        &__viewbtns {
+            .viewbtns {}
+            &--list {}
+            &--grid {}
+        }
+        &__sort {
+            &--selector {}
+        }
+    }
+    .filters_panel {
+        &--byprice {
+            &_header {}
+            &_value {}
+            &_min {}
+            &_max {}
+            &_submit {}
+        }
+        &--bycustomerreview {
+            &_header {}
+            &_nstarandmore {}
+        }
+        &--reset {}
+    }
+    .container {
+        &__header {}
+        &__cards {
+            &--cover {
+                &_img {}
+            }
+            &--info {
+                &_header {}
+                &_rating {
+                    &-point {}
+                    &-stars {}
+                    &-votes {}
+                }
+                &_price {
+                    &-currency {}
+                    &-currentprice {}
+                    &-centofprice {}
+                    &-was {}
+                    &-oldprice {}
+                }
+            }
+        }
+    }
+    .pagination {
+        &__prev {}
+        &__numbers {}
+        &__next {}
+    }
+}
+// •| #(PRODUCTS PAGINATION PAGE) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(CHOOSEN ITEM PAGE) start |•
+#productpage {
+    .productpage__images {
+        &--activebig {}
+        &--thumbnailsmall {
+            &_images {
+                &-img {}
+            }
+        }
+    }
+    .productpage__main {
+        &--title {}
+        &--rating {
+            &_point {}
+            &_stars {}
+            &_votes {}
+        }
+        &--price {
+            &_currency {}
+            &_currentprice {}
+            &_centofprice {}
+            &_was {}
+            &_oldprice {}
+        }
+        &--information {
+            &_brand {
+                &-name {}
+                &-input {}
+            }
+            &_series {
+                &-name {}
+                &-input {}
+            }
+            &_screensize {
+                &-name {}
+                &-input {}
+            }
+            &_disksize {
+                &-name {}
+                &-input {}
+            }
+        }
+        &--seemore {}
+        &--quantity {
+            &_selector {}
+        }
+        &--buttons {
+            &_fav {}
+            &_cart {}
+            &_buynow {}
+        }
+        &--aboutthisitem {
+            &_header {}
+            &_lists {}
+        }
+    }
+}
+// •| #(CHOOSEN ITEM PAGE) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(EXTRA CLASSES) start |•
 .hidden {
     display: none;
 }
 .checked {
-    transition: ease-in-out 0.3s;
+    transition: $slow-fx;
 }
 // •| #(EXTRA CLASSES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►

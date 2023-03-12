@@ -10,6 +10,14 @@
 }
 * a {
   text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: ease-in-out 0.2s;
+}
+* a:hover {
+  color: rgb(0, 255, 128);
+}
+* button {
+  cursor: pointer;
 }
 
 .hidden {
@@ -17,5 +25,5 @@
 }
 
 .checked {
-  transition: ease-in-out 0.3s;
+  transition: linear 0.35s;
 }/*# sourceMappingURL=Ploranza.css.map */
