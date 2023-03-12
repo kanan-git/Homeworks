@@ -411,12 +411,122 @@
         </section>
         <!-- •| #(SECTION 0 - BREADCRUMB) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
-        <!-- ►►►►►►►►►►| #($$$$$) start |• -->
-        <section id="$$$$$">
-            <aside class="$$$$$"></aside>
-            <div class="$$$$$"></div>
+        <!-- ►►►►►►►►►►| #(PAGES OF PRUDUCTS) start |• -->
+        <section id="pages_of_products">
+            <!-- top panel includes filters button, sorting, view and searched tag -->
+            <div class="top_panel">
+                <!-- filters button panel -->
+                <button class="top_panel__filtersbtn">
+                    Filters
+                    <i class="fa-solid fa-sliders fa-1x"></i>
+                    <i class="fa-solid fa-angles-left fa-1x hidden"></i>
+                </button>
+                <!-- searched or selected tags for products panel -->
+                <span class="top_panel__tags"></span>
+                <!-- view products as list or grid panel -->
+                <span class="top_panel__viewbtns">
+                    <button class="top_panel__viewbtns--list viewbtns">
+                        <i class="fa-solid fa-list fa-1x"></i>
+                    </button>
+                    <button class="top_panel__viewbtns--grid viewbtns">
+                        <i class="fa-solid fa-grip fa-1x"></i>
+                    </button>
+                </span>
+                <!-- sorting panel -->
+                <span class="top_panel__sort">
+                    <i class="fa-solid fa-sort fa-1x"></i>
+                    Sort by
+                    <select name="sorting" id="sorting" class="top_panel__sort--selector">
+                        <option value="recent">Recent</option>
+                        <option value="newest">Newest</option>
+                        <option value="pricelowtohigh">Price low to high</option>
+                        <option value="pricehightolow">Price high to low</option>
+                    </select>
+                </span>
+            </div>
+            <!-- filters aside panel which opens from left on click -->
+            <aside class="filters_panel">
+                <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+            </aside>
+            <!-- container of product cards -->
+            <div class="container"> <!-- NOTE: get product info by object from folder or fetch data API -->
+                <!-- header of container -->
+                <h3 class="container__header">RESULTS</h3>
+                <!-- product cards on the pagination page -->
+                <div class="container__cards">
+                    <!-- left image container of card -->
+                    <a href="#" class="container__cards--cover">
+                        <img src="." alt="pcard-img" class="container__cards--cover">
+                    </a>
+                    <!-- right and center info container of card -->
+                    <div class="container__cards--info">
+                        <!-- title of the product -->
+                        <a href="#" class="container__cards--info_header">Lorem ipsum dolor sit amet</a>
+                        <!-- rating of the product -->
+                        <div class="container__cards--info_rating">
+                            <!-- rating with digits -->
+                            <span class="container__cards--info_rating-point">
+                                4.2
+                            </span>
+                            <!-- rating with symbols -->
+                            <span class="container__cards--info_rating-stars">
+                                <i class="fa-solid fa-star fa-1x"></i>
+                                <i class="fa-solid fa-star fa-1x"></i>
+                                <i class="fa-solid fa-star fa-1x"></i>
+                                <i class="fa-solid fa-star-half-stroke fa-1x"></i>
+                                <i class="fa-regular fa-star fa-1x"></i>
+                            </span>
+                            <!-- count of votes -->
+                            <span class="container__cards--info_rating-votes">
+                                (123)
+                            </span>
+                        </div>
+                        <!-- price of the product -->
+                        <div class="container__cards--info_price">
+                            <sup class="container__cards--info_price-currency">$</sup>
+                            <strong class="container__cards--info_price-currentprice">599</strong>
+                            <sup class="container__cards--info_price-centofprice">99</sup>
+                            <span class="container__cards--info_price-was">Was:</span>
+                            <del class="container__cards--info_price-oldprice">$219.00</del>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pagination buttons -->
+            <div class="pagination">
+                <!-- page no previous -->
+                <button class="pagination__prev">
+                    <i class="fa-solid fa-chevron-left fa-1x"></i>
+                    Previous
+                </button>
+                <!-- page no 1 -->
+                <button class="pagination__numbers">
+                    1
+                </button>
+                <!-- page no 2 -->
+                <button class="pagination__numbers">
+                    2
+                </button>
+                <!-- page no 3 -->
+                <button class="pagination__numbers">
+                    3
+                </button>
+                <!-- page no 4 -->
+                <button class="pagination__numbers">
+                    4
+                </button>
+                <!-- page no 5 -->
+                <button class="pagination__numbers">
+                    5
+                </button>
+                <!-- page no next -->
+                <button class="pagination__next">
+                    Next
+                    <i class="fa-solid fa-chevron-right fa-1x"></i>
+                </button>
+            </div>
         </section>
-        <!-- •| #($$$$$) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- •| #(PAGES OF PRUDUCTS) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(FOOTER) start |• -->
         <footer id="footer">
@@ -628,6 +738,55 @@
         <!-- ►►►►►►►►►►| #(JAVASCRIPT LINK) start |• -->
         <script src="./Ploranza.js"></script>
         <!-- •| #(JAVASCRIPT LINK) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(A CANCELED FEATURE) start |• -->
+        <div class="hidden">
+            <!-- rating charts dropdown menu show button on hover -->
+            <span class="container__cards--info_rating-charts">
+                ▼
+            </span>
+            <!-- rating charts dropdown window -->
+            <div class="container__cards--info_rating-dropdown">
+                <h4>4.2 out of 5</h4>
+                <p>623 global ratings</p>
+                <div>
+                    5 star
+                    <span>
+                        <span></span>
+                    </span>
+                    61%
+                </div>
+                <div>
+                    4 star
+                    <span>
+                        <span></span>
+                    </span>
+                    17%
+                </div>
+                <div>
+                    3 star
+                    <span>
+                        <span></span>
+                    </span>
+                    7%
+                </div>
+                <div>
+                    2 star
+                    <span>
+                        <span></span>
+                    </span>
+                    4%
+                </div>
+                <div>
+                    1 star
+                    <span>
+                        <span></span>
+                    </span>
+                    10%
+                </div>
+            </div>
+        </div>
+        <!-- •| #(A CANCELED FEATURE) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
     </body>
 </html>
