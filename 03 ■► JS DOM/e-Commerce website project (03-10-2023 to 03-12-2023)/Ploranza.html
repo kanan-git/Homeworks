@@ -30,14 +30,14 @@
     <body>
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(MENU BUTTON FOR RESPONSIVE NAVBAR AND HEADER) start |• -->
-        <button class="mobile-menu">
+        <button class="mobile-menu light-mode hidden">
             <i class="fa-solid fa-bars fa-1x"></i> <!-- menu bars -->
             <i class="fa-solid fa-xmark fa-1x hidden"></i> <!-- menu close -->
         </button>
         <!-- •| #(MENU BUTTON FOR RESPONSIVE NAVBAR AND HEADER) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(SCROLL UP BUTTON) start |• -->
-        <button class="scroll-top">
+        <button class="scroll-top light-mode hidden">
             ▲
         </button>
         <!-- •| #(SCROLL UP BUTTON) end |◄◄◄◄◄◄◄◄◄◄ -->
@@ -47,7 +47,7 @@
             <div class="header">
                 <!-- logo -->
                 <div class="header__logo">
-                    <img class="header__logo--image" src="." alt="ploranza-logo">
+                    <img class="header__logo--image" src="./Ploranza-assets/ploranza-images/logo-ploranza.png" alt="ploranza-logo">
                 </div>
                 <!-- search bar -->
                 <form action="#" class="header__search" method="get">
@@ -68,9 +68,7 @@
                 <!-- user panel -->
                 <div class="header__userpanel">
                     <!-- profile image -->
-                    <img src="." alt="profile-img" class="header__userpanel--image">
-                    <!-- notification red dot -->
-                    <div class="red-dot-notification hidden">
+                    <img src="./Ploranza-assets/user-profiles/nodata.png" alt="profile-img" class="header__userpanel--image">
                         <!-- will be visible when something change on fav or cart list -->
                     </div>
                     <!-- dropdown menu of profile in the user panel -->
@@ -79,35 +77,45 @@
                             <!-- switch light or dark mode -->
                             <li class="header__userpanel--dropdown_column-switch-visual">
                                 <i class="fa-solid fa-sun fa-1x"></i>
-                                <span class="switch">
-                                    <span class="switch__button checked"></span>
+                                <span class="switch checked">
+                                    <span class="switch__button"></span>
                                 </span>
                                 <i class="fa-regular fa-moon fa-1x"></i>
                             </li>
                             <!-- products list which user added to cart -->
                             <li class="header__userpanel--dropdown_column-cart">
-                                <i class="fa-solid fa-cart-shopping fa-1x"></i>
-                                Cart
+                                <a href="#">
+                                    <i class="fa-solid fa-cart-shopping fa-1x"></i>
+                                    Cart
+                                </a>
                             </li>
                             <!-- products list which user added to favorites -->
                             <li class="header__userpanel--dropdown_column-fav">
-                                <i class="fa-solid fa-heart fa-1x"></i>
-                                Favorites
+                                <a href="#">
+                                    <i class="fa-solid fa-heart fa-1x"></i>
+                                    Favorites
+                                </a>
                             </li>
                             <!-- preferences -->
                             <li class="header__userpanel--dropdown_column-pref">
-                                <i class="fa-solid fa-gear fa-1x"></i>
-                                Preferences
+                                <a href="#">
+                                    <i class="fa-solid fa-gear fa-1x"></i>
+                                    Preferences
+                                </a>
                             </li>
                             <!-- log out -->
                             <li class="header__userpanel--dropdown_column-logout">
-                                <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i>
-                                Log out
+                                <a href="#">
+                                    <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i>
+                                    Log out
+                                </a>
                             </li>
                             <!-- dropdown height will be auto with padding because of user not logged in, sign in will seem, rest will not -->
                             <li class="header__userpanel--dropdown_column-signin hidden">
-                                <i class="fa-solid fa-circle-user fa-1x"></i>
-                                Sign in
+                                <a href="#">
+                                    <i class="fa-solid fa-circle-user fa-1x"></i>
+                                    Sign in
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -171,8 +179,12 @@
                     </div>
                     <!-- container of images -->
                     <div class="nav__dropdown--images">
-                        <img src="." alt="cover-woman-1" class="nav__dropdown--images_top">
-                        <img src="." alt="cover-woman-2" class="nav__dropdown--images_bottom">
+                        <div class="nav__dropdown--images_top">
+                            <img src="." alt="cover-woman-1" class="nav__dropdown--images_top-img">
+                        </div>
+                        <div class="nav__dropdown--images_bottom">
+                            <img src="." alt="cover-woman-1" class="nav__dropdown--images_bottom-img">
+                        </div>
                     </div>
                 </div>
                 <!-- dropdown of man menu -->
@@ -403,7 +415,7 @@
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(SECTION 0 - BREADCRUMB) start |• -->
         <section id="breadcrumb">
-            <div class="breadcrumb">
+            <div class="breadcrumb light-mode">Homepage/test/123
                 <!-- in JS, add with ${} innerHTML, add with "/" without space -->
                 <!-- <a class="breadcrumb__links" href="#">HOME</a> --- a sample p1 -->
                 <!-- <a class="breadcrumb__links" href="#">/About Us</a> --- a sample p2 -->
@@ -591,9 +603,9 @@
         <footer id="footer">
             <div class="footer">
                 <ul class="footer__columns">
-                    <!-- <img class="footer__columns--logo" 
-                    src="./Ploranza-assets/ploranza-images/logo-here-ref.png" 
-                    alt="ploranza-flogo"> -->
+                    <img class="footer__columns--logo" 
+                    src="./Ploranza-assets/ploranza-images/logo-ploranza.png" 
+                    alt="ploranza-flogo">
                 </ul>
                 <ul class="footer__columns">
                     <h3 class="footer__columns--headers">Shopping</h3>

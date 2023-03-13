@@ -1,20 +1,37 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(CUSTOM VALUES) start |•
-.custom-values-class {
-    // light mode defaults
-    $text_color: rgb(0,0,0) !global;
-    $hover-text_color: rgb(0,255,128) !global;
-    // // dark mode defaults
-    // $text_color: rgb(255,255,255) !global;
-    // $hover-text_color: rgb(0,128,255) !global;
+:root {
+    // default parameters
+    --defaultColor: rgb(0,0,0);
+    --highlightColor: rgb(255,0,0);
+    // ○○○○○     light mode defaults     ○○○○○
+    --lightTextColor: rgb(0,0,0);
+    --lightHoverTextColor: rgb(0,255,128);
+    --lightBackground: linear-gradient(to right, rgb(0,255,0), rgb(0,255,255));
+    --lightBackgroundColor: rgb(255,255,255);
+    // •••••     dark mode defaults     •••••
+    --darkTextColor: rgb(255,255,255);
+    --darkHoverTextColor: rgb(0,128,255);
+    --darkBackground: linear-gradient(to right, rgb(64,0,255), rgb(0,0,255));
+    --darkBackgroundColor: rgb(32,32,32);
     // responsivity lengths for devices
-    $extra_small_device: 575px !global;
-    $mobile_device: 767px !global;
-    $tablet_device: 991px !global;
-    $desktop_device: 1199px !global;
+    --extra_small_device: 575px;
+    --mobile_device: 767px;
+    --tablet_device: 991px;
+    --desktop_device: 1199px;
     // transition values
-    $slow-fx: linear 0.35s !global;
-    $ease-fx: ease-in-out 0.2s !global;
+    --slow-fx: linear 0.35s;
+    --ease-fx: ease-in-out 0.2s;
+    // .custom-values-class {
+    //     // responsivity lengths for devices
+    //     $extra_small_device: 575px !global;
+    //     $mobile_device: 767px !global;
+    //     $tablet_device: 991px !global;
+    //     $desktop_device: 1199px !global;
+    //     // transition values
+    //     $slow-fx: linear 0.35s !global;
+    //     $ease-fx: ease-in-out 0.2s !global;
+    // }
 }
 // •| #(CUSTOM VALUES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
@@ -34,11 +51,8 @@
     // links
     a {
         text-decoration: none;
-        color: $text_color;
-        transition: $ease-fx;
-        &:hover {
-            color: $hover-text_color;
-        }
+        color: var(--defaultColor);
+        transition: var(--ease-fx);
     }
     button {
         cursor: pointer;
@@ -60,37 +74,174 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@mixin test-border {
+    box-sizing: border-box;
+    border: 1px solid var(--highlightColor);
+}
 // •| #(@MIXINS FOR @INCLUDE CALLS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HEADER) start |•
 #header {
+    // @include test-border;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    justify-content: center;
+    flex-direction: column;
+    @include df-center;
     .header {
+        margin-top: 20px;
+        box-sizing: border-box;
+        // border: 1px solid yellow;
+        width: 1250px;
+        height: 60px;
+        background-color: grey;
+        display: flex;
+        position: relative;
         &__logo {
-            &--image {}
+            margin-left: 30px;
+            // border: 1px solid green;
+            box-sizing: border-box;
+            width: 20%;
+            height: 100%;
+            &--image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         &__search {
-            &--bar {}
-            &--find {}
+            // border: 1px solid green;
+            box-sizing: border-box;
+            width: 50%;
+            position: relative;
+            @include df-center;
+            &--bar {
+                width: 450px;
+                height: 40px;
+                padding-left: 20px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                font-size: 16px;
+            }
+            &--find {
+                position: absolute;
+                top: 50%;
+                left: 83%;
+                transform: translate(-50%, -50%);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: none;
+                background-color: transparent;
+            }
         }
         &__langbar {
-            &--selector {}
+            // border: 1px solid green;
+            box-sizing: border-box;
+            width: 10%;
+            @include df-center;
+            &--selector {
+                width: 50px;
+                border: none;
+                border-bottom: 1px solid var(--defaultColor);
+                outline: none;
+            }
+            .fa-globe {
+                margin-right: 5px;
+            }
         }
         &__userpanel {
-            &--image {}
-            .red-dot-notification {}
+            margin-right: 30px;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            // border: 1px solid green;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            @include df-center;
+            overflow: hidden;
+            border: 1px solid var(--defaultColor);
+            cursor: pointer;
+            &--image {
+                width: 100%;
+                height: 60px;
+                object-fit: cover;
+            }
             &--dropdown {
+                background-color: white;
+                @include test-border;
+                width: 150px;
+                // height: 180px;
+                height: auto;
+                padding: 15px 0;
+                position: absolute;
+                top: 100%;
+                right: 0%;
+                @include df-center;
                 &_column {
+                    @include df-center;
+                    flex-direction: column;
+                    row-gap: 10px;
                     &-switch-visual {
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+                        .fa-sun {
+                            scale: 1.0;
+                        }
+                        .fa-moon {
+                            scale: 1.5;
+                        }
                         .switch {
-                            &__button {}
-                            .checked {}
+                            display: block;
+                            width: 40px;
+                            height: 20px;
+                            // border: 1px solid grey;
+                            background-color: gainsboro;
+                            position: relative;
+                            cursor: pointer;
+                            border-radius: 10px;
+                            margin: 0 5px;
+                            filter: drop-shadow(0px 0px 2px rgb(0,0,0));
+                            &__button {
+                                display: block;
+                                position: relative;
+                                left: 0px;
+                                box-sizing: border-box;
+                                border: 1px solid grey;
+                                background-color: white;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                transition: var(--slow-fx);
+                            }
+                        }
+                        .checked {
+                            background-color: greenyellow;
+                            filter: drop-shadow(0px 0px 3px rgb(255,255,255));
+                            .switch__button {
+                                left: 20px;
+                                transition: var(--slow-fx);
+                            }
                         }
                     }
-                    &-cart {}
-                    &-fav {}
-                    &-pref {}
-                    &-logout {}
-                    &-signin {}
+                    &-cart {
+                        cursor: pointer;
+                    }
+                    &-fav {
+                        cursor: pointer;
+                    }
+                    &-pref {
+                        cursor: pointer;
+                    }
+                    &-logout {
+                        cursor: pointer;
+                    }
+                    &-signin {
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -99,33 +250,209 @@
 // •| #(HEADER) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(MIXED) start |•
-.mobile-menu {}
-.scroll-top {}
-.breadcrumb {}
+.mobile-menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+    box-sizing: border-box;
+    border: 1px solid var(--defaultColor);
+    border-radius: 50%;
+}
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    @include test-border;
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--defaultColor);
+    font-size: 28px;
+}
+#breadcrumb {
+    @include df-center();
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // width: 100%;
+    .breadcrumb {
+        border: none;
+        border-top: 1px solid var(--defaultColor);
+        // @include test-border;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 1250px;
+        height: 36px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding-left: 50px;
+        letter-spacing: 5px;
+        background-color: olive;
+    }
+}
 // •| #(MIXED) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(NAVIGATION BAR) start |•
 #nav {
+    // @include test-border;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     .nav {
-        &__woman {}
-        &__man {}
-        &__kid {}
-        &__accessories {}
-        &__electronics {}
-        &__sport {}
-        &__furniture {}
-        &__software {}
+        box-sizing: border-box;
+        border: none;
+        border-top: 1px solid var(--defaultColor);
+        // border: 1px solid yellow;
+        width: 1250px;
+        height: 30px;
+        background-color: darkgoldenrod;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: relative;
+        &__woman {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__man {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__kid {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__accessories {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__electronics {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__sport {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__furniture {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &__software {
+            // @include test-border;
+            height: 100%;
+            padding: 0 25px;
+            @include df-center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+        }
         &__dropdown {
+            border: 1px solid var(--defaultColor);
+            box-sizing: border-box;
+            background-color: tan;
+            width: 1250px;
+            height: 350px;
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
             &--categories {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                // @include test-border();
+                width: 50%;
                 &_columns {
-                    &-header {}
-                    &-lists {}
+                    // border: 1px solid orange;
+                    width: 33%;
+                    height: 50%;
+                    &-header {
+                        font-size: 20px;
+                        margin-bottom: 5px;
+                    }
+                    &-lists {
+                        font-size: 16px;
+                        &:not(:last-of-type) {
+                            margin-bottom: 5px;
+                        }
+                    }
                 }
-                
             }
             &--images {
-                &_top {}
-                &_bottom {}
+                // @include test-border();
+                width: 30%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                &_top {
+                    box-sizing: border-box;
+                    // border: 2px solid purple;
+                    width: 60%;
+                    height: 140px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    &-img {
+                        width: auto;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &_bottom {
+                    box-sizing: border-box;
+                    // border: 2px solid purple;
+                    width: 60%;
+                    height: 140px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    &-img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
             }
         }
         .woman {}
@@ -142,6 +469,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HOMEPAGE | SECTION 1 CAROUSEL) start |•
 #section1-categories {
+    @include test-border;
     .section1-carousels {
         &__slides {
             &--image {}
@@ -160,6 +488,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 2 EXPLORE POPULAR CATEGORIES) start |•
 #section2-exppopcateg {
+    @include test-border;
     .section2-exppopcateg {
         &__header {}
         &__container {
@@ -176,6 +505,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 3 TOP SELL BOOKS) start |•
 #section3-topsellbooks {
+    @include test-border;
     .section3-topsellbooks {
         &__header {}
         &__cards {
@@ -187,6 +517,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 4 EXPLORE POPULAR BRANDS) start |•
 #section4-exppopbrands {
+    @include test-border;
     .section4-exppopbrands {
         &__header {}
         &__container {
@@ -203,21 +534,88 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(FOOTER AND BOTTOM) start |•
 #footer {
+    // @include test-border;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     .footer {
+        box-sizing: border-box;
+        // border: 1px solid yellow;
+        width: 1250px;
+        background-color: cornflowerblue;
+        height: 230px;
+        display: flex;
         &__columns {
-            &--headers {}
-            &--lists {}
+            // border: 1px solid blue;
+            box-sizing: border-box;
+            width: 20%;
+            position: relative;
+            &--logo {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 80px;
+                object-fit: cover;
+            }
+            &--headers {
+                margin: 30px 0px 20px 10px;
+                font-size: 24px; // font-size 24px for all header large, small 20px
+                text-transform: uppercase;
+            }
+            &--lists {
+                margin-left: 20px;
+                transition: var(--ease-fx);
+                font-size: 16px; // font-size 16px for all text
+                width: fit-content;
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+                a:hover {
+                    position: relative;
+                    color: rgb(255,0,0);
+                    transition: var(--ease-fx);
+                }
+                &:hover {
+                    transform: translateX(10px);
+                    transition: var(--ease-fx);
+                }
+            }
         }
     }
     .bottom {
-        &__rights {}
-        &__conditions {}
+        margin-bottom: 20px;
+        padding: 15px 0;
+        box-sizing: border-box;
+        // border: 1px solid yellow;
+        border-top: 1px solid var(--lightTextColor);
+        width: 1250px;
+        background-color: tomato;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        &__rights {
+            box-sizing: border-box;
+            // border: 1px solid red;
+            width: 35%;
+        }
+        &__conditions {
+            box-sizing: border-box;
+            // border: 1px solid yellowgreen;
+            width: 35%;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
 // •| #(FOOTER AND BOTTOM) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(POP-UP WINDOWS) start |•
 #popups {
+    @include test-border;
     .overlay-bolder {}
     .overlay-blurbg {}
     .privacypolicy {
@@ -241,6 +639,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION - AUTHENTICATION) start |•
 #section-auth {
+    @include test-border;
     .section-auth__gobackhome {}
     .section-auth__buttons {
         &--login {}
@@ -293,6 +692,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(ABOUT US) start |•
 #aboutus {
+    @include test-border;
     .aboutus {
         &__header {}
         &__description {}
@@ -307,6 +707,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(F-A-Q) start |•
 #faq {
+    @include test-border;
     .faq {
         &__header {}
         &__aandq {
@@ -320,6 +721,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(LOCATIONS) start |•
 #locations {
+    @include test-border;
     .locations {
         &__header {}
         &__description {}
@@ -333,6 +735,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(PRODUCTS PAGINATION PAGE) start |•
 #pages_of_products {
+    @include test-border;
     .top_panel {
         &__filtersbtn {}
         &__tags {}
@@ -392,6 +795,7 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(CHOOSEN ITEM PAGE) start |•
 #productpage {
+    @include test-border;
     .productpage__images {
         &--activebig {}
         &--thumbnailsmall {
@@ -450,11 +854,25 @@
 // •| #(CHOOSEN ITEM PAGE) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(EXTRA CLASSES) start |•
+// hiding HTML elements
 .hidden {
-    display: none;
+    display: none !important;
 }
-.checked {
-    transition: $slow-fx;
+// ○○○○○     light mode setup class     ○○○○○
+.light-mode {
+    background: var(--lightBackgroundColor);
+    color: var(--lightTextColor);
+    // &:hover {
+    //     color: var(--lightHoverTextColor);
+    // } add to links a:hover ...
+}
+// •••••     dark mode setup class     •••••
+.dark-mode {
+    background: var(--darkBackgroundColor);
+    color: var(--darkTextColor);
+    // &:hover {
+    //     color: var(--darkHoverTextColor);
+    // } add to links a:hover ...
 }
 // •| #(EXTRA CLASSES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
