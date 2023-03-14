@@ -13,7 +13,10 @@
 
 •=> Notes:
 - 1. event click on unavailable features or link, dark overlay and setTimeOut pop-up alert window
-- 2. terms and pricavy on click, blur overlay scroll able pop-up window, change text with ChatGPT
-- 3. .
-- 4. .
+- 2. copy footer, nav, popups, footer, breadcrumb, scrolltopbtn, mobile menu btn - copy to all pages
+- 3. replace "available links" with "#"
+- 4. with JS objects array and createElement+innerHTML, generate product cards
+- 5. insert static image pathes to source
+- 6. download product images, bg and etc from https://yandex.com/images
+- 7. _
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
