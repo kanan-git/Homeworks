@@ -1,22 +1,54 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-2023-03-13 (I)
+•=> Ploranza (HTML, CSS, JS) | March 15, 2023
 
-•=> Ploranza (CSS):
-- 1. design all of the pages
-- 2. media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
+- signed successfully, registration completed popup windows, wrong login or password <p> alert, required to all slot (HTML, CSS, JS)
+- header search function
+- header this feature is unavailable now alert popup to language bar, setTimeOut alert popup with blur overlay
+- header userpanel click 4 dropdown
+- all lighr/dark color classes add (CSS)
+- header dropdown enable/disable dark mode
+- header #id and .class backgrounds (CSS)
+- auth page input fill requirements algorithm
+- auth page sign in / register algorithms
+- auth page go back homepage button
+- auth page background (CSS)
+- log out and reload page function
+- header signed id / guest modes
+- dark/light & guest/id, save to localStorage
+- breadcrumb algorithm
+- beadcrumb #id & .class backgrounds (CSS)
+- navbar on hover open dropdowns
+- navbar dropdowns images (CSS)
+- navbar #id and .class backgrounds (CSS)
+- footer links
+- footer #id and .class backgrounds (CSS)
+- bottom policies and terms
+- section1 carousel & radio buttons
+- section1 #id & .class backgrounds (CSS)
+- section 2 & 4 image and titles (CSS)
+- section 2 & 4 feature search with owned tags
+- section 2 & 4 backgrounds (CSS)
+- locations page fake location image
+- locations page (CSS)
+- about us (CSS)
+- FAQ link and background (CSS)
+- product page title, img, price ... from object data to slots with textContent
+- product page breadcrumb
+- pagination page buttons function, next, prev
+- pagination cards grid/list cards design (CSS)
+- pagination cards generate in JS with obj data, with JS objects array and createElement+innerHTML, generate
+- pagination filtering system
+- pagination top panel entered tags, buttons, sorting function
+- pagination check reset button
+- fix all sections zoomin static width issue
+- change language function, first research
 
-•=> Ploranza (JS):
-- 1. begin to complete algorithms
+► copy footer, nav, popups, footer, breadcrumb, scrolltopbtn, mobile menu btn - copy to all pages
+► insert static image pathes to source
+► download product images, bg and etc from https://yandex.com/images
+► replace "available links" on their "#" slots
+► insert all links, all images (fetch url or folder path), save light/dark mode to localStorage
+► media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
 
-•=> Ploranza (HTML, CSS, JS):
-- 1. insert all links, all images (fetch url or folder path), save light/dark mode to localStorage
-
-•=> Notes:
-- 1. event click on unavailable features or link, dark overlay and setTimeOut pop-up alert window
-- 2. copy footer, nav, popups, footer, breadcrumb, scrolltopbtn, mobile menu btn - copy to all pages
-- 3. replace "available links" with "#"
-- 4. with JS objects array and createElement+innerHTML, generate product cards
-- 5. insert static image pathes to source
-- 6. download product images, bg and etc from https://yandex.com/images
-- 7. _
+■ check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
