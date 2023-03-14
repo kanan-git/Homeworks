@@ -84,9 +84,8 @@
 #header {
     // @include test-border;
     background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
-    justify-content: center;
-    flex-direction: column;
     @include df-center;
+    flex-direction: column;
     .header {
         margin-top: 20px;
         box-sizing: border-box;
@@ -298,10 +297,8 @@
 #nav {
     // @include test-border;
     background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
-    display: flex;
-    justify-content: center;
+    @include df-center();
     flex-direction: column;
-    align-items: center;
     .nav {
         box-sizing: border-box;
         border: none;
@@ -469,34 +466,163 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HOMEPAGE | SECTION 1 CAROUSEL) start |•
 #section1-categories {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    position: relative;
     .section1-carousels {
+        width: 1250px;
+        height: 550px;
+        box-sizing: border-box;
+        // border: 1px solid red;
+        background-color: coral;
+        display: flex;
+        position: relative;
         &__slides {
-            &--image {}
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            // border: 1px solid red;
+            width: 100%;
+            height: 100%;
+            &--image {
+                width: 1250px;
+                height: 100%;
+                object-fit: cover;
+            }
             &--info {
-                &_header {}
+                position: absolute;
+                top: 65%;
+                left: 5%;
+                &_header {
+                    text-transform: uppercase;
+                    font-size: 24px;
+                    color: rgb(255,255,255);
+                    filter: drop-shadow(0px 0px 5px rgb(0,0,0));
+                }
             }
         }
     }
     .section1-radios {
-        &__dots {}
+        position: absolute;
+        transform: translateX(-50%);
+        @include df-center();
+        column-gap: 25px;
+        left: 50%;
+        bottom: 0%;
+        // border: 1px solid red;
+        box-sizing: border-box;
+        border: none;
+        // background-color: wheat;
+        background-color: transparent;
+        width: 15%;
+        height: 80px;
+        &__dots {
+            scale: 1.5;
+            accent-color: rgb(16,16,16);
+        }
     }
-    .section1-right {}
-    .section1-left {}
+    .section1-right {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        font-size: 35px;
+        border-radius: 50%;
+        top: 50%;
+        left: 12%;
+        background-color: rgba(120,120,120,0.2);
+        color: rgba(16,16,16,0.2);
+        border: 1px solid rgba(16,16,16,0.2);
+        transition: var(--slow-fx);
+        &:hover {
+            background-color: rgba(240,240,240,0.9);
+            color: rgba(16,16,16,0.9);
+            border: 1px solid rgba(16,16,16,0.9);
+            transition: var(--slow-fx);
+        }
+        &:active {
+            background-color: rgb(16,16,16);
+            color: rgb(255,0,0);
+            border: 1px solid rgb(255,0,0);
+            transition: linear 0.01s;
+        }
+    }
+    .section1-left {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        font-size: 35px;
+        border-radius: 50%;
+        top: 50%;
+        left: 88%;
+        background-color: rgba(120,120,120,0.2);
+        color: rgba(16,16,16,0.2);
+        border: 1px solid rgba(16,16,16,0.2);
+        transition: var(--slow-fx);
+        &:hover {
+            background-color: rgba(240,240,240,0.9);
+            color: rgba(16,16,16,0.9);
+            border: 1px solid rgba(16,16,16,0.9);
+            transition: var(--slow-fx);
+        }
+        &:active {
+            background-color: rgb(16,16,16);
+            color: rgb(255,0,0);
+            border: 1px solid rgb(255,0,0);
+            transition: linear 0.01s;
+        }
+    }
 }
 // •| #(HOMEPAGE | SECTION 1 CAROUSEL) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 2 EXPLORE POPULAR CATEGORIES) start |•
 #section2-exppopcateg {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .section2-exppopcateg {
-        &__header {}
+        width: 1250px;
+        height: 400px;
+        box-sizing: border-box;
+        border: 1px solid red;
+        background-color: mediumturquoise;
+        display: flex;
+        flex-direction: column;
+        &__header {
+            text-transform: uppercase;
+            font-size: 24px;
+            margin: 30px 0px 40px 20px;
+        }
         &__container {
+            @include df-center();
+            column-gap: 15px;
+            padding: 0px 20px;
             &--cards {
+                // border: 1px solid mediumpurple;
+                width: 220px;
+                height: 260px;
+                display: flex;
+                flex-direction: column;
                 &_cover {
-                    &-img {}
+                    width: 100%;
+                    height: 220px;
+                    &-img {
+                        // border: 1px solid red;
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
-                &_name {}
+                &_name {
+                    margin-top: 20px;
+                    // @include test-border();
+                    align-self: center;
+                }
             }
         }
     }
@@ -505,11 +631,46 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 3 TOP SELL BOOKS) start |•
 #section3-topsellbooks {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .section3-topsellbooks {
-        &__header {}
+        width: 1250px;
+        height: 600px;
+        box-sizing: border-box;
+        border: 1px solid red;
+        background-color: darkseagreen;
+        @include df-center();
+        flex-wrap: wrap;
+        position: relative;
+        padding: 80px 0px 60px 0px;
+        &__header {
+            position: absolute;
+            top: 2%;
+            transform: translateX(-50%);
+            left: 50%;
+            text-transform: uppercase;
+            font-size: 24px;
+            margin: 30px 0px 0px 0px;
+        }
         &__cards {
-            &--img {}
+            border: 1px solid none;
+            width: 140px;
+            height: 200px;
+            margin: 10px 10px 10px 10px;
+            cursor: pointer;
+            background-color: transparent;
+            margin-right: 100px;
+            &--img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:hover {
+                scale: 1.05;
+                filter: drop-shadow(0px 0px 20px rgba(0,0,0,0.5));
+            }
         }
     }
 }
@@ -517,15 +678,48 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 4 EXPLORE POPULAR BRANDS) start |•
 #section4-exppopbrands {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .section4-exppopbrands {
-        &__header {}
+        width: 1250px;
+        height: 400px;
+        box-sizing: border-box;
+        border: 1px solid red;
+        background-color: gold;
+        display: block;
+        &__header {
+            text-transform: uppercase;
+            font-size: 24px;
+            margin: 30px 0px 40px 20px;
+        }
         &__container {
+            @include df-center();
+            column-gap: 15px;
+            padding: 0px 20px;
             &--cards {
+                // border: 1px solid mediumpurple;
+                width: 220px;
+                height: 260px;
+                display: flex;
+                flex-direction: column;
                 &_cover {
-                    &-img {}
+                    width: 100%;
+                    height: 220px;
+                    &-img {
+                        // border: 1px solid red;
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
-                &_name {}
+                &_name {
+                    margin-top: 20px;
+                    // @include test-border();
+                    align-self: center;
+                }
             }
         }
     }
@@ -692,7 +886,10 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(ABOUT US) start |•
 #aboutus {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .aboutus {
         &__header {}
         &__description {}
@@ -707,7 +904,10 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(F-A-Q) start |•
 #faq {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .faq {
         &__header {}
         &__aandq {
@@ -721,7 +921,10 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(LOCATIONS) start |•
 #locations {
-    @include test-border;
+    // @include test-border;
+    @include df-center();
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .locations {
         &__header {}
         &__description {}
