@@ -46,6 +46,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  filter: drop-shadow(0px 0px 3px rgb(255, 255, 255));
 }
 #header .header__search {
   box-sizing: border-box;
@@ -257,7 +258,7 @@
   border: none;
   width: 1250px;
   height: 30px;
-  background-color: darkgoldenrod;
+  background: var(--gradBG);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -542,6 +543,7 @@
   text-transform: uppercase;
   font-size: 24px;
   margin: 30px 0px 40px 20px;
+  color: var(--defaultColor);
 }
 #section2-exppopcateg .section2-exppopcateg__container {
   display: flex;
@@ -605,6 +607,7 @@
   text-transform: uppercase;
   font-size: 24px;
   margin: 30px 0px 0px 0px;
+  color: var(--defaultColor);
 }
 #section3-topsellbooks .section3-topsellbooks__cards {
   border: 1px solid none;
@@ -646,6 +649,7 @@
   text-transform: uppercase;
   font-size: 24px;
   margin: 30px 0px 40px 20px;
+  color: var(--defaultColor);
 }
 #section4-exppopbrands .section4-exppopbrands__container {
   display: flex;
@@ -710,7 +714,7 @@
   height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: invert(1);
+  filter: invert(1) drop-shadow(0px 0px 3px rgb(0, 0, 0));
 }
 #footer .footer__columns--headers {
   margin: 30px 0px 20px 10px;
