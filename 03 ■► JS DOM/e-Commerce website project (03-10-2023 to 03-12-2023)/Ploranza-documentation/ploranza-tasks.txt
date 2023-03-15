@@ -1,6 +1,7 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 •=> Ploranza (HTML, CSS, JS) | March 15, 2023
 
+- if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, cart
 + signed successfully, registration completed popup windows
 - wrong login or password <p> alert, required to all slot
 - header search function
