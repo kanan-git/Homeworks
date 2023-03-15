@@ -115,7 +115,7 @@
 }
 #header .header__userpanel--dropdown {
   z-index: 10;
-  background-color: white;
+  background-color: var(--bgColor);
   box-sizing: border-box;
   border: 1px solid rgb(128, 128, 128);
   width: 150px;
@@ -139,12 +139,17 @@
   display: flex;
   align-items: center;
   font-size: 16px;
+  transition: ease-in-out 0.2s;
 }
 #header .header__userpanel--dropdown_column-switch-visual .fa-sun {
   scale: 1.5;
+  transition: ease-in-out 0.2s;
+  color: var(--defaultColor);
 }
 #header .header__userpanel--dropdown_column-switch-visual .fa-moon {
   scale: 1;
+  transition: ease-in-out 0.2s;
+  color: var(--defaultColor);
 }
 #header .header__userpanel--dropdown_column-switch-visual .switch {
   display: block;
@@ -154,8 +159,9 @@
   position: relative;
   cursor: pointer;
   border-radius: 10px;
-  margin: 0 5px;
+  margin: 0 10px;
   filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
+  transition: ease-in-out 0.2s;
 }
 #header .header__userpanel--dropdown_column-switch-visual .switch__button {
   display: block;
@@ -168,13 +174,14 @@
   height: 20px;
   border-radius: 50%;
   transition: var(--slow-fx);
+  transition: ease-in-out 0.2s;
 }
 #header .header__userpanel--dropdown_column-switch-visual .checked {
   background-color: greenyellow;
 }
 #header .header__userpanel--dropdown_column-switch-visual .checked .switch__button {
   left: 20px;
-  transition: var(--slow-fx);
+  transition: ease-in-out 0.2s;
 }
 #header .header__userpanel--dropdown_column-cart {
   cursor: pointer;

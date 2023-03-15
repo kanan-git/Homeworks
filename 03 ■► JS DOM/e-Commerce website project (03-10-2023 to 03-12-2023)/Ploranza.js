@@ -9,22 +9,13 @@ const body = document.body
     const switchLDmodes = document.querySelector(".switch")
     const faSun = document.querySelector(".fa-sun")
     const faMoon = document.querySelector(".fa-moon")
-    var switching
     // functions
     function isSwitched() {
         if (switchLDmodes.classList.contains("checked")) {
+            // setup for light mode
             switchLDmodes.classList.remove("checked")
             faSun.style.scale = `1.5`
             faMoon.style.scale = `1.0`
-        } else {
-            switchLDmodes.classList.add("checked")
-            faSun.style.scale = `1.0`
-            faMoon.style.scale = `1.5`
-        }
-    }
-    function swithLightDark() {
-        if (isSwitched === true) {
-            // light mode setup
             document.documentElement.style.setProperty("--defaultColor", "rgb(0,0,0)")
             document.documentElement.style.setProperty("--hoverColor", "rgb(0,128,255)")
             document.documentElement.style.setProperty("--activeColor", "rgb(128,0,255)")
@@ -34,7 +25,10 @@ const body = document.body
             document.documentElement.style.setProperty("--containBGv1", "linear-gradient(to right, rgb(255,255,0), rgb(255,128,0))")
             document.documentElement.style.setProperty("--containBGv2", "linear-gradient(to right, rgb(0,255,255), rgb(0,128,255))")
         } else {
-            // dark mode setup
+            // setup for dark mode
+            switchLDmodes.classList.add("checked")
+            faSun.style.scale = `1.0`
+            faMoon.style.scale = `1.5`
             document.documentElement.style.setProperty("--defaultColor", "rgb(255,255,255)")
             document.documentElement.style.setProperty("--hoverColor", "rgb(0,255,128)")
             document.documentElement.style.setProperty("--activeColor", "rgb(255,128,0)")
@@ -46,8 +40,9 @@ const body = document.body
         }
     }
     // actions
+    isSwitched() // first call makes dark mode
+    isSwitched() // second call for fix start up dark mode issue
     switchLDmodes.addEventListener("click", isSwitched)
-    document.addEventListener("mousemove", swithLightDark)
 }
 // •| #(LIGHT/DARK MODE VALUES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
