@@ -1,37 +1,48 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(CUSTOM VALUES) start |•
 :root {
-    // default parameters
-    --defaultColor: rgb(0,0,0);
-    --highlightColor: rgb(255,0,0);
-    // ○○○○○     light mode defaults     ○○○○○
-    --lightTextColor: rgb(0,0,0);
-    --lightHoverTextColor: rgb(0,255,128);
-    --lightBackground: linear-gradient(to right, rgb(0,255,0), rgb(0,255,255));
-    --lightBackgroundColor: rgb(255,255,255);
-    // •••••     dark mode defaults     •••••
-    --darkTextColor: rgb(255,255,255);
-    --darkHoverTextColor: rgb(0,128,255);
-    --darkBackground: linear-gradient(to right, rgb(64,0,255), rgb(0,0,255));
-    --darkBackgroundColor: rgb(32,32,32);
-    // responsivity lengths for devices
-    --extra_small_device: 575px;
-    --mobile_device: 767px;
-    --tablet_device: 991px;
-    --desktop_device: 1199px;
-    // transition values
-    --slow-fx: linear 0.35s;
-    --ease-fx: ease-in-out 0.2s;
-    // .custom-values-class {
-    //     // responsivity lengths for devices
-    //     $extra_small_device: 575px !global;
-    //     $mobile_device: 767px !global;
-    //     $tablet_device: 991px !global;
-    //     $desktop_device: 1199px !global;
-    //     // transition values
-    //     $slow-fx: linear 0.35s !global;
-    //     $ease-fx: ease-in-out 0.2s !global;
+    // // default parameters
+    // // --defaultColor: rgb(0,0,0);
+    // --highlightColor: rgb(255,0,0);
+    // // ○○○○○     light mode defaults     ○○○○○
+    // --lightTextColor: rgb(0,0,0);
+    // --lightHoverTextColor: rgb(0,255,128);
+    // --lightBackground: linear-gradient(to right, rgb(0,255,0), rgb(0,255,255));
+    // --lightBackgroundColor: rgb(255,255,255);
+    // // •••••     dark mode defaults     •••••
+    // --darkTextColor: rgb(255,255,255);
+    // --darkHoverTextColor: rgb(0,128,255);
+    // --darkBackground: linear-gradient(to right, rgb(64,0,255), rgb(0,0,255));
+    // --darkBackgroundColor: rgb(32,32,32);
+    // // responsivity lengths for devices
+    // --extra_small_device: 575px;
+    // --mobile_device: 767px;
+    // --tablet_device: 991px;
+    // --desktop_device: 1199px;
+    // // transition values
+    // --slow-fx: linear 0.35s;
+    // --ease-fx: ease-in-out 0.2s;
+    // // .custom-values-class {
+    // //     // responsivity lengths for devices
+    // //     $extra_small_device: 575px !global;
+    // //     $mobile_device: 767px !global;
+    // //     $tablet_device: 991px !global;
+    // //     $desktop_device: 1199px !global;
+    // //     // transition values
+    // //     $slow-fx: linear 0.35s !global;
+    // //     $ease-fx: ease-in-out 0.2s !global;
     // }
+    $slow-fx: linear 0.35s !global;
+    $ease-fx: ease-in-out 0.2s !global;
+    $footer-hdr_clr: rgb(255,255,255) !global;
+    $footer-bg: rgb(25,45,95) !global;
+    $footer-txt_clr: rgb(255,255,255) !global;
+    $footer-hov_clr: rgb(255,128,0) !global;
+    $footer-link_crl: rgb(255,255,255) !global;
+    $bottom-bg: rgb(16,16,16) !global;
+    $bottom-txt_clr: rgb(255,255,255) !global;
+    $bottom-link_crl: rgb(255,255,255) !global;
+    $darkmode-hlf_border: rgb(32,32,32) !global;
 }
 // •| #(CUSTOM VALUES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
@@ -56,6 +67,9 @@
     }
     button {
         cursor: pointer;
+    }
+    body {
+        background: var(--bgColor);
     }
 }
 // •| #(ZEROINGS) end |◄◄◄◄◄◄◄◄◄◄
@@ -83,7 +97,7 @@
 // ►►►►►►►►►►| #(HEADER) start |•
 #header {
     // @include test-border;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     @include df-center;
     flex-direction: column;
     .header {
@@ -92,7 +106,7 @@
         // border: 1px solid yellow;
         width: 1250px;
         height: 60px;
-        background-color: grey;
+        background: var(--gradBG);
         display: flex;
         position: relative;
         &__logo {
@@ -191,10 +205,10 @@
                         align-items: center;
                         font-size: 16px;
                         .fa-sun {
-                            scale: 1.0;
+                            scale: 1.5;
                         }
                         .fa-moon {
-                            scale: 1.5;
+                            scale: 1.0;
                         }
                         .switch {
                             display: block;
@@ -222,7 +236,7 @@
                         }
                         .checked {
                             background-color: greenyellow;
-                            filter: drop-shadow(0px 0px 3px rgb(255,255,255));
+                            // filter: drop-shadow(0px 0px 3px rgb(255,255,255));
                             .switch__button {
                                 left: 20px;
                                 transition: var(--slow-fx);
@@ -275,37 +289,40 @@
     font-size: 28px;
 }
 #breadcrumb {
+    margin-top: 10px;
     @include df-center();
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     // width: 100%;
     .breadcrumb {
         border: none;
-        border-top: 1px solid var(--defaultColor);
+        // border-top: 1px solid var(--defaultColor);
         // @include test-border;
         box-sizing: border-box;
         overflow: hidden;
         width: 1250px;
-        height: 36px;
-        font-size: 16px;
+        height: 24px;
+        font-size: 14px;
         display: flex;
         align-items: center;
         padding-left: 50px;
         letter-spacing: 5px;
-        background-color: olive;
+        background: var(--containerClr);
+        color: var(--defaultColor);
     }
 }
 // •| #(MIXED) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(NAVIGATION BAR) start |•
 #nav {
+    margin-top: 10px;
     // @include test-border;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     @include df-center();
     flex-direction: column;
     .nav {
         box-sizing: border-box;
         border: none;
-        border-top: 1px solid var(--defaultColor);
+        // border-top: 1px solid var(--defaultColor);
         // border: 1px solid yellow;
         width: 1250px;
         height: 30px;
@@ -470,10 +487,11 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HOMEPAGE | SECTION 1 CAROUSEL) start |•
 #section1-categories {
+    margin-top: 10px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     position: relative;
     .section1-carousels {
         width: 1250px;
@@ -584,16 +602,17 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 2 EXPLORE POPULAR CATEGORIES) start |•
 #section2-exppopcateg {
+    margin-top: 10px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     .section2-exppopcateg {
         width: 1250px;
         height: 400px;
         box-sizing: border-box;
         // border: 1px solid red;
-        background-color: mediumturquoise;
+        background: var(--containBGv1);
         display: flex;
         flex-direction: column;
         &__header {
@@ -611,6 +630,11 @@
                 height: 260px;
                 display: flex;
                 flex-direction: column;
+                transition: $ease-fx;
+                &:hover {
+                    scale: 1.05;
+                    filter: drop-shadow(0px 0px 15px rgb(0,0,0));
+                }
                 &_cover {
                     width: 100%;
                     height: 220px;
@@ -635,16 +659,17 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 3 TOP SELL BOOKS) start |•
 #section3-topsellbooks {
+    margin-top: 10px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     .section3-topsellbooks {
         width: 1250px;
         height: 600px;
         box-sizing: border-box;
         // border: 1px solid red;
-        background-color: darkseagreen;
+        background: linear-gradient(to right, rgb(220,220,220), rgb(100,100,100));
         @include df-center();
         flex-wrap: wrap;
         position: relative;
@@ -666,6 +691,8 @@
             cursor: pointer;
             background-color: transparent;
             margin-right: 100px;
+            border: 1px solid rgb(160,160,160);
+            transition: $slow-fx;
             &--img {
                 width: 100%;
                 height: 100%;
@@ -682,16 +709,18 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 4 EXPLORE POPULAR BRANDS) start |•
 #section4-exppopbrands {
+    margin-top: 10px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     .section4-exppopbrands {
         width: 1250px;
         height: 400px;
         box-sizing: border-box;
         // border: 1px solid red;
-        background-color: gold;
+        // background-color: gold;
+        background: var(--containBGv2);
         display: block;
         &__header {
             text-transform: uppercase;
@@ -708,6 +737,11 @@
                 height: 260px;
                 display: flex;
                 flex-direction: column;
+                transition: $ease-fx;
+                &:hover {
+                    scale: 1.05;
+                    filter: drop-shadow(0px 0px 15px rgb(0,0,0));
+                }
                 &_cover {
                     width: 100%;
                     height: 220px;
@@ -732,8 +766,9 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(FOOTER AND BOTTOM) start |•
 #footer {
+    margin-top: 10px;
     // @include test-border;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: var(--bgColor);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -742,9 +777,10 @@
         box-sizing: border-box;
         // border: 1px solid yellow;
         width: 1250px;
-        background-color: cornflowerblue;
+        background-color: $footer-bg;
         height: 230px;
         display: flex;
+        color: $footer-txt_clr;
         &__columns {
             // border: 1px solid blue;
             box-sizing: border-box;
@@ -757,28 +793,33 @@
                 width: 100%;
                 height: 80px;
                 object-fit: cover;
+                filter: invert(1);
             }
             &--headers {
                 margin: 30px 0px 20px 10px;
                 font-size: 24px; // font-size 24px for all header large, small 20px
                 text-transform: uppercase;
+                color: $footer-hdr_clr;
             }
             &--lists {
                 margin-left: 20px;
-                transition: var(--ease-fx);
+                transition: $ease-fx;
                 font-size: 16px; // font-size 16px for all text
                 width: fit-content;
+                a {
+                    color: $footer-link_crl;
+                }
                 &:not(:last-of-type) {
                     margin-bottom: 10px;
                 }
                 a:hover {
                     position: relative;
-                    color: rgb(255,0,0);
-                    transition: var(--ease-fx);
+                    color: $footer-hov_clr;
+                    transition: $ease-fx;
                 }
                 &:hover {
                     transform: translateX(10px);
-                    transition: var(--ease-fx);
+                    transition: $ease-fx;
                 }
             }
         }
@@ -788,9 +829,9 @@
         padding: 15px 0;
         box-sizing: border-box;
         // border: 1px solid yellow;
-        border-top: 1px solid var(--lightTextColor);
+        border-top: 1px solid $darkmode-hlf_border;
         width: 1250px;
-        background-color: tomato;
+        background-color: $bottom-bg;
         height: 50px;
         display: flex;
         align-items: center;
@@ -799,6 +840,7 @@
             box-sizing: border-box;
             // border: 1px solid red;
             width: 35%;
+            color: $bottom-txt_clr;
         }
         &__conditions {
             box-sizing: border-box;
@@ -806,6 +848,9 @@
             width: 35%;
             display: flex;
             justify-content: space-between;
+            a {
+                color: $bottom-link_crl;
+            }
         }
     }
 }
@@ -814,6 +859,7 @@
 // ►►►►►►►►►►| #(POP-UP WINDOWS) start |•
 #popups {
     // @include test-border;
+    // dark overlay bg for alert popups
     .overlay-bolder {
         position: fixed;
         width: 100%;
@@ -823,6 +869,7 @@
         left: 0;
         background-color: rgba(0,0,0,0.5);
     }
+    // blur overlay bg for policies and terms popups
     .overlay-blurbg {
         position: fixed;
         width: 100%;
@@ -833,6 +880,7 @@
         background-color: rgba(255,255,255,0.1);
         backdrop-filter: blur(4px);
     }
+    // privacy policies
     .privacypolicy {
         position: fixed;
         top: 50%;
@@ -865,6 +913,7 @@
             color: var(--defaultColor);
         }
     }
+    // terms and conditions
     .termsofuse {
         position: fixed;
         top: 50%;
@@ -897,6 +946,7 @@
             color: var(--defaultColor);
         }
     }
+    // unavailable feature alert
     .comingsoon {
         position: fixed;
         top: 50%;
@@ -985,6 +1035,205 @@
             70% {rotate: 0deg;}
             100% {rotate: 0deg;}
         }
+    }
+    // signed in
+    .signed {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgb(128,128,128);
+        background-color: rgb(255,255,255);
+        width: 500px;
+        height: 400px;
+        border-radius: 10px;
+        filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+        &__cross {
+            position: relative;
+            top: 10px;
+            left: 45%;
+            border: none;
+            background-color: transparent;
+            color: var(--defaultColor);
+            cursor: pointer;
+            @include df-center();
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--slow-fx);
+            &:hover {
+                filter: brightness(1.2);
+                scale: 1.05;
+                transition: var(--slow-fx);
+            }
+        }
+        &__image {
+            border: 6px solid rgba(0,0,0,1);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            background-color: rgba(0,255,0,1);
+            &--symbol {
+                width: 70%;
+                object-fit: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        &__text {
+            font-size: 20px;
+            filter: drop-shadow(0px 0px 5px rgb(0,255,0));
+            color: rgb(8,0,0);
+        }
+        &__ok {
+            margin-bottom: 40px;
+            width: 70px;
+            height: 34px;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(255,255,255);
+            border: 1px solid rgb(0,0,0);
+            border-radius: 5px;
+            background-color: rgb(16,16,16);
+            transition: var(--slow-fx);
+            &:hover {
+                filter: brightness(1.2);
+                scale: 1.05;
+                transition: var(--slow-fx);
+            }
+        }
+    }
+    // registered
+    .registered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgb(128,128,128);
+        background-color: rgb(255,255,255);
+        width: 500px;
+        height: 400px;
+        border-radius: 10px;
+        filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+        &__cross {
+            position: relative;
+            top: 10px;
+            left: 45%;
+            border: none;
+            background-color: transparent;
+            color: var(--defaultColor);
+            cursor: pointer;
+            @include df-center();
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--slow-fx);
+            &:hover {
+                filter: brightness(1.2);
+                scale: 1.05;
+                transition: var(--slow-fx);
+            }
+        }
+        &__image {
+            border: 6px solid rgba(0,0,0,1);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            background-color: rgba(0,128,255,1);
+            &--symbol {
+                width: 70%;
+                object-fit: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        &__text {
+            font-size: 20px;
+            filter: drop-shadow(0px 0px 5px rgb(0,128,255));
+            color: rgb(8,0,0);
+        }
+        &__ok {
+            margin-bottom: 40px;
+            width: 70px;
+            height: 34px;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(255,255,255);
+            border: 1px solid rgb(0,0,0);
+            border-radius: 5px;
+            background-color: rgb(16,16,16);
+            transition: var(--slow-fx);
+            &:hover {
+                filter: brightness(1.2);
+                scale: 1.05;
+                transition: var(--slow-fx);
+            }
+        }
+    }
+    // loading
+    .loading {
+        // loading circle
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,0,0.2);
+        box-sizing: border-box;
+        border: none;
+        backdrop-filter: blur(4px);
+        &__animation {
+            width: 250px;
+            height: 250px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &--svg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                animation: loadingCircle 4.5s linear 0ms infinite;
+            }
+        }
+        @keyframes loadingCircle {
+            0% {rotate: 0deg;}
+            100% {rotate: 360deg;}
+        }
+    }
+    // invisible overlay
+    .overlay-iv {
+        z-index: 9;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.01);
     }
 }
 // •| #(POP-UP WINDOWS) end |◄◄◄◄◄◄◄◄◄◄
@@ -1218,22 +1467,6 @@
 // hiding HTML elements
 .hidden {
     display: none !important;
-}
-// ○○○○○     light mode setup class     ○○○○○
-.light-mode {
-    background: var(--lightBackgroundColor);
-    color: var(--lightTextColor);
-    // &:hover {
-    //     color: var(--lightHoverTextColor);
-    // } add to links a:hover ...
-}
-// •••••     dark mode setup class     •••••
-.dark-mode {
-    background: var(--darkBackgroundColor);
-    color: var(--darkTextColor);
-    // &:hover {
-    //     color: var(--darkHoverTextColor);
-    // } add to links a:hover ...
 }
 // •| #(EXTRA CLASSES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►

@@ -1,11 +1,12 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 •=> Ploranza (HTML, CSS, JS) | March 15, 2023
 
-- signed successfully, registration completed popup windows, wrong login or password <p> alert, required to all slot (HTML, CSS, JS)
++ signed successfully, registration completed popup windows
+- wrong login or password <p> alert, required to all slot
 - header search function
 - header this feature is unavailable now alert popup to language bar, setTimeOut alert popup with blur overlay
 - header userpanel click 4 dropdown
-- all lighr/dark color classes add (CSS)
+- edit color values of all sections, all elements as var(--value) from rgb(123,123,123) for light/dark mode (SCSS, JS)
 - header dropdown enable/disable dark mode
 - header #id and .class backgrounds (CSS)
 - auth page input fill requirements algorithm
