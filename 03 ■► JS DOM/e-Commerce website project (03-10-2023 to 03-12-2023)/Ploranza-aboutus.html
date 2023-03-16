@@ -30,14 +30,14 @@
     <body>
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(MENU BUTTON FOR RESPONSIVE NAVBAR AND HEADER) start |• -->
-        <button class="mobile-menu">
+        <button class="mobile-menu hidden">
             <i class="fa-solid fa-bars fa-1x"></i> <!-- menu bars -->
             <i class="fa-solid fa-xmark fa-1x hidden"></i> <!-- menu close -->
         </button>
         <!-- •| #(MENU BUTTON FOR RESPONSIVE NAVBAR AND HEADER) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(SCROLL UP BUTTON) start |• -->
-        <button class="scroll-top">
+        <button class="scroll-top hidden">
             ▲
         </button>
         <!-- •| #(SCROLL UP BUTTON) end |◄◄◄◄◄◄◄◄◄◄ -->
@@ -47,7 +47,7 @@
             <div class="header">
                 <!-- logo -->
                 <div class="header__logo">
-                    <img class="header__logo--image" src="." alt="ploranza-logo">
+                    <img class="header__logo--image" src="./Ploranza-assets/ploranza-images/logo-ploranza-fix.png" alt="ploranza-logo">
                 </div>
                 <!-- search bar -->
                 <form action="#" class="header__search" method="get">
@@ -68,46 +68,54 @@
                 <!-- user panel -->
                 <div class="header__userpanel">
                     <!-- profile image -->
-                    <img src="." alt="profile-img" class="header__userpanel--image">
-                    <!-- notification red dot -->
-                    <div class="red-dot-notification hidden">
+                    <img src="./Ploranza-assets/user-profiles/nodata.png" alt="profile-img" class="header__userpanel--image">
                         <!-- will be visible when something change on fav or cart list -->
                     </div>
                     <!-- dropdown menu of profile in the user panel -->
-                    <div class="header__userpanel--dropdown hidden">
+                    <div class="header__userpanel--dropdown invisible">
                         <ul class="header__userpanel--dropdown_column">
                             <!-- switch light or dark mode -->
                             <li class="header__userpanel--dropdown_column-switch-visual">
                                 <i class="fa-solid fa-sun fa-1x"></i>
                                 <span class="switch">
-                                    <span class="switch__button checked"></span>
+                                    <span class="switch__button"></span>
                                 </span>
                                 <i class="fa-regular fa-moon fa-1x"></i>
                             </li>
                             <!-- products list which user added to cart -->
-                            <li class="header__userpanel--dropdown_column-cart">
-                                <i class="fa-solid fa-cart-shopping fa-1x"></i>
-                                Cart
+                            <li class="header__userpanel--dropdown_column-cart hidden">
+                                <a href="#">
+                                    <i class="fa-solid fa-cart-shopping fa-1x"></i>
+                                    Cart
+                                </a>
                             </li>
                             <!-- products list which user added to favorites -->
-                            <li class="header__userpanel--dropdown_column-fav">
-                                <i class="fa-solid fa-heart fa-1x"></i>
-                                Favorites
+                            <li class="header__userpanel--dropdown_column-fav hidden">
+                                <a href="#">
+                                    <i class="fa-solid fa-heart fa-1x"></i>
+                                    Favorites
+                                </a>
                             </li>
                             <!-- preferences -->
-                            <li class="header__userpanel--dropdown_column-pref">
-                                <i class="fa-solid fa-gear fa-1x"></i>
-                                Preferences
+                            <li class="header__userpanel--dropdown_column-pref hidden">
+                                <a href="#">
+                                    <i class="fa-solid fa-gear fa-1x"></i>
+                                    Preferences
+                                </a>
                             </li>
                             <!-- log out -->
-                            <li class="header__userpanel--dropdown_column-logout">
-                                <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i>
-                                Log out
+                            <li class="header__userpanel--dropdown_column-logout hidden">
+                                <a href="#">
+                                    <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i>
+                                    Log out
+                                </a>
                             </li>
                             <!-- dropdown height will be auto with padding because of user not logged in, sign in will seem, rest will not -->
-                            <li class="header__userpanel--dropdown_column-signin hidden">
-                                <i class="fa-solid fa-circle-user fa-1x"></i>
-                                Sign in
+                            <li class="header__userpanel--dropdown_column-signin">
+                                <a href="./Ploranza-signin-register.html">
+                                    <i class="fa-solid fa-circle-user fa-1x"></i>
+                                    Sign in
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -133,7 +141,7 @@
                 <a class="nav__furniture" href="#">Furniture</a>
                 <a class="nav__software" href="#">Software</a>
                 <!-- dropdown of woman menu -->
-                <div class="nav__dropdown woman hidden">
+                <div class="nav__dropdown woman">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -171,12 +179,16 @@
                     </div>
                     <!-- container of images -->
                     <div class="nav__dropdown--images">
-                        <img src="." alt="cover-woman-1" class="nav__dropdown--images_top">
-                        <img src="." alt="cover-woman-2" class="nav__dropdown--images_bottom">
+                        <div class="nav__dropdown--images_top">
+                            <img src="." alt="cover-woman-1" class="nav__dropdown--images_top-img">
+                        </div>
+                        <div class="nav__dropdown--images_bottom">
+                            <img src="." alt="cover-woman-1" class="nav__dropdown--images_bottom-img">
+                        </div>
                     </div>
                 </div>
                 <!-- dropdown of man menu -->
-                <div class="nav__dropdown man hidden">
+                <div class="nav__dropdown man">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -219,7 +231,7 @@
                     </div>
                 </div>
                 <!-- dropdown of kid menu -->
-                <div class="nav__dropdown kid hidden">
+                <div class="nav__dropdown kid">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -245,7 +257,7 @@
                     </div>
                 </div>
                 <!-- dropdown of accessories menu -->
-                <div class="nav__dropdown accessories hidden">
+                <div class="nav__dropdown accessories">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -276,7 +288,7 @@
                     </div>
                 </div>
                 <!-- dropdown of electronics menu -->
-                <div class="nav__dropdown electronics hidden">
+                <div class="nav__dropdown electronics">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -318,7 +330,7 @@
                     </div>
                 </div>
                 <!-- dropdown of sport menu -->
-                <div class="nav__dropdown sport hidden">
+                <div class="nav__dropdown sport">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -341,7 +353,7 @@
                     </div>
                 </div>
                 <!-- dropdown of furniture menu -->
-                <div class="nav__dropdown furniture hidden">
+                <div class="nav__dropdown furniture">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -370,7 +382,7 @@
                     </div>
                 </div>
                 <!-- dropdown of software menu -->
-                <div class="nav__dropdown software hidden">
+                <div class="nav__dropdown software">
                     <!-- container of unordered lists -->
                     <div class="nav__dropdown--categories">
                         <ul class="nav__dropdown--categories_columns">
@@ -403,7 +415,7 @@
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(SECTION 0 - BREADCRUMB) start |• -->
         <section id="breadcrumb">
-            <div class="breadcrumb">
+            <div class="breadcrumb">Homepage/test/123
                 <!-- in JS, add with ${} innerHTML, add with "/" without space -->
                 <!-- <a class="breadcrumb__links" href="#">HOME</a> --- a sample p1 -->
                 <!-- <a class="breadcrumb__links" href="#">/About Us</a> --- a sample p2 -->
@@ -479,9 +491,9 @@
         <footer id="footer">
             <div class="footer">
                 <ul class="footer__columns">
-                    <!-- <img class="footer__columns--logo" 
-                    src="./Ploranza-assets/ploranza-images/logo-here-ref.png" 
-                    alt="ploranza-flogo"> -->
+                    <img class="footer__columns--logo" 
+                    src="./Ploranza-assets/ploranza-images/logo-ploranza-fix.png" 
+                    alt="ploranza-flogo">
                 </ul>
                 <ul class="footer__columns">
                     <h3 class="footer__columns--headers">Shopping</h3>
@@ -509,27 +521,27 @@
                 <ul class="footer__columns">
                     <h3 class="footer__columns--headers">Ploranza</h3>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="./Ploranza-aboutus.html">
                             <i class="fa-solid fa-circle-info fa-1x"></i>
                             About Us</a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="#" class="career">
                             <i class="fa-solid fa-laptop-code fa-1x"></i>
                             Career</a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="#" class="contact">
                             <i class="fa-solid fa-headset fa-1x"></i>
                             Contact</a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="#" class="sellinpol">
                             <i class="fa-solid fa-hand-holding-dollar fa-1x"></i>
                             Sell in Ploranza</a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="./Ploranza-locations.html">
                             <i class="fa-solid fa-map-location-dot fa-1x"></i>
                             Locations</a>
                     </li>
@@ -537,31 +549,31 @@
                 <ul class="footer__columns">
                     <h3 class="footer__columns--headers">Social Media</h3>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="http://facebook.com/">
                             <i class="fa-brands fa-facebook fa-1x"></i>
                             Facebook
                         </a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="http://twitter.com/">
                             <i class="fa-brands fa-twitter fa-1x"></i>
                             Twitter
                         </a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="http://instagram.com/">
                             <i class="fa-brands fa-square-instagram fa-1x"></i>
                             Instagram
                         </a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="http://youtube.com/">
                             <i class="fa-brands fa-youtube fa-1x"></i>
                             YouTube
                         </a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="http://mail.google.com/">
                             <i class="fa-solid fa-envelope fa-1x"></i>
                             e-Mail
                         </a>
@@ -570,19 +582,19 @@
                 <ul class="footer__columns">
                     <h3 class="footer__columns--headers">Support</h3>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="./Ploranza-faq.html">
                             <i class="fa-solid fa-question fa-1x"></i>
                             Frequently Asked Questions
                         </a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="#" class="livechat">
                             <i class="fa-brands fa-rocketchat fa-1x"></i>
                             Live chat
                         </a>
                     </li>
                     <li class="footer__columns--lists">
-                        <a href="#">
+                        <a href="#" class="returnpolicy">
                             <i class="fa-solid fa-shield-halved fa-1x"></i>
                             Return policy
                         </a>
@@ -594,9 +606,9 @@
                     ©2023 CODERS Denmark Corps. All Rights Reserved.
                 </p>
                 <span class="bottom__conditions">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Terms of Use</a>
+                    <a href="#" class="privbutton">Privacy Policy</a>
+                    <a href="#" class="termsbutton">Terms & Conditions</a>
+                    <a href="#" class="tuse">Terms of Use</a>
                 </span>
             </div>
         </footer>
@@ -609,7 +621,7 @@
             <!-- blue background overlay for terms window popups -->
             <div class="overlay-blurbg hidden"></div>
             <!-- privacy policy popup window -->
-            <div class="privacypolicy hidden">
+            <div class="privacypolicy invisible-v2">
                 <!-- x button -->
                 <button class="privacypolicy__cross">
                     <i class="fa-solid fa-xmark fa-1x"></i>
@@ -617,27 +629,132 @@
                 <!-- privacy policies -->
                 <div class="privacypolicy__text">
                     <!-- headers -->
-                    <h3>LOREM BUT NOT IPSUM</h3>
+                    <h3>Privacy Policy for Ploranza</h3>
+                    <br>
                     <!-- text -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis corrupti commodi laboriosam delectus magni, quas ipsam autem quisquam facere.
+                        Effective date: 2023-03-14
                     </p>
-                    <!-- headers -->
-                    <h3>LOREM BUT NOT IPSUM</h3>
+                    <br>
                     <!-- text -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis corrupti commodi laboriosam delectus magni, quas ipsam autem quisquam facere.
-                    </p>
+                         At Ploranza, we value your privacy and are committed to protecting your personal information. 
+                        This Privacy Policy describes how we collect, use, and disclose information that we obtain 
+                        about visitors to our website, Ploranza.com (the "Site"), and customers who purchase our 
+                        products and services (collectively, "Services"). <br>
+                         By using our Site or Services, you consent to our collection, use, and disclosure of your 
+                        information in accordance with this Privacy Policy.
+                    </p> <br> <br>
                     <!-- headers -->
-                    <h3>LOREM BUT NOT IPSUM</h3>
+                    <h3>1. Information We Collect</h3>
+                    <br>
                     <!-- text -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis corrupti commodi laboriosam delectus magni, quas ipsam autem quisquam facere.
+                         We collect information from you when you visit our Site or use our Services, 
+                        such as: <br>
+                         Personal information, including your name, email address, billing address, 
+                        shipping address, and payment information. <br>
+                         Information about your use of our Site or Services, including your IP address, 
+                        browser type, and the pages you visit. <br>
+                         Information you provide when you contact us, such as your name, email address, 
+                        and the content of your message. <br>
+                         Other information we obtain from third-party sources, such as social media 
+                        platforms.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>2. How We Use Your Information</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We use the information we collect to: <br>
+                         Provide our Services to you, including processing your orders and payments. <br>
+                         Communicate with you about our Services, such as sending you marketing emails 
+                        and newsletters. <br>
+                         Improve our Site and Services, such as by analyzing how our users interact with 
+                        our Site. <br>
+                         Respond to your inquiries and provide customer support. <br>
+                         Comply with legal obligations, such as tax and accounting requirements.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>3. How We Disclose Your Information</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We may disclose your information to third parties in the following circumstances: <br>
+                         With your consent. <br>
+                         To our service providers and partners who assist us in providing our Services, 
+                        such as payment processors and shipping companies. <br>
+                         To comply with legal obligations, such as responding to a subpoena or other legal 
+                        request. <br>
+                         In connection with a merger, acquisition, or other business transaction involving 
+                        Ploranza. <br>
+                         To protect the rights, property, or safety of Ploranza or others.
+                   </p> <br> <br>
+                    <!-- headers -->
+                    <h3>4. Cookies and Other Tracking Technologies</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We use cookies and other tracking technologies to collect information 
+                        about your use of our Site and Services. Cookies are small data files that 
+                        are placed on your computer or mobile device when you visit a website. 
+                        We use cookies to remember your preferences, understand how our users 
+                        interact with our Site, and personalize your experience. <br>
+                         You can control cookies through your browser settings. However, disabling 
+                        cookies may limit your ability to use certain features of our Site and 
+                        Services.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>5. Security</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We take reasonable measures to protect your information from unauthorized 
+                        access and use. However, no security measure is perfect, and we cannot 
+                        guarantee the security of your information.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>6. Children's Privacy</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         Our Site and Services are not directed to children under the age of 13, 
+                        and we do not knowingly collect personal information from children under 
+                        the age of 13. If we become aware that we have collected personal 
+                        information from a child under the age of 13, we will take steps to delete 
+                        the information as soon as possible.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>7. Changes to This Privacy Policy</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We may update this Privacy Policy from time to time. If we make material 
+                        changes, we will notify you by posting a notice on our Site or by sending 
+                        you an email. Your continued use of our Site or Services after any such 
+                        update constitutes your acceptance of the updated Privacy Policy.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>8. Contact Us</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         If you have any questions or concerns about this Privacy Policy, or if you 
+                        would like to exercise any of your rights under applicable privacy laws 
+                        (such as the right to access or delete your personal information), please 
+                        contact us at: <br>
+                         Ploranza Customer Support <br>
+                         Email: support@ploranza.com <br>
+                         Address: [INSERT ADDRESS] <br>
+                         We will respond to your request as soon as possible and no later than the 
+                        time period required by applicable law. Please note that we may require 
+                        additional information from you to verify your identity and to process your 
+                        request.
                     </p>
                 </div>
             </div>
             <!-- terms and conditions popup window -->
-            <div class="termsofuse hidden">
+            <div class="termsofuse invisible-v2">
                 <!-- x button -->
                 <button class="termsofuse__cross">
                     <i class="fa-solid fa-xmark fa-1x"></i>
@@ -645,22 +762,162 @@
                 <!-- terms and condition -->
                 <div class="termsofuse__text">
                     <!-- headers -->
-                    <h3>LOREM BUT NOT IPSUM</h3>
+                    <h3>Terms and Conditions for Ploranza</h3>
+                    <br>
                     <!-- text -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis corrupti commodi laboriosam delectus magni, quas ipsam autem quisquam facere.
-                    </p>
+                        Effective date: [DATE]
+                    </p> <br>
+                    <!-- text -->
+                    <p>
+                         Welcome to Ploranza.com (the "Site"), operated by [COMPANY NAME] ("Ploranza," "we," "us," 
+                        or "our"). These Terms and Conditions ("Terms") govern your use of the Site and our 
+                        products and services (collectively, the "Services"). <br>
+                         By accessing or using the Site or Services, you agree to be bound by these Terms. If you 
+                        do not agree to these Terms, you may not access or use the Site or Services.
+                    </p> <br> <br>
                     <!-- headers -->
-                    <h3>LOREM BUT NOT IPSUM</h3>
+                    <h3>1. Use of Site and Services</h3>
+                    <br>
                     <!-- text -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis corrupti commodi laboriosam delectus magni, quas ipsam autem quisquam facere.
-                    </p>
+                         You may use the Site and Services only for lawful purposes and in accordance with these Terms. 
+                        You agree not to use the Site or Services: <br>
+                         In any way that violates any applicable federal, state, local, or international law or 
+                        regulation. <br>
+                         To engage in any activity that interferes with or disrupts the Site or Services, or the 
+                        servers and networks connected to the Site or Services. <br>
+                         To impersonate or attempt to impersonate Ploranza, a Ploranza employee, another user, or any 
+                        other person or entity. <br>
+                         To engage in any activity that could disable, overburden, damage, or impair the Site or 
+                        Services or interfere with any other party's use of the Site or Services.
+                    </p> <br> <br>
                     <!-- headers -->
-                    <h3>LOREM BUT NOT IPSUM</h3>
+                    <h3>2. Intellectual Property</h3>
+                    <br>
                     <!-- text -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis corrupti commodi laboriosam delectus magni, quas ipsam autem quisquam facere.
+                         The Site and Services, including all text, graphics, logos, images, software, and other 
+                        content, are the property of Ploranza or its licensors and are protected by United States and 
+                        international copyright, trademark, and other intellectual property laws. <br>
+                         You may not use any trademark, service mark, logo, or trade name of Ploranza without our prior 
+                        written consent.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>3. Product Information and Pricing</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We make every effort to display as accurately as possible the colors, features, specifications, 
+                        and details of our products available on the Site. However, we do not guarantee that the 
+                        colors, features, specifications, and details of the products will be accurate, complete, 
+                        reliable, current, or error-free. <br>
+                         The prices displayed on the Site are quoted in U.S. dollars and are subject to change without 
+                        notice. We reserve the right to refuse or cancel any order at any time for any reason.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>4. Payment</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We accept payment by credit card, debit card, and other payment methods that we make available 
+                        on the Site. By submitting your payment information, you authorize us to charge your payment 
+                        method for the total amount of your order (including any applicable taxes and shipping fees).
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>5. Shipping and Delivery</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We ship our products to locations within the United States and its territories. Delivery 
+                        dates are estimates and are not guaranteed.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>6. Returns and Refunds</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         If you are not completely satisfied with your purchase, you may return it to us for a refund 
+                        or exchange within [NUMBER] days of the purchase date. Please see our Returns and Refunds 
+                        Policy for more information.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>7. Disclaimer of Warranties</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         The Site and Services are provided "as is" and "as available" without warranties of any 
+                        kind, either express or implied, including, but not limited to, implied warranties of 
+                        merchantability, fitness for a particular purpose, and non-infringement.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>8. Limitation of Liability</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         In no event shall Ploranza or its affiliates, licensors, service 
+                        providers, employees, agents, officers, or directors be liable for any 
+                        direct, indirect, special, incidental, consequential, or punitive 
+                        damages, including, but not limited to, personal injury, pain and 
+                        suffering, emotional distress, loss of revenue, loss of profits, loss of 
+                        business or anticipated savings, loss of use, loss of goodwill, loss of 
+                        data, and whether caused by tort (including negligence), breach of 
+                        contract, or otherwise, even if foreseeable. <br>
+                         Ploranza's liability shall be limited to the maximum extent permitted by 
+                        law. If applicable law does not allow limitations or exclusions of 
+                        liability for incidental or consequential damages, the above limitations 
+                        may not apply to you.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>9. Indemnification</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         You agree to indemnify, defend, and hold harmless Ploranza, its 
+                        affiliates, licensors, and service providers, and its and their respective 
+                        officers, directors, employees, contractors, agents, licensors, suppliers, 
+                        successors, and assigns from and against any claims, liabilities, damages, 
+                        judgments, awards, losses, costs, expenses, or fees (including reasonable 
+                        attorneys' fees) arising out of or relating to your violation of these 
+                        Terms or your use of the Site or Services.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>10. Governing Law and Dispute Resolution</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         These Terms shall be governed by and construed in accordance with the laws of the State 
+                        of [STATE], without regard to its conflict of law provisions. <br>
+                         Any dispute arising out of or relating to these Terms, the Site, or the Services shall be 
+                        resolved through arbitration administered by the American Arbitration 
+                        Association in accordance with its Commercial Arbitration Rules, and 
+                        judgment on the award rendered by the arbitrator(s) may be entered in any 
+                        court having jurisdiction thereof.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>11. Changes to Terms</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         We reserve the right to modify or revise these Terms at any time and 
+                        without prior notice. Any changes to these Terms will be effective 
+                        immediately upon posting on the Site. Your continued use of the Site or 
+                        Services after the posting of revised Terms means that you accept and 
+                        agree to the changes.
+                    </p> <br> <br>
+                    <!-- headers -->
+                    <h3>12. Contact Us</h3>
+                    <br>
+                    <!-- text -->
+                    <p>
+                         If you have any questions or concerns about these Terms or the Site or 
+                        Services, please contact us at:
+                        <br>
+                        Ploranza Customer Support
+                        <br>
+                        Email: support@ploranza.com
+                        <br>
+                        Address: [INSERT ADDRESS]
                     </p>
                 </div>
             </div>
@@ -672,13 +929,53 @@
                 </button>
                 <!-- alert image yellow triangle with ! sign -->
                 <div class="comingsoon__image">
-                    <img src="." alt="alert-img" class="comingsoon__image--symbol">
+                    <img src="./Ploranza-assets/dropdownmenu-images/alert.png" alt="alert-img" class="comingsoon__image--symbol">
                 </div>
                 <!-- info -->
                 <div class="comingsoon__text">Sorry, this feature is not available now.</div>
                 <!-- ok button -->
                 <button class="comingsoon__ok">Ok</button>
             </div>
+            <!-- signed in successfully popup window -->
+            <div class="signed hidden">
+                <!-- x button -->
+                <button class="signed__cross">
+                    <i class="fa-solid fa-xmark fa-1x"></i>
+                </button>
+                <!-- alert image green verified with check sign -->
+                <div class="signed__image">
+                    <img src="./Ploranza-assets/dropdownmenu-images/success.png" alt="success-img" class="signed__image--symbol">
+                </div>
+                <!-- info -->
+                <div class="signed__text">You are signed in successfully.</div>
+                <!-- ok button -->
+                <button class="signed__ok">Ok</button>
+            </div>
+            <!-- registration completed popup window -->
+            <div class="registered hidden">
+                <!-- x button -->
+                <button class="registered__cross">
+                    <i class="fa-solid fa-xmark fa-1x"></i>
+                </button>
+                <!-- alert image green verified with check sign -->
+                <div class="registered__image">
+                    <img src="./Ploranza-assets/dropdownmenu-images/success.png" alt="success-img" class="registered__image--symbol">
+                </div>
+                <!-- info -->
+                <div class="registered__text">Registration is completed.</div>
+                <!-- ok button -->
+                <button class="registered__ok">Ok</button>
+            </div>
+            <!-- loading animation with own dark overlay -->
+            <div class="loading hidden">
+                <div class="loading__animation">
+                    <img class="loading__animation--svg" 
+                    src="./Ploranza-assets/dropdownmenu-images/loadingRound.png" 
+                    alt="loading">
+                </div>
+            </div>
+            <!-- unvisible overlay window popup for userpanel dropdown -->
+            <div class="overlay-iv hidden"></div>
         </section>
         <!-- •| #(POP-UP WINDOW LAYERS) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->

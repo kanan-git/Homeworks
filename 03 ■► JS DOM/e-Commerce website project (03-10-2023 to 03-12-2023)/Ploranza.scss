@@ -69,7 +69,7 @@
         cursor: pointer;
     }
     body {
-        background: var(--bgColor);
+        background: var(--bodyCLR);
     }
 }
 // •| #(ZEROINGS) end |◄◄◄◄◄◄◄◄◄◄
@@ -92,19 +92,32 @@
     box-sizing: border-box;
     border: 1px solid var(--highlightColor);
 }
+@mixin nav-slots {
+    visibility: visible;
+    z-index: 9;
+    opacity: 1.0;
+    transform: translate(-50%, 0%);
+    transition: $ease-fx;
+}
 // •| #(@MIXINS FOR @INCLUDE CALLS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HEADER) start |•
 #header {
+    z-index: 10;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 1423px;
     // @include test-border;
     // background: var(--bgColor);
     @include df-center;
     flex-direction: column;
     .header {
-        margin-top: 20px;
+        // margin-top: 20px;
         box-sizing: border-box;
         // border: 1px solid yellow;
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 60px;
         background: var(--gradBG);
         display: flex;
@@ -140,7 +153,7 @@
             &--find {
                 position: absolute;
                 top: 50%;
-                left: 83%;
+                left: 79%;
                 transform: translate(-50%, -50%);
                 width: 40px;
                 height: 40px;
@@ -197,6 +210,11 @@
                 top: 100%;
                 right: 0%;
                 @include df-center;
+                visibility: visible;
+                z-index: 9;
+                opacity: 1.0;
+                // transform: translate(0%, 0%);
+                transition: $ease-fx;
                 &_column {
                     @include df-center;
                     flex-direction: column;
@@ -253,18 +271,48 @@
                     }
                     &-cart {
                         cursor: pointer;
+                        a {
+                            transition: $ease-fx;
+                            &:hover {
+                                color: var(--hoverColor);
+                            }
+                        }
                     }
                     &-fav {
                         cursor: pointer;
+                        a {
+                            transition: $ease-fx;
+                            &:hover {
+                                color: var(--hoverColor);
+                            }
+                        }
                     }
                     &-pref {
                         cursor: pointer;
+                        a {
+                            transition: $ease-fx;
+                            &:hover {
+                                color: var(--hoverColor);
+                            }
+                        }
                     }
                     &-logout {
                         cursor: pointer;
+                        a {
+                            transition: $ease-fx;
+                            &:hover {
+                                color: var(--hoverColor);
+                            }
+                        }
                     }
                     &-signin {
                         cursor: pointer;
+                        a {
+                            transition: $ease-fx;
+                            &:hover {
+                                color: var(--hoverColor);
+                            }
+                        }
                     }
                 }
             }
@@ -297,7 +345,12 @@
     font-size: 28px;
 }
 #breadcrumb {
-    margin-top: 10px;
+    z-index: 8;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     @include df-center();
     // background: var(--bgColor);
     // width: 100%;
@@ -307,7 +360,8 @@
         // @include test-border;
         box-sizing: border-box;
         overflow: hidden;
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 24px;
         font-size: 14px;
         display: flex;
@@ -322,7 +376,12 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(NAVIGATION BAR) start |•
 #nav {
-    margin-top: 10px;
+    z-index: 9;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     // @include test-border;
     // background: var(--bgColor);
     @include df-center();
@@ -332,7 +391,8 @@
         border: none;
         // border-top: 1px solid var(--defaultColor);
         // border: 1px solid yellow;
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 30px;
         background: var(--gradBG);
         display: flex;
@@ -348,6 +408,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .woman {
+                @include nav-slots();
+            }
         }
         &__man {
             // @include test-border;
@@ -357,6 +420,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .man {
+                @include nav-slots();
+            }
         }
         &__kid {
             // @include test-border;
@@ -366,6 +432,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .kid {
+                @include nav-slots();
+            }
         }
         &__accessories {
             // @include test-border;
@@ -375,6 +444,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .accessories {
+                @include nav-slots();
+            }
         }
         &__electronics {
             // @include test-border;
@@ -384,6 +456,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .electronics {
+                @include nav-slots();
+            }
         }
         &__sport {
             // @include test-border;
@@ -393,6 +468,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .sport {
+                @include nav-slots();
+            }
         }
         &__furniture {
             // @include test-border;
@@ -402,6 +480,9 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .furniture {
+                @include nav-slots();
+            }
         }
         &__software {
             // @include test-border;
@@ -411,20 +492,31 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+            &:hover ~ .software {
+                @include nav-slots();
+            }
         }
         &__dropdown {
-            z-index: 9;
-            border: 1px solid var(--defaultColor);
+            border: 1px solid rgbar(128,128,128);
             box-sizing: border-box;
-            background-color: tan;
-            width: 1250px;
+            background: var(--bgColor);
+            // width: 1250px;
+            width: 1350px;
             height: 350px;
             position: absolute;
             top: 100%;
-            left: 0%;
+            left: 50%;
             display: flex;
             justify-content: center;
             padding: 20px;
+            visibility: hidden;
+            z-index: 8;
+            opacity: 0.0;
+            transform: translate(-50%, -100%);
+            transition: $ease-fx;
+            &:hover {
+                @include nav-slots();
+            }
             &--categories {
                 display: flex;
                 justify-content: space-between;
@@ -443,6 +535,12 @@
                         font-size: 16px;
                         &:not(:last-of-type) {
                             margin-bottom: 5px;
+                        }
+                        a {
+                            transition: $ease-fx;
+                            &:hover {
+                                color: var(--hoverColor);
+                            }
                         }
                     }
                 }
@@ -495,14 +593,19 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HOMEPAGE | SECTION 1 CAROUSEL) start |•
 #section1-categories {
-    margin-top: 10px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
     // background: var(--bgColor);
     position: relative;
     .section1-carousels {
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 550px;
         box-sizing: border-box;
         // border: 1px solid red;
@@ -517,7 +620,8 @@
             width: 100%;
             height: 100%;
             &--image {
-                width: 1250px;
+                // width: 1250px;
+                width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
@@ -610,13 +714,18 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 2 EXPLORE POPULAR CATEGORIES) start |•
 #section2-exppopcateg {
-    margin-top: 10px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
     // background: var(--bgColor);
     .section2-exppopcateg {
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 400px;
         box-sizing: border-box;
         // border: 1px solid red;
@@ -668,13 +777,18 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 3 TOP SELL BOOKS) start |•
 #section3-topsellbooks {
-    margin-top: 10px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
     // background: var(--bgColor);
     .section3-topsellbooks {
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 600px;
         box-sizing: border-box;
         // border: 1px solid red;
@@ -719,13 +833,18 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 4 EXPLORE POPULAR BRANDS) start |•
 #section4-exppopbrands {
-    margin-top: 10px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
     // background: var(--bgColor);
     .section4-exppopbrands {
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         height: 400px;
         box-sizing: border-box;
         // border: 1px solid red;
@@ -777,7 +896,11 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(FOOTER AND BOTTOM) start |•
 #footer {
-    margin-top: 10px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 4px;
+    width: 1423px;
     // @include test-border;
     // background: var(--bgColor);
     display: flex;
@@ -787,7 +910,8 @@
     .footer {
         box-sizing: border-box;
         // border: 1px solid yellow;
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         background-color: $footer-bg;
         height: 230px;
         display: flex;
@@ -836,12 +960,13 @@
         }
     }
     .bottom {
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
         padding: 15px 0;
         box-sizing: border-box;
         // border: 1px solid yellow;
         border-top: 1px solid $darkmode-hlf_border;
-        width: 1250px;
+        // width: 1250px;
+        width: 100%;
         background-color: $bottom-bg;
         height: 50px;
         display: flex;
@@ -872,6 +997,7 @@
     // @include test-border;
     // dark overlay bg for alert popups
     .overlay-bolder {
+        z-index: 12;
         position: fixed;
         width: 100%;
         height: 100%;
@@ -893,6 +1019,7 @@
     }
     // privacy policies
     .privacypolicy {
+        z-index: 999;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -926,10 +1053,14 @@
     }
     // terms and conditions
     .termsofuse {
+        z-index: 999;
         position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        visibility: visible;
+        transition: $slow-fx;
+        transform: translate(-50%, -50%) rotateZ(0deg);
+        opacity: 1.0;
         border: 1px solid rgb(128,128,128);
         background-color: rgb(255,255,255);
         width: 450px;
@@ -959,6 +1090,7 @@
     }
     // unavailable feature alert
     .comingsoon {
+        z-index: 13;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -1304,11 +1436,19 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(ABOUT US) start |•
 #aboutus {
+    z-index: 8;
+    margin-top: 4px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .aboutus {
+        width: 100%;
+        background-color: var(--bgColor);
         &__header {}
         &__description {}
         &__gallery {
@@ -1322,11 +1462,19 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(F-A-Q) start |•
 #faq {
+    z-index: 8;
+    margin-top: 4px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .faq {
+        width: 100%;
+        background-color: var(--bgColor);
         &__header {}
         &__aandq {
             &--questions {}
@@ -1339,11 +1487,19 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(LOCATIONS) start |•
 #locations {
+    z-index: 8;
+    margin-top: 4px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 1423px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
-    background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
+    // background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .locations {
+        width: 100%;
+        background-color: var(--bgColor);
         &__header {}
         &__description {}
         &__map {
@@ -1356,8 +1512,16 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(PRODUCTS PAGINATION PAGE) start |•
 #pages_of_products {
+    z-index: 8;
+    margin-top: 4px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 1423px;
     @include test-border;
     .top_panel {
+        width: 100%;
+        background-color: var(--bgColor);
         &__filtersbtn {}
         &__tags {}
         &__viewbtns {
@@ -1370,6 +1534,7 @@
         }
     }
     .filters_panel {
+        background-color: var(--bgColor);
         &--byprice {
             &_header {}
             &_value {}
@@ -1383,6 +1548,7 @@
         }
         &--reset {}
     }
+    background-color: var(--bgColor);
     .container {
         &__header {}
         &__cards {
@@ -1416,6 +1582,12 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(CHOOSEN ITEM PAGE) start |•
 #productpage {
+    z-index: 8;
+    margin-top: 4px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 1423px;
     @include test-border;
     .productpage__images {
         &--activebig {}
@@ -1477,7 +1649,22 @@
 // ►►►►►►►►►►| #(EXTRA CLASSES) start |•
 // hiding HTML elements
 .hidden {
+    transition: $slow-fx;
+    opacity: 0.0;
     display: none !important;
+}
+.invisible {
+    visibility: hidden !important;
+    z-index: 8 !important;
+    opacity: 0.0 !important;
+    transform: translate(0%, -100%) !important;
+    transition: $ease-fx !important;
+}
+.invisible-v2 {
+    visibility: hidden !important;
+    transition: $slow-fx !important;
+    transform: translate(-50%, -50%) rotateZ(-15deg) !important;
+    opacity: 0.0 !important;
 }
 // •| #(EXTRA CLASSES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►

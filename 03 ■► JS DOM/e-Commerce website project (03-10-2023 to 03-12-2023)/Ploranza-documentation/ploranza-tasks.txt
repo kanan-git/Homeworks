@@ -1,57 +1,42 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-•=> Ploranza (HTML, CSS, JS) | March 15, 2023
+Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V)
 
-- transition effects on dropdown menus
-- if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, cart
-+ signed successfully, registration completed popup windows
-- wrong login or password <p> alert, required to all slot
+- if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, cart, 
+signed / guest mode
+- call signed successfully, registration completed popup windows when is active their buttons, first remove hidden class, 
+then add setTimeout to close in 1000 microsecond
+- wrong login or password <p> alert, required to all slot, red colored position absolute top texts, also try label holder 
+lines
 - header search function
-- header this feature is unavailable now alert popup to language bar, setTimeOut alert popup with blur overlay
-- header userpanel click 4 dropdown
-- edit color values of all sections, all elements as var(--value) from rgb(123,123,123) for light/dark mode (SCSS, JS)
-- header dropdown enable/disable dark mode
-- header #id and .class backgrounds (CSS)
 - auth page input fill requirements algorithm
 - auth page sign in / register algorithms
 - auth page go back homepage button
-- auth page background (CSS)
+~ auth page background (CSS)
 - log out and reload page function
-- header signed id / guest modes
-- dark/light & guest/id, save to localStorage
-- breadcrumb algorithm
-- beadcrumb #id & .class backgrounds (CSS)
-- navbar on hover open dropdowns
-- navbar dropdowns images (CSS)
-- navbar #id and .class backgrounds (CSS)
-- footer links
-- footer #id and .class backgrounds (CSS)
-- bottom policies and terms
+~ dark/light & noDataGuest/signedId, save to localStorage
+~ breadcrumb algorithm 1 (homepage "Homepage", products pagination "+/Products", shopping product page "++/Shopping")
+~ breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
+~ breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
+~ breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
+- navbar dropdown images download, add (CSS)
 - section1 carousel & radio buttons
-- section1 #id & .class backgrounds (CSS)
-- section 2 & 4 image and titles (CSS)
 - section 2 & 4 feature search with owned tags
-- section 2 & 4 backgrounds (CSS)
-- locations page fake location image
-- locations page (CSS)
-- about us (CSS)
-- FAQ link and background (CSS)
+- locations page fake location image or yandex API for location map
 - product page title, img, price ... from object data to slots with textContent
-- product page breadcrumb
 - pagination page buttons function, next, prev
-- pagination cards grid/list cards design (CSS)
-- pagination cards generate in JS with obj data, with JS objects array and createElement+innerHTML, generate
+- pagination cards grid/list cards design (CSS), test both version before
+- pagination cards generate in JS with obj data, with JS objects array and createElement + innerHTML, generate
 - pagination filtering system
 - pagination top panel entered tags, buttons, sorting function
 - pagination check reset button
-- fix all sections zoomin static width issue
-- change language function, first research
 
-► copy footer, nav, popups, footer, breadcrumb, scrolltopbtn, mobile menu btn - copy to all pages
-► insert static image pathes to source
+► copy footer, nav, popups, footer, breadcrumb, scrolltopbtn, mobile menu btn - copy to all pages when they are ready*
+► insert static image pathes to source, ALL
 ► download product images, bg and etc from https://yandex.com/images
 ► replace "available links" on their "#" slots
-► insert all links, all images (fetch url or folder path), save light/dark mode to localStorage
+► insert all links, all images (folder path), save light/dark mode to localStorage
 ► media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
 
+■ zoom in responsivity not required, fix zoomout issiu and max width with media tags at least
 ■ check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
