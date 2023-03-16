@@ -21,7 +21,7 @@ lines
 ~ breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
 ~ breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
 - navbar dropdown images download, add (CSS)
-- section1 carousel & radio buttons
+~ section1 carousel & radio buttons
 - section 2 & 4 feature search with owned tags
 - locations page fake location image or yandex API for location map
 - product page title, img, price ... from object data to slots with textContent
