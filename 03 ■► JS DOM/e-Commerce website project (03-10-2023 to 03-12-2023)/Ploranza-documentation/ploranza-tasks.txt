@@ -1,6 +1,8 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V)
 
+► download product images, bg and etc from https://yandex.com/images, insert static image pathes to source, ALL
+
 - if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, cart, 
 signed / guest mode
 - call signed successfully, registration completed popup windows when is active their buttons, first remove hidden class, 
@@ -13,7 +15,7 @@ lines
 - auth page go back homepage button
 ~ auth page background (CSS)
 - log out and reload page function
-~ dark/light & noDataGuest/signedId, save to localStorage
+~ dark/light & noDataGuest/signedId, save to localStorage, reload page issue fix with algorith (JS)
 ~ breadcrumb algorithm 1 (homepage "Homepage", products pagination "+/Products", shopping product page "++/Shopping")
 ~ breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
 ~ breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
@@ -30,13 +32,7 @@ lines
 - pagination top panel entered tags, buttons, sorting function
 - pagination check reset button
 
-► copy footer, nav, popups, footer, breadcrumb, scrolltopbtn, mobile menu btn - copy to all pages when they are ready*
-► insert static image pathes to source, ALL
-► download product images, bg and etc from https://yandex.com/images
-► replace "available links" on their "#" slots
-► insert all links, all images (folder path), save light/dark mode to localStorage
-► media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
+■ media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
 
-■ zoom in responsivity not required, fix zoomout issiu and max width with media tags at least
-■ check is it done or not
+* zoom in responsivity not required, fix zoomout issiu & max width with media tags at least, aslo check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

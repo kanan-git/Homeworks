@@ -62,6 +62,7 @@ function isSwitched() {
         document.documentElement.style.setProperty("--containBGv1", "linear-gradient(to right, rgb(255,255,0), rgb(255,128,0))")
         document.documentElement.style.setProperty("--containBGv2", "linear-gradient(to right, rgb(0,255,255), rgb(0,128,255))")
         document.documentElement.style.setProperty("--otherPagesBG", "linear-gradient(to top, rgb(0,32,255), rgb(0,128,0), rgb(0,32,255))")
+        localStorage.setItem("visualMode", "lightmode")
     } else {
         // setup for dark mode
         switchLDmodes.classList.add("checked")
@@ -77,6 +78,7 @@ function isSwitched() {
         document.documentElement.style.setProperty("--containBGv1", "linear-gradient(to right, rgb(255,0,128), rgb(255,0,0))")
         document.documentElement.style.setProperty("--containBGv2", "linear-gradient(to right, rgb(0,128,0), rgb(0,0,255))")
         document.documentElement.style.setProperty("--otherPagesBG", "linear-gradient(to top, rgb(48,48,48), rgb(96,96,96), rgb(48,48,48))")
+        localStorage.setItem("visualMode", "darkmode")
     }
 }
 isSwitched() // first call makes dark mode

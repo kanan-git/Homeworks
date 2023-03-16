@@ -25,7 +25,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,7 +269,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,7 +295,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -537,7 +537,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -654,7 +654,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -714,7 +714,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -769,7 +769,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -828,7 +828,7 @@
   transform: translateX(-50%);
   left: 50%;
   margin-top: 4px;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1324,6 +1324,7 @@
 }
 
 #section-auth {
+  width: 1424px;
   box-sizing: border-box;
   border: 1px solid var(--highlightColor);
 }
@@ -1333,7 +1334,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1349,7 +1350,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1365,7 +1366,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 1423px;
+  width: 1424px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1381,7 +1382,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 1423px;
+  width: 1424px;
   box-sizing: border-box;
   border: 1px solid var(--highlightColor);
   background-color: var(--bgColor);
@@ -1399,7 +1400,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 1423px;
+  width: 1424px;
   box-sizing: border-box;
   border: 1px solid var(--highlightColor);
 }
