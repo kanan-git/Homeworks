@@ -942,6 +942,7 @@
                 font-size: 16px; // font-size 16px for all text
                 width: fit-content;
                 a {
+                    cursor: pointer;
                     color: $footer-link_crl;
                 }
                 &:not(:last-of-type) {
@@ -985,6 +986,7 @@
             display: flex;
             justify-content: space-between;
             a {
+                cursor: pointer;
                 color: $bottom-link_crl;
             }
         }
@@ -1023,6 +1025,10 @@
         position: fixed;
         top: 50%;
         left: 50%;
+        visibility: visible;
+        transition: $slow-fx;
+        transform: translate(-50%, -50%) rotateZ(0deg);
+        opacity: 1.0;
         transform: translate(-50%, -50%);
         border: 1px solid rgb(128,128,128);
         background-color: rgb(255,255,255);

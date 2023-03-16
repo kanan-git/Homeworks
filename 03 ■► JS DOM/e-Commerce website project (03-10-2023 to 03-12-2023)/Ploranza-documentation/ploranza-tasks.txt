@@ -1,38 +1,41 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V)
 
-► download product images, bg and etc from https://yandex.com/images, insert static image pathes to source, ALL
+- 01 download product images, bg and etc from https://yandex.com/images, insert static image pathes to source, ALL
++ 02 add transition to terms (copy from policy)
++ 03 to fix scroll top issue on click links, remove href="#" from terms, policy and unavailable links
+- 04 auth page background, complete design (CSS)
++ 05 breadcrumb algorithm 1 (homepage "Homepage", products pagination "+/Products", shopping product page "++/Shopping")
++ 06 breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
++ 07 breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
++ 08 breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
+- 09 section 1 carousel & radio buttons, left and right buttons position on relative container
+- 10 navbar dropdown images download, add (CSS)
+- 11 complete design of aboutus, faq, locations, productpage, pagination (HTML, CSS, JS)
+- 12 auth page input fill requirements algorithm, required add to html (HTML, JS)
+- 13 auth page sign in / register algorithms, link pop-ups too
+- 14 call signed successfully, registration completed popup windows when is active their buttons, first remove hidden 
+class, then add setTimeout to close in 1000 microsecond
++ 15 auth page go back homepage button add link
+- 16 wrong login or password <p> alert, required to all slot, red colored position absolute top texts, also try label 
+holder lines
+- 17 dark/light & noDataGuest/signedId, save to localStorage, reload page issue fix with algorith (JS)
+- 18 pagination cards generate in JS with obj data, with JS objects array and createElement + innerHTML, generate
+- 19 pagination cards grid/list cards design (CSS), test both version before
+- 20 if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, 
+cart, signed / guest mode
+- 21 pagination page buttons function, next, prev
+- 22 pagination top panel entered tags, buttons
+- 23 pagination page sorting function
+- 24 product page title, img, price ... from object data to slots with textContent
+- 25 locations page fake location image or yandex API for location map
+- 26 log out and reload page function
+- 27 section 2 & 4 feature search with owned tags
+- 28 header search function
+- 29 pagination filtering system
+- 30 pagination check reset filters and reload button
+- 31 media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
 
-- if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, cart, 
-signed / guest mode
-- call signed successfully, registration completed popup windows when is active their buttons, first remove hidden class, 
-then add setTimeout to close in 1000 microsecond
-- wrong login or password <p> alert, required to all slot, red colored position absolute top texts, also try label holder 
-lines
-- header search function
-- auth page input fill requirements algorithm
-- auth page sign in / register algorithms
-- auth page go back homepage button
-~ auth page background (CSS)
-- log out and reload page function
-~ dark/light & noDataGuest/signedId, save to localStorage, reload page issue fix with algorith (JS)
-~ breadcrumb algorithm 1 (homepage "Homepage", products pagination "+/Products", shopping product page "++/Shopping")
-~ breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
-~ breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
-~ breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
-- navbar dropdown images download, add (CSS)
-~ section1 carousel & radio buttons
-- section 2 & 4 feature search with owned tags
-- locations page fake location image or yandex API for location map
-- product page title, img, price ... from object data to slots with textContent
-- pagination page buttons function, next, prev
-- pagination cards grid/list cards design (CSS), test both version before
-- pagination cards generate in JS with obj data, with JS objects array and createElement + innerHTML, generate
-- pagination filtering system
-- pagination top panel entered tags, buttons, sorting function
-- pagination check reset button
-
-■ media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
-
+* copy design for main menu mobile button from go to homepage button
 * zoom in responsivity not required, fix zoomout issiu & max width with media tags at least, aslo check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

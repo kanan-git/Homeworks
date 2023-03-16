@@ -871,6 +871,7 @@
   width: fit-content;
 }
 #footer .footer__columns--lists a {
+  cursor: pointer;
   color: rgb(255, 255, 255);
 }
 #footer .footer__columns--lists:not(:last-of-type) {
@@ -908,6 +909,7 @@
   justify-content: space-between;
 }
 #footer .bottom__conditions a {
+  cursor: pointer;
   color: rgb(255, 255, 255);
 }
 
@@ -937,6 +939,10 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  visibility: visible;
+  transition: linear 0.35s;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  opacity: 1;
   transform: translate(-50%, -50%);
   border: 1px solid rgb(128, 128, 128);
   background-color: rgb(255, 255, 255);

@@ -41,6 +41,8 @@ const unSerCar = document.querySelector(".career")
 const unSerCnt = document.querySelector(".contact")
 const unSerSell = document.querySelector(".sellinpol")
 const unSerTuse = document.querySelector(".tuse")
+// breadcrumb algoritm variable
+const breadcrumb = document.querySelector(".breadcrumb")
 // .
 
 // •| #(VARIABLE HTML/BODY) end |◄◄◄◄◄◄◄◄◄◄
@@ -344,6 +346,15 @@ termsbuttonCross.addEventListener("click", () => {
     overlayBlurbg.classList.add("hidden")
 })
 // •| #(POP-UP WINDOWS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(BREADCRUMB ALGORITHYM) start |•
+// function breadcrumbLinks() {
+//     let a = "Test 123"
+//     breadcrumb.innerHTML = `
+//     <a href="#">Homepage</a>
+//     `
+// }
+// •| #(BREADCRUMB ALGORITHYM) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SIGN IN FORM) start |•
 // signed.classList.add("hidden")
