@@ -1,21 +1,11 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V)
+Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V) | TODO
 
-► 01 download product images, bg and etc from https://yandex.com/images, insert static image pathes to source, ALL
-► 04 auth page background, complete design (CSS) + fix not using javascript issue
-► 14 call signed successfully, registration completed popup windows when is active their buttons, first remove hidden 
-class, then add setTimeout to close in 1000 microsecond
-
-- 09 section 1 carousel & radio buttons, left and right buttons position on relative container
-- 10 navbar dropdown images download, add (CSS)
-- 11 complete design of aboutus, faq, locations, productpage, pagination, change section z-index layer (HTML, CSS, JS)
-- 12 auth page input fill requirements algorithm, required add to html (HTML, JS)
-- 13 auth page sign in / register algorithms, link pop-ups too, put signin/up data on an object
 - 16 wrong login or password <p> alert, required to all slot, red colored position absolute top texts, also try label 
 holder lines
 - 17 dark/light & noDataGuest/signedId, save to localStorage, reload page issue fix with algorith (JS)
 - 18 pagination cards generate in JS with obj data, with JS objects array and createElement + innerHTML, generate
-- 19 pagination cards grid/list cards design (CSS), test both version before
+- 19 pagination cards grid/list cards design (CSS), test both version before, add no image, with BG-CLR + Text "IMAGE"
 - 20 if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, 
 cart, signed / guest mode
 - 21 pagination page buttons function, next, prev
@@ -33,13 +23,25 @@ cart, signed / guest mode
 * copy design for main menu mobile button from go to homepage button
 * zoom in responsivity not required, fix zoomout issiu & max width with media tags at least, aslo check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Work In Progress
+
+► 09 section 1 carousel & radio buttons, left and right buttons position on relative container
+► 11 complete design of aboutus, faq, locations, productpage, pagination, change section z-index layer (HTML, CSS, JS)
+► 13 auth page sign in / register algorithms, link pop-ups too, put signin/up data on an object
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Done
 
++ 01 download product images, bg and etc from https://yandex.com/images, insert static image pathes to source, ALL
 + 02 add transition to terms (copy from policy)
 + 03 to fix scroll top issue on click links, remove href="#" from terms, policy and unavailable links
++ 04 auth page background, complete design (CSS) + fix not using javascript issue
 + 05 breadcrumb algorithm 1 (homepage "Homepage", products pagination "+/Products", shopping product page "++/Shopping")
 + 06 breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
 + 07 breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
 + 08 breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
++ 10 navbar dropdown images download, add (CSS), copy nav to all html files again
++ 12 auth page input fill requirements algorithm, required add to html (HTML, JS)
+x 14 call signed successfully, registration completed popup windows when is active their buttons, first remove hidden 
+class, then add setTimeout to close in 1000 microsecond
 + 15 auth page go back homepage button add link
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

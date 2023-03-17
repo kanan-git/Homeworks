@@ -255,7 +255,7 @@
   bottom: 30px;
   right: 30px;
   box-sizing: border-box;
-  border: 1px solid var(--highlightColor);
+  border: 1px solid red;
   width: 70px;
   height: 40px;
   border-radius: 20px;
@@ -924,6 +924,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 #popups .overlay-blurbg {
+  z-index: 12;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -1283,6 +1284,7 @@
   transition: var(--slow-fx);
 }
 #popups .loading {
+  z-index: 12;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1331,7 +1333,7 @@
 
 #section-auth {
   box-sizing: border-box;
-  border: 1px solid var(--highlightColor);
+  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1341,7 +1343,7 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  background: linear-gradient(to right, rgb(0, 128, 255), rgb(0, 0, 255), rgb(0, 128, 255));
+  filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
 }
 #section-auth .section-auth__gobackhome {
   z-index: 20;
@@ -1361,10 +1363,10 @@
   transition: ease-in-out 0.2s;
 }
 #section-auth .section-auth__gobackhome:hover {
-  border: 2px solid rgb(255, 255, 0);
-  background: radial-gradient(rgb(255, 255, 255), rgb(255, 255, 0));
-  color: rgb(255, 255, 255);
-  filter: drop-shadow(0px 0px 15px rgb(255, 255, 0));
+  border: 2px solid rgb(255, 255, 255);
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  color: rgb(16, 16, 16);
+  filter: drop-shadow(0px 0px 20px rgb(255, 255, 255)) brightness(5) contrast(1.1);
 }
 #section-auth .section-auth__buttons {
   border: 1px solid rgb(128, 128, 128);
@@ -1428,6 +1430,7 @@
   row-gap: 5px;
   width: 100%;
   margin-left: 20px;
+  transition: ease-in-out 0.2s;
 }
 #section-auth .section-auth__container--login_email {
   font-size: 20px;
@@ -1490,6 +1493,7 @@
   flex-direction: column;
   row-gap: 5px;
   position: relative;
+  transition: ease-in-out 0.2s;
 }
 #section-auth .section-auth__container--register_name {
   font-size: 20px;
@@ -1644,12 +1648,13 @@
 }
 
 #aboutus {
-  z-index: 8;
+  z-index: 5;
   margin-top: 4px;
   position: relative;
   transform: translateX(-50%);
   left: 50%;
   width: 1424px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1657,8 +1662,43 @@
 }
 #aboutus .aboutus {
   width: 100%;
+  height: 100%;
   background-color: var(--bgColor);
+  box-sizing: border-box;
+  padding: 40px;
 }
+#aboutus .aboutus__header {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+#aboutus .aboutus__description {
+  border: 1px solid yellowgreen;
+}
+#aboutus .aboutus__gallery {
+  margin-top: 40px;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#aboutus .aboutus__gallery--imgcards {
+  box-sizing: border-box;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 8px;
+  width: 340px;
+  height: 200px;
+  overflow: hidden;
+}
+#aboutus .aboutus__gallery--imgcards_image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #faq {
   z-index: 8;
   margin-top: 4px;
@@ -1699,7 +1739,7 @@
   left: 50%;
   width: 1424px;
   box-sizing: border-box;
-  border: 1px solid var(--highlightColor);
+  border: 1px solid red;
   background-color: var(--bgColor);
 }
 #pages_of_products .top_panel {
@@ -1717,7 +1757,7 @@
   left: 50%;
   width: 1424px;
   box-sizing: border-box;
-  border: 1px solid var(--highlightColor);
+  border: 1px solid red;
 }
 .hidden {
   transition: linear 0.35s;

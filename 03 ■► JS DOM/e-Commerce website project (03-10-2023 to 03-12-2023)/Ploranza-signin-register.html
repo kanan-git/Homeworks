@@ -45,7 +45,7 @@
             <!-- switch between login or register container -->
             <div class="section-auth__container">
                 <!-- sign in panel -->
-                <form class="section-auth__container--login" action="#" method="post">
+                <form class="section-auth__container--login" method="post"> <!-- action="#" -->
                     <!-- email -->
                     <label for="login--email" class="section-auth__container--login_email">
                         Email:
@@ -64,7 +64,7 @@
                     <a href="#" class="login--recoverid">Forgot username or password.</a>
                 </form>
                 <!-- sign up panel -->
-                <form class="section-auth__container--register hidden" action="#" method="post">
+                <form class="section-auth__container--register hidden" method="post"> <!-- action="#" -->
                     <!-- <fieldset>
                         <legend>TEST</legend>
                         Name: <input type="text">
@@ -205,8 +205,43 @@
         <!-- •| #(SECTION - AUTHENTICATION) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(JAVASCRIPT LINK) start |• -->
-        <script src="./Ploranza.js"></script>
+        <script src="./Ploranza-signin-register.js"></script>
         <!-- •| #(JAVASCRIPT LINK) end |◄◄◄◄◄◄◄◄◄◄ -->
+        <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
+        <!-- ►►►►►►►►►►| #(POP-UP WINDOW LAYERS) start |• -->
+        <section id="popups">
+            <!-- signed in successfully popup window -->
+            <div class="signed hidden">
+                <!-- x button -->
+                <button class="signed__cross">
+                    <i class="fa-solid fa-xmark fa-1x"></i>
+                </button>
+                <!-- alert image green verified with check sign -->
+                <div class="signed__image">
+                    <img src="./Ploranza-assets/dropdownmenu-images/success.png" alt="success-img" class="signed__image--symbol">
+                </div>
+                <!-- info -->
+                <div class="signed__text">You are signed in successfully.</div>
+                <!-- ok button -->
+                <button class="signed__ok">Ok</button>
+            </div>
+            <!-- registration completed popup window -->
+            <div class="registered hidden">
+                <!-- x button -->
+                <button class="registered__cross">
+                    <i class="fa-solid fa-xmark fa-1x"></i>
+                </button>
+                <!-- alert image green verified with check sign -->
+                <div class="registered__image">
+                    <img src="./Ploranza-assets/dropdownmenu-images/success.png" alt="success-img" class="registered__image--symbol">
+                </div>
+                <!-- info -->
+                <div class="registered__text">Registration is completed.</div>
+                <!-- ok button -->
+                <button class="registered__ok">Ok</button>
+            </div>
+        </section>
+        <!-- •| #(POP-UP WINDOW LAYERS) end |◄◄◄◄◄◄◄◄◄◄ -->
         <!-- ◄◄|==========|==========|==========|==========|==========|==========|►► -->
         <!-- ►►►►►►►►►►| #(TEMPORARY HIDDEN LABEL FOR FONTAWESOME ICONS) start |• -->
         <div class="hidden">
