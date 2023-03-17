@@ -99,6 +99,23 @@
     transform: translate(-50%, 0%);
     transition: $ease-fx;
 }
+@mixin auth-inputs {
+    position: absolute;
+    right: 0%;
+    width: 240px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 20px;
+    border: 1px solid rgb(0,0,0);
+    font-size: 14px;
+    &:focus {
+        border: 2px solid rgb(0,0,0);
+        filter: drop-shadow(0px 0px 4px rgb(0,0,0));
+        background-color: rgb(240,240,255);
+    }
+}
 // •| #(@MIXINS FOR @INCLUDE CALLS) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HEADER) start |•
@@ -657,7 +674,7 @@
             accent-color: rgb(16,16,16);
         }
     }
-    .section1-right {
+    .section1-carousels-right {
         position: absolute;
         transform: translate(-50%, -50%);
         width: 80px;
@@ -665,16 +682,16 @@
         font-size: 35px;
         border-radius: 50%;
         top: 50%;
-        left: 12%;
+        left: 7%;
         background-color: rgba(120,120,120,0.2);
         color: rgba(16,16,16,0.2);
         border: 1px solid rgba(16,16,16,0.2);
-        transition: var(--slow-fx);
+        transition: $slow-fx;
         &:hover {
             background-color: rgba(240,240,240,0.9);
             color: rgba(16,16,16,0.9);
             border: 1px solid rgba(16,16,16,0.9);
-            transition: var(--slow-fx);
+            transition: $slow-fx;
         }
         &:active {
             background-color: rgb(16,16,16);
@@ -683,7 +700,7 @@
             transition: linear 0.01s;
         }
     }
-    .section1-left {
+    .section1-carousels-left {
         position: absolute;
         transform: translate(-50%, -50%);
         width: 80px;
@@ -691,16 +708,16 @@
         font-size: 35px;
         border-radius: 50%;
         top: 50%;
-        left: 88%;
+        left: 93%;
         background-color: rgba(120,120,120,0.2);
         color: rgba(16,16,16,0.2);
         border: 1px solid rgba(16,16,16,0.2);
-        transition: var(--slow-fx);
+        transition: $slow-fx;
         &:hover {
             background-color: rgba(240,240,240,0.9);
             color: rgba(16,16,16,0.9);
             border: 1px solid rgba(16,16,16,0.9);
-            transition: var(--slow-fx);
+            transition: $slow-fx;
         }
         &:active {
             background-color: rgb(16,16,16);
@@ -1422,55 +1439,206 @@
         }
     }
     .section-auth__buttons {
-        border: 1px solid red;
-        width: 50%;
+        border: 1px solid rgb(128,128,128);
+        width: 600px;
+        height: 40px;
         background-color: rgb(255,255,255);
-        &--login {}
-        &--register {}
+        box-sizing: border-box;
+        padding: 5px;
+        @include df-center();
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        &--login {
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            color: rgb(0,0,0);
+            padding-top: 5px;
+            margin-right: 50px;
+            &:hover {
+                color: rgb(0,128,255);
+            }
+            &:active {
+                color: rgb(0,128,255);
+            }
+        }
+        &--register {
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            color: rgb(0,0,0);
+            padding-top: 5px;
+            &:hover {
+                color: rgb(0,128,255);
+            }
+            &:active {
+                color: rgb(0,128,255);
+            }
+        }
     }
     .section-auth__container {
-        border: 1px solid red;
-        width: 50%;
+        border: 1px solid rgb(128,128,128);
+        width: 600px;
+        height: 250px; // login 250, register 600 pixels, ajdust with JavaScript
         background-color: rgb(255,255,255);
+        box-sizing: border-box;
+        padding: 20px;
+        @include df-center();
+        position: relative;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         &--login {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            width: 100%;
+            margin-left: 20px;
             &_email {
-                .login--email {}
+                font-size: 20px;
+                .login--email {
+                    position: absolute;
+                    right: 10%;
+                    width: 240px;
+                    height: 30px;
+                    border-radius: 5px;
+                    outline: none;
+                    box-sizing: border-box;
+                    padding: 0 20px;
+                    border: 1px solid rgb(0,0,0);
+                    font-size: 14px;
+                    &:focus {
+                        border: 2px solid rgb(0,0,0);
+                        filter: drop-shadow(0px 0px 4px rgb(0,0,0));
+                        background-color: rgb(240,240,255);
+                    }
+                }
             }
             &_password {
-                .login--password {}
+                font-size: 20px;
+                .login--password {
+                    position: absolute;
+                    right: 10%;
+                    width: 240px;
+                    height: 30px;
+                    border-radius: 5px;
+                    outline: none;
+                    box-sizing: border-box;
+                    padding: 0 20px;
+                    border: 1px solid rgb(0,0,0);
+                    font-size: 14px;
+                    &:focus {
+                        border: 2px solid rgb(0,0,0);
+                        filter: drop-shadow(0px 0px 4px rgb(0,0,0));
+                        background-color: rgb(240,240,255);
+                    }
+                }
             }
-            .login--submit {}
+            .login--submit {
+                font-size: 20px;
+                width: 100%;
+                height: 40px;
+                cursor: pointer;
+                color: rgb(255,255,255);
+                border: 1px solid rgb(255,255,255);
+                background-color: rgb(0,128,255);
+                border-radius: 6px;
+                transition: $ease-fx;
+                &:hover {
+                    background-color: rgb(64,128,255);
+                    filter: drop-shadow(0px 0px 5px rgb(64,128,255));
+                    scale: 1.01;
+                }
+            }
             .login--recoverid {}
         }
         &--register {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            position: relative;
             &_name {
-                .register--name {}
+                font-size: 20px;
+                .register--name {
+                    @include auth-inputs();
+                }
             }
             &_lastname {
-                .register--lastname {}
+                font-size: 20px;
+                .register--lastname {
+                    @include auth-inputs();
+                }
             }
             &_email {
-                .register--email {}
+                font-size: 20px;
+                .register--email {
+                    @include auth-inputs();
+                }
             }
             &_phonenumber {
-                .register--phonenumber {}
+                font-size: 20px;
+                .register--phonenumber {
+                    @include auth-inputs();
+                }
             }
             &_dateofbirth {
-                .mm-dd-yyyy {}
+                font-size: 20px;
+                .mm-dd-yyyy {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    select {
+                        width: 100px;
+                        height: 24px;
+                        border-radius: 4px;
+                        outline: none;
+                    }
+                }
             }
             &_gender {
-                .register--genders {}
+                font-size: 20px;
+                .register--genders {
+                    accent-color: rgb(0,128,255);
+                }
             }
             &_password {
-                .register--password {}
+                font-size: 20px;
+                .register--password {
+                    @include auth-inputs();
+                }
             }
             &_country {
-                .register--country {}
+                font-size: 20px;
+                .register--country {
+                    width: 120px;
+                    height: 24px;
+                    border-radius: 4px;
+                    outline: none;
+                }
             }
             &_terms {
-                .register--terms {}
+                font-size: 20px;
+                .register--terms {
+                    font-size: 16px;
+                }
             }
-            .register--submit {}
+            .register--submit {
+                font-size: 20px;
+                width: 100%;
+                height: 40px;
+                cursor: pointer;
+                color: rgb(255,255,255);
+                border: 1px solid rgb(255,255,255);
+                background-color: rgb(0,128,255);
+                border-radius: 6px;
+                transition: $ease-fx;
+                &:hover {
+                    background-color: rgb(64,128,255);
+                    filter: drop-shadow(0px 0px 5px rgb(64,128,255));
+                    scale: 1.01;
+                }
+            }
         }
     }
 }

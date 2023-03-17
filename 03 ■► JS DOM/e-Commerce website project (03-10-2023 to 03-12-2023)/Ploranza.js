@@ -41,8 +41,15 @@ const unSerCar = document.querySelector(".career")
 const unSerCnt = document.querySelector(".contact")
 const unSerSell = document.querySelector(".sellinpol")
 const unSerTuse = document.querySelector(".tuse")
+const unSerRecID = document.querySelector(".login--recoverid")
 // breadcrumb algoritm variable
 const breadcrumb = document.querySelector(".breadcrumb")
+// authentication panel
+const loginPanelAuth = document.querySelector(".section-auth__container--login")
+const regPanelAuth = document.querySelector(".section-auth__container--register")
+const loginSwitchBtn = document.querySelector(".section-auth__buttons--login")
+const regSwitchBtn = document.querySelector(".section-auth__buttons--register")
+const containerAuth = document.querySelector(".section-auth__container")
 // .
 
 // •| #(VARIABLE HTML/BODY) end |◄◄◄◄◄◄◄◄◄◄
@@ -318,6 +325,7 @@ unSerCar.addEventListener("click", alertComingSoon)
 unSerCnt.addEventListener("click", alertComingSoon)
 unSerSell.addEventListener("click", alertComingSoon)
 unSerTuse.addEventListener("click", alertComingSoon)
+unSerRecID.addEventListener("click", alertComingSoon)
 // •| #(UNAVAILABLE FUNCTIONS /!\ MESSAGE) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(POP-UP WINDOWS) start |•
@@ -356,16 +364,28 @@ termsbuttonCross.addEventListener("click", () => {
 // }
 // •| #(BREADCRUMB ALGORITHYM) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(SIGN IN FORM) start |•
+// ►►►►►►►►►►| #(AUTHENTICATION PAGE DESIGN) start |•
+function switch2Login() {
+    containerAuth.style.height = `250px`
+    loginPanelAuth.classList.remove("hidden")
+    regPanelAuth.classList.add("hidden")
+}
+function switch2Reg() {
+    containerAuth.style.height = `600px`
+    loginPanelAuth.classList.add("hidden")
+    regPanelAuth.classList.remove("hidden")
+}
+loginSwitchBtn.addEventListener("click", switch2Login)
+regSwitchBtn.addEventListener("click", switch2Reg)
+// •| #(AUTHENTICATION PAGE DESIGN) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(SIGN IN & REGISTER FORM) start |•
+
 // signed.classList.add("hidden")
 // signed.classList.remove("hidden")
-// •| #(SIGN IN FORM) end |◄◄◄◄◄◄◄◄◄◄
-// ◄◄|==========|==========|==========|==========|==========|==========|►►
-// ►►►►►►►►►►| #(REGISTER FORM) start |•
-// registered.classList.add("hidden")
-// registered.classList.remove("hidden")
-// •| #(REGISTER FORM) end |◄◄◄◄◄◄◄◄◄◄
-// ◄◄|==========|==========|==========|==========|==========|==========|►►
+
+// •| #(SIGN IN & REGISTER FORM) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(HEADER) start |•
 {}
 // •| #(HEADER) end |◄◄◄◄◄◄◄◄◄◄

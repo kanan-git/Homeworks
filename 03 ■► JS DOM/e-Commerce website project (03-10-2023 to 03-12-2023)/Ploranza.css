@@ -596,7 +596,7 @@
   scale: 1.5;
   accent-color: rgb(16, 16, 16);
 }
-#section1-categories .section1-right {
+#section1-categories .section1-carousels-right {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 80px;
@@ -604,25 +604,25 @@
   font-size: 35px;
   border-radius: 50%;
   top: 50%;
-  left: 12%;
+  left: 7%;
   background-color: rgba(120, 120, 120, 0.2);
   color: rgba(16, 16, 16, 0.2);
   border: 1px solid rgba(16, 16, 16, 0.2);
-  transition: var(--slow-fx);
+  transition: linear 0.35s;
 }
-#section1-categories .section1-right:hover {
+#section1-categories .section1-carousels-right:hover {
   background-color: rgba(240, 240, 240, 0.9);
   color: rgba(16, 16, 16, 0.9);
   border: 1px solid rgba(16, 16, 16, 0.9);
-  transition: var(--slow-fx);
+  transition: linear 0.35s;
 }
-#section1-categories .section1-right:active {
+#section1-categories .section1-carousels-right:active {
   background-color: rgb(16, 16, 16);
   color: rgb(255, 0, 0);
   border: 1px solid rgb(255, 0, 0);
   transition: linear 0.01s;
 }
-#section1-categories .section1-left {
+#section1-categories .section1-carousels-left {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 80px;
@@ -630,19 +630,19 @@
   font-size: 35px;
   border-radius: 50%;
   top: 50%;
-  left: 88%;
+  left: 93%;
   background-color: rgba(120, 120, 120, 0.2);
   color: rgba(16, 16, 16, 0.2);
   border: 1px solid rgba(16, 16, 16, 0.2);
-  transition: var(--slow-fx);
+  transition: linear 0.35s;
 }
-#section1-categories .section1-left:hover {
+#section1-categories .section1-carousels-left:hover {
   background-color: rgba(240, 240, 240, 0.9);
   color: rgba(16, 16, 16, 0.9);
   border: 1px solid rgba(16, 16, 16, 0.9);
-  transition: var(--slow-fx);
+  transition: linear 0.35s;
 }
-#section1-categories .section1-left:active {
+#section1-categories .section1-carousels-left:active {
   background-color: rgb(16, 16, 16);
   color: rgb(255, 0, 0);
   border: 1px solid rgb(255, 0, 0);
@@ -1367,15 +1367,282 @@
   filter: drop-shadow(0px 0px 15px rgb(255, 255, 0));
 }
 #section-auth .section-auth__buttons {
-  border: 1px solid red;
-  width: 50%;
+  border: 1px solid rgb(128, 128, 128);
+  width: 600px;
+  height: 40px;
   background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#section-auth .section-auth__buttons--login {
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  padding-top: 5px;
+  margin-right: 50px;
+}
+#section-auth .section-auth__buttons--login:hover {
+  color: rgb(0, 128, 255);
+}
+#section-auth .section-auth__buttons--login:active {
+  color: rgb(0, 128, 255);
+}
+#section-auth .section-auth__buttons--register {
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  padding-top: 5px;
+}
+#section-auth .section-auth__buttons--register:hover {
+  color: rgb(0, 128, 255);
+}
+#section-auth .section-auth__buttons--register:active {
+  color: rgb(0, 128, 255);
 }
 #section-auth .section-auth__container {
-  border: 1px solid red;
-  width: 50%;
+  border: 1px solid rgb(128, 128, 128);
+  width: 600px;
+  height: 250px;
   background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+#section-auth .section-auth__container--login {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  width: 100%;
+  margin-left: 20px;
+}
+#section-auth .section-auth__container--login_email {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--login_email .login--email {
+  position: absolute;
+  right: 10%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--login_email .login--email:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--login_password {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--login_password .login--password {
+  position: absolute;
+  right: 10%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--login_password .login--password:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--login .login--submit {
+  font-size: 20px;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(0, 128, 255);
+  border-radius: 6px;
+  transition: ease-in-out 0.2s;
+}
+#section-auth .section-auth__container--login .login--submit:hover {
+  background-color: rgb(64, 128, 255);
+  filter: drop-shadow(0px 0px 5px rgb(64, 128, 255));
+  scale: 1.01;
+}
+#section-auth .section-auth__container--register {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  position: relative;
+}
+#section-auth .section-auth__container--register_name {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_name .register--name {
+  position: absolute;
+  right: 0%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--register_name .register--name:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--register_lastname {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_lastname .register--lastname {
+  position: absolute;
+  right: 0%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--register_lastname .register--lastname:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--register_email {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_email .register--email {
+  position: absolute;
+  right: 0%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--register_email .register--email:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--register_phonenumber {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_phonenumber .register--phonenumber {
+  position: absolute;
+  right: 0%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--register_phonenumber .register--phonenumber:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--register_dateofbirth {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_dateofbirth .mm-dd-yyyy {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#section-auth .section-auth__container--register_dateofbirth .mm-dd-yyyy select {
+  width: 100px;
+  height: 24px;
+  border-radius: 4px;
+  outline: none;
+}
+#section-auth .section-auth__container--register_gender {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_gender .register--genders {
+  accent-color: rgb(0, 128, 255);
+}
+#section-auth .section-auth__container--register_password {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_password .register--password {
+  position: absolute;
+  right: 0%;
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+}
+#section-auth .section-auth__container--register_password .register--password:focus {
+  border: 2px solid rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+  background-color: rgb(240, 240, 255);
+}
+#section-auth .section-auth__container--register_country {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_country .register--country {
+  width: 120px;
+  height: 24px;
+  border-radius: 4px;
+  outline: none;
+}
+#section-auth .section-auth__container--register_terms {
+  font-size: 20px;
+}
+#section-auth .section-auth__container--register_terms .register--terms {
+  font-size: 16px;
+}
+#section-auth .section-auth__container--register .register--submit {
+  font-size: 20px;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(0, 128, 255);
+  border-radius: 6px;
+  transition: ease-in-out 0.2s;
+}
+#section-auth .section-auth__container--register .register--submit:hover {
+  background-color: rgb(64, 128, 255);
+  filter: drop-shadow(0px 0px 5px rgb(64, 128, 255));
+  scale: 1.01;
+}
+
 #aboutus {
   z-index: 8;
   margin-top: 4px;

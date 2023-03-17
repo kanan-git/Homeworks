@@ -45,49 +45,60 @@
             <!-- switch between login or register container -->
             <div class="section-auth__container">
                 <!-- sign in panel -->
-                <form class="section-auth__container--login hidden" action="#" method="post">
+                <form class="section-auth__container--login" action="#" method="post">
                     <!-- email -->
                     <label for="login--email" class="section-auth__container--login_email">
                         Email:
                         <input type="email" id="login--email" name="email" placeholder="Enter your email" class="login--email" required>
                     </label>
+                    <br>
                     <!-- password -->
                     <label for="login--password" class="section-auth__container--login_password">
                         Password:
                         <input type="password" id="login--password" name="password" placeholder="Enter your password" class="login--password" required>
                     </label>
+                    <br>
                     <!-- submit for sign in -->
                     <input type="submit" value="Sign in" class="login--submit">
                     <!-- recover id -->
                     <a href="#" class="login--recoverid">Forgot username or password.</a>
                 </form>
                 <!-- sign up panel -->
-                <form class="section-auth__container--register" action="#" method="post">
+                <form class="section-auth__container--register hidden" action="#" method="post">
+                    <!-- <fieldset>
+                        <legend>TEST</legend>
+                        Name: <input type="text">
+                    </fieldset> -->
                     <!-- name -->
                     <label for="register--name" class="section-auth__container--register_name">
                         Name:
                         <input type="text" id="register--name" name="name" placeholder="Your name" class="register--name" required>
                     </label>
+                    <br>
                     <!-- last name -->
                     <label for="register--lastname" class="section-auth__container--register_lastname">
                         Last name:
                         <input type="text" id="register--lastname" name="lastname" placeholder="Your last name" class="register--lastname" required>
                     </label>
+                    <br>
                     <!-- email -->
                     <label for="register--email" class="section-auth__container--register_email">
                         Email address:
                         <input type="email" id="register--email" name="email" placeholder="Your email" class="register--email" required>
                     </label>
+                    <br>
                     <!-- phone number -->
                     <label for="register--phonenumber" class="section-auth__container--register_phonenumber">
                         Phone number:
                         <input type="tel" id="register--phonenumber" name="phonenumber" placeholder="Your phone number" class="register--phonenumber" required>
                     </label>
+                    <br>
                     <!-- date of birth -->
                     <label for="register--dateofbirth" class="section-auth__container--register_dateofbirth">
                         Date of birth:
+                        <br> <br>
                         <span class="mm-dd-yyyy">
-                            Month: <select name="month" id="month">
+                            Month: <select name="month" id="month" required>
                                 <option value="-1">- - -</option>
                                 <option value="january">January</option>
                                 <option value="february">February</option>
@@ -102,7 +113,7 @@
                                 <option value="november">November</option>
                                 <option value="december">December</option>
                             </select>
-                            Day: <select name="day" id="day">
+                            Day: <select name="day" id="day" required>
                                 <option value="-1">- - -</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -136,7 +147,7 @@
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-                            Year: <select name="year" id="year">
+                            Year: <select name="year" id="year" required>
                                 <option value="-1">- - - -</option>
                                 <option value="2023">2023</option>
                                 <option value="2022">2022</option>
@@ -149,6 +160,7 @@
                             </select>
                         </span>
                     </label>
+                    <br>
                     <!-- gender -->
                     <label for="register--gender" class="section-auth__container--register_gender">
                         Gender:
@@ -158,11 +170,13 @@
                             <input type="radio" id="register--gender-ipdnt" name="register--gender"> I prefer don't tell
                         </span>
                     </label>
+                    <br>
                     <!-- password -->
                     <label for="register--password" class="section-auth__container--register_password">
                         Password:
                         <input type="password" id="register--password" name="password" placeholder="Your password" class="register--password" required>
                     </label>
+                    <br>
                     <!-- country -->
                     <label for="register--country" class="section-auth__container--register_country">
                         Country:
@@ -176,11 +190,13 @@
                             <option value="fr">France</option>
                         </select>
                     </label>
+                    <br>
                     <!-- terms and conditions -->
                     <label for="register--terms" class="section-auth__container--register_terms">
-                        <input type="checkbox" id="register--terms" class="register--terms">
+                        <input type="checkbox" id="register--terms" class="register--terms" required>
                         I have read and agree with the terms and conditions:
                     </label>
+                    <br>
                     <!-- submit for sign up -->
                     <input type="submit" value="Sign up" class="register--submit">
                 </form>
