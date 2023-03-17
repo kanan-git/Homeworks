@@ -1,34 +1,29 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V) | TODO
+Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V) | TODO: 14 of 31
 
-- 11 complete design of aboutus+, faq+, locations+, productpage*, pagination*, change section z-index layer (HTML, CSS, JS)
 - 16 wrong login or password <p> alert, required to all slot, red colored position absolute top texts, also try label 
 holder lines
-- 17 dark/light & noDataGuest/signedId, save to localStorage, reload page issue fix with algorith (JS)
 - 18 pagination cards generate in JS with obj data, with JS objects array and createElement + innerHTML, generate
 - 19 pagination cards grid/list cards design (CSS), test both version before, add no image, with BG-CLR + Text "IMAGE"
 - 20 if user signed in, change user profile image and replace options between sign in and log out, preferences, fav, 
-cart, signed / guest mode
+cart, signed / guest mode, save data on localStorage
 - 21 pagination page buttons function, next, prev
 - 22 pagination top panel entered tags, buttons
 - 23 pagination page sorting function
 - 24 product page title, img, price ... from object data to slots with textContent
-- 25 locations page fake location image or yandex API for location map
 - 26 log out and reload page function
 - 27 section 2 & 4 feature search with owned tags
 - 28 header search function
 - 29 pagination filtering system
 - 30 pagination check reset filters and reload button
 - 31 media screen only responsivity setup, zoom in, zoom out and etc issues fix, mobile muttons, etc after JS tasks
-
-* copy design for main menu mobile button from go to homepage button
-* zoom in responsivity not required, fix zoomout issiu & max width with media tags at least, aslo check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Work In Progress
+Work In Progress: 2 of 31
 
-► 13 auth page sign in / register algorithms, link pop-ups too, put signin/up data on an object
+► 11 complete design of aboutus+, faq+, locations+, productpage*, pagination*, change section z-index layer (HTML, CSS, JS)
+► 13 auth page sign in / register algorithms, link pop-ups too, put signin/up data on an object when submit
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Done
+Done: 15 of 31
 
 + 01 download product images, bg and etc from https://yandex.com/images, insert static image pathes to source, ALL
 + 02 add transition to terms (copy from policy)
@@ -38,10 +33,18 @@ Done
 + 06 breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
 + 07 breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
 + 08 breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
-+ 09 section 1 carousel & radio buttons, left and right buttons position on relative container
++ 09 section 1 carousel & radio buttons, left and right buttons position on relative container (ERROR /!\ : radio buttons 
+are working, slide buttons are working, radio buttons working after using slide buttons, but its not happening in opposite)
 + 10 navbar dropdown images download, add (CSS), copy nav to all html files again
 + 12 auth page input fill requirements algorithm, required add to html (HTML, JS)
 x 14 call signed successfully, registration completed popup windows when is active their buttons, first remove hidden 
 class, then add setTimeout to close in 1000 microsecond
 + 15 auth page go back homepage button add link
++ 17 dark/light & noDataGuest/signedId (JS) (ERROR /!\ : save to localStorage, reload page issue fix with algorith)
++ 25 locations page fake location image or yandex API for location map
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Notes:
+
+* copy design for main menu mobile button from go to homepage button
+* zoom in responsivity not required, fix zoomout issiu & max width with media tags at least, aslo check is it done or not
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

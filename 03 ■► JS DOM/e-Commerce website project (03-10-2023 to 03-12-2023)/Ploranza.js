@@ -362,26 +362,42 @@ termsbuttonCross.addEventListener("click", () => {
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(SECTION 1 CAROUSEL SLIDES) start |•
 let currentIndex = 0
+function radioSelect() {
+    radioBtns.forEach((radio, index) => {
+        if (radio.checked == true) {
+            currentIndex = index
+            console.log("current index: ", currentIndex, "index: ", index)
+        }
+    })
+}
 function slidesCarousel() {
+    radioSelect()
     slides.forEach((slide, index) => {
         slide.style.transform = `translateX(${(index - currentIndex)*100}%)`
     });
 }
 slidesCarousel()
+document.addEventListener("change", slidesCarousel)
 slideRightBtn.addEventListener("click", () => {
     currentIndex == 0 ? (currentIndex = slides.length-1) : currentIndex--
-    // if (currentIndex == 0) {
-    //     currentIndex = slides.length-1
-    // } else {
-    //     currentIndex--
-    // }
+    for (let i=0; i<radioBtns.length; i++) {
+        if (i == currentIndex) {} else {
+            radioBtns[i].removeAttribute("checked", "")
+        }
+    }
+    radioBtns[currentIndex].setAttribute("checked", "")
     slidesCarousel()
 })
 slideLeftBtn.addEventListener("click", () => {
     currentIndex == slides.length-1 ? (currentIndex = 0) : currentIndex++
+    for (let i=0; i<radioBtns.length; i++) {
+        if (i == currentIndex) {} else {
+            radioBtns[i].removeAttribute("checked", "")
+        }
+    }
+    radioBtns[currentIndex].setAttribute("checked", "")
     slidesCarousel()
 })
-// radioBtns
 // •| #(SECTION 1 CAROUSEL SLIDES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(BREADCRUMB ALGORITHYM) start |•
