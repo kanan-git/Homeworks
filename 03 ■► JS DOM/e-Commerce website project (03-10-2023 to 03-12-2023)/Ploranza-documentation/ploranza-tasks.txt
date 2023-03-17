@@ -1,6 +1,7 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Ploranza (HTML, CSS, JS) | March 16-17, 2023 (IV-V) | TODO
 
+- 11 complete design of aboutus+, faq+, locations+, productpage*, pagination*, change section z-index layer (HTML, CSS, JS)
 - 16 wrong login or password <p> alert, required to all slot, red colored position absolute top texts, also try label 
 holder lines
 - 17 dark/light & noDataGuest/signedId, save to localStorage, reload page issue fix with algorith (JS)
@@ -25,8 +26,6 @@ cart, signed / guest mode
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress
 
-► 09 section 1 carousel & radio buttons, left and right buttons position on relative container
-► 11 complete design of aboutus, faq, locations, productpage, pagination, change section z-index layer (HTML, CSS, JS)
 ► 13 auth page sign in / register algorithms, link pop-ups too, put signin/up data on an object
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Done
@@ -39,6 +38,7 @@ Done
 + 06 breadcrumb algorithm 2 (homepage "Homepage", about us "+/About Us")
 + 07 breadcrumb algorithm 3 (homepage "Homepage", faq "+/FAQ")
 + 08 breadcrumb algorithm 4 (homepage "Homepage", locations "+/Our Locations")
++ 09 section 1 carousel & radio buttons, left and right buttons position on relative container
 + 10 navbar dropdown images download, add (CSS), copy nav to all html files again
 + 12 auth page input fill requirements algorithm, required add to html (HTML, JS)
 x 14 call signed successfully, registration completed popup windows when is active their buttons, first remove hidden 

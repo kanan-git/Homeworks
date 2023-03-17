@@ -630,11 +630,13 @@
         background-color: coral;
         display: flex;
         position: relative;
+        overflow: hidden;
         &__slides {
             position: absolute;
             top: 0%;
             left: 0%;
             // border: 1px solid red;
+            transition: $ease-fx;
             width: 100%;
             height: 100%;
             &--image {
@@ -1658,7 +1660,7 @@
     transform: translateX(-50%);
     left: 50%;
     width: 1424px;
-    height: 700px;
+    height: 740px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
@@ -1669,17 +1671,21 @@
         background-color: var(--bgColor);
         box-sizing: border-box;
         padding: 40px;
+        color: var(--defaultColor);
         &__header {
             font-size: 24px;
             margin-bottom: 30px;
         }
         &__description {
-            border: 1px solid yellowgreen;
+            // border: 1px solid yellowgreen;
         }
         &__gallery {
-            margin-top: 40px;
+            width: 100%;
+            height: 410px;
+            margin: 40px 0px;
             box-sizing: border-box;
             border: none;
+            // border: 1px solid red;
             @include df-center();
             flex-wrap: wrap;
             gap: 10px;
@@ -1703,49 +1709,104 @@
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(F-A-Q) start |•
 #faq {
-    z-index: 8;
+    z-index: 5;
     margin-top: 4px;
     position: relative;
     transform: translateX(-50%);
     left: 50%;
     width: 1424px;
+    height: 1050px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
     // background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .faq {
         width: 100%;
+        height: 100%;
         background-color: var(--bgColor);
-        &__header {}
-        &__aandq {
-            &--questions {}
-            &--answers {}
+        box-sizing: border-box;
+        padding: 40px;
+        color: var(--defaultColor);
+        &__header {
+            font-size: 24px;
+            margin-bottom: 30px;
         }
-        &__trouble {}
+        &__aandq {
+            &--questions {
+                // border: 1px solid red;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            &--answers {
+                // border: 1px solid red;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+        &__trouble {
+            color: rgb(255,0,0);
+            cursor: pointer;
+            transition: $ease-fx;
+            font-weight: 700;
+            &:hover {
+                color: rgb(255,255,255);
+                filter: drop-shadow(0px 0px 5px rgb(255,0,0));
+                font-weight: 500;
+            }
+        }
     }
 }
 // •| #(F-A-Q) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(LOCATIONS) start |•
 #locations {
-    z-index: 8;
+    z-index: 5;
     margin-top: 4px;
     position: relative;
     transform: translateX(-50%);
     left: 50%;
     width: 1424px;
+    height: 1050px;
     // @include test-border;
     @include df-center();
     flex-direction: column;
     // background: linear-gradient(to right, rgb(128,255,0), rgb(0,255,128));
     .locations {
         width: 100%;
+        height: 100%;
         background-color: var(--bgColor);
-        &__header {}
-        &__description {}
+        box-sizing: border-box;
+        padding: 40px;
+        color: var(--defaultColor);
+        &__header {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        &__description {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        a {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            width: 1280px;
+            height: 720px;
+        }
         &__map {
-            &--image {}
-            &--mark {}
+            border: 1px solid rgb(128,128,128);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            filter: drop-shadow(0px 0px 5px rgb(0,0,0));
+            border-radius: 4px;
+            &--image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            // &--mark {}
         }
     }
 }

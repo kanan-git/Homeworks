@@ -2,6 +2,11 @@
 // ►►►►►►►►►►| #(VARIABLE HTML/BODY) start |•
 // body
 const body = document.body
+// section 1 carousel images
+const slides = document.querySelectorAll(".section1-carousels__slides")
+const slideRightBtn = document.querySelector(".section1-carousels-right")
+const slideLeftBtn = document.querySelector(".section1-carousels-left")
+const radioBtns = document.querySelectorAll(".section1-radios__dots")
 // user panel
 const switchLDmodes = document.querySelector(".switch")
 const faSun = document.querySelector(".fa-sun")
@@ -41,6 +46,7 @@ const unSerCar = document.querySelector(".career")
 const unSerCnt = document.querySelector(".contact")
 const unSerSell = document.querySelector(".sellinpol")
 const unSerTuse = document.querySelector(".tuse")
+const unSerFAQmore = document.querySelector(".faq__trouble")
 //        const unSerRecID = document.querySelector(".login--recoverid")
 // breadcrumb algoritm variable
 const breadcrumb = document.querySelector(".breadcrumb")
@@ -50,8 +56,6 @@ const regPanelAuth = document.querySelector(".section-auth__container--register"
 const loginSwitchBtn = document.querySelector(".section-auth__buttons--login")
 const regSwitchBtn = document.querySelector(".section-auth__buttons--register")
 const containerAuth = document.querySelector(".section-auth__container")
-// .
-
 // •| #(VARIABLE HTML/BODY) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(LIGHT/DARK MODE VALUES) start |•
@@ -325,6 +329,7 @@ unSerCar.addEventListener("click", alertComingSoon)
 unSerCnt.addEventListener("click", alertComingSoon)
 unSerSell.addEventListener("click", alertComingSoon)
 unSerTuse.addEventListener("click", alertComingSoon)
+// unSerFAQmore.addEventListener("click", alertComingSoon)
 //        unSerRecID.addEventListener("click", alertComingSoon)
 // •| #(UNAVAILABLE FUNCTIONS /!\ MESSAGE) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
@@ -354,6 +359,30 @@ termsbuttonCross.addEventListener("click", () => {
     overlayBlurbg.classList.add("hidden")
 })
 // •| #(POP-UP WINDOWS) end |◄◄◄◄◄◄◄◄◄◄
+// ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
+// ►►►►►►►►►►| #(SECTION 1 CAROUSEL SLIDES) start |•
+let currentIndex = 0
+function slidesCarousel() {
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${(index - currentIndex)*100}%)`
+    });
+}
+slidesCarousel()
+slideRightBtn.addEventListener("click", () => {
+    currentIndex == 0 ? (currentIndex = slides.length-1) : currentIndex--
+    // if (currentIndex == 0) {
+    //     currentIndex = slides.length-1
+    // } else {
+    //     currentIndex--
+    // }
+    slidesCarousel()
+})
+slideLeftBtn.addEventListener("click", () => {
+    currentIndex == slides.length-1 ? (currentIndex = 0) : currentIndex++
+    slidesCarousel()
+})
+// radioBtns
+// •| #(SECTION 1 CAROUSEL SLIDES) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(BREADCRUMB ALGORITHYM) start |•
 // function breadcrumbLinks() {
@@ -443,5 +472,8 @@ termsbuttonCross.addEventListener("click", () => {
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
 // ►►►►►►►►►►| #(.$$$$$$$$$$.) start |•
 {}
+
+unSerFAQmore.addEventListener("click", alertComingSoon)
+
 // •| #(.$$$$$$$$$$.) end |◄◄◄◄◄◄◄◄◄◄
 // ◄◄|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|==========|►►
