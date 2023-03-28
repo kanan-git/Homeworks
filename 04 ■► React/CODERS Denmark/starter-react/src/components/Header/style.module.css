@@ -1,0 +1,14 @@
+/* styles of header */
+#header {}
+
+/* container of menu items */
+.menus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* select menu items */
+.menus__items {
+    background-color: greenyellow;
+}
