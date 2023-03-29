@@ -9,16 +9,23 @@ import MainJourney from "./components/Main-Journey/index"
 import MainBlog from "./components/Main-Blog/index"
 import Footer from "./components/Footer/index"
 
-function App() {
+function App(prompt) {
+
+    // prompts or useState ?
+
     return (
         <>
             <Header />   {/* Header */}
-            <MainHome />   {/* Main section of Home */}
-            <MainAbout />   {/* Main section of About */}
-            <MainContact />   {/* Main section of Contact */}
-            <MainPortfolios />   {/* Main section of Portfolios */}
-            <MainJourney />   {/* Main section of Journey */}
-            <MainBlog />   {/* Main section of Blog */}
+
+            <>
+                <MainHome />   {/* Main section of Home */}
+                <MainAbout />   {/* Main section of About */}
+                <MainContact />   {/* Main section of Contact */}
+                <MainPortfolios />   {/* Main section of Portfolios */}
+                <MainJourney />   {/* Main section of Journey */}
+                <MainBlog />   {/* Main section of Blog */}
+            </>
+            
             <Footer />   {/* Footer */}
         </>
     )

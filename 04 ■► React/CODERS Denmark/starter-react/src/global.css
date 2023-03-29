@@ -1,3 +1,4 @@
+/* |▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬| */
 /* OVERALL ZEROINGS */
 * {
     margin: 0;
@@ -5,10 +6,28 @@
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
+    /* color: var(--additional-clrWH); */
+    /* border: 1px solid var(--additional-borderRS); */
+    /* background-color: var(--additional-navyBG); */
     font-size: 16px;
     font-weight: 500;
-
-    color: rgb(255,255,255);
-    border: 1px solid rgb(255,0,64);
-    background-color: rgb(12,24,48);
 }
+/* |▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬| */
+/* DEFAULT VALUES */
+:root {
+    --background-color: rgb(4,4,4);
+    --text-color: rgb(240,240,240);
+
+    --additional-borderRS: rgb(255,0,64);
+    --additional-navyBG: rgb(12,24,48);
+    --additional-clrWH: rgb(255,255,255);
+
+    --marks-orange: rgb(255,128,0);
+
+    /* @mixin d-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+}
+/* |▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬|▬▬▬▬▬▬▬▬▬▬| */

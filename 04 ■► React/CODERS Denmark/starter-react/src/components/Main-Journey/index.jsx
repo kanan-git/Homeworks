@@ -1,26 +1,26 @@
 // MAIN/JOURNEY COMPONENT
 
 import React from "react"
-import s from "./style.module.css"
+import sJourney from "./style.module.css"
 
 function MainJourney() {
     return (
-        <header id="journey">
-            <div>
-                <div>
-                    <span>
-                        <img src="" alt="" />
+        <header id={sJourney.journey}>
+            <div className={sJourney.journey__main}>
+                <div className={sJourney.journey__main_top}>
+                    <span className={sJourney.journey__main_top__image}>
+                        <img className={sJourney.journey__main_top__image_content} src="" alt="image" />
                     </span>
-                    <span>
-                        <h3>
+                    <span className={sJourney.journey__main_top__text}>
+                        <h3 className={sJourney.journey__main_top__text_header}>
                             The resolution, What am I gonna do?
                         </h3>
-                        <p>
+                        <p className={sJourney.journey__main_top__text_description}>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
                         </p>
                     </span>
                 </div>
-                <p>
+                <p className={sJourney.journey__main_bottom}>
                     The standard Lorem Ipsum passage, used since the 1500s
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                     Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
@@ -29,38 +29,38 @@ function MainJourney() {
                     "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone 
                 </p>
             </div>
-            <div>
-                <h4>Time line</h4>
-                <select name="years" id="years">
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
+            <div className={sJourney.journey__aside}>
+                <h4 className={sJourney.journey__aside_head}>Time line</h4>
+                <select className={sJourney.journey__aside_years} name="years" id="years">
+                    <option className={sJourney.journey__aside_years__options} value="2021">2021</option>
+                    <option className={sJourney.journey__aside_years__options} value="2020">2020</option>
                 </select>
-                <div>
-                    <h6>2 January 2021</h6>
-                    <div>
-                        <h5>Lorem ipsum dolor sit ?</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className={sJourney.journey__aside_comments}>
+                    <h6 className={sJourney.journey__aside_comments__header}>2 January 2021</h6>
+                    <div className={sJourney.journey__aside_comments__box}>
+                        <h5 className={sJourney.journey__aside_comments__box_title}>Lorem ipsum dolor sit ?</h5>
+                        <p className={sJourney.journey__aside_comments__box_content}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
-                <div>
-                    <h6>29 January 2021</h6>
-                    <div>
-                        <h5>Lorem ipsum dolor sit ?</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className={sJourney.journey__aside_comments}>
+                    <h6 className={sJourney.journey__aside_comments__header}>29 January 2021</h6>
+                    <div className={sJourney.journey__aside_comments__box}>
+                        <h5 className={sJourney.journey__aside_comments__box_title}>Lorem ipsum dolor sit ?</h5>
+                        <p className={sJourney.journey__aside_comments__box_content}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
-                <div>
-                    <h6>2 February 2021</h6>
-                    <div>
-                        <h5>Lorem ipsum dolor sit ?</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className={sJourney.journey__aside_comments}>
+                    <h6 className={sJourney.journey__aside_comments__header}>2 February 2021</h6>
+                    <div className={sJourney.journey__aside_comments__box}>
+                        <h5 className={sJourney.journey__aside_comments__box_title}>Lorem ipsum dolor sit ?</h5>
+                        <p className={sJourney.journey__aside_comments__box_content}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
-                <div>
-                    <h6>1 March 2021</h6>
-                    <div>
-                        <h5>Lorem ipsum dolor sit ?</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className={sJourney.journey__aside_comments}>
+                    <h6 className={sJourney.journey__aside_comments__header}>1 March 2021</h6>
+                    <div className={sJourney.journey__aside_comments__box}>
+                        <h5 className={sJourney.journey__aside_comments__box_title}>Lorem ipsum dolor sit ?</h5>
+                        <p className={sJourney.journey__aside_comments__box_content}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>

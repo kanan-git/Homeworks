@@ -1,0 +1,132 @@
+/*  */
+#journey {
+    display: flex;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0 25px;
+    height: 650px;
+
+    /* display: none; */
+}
+
+/*  */
+.journey__main {
+    /* border: 1px solid blue; */
+    width: 83%;
+    margin: 40px 0;
+}
+
+/*  */
+.journey__main_top {
+    /* border: 1px solid gold; */
+    display: flex;
+    align-items: center;
+}
+
+/*  */
+.journey__main_top__image {
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid fuchsia; */
+}
+
+/*  */
+.journey__main_top__image_content {
+    width: 100%;
+    object-fit: cover;
+}
+
+/*  */
+.journey__main_top__text {
+    padding: 0 50px;
+}
+
+/*  */
+.journey__main_top__text_header {
+    font-size: 60px;
+    font-weight: 800;
+    width: 80%;
+}
+
+/*  */
+.journey__main_top__text_description {
+    width: 60%;
+}
+
+/*  */
+.journey__main_bottom {
+    /* border: 1px solid green; */
+    margin-top: 40px;
+    padding: 0 25px;
+    line-height: 25px;
+}
+
+/*  */
+.journey__aside {
+    background-color: rgb(16,16,16);
+    /* border: 1px solid maroon; */
+    width: 17%;
+    margin: 20px 0;
+    padding: 10px 15px;
+}
+
+/*  */
+.journey__aside_head {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/*  */
+.journey__aside_years {
+    /* border: none; */
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+    padding-left: 10px;
+    margin: 20px 0;
+    width: 100%;
+    height: 30px;
+}
+
+/*  */
+.journey__aside_years__options {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/*  */
+.journey__aside_comments {
+    /* border: 1px solid aqua; */
+    margin: 20px 0;
+}
+
+/*  */
+.journey__aside_comments__header {
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+/*  */
+.journey__aside_comments__box {
+    border: 1px solid rgb(64,64,64);
+    background-color: rgb(32,32,32);
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+/*  */
+.journey__aside_comments__box_title {
+    font-weight: 600;
+    opacity: 0.75;
+}
+
+/*  */
+.journey__aside_comments__box_content {
+    opacity: 0.5;
+}

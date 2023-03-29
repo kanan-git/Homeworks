@@ -1,0 +1,73 @@
+/*  */
+#portfolios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    /* display: none; */
+}
+
+/*  */
+.portfolios {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 12.5%;
+}
+
+/*  */
+.portfolios__cards {
+    border-radius: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid rgb(48,48,48);
+    filter: drop-shadow(0 0 4px rgb(64,64,64));
+    background-color: rgba(90,90,90,0.9);
+    width: 500px;
+    height: 220px;
+    backdrop-filter: blur(3px);
+    display: flex;
+}
+
+/*  */
+.portfolios__cards_image {
+    width: 210px;
+    height: 100%;
+    /* border: 1px solid yellow; */
+}
+
+/*  */
+.portfolios__cards_image__content {
+    object-fit: cover;
+    height: 100%;
+}
+
+/*  */
+.portfolios__cards_container {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 40px;
+}
+
+/*  */
+.portfolios__cards_container__header {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*  */
+.portfolios__cards_container__paragraph {
+    opacity: 0.9;
+}
+
+/*  */
+.portfolios__cards_container__link {
+    color: var(--text-color);
+}

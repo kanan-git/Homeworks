@@ -1,59 +1,71 @@
 // MAIN/PORTFOLIOS COMPONENT
 
 import React from "react"
-import s from "./style.module.css"
+import sPortfolio from "./style.module.css"
 
 function MainPortfolios() {
     return (
-        <header id="portfolios">
-            <div>
-                <div className="cards">
-                    <div>
-                        <img src="" alt="" />
+        <header id={sPortfolio.portfolios}>
+            <div className={sPortfolio.portfolios}>
+                <div className={sPortfolio.portfolios__cards}>
+                    <div className={sPortfolio.portfolios__cards_image}>
+                        <img className={sPortfolio.portfolios__cards_image__content} src="" alt="image-1" />
                     </div>
-                    <h3>There is no more than you know</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
-                    <a href="#">Read more ►</a>
+                    <div className={sPortfolio.portfolios__cards_container}>
+                        <h3 className={sPortfolio.portfolios__cards_container__header}>There is no more than you know</h3>
+                        <p className={sPortfolio.portfolios__cards_container__paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
+                        <a className={sPortfolio.portfolios__cards_container__link} href="#">Read more ►</a>
+                    </div>
                 </div>
-                <div className="cards">
-                    <div>
-                        <img src="" alt="" />
+                <div className={sPortfolio.portfolios__cards}>
+                    <div className={sPortfolio.portfolios__cards_image}>
+                        <img className={sPortfolio.portfolios__cards_image__content} src="" alt="image-1" />
                     </div>
-                    <h3>There is no more than you know</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
-                    <a href="#">Read more ►</a>
+                    <div className={sPortfolio.portfolios__cards_container}>
+                        <h3 className={sPortfolio.portfolios__cards_container__header}>There is no more than you know</h3>
+                        <p className={sPortfolio.portfolios__cards_container__paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
+                        <a className={sPortfolio.portfolios__cards_container__link} href="#">Read more ►</a>
+                    </div>
                 </div>
-                <div className="cards">
-                    <div>
-                        <img src="" alt="" />
+                <div className={sPortfolio.portfolios__cards}>
+                    <div className={sPortfolio.portfolios__cards_image}>
+                        <img className={sPortfolio.portfolios__cards_image__content} src="" alt="image-1" />
                     </div>
-                    <h3>There is no more than you know</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
-                    <a href="#">Read more ►</a>
+                    <div className={sPortfolio.portfolios__cards_container}>
+                        <h3 className={sPortfolio.portfolios__cards_container__header}>There is no more than you know</h3>
+                        <p className={sPortfolio.portfolios__cards_container__paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
+                        <a className={sPortfolio.portfolios__cards_container__link} href="#">Read more ►</a>
+                    </div>
                 </div>
-                <div className="cards">
-                    <div>
-                        <img src="" alt="" />
+                <div className={sPortfolio.portfolios__cards}>
+                    <div className={sPortfolio.portfolios__cards_image}>
+                        <img className={sPortfolio.portfolios__cards_image__content} src="" alt="image-1" />
                     </div>
-                    <h3>There is no more than you know</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
-                    <a href="#">Read more ►</a>
+                    <div className={sPortfolio.portfolios__cards_container}>
+                        <h3 className={sPortfolio.portfolios__cards_container__header}>There is no more than you know</h3>
+                        <p className={sPortfolio.portfolios__cards_container__paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
+                        <a className={sPortfolio.portfolios__cards_container__link} href="#">Read more ►</a>
+                    </div>
                 </div>
-                <div className="cards">
-                    <div>
-                        <img src="" alt="" />
+                <div className={sPortfolio.portfolios__cards}>
+                    <div className={sPortfolio.portfolios__cards_image}>
+                        <img className={sPortfolio.portfolios__cards_image__content} src="" alt="image-1" />
                     </div>
-                    <h3>There is no more than you know</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
-                    <a href="#">Read more ►</a>
+                    <div className={sPortfolio.portfolios__cards_container}>
+                        <h3 className={sPortfolio.portfolios__cards_container__header}>There is no more than you know</h3>
+                        <p className={sPortfolio.portfolios__cards_container__paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
+                        <a className={sPortfolio.portfolios__cards_container__link} href="#">Read more ►</a>
+                    </div>
                 </div>
-                <div className="cards">
-                    <div>
-                        <img src="" alt="" />
+                <div className={sPortfolio.portfolios__cards}>
+                    <div className={sPortfolio.portfolios__cards_image}>
+                        <img className={sPortfolio.portfolios__cards_image__content} src="" alt="image-1" />
                     </div>
-                    <h3>There is no more than you know</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
-                    <a href="#">Read more ►</a>
+                    <div className={sPortfolio.portfolios__cards_container}>
+                        <h3 className={sPortfolio.portfolios__cards_container__header}>There is no more than you know</h3>
+                        <p className={sPortfolio.portfolios__cards_container__paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ullam.</p>
+                        <a className={sPortfolio.portfolios__cards_container__link} href="#">Read more ►</a>
+                    </div>
                 </div>
             </div>
         </header>
