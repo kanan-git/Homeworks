@@ -1,7 +1,6 @@
 // HEADER COMPONENT
 
 import React, { useState } from 'react'
-// import React from "react"
 import sHeader from "./style.module.css"
 
 function Header() {
@@ -9,24 +8,30 @@ function Header() {
     // const menuButtons = ['Home', 'About', 'Contact', 'Portfolios', 'Journey', 'Blog']
     // const menuButtons = [menuHome, menuAbout, menuContact, menuPortfolios, menuJourney, menuBlog]
 
-    const menuHome = document.getElementById("1")
-    const menuAbout = document.getElementById("2")
-    const menuContact = document.getElementById("3")
-    const menuPortfolios = document.getElementById("4")
-    const menuJourney = document.getElementById("5")
-    const menuBlog = document.getElementById("6")
+    // var menuHome = document.getElementById("1")
+    // var menuAbout = document.getElementById("2")
+    // var menuContact = document.getElementById("3")
+    // var menuPortfolios = document.getElementById("4")
+    // var menuJourney = document.getElementById("5")
+    // var menuBlog = document.getElementById("6")
 
     // let selectedMark = React.createElement("div", {className: "menus__selected"})
-    let selectedMark = document.createElement("div")
-    menuHome.appendChild(selectedMark)
-    
+
+    // function test() {
+    //     const menuHome = document.getElementById("1")
+    //     menuHome.textContent = `${selectedMark}`
+    //     menuHome.innerHTML = `<div className={sHeader.menus__selected}></div>`
+    //     console.log("it is working")
+    // }
+
     return (
         <header id={sHeader.header}>
             <ul className={sHeader.menus}>
-                <li className={sHeader.menus__items} id={1}>
+                <li className={sHeader.menus__items} id={1}> {/*onClick={test}*/}
                     Home
                 </li>
                 <li className={sHeader.menus__items} id={2}>
+                    {/* <div className={sHeader.menus__selected}></div> */}
                     About
                 </li>
                 <li className={sHeader.menus__items} id={3}>

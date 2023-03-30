@@ -32,3 +32,6 @@ function App(prompt) {
 }
 
 export default App
+
+// cd 04\ ■►\ React/CODERS\ Denmark/starter-react
+// npm start
