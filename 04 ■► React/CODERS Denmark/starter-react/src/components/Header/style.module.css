@@ -30,13 +30,14 @@
 /* select menu items */
 .menus__items {
     font-weight: 600;
+    position: relative;
 }
 
 /* selected mark */
 .menus__selected {
     position: absolute;
     top: 50%;
-    left: 27%; /* Home 27, About 34, Contact 41.5, Portfolios 50, Journey 59.3, Blog 67.7 */
+    left: -15px;
 
     transform: translate(-50%, -50%);
 

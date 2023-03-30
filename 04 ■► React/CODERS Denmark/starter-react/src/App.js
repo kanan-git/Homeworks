@@ -18,7 +18,7 @@ function App(prompt) {
             <Header />   {/* Header */}
 
             <>
-                <MainHome />   {/* Main section of Home */}
+                <MainHome />   {/* Main section of Home */} {/* Header jsx gonderecek hansi secilibse onun <> tagini, select mark inside with jsx textContent */}
                 <MainAbout />   {/* Main section of About */}
                 <MainContact />   {/* Main section of Contact */}
                 <MainPortfolios />   {/* Main section of Portfolios */}
