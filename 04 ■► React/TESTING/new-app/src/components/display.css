@@ -1,0 +1,30 @@
+.test_buttons {
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb(0,0,0);
+    color: rgb(0,0,0);
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    transition: ease 0.3s;
+    margin: 20px;
+}
+
+.test_buttons:hover {
+    filter: drop-shadow(0 0 5px rgb(0,0,0));
+    transform: scale(1.1);
+    background-color: rgb(48,48,48);
+    border: 1px solid rgb(100,100,100);
+    color: rgb(100,100,100);
+}
+
+.test_buttons:active {
+    filter: drop-shadow(0 0 10px rgb(255,128,0));
+    transform: scale(1.2);
+    background-color: rgb(75,75,75);
+    border: 1px solid rgb(255,128,0);
+    color: rgb(255,128,0);
+    transition: linear 0s;
+}

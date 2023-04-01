@@ -1,0 +1,16 @@
+.selected_mark {
+    z-index: 1;
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    border: none;
+    background: radial-gradient(rgb(255,255,255), rgb(255,255,255), rgb(255,128,0), rgb(255,128,0));
+    filter: drop-shadow(0 0 4px rgb(255,128,0));
+
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
