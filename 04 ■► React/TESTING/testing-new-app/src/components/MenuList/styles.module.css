@@ -1,0 +1,16 @@
+.menulist {
+    background-color: var(--custom-blue-color);
+    width: 300px;
+    height: 400px;
+    /* filter: var(--drop-lens-fx); */
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--custom-bright-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 20px;
+}

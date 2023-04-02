@@ -1,18 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./global.css"
-
-import Header from "./components/Header"
-import MainHome from "./components/MainHome"
-import MainAbout from "./components/MainAbout"
-import Footer from "./components/Footer"
+import MenuList from "./components/MenuList"
+import DisplayBox from "./components/DisplayBox"
 
 export default function App() {
+    const [currentDiff, setCurrentDiff] = useState('Medium')
+
+    function handleChangeLevel(level) {
+        setCurrentDiff(level)
+    }
+
     return (
-        <>
-            <Header />
-            <MainHome />
-            <MainAbout />
-            <Footer />
-        </>
+        <div className="container">
+            <MenuList diffLevel={currentDiff} handleChange={handleChangeLevel} />
+            <DisplayBox diff={currentDiff} />
+        </div>
     )
 }

@@ -2,10 +2,25 @@
 :root {
     /* color picks */
     --default-color: rgb(0,255,128);
+    --custom-bright-color: rgb(245,245,245);
+    --custom-red-color: rgb(255,0,64);
+    --custom-orange-color: rgb(255,155,15);
+    --custom-alert-color: rgb(255,255,64);
+    --custom-green-color: rgb(200,255,200);
+    --custom-blue-color: rgb(150,150,255);
+    --custom-violet-color: rgb(64,0,255);
+    --custom-navy-color: rgb(12,24,48);
+    --custom-dark-color: rgb(16,16,16);
     /* background patterns */
-    --background: radial-gradient(var(--default-color), rgb(255,255,255));
+    --background: radial-gradient(var(--custom-dark-color), var(--custom-bright-color));
     /* transition values */
-    --transition-fx: ease 0.25s;
+    --transition-fast-fx: ease-in-out 0.25s;
+    --transition-slow-fx: linear 0.4s;
+    --transition-instant-fx: linear 0s;
+    /* custom filter effects */
+    --drop-shadow-fx: drop-shadow(0 0 5px var(--custom-dark-color));
+    --drop-lens-fx: drop-shadow(0 0 10px var(--custom-bright-color));
+    --drop-light-fx: drop-shadow(0 0 15px var(--custom-bright-color));
 }
 /* |▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬| */
 * {
@@ -15,5 +30,18 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+}
+/* |▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬| */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    height: 100vh;
+}
+/* |▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬| */
+body {
+    background-color: var(--custom-navy-color);
 }
 /* |▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬| */

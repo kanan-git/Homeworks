@@ -1,0 +1,35 @@
+.menulistitem {
+    background-color: var(--custom-dark-color);
+    width: 80%;
+    height: 15%;
+    border: 1px solid var(--custom-bright-color);
+    border-radius: 6px;
+    color: var(--custom-bright-color);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    transition: var(--transition-slow-fx);
+}
+
+/* .menulistitem:hover {
+    background-color: var(--custom-alert-color);
+    color: var(--custom-orange-color);
+    border: 1px solid var(--custom-orange-color);
+    scale: 1.05;
+    filter: var(--drop-shadow-fx);
+}
+
+.menulistitem:active {
+    background-color: var(--custom-red-color);
+    color: var(--custom-dark-color);
+    border: 1px solid var(--custom-dark-color);
+    transition: var(--transition-instant-fx);
+    scale: 1.1;
+    filter: var(--drop-light-fx);
+} */

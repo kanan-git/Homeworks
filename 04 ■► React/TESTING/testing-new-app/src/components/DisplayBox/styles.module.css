@@ -1,0 +1,17 @@
+.displaybox {
+    background-color: var(--custom-green-color);
+    width: 300px;
+    height: 400px;
+    /* filter: var(--drop-lens-fx); */
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--custom-bright-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--custom-dark-color);
+}
