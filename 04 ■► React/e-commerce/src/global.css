@@ -1,4 +1,19 @@
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+:root {
+    --default-color: rgb(12,24,48);
+    --dark-black: rgb(0,0,0);
+    --bright-white: rgb(255,255,255);
+}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 #header {
     background-color: red;
 }
@@ -7,12 +22,17 @@
 .list_block_2 {}
 .list_items {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-.searcbar {}
+.searcbar {
+    background-color: greenyellow;
+}
 .searchbar_label {}
 .searchbar_input {}
 .searchbar_magnifier_icon {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#dashboard {}
+#dashboard {
+    background-color: var(--default-color);
+    color: white;
+}
 .dashboard {}
 .products_container {}
 .product_card {}
@@ -25,14 +45,18 @@
 .product_card_buy_price {}
 .product_card_buy_add2bag {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-.bag {}
+.bag {
+    background-color: green;
+}
 .bag_header {}
 .bag_icons_container {}
 .bag_small_icons {}
 .icon_contents {}
 .bag_button {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#add_address {}
+#add_address {
+    background-color: orange;
+}
 .add_address {}
 .addaddress_name {}
 .address_name_label {}
