@@ -1,0 +1,161 @@
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#header {
+    background-color: red;
+}
+.list {}
+.list_block_1 {}
+.list_block_2 {}
+.list_items {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+.searcbar {}
+.searchbar_label {}
+.searchbar_input {}
+.searchbar_magnifier_icon {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#dashboard {}
+.dashboard {}
+.products_container {}
+.product_card {}
+.product_card_image {}
+.product_card_image_content {}
+.product_card_info {}
+.product_card_info_title {}
+.product_card_inf_details {}
+.product_card_buy {}
+.product_card_buy_price {}
+.product_card_buy_add2bag {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+.bag {}
+.bag_header {}
+.bag_icons_container {}
+.bag_small_icons {}
+.icon_contents {}
+.bag_button {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#add_address {}
+.add_address {}
+.addaddress_name {}
+.address_name_label {}
+.address_name_input {}
+.addaddress_street {}
+.address_street_label {}
+.address_street_input {}
+.addaddress_city {}
+.address_city_label {}
+.address_city_input {}
+.addaddress_state {}
+.address_state_label {}
+.address_state_input {}
+.addaddress_country {}
+.address_country_label {}
+.address_country_input {}
+.addaddress_checkbox {}
+.addaddress_checkbox_input {}
+.addaddaddress_checkbox_label {}
+.addaddress_submit {}
+.addaddress_submit_input {}
+.addaddress_additionals {}
+.addaddress_additionals_back {}
+.addaddress_additionals_secure {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#select_card {}
+.select_card_header {}
+.select_card_list {}
+.select_card_listitems {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#add_new_card {}
+.add_new_card_header {}
+.add_new_card {}
+.add_new_card_name {}
+.add_new_card_name_label {}
+.add_new_card_name_input {}
+.add_new_card_cnumber {}
+.add_new_card_cnumber_label {}
+.add_new_card_cnumber_input {}
+.add_new_card_expirecvc {}
+.add_new_card_block {}
+.add_new_card_expire_label {}
+.add_new_card_expire_input {}
+.add_new_card_block {}
+.add_new_card_cvc_label {}
+.add_new_card_cvc_input {}
+.add_new_card_block {}
+.add_new_card_checkbox {}
+.add_new_card_checkbox_input {}
+.add_new_card_checkbox_label {}
+.add_new_card_submit {}
+.add_new_card_submit_input {}
+.add_new_card_additionals {}
+.add_new_card_additionals_back {}
+.add_new_card_additionals_secure {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#check_bag {}
+.check_bag_header {}
+.bagcards_container {}
+.bag_productcard {}
+.bag_productcard_image {}
+.bag_productcard_image_content {}
+.bag_productcard_info {}
+.bag_productcard_title {}
+.bag_productcard_detail {}
+.bag_productcard_description {}
+.bag_productcard_rating {}
+.bag_productcard_rating_stars {}
+.bag_productcard_rating_point {}
+.bag_productcard_rating_point_current {}
+.bag_productcard_rating_point_top {}
+.bag_productcard_purchase {}
+.bag_productcard_purchase_price {}
+.bag_productcard_selectcount {}
+.bag_productcard_minus {}
+.bag_productcard_count {}
+.bag_productcard_plus {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#item_view {}
+.back_from_item_view {}
+.item_view_product_container {}
+.selected_product {}
+.selected_product_smallimg {}
+.selected_product_imgitem {}
+.selected_product_imgcontent {}
+.selected_product_preview {}
+.selected_product_preview_imgcontent {}
+.selected_product_information {}
+.selected_product_title {}
+.selected_product_detail {}
+.selected_product_rating {}
+.selected_product_rating_stars {}
+.selected_product_rating_point {}
+.selected_product_rating_point_current {}
+.selected_product_rating_point_top {}
+.selected_product_price {}
+.selected_product_description {}
+.add2bag_button {}
+.item_view_description {}
+.item_view_description_header {}
+.item_view_description_text {}
+.item_view_description_text_paragraph {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#shipping_address {}
+.shipping_list {}
+.shipping_list_items {}
+.change_btn {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#payment_method {}
+.payment_list {}
+.payment_list_items {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#review_you_bag {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
+#order_summary {}
+.order_summary {}
+.order_summary_header {}
+.order_summary_blocks {}
+.order_summary_type {}
+.order_summary_value {}
+.order_summary_total {}
+.order_summary_total_text {}
+.order_summary_total_price {}
+.order_summary_order {}
+.backfrom_checkout_purchase {}
+/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
