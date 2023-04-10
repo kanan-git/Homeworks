@@ -22,7 +22,7 @@ function App() {
     // </div>
     <>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <header style={{display: "block"}} id="header"> {/* static header container for reference*/}
+      <header id="header"> {/* static header container for reference*/}
         <ul className="list"> {/* static list container for reference */}
           <span className="list_block_1"> {/* list block no 1 */}
             <li className="list_items"> ■ 1 </li> {/* static items for reference */}
@@ -36,13 +36,13 @@ function App() {
         </ul>
       </header>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <form method="get" className="searcbar" style={{display: "block"}}>
+      <form method="get" className="searcbar">
         <label for="search" className="searchbar_label">Search:</label>
         <input type="search" id="search" name="search" className="searchbar_input" />
         <button className="searchbar_magnifier_icon">■</button>
       </form>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <main style={{display: "block"}} id="dashboard"> {/* static main container for reference */}
+      <main id="dashboard"> {/* static main container for reference */}
         <section className="dashboard"> {/* products list in grid view page */}
           <div className="products_container"> {/* product cards container */}
             <div className="product_card"> {/* product card 001 */}
@@ -140,7 +140,7 @@ function App() {
         </section>
       </main>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <aside className="bag" style={{display: "block"}}>  {/* bag side */}
+      <aside className="bag">  {/* bag side */}
         <h3 className="bag_header"> {/* header block of bag side */}
           Bag
         </h3>
@@ -163,43 +163,43 @@ function App() {
         </button>
       </aside>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="add_address" style={{display: "block"}}> {/* add address form */}
+      <div id="add_address"> {/* add address form */}
         <form method="post" className="add_address">
-          <span className="addaddress_name"> {/* name and lastname panel */}
+          <div className="addaddress_name"> {/* name and lastname panel */}
             <label className="address_name_label" for="shopping_name">Shopping Name:</label>
             <input type="text" id="shopping_name" name="shopping_name" placeholder="John Maker" required className="address_name_input" />
-          </span>
-          <span className="addaddress_street"> {/* street name panel */}
+          </div>
+          <div className="addaddress_street"> {/* street name panel */}
             <label className="address_street_label" for="street_name">Street Name:</label>
             <input type="text" id="street_name" name="street_name" placeholder="123 Plae Grand Street" required className="address_street_input" />
-          </span>
-          <span className="addaddress_city"> {/* city name panel */}
+          </div>
+          <div className="addaddress_city"> {/* city name panel */}
             <label className="address_city_label" for="city_name">City:</label>
             <input type="text" id="city_name" name="city_name" placeholder="Vermont" required className="address_city_input" />
-          </span>
-          <span className="addaddress_state"> {/* state province panel */}
+          </div>
+          <div className="addaddress_state"> {/* state province panel */}
             <label className="address_state_label" for="state_province">State/Province:</label>
             <input type="text" id="state_province" name="state_province" placeholder="California" required className="address_state_input" />
-          </span>
-          <span className="addaddress_country"> {/* country panel */}
+          </div>
+          <div className="addaddress_country"> {/* country panel */}
             <label className="address_country_label" for="country">Country:</label>
             <input type="text" id="country" name="country" placeholder="United States of America" required className="address_country_input" />
-          </span>
-          <span className="addaddress_checkbox"> {/* checkbox panel */}
+          </div>
+          <div className="addaddress_checkbox"> {/* checkbox panel */}
             <input type="checkbox" id="checkbox" name="checkbox" required className="addaddress_checkbox_input" />
             <label for="checkbox" className="addaddaddress_checkbox_label">Save this as your default address</label>
-          </span>
-          <span className="addaddress_submit"> {/* submit panel */}
+          </div>
+          <div className="addaddress_submit"> {/* submit panel */}
             <input type="submit" id="submit" name="submit" value="Add Address" className="addaddress_submit_input" />
-          </span>
-          <span className="addaddress_additionals"> {/* additionals panel */}
+          </div>
+          <div className="addaddress_additionals"> {/* additionals panel */}
             <button className="addaddress_additionals_back">Back</button>
             <button className="addaddress_additionals_secure">■ Secure Connection</button>
-          </span>
+          </div>
         </form>
       </div>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="select_card" style={{display: "block"}}> {/* select a card window */}
+      <div id="select_card"> {/* select a card window */}
         <h1 className="select_card_header">SELECT A CARD</h1>
         <ul className="select_card_list">
           <li className="select_card_listitems">■ MasterCard ending in 4242</li>
@@ -207,7 +207,7 @@ function App() {
         </ul>
       </div>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="add_new_card" style={{display: "block"}}> {/* add a new card window */}
+      <div id="add_new_card"> {/* add a new card window */}
         <h1 className="add_new_card_header"></h1>
         <form method="post" className="add_new_card">
           <span className="add_new_card_name"> {/* name panel */}
@@ -243,7 +243,7 @@ function App() {
         </form>
       </div>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <section id="check_bag" style={{display: "block"}}> {/* check your bag section */}
+      <section id="check_bag"> {/* check your bag section */}
         <h1 className="check_bag_header">Check your Bag items</h1>
         <div className="bagcards_container">
           <div className="bag_productcard"> {/* product cards in bag section */}
@@ -342,7 +342,7 @@ function App() {
         </div>
       </section>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <section id="item_view" style={{display: "block"}}> {/* item view components */}
+      <section id="item_view"> {/* item view components */}
         <button className="back_from_item_view">◄ Back</button>
         <div className="item_view_product_container">
           <div className="selected_product">
@@ -418,7 +418,7 @@ function App() {
         </div>
       </section>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="shipping_address" style={{display: "block"}}> {/* selected shipping address */}
+      <div id="shipping_address"> {/* selected shipping address */}
         <ul className="shipping_list">
           <li className="shipping_list_items">John Maker</li>
           <li className="shipping_list_items">123 Plae Grand Street</li>
@@ -428,7 +428,7 @@ function App() {
         <button className="change_btn">Change</button>
       </div>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="payment_method" style={{display: "block"}}> {/* selected payment method */}
+      <div id="payment_method"> {/* selected payment method */}
         <ul className="payment_list">
           <li className="payment_list_items">■ MasterCard ending in 1252</li>
           <li className="payment_list_items">■ $53.21 gift card balance</li>
@@ -437,11 +437,11 @@ function App() {
         <button className="change_btn">Change</button>
       </div>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="review_you_bag" style={{display: "block"}}> {/* product cards review from bag */}
+      <div id="review_you_bag"> {/* product cards review from bag */}
         {/* review with product cards */}
       </div>
       {/* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */}
-      <div id="order_summary" style={{display: "block"}}> {/* order summary */}
+      <div id="order_summary"> {/* order summary */}
         <div className="order_summary">
           <h3 className="order_summary_header">Order Summary</h3>
           <div className="order_summary_blocks">

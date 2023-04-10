@@ -1,6 +1,7 @@
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 :root {
-    --default-color: rgb(12,24,48);
+    --default-color: rgb(255,128,0);
+    --navy-blue: rgb(12,24,48);
     --dark-black: rgb(0,0,0);
     --bright-white: rgb(255,255,255);
 }
@@ -12,10 +13,14 @@
     list-style: none;
     font-family: sans-serif;
     box-sizing: border-box;
+    font-size: 16px;
 }
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 #header {
-    background-color: red;
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
 }
 .list {}
 .list_block_1 {}
@@ -23,15 +28,20 @@
 .list_items {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 .searcbar {
-    background-color: greenyellow;
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
 }
 .searchbar_label {}
 .searchbar_input {}
 .searchbar_magnifier_icon {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 #dashboard {
-    background-color: var(--default-color);
-    color: white;
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
 }
 .dashboard {}
 .products_container {}
@@ -46,7 +56,10 @@
 .product_card_buy_add2bag {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 .bag {
-    background-color: green;
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
 }
 .bag_header {}
 .bag_icons_container {}
@@ -55,39 +68,150 @@
 .bag_button {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
 #add_address {
-    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+    width: 440px;
+    height: 540px;
 }
-.add_address {}
-.addaddress_name {}
-.address_name_label {}
-.address_name_input {}
-.addaddress_street {}
-.address_street_label {}
-.address_street_input {}
-.addaddress_city {}
-.address_city_label {}
-.address_city_input {}
-.addaddress_state {}
-.address_state_label {}
-.address_state_input {}
-.addaddress_country {}
-.address_country_label {}
-.address_country_input {}
+/* ----------------------------------------------------------------------------------- */
+.add_address {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+/* ----------------------------------------------------------------------------------- */
+.addaddress_name {
+    display: flex;
+    flex-direction: column;
+}
+.address_name_label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.address_name_input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    background-color: var(--bright-white);
+    filter: drop-shadow(0 0 5px var(--dark-black));
+    border-radius: 3px;
+}
+/* ----------------------------------------------------------------------------------- */
+.addaddress_street {
+    display: flex;
+    flex-direction: column;
+}
+.address_street_label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.address_street_input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    background-color: var(--bright-white);
+    filter: drop-shadow(0 0 5px var(--dark-black));
+    border-radius: 3px;
+}
+/* ----------------------------------------------------------------------------------- */
+.addaddress_city {
+    display: flex;
+    flex-direction: column;
+}
+.address_city_label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.address_city_input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    background-color: var(--bright-white);
+    filter: drop-shadow(0 0 5px var(--dark-black));
+    border-radius: 3px;
+}
+/* ----------------------------------------------------------------------------------- */
+.addaddress_state {
+    display: flex;
+    flex-direction: column;
+}
+.address_state_label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.address_state_input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    background-color: var(--bright-white);
+    filter: drop-shadow(0 0 5px var(--dark-black));
+    border-radius: 3px;
+}
+/* ----------------------------------------------------------------------------------- */
+.addaddress_country {
+    display: flex;
+    flex-direction: column;
+}
+.address_country_label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.address_country_input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    background-color: var(--bright-white);
+    filter: drop-shadow(0 0 5px var(--dark-black));
+    border-radius: 3px;
+}
+/* ----------------------------------------------------------------------------------- */
 .addaddress_checkbox {}
 .addaddress_checkbox_input {}
 .addaddaddress_checkbox_label {}
+/* ----------------------------------------------------------------------------------- */
 .addaddress_submit {}
 .addaddress_submit_input {}
+/* ----------------------------------------------------------------------------------- */
 .addaddress_additionals {}
 .addaddress_additionals_back {}
 .addaddress_additionals_secure {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#select_card {}
+#select_card {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .select_card_header {}
 .select_card_list {}
 .select_card_listitems {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#add_new_card {}
+#add_new_card {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .add_new_card_header {}
 .add_new_card {}
 .add_new_card_name {}
@@ -113,7 +237,12 @@
 .add_new_card_additionals_back {}
 .add_new_card_additionals_secure {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#check_bag {}
+#check_bag {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .check_bag_header {}
 .bagcards_container {}
 .bag_productcard {}
@@ -135,7 +264,12 @@
 .bag_productcard_count {}
 .bag_productcard_plus {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#item_view {}
+#item_view {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .back_from_item_view {}
 .item_view_product_container {}
 .selected_product {}
@@ -160,18 +294,38 @@
 .item_view_description_text {}
 .item_view_description_text_paragraph {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#shipping_address {}
+#shipping_address {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .shipping_list {}
 .shipping_list_items {}
 .change_btn {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#payment_method {}
+#payment_method {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .payment_list {}
 .payment_list_items {}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#review_you_bag {}
+#review_you_bag {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 /* ▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬—▬▬▬▬▬ */
-#order_summary {}
+#order_summary {
+    display: none;
+    background-color: var(--navy-blue);
+    border: 1px solid var(--default-color);
+    color: var(--bright-white);
+}
 .order_summary {}
 .order_summary_header {}
 .order_summary_blocks {}
