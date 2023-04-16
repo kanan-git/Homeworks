@@ -1,0 +1,16 @@
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+All data (Redux TLK):
+01 - to itemView from productCards
+02 - to checkout from addAddress
+03 - to checkout from addPayment
+04 - onClick addToBagBtn to bag from dashboard
+05 - get and sum price to orderSummary from bag
+
+Fetch data from (API):
+01 - productCards → image, title, color, price, rating point
+02 - itemView → product different images if exist on this api
+
+Add:
+01 - search function
+02 - rounting
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
