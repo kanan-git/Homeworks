@@ -1,0 +1,71 @@
+/* ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ */
+:root {
+    /* custom color picks for 'var()' values */
+    --default-color: rgb(0,255,128);
+    --light-white: rgb(255,255,255);
+    --dark-white: rgb(200,200,200);
+    --light-red: rgb(255,16,16);
+    --dark-red: rgb(100,0,0);
+    --light-orange: rgb(255,128,0);
+    --dark-orange: rgb(128,64,0);
+    --light-yellow: rgb(255,255,128);
+    --dark-yellow: rgb(160,160,0);
+    --light-green: rgb(0,255,0);
+    --dark-green: rgb(0,64,0);
+    --light-grey: rgb(128,128,128);
+    --dark-grey: rgb(64,64,64);
+    --light-blue: rgb(0,64,255);
+    --dark-blue: rgb(12,24,48);
+    --light-violet: rgb(128,16,255);
+    --dark-violet: rgb(48,0,255);
+    --light-black: rgb(16,16,16);
+    --dark-black: rgb(0,0,0);
+    /* transition effects */
+    --slow-fx: ease-in-out 0.4s;
+    --quick-fx: ease 0.15s;
+    --instant-fx: linear 0s;
+}
+/* ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ */
+* {
+    /* zeroings */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* list and link defaults */
+    list-style: none;
+    text-decoration: none;
+    /* font parameters */
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ */
+button {
+    /* global effect for all buttons */
+    border: 1px solid var(--light-black);
+    color: var(--light-black);
+    cursor: pointer;
+    transition: var(--slow-fx);
+}
+button:hover {
+    /* global button hover effect */
+    background-color: var(--default-color);
+    border: 1px solid var(--light-black);
+    color: var(--light-black);
+    filter: drop-shadow(0 0 5px var(--light-black));
+}
+button:active {
+    /* global button active effect */
+    background-color: var(--light-yellow);
+    border: 1px solid var(--dark-black);
+    color: var(--dark-black);
+    filter: drop-shadow(0 0 5px var(--dark-black));
+    transition: var(--instant-fx);
+}
+/* ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ */

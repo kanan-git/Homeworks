@@ -1,6 +1,23 @@
 import React from 'react'
 
 export default function Dashboard() {
+
+    // async function testAPI() {
+    //     await fetch('https://fakestoreapi.com/products')
+    //     .then(res=>res.json())
+    //     // .then(json=>console.log(json[2].title))
+    //     .then(json=>console.log(json))
+    // }
+    // testAPI()
+
+    const gettingData = fetch('https://fakestoreapi.com/products')
+    gettingData.then(
+        (res) => {
+            res = res.json()
+            console.log(res)
+        }
+    )
+
     return (
         <>
             <main id="dashboard"> {/* static main container for reference */}
@@ -16,7 +33,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 529.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                     <div className="product_card"> {/* product card 002 */}
@@ -29,7 +46,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 39.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                     <div className="product_card"> {/* product card 003 */}
@@ -42,7 +59,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 619.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                     <div className="product_card"> {/* product card 004 */}
@@ -55,7 +72,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 619.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                     <div className="product_card"> {/* product card 005 */}
@@ -68,7 +85,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 3249.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                     <div className="product_card"> {/* product card 006 */}
@@ -81,7 +98,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 619.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                     <div className="product_card"> {/* product card 007 */}
@@ -94,7 +111,7 @@ export default function Dashboard() {
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
                         <strong className="product_card_buy_price">$ 619.99</strong>
-                        <button className="product_card_buy_add2bag">■</button>
+                        <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
                     </div>
                     </div>
                 </div>

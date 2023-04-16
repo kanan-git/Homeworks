@@ -30,11 +30,14 @@ export default function AddNewCard() {
                     <label for="cardcheckbox" className="add_new_card_checkbox_label">Save this as your default address</label>
                 </span>
                 <span className="add_new_card_submit"> {/* submit panel */}
-                    <input type="submit" id="submit" name="submit" value="Add Address" className="add_new_card_submit_input" />
+                    <input type="submit" id="submit" name="submit" value="Add Payment Method" className="add_new_card_submit_input" />
                 </span>
                 <span className="add_new_card_additionals"> {/* additionals panel */}
                     <button className="add_new_card_additionals_back">Back</button>
-                    <button className="add_new_card_additionals_secure">■ Secure Connection</button>
+                    <button className="add_new_card_additionals_secure">
+                        <i class="fa-solid fa-lock fa-1x"></i>
+                        Secure Connection
+                     </button>
                 </span>
                 </form>
             </div>

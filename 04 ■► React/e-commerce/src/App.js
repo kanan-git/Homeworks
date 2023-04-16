@@ -2,6 +2,9 @@ import React from 'react';
 import { addExpense } from './features/expense/expenseSlice'
 import { useDispatch } from 'react-redux'
 
+import './global.css'
+
+import AddAddress from './components/AddAddress/AddAdress'
 import AddNewCard from './components/AddNewCard/AddNewCard'
 import Bag from './components/Bag/Bag'
 import CheckBag from './components/CheckBag/CheckBag'
@@ -22,20 +25,22 @@ function App() {
   return (
     <div onClick={() =>dispatch(addExpense())} // addExpense function which we got from store with dispatch hook
     className="App">
-      Tools
 
-      <AddNewCard />
-      <Bag />
-      <CheckBag />
+      {/* Tools */}
+
+      {/* <AddAddress /> */}
+      {/* <AddNewCard /> */}
+      {/* <Bag /> */}
+      {/* <CheckBag /> */}
       <Dashboard />
-      <Header />
-      <ItemView />
-      <OrderSummary />
-      <PaymentMethod />
-      <ReviewYourBag />
-      <Searchbar />
-      <SelectCard />
-      <ShippingAddress />
+      {/* <Header /> */}
+      {/* <ItemView /> */}
+      {/* <OrderSummary /> */}
+      {/* <PaymentMethod /> */}
+      {/* <ReviewYourBag /> */}
+      {/* <Searchbar /> */}
+      {/* <SelectCard /> */}
+      {/* <ShippingAddress /> */}
     </div>
   );
 }
