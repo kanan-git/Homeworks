@@ -10,13 +10,23 @@ export default function Dashboard() {
     // }
     // testAPI()
 
-    const gettingData = fetch('https://fakestoreapi.com/products')
-    gettingData.then(
-        (res) => {
-            res = res.json()
-            console.log(res)
-        }
-    )
+    // var response = "empty"
+    // var jsonData = "empty"
+    // async function testingIsFetchWorking() {
+    //     var response = await fetch('https://fakestoreapi.com/products')
+    //     // jsonData = await response.json()
+    //     // console.log(jsonData)
+    //     // console.log(jsonData[0].price, jsonData[19].title)
+    //     // return jsonData
+    // }
+    // testingIsFetchWorking()
+    // console.log(jsonData)
+
+    // fetch('https://fakestoreapi.com/products')
+    // .then(res => res.json())
+    // .then(json => document.querySelector("#test1234").textContent(json[0].price))
+    // var testElement = document.querySelector("#test1234")
+    // testElement.innerText = "abcdefghi"
 
     return (
         <>
@@ -28,7 +38,7 @@ export default function Dashboard() {
                         <img src="#" alt="product-image-001" className="product_card_image_content" />
                     </div>
                     <div className="product_card_info"> {/* item info */}
-                        <h4 className="product_card_info_title">Apple Watch</h4>
+                        <h4 className="product_card_info_title" id="test1234">Apple Watch</h4>
                         <p className="product_card_inf_details">Series 5 SE</p>
                     </div>
                     <div className="product_card_buy"> {/* price and purchase */}
