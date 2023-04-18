@@ -1,14 +1,16 @@
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 All data (Redux TLK):
-01 - to itemView from productCards
-02 - to checkout from addAddress
-03 - to checkout from addPayment
-04 - onClick addToBagBtn to bag from dashboard
-05 - get and sum price to orderSummary from bag
+01 - to ProductCard from Dashboard
+02 - to itemView from productCards
+03 - to checkout from addAddress
+04 - to checkout from addPayment
+05 - onClick addToBagBtn to bag from dashboard
+06 - get and sum price to orderSummary from bag
 
 Fetch data from (API):
-01 - productCards → image, title, color, price, rating point
-02 - itemView → product different images if exist on this api
+01 - productCards → image, title, category, price
+02 - itemView → product different images if exist on this api (or use same)
+03 - itemView → product description, rating point
 
 Add:
 01 - search function

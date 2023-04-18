@@ -1,6 +1,4 @@
 import React from 'react';
-import { addExpense } from './features/expense/expenseSlice'
-import { useDispatch } from 'react-redux'
 
 import './global.css'
 
@@ -19,15 +17,8 @@ import SelectCard from './components/SelectCard/SelectCard'
 import ShippingAddress from './components/ShippingAddress/ShippingAddress'
 
 function App() {
-
-  const dispatch = useDispatch()
-
   return (
-    <div onClick={() =>dispatch(addExpense())} // addExpense function which we got from store with dispatch hook
-    className="App">
-
-      {/* Tools */}
-
+    <div className="App">
       {/* <AddAddress /> */}
       {/* <AddNewCard /> */}
       {/* <Bag /> */}

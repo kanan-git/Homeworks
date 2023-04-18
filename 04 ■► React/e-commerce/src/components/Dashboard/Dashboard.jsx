@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Fragment } from 'react'
+import sDash from './index.module.css'
+import ProductCard from './ProductCard/ProductCard'
 
 export default function Dashboard() {
-
     const [productData, setProductData] = useState([])
     async function fetchDataFromApi() {
         const res = await fetch('https://fakestoreapi.com/products')
         .then( res => res.json() )
         // console.log(productData)
+        var productCount = res.length
+        // console.log(productCount)
         setProductData(
             {
                 title: res[0].title, 
@@ -25,27 +28,37 @@ export default function Dashboard() {
         }, []
     )
 
+    // ◄------------ REFERENCE ------------ REFERENCE ------------ REFERENCE ------------ REFERENCE ------------►
+    // import React, { Fragment } from "react"
+    // import styleMenuList from "./styles.module.css"
+    // import MenuListItem from "../MenuListItem"
+    // import levels from "../../utils/constants"
+
+    // export default function MenuList(props) {
+    //     const { diffLevel, handleChange } = props
+    //     return (
+    //         <div className={styleMenuList.menulist}>
+    //             {
+    //                 // levels.map((level, index) => {<MenuListItem diffLevel="Low" />})
+    //                 levels.map((level, index) => (
+    //                     <Fragment key={index}>
+    //                         <MenuListItem isSelected={diffLevel === level} handleChange={handleChange} diffLevel={level} />
+    //                     </Fragment>
+    //                 ))
+    //             }
+    //         </div>
+    //     )
+    // }
+    // ◄------------ REFERENCE ------------ REFERENCE ------------ REFERENCE ------------ REFERENCE ------------►
     return (
         <>
-            <main id="dashboard"> {/* static main container for reference */}
-                <section className="dashboard"> {/* products list in grid view page */}
-                <div className="products_container"> {/* product cards container */}
+            <main id={sDash.dashboard}> {/* static main container for reference */}
+                <section className={sDash.dashboard}> {/* products list in grid view page */}
+                <div className={sDash.products_container}> {/* product cards container */}
 
                     <Fragment key="1">
-                        <div className="product_card"> {/* product card 001 */}
-                            <div className="product_card_image"> {/* image */}
-                                <img src={productData.image} alt="product-image-001" className="product_card_image_content" />
-                            </div>
-                            <div className="product_card_info"> {/* item info */}
-                                {/* <h4 className="product_card_info_title">Apple Watch</h4> */}
-                                <h4 className="product_card_info_title"> {productData.title} </h4>
-                                <p className="product_card_inf_details"> {productData.category} </p>
-                            </div>
-                            <div className="product_card_buy"> {/* price and purchase */}
-                                <strong className="product_card_buy_price"> $ {productData.price} </strong>
-                                <button className="product_card_buy_add2bag"> <i className="fa-solid fa-shopping-bag fa-1x"></i> </button>
-                            </div>
-                        </div>
+                        <ProductCard />
+                        <p> {productData} </p>
                     </Fragment>
                     
                 </div>
