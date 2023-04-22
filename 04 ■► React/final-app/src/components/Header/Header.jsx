@@ -1,25 +1,48 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// ==============>> imports of React functions
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// ==============>> import design sheet
 import s from './index.module.css'
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+function Header() {
 
-export default function Header() {
-
-    // useState for using js function data in xlm
+    // ==============>> useState for using js function data in xlm
     const [headerList, setHeaderList] = useState([])
 
-    // fetch data
+    // ==============>> temporary condition for testing is working
+    var a = 3
+
+    // ==============>> useState & useEffect for fetch once, also changing language with condition
+    const [changeUrl, setChangeUrl] = useState([])
+    useEffect(
+        () => {
+            if (a > 2) {
+                var fetchLink = "http://localhost:3001/english"
+                setChangeUrl(fetchLink)
+                testingJsonServer()
+                console.log(changeUrl)
+            } else {
+                var fetchLink = "http://localhost:3001/azerbaijani"
+                setChangeUrl(fetchLink)
+                testingJsonServer()
+                console.log(changeUrl)
+            }
+        }, []
+    )
+
+    // ==============>> fetch data function
     function testingJsonServer() {
-        axios.get('http://localhost:3001/english/')
+        axios.get(`${changeUrl}`)
         .then(response => setHeaderList(response.data.headerListItems))
-        // console.log(headerList)
         // fetch('http://localhost:3001/english/')
         // .then(res => res.json())
         // .then(result => setHeaderListItems(result.headerListItems))
+        console.log(headerList, changeUrl)
     }
-    useEffect(testingJsonServer, [])
 
-    // map for gathering all item of array
+    // ==============>> map for gathering all item of array
     const items = headerList.map(
         (menus, index) => 
         <button key={index} className={s.header__menus}>
@@ -27,6 +50,7 @@ export default function Header() {
         </button>
     )
 
+    // ==============>> return of function Header
     return (
         <div className={s.header}> {/* edit classnames, adjust to blender reference */}
             {
@@ -35,4 +59,7 @@ export default function Header() {
         </div>
     )
 }
+
+// ==============>> exporting component function Header
+export default Header;
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
