@@ -1,21 +1,15 @@
 {
+  
+  "azerbaijani": {
+    "headerListItems": ["Ana səhifə", "Məhsullar", "Haqqımızda", "Əlaqə"]
+  },
 
-  "headerListItems": ["Homepage", "Products", "About us", "Contact"],
+  
 
-  "testingAnotherObject": [
 
-    {
-      "id": "0",
-      "name": "Nobody",
-      "status": "alive ?"
-    },
 
-    {
-      "id": "1",
-      "name": "Final App",
-      "status": "pending ..."
-    }
-
-  ]
+  "english": {
+    "headerListItems": ["Homepage", "Products", "About us", "Contact"]
+  }
 
 }

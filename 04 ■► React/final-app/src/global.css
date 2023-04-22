@@ -1,0 +1,55 @@
+:root {
+  --light-white: rgb(255,255,255);
+  --mid-white: rgb(240,240,240);
+  --dark-white: rgb(225,225,225);
+  --light-red: rgb(255,128,128);
+  --mid-red: rgb(255,0,0);
+  --dark-red: rgb(128,0,0);
+  --light-orange: rgb(255,180,64);
+  --mid-orange: rgb(255,128,0);
+  --dark-orange: rgb(200,80,0);
+  --light-yellow: rgb(255,255,200);
+  --mid-yellow: rgb(255,255,0);
+  --dark-yellow: rgb(180,180,0);
+  --light-green: rgb(128,255,128);
+  --mid-green: rgb(0,255,0);
+  --dark-green: rgb(0,64,0);
+  --light-blue: rgb(128,215,255);
+  --mid-blue: rgb(0,128,255);
+  --dark-blue: rgb(0,64,128);
+  --light-navy: rgb(0,0,255);
+  --mid-navy: rgb(0,0,128);
+  --dark-navy: rgb(12,24,48);
+  --light-purple: rgb(220,100,255);
+  --mid-purple: rgb(128,0,255);
+  --dark-purple: rgb(64,0,255);
+  --light-black: rgb(30,30,30);
+  --mid-black: rgb(15,15,15);
+  --dark-black: rgb(0,0,0);
+  --light-grey: rgb(180,180,180);
+  --mid-grey: rgb(128,128,128);
+  --dark-grey: rgb(64,64,64);
+  --slow-fx: ease-in-out 0.35s;
+  --quicky-fx: ease 1.5s;
+  --instant-fx: linear 0s;
+  --extra-small-device: 575px;
+  --mobile-device: 767px;
+  --tablet-device: 991px;
+  --desktop-device: 1199px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  color: var(--dark-black);
+}
+
+button {
+  cursor: pointer;
+}/*# sourceMappingURL=global.css.map */
