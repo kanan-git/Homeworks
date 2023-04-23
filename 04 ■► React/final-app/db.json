@@ -1,15 +1,35 @@
 {
   
-  "azerbaijani": {
-    "headerListItems": ["Ana səhifə", "Məhsullar", "Haqqımızda", "Əlaqə"]
+  "english": {
+
+    "headerListItems": ["Homepage", "Products", "About us", "Contact"],
+
+    "footerListItems": {
+      "aboutus": ["Temporary text, lorem ipsum sit dolor, translate from azerbaijani version", "Ələsgər Qayibov 10h.",
+      "012 555 80 83", "Sales@gst.az"],
+      "profile": ["Sign in", "Cart", "Favorites", "My orders"],
+      "links": ["Products", "Contact Us", "About Us", "Terms and Conditions"],
+      "follow us": ["Facebook", "YouTube"]
+    }
+    
   },
 
   
 
 
 
-  "english": {
-    "headerListItems": ["Homepage", "Products", "About us", "Contact"]
+  "azerbaijani": {
+
+    "headerListItems": ["Ana səhifə", "Məhsullar", "Haqqımızda", "Əlaqə"],
+
+    "footerListItems": {
+      "aboutus": ["Ustalar üçün peşəkar alətlərdən tutmuş qarajlar üçün avadnlıqlara, xüsus təmizləyici vasitələrə qədər hər şey. Peşəkar müştərilərimizin iş gününü GST məhsulları və həlləri olmadan təsəvvür etmək çətin olardı. Etibarlı və təcrübəli ticarət tərəfdaşı kimi daim müştərilərimizin yanındayıq. Sənaye, tikinti, avtomobil, qida sənayesi və texniki qulluq sahəsində çalışan müştərilər brendlərimizin təcrübəsinə etibar edirlər...", "Ələsgər Qayibov 10h.",
+      "012 555 80 83", "Sales@gst.az"],
+      "profile": ["Daxil ol", "Səbət", "Favorilərim", "Sifarişlərim"],
+      "links": ["Məhsullar", "Bizimlə əlaqə", "Haqqımızda", "Şərtlər və qaydalar"],
+      "follow us": ["Facebook", "YouTube"]
+    }
+
   }
 
 }

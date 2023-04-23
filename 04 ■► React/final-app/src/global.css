@@ -30,7 +30,7 @@
   --mid-grey: rgb(128,128,128);
   --dark-grey: rgb(64,64,64);
   --slow-fx: ease-in-out 0.35s;
-  --quicky-fx: ease 1.5s;
+  --quick-fx: ease 0.15s;
   --instant-fx: linear 0s;
   --extra-small-device: 575px;
   --mobile-device: 767px;

@@ -33,7 +33,7 @@
     --dark-grey: rgb(64,64,64);
     // transition speeds
     --slow-fx: ease-in-out 0.35s;
-    --quicky-fx: ease 1.5s;
+    --quick-fx: ease 0.15s;
     --instant-fx: linear 0s;
     // responsivity sizes ( use with @media only screen and (max-width: var(--mobile-device) {...}; )
     --extra-small-device: 575px;

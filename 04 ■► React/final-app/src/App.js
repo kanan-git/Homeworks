@@ -11,15 +11,10 @@ import Header from './components/Header/Header'
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 function App() {
 
-  // ==============>> testing data flow of actions
-  var isClicked = false
-
   // ==============>> return of function App
   return (
     <div 
     className="App" 
-    onMouseEnter={() => {var isClicked = true}} 
-    onMouseLeave={() => {var isClicked = false}}
     >
 
       <Header />
