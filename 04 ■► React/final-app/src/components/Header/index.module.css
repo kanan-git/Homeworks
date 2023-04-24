@@ -1,0 +1,10 @@
+.header {
+  background-color: var(--light-yellow);
+}
+.header__list {
+  background-color: transparent;
+  border: 1px solid var(--dark-navy);
+}
+.header__list_buttons {
+  border-bottom: 1px solid var(--dark-black);
+}/*# sourceMappingURL=index.module.css.map */

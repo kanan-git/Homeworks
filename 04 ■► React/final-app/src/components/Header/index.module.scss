@@ -1,0 +1,11 @@
+
+.header {
+    background-color: var(--light-yellow);
+    &__list {
+        background-color: transparent;
+        border: 1px solid var(--dark-navy);
+        &_buttons {
+            border-bottom: 1px solid var(--dark-black);
+        }
+    }
+}
