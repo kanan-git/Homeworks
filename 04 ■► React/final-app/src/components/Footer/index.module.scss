@@ -1,0 +1,92 @@
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+.footer {
+    width: 100vw;
+    height: 400px;
+    &__top {
+        height: 360px;
+        background-color: var(--dark-navy);
+        color: var(--light-white);
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        border: none;
+        border-bottom: 1px solid var(--mid-white);
+        &_column {
+            width: 250px;
+            height: auto;
+            margin-top: 50px;
+            &__header {
+                text-transform: uppercase;
+                color: var(--light-white);
+                font-weight: 600;
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+            &__items_static {
+                color: var(--light-white);
+                font-weight: 500;
+                font-size: 16px;
+                width: fit-content;
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+            }
+            &__items {
+                color: var(--light-white);
+                font-weight: 500;
+                font-size: 16px;
+                cursor: pointer;
+                transition: var(--quick-fx);
+                width: fit-content;
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+                &:hover {
+                    transform: translateX(10px);
+                    color: var(--light-blue);
+                    // #fa_location {
+                    //     color: var(--light-blue);
+                    // }
+                    // #fa_phone {
+                    //     color: var(--light-blue);
+                    // }
+                    // #fa_envelope {
+                    //     color: var(--light-blue);
+                    // }
+                    #fa_brands {
+                        color: var(--light-blue);
+                    }
+                }
+            }
+            #fa_location {
+                margin-right: 5px;
+                color: var(--light-white);
+            }
+            #fa_phone {
+                margin-right: 5px;
+                color: var(--light-white);
+            }
+            #fa_envelope {
+                margin-right: 5px;
+                color: var(--light-white);
+            }
+            #fa_brands {
+                margin-right: 5px;
+                color: var(--light-white);
+            }
+        }
+    }
+
+    &__bottom {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: var(--mid-black);
+        &_text {
+            font-weight: 600;
+            margin-left: 40px;
+            color: var(--mid-white);
+        }
+    }
+}
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

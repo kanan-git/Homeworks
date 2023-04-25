@@ -3,24 +3,43 @@ final-app To Do List (HTML, SASS, JS, React, Redux TLK):
 
 - 01. header bottom side profile dropdown menu
 - 02. header top side products dropdown menu
-- 03. footer columns
-- 04. footer bottom side
-- 05. usable scripted privacy policy, terms and conditions windows
-- 06. home page
-- 07. about us page
-- 08. contact page
-- 09. routing activate
+- 03. usable scripted privacy policy, terms and conditions windows
+- 04. home page
+- 05. about us page
+- 06. contact page
+- 07. routing activate
+- 08. store reduxTLK data flow, rounting
+- 09. mobile responsivity, light/dark mode functions
 - 10. axios fetch data from fake store API for products or create dataSource (keep API codes as comments)
 - 11. redux toolkit return clicked product card data to next page
 - 12. redux toolkit products dashboard to itemview page
+- 13. scss edit color picks as background bold, background mid, background light, border, content color ...
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
-~ 01. header bottom side
+~ 01. header bottom side with dropdown menus
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Done:
 
 + header top side menu list (replaced json server)
 + font awesome icons
 + font family google
++ footer columns
++ footer bottom side
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+------------------> ABOUT US TEXT <------------------
+Welcome to ShopNet, your one-stop online shop for all your favorite products! Established in April 2023, we are a rapidly growing e-commerce platform based in 28 May, Baku, Azerbaijan, offering a wide range of high-quality products at affordable prices.
+At ShopNet, we understand the convenience and simplicity of online shopping, and we are committed to providing our customers with a seamless and enjoyable shopping experience. Our website is easy to navigate, and our product listings are detailed and informative, providing you with all the information you need to make an informed purchase decision.
+Our product range includes everything from fashion and beauty products to electronics, home appliances, and more, all sourced from trusted manufacturers and suppliers. We also offer fast and reliable shipping to anywhere in Azerbaijan, ensuring that you receive your order quickly and hassle-free.
+At ShopNet, we believe that customer satisfaction is our top priority, and we are dedicated to providing you with excellent customer service and support. If you have any questions or concerns, our friendly and knowledgeable customer service team is available to assist you.
+Thank you for choosing ShopNet as your preferred online shopping destination. We look forward to serving you and making your shopping experience a great one!
+
+------------------> PRIVACY TERMS TEXT <------------------
+.
+
+------------------> TERMS & CONDITIONS TEXT <------------------
+.
+
+------------------> CONTACT TEXT <------------------
+.
