@@ -1,11 +1,52 @@
 
 .header {
-    background-color: var(--light-yellow);
+    // header overall container
+    width: 100vw; // vh, vw, px, %, rem
+    height: 80px;
+    background-color: var(--dark-white);
+    border: none;
+    border-bottom: 1px solid var(--mid-grey);
+    // top navbar side of the header
     &__list {
+        width: 100%;
+        height: 30px;
         background-color: transparent;
-        border: 1px solid var(--dark-navy);
+        border: none;
+        border-bottom: 1px solid var(--dark-black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        background: linear-gradient(to bottom, var(--mid-black), var(--dark-grey));
         &_buttons {
-            border-bottom: 1px solid var(--dark-black);
+            border: none;
+            border-bottom: 1px solid var(--light-white);
+            background-color: transparent;
+            color: var(--light-white);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: capitalize;
+            transition: var(--quick-fx);
+            &:hover {
+                scale: 1.01;
+                color: var(--light-red);
+                border-bottom: 1px solid var(--light-red);
+                filter: drop-shadow(0 0 3px var(--mid-black));
+            }
+            &:active {
+                transition: var(--instant-fx);
+                color: var(--mid-red);
+                border-bottom: 1px solid var(--mid-red);
+                filter: drop-shadow(0 0 8px var(--light-red));
+            }
         }
+    }
+    // bottom main side of the header
+    &__main{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
