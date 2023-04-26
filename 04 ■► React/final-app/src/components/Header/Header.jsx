@@ -9,30 +9,40 @@ import userQuest from './user-quest.png'
 
 function Header() {
     // useState components
-    const [menuElements, setMenuElements] = useState([])
-    const [navItems, setNavItems] = useState([])
-    const [userDropDown, setUserDropDown] = useState([])
-    const [productsDD, setProductsDD] = useState([])
+    const [menuElements, setMenuElements] = useState(dataSource.english.header.topside)
+    const [navItems, setNavItems] = useState(dataSource.english.header.mainside.navbar)
+    const [userDropDown, setUserDropDown] = useState(dataSource.english.header.mainside.userdropdown)
+
+    const [productsDD1, setProductsDD1] = useState(dataSource.english.header.mainside.productsddown.header1)
+    const [productsDD2, setProductsDD2] = useState(dataSource.english.header.mainside.productsddown.header2)
+    const [productsDD3, setProductsDD3] = useState(dataSource.english.header.mainside.productsddown.header3)
 
     // useEffect for call function once
     useEffect(
         () => {
-            setMenuElements(dataSource.english.header.topside)
-            setNavItems(dataSource.english.header.mainside.navbar)
-            setUserDropDown(dataSource.english.header.mainside.userdropdown)
-            setProductsDD(dataSource.english.header.mainside.productsddown)
             var langSelector = document.querySelector("#language")
             langSelector.addEventListener( "change", () => {
                 if(langSelector.value == "English") {
                     setMenuElements(dataSource.english.header.topside)
                     setNavItems(dataSource.english.header.mainside.navbar)
                     setUserDropDown(dataSource.english.header.mainside.userdropdown)
-                    setProductsDD(dataSource.english.header.mainside.productsddown)
+                    setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
+                    setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
+                    setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
+                } else if(langSelector.value == "Türkçe") {
+                    setMenuElements(dataSource.turkish.header.topside)
+                    setNavItems(dataSource.turkish.header.mainside.navbar)
+                    setUserDropDown(dataSource.turkish.header.mainside.userdropdown)
+                    setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
+                    setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
+                    setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
                 } else {
                     setMenuElements(dataSource.azerbaijani.header.topside)
                     setNavItems(dataSource.azerbaijani.header.mainside.navbar)
                     setUserDropDown(dataSource.azerbaijani.header.mainside.userdropdown)
-                    setProductsDD(dataSource.azerbaijani.header.mainside.productsddown)
+                    setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
+                    setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
+                    setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
                 }
             })
         }, []
@@ -55,10 +65,23 @@ function Header() {
                         </button>
                     )
                 }
-                
+
                 {/* dropdown menu for userpanel */}
-                <div className={s.header__products_dropdown}></div>
-                {/* -----------------------------------> COMPLETE THIS DROPDOWN MENU <-------------------------------- */}
+                <ul className={s.header__list_productsdropdown}>
+                    <h4 className={s.header__list_productsdropdown__items_header}> {productsDD1[0]} </h4>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD1[1]} </li>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD1[2]} </li>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD1[3]} </li>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD1[4]} </li>
+
+                    <h4 className={s.header__list_productsdropdown__items_header}> {productsDD2[0]} </h4>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD2[1]} </li>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD2[2]} </li>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD2[3]} </li>
+                    <li className={s.header__list_productsdropdown__items}> {productsDD2[4]} </li>
+
+                    <li className={s.header__list_productsdropdown__items}> {productsDD3[0]} </li>
+                </ul>
             </nav>
 
             {/* bottom main side of the header contains logo, searchbar, language bar, userpanel */}
@@ -72,8 +95,9 @@ function Header() {
                 <div className={s.header__main_langbar}>
                     <i className='fa-solid fa-globe fa-1x' id={s.fa_globe}></i>
                     <select name="language" id="language" className={s.header__main_langbar__selector}>
-                        <option value="English" className={s.header__main_langbar__selector_options}>English</option>
-                        <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}>Azərbaycan dili</option>
+                        <option value="English" className={s.header__main_langbar__selector_options}> English </option>
+                        <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}> Azərbaycan dili </option>
+                        <option value="Türkçe" className={s.header__main_langbar__selector_options}> Türkçe </option>
                     </select>
                 </div>
 
@@ -101,11 +125,11 @@ function Header() {
 
                     {/* dropdown menu for userpanel */}
                     <ul className={s.header__main_userpanel_dropdown}>
-                        <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> Sign in </li>
-                        <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> Register </li>
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> Favorites </li> */}
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> My Cart </li> */}
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> Log Out </li> */}
+                        <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </li>
+                        <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </li>
+                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </li> */}
+                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </li> */}
+                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </li> */}
                     </ul>
                 </div>
             </div>

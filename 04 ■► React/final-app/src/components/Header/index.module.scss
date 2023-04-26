@@ -7,6 +7,7 @@
     border: none;
     // top navbar side of the header
     &__list {
+        position: relative;
         width: 100%;
         height: 40px;
         background-color: transparent;
@@ -49,6 +50,40 @@
                 filter: drop-shadow(0 0 8px var(--light-red));
                 #fa_caret {
                     rotate: 0deg;
+                }
+            }
+        }
+        &_productsdropdown {
+            z-index: 2;
+            position: absolute;
+            top: 100%;
+            left: 35%;
+            width: 300px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0px;
+            gap: 10px;
+            border: 1px solid var(--dark-black);
+            background-color: var(--light-white);
+            filter: drop-shadow(0 0 10px var(--dark-black));
+            // display: none;
+            &__items {
+                font-weight: 600;
+                cursor: pointer;
+                margin-left: 30px;
+                transition: var(--quick-fx);
+                &_header {
+                    font-size: 16px;
+                    font-weight: 800;
+                    margin-left: 30px;
+                }
+                &:hover {
+                    color: var(--light-red);
+                }
+                &:active {
+                    transition: var(--instant-fx);
+                    color: var(--mid-red);
                 }
             }
         }
@@ -105,6 +140,9 @@
                 &_options {
                     font-weight: 600;
                     background-color: var(--light-grey);
+                    &:checked {
+                        color: var(--mid-grey);
+                    }
                 }
             }
         }
@@ -220,6 +258,7 @@
                 gap: 10px;
                 border: 1px solid var(--dark-black);
                 background-color: var(--light-white);
+                filter: drop-shadow(0 0 10px var(--dark-black));
                 display: none;
                 &__items {
                     font-weight: 600;

@@ -1,6 +1,7 @@
 .footer {
   width: 100vw;
   height: 400px;
+  border-top: 1px solid var(--mid-black);
 }
 .footer__top {
   height: 360px;

@@ -5,8 +5,12 @@ export const dataSource = {
             topside: ["homepage", "products", "about us", "contact"],
             mainside: {
                 navbar: ["Search for any products you want ...", "Login"],
-                userdropdown: [],
-                productsddown: []
+                userdropdown: ["Sign in", "Register", "Favorites", "My Cart", "Log Out"],
+                productsddown: {
+                    header1: ["Categories", "Groceries", "Assembly Elements", "Cutting", "Chemical Products"], 
+                    header2: ["Brands", "BERNER", "CTP", "FERM", "HOGERT"],
+                    header3: ["Discount products"]
+                }
             }
         },
 
@@ -49,8 +53,12 @@ export const dataSource = {
             topside: ["ana səhifə", "məhsullar", "haqqımızda", "əlaqə"],
             mainside: {
                 navbar: ["İstədiyiniz məhsulları axtarın ...", "Daxil ol"], 
-                userdropdown: [],
-                productsddown: []
+                userdropdown: ["Daxil ol", "Qeydiyyat", "Favorilər", "Səbət", "Çıxış et"],
+                productsddown: {
+                    header1: ["Kateqoriyalar", "Xırdavat", "Montaj Elementləri", "Kəsmə Deşmə", "Kimyəvi Məhsullar"], 
+                    header2: ["Brendlər", "BERNER", "CTP", "FERM", "HOGERT"],
+                    header3: ["Endirimli məhsullar"]
+                }
             }
         },
         
@@ -83,11 +91,57 @@ export const dataSource = {
                 "Instagram"
             ],
             bottomside: "© Müəllif hüququ 2023 CODERS.EDU.AZ | Bütün Hüquqları Qorunur."
-        }
+        },
+
+        homepage: []
 
     },
-
+    // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ // TURKİSH
     turkish: {
-        // copy all to here and translate
+        header: {
+            topside: ["ana sayfa", "ürünler", "hakkımızda", "iletişim"],
+            mainside: {
+                navbar: ["İstediğiniz ürünleri arayın ...", "Giriş"],
+                userdropdown: ["Giriş", "Kayıt ol", "Favoriler", "Sepetim", "Çıkış yap"],
+                productsddown: {
+                    header1: ["Kategoriler", "Bakkaliye", "Montaj Ekipmanlari", "Kesme", "Kimyasal Ürünler"], 
+                    header2: ["Markalar", "BERNER", "CTP", "FERM", "HOGERT"],
+                    header3: ["Indirimli ürünler"]
+                }
+            }
+        },
+
+        footer: {
+            about: [
+                "Hakkımızda", 
+                "ShopNet'e hoş geldiniz, tüm favori ürünleriniz için tek duraklı online alışveriş merkeziniz! Nisan 2023'te kurulan, 28 Mayıs, Bakü, Azerbaycan'da bulunan ve uygun fiyatlı yüksek kaliteli ürünlerin geniş bir yelpazesini sunan hızla büyüyen bir e-ticaret platformuyuz.",
+                "28 May, Bakü, Azerbaycan", 
+                "(+994) 50 123 45 67", 
+                "sales@shopnet.az"
+            ],
+            profile: [
+                "Profil", 
+                "Giriş", 
+                "Favoriler", 
+                "Sepetim", 
+                "Siparişlerim"
+            ],
+            links: [
+                "Bağlantılar", 
+                "Ürünler", 
+                "İletişim", 
+                "Hakkımızda", 
+                "Kullanım şartları ve Koşullar"
+            ],
+            followus: [
+                "Takip et", 
+                "Facebook", 
+                "YouTube", 
+                "Instagram"
+            ],
+            bottomside: "© Copyright 2023 CODERS.EDU.AZ | Tüm Haklar Saklıdır."
+        },
+
+        homepage: {}
     }
 }

@@ -5,19 +5,14 @@ import {useState, useEffect} from 'react'
 
 function Footer() {
 
-    const [footerCol1data, setFooterCol1data] = useState([])
-    const [footerCol2data, setFooterCol2data] = useState([])
-    const [footerCol3data, setFooterCol3data] = useState([])
-    const [footerCol4data, setFooterCol4data] = useState([])
-    const [footerBottom, setFooterBottom] = useState([])
+    const [footerCol1data, setFooterCol1data] = useState(dataSource.english.footer.about)
+    const [footerCol2data, setFooterCol2data] = useState(dataSource.english.footer.profile)
+    const [footerCol3data, setFooterCol3data] = useState(dataSource.english.footer.links)
+    const [footerCol4data, setFooterCol4data] = useState(dataSource.english.footer.followus)
+    const [footerBottom, setFooterBottom] = useState(dataSource.english.footer.bottomside)
 
     useEffect(
         () => {
-            setFooterCol1data(dataSource.english.footer.about)
-            setFooterCol2data(dataSource.english.footer.profile)
-            setFooterCol3data(dataSource.english.footer.links)
-            setFooterCol4data(dataSource.english.footer.followus)
-            setFooterBottom(dataSource.english.footer.bottomside)
             var langSelector = document.querySelector("#language")
             langSelector.addEventListener( "change", () => {
                 if(langSelector.value == "English") {
@@ -26,6 +21,12 @@ function Footer() {
                     setFooterCol3data(dataSource.english.footer.links)
                     setFooterCol4data(dataSource.english.footer.followus)
                     setFooterBottom(dataSource.english.footer.bottomside)
+                } else if(langSelector.value == "Türkçe") {
+                    setFooterCol1data(dataSource.turkish.footer.about)
+                    setFooterCol2data(dataSource.turkish.footer.profile)
+                    setFooterCol3data(dataSource.turkish.footer.links)
+                    setFooterCol4data(dataSource.turkish.footer.followus)
+                    setFooterBottom(dataSource.turkish.footer.bottomside)
                 } else {
                     setFooterCol1data(dataSource.azerbaijani.footer.about)
                     setFooterCol2data(dataSource.azerbaijani.footer.profile)
