@@ -8,6 +8,18 @@ import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
 
 function Header() {
+    // switching LIGHT/DARK mode of ShopNet overall
+    const root = document.documentElement;
+    const switchLDmodes = document.querySelector(".header__main_switch__slider")
+    var temporaryFakeConditionValue = true
+    if(temporaryFakeConditionValue == true) {
+        // set LIGHT MODE
+        root.style.setProperty('--default-color', 'rgb(255,0,0)');
+    } else {
+        // set DARK MODE
+        root.style.setProperty('--default-color', 'rgb(0,255,0)');
+    }
+
     // useState components
     const [menuElements, setMenuElements] = useState(dataSource.english.header.topside)
     const [navItems, setNavItems] = useState(dataSource.english.header.mainside.navbar)
