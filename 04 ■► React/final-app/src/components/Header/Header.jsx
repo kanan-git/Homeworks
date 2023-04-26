@@ -67,21 +67,41 @@ function Header() {
                 }
 
                 {/* dropdown menu for userpanel */}
-                <ul className={s.header__list_productsdropdown}>
-                    <h4 className={s.header__list_productsdropdown__items_header}> {productsDD1[0]} </h4>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD1[1]} </li>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD1[2]} </li>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD1[3]} </li>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD1[4]} </li>
+                <div className={s.header__list_productsdropdown}>
+                    <ul className={s.header__list_productsdropdown__columns}>
+                        <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD1[0]} </h4>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[1]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[2]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[3]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[4]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[5]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[6]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[7]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[8]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[9]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[10]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[11]} </li>
+                    </ul>
 
-                    <h4 className={s.header__list_productsdropdown__items_header}> {productsDD2[0]} </h4>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD2[1]} </li>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD2[2]} </li>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD2[3]} </li>
-                    <li className={s.header__list_productsdropdown__items}> {productsDD2[4]} </li>
+                    <ul className={s.header__list_productsdropdown__columns}>
+                        <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD2[0]} </h4>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[1]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[2]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[3]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[4]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[5]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[6]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[7]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[8]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[9]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[10]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[11]} </li>
+                    </ul>
 
-                    <li className={s.header__list_productsdropdown__items}> {productsDD3[0]} </li>
-                </ul>
+                    <ul className={s.header__list_productsdropdown__columns}>
+                        <li className={s.header__list_productsdropdown__columns_discount}> {productsDD3[0]} </li>
+                    </ul>
+                </div>
             </nav>
 
             {/* bottom main side of the header contains logo, searchbar, language bar, userpanel */}

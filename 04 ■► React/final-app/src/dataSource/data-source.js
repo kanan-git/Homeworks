@@ -7,8 +7,8 @@ export const dataSource = {
                 navbar: ["Search for any products you want ...", "Login"],
                 userdropdown: ["Sign in", "Register", "Favorites", "My Cart", "Log Out"],
                 productsddown: {
-                    header1: ["Categories", "Groceries", "Assembly Elements", "Cutting", "Chemical Products"], 
-                    header2: ["Brands", "BERNER", "CTP", "FERM", "HOGERT"],
+                    header1: ["Categories", "Groceries", "Assembly Elements", "Cutting", "Chemical Products", "Job Protection", "Tools", "Oils Other", "Conveyor System", "FMCG Products", "Auto Care Tools", "Reserve Parts"], 
+                    header2: ["Brands", "BERNER", "CTP", "FERM", "HOGERT", "MATRİX", "BOLL", "RHODİUS", "MOJE AUTO", "REMA TİP TOP", "MAXMO", "STATUS"], 
                     header3: ["Discount products"]
                 }
             }
@@ -55,8 +55,8 @@ export const dataSource = {
                 navbar: ["İstədiyiniz məhsulları axtarın ...", "Daxil ol"], 
                 userdropdown: ["Daxil ol", "Qeydiyyat", "Favorilər", "Səbət", "Çıxış et"],
                 productsddown: {
-                    header1: ["Kateqoriyalar", "Xırdavat", "Montaj Elementləri", "Kəsmə Deşmə", "Kimyəvi Məhsullar"], 
-                    header2: ["Brendlər", "BERNER", "CTP", "FERM", "HOGERT"],
+                    header1: ["Kateqoriyalar", "Xırdavat", "Montaj Elementləri", "Kəsmə Deşmə", "Kimyəvi Məhsullar", "İş Təhlükəsizlik", "Alətlər", "Yağlar Digər", "Konveyer Sistemi", "FMCG Mallar", "Avto Qulluq Vasitələri", "Ehtiyyat Hissəsi"], 
+                    header2: ["Brendlər", "BERNER", "CTP", "FERM", "HOGERT", "MATRİX", "BOLL", "RHODİUS", "MOJE AUTO", "REMA TİP TOP", "MAXMO", "STATUS"], 
                     header3: ["Endirimli məhsullar"]
                 }
             }
@@ -104,8 +104,8 @@ export const dataSource = {
                 navbar: ["İstediğiniz ürünleri arayın ...", "Giriş"],
                 userdropdown: ["Giriş", "Kayıt ol", "Favoriler", "Sepetim", "Çıkış yap"],
                 productsddown: {
-                    header1: ["Kategoriler", "Bakkaliye", "Montaj Ekipmanlari", "Kesme", "Kimyasal Ürünler"], 
-                    header2: ["Markalar", "BERNER", "CTP", "FERM", "HOGERT"],
+                    header1: ["Kategoriler", "Bakkaliye", "Montaj Ekipmanlari", "Kesme", "Kimyasal Ürünler", "İş Güvenlik", "Aletler", "Yağlar Diger", "Konveyör Sistemi", "FMCG Ürünler", "Oto Bakım Araçları", "Yedek Parçalar"], 
+                    header2: ["Markalar", "BERNER", "CTP", "FERM", "HOGERT", "MATRİX", "BOLL", "RHODİUS", "MOJE AUTO", "REMA TİP TOP", "MAXMO", "STATUS"], 
                     header3: ["Indirimli ürünler"]
                 }
             }
