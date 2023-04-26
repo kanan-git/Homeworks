@@ -1,6 +1,37 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 :root {
-    // custom color picks
+    // custom color picks for LIGHT mode
+    --text-color: rgb();
+    --link-color: rgb();
+    --link-hover-color: rgb();
+    --link-active-color: rgb();
+    --default-bg-color: rgb();
+    --footer-bg-color: rgb();
+    --footer-bottom-color: rgb();
+    --header-bg-color: rgb();
+    --header-top-color: rgb();
+    --buttons-color: rgb();
+    --buttons-hover-color: rgb();
+    --buttons-active-color: rgb();
+
+    // custom color picks for DARK mode
+    --text-color: rgb();
+    --link-color: rgb();
+    --link-hover-color: rgb();
+    --link-active-color: rgb();
+    --default-bg-color: rgb();
+    --footer-bg-color: rgb();
+    --footer-bottom-color: rgb();
+    --header-bg-color: rgb();
+    --header-top-color: rgb();
+    --buttons-color: rgb();
+    --buttons-hover-color: rgb();
+    --buttons-active-color: rgb();
+
+
+
+
+    
     --light-white: rgb(255,255,255);
     --mid-white: rgb(240,240,240);
     --dark-white: rgb(225,225,225);

@@ -4,7 +4,7 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../dataSource/data-source'
 import {useState, useEffect} from 'react'
-import logo from './logo.png'
+import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
 
 function Header() {

@@ -124,7 +124,7 @@
   padding: 0 5%;
 }
 .header__main_logo {
-  border: 1px solid var(--mid-grey);
+  border: none;
   width: 60px;
   height: 100%;
   overflow: hidden;
