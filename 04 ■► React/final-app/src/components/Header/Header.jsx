@@ -39,19 +39,19 @@ function Header() {
             // enable LIGHT mode
             setIsLightMode(false)
             console.log(isLightMode)
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
         }
         else if(isLightMode == false) {
             // enable DARK mode
