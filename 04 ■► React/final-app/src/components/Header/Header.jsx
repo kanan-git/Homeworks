@@ -40,16 +40,16 @@ function Header() {
             switchButtonRef.addEventListener("click", () => {
                 if(variableForLD == "light") {
                     // enable LIGHT mode
-                    var lightMode = "dark"
+                    var lightMode = "dark1"
                     setVariableForLD(lightMode)
                     root.style.setProperty('--default-color', 'rgb(0,255,0)'); // DARK mode default color
-                    console.log(variableForLD)
+                    console.log(variableForLD, lightMode)
                 } else {
                     // enable DARK mode
-                    var lightMode = "light"
+                    var lightMode = "light1"
                     setVariableForLD(lightMode)
                     root.style.setProperty('--default-color', 'rgb(255,0,0)'); // LIGHT mode default color
-                    console.log(variableForLD)
+                    console.log(variableForLD, lightMode)
                 }
             })
         }, []
