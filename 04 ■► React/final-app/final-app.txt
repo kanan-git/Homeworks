@@ -17,7 +17,7 @@ final-app To Do List (HTML, SASS, JS, React, Redux TLK):
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
------ _____ ***** ►►►►► with function, in header jsx, qeurySelect switch button and add function for condition to light or dark mode, edit color picks
+---------------> function is ready, set site color picks and use them in sass files of header, footer, homepage, about components !!!!!!!!!!!!!
 
 ~ 01. header bottom side with dropdown menus
 useState defaults

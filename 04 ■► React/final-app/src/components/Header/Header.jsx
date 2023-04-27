@@ -16,11 +16,10 @@ import userQuest from './user-quest.png'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Header() {
     // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
-    const switchButtonRef = useRef()
+    // const switchButtonRef = useRef()
     const root = document.documentElement;
-    var lightMode = "light"
-    const [variableForLD, setVariableForLD] = useState(lightMode)
     // console.log(switchButtonRef.current.innerHTML)
+    const [isLightMode, setIsLightMode] = useState(true)
     
     // useState components
     const [menuElements, setMenuElements] = useState(dataSource.english.header.topside)
@@ -32,28 +31,50 @@ function Header() {
     const [productsDD3, setProductsDD3] = useState(dataSource.english.header.mainside.productsddown.header3)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     // function for switching Light or Dark mode
-    // switchButtonRef.current.addEventListener("change", () => {console.log("+++")})
+
     // document.querySelector(".header__main_switch__slider").addEventListener("click", () => {console.log("+")})
-    useEffect(
-        () => {
-            var switchButtonRef = document.querySelector("#switchlord")
-            switchButtonRef.addEventListener("click", () => {
-                if(variableForLD == "light") {
-                    // enable LIGHT mode
-                    var lightMode = "dark1"
-                    setVariableForLD(lightMode)
-                    root.style.setProperty('--default-color', 'rgb(0,255,0)'); // DARK mode default color
-                    console.log(variableForLD, lightMode)
-                } else {
-                    // enable DARK mode
-                    var lightMode = "light1"
-                    setVariableForLD(lightMode)
-                    root.style.setProperty('--default-color', 'rgb(255,0,0)'); // LIGHT mode default color
-                    console.log(variableForLD, lightMode)
-                }
-            })
-        }, []
-    )
+
+    function handleSwitchLorD() {
+        if(isLightMode == true) {
+            // enable LIGHT mode
+            setIsLightMode(false)
+            console.log(isLightMode)
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+        }
+        else if(isLightMode == false) {
+            // enable DARK mode
+            setIsLightMode(true)
+            console.log(isLightMode)
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+        }
+        else {
+            console.log("function is not working correctly", isLightMode)
+        }
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // useEffect for call function once
     useEffect(
@@ -170,7 +191,8 @@ function Header() {
                 {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}
                 <div className={s.header__main_switch}>
                     <i className='fa-solid fa-sun fa-1x' id={s.fa_sun}></i>
-                    <button className={s.header__main_switch__slider} id="switchlord" ref={switchButtonRef}>
+                    <button className={s.header__main_switch__slider} id="switchlord" onClick={handleSwitchLorD}>
+                    {/* <button className={s.header__main_switch__slider} id="switchlord" ref={switchButtonRef}> */}
                         <div className={s.header__main_switch__slider_button}></div>
                     </button>
                     <i className='fa-solid fa-moon fa-1x' id={s.fa_moon}></i>
