@@ -1,54 +1,19 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 :root {
     // custom color picks for LIGHT/DARK mode --- this values is LIGHT mode values for starting before click conditions
-    --default-color: rgb(128,128,128);
-    --text-color: rgb();
-    --link-color: rgb();
-    --link-hover-color: rgb();
-    --link-active-color: rgb();
-    --default-bg-color: rgb();
-    --footer-bg-color: rgb();
-    --footer-bottom-color: rgb();
-    --header-bg-color: rgb();
-    --header-top-color: rgb();
-    --buttons-color: rgb();
-    --buttons-hover-color: rgb();
-    --buttons-active-color: rgb();
-
-
-
-
-
-    // --light-white: rgb(255,255,255);
-    // --mid-white: rgb(240,240,240);
-    // --dark-white: rgb(225,225,225);
-    // --light-red: rgb(255,128,128);
-    // --mid-red: rgb(255,0,0);
-    // --dark-red: rgb(128,0,0);
-    // --light-orange: rgb(255,180,64);
-    // --mid-orange: rgb(255,128,0);
-    // --dark-orange: rgb(200,80,0);
-    // --light-yellow: rgb(255,255,200);
-    // --mid-yellow: rgb(255,255,0);
-    // --dark-yellow: rgb(180,180,0);
-    // --light-green: rgb(128,255,128);
-    // --mid-green: rgb(0,255,0);
-    // --dark-green: rgb(0,64,0);
-    // --light-blue: rgb(128,215,255);
-    // --mid-blue: rgb(0,128,255);
-    // --dark-blue: rgb(0,64,128);
-    // --light-navy: rgb(0,0,255);
-    // --mid-navy: rgb(0,0,128);
-    // --dark-navy: rgb(12,24,48);
-    // --light-purple: rgb(220,100,255);
-    // --mid-purple: rgb(128,0,255);
-    // --dark-purple: rgb(64,0,255);
-    // --light-black: rgb(30,30,30);
-    // --mid-black: rgb(15,15,15);
-    // --dark-black: rgb(0,0,0);
-    // --light-grey: rgb(180,180,180);
-    // --mid-grey: rgb(128,128,128);
-    // --dark-grey: rgb(64,64,64);
+    --default-color: rgb(155,155,155);
+    --text-color: rgb(5,5,5);
+    --link-color: rgb(25,25,25);
+    --link-hover-color: rgb(250,150,50);
+    --link-active-color: rgb(255,75,0);
+    --default-bg-color: rgb(215,215,215);
+    --footer-bg-color: rgb(12,24,48);
+    --footer-bottom-color: rgb(35,35,35);
+    --header-bg-color: rgb(185,185,185);
+    --header-top-color: rgb(45,45,45);
+    --buttons-color: rgb(200,200,200);
+    --buttons-hover-color: rgb(255,255,100);
+    --buttons-active-color: rgb(125,255,5);
 
     // transition speeds
     --slow-fx: ease-in-out 0.35s;

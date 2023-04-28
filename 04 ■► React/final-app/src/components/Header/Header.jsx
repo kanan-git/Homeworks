@@ -38,38 +38,39 @@ function Header() {
         if(isLightMode == true) {
             // enable LIGHT mode
             setIsLightMode(false)
+            // add isLightMode & language data to sessionStorage (localStorage?) & make it preventDefault to keep it ? or just no reload page ?
             console.log(isLightMode)
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
-            root.style.setProperty('--default-color', 'rgb(255,255,255)'); // LIGHT mode default color
+            root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
+            root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
+            root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
+            root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
+            root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
+            root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
+            root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
+            root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
+            root.style.setProperty('--header-bg-color', 'rgb(185,185,185)'); // LIGHT mode default color
+            root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
+            root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
+            root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
+            root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
         }
         else if(isLightMode == false) {
             // enable DARK mode
             setIsLightMode(true)
             console.log(isLightMode)
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
-            root.style.setProperty('--default-color', 'rgb(16,16,16)'); // DARK mode default color
+            root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
+            root.style.setProperty('--text-color', 'rgb(205,205,205)'); // DARK mode default color
+            root.style.setProperty('--link-color', 'rgb(255,255,255)'); // DARK mode default color
+            root.style.setProperty('--link-hover-color', 'rgb(5,145,255)'); // DARK mode default color
+            root.style.setProperty('--link-active-color', 'rgb(5,205,255)'); // DARK mode default color
+            root.style.setProperty('--default-bg-color', 'rgb(30,30,30)'); // DARK mode default color
+            root.style.setProperty('--footer-bg-color', 'rgb(15,15,15)'); // DARK mode default color
+            root.style.setProperty('--footer-bottom-color', 'rgb(10,10,10)'); // DARK mode default color
+            root.style.setProperty('--header-bg-color', 'rgb(20,20,20)'); // DARK mode default color
+            root.style.setProperty('--header-top-color', 'rgb(20,20,20)'); // DARK mode default color
+            root.style.setProperty('--buttons-color', 'rgb(55,55,55)'); // DARK mode default color
+            root.style.setProperty('--buttons-hover-color', 'rgb(45,5,245)'); // DARK mode default color
+            root.style.setProperty('--buttons-active-color', 'rgb(115,15,255)'); // DARK mode default color
         }
         else {
             console.log("function is not working correctly", isLightMode)
