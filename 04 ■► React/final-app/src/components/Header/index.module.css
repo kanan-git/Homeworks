@@ -1,7 +1,7 @@
 .header {
-  width: 100vw;
+  width: 1420px;
   height: auto;
-  background-color: var(--dark-white);
+  background-color: var(--header-bg-color);
   border: none;
 }
 .header__list {
@@ -10,25 +10,25 @@
   height: 40px;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid var(--dark-black);
+  border-bottom: 1px solid var(--borders-color);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 60px;
-  background-color: var(--default-color);
+  background-color: var(--header-top-color);
 }
 .header__list_buttons {
   border: none;
-  border-bottom: 1px solid var(--light-white);
+  border-bottom: 1px solid var(--text-negative-color);
   background-color: transparent;
-  color: var(--light-white);
+  color: var(--text-negative-color);
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
   transition: var(--quick-fx);
 }
 .header__list_buttons #fa_caret {
-  color: var(--light-white);
+  color: var(--text-negative-color);
   margin: 0px 0px 0px 5px;
   scale: 0.8;
   rotate: 180deg;
@@ -36,21 +36,23 @@
 }
 .header__list_buttons:hover {
   scale: 1.01;
-  color: var(--light-red);
-  border-bottom: 1px solid var(--light-red);
-  filter: drop-shadow(0 0 3px var(--mid-black));
+  color: var(--link-hover-color);
+  border-bottom: 1px solid var(--link-hover-color);
+  filter: drop-shadow(0 0 3px var());
 }
 .header__list_buttons:hover #fa_caret {
   rotate: 0deg;
+  color: var(--link-hover-color);
 }
 .header__list_buttons:active {
   transition: var(--instant-fx);
-  color: var(--mid-red);
-  border-bottom: 1px solid var(--mid-red);
-  filter: drop-shadow(0 0 8px var(--light-red));
+  color: var(--link-active-color);
+  border-bottom: 1px solid var(--link-active-color);
+  filter: drop-shadow(0 0 8px var());
 }
 .header__list_buttons:active #fa_caret {
   rotate: 0deg;
+  color: var(--link-active-color);
 }
 .header__list_productsdropdown {
   z-index: 2;
@@ -64,9 +66,9 @@
   align-items: flex-start;
   padding: 10px 0px;
   gap: 10px;
-  border: 1px solid var(--dark-black);
-  background-color: var(--light-white);
-  filter: drop-shadow(0 0 10px var(--dark-black));
+  border: 1px solid var(--borders-color);
+  background-color: var(--default-bg-color);
+  filter: drop-shadow(0 0 10px var(--filter-shadow-color));
   display: none;
 }
 .header__list_productsdropdown__columns {
@@ -82,19 +84,21 @@
   letter-spacing: 2px;
 }
 .header__list_productsdropdown__columns_items {
+  color: var(--link-color);
   font-weight: 600;
   cursor: pointer;
   margin-left: 30px;
   transition: var(--quick-fx);
 }
 .header__list_productsdropdown__columns_items:hover {
-  color: var(--light-red);
+  color: var(--link-hover-color);
 }
 .header__list_productsdropdown__columns_items:active {
   transition: var(--instant-fx);
-  color: var(--mid-red);
+  color: var(--link-active-color);
 }
 .header__list_productsdropdown__columns_discount {
+  color: var(--link-color);
   font-size: 18px;
   font-weight: 900;
   cursor: pointer;
@@ -103,11 +107,11 @@
   transition: var(--quick-fx);
 }
 .header__list_productsdropdown__columns_discount:hover {
-  color: var(--light-red);
+  color: var(--link-hover-color);
 }
 .header__list_productsdropdown__columns_discount:active {
   transition: var(--instant-fx);
-  color: var(--mid-red);
+  color: var(--link-active-color);
 }
 .header__main {
   width: 100%;
@@ -118,9 +122,9 @@
   padding: 0 20px;
   font-size: 14px;
   font-weight: 600;
-  background: linear-gradient(to bottom, var(--mid-white), var(--light-grey));
+  background: var(--header-bg-color);
   border: none;
-  border-bottom: 1px solid var(--dark-grey);
+  border-bottom: 1px solid var(--borders-color);
   padding: 0 5%;
 }
 .header__main_logo {
@@ -151,6 +155,7 @@
   align-items: center;
   padding-bottom: 2px;
   margin-right: 5px;
+  color: var(--text-color);
 }
 .header__main_langbar__selector {
   width: auto;
@@ -160,14 +165,14 @@
   outline: none;
   border: none;
   font-weight: 600;
-  color: var(--dark-black);
+  color: var(--text-color);
 }
 .header__main_langbar__selector_options {
   font-weight: 600;
-  background-color: var(--light-grey);
+  background-color: var(--default-bg-color);
 }
 .header__main_langbar__selector_options:checked {
-  color: var(--mid-grey);
+  color: var(--default-color);
 }
 .header__main_search {
   height: 100%;
@@ -184,7 +189,7 @@
   outline: none;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  color: var(--mid-black);
+  color: var(--text-color);
   font-weight: 600;
 }
 .header__main_search__button {
@@ -192,27 +197,27 @@
   height: 30px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background-color: var(--light-grey);
-  border: 1px solid var(--light-grey);
+  background-color: var(--buttons-color);
+  border: 1px solid var(--link-color);
   transition: var(--quick-fx);
 }
 .header__main_search__button #fa_glass {
-  color: var(--dark-grey);
+  color: var(--link-color);
 }
 .header__main_search__button:hover {
-  background-color: var(--light-red);
-  border: 1px solid var(--light-black);
+  background-color: var(--buttons-hover-color);
+  border: 1px solid var(--link-hover-color);
 }
 .header__main_search__button:hover #fa_glass {
-  color: var(--light-black);
+  color: var(--link-hover-color);
 }
 .header__main_search__button:active {
   transition: var(--instant-fx);
-  background-color: var(--mid-red);
-  border: 1px solid var(--dark-black);
+  background-color: var(--buttons-active-color);
+  border: 1px solid var(--link-active-color);
 }
 .header__main_search__button:active #fa_glass {
-  color: var(--dark-black);
+  color: var(--link-active-color);
 }
 .header__main_switch {
   height: 100%;
@@ -225,29 +230,36 @@
   position: relative;
   width: 40px;
   height: 20px;
-  border: 1px solid var(--mid-grey);
+  border: 1px solid var(--borders-color);
   border-radius: 10.5px;
   box-sizing: content-box;
   margin: 0 10px;
-  background-color: var(--light-yellow);
+  background-color: var(--link-hover-color);
 }
 .header__main_switch__slider_button {
   position: absolute;
   top: 0%;
   left: 0%;
+  transform: translateX(0%);
   width: 20px;
   height: 20px;
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--borders-color);
   border-radius: 50%;
-  background-color: var(--light-white);
+  background-color: var(--default-color);
+  scale: 1.05;
+  transition: var(--slow-fx);
 }
 .header__main_switch #fa_sun {
+  transition: var(--slow-fx);
   scale: 1.8;
   opacity: 0.9;
+  color: var(--link-color);
 }
 .header__main_switch #fa_moon {
+  transition: var(--slow-fx);
   scale: 1;
   opacity: 0.5;
+  color: var(--link-color);
 }
 .header__main_userpanel {
   height: 100%;
@@ -255,17 +267,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   position: relative;
 }
 .header__main_userpanel__image {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--mid-grey);
+  border: 1px solid var(--borders-color);
   border-radius: 50%;
 }
 .header__main_userpanel__status {
   margin-left: 10px;
   font-weight: 600;
+  color: var(--text-color);
 }
 .header__main_userpanel_dropdown {
   z-index: 2;
@@ -279,13 +293,14 @@
   flex-direction: column;
   padding: 10px 0px;
   gap: 10px;
-  border: 1px solid var(--dark-black);
-  background-color: var(--light-white);
-  filter: drop-shadow(0 0 10px var(--dark-black));
+  border: 1px solid var(--borders-color);
+  background-color: var(--default-bg-color);
+  filter: drop-shadow(0 0 10px var(--filter-shadow-color));
   display: none;
 }
 .header__main_userpanel_dropdown__items {
   font-weight: 600;
+  color: var(--link-color);
   cursor: pointer;
   margin-left: 30px;
   transition: var(--quick-fx);
@@ -294,15 +309,15 @@
   margin-right: 5px;
 }
 .header__main_userpanel_dropdown__items:hover {
-  color: var(--light-red);
+  color: var(--link-hover-color);
 }
 .header__main_userpanel_dropdown__items:hover #fa_symbols {
-  color: var(--light-red);
+  color: var(--link-hover-color);
 }
 .header__main_userpanel_dropdown__items:active {
   transition: var(--instant-fx);
-  color: var(--mid-red);
+  color: var(--link-active-color);
 }
 .header__main_userpanel_dropdown__items:active #fa_symbols {
-  color: var(--mid-red);
+  color: var(--link-active-color);
 }/*# sourceMappingURL=index.module.css.map */

@@ -21,7 +21,12 @@ Work In Progress:
 
 
 ---------------> function is ready, set site color picks and use them in sass files of header, footer, homepage, about components !!!!!!!!!!!!!
-colorpicks edit for light and dark mode switch
+---------------> colorpicks edit for light and dark mode switch
+---------------> switch LorD button slide effect
+---------------> header dropdowns while onMouseEnter
+HEADER // REPLACE REPEAT TEXT WITH MAP()   <<<-------------------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+HEADER // FIX SWITCH BUTTON ISSUE, DATA CONFUSION ??   <<<-------------------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+HEADER // ACTIVATE DROPDOWNS HOVER EFFECT   <<<-------------------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Done:
 

@@ -3,6 +3,7 @@
     // custom color picks for LIGHT/DARK mode --- this values is LIGHT mode values for starting before click conditions
     --default-color: rgb(155,155,155);
     --text-color: rgb(5,5,5);
+    --text-negative-color: rgb(205,205,205);
     --link-color: rgb(25,25,25);
     --link-hover-color: rgb(250,150,50);
     --link-active-color: rgb(255,75,0);
@@ -14,6 +15,8 @@
     --buttons-color: rgb(200,200,200);
     --buttons-hover-color: rgb(255,255,100);
     --buttons-active-color: rgb(125,255,5);
+    --filter-shadow-color: rgb(10,10,10);
+    --borders-color: rgb(45,45,45);
 
     // transition speeds
     --slow-fx: ease-in-out 0.35s;
@@ -24,6 +27,13 @@
     --mobile-device: 767px;
     --tablet-device: 991px;
     --desktop-device: 1199px;
+}
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+body {
+    // pin components on center
+    display: flex;
+    justify-content: center;
+    // align-items: center;
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 * {

@@ -1,5 +1,20 @@
 :root {
-  --default-color: rgb(0,0,255);
+  --default-color: rgb(155,155,155);
+  --text-color: rgb(5,5,5);
+  --text-negative-color: rgb(205,205,205);
+  --link-color: rgb(25,25,25);
+  --link-hover-color: rgb(250,150,50);
+  --link-active-color: rgb(255,75,0);
+  --default-bg-color: rgb(215,215,215);
+  --footer-bg-color: rgb(12,24,48);
+  --footer-bottom-color: rgb(35,35,35);
+  --header-bg-color: rgb(185,185,185);
+  --header-top-color: rgb(45,45,45);
+  --buttons-color: rgb(200,200,200);
+  --buttons-hover-color: rgb(255,255,100);
+  --buttons-active-color: rgb(125,255,5);
+  --filter-shadow-color: rgb(10,10,10);
+  --borders-color: rgb(45,45,45);
   --slow-fx: ease-in-out 0.35s;
   --quick-fx: ease 0.15s;
   --instant-fx: linear 0s;
@@ -7,6 +22,11 @@
   --mobile-device: 767px;
   --tablet-device: 991px;
   --desktop-device: 1199px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
 }
 
 * {

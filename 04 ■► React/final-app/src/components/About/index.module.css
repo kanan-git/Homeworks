@@ -1,6 +1,7 @@
 .about {
-  width: 100%;
+  width: 1420px;
   height: 600px;
-  border: 1px solid blue;
-  background-color: green;
+  border: none;
+  background-color: var(--default-bg-color);
+  color: var(--text-color);
 }/*# sourceMappingURL=index.module.css.map */

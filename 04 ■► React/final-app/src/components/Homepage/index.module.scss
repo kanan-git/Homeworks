@@ -1,8 +1,29 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+//                              var(--default-color)
+//                              var(--text-color)
+//                              var(--text-negative-color)
+//                              var(--link-color)
+//                              var(--link-hover-color)
+//                              var(--link-active-color)
+//                              var(--default-bg-color)
+//                              var(--footer-bg-color)
+//                              var(--footer-bottom-color)
+//                              var(--header-bg-color)
+//                              var(--header-top-color)
+//                              var(--buttons-color)
+//                              var(--buttons-hover-color)
+//                              var(--buttons-active-color)
+//                              var(--filter-shadow-color)
+//                              var(--borders-color)
+
 .homepage {
-    width: 100%;
+    width: 1420px; // 100%
     height: 600px;
-    border: 1px solid red;
-    background-color: yellow;
+    // border: 1px solid var(--borders-color);
+    border: none;
+    border-bottom: 1px solid var(--borders-color);
+    background-color: var(--default-bg-color);
+    color: var(--text-color);
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

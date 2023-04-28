@@ -1,6 +1,8 @@
 .homepage {
-  width: 100%;
+  width: 1420px;
   height: 600px;
-  border: 1px solid red;
-  background-color: yellow;
+  border: none;
+  border-bottom: 1px solid var(--borders-color);
+  background-color: var(--default-bg-color);
+  color: var(--text-color);
 }/*# sourceMappingURL=index.module.css.map */
