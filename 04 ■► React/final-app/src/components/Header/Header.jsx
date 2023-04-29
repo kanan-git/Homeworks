@@ -14,11 +14,6 @@ import {useState, useEffect, useRef} from 'react'
 import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
-
-// REPLACE REPEAT TEXT WITH MAP()   <<<-------------------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// FIX SWITCH BUTTON ISSUE, DATA CONFUSION ??   <<<-------------------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// ACTIVATE DROPDOWNS HOVER EFFECT   <<<-------------------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 function Header() {
     // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
     // const switchButtonRef = useRef()
