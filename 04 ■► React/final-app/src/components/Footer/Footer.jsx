@@ -1,16 +1,22 @@
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
+// SECTOR 01:  importing elements
+// SECTOR 02:  variables, props and states
+// SECTOR 03:  changing language
+// SECTOR 04:  return XML side
+// SECTOR 05:  export default function
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../dataSource/data-source'
 import {useState, useEffect} from 'react'
-
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Footer() {
-
     const [footerCol1data, setFooterCol1data] = useState(dataSource.english.footer.about)
     const [footerCol2data, setFooterCol2data] = useState(dataSource.english.footer.profile)
     const [footerCol3data, setFooterCol3data] = useState(dataSource.english.footer.links)
     const [footerCol4data, setFooterCol4data] = useState(dataSource.english.footer.followus)
     const [footerBottom, setFooterBottom] = useState(dataSource.english.footer.bottomside)
-
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     useEffect(
         () => {
             var langSelector = document.querySelector("#language")
@@ -37,7 +43,7 @@ function Footer() {
             })
         }, []
     )
-
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <footer className={s.footer}>
             {/* top side columns of the footer */}
@@ -69,9 +75,15 @@ function Footer() {
 
                 <ul className={s.footer__top_column}>
                     <h3 className={s.footer__top_column__header}> {footerCol4data[0]} </h3>
-                    <li className={s.footer__top_column__items}> <i className='fa-brands fa-facebook fa-1x' id={s.fa_brands}></i> {footerCol4data[1]} </li>
-                    <li className={s.footer__top_column__items}> <i className='fa-brands fa-youtube fa-1x' id={s.fa_brands}></i> {footerCol4data[2]} </li>
-                    <li className={s.footer__top_column__items}> <i className='fa-brands fa-square-instagram fa-1x' id={s.fa_brands}></i> {footerCol4data[3]} </li>
+                    <li className={s.footer__top_column__items}>
+                        <a href="https://facebook.com/"> <i className='fa-brands fa-facebook fa-1x' id={s.fa_brands}></i> {footerCol4data[1]} </a>
+                    </li>
+                    <li className={s.footer__top_column__items}>
+                        <a href="https://youtube.com/"> <i className='fa-brands fa-youtube fa-1x' id={s.fa_brands}></i> {footerCol4data[2]} </a>
+                    </li>
+                    <li className={s.footer__top_column__items}>
+                        <a href="https://instagram.com/"> <i className='fa-brands fa-square-instagram fa-1x' id={s.fa_brands}></i> {footerCol4data[3]} </a>
+                    </li>
                 </ul>
                 
             </div>
@@ -83,5 +95,6 @@ function Footer() {
         </footer>
     )
 }
-
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
 export default Footer
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

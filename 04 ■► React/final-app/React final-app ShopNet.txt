@@ -13,16 +13,107 @@ TO DO TASKS:
 - dataflow with store (redux toolkit) learn with ChatGPT and YouTube
 - sessionStorage or localStorage for light mode, language and user data
 - routing
-- generate pages folder & pages files for about, homepage,  login/register, contact, favorites, my cart, itemview, productsDashboard?, verifyBuying, account setting
-- components - popup windows, header, footer, loading, overlay, alert, success message, failed message, filterAside, sum of total price window
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
-~ header replace repeats with map() method
-~ add <a> tag to footer bottom & footer follow
-~ header dropdowns open when hover (fix header top dropdown issue)
+~ generate pages folder & pages files for about, homepage,  login/register, contact, favorites, my cart, itemview, productsDashboard?, verifyBuying, account setting
+~ components - popup windows, header, footer, loading, overlay, alert, success message, failed message, filterAside, sum of total price window
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Completed:
 
 + fix issue about switch button Light/Dark
++ header replace repeats with map() method
++ header dropdowns open when hover (fix header top dropdown issue)
++ add <a> tag to footer bottom & footer follow
++ header component with language & light modes
++ footer
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+
+
+
+
+WRITTEN BY CHATGPT
+
+
+
+
+
+------------------> ABOUT US TEXT <------------------
+Welcome to ShopNet, your one-stop online shop for all your favorite products! Established in April 2023, we are a rapidly growing e-commerce platform based in 28 May, Baku, Azerbaijan, offering a wide range of high-quality products at affordable prices.
+At ShopNet, we understand the convenience and simplicity of online shopping, and we are committed to providing our customers with a seamless and enjoyable shopping experience. Our website is easy to navigate, and our product listings are detailed and informative, providing you with all the information you need to make an informed purchase decision.
+Our product range includes everything from fashion and beauty products to electronics, home appliances, and more, all sourced from trusted manufacturers and suppliers. We also offer fast and reliable shipping to anywhere in Azerbaijan, ensuring that you receive your order quickly and hassle-free.
+At ShopNet, we believe that customer satisfaction is our top priority, and we are dedicated to providing you with excellent customer service and support. If you have any questions or concerns, our friendly and knowledgeable customer service team is available to assist you.
+Thank you for choosing ShopNet as your preferred online shopping destination. We look forward to serving you and making your shopping experience a great one!
+
+------------------> PRIVACY TERMS TEXT <------------------
+ShopNet ("us", "we", or "our") operates the https://www.shopnet.com website (hereinafter referred to as the "Service").
+This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.
+Information Collection and Use
+We collect several different types of information for various purposes to provide and improve our Service to you.
+Types of Data Collected
+Personal Data
+We may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
+- Email address
+- First name and last name
+- Phone number
+- Address, State, Province, ZIP/Postal code, City
+- Cookies and Usage Data
+Usage Data
+We may also collect information about how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+Tracking & Cookies Data
+We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information.
+Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyze our Service.
+You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+Examples of Cookies we use:
+- Session Cookies. We use Session Cookies to operate our Service.
+- Preference Cookies. We use Preference Cookies to remember your preferences and various settings.
+- Security Cookies. We use Security Cookies for security purposes.
+Use of Data
+----------
+ShopNet uses the collected data for various purposes:
+- To provide and maintain our Service
+- To notify you about changes to our Service
+- To allow you to participate in interactive features of our Service when you choose to do so
+- To provide customer support
+- To gather analysis or valuable information so that we can improve our Service
+- To monitor the usage of our Service
+- To detect, prevent and address technical issues
+Transfer of Data
+---------------
+Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
+If you are located outside Azerbaijan and choose to provide information to us, please note that we transfer the data, including Personal Data, to Azerbaijan and process it there.
+Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+ShopNet will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+Disclosure of Data
+----------------
+Legal Requirements
+ShopNet may disclose your Personal Data in the good faith belief that such action is necessary to:
+- To comply with
+
+------------------> TERMS & CONDITIONS TEXT <------------------
+Welcome to ShopNet, your one-stop online shop for all your favorite products! These terms and conditions ("Terms") govern your use of our website and services. By accessing or using our website or services, you agree to be bound by these Terms.
+Registration
+To use some of our services, you may need to register an account with us. When you register an account, you agree to provide accurate and complete information, and to keep your account information up to date.
+Use of Services
+You agree to use our website and services only for lawful purposes and in accordance with these Terms. You agree not to use our website or services in any way that could damage, disable, overburden, or impair our website or services, or interfere with any other party's use and enjoyment of our website or services.
+Payment and Shipping
+All prices are in Azerbaijani Manat (AZN) and are subject to change without notice. We accept payment by credit card or other payment methods that we may make available from time to time. Shipping costs will be calculated based on the shipping destination, shipping method, and the weight and dimensions of the products you order.
+Returns and Refunds
+We want you to be completely satisfied with your purchase from ShopNet. If for any reason you are not satisfied, please contact our customer service team within 14 days of receiving your order to initiate a return. We will issue a refund for the purchase price of the product(s) returned, less any applicable shipping fees.
+Disclaimer of Warranties
+Our website and services are provided on an "as is" and "as available" basis, without any warranties of any kind, either express or implied, including without limitation the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+Limitation of Liability
+In no event shall ShopNet, its affiliates, or their respective officers, directors, employees, or agents be liable for any indirect, incidental, special, consequential or punitive damages, arising out of or in connection with your use of our website or services.
+Changes to Terms
+We reserve the right to modify or update these Terms at any time, without prior notice. Your continued use of our website or services after any such modifications or updates constitutes your acceptance of the revised Terms.
+If you have any questions or concerns about these Terms, please contact us at support@shopnet.com.
+
+------------------> CONTACT TEXT <------------------
+If you have any questions, comments, or concerns about our products or services, please do not hesitate to contact us at:
+Address: 28 May, Baku, Azerbaijan
+Phone: (+994) 50 123 45 67
+Email: sales@shopnet.az
+Our dedicated customer service team is available to assist you Monday through Friday, 9:00 AM to 5:00 PM. We strive to respond to all inquiries within 24 hours.
+-> iframe map + images gallery here <-

@@ -219,9 +219,16 @@ function userpanelDDfuncClose() {
                 }
 
                 {/* dropdown menu for userpanel */}
-                <div className={s.header__list_productsdropdown} ref={topDropDown}>
+                <div className={s.header__list_productsdropdown} ref={topDropDown} onMouseEnter={ () => {
+                    topDropDownSTATE.current.style.display = `flex`
+                    // console.log(topDropDownSTATE.current.style.display)
+                } } onMouseLeave={ () => {
+                    topDropDownSTATE.current.style.display = `none`
+                    // console.log(topDropDownSTATE.current.style.display)
+                } }>
+
                     <ul className={s.header__list_productsdropdown__columns}>
-                        <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD1[0]} </h4>
+                        {/* <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD1[0]} </h4>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[1]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[2]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[3]} </li>
@@ -232,11 +239,18 @@ function userpanelDDfuncClose() {
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[8]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[9]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[10]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[11]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[11]} </li> */}
+                        { productsDD1.map( (item, index) => {
+                            if(index == 0) {
+                                return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
+                            } else {
+                                return (<li className={s.header__list_productsdropdown__columns_items} key={index}> {item} </li>)
+                            }
+                        } ) }
                     </ul>
 
                     <ul className={s.header__list_productsdropdown__columns}>
-                        <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD2[0]} </h4>
+                        {/* <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD2[0]} </h4>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[1]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[2]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[3]} </li>
@@ -247,7 +261,14 @@ function userpanelDDfuncClose() {
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[8]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[9]} </li>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[10]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[11]} </li>
+                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[11]} </li> */}
+                        { productsDD2.map( (item, index) => {
+                            if(index == 0) {
+                                return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
+                            } else {
+                                return (<li className={s.header__list_productsdropdown__columns_items} key={index}> {item} </li>)
+                            }
+                        } ) }
                     </ul>
 
                     <ul className={s.header__list_productsdropdown__columns}>

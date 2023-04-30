@@ -8,6 +8,7 @@
   border: none;
 }
 .header__list {
+  z-index: 1;
   position: relative;
   width: 100%;
   height: 40px;

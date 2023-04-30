@@ -27,6 +27,7 @@
     border: none;
     // top navbar side of the header
     &__list {
+        z-index: 1;
         position: relative;
         width: 100%;
         height: 40px;
