@@ -13,9 +13,13 @@ TO DO TASKS:
 - dataflow with store (redux toolkit) learn with ChatGPT and YouTube
 - sessionStorage or localStorage for light mode, language and user data
 - routing
+- back to home button for login/register page (same page, switch with button)
+- sass mobile responsivity + header menu button for mobile version
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
+~ create components Terms & Conditions, Privacy Policies as windows
+~ now About and Homepage will be pages for routing, not components (components will be header and footer which appear in every pages, excluded login/register)
 ~ generate pages folder & pages files for about, homepage,  login/register, contact, favorites, my cart, itemview, productsDashboard?, verifyBuying, account setting
 ~ components - popup windows, header, footer, loading, overlay, alert, success message, failed message, filterAside, sum of total price window
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
