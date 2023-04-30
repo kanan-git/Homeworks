@@ -18,12 +18,26 @@
 //                              var(--borders-color)
 
 .homepage {
-    width: 1420px; // 100%
+    z-index: 1;
+    width: 100vw; // 100%
     height: 600px;
     // border: 1px solid var(--borders-color);
     border: none;
     border-bottom: 1px solid var(--borders-color);
     background-color: var(--default-bg-color);
     color: var(--text-color);
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__categories {
+        width: 1400px;
+    }
+    &__brands {
+        width: 1400px;
+    }
+    &__discount {
+        width: 1400px;
+    }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

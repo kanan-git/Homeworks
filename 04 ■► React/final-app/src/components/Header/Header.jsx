@@ -3,8 +3,9 @@
 // SECTOR 02:  variables, props and states
 // SECTOR 03:  switching light and dark mode
 // SECTOR 04:  changing language
-// SECTOR 05:  return XML side
-// SECTOR 06:  export default function
+// SECTOR 05:  dropdown events
+// SECTOR 06:  return XML side
+// SECTOR 07:  export default function
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
 // imported elements
 import React from 'react'
@@ -18,16 +19,20 @@ function Header() {
     // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
     // const switchButtonRef = useRef()
     const root = document.documentElement;
-    // const switchSliderBtn = document.querySelector("#swith_btn")
+    // const switchSliderBtn = document.querySelector("#switch_btn")
     // const switchSun = document.querySelector("#fa_sun")
     // const switchMoon = document.querySelector("#fa_moon")
     const switchSliderBtn = useRef()
     const switchSun = useRef()
     const switchMoon = useRef()
+    const topDropDown = useRef()
+    const userpanelDropDown = useRef()
 
     const [switchSliderBtnSTATE, setSwitchSliderBtnSTATE] = useState(switchSliderBtn)
     const [switchSunSTATE, setSwitchSunSTATE] = useState(switchSun)
     const [switchMoonSTATE, setSwitchMoonSTATE] = useState(switchMoon)
+    const [topDropDownSTATE, setTopDropDownSTATE] = useState(topDropDown)
+    const [userpanelDropDownSTATE, setUserpanelDropDownSTATE] = useState(userpanelDropDown)
 
     // console.log(switchButtonRef.current.innerHTML)
     const [isLightMode, setIsLightMode] = useState(true)
@@ -49,15 +54,24 @@ function Header() {
             setSwitchSliderBtnSTATE(switchSliderBtn)
             setSwitchSunSTATE(switchSun)
             setSwitchMoonSTATE(switchMoon)
+            setTopDropDownSTATE(topDropDown)
+            setUserpanelDropDownSTATE(userpanelDropDown)
         }, [])
 
     function handleSwitchLorD() {
-        console.log(switchSliderBtnSTATE.current.style.left, switchSliderBtnSTATE.current.style.transform, switchSunSTATE.current.style.scale, switchSunSTATE.current.style.opacity, switchMoonSTATE.current.style.scale, switchMoonSTATE.current.style.opacity)
+        // console.log(
+        //     switchSliderBtnSTATE.current.style.left, 
+        //     switchSliderBtnSTATE.current.style.transform, 
+        //     switchSunSTATE.current.style.scale, 
+        //     switchSunSTATE.current.style.opacity, 
+        //     switchMoonSTATE.current.style.scale, 
+        //     switchMoonSTATE.current.style.opacity
+        // )
         if(isLightMode == true) {
             // enable LIGHT mode
             setIsLightMode(false)
             // add isLightMode & language data to sessionStorage (localStorage?) & make it preventDefault to keep it ? or just no reload page ?
-            console.log(isLightMode, "DARK mode enabled")
+            // console.log(isLightMode, "DARK mode enabled")
             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
             root.style.setProperty('--text-color', 'rgb(205,205,205)'); // DARK mode default color
             root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
@@ -67,27 +81,35 @@ function Header() {
             root.style.setProperty('--default-bg-color', 'rgb(30,30,30)'); // DARK mode default color
             root.style.setProperty('--footer-bg-color', 'rgb(15,15,15)'); // DARK mode default color
             root.style.setProperty('--footer-bottom-color', 'rgb(10,10,10)'); // DARK mode default color
-            root.style.setProperty('--header-bg-color', 'rgb(20,20,20)'); // DARK mode default color
+            root.style.setProperty('--header-bg-color', 'rgba(5,5,5,0.5)'); // DARK mode default color
             root.style.setProperty('--header-top-color', 'rgb(20,20,20)'); // DARK mode default color
             root.style.setProperty('--buttons-color', 'rgb(55,55,55)'); // DARK mode default color
             root.style.setProperty('--buttons-hover-color', 'rgb(45,5,245)'); // DARK mode default color
             root.style.setProperty('--buttons-active-color', 'rgb(115,15,255)'); // DARK mode default color
             root.style.setProperty('--filter-shadow-color', 'rgb(255,255,255)'); // DARK mode default color
             root.style.setProperty('--borders-color', 'rgb(200,200,200)'); // DARK mode default color
+            root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(70,10,250), rgb(200,10,10))'); // DARK mode default color
 
-            // switchSliderBtnSTATE.current.style.left = `100%`
-            // switchSliderBtnSTATE.current.style.transform = `translateX(-95%)`
+            switchSliderBtnSTATE.current.style.left = `100%`
+            switchSliderBtnSTATE.current.style.transform = `translateX(-95%)`
             switchSunSTATE.current.style.scale = `1.0`
-            // switchSunSTATE.current.style.opacity = `0.5`
+            switchSunSTATE.current.style.opacity = `0.5`
             switchMoonSTATE.current.style.scale = `1.8`
-            // switchMoonSTATE.current.style.opacity = `0.9`
+            switchMoonSTATE.current.style.opacity = `0.9`
 
-            console.log(switchSliderBtnSTATE.current.style.left, switchSliderBtnSTATE.current.style.transform, switchSunSTATE.current.style.scale, switchSunSTATE.current.style.opacity, switchMoonSTATE.current.style.scale, switchMoonSTATE.current.style.opacity)
+            // console.log(
+            //     switchSliderBtnSTATE.current.style.left, 
+            //     switchSliderBtnSTATE.current.style.transform, 
+            //     switchSunSTATE.current.style.scale, 
+            //     switchSunSTATE.current.style.opacity, 
+            //     switchMoonSTATE.current.style.scale, 
+            //     switchMoonSTATE.current.style.opacity
+            // )
         }
         else if(isLightMode == false) {
             // enable DARK mode
             setIsLightMode(true)
-            console.log(isLightMode, "LIGHT mode enabled")
+            // console.log(isLightMode, "LIGHT mode enabled")
             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
             root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
             root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
@@ -97,22 +119,30 @@ function Header() {
             root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
             root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
             root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
-            root.style.setProperty('--header-bg-color', 'rgb(185,185,185)'); // LIGHT mode default color
+            root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
             root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
             root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
             root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
             root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
             root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
             root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
+            root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
 
-            // switchSliderBtnSTATE.current.style.left = `0%`
-            // switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
+            switchSliderBtnSTATE.current.style.left = `0%`
+            switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
             switchSunSTATE.current.style.scale = `1.8`
-            // switchSunSTATE.current.style.opacity = `0.9`
+            switchSunSTATE.current.style.opacity = `0.9`
             switchMoonSTATE.current.style.scale = `1.0`
-            // switchMoonSTATE.current.style.opacity = `0.5`
+            switchMoonSTATE.current.style.opacity = `0.5`
 
-            console.log(switchSliderBtnSTATE.current.style.left, switchSliderBtnSTATE.current.style.transform, switchSunSTATE.current.style.scale, switchSunSTATE.current.style.opacity, switchMoonSTATE.current.style.scale, switchMoonSTATE.current.style.opacity)
+            // console.log(
+            //     switchSliderBtnSTATE.current.style.left, 
+            //     switchSliderBtnSTATE.current.style.transform, 
+            //     switchSunSTATE.current.style.scale, 
+            //     switchSunSTATE.current.style.opacity, 
+            //     switchMoonSTATE.current.style.scale, 
+            //     switchMoonSTATE.current.style.opacity
+            // )
         }
         else {
             console.log("function is not working correctly", isLightMode)
@@ -153,6 +183,16 @@ function Header() {
     // console log for testing is working or not
     // console.log(menuElements, navItems)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+// function for userpanel dropdown menu
+function userpanelDDfuncOpen() {
+    userpanelDropDownSTATE.current.style.display = `flex`
+    // console.log(userpanelDropDownSTATE.current.style.display)
+}
+function userpanelDDfuncClose() {
+    userpanelDropDownSTATE.current.style.display = `none`
+    // console.log(userpanelDropDownSTATE.current.style.display)
+}
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
     // returning result
     return (
         <header className={s.header}>
@@ -161,7 +201,17 @@ function Header() {
                 {/* menu elements */}
                 {
                     menuElements.map(
-                        (element, index) => <button key={index} className={s.header__list_buttons}>
+                        (element, index) => <button key={index} className={s.header__list_buttons} onMouseEnter={ () => {
+                            if(index == 1) {
+                                topDropDownSTATE.current.style.display = `flex`
+                                // console.log(topDropDownSTATE.current.style.display)
+                            }
+                        } } onMouseLeave={ () => {
+                            if(index == 1) {
+                                topDropDownSTATE.current.style.display = `none`
+                                // console.log(topDropDownSTATE.current.style.display)
+                            }
+                        } }>
                             {element}
                             {index == 1 ? (<i className='fa-solid fa-caret-right fa-1x fa-rotate-90' id={s.fa_caret}></i>) : ""}
                         </button>
@@ -169,7 +219,7 @@ function Header() {
                 }
 
                 {/* dropdown menu for userpanel */}
-                <div className={s.header__list_productsdropdown}>
+                <div className={s.header__list_productsdropdown} ref={topDropDown}>
                     <ul className={s.header__list_productsdropdown__columns}>
                         <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD1[0]} </h4>
                         <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[1]} </li>
@@ -233,21 +283,21 @@ function Header() {
 
                 {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}
                 <div className={s.header__main_switch}>
-                    <i className='fa-solid fa-sun fa-1x' id={s.fa_sun} ref={switchSliderBtn} ></i>
+                    <i className='fa-solid fa-sun fa-1x' id={s.fa_sun} ref={switchSun} ></i>
                     <button className={s.header__main_switch__slider} id="switchlord" onClick={handleSwitchLorD}>
                     {/* <button className={s.header__main_switch__slider} id="switchlord" ref={switchButtonRef}> */}
-                        <div className={s.header__main_switch__slider_button} id={s.swith_btn} ref={switchSun} ></div>
+                        <div className={s.header__main_switch__slider_button} id={s.switch_btn} ref={switchSliderBtn} ></div>
                     </button>
                     <i className='fa-solid fa-moon fa-1x' id={s.fa_moon} ref={switchMoon} ></i>
                 </div>
 
                 {/* temporary static elements for reference | USER PANEL */}
-                <div className={s.header__main_userpanel}>
+                <div className={s.header__main_userpanel} onMouseEnter={userpanelDDfuncOpen} onMouseLeave={userpanelDDfuncClose}>
                     <img src={userQuest} alt="user-profile" className={s.header__main_userpanel__image} />
                     <p className={s.header__main_userpanel__status}> {navItems[1]} </p>
 
                     {/* dropdown menu for userpanel */}
-                    <ul className={s.header__main_userpanel_dropdown}>
+                    <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
                         <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </li>
                         <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </li>
                         {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </li> */}
@@ -259,6 +309,6 @@ function Header() {
         </header>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 07 //
 export default Header
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

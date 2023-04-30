@@ -5,7 +5,11 @@ import {useState, useEffect} from 'react'
 
 function About() {
     return (
-        <main className={s.about}> this is the about page of the ShopNet </main>
+        <main className={s.about}>
+            <div className={s.about__container}>
+                this is the about page of the ShopNet
+            </div>
+        </main>
     )
 }
 

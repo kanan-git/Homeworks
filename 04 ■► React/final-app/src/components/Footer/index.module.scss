@@ -18,7 +18,8 @@
 //                              var(--borders-color)
 
 .footer {
-    width: 1420px; // 100vw
+    z-index: 1;
+    width: 100%; // 100vw
     height: 400px;
     border-top: 1px solid var(--borders-color);
     &__top {

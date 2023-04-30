@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 :root {
-    // custom color picks for LIGHT/DARK mode --- this values is LIGHT mode values for starting before click conditions
+    // custom color picks for LIGHT/DARK mode --- this values is LIGHT mode values for starting
     --default-color: rgb(155,155,155);
     --text-color: rgb(5,5,5);
     --text-negative-color: rgb(205,205,205);
@@ -10,13 +10,14 @@
     --default-bg-color: rgb(215,215,215);
     --footer-bg-color: rgb(12,24,48);
     --footer-bottom-color: rgb(35,35,35);
-    --header-bg-color: rgb(185,185,185);
+    --header-bg-color: rgba(185,185,185,0.7);
     --header-top-color: rgb(45,45,45);
     --buttons-color: rgb(200,200,200);
     --buttons-hover-color: rgb(255,255,100);
     --buttons-active-color: rgb(125,255,5);
     --filter-shadow-color: rgb(10,10,10);
     --borders-color: rgb(45,45,45);
+    --body-bg: linear-gradient(to right, rgb(250,150,10), rgb(10,250,150)); // to bottom right
 
     // transition speeds
     --slow-fx: ease-in-out 0.35s;
@@ -33,6 +34,10 @@ body {
     // pin components on center
     display: flex;
     justify-content: center;
+    background: var(--body-bg);
+    width: 100%;
+    height: 100%;
+    border: none;
     // align-items: center;
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -46,6 +51,7 @@ body {
     text-decoration: none;
     // font adjustments
     font-size: 14px;
+    // border: 1px solid red;
     font-weight: 500;
     font-family: 'Josefin Sans', sans-serif;
     color: var(--dark-black);

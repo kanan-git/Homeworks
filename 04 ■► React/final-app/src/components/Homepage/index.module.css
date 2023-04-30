@@ -1,8 +1,21 @@
 .homepage {
-  width: 1420px;
+  z-index: 1;
+  width: 100vw;
   height: 600px;
   border: none;
   border-bottom: 1px solid var(--borders-color);
   background-color: var(--default-bg-color);
   color: var(--text-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.homepage__categories {
+  width: 1400px;
+}
+.homepage__brands {
+  width: 1400px;
+}
+.homepage__discount {
+  width: 1400px;
 }/*# sourceMappingURL=index.module.css.map */
