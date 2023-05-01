@@ -87,6 +87,23 @@
 }
 .footer__bottom_text {
   font-weight: 600;
-  margin-right: 800px;
+  margin-right: 600px;
   color: var(--text-negative-color);
+}
+.footer__bottom_group {
+  display: flex;
+  gap: 50px;
+}
+.footer__bottom_group__items {
+  color: var(--text-negative-color);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--quick-fx);
+}
+.footer__bottom_group__items:hover {
+  color: var(--link-hover-color);
+}
+.footer__bottom_group__items:active {
+  transition: var(--instant-fx);
+  color: var(--link-active-color);
 }/*# sourceMappingURL=index.module.css.map */

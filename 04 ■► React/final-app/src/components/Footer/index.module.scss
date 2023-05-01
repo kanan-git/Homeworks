@@ -112,8 +112,25 @@
         background-color: var(--footer-bottom-color);
         &_text {
             font-weight: 600;
-            margin-right: 800px;
+            margin-right: 600px;
             color: var(--text-negative-color);
+        }
+        &_group {
+            display: flex;
+            gap: 50px;
+            &__items {
+                color: var(--text-negative-color);
+                cursor: pointer;
+                font-weight: 600;
+                transition: var(--quick-fx);
+                &:hover {
+                    color: var(--link-hover-color);
+                }
+                &:active {
+                    transition: var(--instant-fx);
+                    color: var(--link-active-color);
+                }
+            }
         }
     }
 }

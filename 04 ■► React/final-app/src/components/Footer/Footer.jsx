@@ -90,7 +90,11 @@ function Footer() {
 
             {/* bottom side of the footer */}
             <div className={s.footer__bottom}>
-                <p className={s.footer__bottom_text}> {footerBottom} </p>
+                <p className={s.footer__bottom_text}> {footerBottom[0]} </p>
+                <span className={s.footer__bottom_group}>
+                    <p className={s.footer__bottom_group__items}> {footerBottom[1]} </p>
+                    <p className={s.footer__bottom_group__items}> {footerBottom[2]} </p>
+                </span>
             </div>
         </footer>
     )

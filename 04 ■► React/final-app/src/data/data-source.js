@@ -42,10 +42,25 @@ export const dataSource = {
                 "YouTube", 
                 "Instagram"
             ],
-            bottomside: "© Copyright 2023 CODERS.EDU.AZ | All Rights Reserved."
+            bottomside: ["© Copyright 2023 CODERS.EDU.AZ | All Rights Reserved.", "Terms & Conditions", "Privacy Policy"]
         },
 
-        homepage: {}
+        homepage: {},
+        about: {},
+        contact: {},
+        itemview: {},
+        mycart: {},
+        myfav: {},
+        products: {},
+        purchase: {},
+        settings: {},
+        signinorup: {},
+        filteraside: {},
+        breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        popup_failedmessage: {},
+        popup_successfullysigned: {},
+        popup_termsandconditions: {},
+        popup_privacypolicies: {}
     },
     // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ // AZERBAIJANI
     azerbaijani: {
@@ -90,11 +105,25 @@ export const dataSource = {
                 "YouTube", 
                 "Instagram"
             ],
-            bottomside: "© Müəllif hüququ 2023 CODERS.EDU.AZ | Bütün Hüquqları Qorunur."
+            bottomside: ["© Müəllif hüququ 2023 CODERS.EDU.AZ | Bütün Hüquqları Qorunur.", "Qaydalar və Şərtlər", "Gizlilik Siyasəti"]
         },
 
-        homepage: []
-
+        homepage: {},
+        about: {},
+        contact: {},
+        itemview: {},
+        mycart: {},
+        myfav: {},
+        products: {},
+        purchase: {},
+        settings: {},
+        signinorup: {},
+        filteraside: {},
+        breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        popup_failedmessage: {},
+        popup_successfullysigned: {},
+        popup_termsandconditions: {},
+        popup_privacypolicies: {}
     },
     // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ // TURKİSH
     turkish: {
@@ -139,9 +168,24 @@ export const dataSource = {
                 "YouTube", 
                 "Instagram"
             ],
-            bottomside: "© Copyright 2023 CODERS.EDU.AZ | Tüm Haklar Saklıdır."
+            bottomside: ["© Copyright 2023 CODERS.EDU.AZ | Tüm Haklar Saklıdır.", "Şartlar ve Koşullar", "Gizlilik Politikası"]
         },
 
-        homepage: {}
+        homepage: {},
+        about: {},
+        contact: {},
+        itemview: {},
+        mycart: {},
+        myfav: {},
+        products: {},
+        purchase: {},
+        settings: {},
+        signinorup: {},
+        filteraside: {},
+        breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        popup_failedmessage: {},
+        popup_successfullysigned: {},
+        popup_termsandconditions: {},
+        popup_privacypolicies: {}
     }
 }

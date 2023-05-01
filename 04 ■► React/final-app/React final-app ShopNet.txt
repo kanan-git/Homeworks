@@ -1,25 +1,34 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 TO DO TASKS:
 
-- fakeAPI js file for objects (values, text will be used from dataSource js)
-- userData
-- routing
+- start 2 finish Homepage
+- start 2 finish About
+- start 2 finish Contact
+- start 2 finish ItemView
+- start 2 finish MyCart
+- start 2 finish MyFav
+- start 2 finish Products
+- start 2 finish Purchase
+- start 2 finish Settings
+- start 2 finish SignInOrUp
+- fakeAPI js file for objects (values, text will be used from dataSource js) - use only on Products page, itemview will get data from products page with redux
+- userData for authentication
 - authentication function
-- search function
-- input writing rules from js dom less 11
-- inlut writing design like +994 50 555 55 55
-- filter function
-- sort function
+- input writing rules from js dom less 11 & inlut writing design like +994 50 555 55 55 for sign up page
 - dataflow with store (redux toolkit) learn with ChatGPT and YouTube
 - sessionStorage or localStorage for light mode, language and user data
 - back to home button for login/register page (same page, switch with button)
 - sass mobile responsivity + header menu button for mobile version
 - components will be header and footer which appear in every pages, excluded login/register
+- filter function
+- search function
+- sort function
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
 ~ create components Terms & Conditions, Privacy Policies as windows
 ~ fix header top products arrow not keep rotation degree when dropdown still visible, also add transition and transform fx with using no display, visibility ...
+~ set up routing
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Completed:
 
