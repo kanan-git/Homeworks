@@ -10,7 +10,7 @@
 // imported elements
 import React from 'react'
 import s from './index.module.css'
-import {dataSource} from '../../dataSource/data-source'
+import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'

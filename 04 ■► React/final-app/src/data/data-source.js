@@ -4,7 +4,7 @@ export const dataSource = {
         header: {
             topside: ["homepage", "products", "about us", "contact"],
             mainside: {
-                navbar: ["Search for any products you want ...", "Login"],
+                navbar: ["Search for any products you want ...", "Login"], // if a user logged in, get data from 'userData' not from 'dataSource' (login)
                 userdropdown: ["Sign in", "Register", "Favorites", "My Cart", "Log Out"],
                 productsddown: {
                     header1: ["Categories", "Groceries", "Assembly Elements", "Cutting", "Chemical Products", "Job Protection", "Tools", "Oils Other", "Conveyor System", "FMCG Products", "Auto Care Tools", "Reserve Parts"], 
