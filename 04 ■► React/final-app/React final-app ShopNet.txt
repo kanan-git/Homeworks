@@ -1,16 +1,10 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 TO DO TASKS:
 
-- start 2 finish Homepage
-- start 2 finish About
-- start 2 finish Contact
-- start 2 finish ItemView
-- start 2 finish MyCart
-- start 2 finish MyFav
-- start 2 finish Products
-- start 2 finish Purchase
-- start 2 finish Settings
-- start 2 finish SignInOrUp
+- create components Terms & Conditions, Privacy Policies as windows
+- fix header top products arrow not keep rotation degree when dropdown still visible, also add transition and transform fx with using no display, visibility ...
+- set up routing
+- fix homepage zoomin issue, container or style problem
 - fakeAPI js file for objects (values, text will be used from dataSource js) - use only on Products page, itemview will get data from products page with redux
 - userData for authentication
 - authentication function
@@ -26,9 +20,16 @@ TO DO TASKS:
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
-~ create components Terms & Conditions, Privacy Policies as windows
-~ fix header top products arrow not keep rotation degree when dropdown still visible, also add transition and transform fx with using no display, visibility ...
-~ set up routing
+~ make Homepage
+~ make About
+~ make Contact
+~ make ItemView
+~ make MyCart
+~ make MyFav
+~ make Products
+~ make Purchase
+~ make Settings
+~ make SignInOrUp
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Completed:
 
