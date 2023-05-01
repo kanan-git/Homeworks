@@ -1,0 +1,1 @@
+// ojbect contains image links, title, price, etc data in objects like an API
