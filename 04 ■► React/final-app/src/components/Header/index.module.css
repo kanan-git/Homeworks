@@ -47,6 +47,7 @@
   filter: drop-shadow(0 0 3px var());
 }
 .header__list_buttons:hover #fa_caret {
+  rotate: 0deg;
   color: var(--link-hover-color);
 }
 .header__list_buttons:active {
@@ -56,6 +57,7 @@
   filter: drop-shadow(0 0 8px var());
 }
 .header__list_buttons:active #fa_caret {
+  rotate: 0deg;
   color: var(--link-active-color);
 }
 .header__list_productsdropdown {

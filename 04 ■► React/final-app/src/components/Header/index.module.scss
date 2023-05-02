@@ -65,7 +65,7 @@
                 border-bottom: 1px solid var(--link-hover-color);
                 filter: drop-shadow(0 0 3px var());
                 #fa_caret {
-                    // rotate: 0deg;
+                    rotate: 0deg;
                     color: var(--link-hover-color);
                 }
             }
@@ -75,7 +75,7 @@
                 border-bottom: 1px solid var(--link-active-color);
                 filter: drop-shadow(0 0 8px var());
                 #fa_caret {
-                    // rotate: 0deg;
+                    rotate: 0deg;
                     color: var(--link-active-color);
                 }
             }

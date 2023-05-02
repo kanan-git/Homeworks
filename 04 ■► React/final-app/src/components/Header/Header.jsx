@@ -37,6 +37,7 @@ function Header() {
     const [topDropDownSTATE, setTopDropDownSTATE] = useState(topDropDown)
     const [userpanelDropDownSTATE, setUserpanelDropDownSTATE] = useState(userpanelDropDown)
 
+    const [ddarrowSTATE, setDDarrowSTATE] = useState(dd_arrow)
     const [isHoveredSTATE, setIsHoveredSTATE] = useState(isHovered)
 
     // console.log(switchButtonRef.current.innerHTML)
@@ -206,13 +207,17 @@ function userpanelDDfuncClose() {
     userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
     // console.log(userpanelDropDownSTATE.current.style.display)
 }
-if(isHoveredSTATE == "yup") {
-    dd_arrow.current.style.rotate = `0deg`
-    console.log("true | 1")
-} else if(isHoveredSTATE == "nope") {
-    dd_arrow.current.style.rotate = `180deg`
-    console.log("false | 0")
-}
+// function testTopDropdown() {
+//     if(isHoveredSTATE == "yup") {
+//         ddarrowSTATE.current.style.rotate = `0deg`
+//         // document.querySelector("#fa_caret").style.rotate = `0deg`
+//         console.log("true | 1")
+//     } else if(isHoveredSTATE == "nope") {
+//         ddarrowSTATE.current.style.rotate = `180deg`
+//         // document.querySelector("#fa_caret").style.rotate = `180deg`
+//         console.log("false | 0")
+//     }
+// }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
     // returning result
     return (
@@ -230,8 +235,8 @@ if(isHoveredSTATE == "yup") {
                                 topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
                                 topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                                 // console.log(topDropDownSTATE.current.style.display)
-                                setIsHoveredSTATE("yup")
-                                console.log(isHoveredSTATE)
+                                // setIsHoveredSTATE("yup")
+                                // console.log(isHoveredSTATE, "from menu items sector")
                             }
                         } } onMouseLeave={ () => {
                             if(index == 1) {
@@ -241,8 +246,8 @@ if(isHoveredSTATE == "yup") {
                                 topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
                                 topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                                 // console.log(topDropDownSTATE.current.style.display)
-                                setIsHoveredSTATE("nope")
-                                console.log(isHoveredSTATE)
+                                // setIsHoveredSTATE("nope")
+                                // console.log(isHoveredSTATE, "from menu items sector")
                             }
                         } }>
                             {element}
@@ -259,7 +264,9 @@ if(isHoveredSTATE == "yup") {
                     topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
                     topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                     // console.log(topDropDownSTATE.current.style.display)
-                    setIsHoveredSTATE("yup")
+                    // setIsHoveredSTATE("yup")
+                    // console.log(isHoveredSTATE, "from dropdown menu sector")
+                    // testTopDropdown()
                 } } onMouseLeave={ () => {
                     // topDropDownSTATE.current.style.display = `none`
                     topDropDownSTATE.current.style.visibility = `hidden`
@@ -267,7 +274,9 @@ if(isHoveredSTATE == "yup") {
                     topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
                     topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                     // console.log(topDropDownSTATE.current.style.display)
-                    setIsHoveredSTATE("nope")
+                    // setIsHoveredSTATE("nope")
+                    // console.log(isHoveredSTATE, "from dropdown menu sector")
+                    // testTopDropdown()
                 } }>
 
                     <ul className={s.header__list_productsdropdown__columns}>
