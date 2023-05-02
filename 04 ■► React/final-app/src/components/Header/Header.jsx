@@ -20,6 +20,7 @@ function Header() {
     // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
     // const switchButtonRef = useRef()
     const root = document.documentElement;
+    const isHovered = "nope"
     // const switchSliderBtn = document.querySelector("#switch_btn")
     // const switchSun = document.querySelector("#fa_sun")
     // const switchMoon = document.querySelector("#fa_moon")
@@ -28,12 +29,15 @@ function Header() {
     const switchMoon = useRef()
     const topDropDown = useRef()
     const userpanelDropDown = useRef()
+    const dd_arrow = useRef()
 
     const [switchSliderBtnSTATE, setSwitchSliderBtnSTATE] = useState(switchSliderBtn)
     const [switchSunSTATE, setSwitchSunSTATE] = useState(switchSun)
     const [switchMoonSTATE, setSwitchMoonSTATE] = useState(switchMoon)
     const [topDropDownSTATE, setTopDropDownSTATE] = useState(topDropDown)
     const [userpanelDropDownSTATE, setUserpanelDropDownSTATE] = useState(userpanelDropDown)
+
+    const [isHoveredSTATE, setIsHoveredSTATE] = useState(isHovered)
 
     // console.log(switchButtonRef.current.innerHTML)
     const [isLightMode, setIsLightMode] = useState(true)
@@ -57,6 +61,7 @@ function Header() {
             setSwitchMoonSTATE(switchMoon)
             setTopDropDownSTATE(topDropDown)
             setUserpanelDropDownSTATE(userpanelDropDown)
+            setIsHoveredSTATE(isHovered)
         }, [])
 
     function handleSwitchLorD() {
@@ -186,12 +191,27 @@ function Header() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
 // function for userpanel dropdown menu
 function userpanelDDfuncOpen() {
-    userpanelDropDownSTATE.current.style.display = `flex`
+    // userpanelDropDownSTATE.current.style.display = `flex`
+    userpanelDropDownSTATE.current.style.visibility = `visible`
+    userpanelDropDownSTATE.current.style.opacity = `1.0`
+    userpanelDropDownSTATE.current.style.transform = `translate(-50%, 0%)`
+    userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
     // console.log(userpanelDropDownSTATE.current.style.display)
 }
 function userpanelDDfuncClose() {
-    userpanelDropDownSTATE.current.style.display = `none`
+    // userpanelDropDownSTATE.current.style.display = `none`
+    userpanelDropDownSTATE.current.style.visibility = `hidden`
+    userpanelDropDownSTATE.current.style.opacity = `0.0`
+    userpanelDropDownSTATE.current.style.transform = `translate(-50%, -100%)`
+    userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
     // console.log(userpanelDropDownSTATE.current.style.display)
+}
+if(isHoveredSTATE == "yup") {
+    dd_arrow.current.style.rotate = `0deg`
+    console.log("true | 1")
+} else if(isHoveredSTATE == "nope") {
+    dd_arrow.current.style.rotate = `180deg`
+    console.log("false | 0")
 }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
     // returning result
@@ -204,28 +224,50 @@ function userpanelDDfuncClose() {
                     menuElements.map(
                         (element, index) => <button key={index} className={s.header__list_buttons} onMouseEnter={ () => {
                             if(index == 1) {
-                                topDropDownSTATE.current.style.display = `flex`
+                                // topDropDownSTATE.current.style.display = `flex`
+                                topDropDownSTATE.current.style.visibility = `visible`
+                                topDropDownSTATE.current.style.opacity = `1.0`
+                                topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
+                                topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                                 // console.log(topDropDownSTATE.current.style.display)
+                                setIsHoveredSTATE("yup")
+                                console.log(isHoveredSTATE)
                             }
                         } } onMouseLeave={ () => {
                             if(index == 1) {
-                                topDropDownSTATE.current.style.display = `none`
+                                // topDropDownSTATE.current.style.display = `none`
+                                topDropDownSTATE.current.style.visibility = `hidden`
+                                topDropDownSTATE.current.style.opacity = `0.0`
+                                topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
+                                topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                                 // console.log(topDropDownSTATE.current.style.display)
+                                setIsHoveredSTATE("nope")
+                                console.log(isHoveredSTATE)
                             }
                         } }>
                             {element}
-                            {index == 1 ? (<i className='fa-solid fa-caret-right fa-1x fa-rotate-90' id={s.fa_caret}></i>) : ""}
+                            {index == 1 ? (<i className='fa-solid fa-caret-right fa-1x fa-rotate-90' id={s.fa_caret} ref={dd_arrow}></i>) : ""}
                         </button>
                     )
                 }
 
                 {/* dropdown menu for userpanel */}
                 <div className={s.header__list_productsdropdown} ref={topDropDown} onMouseEnter={ () => {
-                    topDropDownSTATE.current.style.display = `flex`
+                    // topDropDownSTATE.current.style.display = `flex`
+                    topDropDownSTATE.current.style.visibility = `visible`
+                    topDropDownSTATE.current.style.opacity = `1.0`
+                    topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
+                    topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                     // console.log(topDropDownSTATE.current.style.display)
+                    setIsHoveredSTATE("yup")
                 } } onMouseLeave={ () => {
-                    topDropDownSTATE.current.style.display = `none`
+                    // topDropDownSTATE.current.style.display = `none`
+                    topDropDownSTATE.current.style.visibility = `hidden`
+                    topDropDownSTATE.current.style.opacity = `0.0`
+                    topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
+                    topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                     // console.log(topDropDownSTATE.current.style.display)
+                    setIsHoveredSTATE("nope")
                 } }>
 
                     <ul className={s.header__list_productsdropdown__columns}>

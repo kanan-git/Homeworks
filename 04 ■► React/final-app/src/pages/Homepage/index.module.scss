@@ -19,7 +19,7 @@
 
 .homepage {
     z-index: 1;
-    width: 100vw; // 100%
+    width: 100%; // 100vw
     height: 600px;
     // border: 1px solid var(--borders-color);
     border: none;
@@ -31,13 +31,13 @@
     align-items: center;
     flex-direction: column;
     &__categories {
-        width: 1400px;
+        width: 95%;
     }
     &__brands {
-        width: 1400px;
+        width: 95%;
     }
     &__discount {
-        width: 1400px;
+        width: 95%;
     }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

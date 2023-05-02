@@ -55,6 +55,10 @@ body {
     font-weight: 500;
     font-family: 'Josefin Sans', sans-serif;
     color: var(--dark-black);
+    &::selection {
+        background: var(--buttons-hover-color);
+        color: var(--text-color);
+    }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // button cursor

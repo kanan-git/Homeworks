@@ -47,7 +47,6 @@
   filter: drop-shadow(0 0 3px var());
 }
 .header__list_buttons:hover #fa_caret {
-  rotate: 0deg;
   color: var(--link-hover-color);
 }
 .header__list_buttons:active {
@@ -57,7 +56,6 @@
   filter: drop-shadow(0 0 8px var());
 }
 .header__list_buttons:active #fa_caret {
-  rotate: 0deg;
   color: var(--link-active-color);
 }
 .header__list_productsdropdown {
@@ -67,13 +65,18 @@
   left: 30%;
   width: auto;
   height: auto;
-  display: none;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0, -100%);
+  transition: ease-in-out 0.2s;
   justify-content: center;
   align-items: flex-start;
   padding: 20px 20px;
   gap: 40px;
   border: 1px solid var(--borders-color);
   background-color: var(--default-bg-color);
+  filter: drop-shadow(0 0 2px var(--filter-shadow-color));
 }
 .header__list_productsdropdown__columns {
   display: flex;
@@ -95,6 +98,8 @@
   cursor: pointer;
   margin-left: 30px;
   transition: var(--quick-fx);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .header__list_productsdropdown__columns_items:not(:last-of-type) {
   margin-bottom: 5px;
@@ -114,6 +119,8 @@
   margin-left: 30px;
   text-transform: uppercase;
   transition: var(--quick-fx);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .header__list_productsdropdown__columns_discount:hover {
   color: var(--link-hover-color);
@@ -300,20 +307,26 @@
   transform: translateX(-50%);
   width: 200px;
   height: auto;
-  display: none;
-  flex-direction: column;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: ease-in-out 0.2s;
   padding: 10px 0px;
   gap: 10px;
   border: 1px solid var(--borders-color);
   background-color: var(--default-bg-color);
   filter: drop-shadow(0 0 10px var(--filter-shadow-color));
+  flex-direction: column;
 }
 .header__main_userpanel_dropdown__items {
   font-weight: 600;
   color: var(--link-color);
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 50px;
   transition: var(--quick-fx);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .header__main_userpanel_dropdown__items #fa_symbols {
   margin-right: 5px;
