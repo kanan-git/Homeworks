@@ -1,7 +1,7 @@
 .homepage {
   z-index: 1;
   width: 100%;
-  height: 600px;
+  height: auto;
   border: none;
   border-bottom: 1px solid var(--borders-color);
   background-color: var(--default-bg-color);
@@ -9,12 +9,179 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 50px;
+  padding: 20px 10px;
+  transition: var(--quick-fx);
 }
 .homepage__categories {
-  width: 95%;
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.homepage__categories_topside {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid var(--borders-color);
+  padding-bottom: 10px;
+}
+.homepage__categories_topside__header {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.homepage__categories_topside__box {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  gap: 20px;
+}
+.homepage__categories_topside__box_buttons {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--borders-color);
+  background-color: var(--buttons-color);
+  color: var(--text-color);
+  transition: var(--quick-fx);
+}
+.homepage__categories_topside__box_buttons:hover {
+  background-color: var(--buttons-hover-color);
+  color: var(--text-color);
+}
+.homepage__categories_topside__box_buttons:active {
+  transition: var(--instant-fx);
+  background-color: var(--buttons-active-color);
+  color: var(--text-color);
+}
+.homepage__categories_container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.homepage__categories_container__cards {
+  width: 200px;
+  height: 240px;
+  border: 1px solid var(--borders-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: 20px;
+  background-color: var(--searchbar-bg);
+}
+.homepage__categories_container__cards_image {
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--borders-color);
+  overflow: hidden;
+}
+.homepage__categories_container__cards_image__content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.homepage__categories_container__cards_title {
+  font-size: 16px;
+  margin: 0 20px;
+  color: var(--text-color);
 }
 .homepage__brands {
-  width: 95%;
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.homepage__brands_topside {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid var(--borders-color);
+  padding-bottom: 10px;
+}
+.homepage__brands_topside__header {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.homepage__brands_topside__box {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  gap: 20px;
+}
+.homepage__brands_topside__box_buttons {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--borders-color);
+  background-color: var(--buttons-color);
+  color: var(--text-color);
+  transition: var(--quick-fx);
+}
+.homepage__brands_topside__box_buttons:hover {
+  background-color: var(--buttons-hover-color);
+  color: var(--text-color);
+}
+.homepage__brands_topside__box_buttons:active {
+  transition: var(--instant-fx);
+  background-color: var(--buttons-active-color);
+  color: var(--text-color);
+}
+.homepage__brands_container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.homepage__brands_container__cards {
+  width: 200px;
+  height: 240px;
+  border: 1px solid var(--borders-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.homepage__brands_container__cards_image {
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--borders-color);
+  overflow: hidden;
+}
+.homepage__brands_container__cards_image__content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.homepage__brands_container__cards_title {
+  font-size: 16px;
+  margin: 0 20px;
+  color: var(--text-color);
 }
 .homepage__discount {
   width: 95%;

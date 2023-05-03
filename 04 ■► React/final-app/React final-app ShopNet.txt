@@ -32,6 +32,7 @@ Work In Progress:
 ~ make Breadcrumb —— for now without dataflow (redux tlk), with HTML, SCSS, JS
 ~ make Popups & Windows —— for now without dataflow (redux tlk), with HTML, SCSS, JS
 ~ ask to ChatGPT and learn how works props & lifting up, redux toolkit with examples /!\
+~ fix components width 100% issue
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Completed:
 

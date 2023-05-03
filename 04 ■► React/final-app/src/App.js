@@ -24,7 +24,7 @@ function App() {
       <Breadcrumb />
 
       <Homepage />
-      <About />
+      {/* <About />
       <Contact />
       <ItemView />
       <MyCart />
@@ -32,7 +32,7 @@ function App() {
       <Products />
       <Purchase />
       <Settings />
-      <SignInOrUp />
+      <SignInOrUp /> */}
 
       <Footer />
     </div>

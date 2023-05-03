@@ -96,6 +96,8 @@ function Header() {
             root.style.setProperty('--filter-shadow-color', 'rgb(255,255,255)'); // DARK mode default color
             root.style.setProperty('--borders-color', 'rgb(200,200,200)'); // DARK mode default color
             root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(70,10,250), rgb(200,10,10))'); // DARK mode default color
+            root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
+            root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
 
             switchSliderBtnSTATE.current.style.left = `100%`
             switchSliderBtnSTATE.current.style.transform = `translateX(-95%)`
@@ -134,6 +136,8 @@ function Header() {
             root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
             root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
             root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
+            root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
+            root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
 
             switchSliderBtnSTATE.current.style.left = `0%`
             switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
