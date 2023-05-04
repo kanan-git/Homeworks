@@ -13,7 +13,6 @@ export const dataSource = {
                 }
             }
         },
-
         footer: {
             about: [
                 "About Us", 
@@ -44,7 +43,6 @@ export const dataSource = {
             ],
             bottomside: ["© Copyright 2023 CODERS.EDU.AZ | All Rights Reserved.", "Terms & Conditions", "Privacy Policy"]
         },
-
         homepage: {},
         about: {},
         contact: {},
@@ -56,7 +54,7 @@ export const dataSource = {
         settings: {},
         signinorup: {},
         filteraside: {},
-        breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        // breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
         popup_successfullysigned: {},
         popup_termsandconditions: {},
@@ -76,7 +74,6 @@ export const dataSource = {
                 }
             }
         },
-        
         footer: {
             about: [
                 "Haqqımızda", 
@@ -107,7 +104,6 @@ export const dataSource = {
             ],
             bottomside: ["© Müəllif hüququ 2023 CODERS.EDU.AZ | Bütün Hüquqları Qorunur.", "Qaydalar və Şərtlər", "Gizlilik Siyasəti"]
         },
-
         homepage: {},
         about: {},
         contact: {},
@@ -119,7 +115,7 @@ export const dataSource = {
         settings: {},
         signinorup: {},
         filteraside: {},
-        breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        // breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
         popup_successfullysigned: {},
         popup_termsandconditions: {},
@@ -139,7 +135,6 @@ export const dataSource = {
                 }
             }
         },
-
         footer: {
             about: [
                 "Hakkımızda", 
@@ -170,7 +165,6 @@ export const dataSource = {
             ],
             bottomside: ["© Copyright 2023 CODERS.EDU.AZ | Tüm Haklar Saklıdır.", "Şartlar ve Koşullar", "Gizlilik Politikası"]
         },
-
         homepage: {},
         about: {},
         contact: {},
@@ -182,7 +176,7 @@ export const dataSource = {
         settings: {},
         signinorup: {},
         filteraside: {},
-        breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        // breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
         popup_successfullysigned: {},
         popup_termsandconditions: {},

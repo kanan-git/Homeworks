@@ -17,10 +17,27 @@
 //                              var(--borders-color)
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 .breadcrumb {
+    width: 100%;
+    height: 40px;
     background-color: var(--header-top-color);
     color: var(--text-negative-color);
-    padding: 5px 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
     border: none;
     border-bottom: 1px solid var(--borders-color);
+    &__contents {
+        letter-spacing: 1px;
+        &_links {
+            color: var(--text-negative-color);
+            font-weight: 600;
+            &:hover {
+                color: var(--link-hover-color);
+            }
+            &:active {
+                color: var(--link-active-color);
+            }
+        }
+    }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

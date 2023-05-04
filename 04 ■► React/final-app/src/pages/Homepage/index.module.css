@@ -9,16 +9,19 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
-  padding: 20px 10px;
+  gap: 100px;
+  padding: 50px 10px;
   transition: var(--quick-fx);
 }
 .homepage__categories {
-  width: 1400px;
+  z-index: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 10px 0px;
+  padding: 0px 10px;
 }
 .homepage__categories_topside {
   width: 100%;
@@ -26,11 +29,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 10px 50px;
   margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid var(--borders-color);
-  padding-bottom: 10px;
 }
 .homepage__categories_topside__header {
   font-size: 24px;
@@ -79,6 +81,11 @@
   overflow: hidden;
   padding-bottom: 20px;
   background-color: var(--searchbar-bg);
+  transition: var(--quick-fx);
+}
+.homepage__categories_container__cards:hover {
+  scale: 1.02;
+  filter: drop-shadow(0 0 5px var(--filter-shadow-color));
 }
 .homepage__categories_container__cards_image {
   width: 100%;
@@ -92,6 +99,8 @@
   padding: 10px;
   -o-object-fit: contain;
      object-fit: contain;
+  background-color: rgba(255, 255, 255, 0);
+  mix-blend-mode: multiply;
 }
 .homepage__categories_container__cards_title {
   font-size: 16px;
@@ -99,11 +108,13 @@
   color: var(--text-color);
 }
 .homepage__brands {
-  width: 1400px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 10px 0px;
+  padding: 0px 10px;
 }
 .homepage__brands_topside {
   width: 100%;
@@ -163,7 +174,12 @@
   justify-content: center;
   overflow: hidden;
   padding-bottom: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--searchbar-bg);
+  transition: var(--quick-fx);
+}
+.homepage__brands_container__cards:hover {
+  scale: 1.02;
+  filter: drop-shadow(0 0 5px var(--filter-shadow-color));
 }
 .homepage__brands_container__cards_image {
   width: 100%;
@@ -177,6 +193,8 @@
   padding: 10px;
   -o-object-fit: contain;
      object-fit: contain;
+  background-color: rgba(255, 255, 255, 0);
+  mix-blend-mode: multiply;
 }
 .homepage__brands_container__cards_title {
   font-size: 16px;
@@ -184,5 +202,11 @@
   color: var(--text-color);
 }
 .homepage__discount {
-  width: 95%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0px;
+  padding: 0px 10px;
 }/*# sourceMappingURL=index.module.css.map */

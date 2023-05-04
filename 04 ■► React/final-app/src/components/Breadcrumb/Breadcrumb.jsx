@@ -21,7 +21,14 @@ function Breadcrumb() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <div className={s.breadcrumb}>
-            test123
+            <p className={s.breadcrumb__contents}>
+                ShopNet | You are here now → '
+                <a href="#" className={s.breadcrumb__contents_links}>Homepage</a>/
+                <a href="#" className={s.breadcrumb__contents_links}>Products</a>/
+                <a href="#" className={s.breadcrumb__contents_links}>Item view</a>/
+                <a href="#" className={s.breadcrumb__contents_links}>Purchase</a>
+                '
+            </p>
         </div>
     )
 }

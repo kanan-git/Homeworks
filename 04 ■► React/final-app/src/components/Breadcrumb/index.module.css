@@ -1,7 +1,24 @@
 .breadcrumb {
+  width: 100%;
+  height: 40px;
   background-color: var(--header-top-color);
   color: var(--text-negative-color);
-  padding: 5px 20px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
   border: none;
   border-bottom: 1px solid var(--borders-color);
+}
+.breadcrumb__contents {
+  letter-spacing: 1px;
+}
+.breadcrumb__contents_links {
+  color: var(--text-negative-color);
+  font-weight: 600;
+}
+.breadcrumb__contents_links:hover {
+  color: var(--link-hover-color);
+}
+.breadcrumb__contents_links:active {
+  color: var(--link-active-color);
 }/*# sourceMappingURL=index.module.css.map */
