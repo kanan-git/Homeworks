@@ -15,14 +15,27 @@ import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Breadcrumb() {
-    // ...
+    
+    const [dataBC, setDataBC] = useState(dataSource.english.breadcrumb)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    useEffect(
+        () => {
+            // fake condition for now which will be replaced with input select language data with store (redux tlk)
+            var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+            if (languageData == "English") {
+                setDataBC(dataSource.english.breadcrumb)
+            } else if (languageData == "Azərbaycan dili") {
+                setDataBC(dataSource.azerbaijani.breadcrumb)
+            } else if (languageData == "Türkçe") {
+                setDataBC(dataSource.turkish.breadcrumb)
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <div className={s.breadcrumb}>
             <p className={s.breadcrumb__contents}>
-                ShopNet | You are here now → '
+                ShopNet | {dataBC} → '
                 <a href="#" className={s.breadcrumb__contents_links}>Homepage</a>/
                 <a href="#" className={s.breadcrumb__contents_links}>Products</a>/
                 <a href="#" className={s.breadcrumb__contents_links}>Item view</a>/

@@ -17,18 +17,20 @@
 //                              var(--borders-color)
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 .breadcrumb {
-    width: 100%;
+    width: 100vw;
     height: 40px;
     background-color: var(--header-top-color);
     color: var(--text-negative-color);
-    padding: 10px 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     border: none;
     border-bottom: 1px solid var(--borders-color);
     &__contents {
         letter-spacing: 1px;
+        width: 1300px;
         &_links {
+            padding: 0px 10px;
             color: var(--text-negative-color);
             font-weight: 600;
             &:hover {

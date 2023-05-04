@@ -43,7 +43,36 @@ export const dataSource = {
             ],
             bottomside: ["© Copyright 2023 CODERS.EDU.AZ | All Rights Reserved.", "Terms & Conditions", "Privacy Policy"]
         },
-        homepage: {},
+        homepage: {
+            headers: ["Categories", "Brands", "Discounts"],
+            category_cards: [
+                "Groceries", 
+                "Assembly Elements", 
+                "Cutting", 
+                "Chemical Products", 
+                "Job Protection", 
+                "Tools", 
+                "Oils Other", 
+                "Conveyor System", 
+                "FMCG Products", 
+                "Auto Care Tools", 
+                "Reserve Parts"
+            ],
+            brand_cards: [
+                "BERNER", 
+                "CTP", 
+                "FERM", 
+                "HOGERT", 
+                "MATRİX", 
+                "BOLL", 
+                "RHODİUS", 
+                "MOJE AUTO", 
+                "REMA TİP TOP", 
+                "MAXMO", 
+                "STATUS"
+            ],
+            discount_cards: []
+        },
         about: {},
         contact: {},
         itemview: {},
@@ -54,7 +83,7 @@ export const dataSource = {
         settings: {},
         signinorup: {},
         filteraside: {},
-        // breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        breadcrumb: "You are here now", // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
         popup_successfullysigned: {},
         popup_termsandconditions: {},
@@ -104,7 +133,36 @@ export const dataSource = {
             ],
             bottomside: ["© Müəllif hüququ 2023 CODERS.EDU.AZ | Bütün Hüquqları Qorunur.", "Qaydalar və Şərtlər", "Gizlilik Siyasəti"]
         },
-        homepage: {},
+        homepage: {
+            headers: ["Kateqoriyalar", "Brendlər", "Endirimli məhsullar"],
+            category_cards: [
+                "Xırdavat", 
+                "Montaj Elementləri", 
+                "Kəsmə Deşmə", 
+                "Kimyəvi Məhsullar", 
+                "İş Təhlükəsizlik", 
+                "Alətlər", 
+                "Yağlar Digər", 
+                "Konveyer Sistemi", 
+                "FMCG Mallar", 
+                "Avto Qulluq Vasitələri", 
+                "Ehtiyyat Hissəsi"
+            ],
+            brand_cards: [
+                "BERNER", 
+                "CTP", 
+                "FERM", 
+                "HOGERT", 
+                "MATRİX", 
+                "BOLL", 
+                "RHODİUS", 
+                "MOJE AUTO", 
+                "REMA TİP TOP", 
+                "MAXMO", 
+                "STATUS"
+            ],
+            discount_cards: []
+        },
         about: {},
         contact: {},
         itemview: {},
@@ -115,7 +173,7 @@ export const dataSource = {
         settings: {},
         signinorup: {},
         filteraside: {},
-        // breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        breadcrumb: "Indi buradasınız", // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
         popup_successfullysigned: {},
         popup_termsandconditions: {},
@@ -165,7 +223,36 @@ export const dataSource = {
             ],
             bottomside: ["© Copyright 2023 CODERS.EDU.AZ | Tüm Haklar Saklıdır.", "Şartlar ve Koşullar", "Gizlilik Politikası"]
         },
-        homepage: {},
+        homepage: {
+            headers: ["Kategoriler", "Markalar", "Indirimli ürünler"],
+            category_cards: [
+                "Bakkaliye", 
+                "Montaj Ekipmanlari", 
+                "Kesme", 
+                "Kimyasal Ürünler", 
+                "İş Güvenlik", 
+                "Aletler", 
+                "Yağlar Diger", 
+                "Konveyör Sistemi", 
+                "FMCG Ürünler", 
+                "Oto Bakım Araçları", 
+                "Yedek Parçalar"
+            ],
+            brand_cards: [
+                "BERNER", 
+                "CTP", 
+                "FERM", 
+                "HOGERT", 
+                "MATRİX", 
+                "BOLL", 
+                "RHODİUS", 
+                "MOJE AUTO", 
+                "REMA TİP TOP", 
+                "MAXMO", 
+                "STATUS"
+            ],
+            discount_cards: []
+        },
         about: {},
         contact: {},
         itemview: {},
@@ -176,7 +263,7 @@ export const dataSource = {
         settings: {},
         signinorup: {},
         filteraside: {},
-        // breadcrumb: {}, // if you change language in breadcrumb.jsx or in rounting, remove this label
+        breadcrumb: "Şimdi buradasın", // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
         popup_successfullysigned: {},
         popup_termsandconditions: {},

@@ -24,15 +24,15 @@ function App() {
       <Breadcrumb />
 
       <Homepage />
-      {/* <About />
-      <Contact />
-      <ItemView />
-      <MyCart />
-      <MyFav />
-      <Products />
-      <Purchase />
-      <Settings />
-      <SignInOrUp /> */}
+      {/* <About /> */}
+      {/* <Contact /> */}
+      {/* <ItemView /> */}
+      {/* <MyCart /> */}
+      {/* <MyFav /> */}
+      {/* <Products /> */}
+      {/* <Purchase /> */}
+      {/* <Settings /> */}
+      {/* <SignInOrUp /> */}
 
       <Footer />
     </div>

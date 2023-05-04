@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 import categ_001 from './homepage assets/categories/1.png'
 import categ_002 from './homepage assets/categories/2.png'
@@ -28,8 +28,50 @@ import brands_010 from './homepage assets/brands/10.png'
 import brands_011 from './homepage assets/brands/11.png'
 
 function Homepage() {
+    // states and variables
+    const [hpHeaders, setHpHeaders] = useState(dataSource.english.homepage.headers)
+    const [categCards, setCategCards] = useState(dataSource.english.homepage.category_cards)
+    const [brandCards, setBrandCards] = useState(dataSource.english.homepage.brand_cards)
+    // const [discntCards, setDiscntCards] = useState(dataSource.english.homepage.discount_cards)
+    
+    useEffect(
+        () => {
+            // fake condition for now which will be replaced with input select language data with store (redux tlk)
+            var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+            if (languageData == "English") {
+                setHpHeaders(dataSource.english.homepage.headers)
+                setCategCards(dataSource.english.homepage.category_cards)
+                setBrandCards(dataSource.english.homepage.brand_cards)
+                // setDiscntCards(dataSource.english.homepage.discount_cards)
+                // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+            } else if (languageData == "Azərbaycan dili") {
+                setHpHeaders(dataSource.azerbaijani.homepage.headers)
+                setCategCards(dataSource.azerbaijani.homepage.category_cards)
+                setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
+                // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
+                // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+            } else if (languageData == "Türkçe") {
+                setHpHeaders(dataSource.turkish.homepage.headers)
+                setCategCards(dataSource.turkish.homepage.category_cards)
+                setBrandCards(dataSource.turkish.homepage.brand_cards)
+                // setDiscntCards(dataSource.turkish.homepage.discount_cards)
+                // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+            }
+        }, []
+    )
 
+    // const filterCards = document.querySelectorAll(".homepage__sections_container__cards")
+    // filterCards.map(
+    //     (items, index) => {console.log("element: ", items, ", ", "id: ", index)}
+    // )
+    // console.log(filterCards.length)
 
+    const filterCards = useRef([])
+    // filterCards.current.map(
+    //     (item) => {console.log(item)}, []
+    // )
+    console.log(filterCards)
+    // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
 
     // used ChatGPT -------------------------------------------------------------------------------> START ■
     // const [categoryLinksArraySTATE, setCategoryLinksArraySTATE] = useState([])
@@ -74,184 +116,184 @@ function Homepage() {
 
     return (
         <main className={s.homepage}>
-            <section className={s.homepage__categories}>
+            <section className={s.homepage__sections}>
                 {/* container which holds header and buttons */}
-                <div className={s.homepage__categories_topside}>
-                    <h3 className={s.homepage__categories_topside__header}> Categories </h3>
-                    <span className={s.homepage__categories_topside__box}>
-                        <button className={s.homepage__categories_topside__box_buttons} id={s.arrow_left}> ◄ </button>
-                        <button className={s.homepage__categories_topside__box_buttons} id={s.arrow_right}> ► </button>
+                <div className={s.homepage__sections_topside}>
+                    <h3 className={s.homepage__sections_topside__header}> {hpHeaders[0]} </h3>
+                    <span className={s.homepage__sections_topside__box}>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_left}> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_right}> ► </button>
                     </span>
                 </div>
                 {/* container which holds cards */}
-                <div className={s.homepage__categories_container}>
+                <div className={s.homepage__sections_container}>
                     {/* cards --- card-001 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_001} alt="categ_001" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_001} alt="categ_001" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Groceries </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[0]} </p>
                     </div>
                     {/* cards --- card-002 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_002} alt="categ_002" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_002} alt="categ_002" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Assembly Elements </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[1]} </p>
                     </div>
                     {/* cards --- card-003 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_003} alt="categ_003" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_003} alt="categ_003" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Cutting </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[2]} </p>
                     </div>
                     {/* cards --- card-004 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_004} alt="categ_004" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_004} alt="categ_004" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Chemical Products </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[3]} </p>
                     </div>
                     {/* cards --- card-005 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_005} alt="categ_005" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_005} alt="categ_005" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Job Protection </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[4]} </p>
                     </div>
                     {/* cards --- card-006 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_006} alt="categ_006" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_006} alt="categ_006" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Tools </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[5]} </p>
                     </div>
                     {/* cards --- card-007 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_007} alt="categ_007" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_007} alt="categ_007" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Oils Other </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[6]} </p>
                     </div>
                     {/* cards --- card-008 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_008} alt="categ_008" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_008} alt="categ_008" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Conveyor System </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[7]} </p>
                     </div>
                     {/* cards --- card-009 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_009} alt="categ_009" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_009} alt="categ_009" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> FMCG Products </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[8]} </p>
                     </div>
                     {/* cards --- card-010 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_010} alt="categ_010" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_010} alt="categ_010" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Auto Care Tools </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[9]} </p>
                     </div>
                     {/* cards --- card-011 */}
-                    <div className={s.homepage__categories_container__cards}>
-                        <div className={s.homepage__categories_container__cards_image__content}>
-                            <img src={categ_011} alt="categ_011" className={s.homepage__categories_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={categ_011} alt="categ_011" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__categories_container__cards_title}> Reserve Parts </p>
+                        <p className={s.homepage__sections_container__cards_title}> {categCards[10]} </p>
                     </div>
                 </div>
             </section>
 
-            <section className={s.homepage__brands}>
+            <section className={s.homepage__sections}>
                 {/* container which holds header and buttons */}
-                <div className={s.homepage__brands_topside}>
-                    <h3 className={s.homepage__brands_topside__header}> Brands </h3>
-                    <span className={s.homepage__brands_topside__box}>
-                        <button className={s.homepage__brands_topside__box_buttons} id={s.arrow_left}> ◄ </button>
-                        <button className={s.homepage__brands_topside__box_buttons} id={s.arrow_right}> ► </button>
+                <div className={s.homepage__sections_topside}>
+                    <h3 className={s.homepage__sections_topside__header}> {hpHeaders[1]} </h3>
+                    <span className={s.homepage__sections_topside__box}>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_left}> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_right}> ► </button>
                     </span>
                 </div>
                 {/* container which holds cards */}
-                <div className={s.homepage__brands_container}>
+                <div className={s.homepage__sections_container}>
                     {/* cards --- card-001 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_001} alt="brands_001" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_001} alt="brands_001" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Groceries </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[0]} </p>
                     </div>
                     {/* cards --- card-002 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_002} alt="brands_002" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_002} alt="brands_002" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Assembly Elements </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[1]} </p>
                     </div>
                     {/* cards --- card-003 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_003} alt="brands_003" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_003} alt="brands_003" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Cutting </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[2]} </p>
                     </div>
                     {/* cards --- card-004 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_004} alt="brands_004" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_004} alt="brands_004" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Chemical Products </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[3]} </p>
                     </div>
                     {/* cards --- card-005 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_005} alt="brands_005" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_005} alt="brands_005" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Job Protection </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[4]} </p>
                     </div>
                     {/* cards --- card-006 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_006} alt="brands_006" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_006} alt="brands_006" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Tools </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[5]} </p>
                     </div>
                     {/* cards --- card-007 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_007} alt="brands_007" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_007} alt="brands_007" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Oils Other </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[6]} </p>
                     </div>
                     {/* cards --- card-008 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_008} alt="brands_008" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_008} alt="brands_008" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Conveyor System </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[7]} </p>
                     </div>
                     {/* cards --- card-009 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_009} alt="brands_009" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_009} alt="brands_009" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> FMCG Products </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[8]} </p>
                     </div>
                     {/* cards --- card-010 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_010} alt="brands_010" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_010} alt="brands_010" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Auto Care Tools </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[9]} </p>
                     </div>
                     {/* cards --- card-011 */}
-                    <div className={s.homepage__brands_container__cards}>
-                        <div className={s.homepage__brands_container__cards_image__content}>
-                            <img src={brands_011} alt="brands_011" className={s.homepage__brands_container__cards_image__content} />
+                    <div className={s.homepage__sections_container__cards}>
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_011} alt="brands_011" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__brands_container__cards_title}> Reserve Parts </p>
+                        <p className={s.homepage__sections_container__cards_title}> {brandCards[10]} </p>
                     </div>
                 </div>
             </section>
