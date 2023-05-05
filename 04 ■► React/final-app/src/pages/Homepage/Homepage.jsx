@@ -60,18 +60,30 @@ function Homepage() {
         }, []
     )
 
-    // const filterCards = document.querySelectorAll(".homepage__sections_container__cards")
     // filterCards.map(
     //     (items, index) => {console.log("element: ", items, ", ", "id: ", index)}
     // )
     // console.log(filterCards.length)
 
-    const filterCards = useRef([])
-    // filterCards.current.map(
+    // const filterCards = useRef([])
+    // const fcArray = filterCards.current.querySelectorAll(".homepage__sections_container__cards")
+    // fcArray.map(
     //     (item) => {console.log(item)}, []
     // )
-    console.log(filterCards)
-    // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
+
+    // useEffect(
+    //     () => {
+    //         const filterCards = document.querySelector(".homepage__sections_container__cards") // querySelectorAll
+    //         console.log(filterCards)
+    //     }, []
+    // )
+
+    const filterCards = useRef([]) // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
+    useEffect(
+        () => {
+            console.log(filterCards.current)
+        }, []
+    )
 
     // used ChatGPT -------------------------------------------------------------------------------> START ■
     // const [categoryLinksArraySTATE, setCategoryLinksArraySTATE] = useState([])
@@ -142,63 +154,63 @@ function Homepage() {
                         <p className={s.homepage__sections_container__cards_title}> {categCards[1]} </p>
                     </div>
                     {/* cards --- card-003 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_003} alt="categ_003" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[2]} </p>
                     </div>
                     {/* cards --- card-004 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_004} alt="categ_004" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[3]} </p>
                     </div>
                     {/* cards --- card-005 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_005} alt="categ_005" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[4]} </p>
                     </div>
                     {/* cards --- card-006 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_006} alt="categ_006" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[5]} </p>
                     </div>
                     {/* cards --- card-007 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_007} alt="categ_007" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[6]} </p>
                     </div>
                     {/* cards --- card-008 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_008} alt="categ_008" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[7]} </p>
                     </div>
                     {/* cards --- card-009 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_009} alt="categ_009" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[8]} </p>
                     </div>
                     {/* cards --- card-010 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_010} alt="categ_010" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[9]} </p>
                     </div>
                     {/* cards --- card-011 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_011} alt="categ_011" className={s.homepage__sections_container__cards_image__content} />
                         </div>
