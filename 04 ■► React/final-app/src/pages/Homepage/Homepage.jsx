@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from "react-dom"
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
@@ -78,10 +79,72 @@ function Homepage() {
     //     }, []
     // )
 
-    const filterCards = useRef([]) // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
+
+
+    // const filterCards = document.querySelectorAll(".homepage__sections_container__cards") // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
+    // useEffect(
+    //     () => {
+    //         function funcTest() {
+    //             const filterCards = document.querySelectorAll(".homepage__sections_container__cards")
+    //             console.log(filterCards)
+    //         }
+    //         // const filterCards = Array.from(document.querySelectorAll(".homepage__sections_container__cards"))
+    //         // const filterCards = Array.from( document.querySelectorAll(`.${s.test123}`) )
+    //         // className={s.classname} use querySelectorAll
+    //         // filterCards.map(
+    //         //     (element) => {
+    //         //         console.log(element)
+    //         //     }
+    //         // )
+    //     }, []
+    // )
+
+    function funcTest() {
+        const filterCards = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`))
+        const filterCards_Categ = filterCards.slice(0, 11)
+        const filterCards_Brand = filterCards.slice(11, 22)
+        var currentIndex = 0
+        const sectionsBtn = Array.from(document.querySelectorAll(`.${s.homepage__sections_topside__box_buttons}`))
+        const categBtn_left = sectionsBtn[0]
+        const categBtn_right = sectionsBtn[1]
+        const brandsBtn_left = sectionsBtn[2]
+        const brandsBtn_right = sectionsBtn[3]
+
+        categBtn_left.addEventListener("click", () => {
+            console.log("categories left button is working")
+        })
+        categBtn_right.addEventListener("click", () => {
+            console.log("categories right button is working")
+        })
+        brandsBtn_left.addEventListener("click", () => {
+            console.log("brands left button is working")
+        })
+        brandsBtn_right.addEventListener("click", () => {
+            console.log("brands right button is working")
+        })
+
+        if(currentIndex > filterCards_Categ.length) {
+            var currentIndex = currentIndex - filterCards_Categ.length
+        } else if(currentIndex < 0) {
+            var currentIndex = filterCards_Categ.length
+        }
+
+        filterCards_Categ.forEach(
+            (element, index) => {
+                element.style.transform = `translateX(${index * 110}%)`
+            }
+        )
+        filterCards_Brand.forEach(
+            (element, index) => {
+                element.style.transform = `translateX(${index * 110}%)`
+            }
+        )
+        // console.log("Categories: ", filterCards_Categ, ", ", "Brands: ", filterCards_Brand, filterCards_Categ)
+        // console.log(categBtn_left, categBtn_right, brandsBtn_left, brandsBtn_right)
+    }
     useEffect(
         () => {
-            console.log(filterCards.current)
+            funcTest()
         }, []
     )
 
@@ -133,21 +196,21 @@ function Homepage() {
                 <div className={s.homepage__sections_topside}>
                     <h3 className={s.homepage__sections_topside__header}> {hpHeaders[0]} </h3>
                     <span className={s.homepage__sections_topside__box}>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_left}> ◄ </button>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_right}> ► </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left}> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right}> ► </button>
                     </span>
                 </div>
                 {/* container which holds cards */}
                 <div className={s.homepage__sections_container}>
                     {/* cards --- card-001 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_001} alt="categ_001" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {categCards[0]} </p>
                     </div>
                     {/* cards --- card-002 */}
-                    <div className={s.homepage__sections_container__cards} ref={filterCards}>
+                    <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_002} alt="categ_002" className={s.homepage__sections_container__cards_image__content} />
                         </div>
@@ -224,8 +287,8 @@ function Homepage() {
                 <div className={s.homepage__sections_topside}>
                     <h3 className={s.homepage__sections_topside__header}> {hpHeaders[1]} </h3>
                     <span className={s.homepage__sections_topside__box}>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_left}> ◄ </button>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.arrow_right}> ► </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.brand__arrow_left}> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.brand__arrow_right}> ► </button>
                     </span>
                 </div>
                 {/* container which holds cards */}

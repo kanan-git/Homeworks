@@ -69,6 +69,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  overflow: hidden;
+  position: relative;
 }
 .homepage__sections_container__cards {
   width: 200px;
@@ -86,7 +88,6 @@
   position: absolute;
 }
 .homepage__sections_container__cards:hover {
-  scale: 1.02;
   filter: drop-shadow(0 0 5px var(--filter-shadow-color));
 }
 .homepage__sections_container__cards_image {

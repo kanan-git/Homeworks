@@ -91,6 +91,9 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            overflow: hidden;
+            // border: 1px solid red;
+            position: relative;
             &__cards {
                 width: 200px;
                 height: 240px;
@@ -106,7 +109,7 @@
                 transition: var(--quick-fx);
                 position: absolute;
                 &:hover {
-                    scale: 1.02;
+                    // scale: 1.02;
                     filter: drop-shadow(0 0 5px var(--filter-shadow-color));
                 }
                 &_image {
