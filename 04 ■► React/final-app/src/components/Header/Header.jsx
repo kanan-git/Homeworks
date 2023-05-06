@@ -30,12 +30,14 @@ function Header() {
     const topDropDown = useRef()
     const userpanelDropDown = useRef()
     const dd_arrow = useRef()
+    const logo_img = useRef()
 
     const [switchSliderBtnSTATE, setSwitchSliderBtnSTATE] = useState(switchSliderBtn)
     const [switchSunSTATE, setSwitchSunSTATE] = useState(switchSun)
     const [switchMoonSTATE, setSwitchMoonSTATE] = useState(switchMoon)
     const [topDropDownSTATE, setTopDropDownSTATE] = useState(topDropDown)
     const [userpanelDropDownSTATE, setUserpanelDropDownSTATE] = useState(userpanelDropDown)
+    const [logoSTATE, setLogoSTATE] = useState(logo_img)
 
     const [ddarrowSTATE, setDDarrowSTATE] = useState(dd_arrow)
     const [isHoveredSTATE, setIsHoveredSTATE] = useState(isHovered)
@@ -63,6 +65,7 @@ function Header() {
             setTopDropDownSTATE(topDropDown)
             setUserpanelDropDownSTATE(userpanelDropDown)
             setIsHoveredSTATE(isHovered)
+            setLogoSTATE(logo_img)
         }, [])
 
     function handleSwitchLorD() {
@@ -105,6 +108,7 @@ function Header() {
             switchSunSTATE.current.style.opacity = `0.5`
             switchMoonSTATE.current.style.scale = `1.8`
             switchMoonSTATE.current.style.opacity = `0.9`
+            logoSTATE.current.style.filter = `invert(1)`
 
             // console.log(
             //     switchSliderBtnSTATE.current.style.left, 
@@ -145,6 +149,7 @@ function Header() {
             switchSunSTATE.current.style.opacity = `0.9`
             switchMoonSTATE.current.style.scale = `1.0`
             switchMoonSTATE.current.style.opacity = `0.5`
+            logoSTATE.current.style.filter = `invert(0)`
 
             // console.log(
             //     switchSliderBtnSTATE.current.style.left, 
@@ -337,7 +342,7 @@ function userpanelDDfuncClose() {
             <div className={s.header__main}>
                 {/* temporary static elements for reference | LOGO */}
                 <div className={s.header__main_logo}>
-                    <img src={logo} alt="website-logo" className={s.header__main_logo__content} />
+                    <img src={logo} alt="website-logo" className={s.header__main_logo__content} ref={logo_img} />
                 </div>
 
                 {/* temporary static elements for reference | LANGUAGE BAR */}

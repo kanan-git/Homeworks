@@ -100,48 +100,86 @@ function Homepage() {
     // )
 
     function funcTest() {
+        // variables
         const filterCards = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`))
         const filterCards_Categ = filterCards.slice(0, 11)
         const filterCards_Brand = filterCards.slice(11, 22)
-        var currentIndex = 0
         const sectionsBtn = Array.from(document.querySelectorAll(`.${s.homepage__sections_topside__box_buttons}`))
         const categBtn_left = sectionsBtn[0]
         const categBtn_right = sectionsBtn[1]
         const brandsBtn_left = sectionsBtn[2]
         const brandsBtn_right = sectionsBtn[3]
-
-        categBtn_left.addEventListener("click", () => {
-            console.log("categories left button is working")
-        })
-        categBtn_right.addEventListener("click", () => {
-            console.log("categories right button is working")
-        })
-        brandsBtn_left.addEventListener("click", () => {
-            console.log("brands left button is working")
-        })
-        brandsBtn_right.addEventListener("click", () => {
-            console.log("brands right button is working")
-        })
-
-        if(currentIndex > filterCards_Categ.length) {
-            var currentIndex = currentIndex - filterCards_Categ.length
-        } else if(currentIndex < 0) {
-            var currentIndex = filterCards_Categ.length
-        }
-
+        // current index of section cards
+        var currentIndexCateg = 0
+        var currentIndexBrand = 0
+        // spreading cards by their index numbers
         filterCards_Categ.forEach(
             (element, index) => {
-                element.style.transform = `translateX(${index * 110}%)`
+                element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
             }
         )
         filterCards_Brand.forEach(
             (element, index) => {
-                element.style.transform = `translateX(${index * 110}%)`
+                element.style.transform = `translateX(${(index - currentIndexBrand) * 110}%)`
             }
         )
+        // events for carousel slider buttons
+        categBtn_left.addEventListener("click", () => {
+            if(currentIndexCateg == 0) {
+                currentIndexCateg = filterCards_Categ.length-1
+            } else {
+                currentIndexCateg--
+            }
+            // console.log(currentIndexCateg, "categories left button is working", filterCards_Categ.length)
+            filterCards_Categ.forEach(
+                (element, index) => {
+                    element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
+                }
+            )
+        })
+        categBtn_right.addEventListener("click", () => {
+            if(currentIndexCateg == filterCards_Categ.length-1) {
+                currentIndexCateg = 0
+            } else {
+                currentIndexCateg++
+            }
+            // console.log(currentIndexCateg, "categories right button is working", filterCards_Categ.length)
+            filterCards_Categ.forEach(
+                (element, index) => {
+                    element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
+                }
+            )
+        })
+        brandsBtn_left.addEventListener("click", () => {
+            if(currentIndexBrand == 0) {
+                currentIndexBrand = filterCards_Brand.length-1
+            } else {
+                currentIndexBrand--
+            }
+            // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
+            filterCards_Brand.forEach(
+                (element, index) => {
+                    element.style.transform = `translateX(${(index - currentIndexBrand) * 110}%)`
+                }
+            )
+        })
+        brandsBtn_right.addEventListener("click", () => {
+            if(currentIndexBrand == filterCards_Brand.length-1) {
+                currentIndexBrand = 0
+            } else {
+                currentIndexBrand++
+            }
+            // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
+            filterCards_Brand.forEach(
+                (element, index) => {
+                    element.style.transform = `translateX(${(index - currentIndexBrand) * 110}%)`
+                }
+            )
+        })
         // console.log("Categories: ", filterCards_Categ, ", ", "Brands: ", filterCards_Brand, filterCards_Categ)
         // console.log(categBtn_left, categBtn_right, brandsBtn_left, brandsBtn_right)
     }
+    // use function in useEffect
     useEffect(
         () => {
             funcTest()

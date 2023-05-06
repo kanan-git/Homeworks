@@ -175,6 +175,7 @@
                 width: 100%;
                 object-fit: cover;
                 object-position: center;
+                filter: invert(0);
             }
         }
         &_langbar {

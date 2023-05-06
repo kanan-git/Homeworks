@@ -19,20 +19,22 @@ TO DO TASKS:
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
-~ make Homepage —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make About —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make Contact —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make ItemView —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make MyCart —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make MyFav —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make Products —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make Purchase —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make Settings —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make SignInOrUp —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make Breadcrumb —— for now without dataflow (redux tlk), with HTML, SCSS, JS
-~ make Popups & Windows —— for now without dataflow (redux tlk), with HTML, SCSS, JS
+~ make About —— for now without dataflow, with HTML, SCSS, JS
+~ make Contact —— for now without dataflow, with HTML, SCSS, JS
+~ make ItemView —— for now without dataflow, with HTML, SCSS, JS
+~ make MyCart —— for now without dataflow, with HTML, SCSS, JS
+~ make MyFav —— for now without dataflow, with HTML, SCSS, JS
+~ make Products —— for now without dataflow, with HTML, SCSS, JS
+~ make Purchase —— for now without dataflow, with HTML, SCSS, JS
+~ make Settings —— for now without dataflow, with HTML, SCSS, JS
+~ make SignInOrUp —— for now without dataflow, with HTML, SCSS, JS
+~ make Breadcrumb —— for now without dataflow, with HTML, SCSS, JS
+~ make Popups & Windows —— for now without dataflow, with HTML, SCSS, JS
+
+~ all pages, components, popups —— dataflow (redux toolkit * / props)
 ~ ask to ChatGPT and learn how works props & lifting up, redux toolkit with examples /!\
-~ fix components width 100% issue
+
+~ fix components width 100% issue (must be without scroll horizontal)
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Completed:
 
@@ -46,6 +48,7 @@ Completed:
 + add breadcrumb, links <a>
 + pages for about, homepage,  login/register, contact, favorites, my cart, itemview, products?, purchase, account setting
 x fix caret arrow is not rotated while dropdown is visible issue | FAILED
++ make Homepage —— for now without dataflow, with HTML, SCSS, JS
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Write to Terminal for starting:
 

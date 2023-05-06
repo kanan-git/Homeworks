@@ -159,6 +159,7 @@
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  filter: invert(0);
 }
 .header__main_langbar {
   height: 100%;
