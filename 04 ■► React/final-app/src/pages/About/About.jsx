@@ -31,20 +31,23 @@ function About() {
 
     useEffect(
         () => {
+            var languageData = document.querySelector("#language")
             // fake condition for now which will be replaced with input select language data with store (redux tlk)
-            var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+            // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
             // var languageData = "Azərbaycan dili" // "English", "Azərbaycan dili", "Türkçe"
             // var languageData = "Türkçe" // "English", "Azərbaycan dili", "Türkçe"
-            if (languageData == "English") {
-                setTextSTATE(dataSource.english.about.text)
-                setHeadersSTATE(dataSource.english.about.headers) // english azerbaijani turkish
-            } else if (languageData == "Azərbaycan dili") {
-                setTextSTATE(dataSource.azerbaijani.about.text)
-                setHeadersSTATE(dataSource.azerbaijani.about.headers)
-            } else if (languageData == "Türkçe") {
-                setTextSTATE(dataSource.turkish.about.text)
-                setHeadersSTATE(dataSource.turkish.about.headers)
-            }
+            languageData.addEventListener("change", () => {
+                if (languageData.value == "English") {
+                    setTextSTATE(dataSource.english.about.text)
+                    setHeadersSTATE(dataSource.english.about.headers) // english azerbaijani turkish
+                } else if (languageData.value == "Azərbaycan dili") {
+                    setTextSTATE(dataSource.azerbaijani.about.text)
+                    setHeadersSTATE(dataSource.azerbaijani.about.headers)
+                } else if (languageData.value == "Türkçe") {
+                    setTextSTATE(dataSource.turkish.about.text)
+                    setHeadersSTATE(dataSource.turkish.about.headers)
+                }
+            })
         }, []
     )
 

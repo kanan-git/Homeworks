@@ -37,27 +37,30 @@ function Homepage() {
     
     useEffect(
         () => {
+            var languageData = document.querySelector("#language")
             // fake condition for now which will be replaced with input select language data with store (redux tlk)
-            var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
-            if (languageData == "English") {
-                setHpHeaders(dataSource.english.homepage.headers)
-                setCategCards(dataSource.english.homepage.category_cards)
-                setBrandCards(dataSource.english.homepage.brand_cards)
-                // setDiscntCards(dataSource.english.homepage.discount_cards)
-                // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-            } else if (languageData == "Azərbaycan dili") {
-                setHpHeaders(dataSource.azerbaijani.homepage.headers)
-                setCategCards(dataSource.azerbaijani.homepage.category_cards)
-                setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
-                // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
-                // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-            } else if (languageData == "Türkçe") {
-                setHpHeaders(dataSource.turkish.homepage.headers)
-                setCategCards(dataSource.turkish.homepage.category_cards)
-                setBrandCards(dataSource.turkish.homepage.brand_cards)
-                // setDiscntCards(dataSource.turkish.homepage.discount_cards)
-                // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-            }
+            // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+            languageData.addEventListener("change", () => {
+                if (languageData.value == "English") {
+                    setHpHeaders(dataSource.english.homepage.headers)
+                    setCategCards(dataSource.english.homepage.category_cards)
+                    setBrandCards(dataSource.english.homepage.brand_cards)
+                    // setDiscntCards(dataSource.english.homepage.discount_cards)
+                    // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+                } else if (languageData.value == "Azərbaycan dili") {
+                    setHpHeaders(dataSource.azerbaijani.homepage.headers)
+                    setCategCards(dataSource.azerbaijani.homepage.category_cards)
+                    setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
+                    // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
+                    // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+                } else if (languageData.value == "Türkçe") {
+                    setHpHeaders(dataSource.turkish.homepage.headers)
+                    setCategCards(dataSource.turkish.homepage.category_cards)
+                    setBrandCards(dataSource.turkish.homepage.brand_cards)
+                    // setDiscntCards(dataSource.turkish.homepage.discount_cards)
+                    // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+                }
+            })
         }, []
     )
 

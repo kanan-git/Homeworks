@@ -24,16 +24,16 @@ function App() {
       <Header />
       <Breadcrumb />
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      {/* <Homepage /> */}
+      <Homepage />
       <About />
-      {/* <Contact /> */}
-      {/* <ItemView /> */}
-      {/* <MyCart /> */}
-      {/* <MyFav /> */}
-      {/* <Products /> */}
-      {/* <Purchase /> */}
-      {/* <Settings /> */}
-      {/* <SignInOrUp /> */}
+      <Contact />
+      {/* <ItemView />
+      <MyCart />
+      <MyFav />
+      <Products />
+      <Purchase />
+      <Settings />
+      <SignInOrUp /> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Footer />
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}

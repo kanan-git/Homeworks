@@ -88,7 +88,19 @@ export const dataSource = {
                 "See more"
             ]
         },
-        contact: {},
+        contact: {
+            text: [
+                "If you have any questions, comments, or concerns about our products or services, please do not hesitate to contact us at:", 
+                "Address: 28 May, Baku, Azerbaijan", 
+                "Phone: (+994) 50 123 45 67", 
+                "Email: sales@shopnet.az", 
+                "Our dedicated customer service team is available to assist you Monday through Friday, 9:00 AM to 5:00 PM. We strive to respond to all inquiries within 24 hours."
+            ], 
+            headers: [
+                "Contact Information", 
+                "Find on Map"
+            ]
+        },
         itemview: {},
         mycart: {},
         myfav: {},
@@ -192,7 +204,19 @@ export const dataSource = {
                 "Daha çox gör"
             ]
         },
-        contact: {},
+        contact: {
+            text: [
+                "Məhsullarımız və ya xidmətlərimizlə bağlı hər hansı sualınız, şərhiniz və ya narahatlığınız varsa, bizimlə əlaqə saxlamaqdan çəkinməyin:", 
+                "Ünvan: 28 May, Bakı, Azərbaycan", 
+                "Telefon: (+994) 50 123 45 67", 
+                "Email: sales@shopnet.az", 
+                "Xüsusi müştəri xidmətləri komandamız bazar ertəsindən cümə gününə qədər, səhər saat 9:00-dan axşam 17:00-dək sizə kömək etmək üçün hazırdır. Biz bütün sorğulara 24 saat ərzində cavab verməyə çalışırıq."
+            ], 
+            headers: [
+                "Əlaqə məlumatı", 
+                "Xəritədə tapın"
+            ]
+        },
         itemview: {},
         mycart: {},
         myfav: {},
@@ -296,7 +320,19 @@ export const dataSource = {
                 "Daha fazla gör"
             ]
         },
-        contact: {},
+        contact: {
+            text: [
+                "Ürünlerimiz veya hizmetlerimiz hakkında herhangi bir sorunuz, yorumunuz veya endişeniz varsa, lütfen bizimle şu adresten iletişime geçmekten çekinmeyin:", 
+                "Adres: 28 Mayıs, Bakü, Azerbaycan", 
+                "Telefon: (+994) 50 123 45 67", 
+                "E-posta: sales@shopnet.az", 
+                "Özel müşteri hizmetleri ekibimiz, Pazartesi'den Cuma'ya 09:00 - 17:00 saatleri arasında size yardımcı olmaya hazırdır. Tüm sorulara 24 saat içinde yanıt vermeye çalışıyoruz."
+            ], 
+            headers: [
+                "İletişim bilgileri", 
+                "Haritada Bul"
+            ]
+        },
         itemview: {},
         mycart: {},
         myfav: {},

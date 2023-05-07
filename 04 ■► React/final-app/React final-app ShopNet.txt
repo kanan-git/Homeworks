@@ -35,7 +35,6 @@ TO DO TASKS:
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Work In Progress:
 
-~ make Contact —— for now without dataflow, with HTML, SCSS, JS
 ~ make MyCart —— for now without dataflow, with HTML, SCSS, JS
 ~ make MyFav —— for now without dataflow, with HTML, SCSS, JS
 ~ make Breadcrumb —— for now without dataflow, with HTML, SCSS, JS
@@ -54,6 +53,7 @@ Completed:
 x fix caret arrow is not rotated while dropdown is visible issue | FAILED
 + make Homepage —— for now without dataflow, with HTML, SCSS, JS
 + make About —— for now without dataflow, with HTML, SCSS, JS
++ make Contact —— for now without dataflow, with HTML, SCSS, JS
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Write to Terminal for starting:
 
