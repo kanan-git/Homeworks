@@ -20,7 +20,7 @@
 .about {
     z-index: 1;
     width: 100%; // 100%
-    height: 600px;
+    height: auto;
     // border: 1px solid var(--borders-color);
     border: none;
     background-color: var(--default-bg-color);
@@ -29,10 +29,114 @@
     // justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 140px 0px 0px 0px;
+    padding: 0px 20px 40px 20px; // top right bottom left
+    transition: var(--quick-fx);
     &__container {
         width: 95%;
-        border: 1px solid red;
+        // border: 1px solid red;
+        &_headers {
+            font-size: 28px;
+            font-weight: 600;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            border: none;
+            border-left: 5px solid var(--link-hover-color);
+            letter-spacing: 2px;
+            margin: 100px 0px 20px 25px; // top right bottom left
+            padding-left: 10px;
+        }
+        &_text {
+            font-size: 20px;
+            line-height: 110%;
+        }
+        &_gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            &__image {
+                width: 300px;
+                height: 200px;
+                overflow: hidden;
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid var(--borders-color);
+                &:hover {
+                    transition: var(--quick-fx);
+                    filter: drop-shadow(0 0 5px var(--filter-shadow-color));
+                    scale: 1.01;
+                }
+                &_content {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        &_carousel {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            // border: 1px solid yellow;
+            border: none;
+            border-left: 5px solid var(--borders-color);
+            border-right: 5px solid var(--borders-color);
+            &__image {
+                width: 200px;
+                height: 200px;
+                overflow: hidden;
+                border-radius: 5px;
+                border: 1px solid var(--borders-color);
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0%, -50%);
+                &_content {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__buttons {
+                border: 1px solid var(--borders-color);
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                color: var(--link-color);
+                background-color: var(--buttons-color);
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0.25;
+                font-size: 30px;
+                transition: var(--quick-fx);
+                &:hover {
+                    background-color: var(--buttons-hover-color);
+                    color: var(--links-hover-color);
+                    opacity: 0.75;
+                }
+                &:active {
+                    transition: var(--instant-fx);
+                    background-color: var(--buttons-active-color);
+                    color: var(--links-active-color);
+                    opacity: 1.0;
+                }
+            }
+            #carousel__btn_previous {
+                left: 30px;
+            }
+            #carousel__btn_next {
+                right: 30px;
+            }
+        }
     }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

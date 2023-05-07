@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { Counter } from './features/counter/Counter';
 import './global.css';
 
@@ -26,10 +26,10 @@ function App() {
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* <Homepage /> */}
       <About />
-      <Contact />
+      {/* <Contact /> */}
       {/* <ItemView /> */}
-      <MyCart />
-      <MyFav />
+      {/* <MyCart /> */}
+      {/* <MyFav /> */}
       {/* <Products /> */}
       {/* <Purchase /> */}
       {/* <Settings /> */}

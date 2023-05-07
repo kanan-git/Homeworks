@@ -1,16 +1,120 @@
 .about {
   z-index: 1;
   width: 100%;
-  height: 600px;
+  height: auto;
   border: none;
   background-color: var(--default-bg-color);
   color: var(--text-color);
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 140px 0px 0px 0px;
+  padding: 0px 20px 40px 20px;
+  transition: var(--quick-fx);
 }
 .about__container {
   width: 95%;
-  border: 1px solid red;
+}
+.about__container_headers {
+  font-size: 28px;
+  font-weight: 600;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-left: 5px solid var(--link-hover-color);
+  letter-spacing: 2px;
+  margin: 100px 0px 20px 25px;
+  padding-left: 10px;
+}
+.about__container_text {
+  font-size: 20px;
+  line-height: 110%;
+}
+.about__container_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.about__container_gallery__image {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--borders-color);
+}
+.about__container_gallery__image:hover {
+  transition: var(--quick-fx);
+  filter: drop-shadow(0 0 5px var(--filter-shadow-color));
+  scale: 1.01;
+}
+.about__container_gallery__image_content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__container_carousel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border: none;
+  border-left: 5px solid var(--borders-color);
+  border-right: 5px solid var(--borders-color);
+}
+.about__container_carousel__image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid var(--borders-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+}
+.about__container_carousel__image_content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__container_carousel__buttons {
+  border: 1px solid var(--borders-color);
+  border-radius: 2px;
+  width: 50px;
+  height: 50px;
+  color: var(--link-color);
+  background-color: var(--buttons-color);
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.25;
+  font-size: 30px;
+  transition: var(--quick-fx);
+}
+.about__container_carousel__buttons:hover {
+  background-color: var(--buttons-hover-color);
+  color: var(--links-hover-color);
+  opacity: 0.75;
+}
+.about__container_carousel__buttons:active {
+  transition: var(--instant-fx);
+  background-color: var(--buttons-active-color);
+  color: var(--links-active-color);
+  opacity: 1;
+}
+.about__container_carousel #carousel__btn_previous {
+  left: 30px;
+}
+.about__container_carousel #carousel__btn_next {
+  right: 30px;
 }/*# sourceMappingURL=index.module.css.map */
