@@ -20,9 +20,10 @@ import SignInOrUp from './pages/SignInOrUp/SignInOrUp'
 function App() {
   return (
     <div className="App">
+      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Header />
       <Breadcrumb />
-
+      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* <Homepage /> */}
       <About />
       <Contact />
@@ -33,8 +34,9 @@ function App() {
       {/* <Purchase /> */}
       {/* <Settings /> */}
       {/* <SignInOrUp /> */}
-
+      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Footer />
+      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
 }

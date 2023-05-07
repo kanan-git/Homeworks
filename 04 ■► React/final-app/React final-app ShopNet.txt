@@ -13,6 +13,9 @@ TO DO TASKS:
 - ask to ChatGPT and learn how works props & lifting up, redux toolkit with examples /!\
 
 - fix components width 100% issue (must be without scroll horizontal)
+- fix problem if you dont call <Header /> component, error message seem about addEventListener
+
+
 
 - create components Terms & Conditions, Privacy Policies as windows
 - fix header top products arrow not keep rotation degree when dropdown still visible, also add transition and transform fx with using no display, visibility ...
