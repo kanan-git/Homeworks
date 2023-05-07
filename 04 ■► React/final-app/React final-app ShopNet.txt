@@ -1,6 +1,19 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 TO DO TASKS:
 
+- make Popups & Windows —— for now without dataflow, with HTML, SCSS, JS
+- make Products —— for now without dataflow, with HTML, SCSS, JS
+- make ItemView —— for now without dataflow, with HTML, SCSS, JS
+- make Purchase —— for now without dataflow, with HTML, SCSS, JS
+
+- make Settings —— for now without dataflow, with HTML, SCSS, JS
+- make SignInOrUp —— for now without dataflow, with HTML, SCSS, JS
+
+- all pages, components, popups —— dataflow (redux toolkit * / props)
+- ask to ChatGPT and learn how works props & lifting up, redux toolkit with examples /!\
+
+- fix components width 100% issue (must be without scroll horizontal)
+
 - create components Terms & Conditions, Privacy Policies as windows
 - fix header top products arrow not keep rotation degree when dropdown still visible, also add transition and transform fx with using no display, visibility ...
 - set up routing
@@ -21,20 +34,9 @@ Work In Progress:
 
 ~ make About —— for now without dataflow, with HTML, SCSS, JS
 ~ make Contact —— for now without dataflow, with HTML, SCSS, JS
-~ make ItemView —— for now without dataflow, with HTML, SCSS, JS
 ~ make MyCart —— for now without dataflow, with HTML, SCSS, JS
 ~ make MyFav —— for now without dataflow, with HTML, SCSS, JS
-~ make Products —— for now without dataflow, with HTML, SCSS, JS
-~ make Purchase —— for now without dataflow, with HTML, SCSS, JS
-~ make Settings —— for now without dataflow, with HTML, SCSS, JS
-~ make SignInOrUp —— for now without dataflow, with HTML, SCSS, JS
 ~ make Breadcrumb —— for now without dataflow, with HTML, SCSS, JS
-~ make Popups & Windows —— for now without dataflow, with HTML, SCSS, JS
-
-~ all pages, components, popups —— dataflow (redux toolkit * / props)
-~ ask to ChatGPT and learn how works props & lifting up, redux toolkit with examples /!\
-
-~ fix components width 100% issue (must be without scroll horizontal)
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Completed:
 

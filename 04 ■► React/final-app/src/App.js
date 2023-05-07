@@ -23,12 +23,12 @@ function App() {
       <Header />
       <Breadcrumb />
 
-      <Homepage />
-      {/* <About /> */}
-      {/* <Contact /> */}
+      {/* <Homepage /> */}
+      <About />
+      <Contact />
       {/* <ItemView /> */}
-      {/* <MyCart /> */}
-      {/* <MyFav /> */}
+      <MyCart />
+      <MyFav />
       {/* <Products /> */}
       {/* <Purchase /> */}
       {/* <Settings /> */}

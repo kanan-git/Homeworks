@@ -16,5 +16,22 @@
 //                              var(--filter-shadow-color)
 //                              var(--borders-color)
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-
+.myfav {
+    z-index: 1;
+    width: 100%; // 100%
+    height: 600px;
+    // border: 1px solid var(--borders-color);
+    border: none;
+    background-color: var(--default-bg-color);
+    color: var(--text-color);
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 140px 0px 0px 0px;
+    &__container {
+        width: 95%;
+        border: 1px solid red;
+    }
+}
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
