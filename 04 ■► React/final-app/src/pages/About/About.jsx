@@ -18,6 +18,10 @@ import carousel_img_5 from './about assets/carousel/img_5.png'
 import carousel_img_6 from './about assets/carousel/img_6.png'
 import carousel_img_7 from './about assets/carousel/img_7.png'
 
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (1) make infinite loop on carousel (1)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (2) add a rotateY with keyframe animation to headers (2)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (3) fix transform + scale issue for carousel (3)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
+
 function About() {
     const [textSTATE, setTextSTATE] = useState(dataSource.english.about.text)
     const [headersSTATE, setHeadersSTATE] = useState(dataSource.english.about.headers)
@@ -43,10 +47,6 @@ function About() {
             }
         }, []
     )
-    
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (1) make infinite loop on carousel (1)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (2) add a rotateY with keyframe animation to headers (2)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (3) fix transform + scale issue for carousel (3)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
 
     function carouselGallery() {
         const carouselImages = Array.from(document.querySelectorAll(`.${s.about__container_carousel__image}`))
