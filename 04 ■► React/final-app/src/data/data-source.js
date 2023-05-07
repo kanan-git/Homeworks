@@ -73,7 +73,21 @@ export const dataSource = {
             ],
             discount_cards: []
         },
-        about: {},
+        about: {
+            text: [
+                "Your one-stop online shop for all your favorite products! Established in April 2023, we are a rapidly growing e-commerce platform based in 28 May, Baku, Azerbaijan, offering a wide range of high-quality products at affordable prices.", 
+                "At ShopNet, we understand the convenience and simplicity of online shopping, and we are committed to providing our customers with a seamless and enjoyable shopping experience. Our website is easy to navigate, and our product listings are detailed and informative, providing you with all the information you need to make an informed purchase decision.",
+                "Our product range includes everything from fashion and beauty products to electronics, home appliances, and more, all sourced from trusted manufacturers and suppliers. We also offer fast and reliable shipping to anywhere in Azerbaijan, ensuring that you receive your order quickly and hassle-free.", 
+                "At ShopNet, we believe that customer satisfaction is our top priority, and we are dedicated to providing you with excellent customer service and support. If you have any questions or concerns, our friendly and knowledgeable customer service team is available to assist you.", 
+                "Thank you for choosing ShopNet as your preferred online shopping destination. We look forward to serving you and making your shopping experience a great one!"
+            ], 
+            headers: [
+                "Welcome to ShopNet", 
+                "Gallery", 
+                "Who we are ?", 
+                "See more"
+            ]
+        },
         contact: {},
         itemview: {},
         mycart: {},
@@ -163,7 +177,21 @@ export const dataSource = {
             ],
             discount_cards: []
         },
-        about: {},
+        about: {
+            text: [
+                "Bütün sevdiyiniz məhsullar üçün bir pəncərə onlayn mağazanız! 2023-cü ilin aprel ayında yaradılan biz, 28 May, Bakı, Azərbaycan əsasında yerləşən və sərfəli qiymətlərlə geniş çeşiddə yüksək keyfiyyətli məhsullar təklif edən, sürətlə inkişaf edən e-ticarət platformasıyıq.", 
+                "ShopNet-də biz onlayn alış-verişin rahatlığını və sadəliyini başa düşürük və müştərilərimizə qüsursuz və zövqlü alış-veriş təcrübəsi təqdim etməyə sadiqik. Veb saytımızda naviqasiya etmək asandır və məhsul siyahılarımız təfərrüatlı və məlumatlıdır və məlumatlı satınalma qərarı vermək üçün sizə lazım olan bütün məlumatları təqdim edir.",
+                "Bizim məhsul çeşidimizə dəb və gözəllik məhsullarından tutmuş elektronika, məişət texnikası və s. kimi hər şey daxildir, bunların hamısı etibarlı istehsalçılardan və təchizatçılardan alınır. Biz həmçinin Azərbaycanın istənilən yerinə sürətli və etibarlı çatdırılma təklif edirik ki, sifarişinizi tez və əngəlsiz qəbul edəsiniz.", 
+                "ShopNet-də biz müştəri məmnuniyyətinin əsas prioritetimiz olduğuna inanırıq və biz sizə mükəmməl müştəri xidməti və dəstəyi təqdim etməyə çalışırıq. Hər hansı bir sualınız və ya narahatlığınız varsa, mehriban və məlumatlı müştəri xidməti komandamız sizə kömək etmək üçün hazırdır.", 
+                "Seçdiyiniz onlayn alış-veriş məkanı kimi ShopNet-i seçdiyiniz üçün təşəkkür edirik. Sizə xidmət göstərməyi və alış-veriş təcrübənizi möhtəşəm hala gətirməyi səbirsizliklə gözləyirik!"
+            ], 
+            headers: [
+                "ShopNet-ə xoş gəlmisiniz", 
+                "Qalereya", 
+                "Biz kimik ?", 
+                "Daha çox gör"
+            ]
+        },
         contact: {},
         itemview: {},
         mycart: {},
@@ -253,7 +281,21 @@ export const dataSource = {
             ],
             discount_cards: []
         },
-        about: {},
+        about: {
+            text: [
+                "Tüm favori ürünleriniz için tek adresiniz! Nisan 2023'te kurulan, 28 Mayıs Bakü, Azerbaycan merkezli, geniş bir yelpazede yüksek kaliteli ürünleri uygun fiyatlarla sunan, hızla büyüyen bir e-ticaret platformuyuz.", 
+                "ShopNet'te çevrimiçi alışverişin kolaylığını ve basitliğini anlıyoruz ve kendimizi müşterilerimize sorunsuz ve keyifli bir alışveriş deneyimi sunmaya adadık. Web sitemizde gezinmek kolaydır ve ürün listelerimiz ayrıntılı ve bilgilendirici olup, bilinçli bir satın alma kararı vermeniz için ihtiyacınız olan tüm bilgileri sağlar.",
+                "Ürün yelpazemiz, tamamı güvenilir üreticilerden ve tedarikçilerden temin edilen moda ve güzellik ürünlerinden elektronik cihazlara, ev aletlerine ve daha fazlasına kadar her şeyi içerir. Ayrıca siparişinizi hızlı ve sorunsuz bir şekilde almanızı sağlamak için Azerbaycan'ın her yerine hızlı ve güvenilir nakliye hizmeti sunuyoruz.", 
+                "ShopNet'te müşteri memnuniyetinin en büyük önceliğimiz olduğuna inanıyoruz ve kendimizi size mükemmel müşteri hizmeti ve desteği sunmaya adadık. Herhangi bir sorunuz veya endişeniz varsa, güler yüzlü ve bilgili müşteri hizmetleri ekibimiz size yardımcı olmaya hazırdır.", 
+                "Tercih ettiğiniz çevrimiçi alışveriş yeri olarak ShopNet'i seçtiğiniz için teşekkür ederiz. Size hizmet etmeyi ve alışveriş deneyiminizi harika bir hale getirmeyi dört gözle bekliyoruz!"
+            ], 
+            headers: [
+                "ShopNet'e hoş geldiniz", 
+                "Galeri", 
+                "Biz kimiz ?", 
+                "Daha fazla gör"
+            ]
+        },
         contact: {},
         itemview: {},
         mycart: {},

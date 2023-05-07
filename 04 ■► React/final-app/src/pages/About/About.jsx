@@ -19,36 +19,107 @@ import carousel_img_6 from './about assets/carousel/img_6.png'
 import carousel_img_7 from './about assets/carousel/img_7.png'
 
 function About() {
+    const [textSTATE, setTextSTATE] = useState(dataSource.english.about.text)
+    const [headersSTATE, setHeadersSTATE] = useState(dataSource.english.about.headers)
 
-    
-    const [] = useState(dataSource.english.about.___)
+    const btnLeft = useRef()
+    const btnRight = useRef()
 
     useEffect(
         () => {
             // fake condition for now which will be replaced with input select language data with store (redux tlk)
             var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+            // var languageData = "Azərbaycan dili" // "English", "Azərbaycan dili", "Türkçe"
+            // var languageData = "Türkçe" // "English", "Azərbaycan dili", "Türkçe"
             if (languageData == "English") {
-                // .
+                setTextSTATE(dataSource.english.about.text)
+                setHeadersSTATE(dataSource.english.about.headers) // english azerbaijani turkish
             } else if (languageData == "Azərbaycan dili") {
-                // .
+                setTextSTATE(dataSource.azerbaijani.about.text)
+                setHeadersSTATE(dataSource.azerbaijani.about.headers)
             } else if (languageData == "Türkçe") {
-                // .
+                setTextSTATE(dataSource.turkish.about.text)
+                setHeadersSTATE(dataSource.turkish.about.headers)
             }
+        }, []
+    )
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>> make infinite loop on carousel (1)
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>> add a rotateY with keyframe animation to headers (2)
+    function carouselGallery() {
+        const carouselImages = Array.from(document.querySelectorAll(`.${s.about__container_carousel__image}`))
+        var currentIndexCarousel = 0
+        carouselImages.map(
+            (image, index) => {
+                image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 140}%)`
+                if (index-currentIndexCarousel == 2) {
+                    image.style.filter = `drop-shadow(0 0 24px red)`
+                } else if (index-currentIndexCarousel == 1 || index-currentIndexCarousel == 3) {
+                    image.style.filter = `drop-shadow(0 0 16px gold)`
+                } else if (index-currentIndexCarousel == 0 || index-currentIndexCarousel == 4) {
+                    image.style.filter = `drop-shadow(0 0 4px yellowgreen)`
+                }
+            }
+        )
+        btnLeft.current.addEventListener("click", () => {
+            if(currentIndexCarousel == 0) {
+                currentIndexCarousel = carouselImages.length-1
+            } else {
+                currentIndexCarousel--
+            }
+            carouselImages.map(
+                (image, index) => {
+                    image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 140}%)`
+                    if (index-currentIndexCarousel == 2) {
+                        image.style.filter = `drop-shadow(0 0 24px red)`
+                    } else if (index-currentIndexCarousel == 1 || index-currentIndexCarousel == 3) {
+                        image.style.filter = `drop-shadow(0 0 16px gold)`
+                    } else if (index-currentIndexCarousel == 0 || index-currentIndexCarousel == 4) {
+                        image.style.filter = `drop-shadow(0 0 4px yellowgreen)`
+                    }
+                }
+            )
+            // console.log(currentIndexCarousel)
+        })
+        btnRight.current.addEventListener("click", () => {
+            if(currentIndexCarousel == carouselImages.length-1) {
+                currentIndexCarousel = 0
+            } else {
+                currentIndexCarousel++
+            }
+            carouselImages.map(
+                (image, index) => {
+                    image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 140}%)`
+                    if (index-currentIndexCarousel == 2) {
+                        image.style.filter = `drop-shadow(0 0 24px red)`
+                    } else if (index-currentIndexCarousel == 1 || index-currentIndexCarousel == 3) {
+                        image.style.filter = `drop-shadow(0 0 16px gold)`
+                    } else if (index-currentIndexCarousel == 0 || index-currentIndexCarousel == 4) {
+                        image.style.filter = `drop-shadow(0 0 4px yellowgreen)`
+                    }
+                }
+            )
+            // console.log(currentIndexCarousel)
+        })
+    }
+
+    useEffect(
+        () => {
+            carouselGallery()
         }, []
     )
 
     return (
         <main className={s.about}>
             <div className={s.about__container}>
-                <h3 className={s.about__container_headers}> Welcome to ShopNet </h3>
+                <h3 className={s.about__container_headers}> { headersSTATE[0] } </h3>
                 <div className={s.about__container_text}>
                     {/* text content 2/5 paragraph from chatgpt */}
-                    Your one-stop online shop for all your favorite products! Established in April 2023, we are a rapidly growing e-commerce platform based in 28 May, Baku, Azerbaijan, offering a wide range of high-quality products at affordable prices.
-                    <br />
-                    At ShopNet, we understand the convenience and simplicity of online shopping, and we are committed to providing our customers with a seamless and enjoyable shopping experience. Our website is easy to navigate, and our product listings are detailed and informative, providing you with all the information you need to make an informed purchase decision.
+                    { textSTATE[0] }
+                    <br /> <br />
+                    { textSTATE[1] }
                 </div>
 
-                <h3 className={s.about__container_headers}> Gallery </h3>
+                <h3 className={s.about__container_headers}> { headersSTATE[1] } </h3>
                 <div className={s.about__container_gallery}>
                     {/* grid 6 image gallery */}
                     <div className={s.about__container_gallery__image}> {/* 1 of 6 */}
@@ -83,17 +154,17 @@ function About() {
                     </div>
                 </div>
 
-                <h3 className={s.about__container_headers}> Who we are ? </h3>
+                <h3 className={s.about__container_headers}> { headersSTATE[2] } </h3>
                 <div className={s.about__container_text}>
                     {/* text content 3/5 paragraph from chatgpt */}
-                    Our product range includes everything from fashion and beauty products to electronics, home appliances, and more, all sourced from trusted manufacturers and suppliers. We also offer fast and reliable shipping to anywhere in Azerbaijan, ensuring that you receive your order quickly and hassle-free.
-                    <br />
-                    At ShopNet, we believe that customer satisfaction is our top priority, and we are dedicated to providing you with excellent customer service and support. If you have any questions or concerns, our friendly and knowledgeable customer service team is available to assist you.
-                    <br />
-                    Thank you for choosing ShopNet as your preferred online shopping destination. We look forward to serving you and making your shopping experience a great one!
+                    { textSTATE[2] }
+                    <br /> <br />
+                    { textSTATE[3] }
+                    <br /> <br />
+                    { textSTATE[4] }
                 </div>
 
-                <h3 className={s.about__container_headers}> See more </h3>
+                <h3 className={s.about__container_headers}> { headersSTATE[3] } </h3>
                 <div className={s.about__container_carousel}>
                     {/* centered infinite carousel 7 image gallery */}
                     <div className={s.about__container_carousel__image}> {/* 1 of 7 */}
@@ -131,8 +202,12 @@ function About() {
                         alt="grid-carousel-7" 
                         className={s.about__container_carousel__image_content}/>
                     </div>
-                    <button className={s.about__container_carousel__buttons} id={s.carousel__btn_previous}> ◄ </button>
-                    <button className={s.about__container_carousel__buttons} id={s.carousel__btn_next}> ► </button>
+                    <button className={s.about__container_carousel__buttons} 
+                    id={s.carousel__btn_previous} 
+                    ref={btnLeft}> ◄ </button>
+                    <button className={s.about__container_carousel__buttons} 
+                    id={s.carousel__btn_next} 
+                    ref={btnRight}> ► </button>
                 </div>
             </div>
         </main>
