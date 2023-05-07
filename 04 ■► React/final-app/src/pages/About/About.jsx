@@ -43,8 +43,11 @@ function About() {
             }
         }, []
     )
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>> make infinite loop on carousel (1)
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>> add a rotateY with keyframe animation to headers (2)
+    
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (1) make infinite loop on carousel (1)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (2) add a rotateY with keyframe animation to headers (2)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (3) fix transform + scale issue for carousel (3)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
+
     function carouselGallery() {
         const carouselImages = Array.from(document.querySelectorAll(`.${s.about__container_carousel__image}`))
         var currentIndexCarousel = 0
