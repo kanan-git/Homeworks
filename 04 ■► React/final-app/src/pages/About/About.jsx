@@ -53,7 +53,7 @@ function About() {
         var currentIndexCarousel = 0
         carouselImages.map(
             (image, index) => {
-                image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 140}%)`
+                image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 149}%)`
                 if (index-currentIndexCarousel == 2) {
                     image.style.filter = `drop-shadow(0 0 24px red)`
                 } else if (index-currentIndexCarousel == 1 || index-currentIndexCarousel == 3) {
@@ -71,7 +71,7 @@ function About() {
             }
             carouselImages.map(
                 (image, index) => {
-                    image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 140}%)`
+                    image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 149}%)`
                     if (index-currentIndexCarousel == 2) {
                         image.style.filter = `drop-shadow(0 0 24px red)`
                     } else if (index-currentIndexCarousel == 1 || index-currentIndexCarousel == 3) {
@@ -91,7 +91,7 @@ function About() {
             }
             carouselImages.map(
                 (image, index) => {
-                    image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 140}%)`
+                    image.style.transform = `translateY(-50%) translateX(${(index - currentIndexCarousel) * 149}%)`
                     if (index-currentIndexCarousel == 2) {
                         image.style.filter = `drop-shadow(0 0 24px red)`
                     } else if (index-currentIndexCarousel == 1 || index-currentIndexCarousel == 3) {

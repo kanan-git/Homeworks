@@ -26,13 +26,13 @@
     background-color: var(--default-bg-color);
     color: var(--text-color);
     display: flex;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 0px 20px 40px 20px; // top right bottom left
     transition: var(--quick-fx);
     &__container {
-        width: 95%;
+        width: 1400px;
         // border: 1px solid red;
         &_headers {
             font-size: 28px;

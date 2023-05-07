@@ -6,13 +6,14 @@
   background-color: var(--default-bg-color);
   color: var(--text-color);
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 0px 20px 40px 20px;
   transition: var(--quick-fx);
 }
 .about__container {
-  width: 95%;
+  width: 1400px;
 }
 .about__container_headers {
   font-size: 28px;
@@ -79,6 +80,7 @@
   top: 50%;
   left: 0;
   transform: translate(0%, -50%);
+  transition: var(--quick-fx);
 }
 .about__container_carousel__image_content {
   width: 100%;
