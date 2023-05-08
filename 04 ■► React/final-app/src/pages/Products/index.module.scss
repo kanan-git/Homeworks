@@ -16,5 +16,180 @@
 //                              var(--filter-shadow-color)
 //                              var(--borders-color)
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+.products {
+    z-index: 1;
+    width: 100%; // 100%
+    height: auto;
+    // border: 1px solid red;
+    background-color: var(--default-bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    // flex-direction: column;
+    padding: 00px 10px 40px 10px; // top right bottom left
+    transition: var(--quick-fx);
+    flex-wrap: wrap;
 
+    &__topside {
+        width: 100%;
+        height: 30px;
+        background-color: var(--default-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 700px;
+        border: none;
+        border-bottom: 1px solid var(--borders-color);
+        margin-bottom: 10px;
+        &_filterbtn {
+            width: 60px;
+            height: auto;
+            padding: 2px;
+            border: 1px solid var(--borders-color);
+            border-radius: 2px;
+            color: var(--link-color);
+            background-color: var(--buttons-color);
+            transition: var(--quick-fx);
+            font-weight: 600;
+            &:hover {
+                background-color: var(--buttons-hover-color);
+                color: var(--link-hover-color);
+            }
+            &:active {
+                transition: var(--instant-fx);
+                background-color: var(--buttons-active-color);
+                color: var(--link-active-color);
+            }
+        }
+        &_sort {
+            border: none;
+            outline: none;
+            color: var(--text-color);
+            background-color: transparent;
+            font-weight: 600;
+            option {
+                background-color: var(--default-bg-color);
+            }
+        }
+    }
+
+    // temporary component which FilterAside will replace it
+    .tempdiv {
+        width: 300px;
+        height: 400px;
+        border: 1px solid green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: var(--slow-fx);
+    }
+
+    .container {
+        width: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid yellow;
+        padding: 20px;
+        transition: var(--slow-fx);
+        .products__cards {
+            border: 1px solid var(--borders-color);
+            width: 300px;
+            height: 450px;
+            background-color: rgb(255,255,255);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--quick-fx);
+            &:hover {
+                filter: drop-shadow(0 0 6px var(--filter-shadow-color));
+                scale: 1.03;
+            }
+            &_image {
+                width: 100%;
+                height: 300px;
+                border: none;
+                border-bottom: 1px solid var(--borders-color);
+                overflow: hidden;
+                position: relative;
+                &__content {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                &__favbtn {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    opacity: 0.5;
+                    width: 50px;
+                    height: 50px;
+                    background-color: var(--buttons-color);
+                    color: var(--link-color);
+                    border: 1px solid var(--borders-color);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    transition: var(--quick-fx);
+                    &:hover {
+                        background-color: var(--buttons-hover-color);
+                        opacity: 0.9;
+                        color: var(--link-hover-color);
+                    }
+                    &:active {
+                        transition: var(--instant-fx);
+                        background-color: var(--buttons-active-color);
+                        opacity: 1.0;
+                        color: var(--link-active-color);
+                    }
+                }
+            }
+            &_information {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                &__titleandcateg {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    &_title {
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    &_categ {
+                        font-size: 14px;
+                        opacity: 0.5;
+                        font-style: italic;
+                        align-self: flex-start;
+                    }
+                }
+                &__rating {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 80px;
+                    &_stars {
+                        color: var(--link-hover-color);
+                    }
+                    &_point {
+                        opacity: 0.9;
+                    }
+                }
+                &__description {
+                    font-size: 14px;
+                }
+                &__price {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

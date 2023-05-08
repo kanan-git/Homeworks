@@ -18,6 +18,12 @@ import Settings from './pages/Settings/Settings'
 import SignInOrUp from './pages/SignInOrUp/SignInOrUp'
 
 function App() {
+
+  // <Homepage />   {/* done */}
+  // <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
+  // <Contact />   {/* add API map */}
+  // <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
+
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
@@ -27,14 +33,16 @@ function App() {
       <Homepage />   {/* done */}
       <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
       <Contact />   {/* add API map */}
+      <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
       <ItemView />   {/* . */}
       <MyCart />   {/* . */}
       <MyFav />   {/* . */}
-      <Products />   {/* . */}
       <Purchase />   {/* . */}
       <Settings />   {/* . */}
       <SignInOrUp />   {/* . */}
+
       {/* add popup components to complete them too */}
+
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Footer />   {/* done */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
