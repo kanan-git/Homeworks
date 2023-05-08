@@ -19,23 +19,24 @@ import SignInOrUp from './pages/SignInOrUp/SignInOrUp'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Header />
-      <Breadcrumb />
+      <Header />   {/* done */}
+      <Breadcrumb />   {/* fix language condition,  */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Homepage />
-      <About />
-      <Contact />
-      {/* <ItemView />
-      <MyCart />
-      <MyFav />
-      <Products />
-      <Purchase />
-      <Settings />
-      <SignInOrUp /> */}
+      <Homepage />   {/* done */}
+      <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
+      <Contact />   {/* add API map */}
+      <ItemView />   {/* . */}
+      <MyCart />   {/* . */}
+      <MyFav />   {/* . */}
+      <Products />   {/* . */}
+      <Purchase />   {/* . */}
+      <Settings />   {/* . */}
+      <SignInOrUp />   {/* . */}
+      {/* add popup components to complete them too */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Footer />
+      <Footer />   {/* done */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );

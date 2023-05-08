@@ -3,7 +3,6 @@
   width: 100vw;
   height: auto;
   border: none;
-  border-bottom: 1px solid var(--borders-color);
   background-color: var(--default-bg-color);
   color: var(--text-color);
   display: flex;

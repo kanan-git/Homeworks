@@ -33,14 +33,54 @@ function Products() {
             getDataFromAPI()
         }, []
     )
+
+
+
+
+    // {/* ----- product card - no 001 ----- */}
+    // <div className={s.products__cards}> {/* apiSTATE[0].id */}
+    //     {/* image */}
+    //     <div className={s.products__cards_image}>
+    //         <img src={apiSTATE[0].image} alt="product-001" className={s.products__cards_image__content} />
+    //         <button className={s.products__cards_image__favbtn}> <i className='fa-solid fa-heart fa-1x'></i> </button>
+    //     </div>
+    //     {/* information */}
+    //     <div className={s.products__cards_information}>
+    //         {/* title & category */}
+    //         <span className={s.products__cards_information__titleandcateg}>
+    //             <p className={s.products__cards_information__titleandcateg_title}> {apiSTATE[0].title} </p>
+    //             <i className={s.products__cards_information__titleandcateg_categ}> {apiSTATE[0].category} </i> {/* opacity 0.5, smaller text under title */}
+    //         </span>
+    //         {/* rating */}
+    //         <span className={s.products__cards_information__rating}>
+    //             <span className={s.products__cards_information__rating_stars}>
+    //                 <i className='fa-solid fa-star fa-1x'></i>
+    //                 <i className='fa-solid fa-star fa-1x'></i>
+    //                 <i className='fa-solid fa-star fa-1x'></i>
+    //                 <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+    //                 <i className='fa-regular fa-star fa-1x'></i>
+    //             </span>
+    //             <span className={s.products__cards_information__rating_point}> {apiSTATE[0].rating.rate} / 10 </span>
+    //         </span>
+    //         <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span>
+    //         <strong className={s.products__cards_information__price}> $ {apiSTATE[0].price} USD </strong>
+    //     </div>
+    // </div>
+
+
+
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.products}>
-            test123
-            product cards will get data from fake api
+            <div className={s.container}>
 
-            <div className={s.products__cards}></div>
-            
+
+
+                {/* add html here */}
+
+
+
+            </div>
         </main>
     )
 }
