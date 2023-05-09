@@ -22,6 +22,18 @@ function MyCart() {
     return (
         <main className={s.mycart}>
             test123
+            cd 04\ ■►\ React/final-app
+            npm start
+            watch sass
+
+            <div className={s.mycart__topside}>
+                <b className={s.mycart__topside_header}> My Cart: "10" </b>
+                <i className={s.my}> Total Price: $ "9'999" USD </i>
+            </div>
+
+            <div className={s.mycart__container}>
+                <div className={s.mycart__container_cards}></div>
+            </div>
         </main>
     )
 }
