@@ -21,27 +21,62 @@ function ItemView() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.itemview}>
-            <div className={s.itemview__container}>
-                TEMPORARY TEXT - ABOUT WHAT INCLUDES THIS PAGE
-                <br /> <br /> <br />
+            <section className={s.itemview__container}>
+                <div className={s.itemview__container_thumbnails}>
+                    <button className={s.itemview__container_thumbnails__buttons}>
+                        <img src="#" alt="image-name1" className={s.itemview__container_thumbnails__buttons_content} />
+                    </button>
+                    <button className={s.itemview__container_thumbnails__buttons}>
+                        <img src="#" alt="image-name2" className={s.itemview__container_thumbnails__buttons_content} />
+                    </button>
+                    <button className={s.itemview__container_thumbnails__buttons}>
+                        <img src="#" alt="image-name3" className={s.itemview__container_thumbnails__buttons_content} />
+                    </button>
+                    <button className={s.itemview__container_thumbnails__buttons}>
+                        <img src="#" alt="image-name4" className={s.itemview__container_thumbnails__buttons_content} />
+                    </button>
+                    <button className={s.itemview__container_thumbnails__buttons}>
+                        <img src="#" alt="image-name5" className={s.itemview__container_thumbnails__buttons_content} />
+                    </button>
+                </div>
+                <div className={s.itemview__container_bigframe}>
+                    <img src="#" alt="selected-img-name" className={s.itemview__container_bigframe__content} />
+                </div>
+                <div className={s.itemview__container_information}>
+                    <h3 className={s.itemview__container_information__title}> Product: HP Pavilion 16-d 1083ci Victus 6X7R2EA </h3>
+                    <h6 className={s.itemview__container_information__category}> Category: Laptops </h6>
+                    <p className={s.itemview__container_information__description}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptates! </p>
+                    <span className={s.itemview__container_information__rating}>
+                        <span className={s.itemview__container_information__rating_stars}>
+                            <i className='fa-solid fa-star fa-1x'></i>
+                            <i className='fa-solid fa-star fa-1x'></i>
+                            <i className='fa-solid fa-star fa-1x'></i>
+                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                            <i className='fa-regular fa-star fa-1x'></i>
+                        </span>
+                        <b className={s.itemview__container_information__rating_point}>
+                            3.9 / 5
+                        </b>
+                    </span>
+                    <strong className={s.itemview__container_information__price}> $ 999 USD </strong>
+                    <span className={s.itemview__container_information__buttons}>
+                        <button className={s.itemview__container_information__buttons_buy}> <i className='fa-regular fa-credit-card fa-1x'></i> Buy </button>
+                        <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> Add to Favorite </button>
+                        <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> Add to Cart </button>
+                    </span>
+                </div>
+
+                {/* TEMPORARY TEXT - ABOUT WHAT INCLUDES THIS PAGE
                 left side flexDirection column images scroll
-                <br />
                 big screen images
-                <br />
                 right side information:
-                <br />
                 - title
-                <br />
                 - category
-                <br />
                 - rating data
-                <br />
                 - price
-                <br />
                 - purchase, add to cart & fav buttons
-                <br />
-                - description
-            </div>
+                - description */}
+            </section>
         </main>
     )
 }
