@@ -22,9 +22,17 @@ function MyCart() {
     return (
         <main className={s.mycart}>
             test123
+
             cd 04\ ■►\ React/final-app
             npm start
+
             watch sass
+
+            git add .
+            git commit -m "."
+            git push origin master
+            git status
+            clear
 
             <div className={s.mycart__topside}>
                 <b className={s.mycart__topside_header}> My Cart: "10" </b>
