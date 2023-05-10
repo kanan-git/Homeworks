@@ -46,15 +46,19 @@ function App() {
 
   // <FilterAside />   {/* not even started */}
 
+  // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
+  // <Breadcrumb />   {/* fix language condition,  */}
+  // <Footer />   {/* done */}
+
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Header />   {/* done */}
-      <Breadcrumb />   {/* fix language condition,  */}
+      {/* header's space */}
+      {/* {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <SignInOrUp />   {/* . */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Footer />   {/* done */}
+      {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
