@@ -1,7 +1,7 @@
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
 REACT FINAL PROJECT SHOPNET
 
-1 - qalan butun page leri tamamla (mycart, myfav, settings, sign in/up, purchase - 5x)
+1 ~ qalan butun page leri tamamla (sign in/up)
 2 - components (filterAside complete with scss, make height same), butun popup window lari tamamla (failed, loading, 
 overlay, success, privacy policy, terms and condition)
 3 - component, page lerdeki eksiklikleri tamamla (breadcrumb, about, contact, products)
@@ -10,4 +10,5 @@ overlay, success, privacy policy, terms and condition)
 6 - qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header)
 7 - guide txt (sass mobile responsivity, overall width scroll issue, sessionStorage, sign in up input writing rule and 
 look 994 50 123 45 67)
+8 - butun jsx ve scss fayllarini header daki kimi seliqeye sal, sector lara ayir
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈

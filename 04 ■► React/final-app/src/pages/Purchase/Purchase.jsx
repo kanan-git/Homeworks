@@ -21,7 +21,24 @@ function Purchase() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.purchase}>
-            test123
+            {/* ordered message */}
+            <p className={s.purchase__status}> Your purchase has been successfully completed </p>
+            {/* ordered product info */}
+            <ul className={s.purchase__infolist}>
+                <li className={s.purchase__infolist_items}> Product Name Here </li>
+                <li className={s.purchase__infolist_items}> Category </li>
+                <li className={s.purchase__infolist_items}> Describe </li>
+                <li className={s.purchase__infolist_items}> Price here $ 9'999.99 USD </li>
+            </ul>
+            {/* back to circle buttons */}
+            <div className={s.purchase__buttons}>
+                <h4 className={s.purchase__buttons_header}> Back to: </h4>
+                <span className={s.purchase__buttons_list}>
+                    <button className={s.purchase__buttons_list__items}> Homepage </button>
+                    <button className={s.purchase__buttons_list__items}> Cart </button>
+                    <button className={s.purchase__buttons_list__items}> Favorites </button>
+                </span>
+            </div>
         </main>
     )
 }

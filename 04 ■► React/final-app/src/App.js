@@ -5,6 +5,7 @@ import './global.css';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Breadcrumb from './components/Breadcrumb/Breadcrumb'
+// import FilterAside from './components/FilterAside/FilterAside'
 
 import Homepage from './pages/Homepage/Homepage'
 import About from './pages/About/About'
@@ -30,9 +31,11 @@ function App() {
   // <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
   // <Contact />   {/* add API map */}
   // <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
-  // <ItemView />   {/* done for now */}
-  // <MyCart />   {/* done for now */}
-  // <MyFav />   {/* done for now */}
+  // <ItemView />   {/* done for now, language stuff, not claimed data, only static texts */}
+  // <MyCart />   {/* done for now, language stuff */}
+  // <MyFav />   {/* done for now, language stuff */}
+  // <Purchase />   {/* language stuff, sass style sheets */}
+  // <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
 
   // <FailedMessage />   {/* not even started */}
   // <SuccessfullySigned />   {/* not even started */}
@@ -41,14 +44,14 @@ function App() {
   // <Overlay />   {/* not even started */} ----- cancel, delete jsx, add overlay to all individually (loading animation bg, alerts, terms and policies windows)
   // <Loading />   {/* not even started */}
 
+  // <FilterAside />   {/* not even started */}
+
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Header />   {/* done */}
       <Breadcrumb />   {/* fix language condition,  */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Purchase />   {/* . */}
-      <Settings />   {/* . */}
       <SignInOrUp />   {/* . */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Footer />   {/* done */}
@@ -59,13 +62,9 @@ function App() {
 
 export default App;
 
-
-
 // cd 04\ ■►\ React/final-app
 // npm start
-
-// watch sass
-
+// *** watch sass *** //
 // git add .
 // git commit -m "."
 // git push origin master
