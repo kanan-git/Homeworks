@@ -1,16 +1,91 @@
 .mycart {
   z-index: 1;
   width: 100%;
-  height: 600px;
+  height: auto;
   border: none;
   background-color: var(--default-bg-color);
   color: var(--text-color);
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 140px 0px 0px 0px;
+  padding: 30px 0px 10px 0px;
+}
+.mycart__topside {
+  width: 1300px;
+  height: 50px;
+  border: none;
+  border-bottom: 2px solid var(--borders-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  opacity: 0.9;
+  padding: 10px 0px 10px 0px;
+}
+.mycart__topside_header {
+  font-size: 24px;
+  font-weight: 600;
+}
+.mycart__topside_price {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
 }
 .mycart__container {
-  width: 95%;
-  border: 1px solid red;
+  width: 1400px;
+  border: none;
+  border-left: 4px solid var(--borders-color);
+  border-right: 4px solid var(--borders-color);
+  height: auto;
+  padding: 20px 45px 20px 45px;
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.mycart__container_cards {
+  width: 200px;
+  height: 260px;
+  border: 1px solid var(--borders-color);
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  background-color: var(--default-bg-color);
+  cursor: pointer;
+  transition: var(--slow-fx);
+}
+.mycart__container_cards:hover {
+  scale: 1.02;
+  filter: drop-shadow(0 0 8px var(--filter-shadow-color));
+  transform: rotateY(360deg);
+}
+.mycart__container_cards:active {
+  scale: 1.05;
+  transition: var(--quick-fx);
+}
+.mycart__container_cards__image {
+  width: 100%;
+  height: 190px;
+  border: 1px solid var(--borders-color);
+}
+.mycart__container_cards__image_content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mycart__container_cards_title {
+  width: 100%;
+  font-weight: 600;
+}
+.mycart__container_cards__price {
+  width: 100%;
+  text-align: center;
 }/*# sourceMappingURL=index.module.css.map */

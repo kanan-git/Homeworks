@@ -21,7 +21,187 @@ function MyFav() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.myfav}>
-            test123
+            <div className={s.myfav__topside}>
+                <b className={s.myfav__topside_header}> My Favorites: "25" </b>
+            </div>
+            <div className={s.myfav__container}>
+
+
+                {/* product card in favorites 001 */}
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+
+                
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div><div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div><div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div><div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div><div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div><div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div><div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.myfav__container_cards}>
+                    <div className={s.myfav__container_cards__image}>
+                        <img src="#" alt="image-favorites-001" className={s.myfav__container_cards__image_content} />
+                    </div>
+                    <p className={s.myfav__container_cards__title}> Product Name </p>
+                    <strong className={s.myfav__container_cards__price}> $ 100 USD </strong>
+                </div>
+
+
+            </div>
         </main>
     )
 }

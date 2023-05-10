@@ -21,26 +21,88 @@ function MyCart() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.mycart}>
-            test123
-
-            cd 04\ ■►\ React/final-app
-            npm start
-
-            watch sass
-
-            git add .
-            git commit -m "."
-            git push origin master
-            git status
-            clear
-
             <div className={s.mycart__topside}>
                 <b className={s.mycart__topside_header}> My Cart: "10" </b>
-                <i className={s.my}> Total Price: $ "9'999" USD </i>
+                <i className={s.mycart__topside_price}> Total Price: $ "9'999" USD </i>
             </div>
-
             <div className={s.mycart__container}>
-                <div className={s.mycart__container_cards}></div>
+
+
+                {/* product card in basket 001 */}
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+
+
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+                <div className={s.mycart__container_cards}>
+                    <div className={s.mycart__container_cards__image}>
+                        <img src="#" alt="image-basket-001" className={s.mycart__container_cards__image_content} />
+                    </div>
+                    <p className={s.mycart__container_cards__title}> Product Name </p>
+                    <strong className={s.mycart__container_cards__price}> $ 100 USD </strong>
+                </div>
+
+
             </div>
         </main>
     )

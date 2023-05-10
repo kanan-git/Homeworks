@@ -31,12 +31,14 @@ function App() {
   // <Contact />   {/* add API map */}
   // <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
   // <ItemView />   {/* done for now */}
+  // <MyCart />   {/* done for now */}
+  // <MyFav />   {/* done for now */}
 
   // <FailedMessage />   {/* not even started */}
   // <SuccessfullySigned />   {/* not even started */}
   // <TermsAndConditions />   {/* not even started */}
   // <PrivacyPolicies />   {/* not even started */}
-  // <Overlay />   {/* not even started */}
+  // <Overlay />   {/* not even started */} ----- cancel, delete jsx, add overlay to all individually (loading animation bg, alerts, terms and policies windows)
   // <Loading />   {/* not even started */}
 
   return (
@@ -45,8 +47,6 @@ function App() {
       <Header />   {/* done */}
       <Breadcrumb />   {/* fix language condition,  */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <MyCart />   {/* . */}
-      <MyFav />   {/* . */}
       <Purchase />   {/* . */}
       <Settings />   {/* . */}
       <SignInOrUp />   {/* . */}
@@ -58,3 +58,16 @@ function App() {
 }
 
 export default App;
+
+
+
+// cd 04\ ■►\ React/final-app
+// npm start
+
+// watch sass
+
+// git add .
+// git commit -m "."
+// git push origin master
+// git status
+// clear
