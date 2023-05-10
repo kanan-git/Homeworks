@@ -54,7 +54,7 @@ function App() {
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* header's space */}
-      {/* {/* breadcrumb's space */}
+      {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <SignInOrUp />   {/* . */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
