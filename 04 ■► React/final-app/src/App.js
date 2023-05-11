@@ -36,19 +36,19 @@ function App() {
   // <MyFav />   {/* done for now, language stuff */}
   // <Purchase />   {/* language stuff, sass style sheets */}
   // <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
+  // <SignInOrUp />   {/* complete forms inside, language stuff */}
+
+  // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
+  // <Breadcrumb />   {/* fix language condition,  */}
+  // <Footer />   {/* done */}
 
   // <FailedMessage />   {/* not even started */}
   // <SuccessfullySigned />   {/* not even started */}
   // <TermsAndConditions />   {/* not even started */}
   // <PrivacyPolicies />   {/* not even started */}
-  // <Overlay />   {/* not even started */} ----- cancel, delete jsx, add overlay to all individually (loading animation bg, alerts, terms and policies windows)
+  // <Overlay />   {/* not even started ----- cancel, delete jsx, add overlay to all individually (loading animation bg, alerts, terms and policies windows) */}
   // <Loading />   {/* not even started */}
-
-  // <FilterAside />   {/* not even started */}
-
-  // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
-  // <Breadcrumb />   {/* fix language condition,  */}
-  // <Footer />   {/* done */}
+  // <FilterAside />   {/* not even started | part of products page */}
 
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
@@ -56,7 +56,7 @@ function App() {
       {/* header's space */}
       {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <SignInOrUp />   {/* . */}
+      <SignInOrUp />   {/* complete forms inside, language stuff */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}

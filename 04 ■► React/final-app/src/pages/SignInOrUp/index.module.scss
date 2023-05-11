@@ -35,8 +35,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 160px;
-        padding-right: 100px;
+        gap: 80px;
+        padding-right: 70px;
+        // background: linear-gradient(to top, var(--default-bg-color), transparent);
+        transition: var(--quick-fx);
         &_language {
             width: 120px;
             outline: none;
@@ -46,37 +48,44 @@
             color: var(--text-color);
             font-size: 14px;
             font-weight: 600;
+            transition: var(--quick-fx);
             &__options {
                 background-color: var(--default-bg-color);
             }
         }
         &_selection {
             display: flex;
+            align-items: center;
             gap: 40px;
+            justify-content: center;
+            width: 50%;
+            transition: var(--quick-fx);
             &__login {
                 font-size: 40px;
                 font-weight: 900;
-                color: rgb(0,128,255);
+                color: rgb(0,128,255);   // rgb(0,128,255)  rgb(64,64,64)
                 cursor: pointer;
-                scale: 1.2;
-                opacity: 1.0;
+                scale: 1.2;   // 1.2 0.8
+                opacity: 1.0;   // 1.0 0.75
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: var(--quick-fx);
                 &:hover {
-                    filter: brightness(1.2);
+                    filter: brightness(2.5);
                 }
             }
             &__register {
                 font-size: 40px;
                 font-weight: 900;
-                color: rgb(64,64,64);
+                color: rgb(64,64,64);   // rgb(0,128,255)  rgb(64,64,64)
                 cursor: pointer;
-                scale: 0.8;
-                opacity: 0.75;
+                scale: 0.8;   // 0.8 1.2
+                opacity: 0.75;   // 0.75 1.0
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: var(--quick-fx);
                 &:hover {
                     filter: brightness(2.5);
                 }
@@ -102,12 +111,19 @@
     }
 
     &__login {
+        z-index: 2;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
         width: 400px;
         height: 500px;
         border: 1px solid var(--borders-color);
         border-radius: 5px;
         background-color: var(--default-bg-color);
-        position: absolute;
         top: 53%;   //   53%   40%
         left: 50%;   //   50%   -4%
         transform: translate(-50%, -50%);
@@ -115,15 +131,30 @@
         overflow: hidden;
         scale: 1.0;   //   1.0   0.6
         opacity: 1.0;   //   1.0   0.5
+        color: var(--text-color);
+        &_overlay {
+            z-index: -1; // -1 1
+            backdrop-filter: blur(2px);
+            background-color: rgba(255,255,255,0.1);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
     }
     &__register {
+        z-index: 2;
         position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
         width: 600px;
         height: 500px;
         border: 1px solid var(--borders-color);
         border-radius: 5px;
         background-color: var(--default-bg-color);
-        position: absolute;
         top: 40%;   //   40%   53%
         left: 80%;   //   80%   50%
         transform: translate(-50%, -50%);
@@ -131,6 +162,15 @@
         overflow: hidden;
         scale: 0.6;   //   0.6   1.0
         opacity: 0.5;   //   0.5   1.0
+        color: var(--text-color);
+        &_overlay {
+            z-index: 1; // 1 -1
+            backdrop-filter: blur(2px);
+            background-color: rgba(255,255,255,0.1);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
     }
 
     &__bottomside {
@@ -142,6 +182,7 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
+        // background: linear-gradient(to bottom, var(--default-bg-color), transparent);
         &_buttons {
             width: auto;
             height: auto;

@@ -18,8 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 160px;
-  padding-right: 100px;
+  gap: 80px;
+  padding-right: 70px;
+  transition: var(--quick-fx);
 }
 .signinorup__topside_language {
   width: 120px;
@@ -30,13 +31,18 @@
   color: var(--text-color);
   font-size: 14px;
   font-weight: 600;
+  transition: var(--quick-fx);
 }
 .signinorup__topside_language__options {
   background-color: var(--default-bg-color);
 }
 .signinorup__topside_selection {
   display: flex;
+  align-items: center;
   gap: 40px;
+  justify-content: center;
+  width: 50%;
+  transition: var(--quick-fx);
 }
 .signinorup__topside_selection__login {
   font-size: 40px;
@@ -48,9 +54,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--quick-fx);
 }
 .signinorup__topside_selection__login:hover {
-  filter: brightness(1.2);
+  filter: brightness(2.5);
 }
 .signinorup__topside_selection__register {
   font-size: 40px;
@@ -62,6 +69,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--quick-fx);
 }
 .signinorup__topside_selection__register:hover {
   filter: brightness(2.5);
@@ -83,12 +91,19 @@
   filter: drop-shadow(0 0 5px var(--filter-shadow-color));
 }
 .signinorup__login {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
   width: 400px;
   height: 500px;
   border: 1px solid var(--borders-color);
   border-radius: 5px;
   background-color: var(--default-bg-color);
-  position: absolute;
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -96,15 +111,31 @@
   overflow: hidden;
   scale: 1;
   opacity: 1;
+  color: var(--text-color);
+}
+.signinorup__login_overlay {
+  z-index: -1;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 .signinorup__register {
+  z-index: 2;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
   width: 600px;
   height: 500px;
   border: 1px solid var(--borders-color);
   border-radius: 5px;
   background-color: var(--default-bg-color);
-  position: absolute;
   top: 40%;
   left: 80%;
   transform: translate(-50%, -50%);
@@ -112,6 +143,16 @@
   overflow: hidden;
   scale: 0.6;
   opacity: 0.5;
+  color: var(--text-color);
+}
+.signinorup__register_overlay {
+  z-index: 1;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 .signinorup__bottomside {
   width: 1000px;
