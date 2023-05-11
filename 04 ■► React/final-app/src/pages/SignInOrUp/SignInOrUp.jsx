@@ -172,12 +172,8 @@ function SignInOrUp() {
 
             {/* login (sign in) form window */}
             <form className={s.signinorup__login}>
-                <div className={s.signinorup__login_overlay}></div>
-                - block bg linkHover colored headers
-                <br />
-                - inputs with js (+994 50 123 45 67 kind writing design + rules, red absolute alert text if something wrong)
-                <br />
-                - submit button with buttons bg color centered big
+                <label htmlFor=""></label>
+                <input type="text" />
             </form>
             {/* register (sign up) form window */}
             <form className={s.signinorup__register}>
