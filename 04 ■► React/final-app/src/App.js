@@ -5,7 +5,7 @@ import './global.css';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Breadcrumb from './components/Breadcrumb/Breadcrumb'
-// import FilterAside from './components/FilterAside/FilterAside'
+import FilterAside from './components/FilterAside/FilterAside'
 
 import Homepage from './pages/Homepage/Homepage'
 import About from './pages/About/About'
@@ -18,12 +18,11 @@ import Purchase from './pages/Purchase/Purchase'
 import Settings from './pages/Settings/Settings'
 import SignInOrUp from './pages/SignInOrUp/SignInOrUp'
 
-// import FailedMessage from './components/Pop-ups/FailedMessage/FailedMessage'
-// import SuccessfullySigned from './components/Pop-ups/SuccessfullySigned/SuccessfullySigned'
-// import TermsAndConditions from './components/Pop-ups/TermsAndConditions/TermsAndConditions'
-// import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies/PrivacyPolicies'
-// import Overlay from './components/Pop-ups/Overlay/Overlay'
-// import Loading from './components/Pop-ups/Loading/Loading'
+import FailedMessage from './components/Pop-ups/FailedMessage'
+import SuccessfullySigned from './components/Pop-ups/SuccessfullySigned'
+import TermsAndConditions from './components/Pop-ups/TermsAndConditions'
+import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies'
+import Loading from './components/Pop-ups/Loading'
 
 function App() {
 
@@ -36,19 +35,11 @@ function App() {
   // <MyFav />   {/* done for now, language stuff */}
   // <Purchase />   {/* language stuff, sass style sheets */}
   // <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
-  // <SignInOrUp />   {/* complete forms inside, language stuff */}
+  // <SignInOrUp />   {/* complete forms styles scss, language stuff */}
 
   // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
   // <Breadcrumb />   {/* fix language condition,  */}
   // <Footer />   {/* done */}
-
-  // <FailedMessage />   {/* not even started */}
-  // <SuccessfullySigned />   {/* not even started */}
-  // <TermsAndConditions />   {/* not even started */}
-  // <PrivacyPolicies />   {/* not even started */}
-  // <Overlay />   {/* not even started ----- cancel, delete jsx, add overlay to all individually (loading animation bg, alerts, terms and policies windows) */}
-  // <Loading />   {/* not even started */}
-  // <FilterAside />   {/* not even started | part of products page */}
 
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
@@ -56,7 +47,12 @@ function App() {
       {/* header's space */}
       {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <SignInOrUp />   {/* complete forms inside, language stuff */}
+      <FailedMessage />   {/* not even started | make with their own overlay */}
+      <SuccessfullySigned />   {/* not even started | make with their own overlay */}
+      <TermsAndConditions />   {/* not even started | make with their own overlay */}
+      <PrivacyPolicies />   {/* not even started | make with their own overlay */}
+      <Loading />   {/* not even started | make with their own overlay */}
+      <FilterAside />   {/* not even started | part of products page*/}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
