@@ -21,7 +21,13 @@ function SuccessfullySigned() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <div className={s.successfullysigned}>
-            test123
+            <div className={s.successfullysigned__overlay}></div>
+            <div className={s.successfullysigned__icon}>
+                <i className='fa-solid fa-check fa-1x'></i>
+            </div>
+            <p className={s.successfullysigned__text}>
+                You have successfully signed in
+            </p>
         </div>
     )
 }

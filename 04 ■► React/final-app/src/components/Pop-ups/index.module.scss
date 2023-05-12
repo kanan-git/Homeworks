@@ -16,5 +16,30 @@
 //                              var(--filter-shadow-color)
 //                              var(--borders-color)
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+.successfullysigned {}
+&successfullysigned__overlay {}
+&successfullysigned__icon {}
+.fa-check {}
+&successfullysigned__text {}
 
+.failedmessage {}
+&failedmessage__overlay {}
+&failedmessage__icon {}
+.fa-xmark {}
+&failedmessage__text {}
+
+.loading {}
+&loading__overlay {}
+&loading__animation {}
+&loading__animation_blocks {}
+
+.privacypolicies {}
+&__overlay {}
+&privacypolicies__title {}
+&privacypolicies__headers {}
+
+.termsandconditions {}
+&__overlay {}
+&termsandconditions__title {}
+&termsandconditions__headers {}
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

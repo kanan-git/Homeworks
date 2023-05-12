@@ -21,7 +21,25 @@ function Loading() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <div className={s.loading}>
-            test123
+            <div className={s.loading__overlay}></div>
+            <div className={s.loading__animation}>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+                <div className={s.loading__animation_blocks}></div>
+            </div>
         </div>
     )
 }

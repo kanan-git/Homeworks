@@ -40,6 +40,7 @@ function App() {
   // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
   // <Breadcrumb />   {/* fix language condition,  */}
   // <Footer />   {/* done */}
+  // <FilterAside />   {/* not even started | part of products page*/}
 
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
@@ -47,12 +48,11 @@ function App() {
       {/* header's space */}
       {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <FailedMessage />   {/* not even started | make with their own overlay */}
-      <SuccessfullySigned />   {/* not even started | make with their own overlay */}
-      <TermsAndConditions />   {/* not even started | make with their own overlay */}
-      <PrivacyPolicies />   {/* not even started | make with their own overlay */}
-      <Loading />   {/* not even started | make with their own overlay */}
-      <FilterAside />   {/* not even started | part of products page*/}
+      <FailedMessage />   {/* styles, language stuff | make with their own overlay */}
+      <SuccessfullySigned />   {/* styles, language stuff | make with their own overlay */}
+      <TermsAndConditions />   {/* styles, language stuff | make with their own overlay */}
+      <PrivacyPolicies />   {/* styles, language stuff | make with their own overlay */}
+      <Loading />   {/* styles, language stuff | make with their own overlay */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
