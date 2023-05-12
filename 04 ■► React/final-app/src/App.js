@@ -42,17 +42,20 @@ function App() {
   // <Footer />   {/* done */}
   // <FilterAside />   {/* not even started | part of products page*/}
 
+  // <SuccessfullySigned />   {/* language stuff */}
+  // <FailedMessage />   {/* language stuff */}
+  // <Loading />   {/* done for now */}
+  // 
+  // <PrivacyPolicies />   {/* styles, language stuff | make with their own overlay */}
+
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* header's space */}
       {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <FailedMessage />   {/* styles, language stuff | make with their own overlay */}
-      <SuccessfullySigned />   {/* styles, language stuff | make with their own overlay */}
+      <SignInOrUp />
       <TermsAndConditions />   {/* styles, language stuff | make with their own overlay */}
-      <PrivacyPolicies />   {/* styles, language stuff | make with their own overlay */}
-      <Loading />   {/* styles, language stuff | make with their own overlay */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}

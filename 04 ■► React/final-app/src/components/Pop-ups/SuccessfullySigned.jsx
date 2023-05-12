@@ -20,15 +20,17 @@ function SuccessfullySigned() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
-        <div className={s.successfullysigned}>
+        <>
             <div className={s.successfullysigned__overlay}></div>
-            <div className={s.successfullysigned__icon}>
-                <i className='fa-solid fa-check fa-1x'></i>
+            <div className={s.successfullysigned}>
+                <div className={s.successfullysigned__icon}>
+                    <i className='fa-solid fa-check fa-1x'></i>
+                </div>
+                <p className={s.successfullysigned__text}>
+                    You have successfully signed in
+                </p>
             </div>
-            <p className={s.successfullysigned__text}>
-                You have successfully signed in
-            </p>
-        </div>
+        </>
     )
 }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //

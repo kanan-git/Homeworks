@@ -20,15 +20,18 @@ function FailedMessage() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
-        <div className={s.failedmessage}>
+        <>
             <div className={s.failedmessage__overlay}></div>
-            <div className={s.failedmessage__icon}>
-                <i className='fa-solid fa-xmark fa-1x'></i>
+            <div className={s.failedmessage}>
+                
+                <div className={s.failedmessage__icon}>
+                    <i className='fa-solid fa-xmark fa-1x'></i>
+                </div>
+                <p className={s.failedmessage__text}>
+                    Your email or password is incorrect
+                </p>
             </div>
-            <p className={s.failedmessage__text}>
-                Your email or password is incorrect
-            </p>
-        </div>
+        </>
     )
 }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
