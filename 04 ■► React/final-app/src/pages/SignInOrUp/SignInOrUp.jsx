@@ -22,7 +22,7 @@ function SignInOrUp() {
             return () => {
                 // language
                 // const [] = useState(dataSource.english.signinorup)
-                var langDataAuth = document.querySelector("#language")
+                var langDataAuth = document.querySelector("#langAuth")
                 langDataAuth.addEventListener("change", () => {
                 console.log(langDataAuth.value)
                 })
@@ -198,7 +198,7 @@ function SignInOrUp() {
     return (
         <main className={s.signinorup}>
             <div className={s.signinorup__topside}>
-                <select name="language" id="language" className={s.signinorup__topside_language}>
+                <select name="langAuth" id="langAuth" className={s.signinorup__topside_language}>
                     <option value="English" className={s.signinorup__topside_language__options}> English </option>
                     <option value="Azərbaycan dili" className={s.signinorup__topside_language__options}> Azərbaycan dili </option>
                     <option value="Türkçe" className={s.signinorup__topside_language__options}> Türkçe </option>

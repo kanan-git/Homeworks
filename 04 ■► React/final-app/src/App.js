@@ -35,7 +35,7 @@ function App() {
   // <MyFav />   {/* done for now, language stuff */}
   // <Purchase />   {/* language stuff, sass style sheets */}
   // <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
-  // <SignInOrUp />   {/* complete forms styles scss, language stuff */}
+  // 
 
   // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
   // <Breadcrumb />   {/* fix language condition,  */}
@@ -45,8 +45,8 @@ function App() {
   // <SuccessfullySigned />   {/* language stuff */}
   // <FailedMessage />   {/* language stuff */}
   // <Loading />   {/* done for now */}
-  // 
-  // <PrivacyPolicies />   {/* styles, language stuff | make with their own overlay */}
+  // <TermsAndConditions />   {/* language stuff */}
+  // <PrivacyPolicies />   {/* language stuff */}
 
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
@@ -54,8 +54,7 @@ function App() {
       {/* header's space */}
       {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <SignInOrUp />
-      <TermsAndConditions />   {/* styles, language stuff | make with their own overlay */}
+      <SignInOrUp />   {/* complete forms styles scss, language stuff */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
