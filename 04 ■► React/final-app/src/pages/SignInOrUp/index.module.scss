@@ -116,7 +116,7 @@
         z-index: 2;
         position: absolute;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         gap: 5px;
@@ -142,36 +142,73 @@
             height: 100%;
             position: absolute;
         }
+        &_header {
+            font-size: 30px;
+            font-weight: 900;
+            filter: drop-shadow(0 0 1px var(--filter-shadow-color));
+            color: var(--default-bg-color);
+            margin: 100px 0px 80px 0px; // top right bottom left
+        }
+        &_contents {
+            border: none;
+            padding-left: 20px;
+            &__label {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            &__input {
+                width: 240px;
+                height: 30px;
+                padding-left: 10px;
+                outline: none;
+                border: 1px solid var(--borders-color);
+                color: var(--text-color);
+                border-radius: 4px;
+                position: relative;
+                margin-top: 5px;
+                background-color: var(--default-bg-color);
+                &:not(:last-of-type) {
+                    margin-bottom: 20px;
+                }
+            }
+            &__eyebutton {
+                position: relative;
+                top: 0;
+                left: -30px;
+                width: fit-content;
+                height: fit-content;
+                border: none;
+                background-color: transparent;
+                color: var(--text-color);
+            }
+        }
+        &_submit {
+            border: 1px solid var(--borders-color);
+            background-color: var(--buttons-color);
+            width: 240px;
+            height: 30px;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 20px;
+            color: var(--text-color);
+            transition: var(--quick-fx);
+            &:hover {
+                background-color: var(--buttons-hover-color);
+                filter: drop-shadow(0 0 5px var(--filter-shadow-color));
+            }
+            &:active {
+                transition: var(--instant-fx);
+                background-color: var(--buttons-active-color);
+            }
+        }
     }
-    // &signinorup__login {}
-    // &signinorup__login_overlay {}
-    // &signinorup__login_header {}
-    // &signinorup__login_contents {}
-    // &signinorup__login_contents__label {}
-    // &signinorup__login_contents__input {}
-    // &signinorup__login_contents__eyebutton {}
-    // .fa-eye {}
-    // &signinorup__login_submit {}
-    // &signinorup__register {}
-    // &signinorup__register_overlay {}
-    // &signinorup__register_header {}
-    // &signinorup__register_contents {}
-    // &signinorup__register_contents__label {}
-    // &signinorup__register_contents__input {}
-    // &genders_radio {}
-    // &genders_label {}
-    // &dateofbirth__label {}
-    // &dateofbirth__input {}
-    // &dateofbirth__input_options {}
-    // &signinorup__register_accept {}
-    // &signinorup__register_accept__checkbox {}
-    // &signinorup__register_submit {}
-    // i {}
+    
     &__register {
         z-index: 2;
         position: absolute;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         gap: 5px;
@@ -196,6 +233,95 @@
             width: 100%;
             height: 100%;
             position: absolute;
+        }
+        &_header {
+            font-size: 30px;
+            font-weight: 900;
+            filter: drop-shadow(0 0 1px var(--filter-shadow-color));
+            color: var(--default-bg-color);
+            margin: 10px 0px 10px 0px; // top right bottom left
+        }
+        &_contents {
+            border: none;
+            padding-left: 20px;
+            &__label {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                .genders_radio {
+                    accent-color: var(--link-hover-color);
+                }
+                .genders_label {
+                    margin-bottom: 10px;
+                }
+            }
+            &__input {
+                width: 240px;
+                height: 30px;
+                padding-left: 10px;
+                outline: none;
+                border: 1px solid var(--borders-color);
+                color: var(--text-color);
+                border-radius: 4px;
+                position: relative;
+                margin-top: 5px;
+                background-color: var(--default-bg-color);
+                &:not(:last-of-type) {
+                    margin-bottom: 20px;
+                }
+            }
+            &__eyebutton {
+                position: relative;
+                top: 0;
+                left: -30px;
+                width: fit-content;
+                height: fit-content;
+                border: none;
+                background-color: transparent;
+                color: var(--text-color);
+            }
+            .dateofbirth__label {
+                font-weight: 600;
+                margin: 10px 5px; // top-bottom left-right
+                position: relative;
+            }
+            .dateofbirth__input {
+                background-color: var(--default-bg-color);
+                padding: 1px;
+                outline: none;
+                &_options {
+                    background-color: var(--default-bg-color);
+                }
+            }
+        }
+        &_accept {
+            font-weight: 600;
+            &__checkbox {
+                accent-color: var(--link-active-color);
+                margin: 10px 5px 10px 0px; // top right bottom left
+            }
+            i {
+                font-style: normal;
+                font-weight: 600;
+            }
+        }
+        &_submit {
+            border: 1px solid var(--borders-color);
+            background-color: var(--buttons-color);
+            width: 400px;
+            height: 30px;
+            font-weight: 600;
+            border-radius: 6px;
+            color: var(--text-color);
+            transition: var(--quick-fx);
+            &:hover {
+                background-color: var(--buttons-hover-color);
+                filter: drop-shadow(0 0 5px var(--filter-shadow-color));
+            }
+            &:active {
+                transition: var(--instant-fx);
+                background-color: var(--buttons-active-color);
+            }
         }
     }
 
@@ -227,7 +353,7 @@
                 background-color: var(--buttons-hover-color);
             }
             &:active {
-                transition: var(--instant-color);
+                transition: var(--instant-fx);
                 filter: drop-shadow(0 0 10px var(--buttons-active-color));
                 background-color: var(--buttons-active-color);
             }
