@@ -101,19 +101,26 @@ export const dataSource = {
                 "Find on Map"
             ]
         },
-        itemview: {},
-        mycart: {},
-        myfav: {},
-        products: {},
-        purchase: {},
-        settings: {},
-        signinorup: {},
-        filteraside: {},
-        breadcrumb: "You are here now", // if you change language in breadcrumb.jsx or in rounting, remove this label
-        popup_failedmessage: {},
-        popup_successfullysigned: {},
-        popup_termsandconditions: {},
-        popup_privacypolicies: {}
+        itemview: {}, // not started ▲
+        mycart: {}, // not started ▲
+        myfav: {}, // not started ▲
+        products: {}, // not started ▲
+        purchase: {}, // not started ▲
+        settings: {}, // not started ▲
+        signinorup: {
+            selections: ["Login", "Register"], 
+            loginform: ["Welcome to ShopNet", "Email:", "Password:"], 
+            registerform: ["Join us", "Name:", "Lastname:", "Email:", "Gender:", "Month", "Day", "Year", 
+            "I have read and agree to the", "Terms & Conditions", "Sign up", "Male", "Female", "Choose"], 
+            buttons: ["Go to Home", "Go to About", "Go to Contact"], 
+            month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        },
+        filteraside: {}, // not started ▲
+        breadcrumb: "You are here now", // not started ▲
+        popup_failedmessage: {}, // not started ▲
+        popup_successfullysigned: {}, // not started ▲
+        popup_termsandconditions: {}, // not started ▲
+        popup_privacypolicies: {} // not started ▲
     },
     // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ // AZERBAIJANI
     azerbaijani: {

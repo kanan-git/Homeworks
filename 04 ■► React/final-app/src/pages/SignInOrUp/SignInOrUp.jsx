@@ -17,14 +17,37 @@ import {useState, useEffect, useRef} from 'react'
 function SignInOrUp() {
     const root = document.documentElement;
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
+const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
+const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
+const [registerformSTATE, setRegisterformSTATE] = useState(dataSource.english.signinorup.registerform)
+const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.signinorup.buttons)
+const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup.month)
     useEffect(
         () => {
             return () => {
                 // language
-                // const [] = useState(dataSource.english.signinorup)
                 var langDataAuth = document.querySelector("#langAuth")
                 langDataAuth.addEventListener("change", () => {
-                console.log(langDataAuth.value)
+                    // console.log(langDataAuth.value)
+                    if (langDataAuth.value == "English") {
+                        setSelectionsSTATE(dataSource.english.signinorup.selections)
+                        setLoginformSTATE(dataSource.english.signinorup.loginform)
+                        setRegisterformSTATE(dataSource.english.signinorup.registerform)
+                        setButtonsSTATE(dataSource.english.signinorup.buttons)
+                        setMonthallSTATE(dataSource.english.signinorup.month)
+                    } else if (langDataAuth.value == "Azərbaycan dili") {
+                        setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
+                        setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
+                        setRegisterformSTATE(dataSource.azerbaijani.signinorup.registerform)
+                        setButtonsSTATE(dataSource.azerbaijani.signinorup.buttons)
+                        setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
+                    } else if (langDataAuth.value == "Türkçe") {
+                        setSelectionsSTATE(dataSource.turkish.signinorup.selections)
+                        setLoginformSTATE(dataSource.turkish.signinorup.loginform)
+                        setRegisterformSTATE(dataSource.turkish.signinorup.registerform)
+                        setButtonsSTATE(dataSource.turkish.signinorup.buttons)
+                        setMonthallSTATE(dataSource.turkish.signinorup.month)
+                    }
                 })
             }
         }, []
