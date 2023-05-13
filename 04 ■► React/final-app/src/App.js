@@ -25,38 +25,34 @@ import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies'
 import Loading from './components/Pop-ups/Loading'
 
 function App() {
-
-  // <Homepage />   {/* done */}
-  // <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
-  // <Contact />   {/* add API map */}
-  // <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
-  // <ItemView />   {/* done for now, language stuff, not claimed data, only static texts */}
-  // <MyCart />   {/* done for now, language stuff */}
-  // <MyFav />   {/* done for now, language stuff */}
-  // <Purchase />   {/* language stuff, sass style sheets */}
-  // <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
-  // 
-
-  // <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
-  // <Breadcrumb />   {/* fix language condition,  */}
-  // <Footer />   {/* done */}
-  // <FilterAside />   {/* not even started | part of products page*/}
+  // <FilterAside />   {/* part of products page | canceled */} <---------- build filter inside products page
 
   // <SuccessfullySigned />   {/* language stuff */}
   // <FailedMessage />   {/* language stuff */}
-  // <Loading />   {/* done for now */}
   // <TermsAndConditions />   {/* language stuff */}
   // <PrivacyPolicies />   {/* language stuff */}
 
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      {/* header's space */}
-      {/* breadcrumb's space */}
+      <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
+      <Breadcrumb />   {/* fix language condition,  */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <SignInOrUp />   {/* complete forms styles scss */}
+      {/* <Homepage /> */}
+      <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
+      <Contact />   {/* add API map */}
+      <ItemView />   {/* done for now, language stuff, not claimed data, only static texts */}
+      <MyCart />   {/* done for now, language stuff */}
+      <MyFav />   {/* done for now, language stuff */}
+      <Purchase />   {/* language stuff, sass style sheets */}
+      <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
+      <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
+
+      {/* <SignInOrUp /> */}
+
+      {/* <Loading /> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      {/* footer's space */}
+      <Footer />
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
