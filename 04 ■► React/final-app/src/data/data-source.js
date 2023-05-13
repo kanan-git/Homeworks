@@ -109,14 +109,15 @@ export const dataSource = {
         settings: {}, // not started ▲
         signinorup: {
             selections: ["Login", "Register"], 
-            loginform: ["Welcome to ShopNet", "Email:", "Password:"], 
+            loginform: ["Welcome to ShopNet", "Email:", "Password:", "Sign in"], 
             registerform: ["Join us", "Name:", "Lastname:", "Email:", "Gender:", "Month", "Day", "Year", 
             "I have read and agree to the", "Terms & Conditions", "Sign up", "Male", "Female", "Choose"], 
             buttons: ["Go to Home", "Go to About", "Go to Contact"], 
-            month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], 
+            placeholders: ["Enter your email here", "Enter your password here", "Your name here", "Your lastname here", "Enter your email address", "Assign a new password"]
         },
         filteraside: {}, // not started ▲
-        breadcrumb: "You are here now", // not started ▲
+        breadcrumb: "You are here now", // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {}, // not started ▲
         popup_successfullysigned: {}, // not started ▲
         popup_termsandconditions: {}, // not started ▲
@@ -230,7 +231,15 @@ export const dataSource = {
         products: {},
         purchase: {},
         settings: {},
-        signinorup: {},
+        signinorup: {
+            selections: ["Daxil ol", "Qeydiyyatdan keçin"], 
+            loginform: ["ShopNet-ə xoş gəlmisiniz", "E-poçt:", "Parol:", "Daxil ol"], 
+            registerform: ["Bizə qoşul", "Ad:", "Soyad:", "E-poçt:", "Cinsiyyət:", "Ay", "Gün", "İl", 
+            "Oxudum və razıyam - ", "Qaydalar və Şərtlər", "Qeydiyyat", "Kişi", "Qadın", "Seçin"], 
+            buttons: ["Əsas səhifəyə keçin", "Haqqımızda səhifəsinə keçin", "Əlaqə bölməsinə keçin"], 
+            month: ["Yanvar", "Fevral", "Mart", "Aprel", "May", "İyun", "İyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"], 
+            placeholders: ["E-poçtunuzu daxil edin", "Parolu daxil edin", "Adınızı burada qeyd edin", "Soyadınızı burada qeyd edin", "E-poçt ünvanınızı daxil edin", "Yeni parol təyin edin"]
+        },
         filteraside: {},
         breadcrumb: "Indi buradasınız", // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},
@@ -346,7 +355,15 @@ export const dataSource = {
         products: {},
         purchase: {},
         settings: {},
-        signinorup: {},
+        signinorup: {
+            selections: ["Giriş yap", "Kayıt ol"], 
+            loginform: ["ShopNet'e hoş geldiniz", "E-posta:", "Şifre:", "Giriş yap"], 
+            registerform: ["Bize katılın", "İsim:", "Soy isim:", "E-posta:", "Cinsiyet:", "Ay", "Gün", "Yıl", 
+            "Okudum ve onaylıyorum - ", "Şartlar ve Koşullar", "Üye ol", "Erkek", "Kadın", "Seç"], 
+            buttons: ["Ana sayfaya git", "Hakkımızda sayfasına git", "İletişim sayfasına git"], 
+            month: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"], 
+            placeholders: ["E-posta adresinizi girin", "Şifrenizi buraya girin", "İsminizi buraya girin", "Soy isminizi buraya girin", "E-posta adresinizi girin", "Yeni bir şifre atayın"]
+        },
         filteraside: {},
         breadcrumb: "Şimdi buradasın", // if you change language in breadcrumb.jsx or in rounting, remove this label
         popup_failedmessage: {},

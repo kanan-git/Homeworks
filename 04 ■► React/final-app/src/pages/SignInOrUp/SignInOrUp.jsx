@@ -17,11 +17,12 @@ import {useState, useEffect, useRef} from 'react'
 function SignInOrUp() {
     const root = document.documentElement;
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
-const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
-const [registerformSTATE, setRegisterformSTATE] = useState(dataSource.english.signinorup.registerform)
-const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.signinorup.buttons)
-const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup.month)
+    const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
+    const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
+    const [registerformSTATE, setRegisterformSTATE] = useState(dataSource.english.signinorup.registerform)
+    const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.signinorup.buttons)
+    const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup.month)
+    const [pholderSTATE, setPholderSTATE] = useState(dataSource.english.signinorup.placeholders)
     useEffect(
         () => {
             return () => {
@@ -35,18 +36,21 @@ const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup
                         setRegisterformSTATE(dataSource.english.signinorup.registerform)
                         setButtonsSTATE(dataSource.english.signinorup.buttons)
                         setMonthallSTATE(dataSource.english.signinorup.month)
+                        setPholderSTATE(dataSource.english.signinorup.placeholders)
                     } else if (langDataAuth.value == "Azərbaycan dili") {
                         setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
                         setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
                         setRegisterformSTATE(dataSource.azerbaijani.signinorup.registerform)
                         setButtonsSTATE(dataSource.azerbaijani.signinorup.buttons)
                         setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
+                        setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
                     } else if (langDataAuth.value == "Türkçe") {
                         setSelectionsSTATE(dataSource.turkish.signinorup.selections)
                         setLoginformSTATE(dataSource.turkish.signinorup.loginform)
                         setRegisterformSTATE(dataSource.turkish.signinorup.registerform)
                         setButtonsSTATE(dataSource.turkish.signinorup.buttons)
                         setMonthallSTATE(dataSource.turkish.signinorup.month)
+                        setPholderSTATE(dataSource.turkish.signinorup.placeholders)
                     }
                 })
             }
@@ -195,14 +199,14 @@ const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup
         }, []
     )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
-    const [monthSTATE, setMonthSTATE] = useState([])
+    // const [monthSTATE, setMonthSTATE] = useState([])
     const [daySTATE, setDaySTATE] = useState([])
     const [yearSTATE, setYearSTATE] = useState([])
     useEffect(
         () => {
-            // array for month
-            var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-            setMonthSTATE(monthArray)
+            // month data will came from dataSource
+            // var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            // setMonthSTATE(monthArray)
             // array for days
             var daysArray = []
             for(var i=1; i<=31; i++) {
@@ -227,8 +231,8 @@ const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup
                     <option value="Türkçe" className={s.signinorup__topside_language__options}> Türkçe </option>
                 </select>
                 <span className={s.signinorup__topside_selection}>
-                    <h3 className={s.signinorup__topside_selection__login}> Login </h3>
-                    <h3 className={s.signinorup__topside_selection__register}> Register</h3>
+                    <h3 className={s.signinorup__topside_selection__login}> {selectionsSTATE[0]} </h3>
+                    <h3 className={s.signinorup__topside_selection__register}> {selectionsSTATE[1]} </h3>
                 </span>
                 <button className={s.signinorup__topside_lord}>  </button> {/* sun / moon     <i className='fa-solid fa-sun fa-1x'></i> */}
             </div>
@@ -238,79 +242,79 @@ const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup
             {/* login (sign in) form window */}
             <form className={s.signinorup__login}>
                 <div className={s.signinorup__login_overlay}></div>
-                <h3 className={s.signinorup__login_header}> Welcome to ShopNet </h3>
+                <h3 className={s.signinorup__login_header}> {loginformSTATE[0]} </h3>
                 <span className={s.signinorup__login_contents}>
-                    <label htmlFor="email-login" className={s.signinorup__login_contents__label}> Email: </label> <br />
-                    <input type="email" id="email-login" name="email-login" className={s.signinorup__login_contents__input} required placeholder='Enter your email here' />
+                    <label htmlFor="email-login" className={s.signinorup__login_contents__label}> {loginformSTATE[1]} </label> <br />
+                    <input type="email" id="email-login" name="email-login" className={s.signinorup__login_contents__input} required placeholder={pholderSTATE[0]} />
                     <br />
-                    <label htmlFor="password-login" className={s.signinorup__login_contents__label}> Password: </label> <br />
-                    <input type="password" id="password-login" name="password-login" className={s.signinorup__login_contents__input} required placeholder='Enter your password here' /> {/* type="text/password" */}
+                    <label htmlFor="password-login" className={s.signinorup__login_contents__label}> {loginformSTATE[2]} </label> <br />
+                    <input type="password" id="password-login" name="password-login" className={s.signinorup__login_contents__input} required placeholder={pholderSTATE[1]} /> {/* type="text/password" */}
                     <button className={s.signinorup__login_contents__eyebutton}> <i className='fa-regular fa-eye fa-1x'></i> </button>
                 </span>
-                <input type="submit" className={s.signinorup__login_submit} value="Sign in" />
+                <input type="submit" className={s.signinorup__login_submit} value={loginformSTATE[3]} />
             </form>
 
             {/* register (sign up) form window */}
             <form className={s.signinorup__register}>
                 <div className={s.signinorup__register_overlay}></div>
-                <h3 className={s.signinorup__register_header}> Join us </h3>
+                <h3 className={s.signinorup__register_header}> {registerformSTATE[0]} </h3>
                 <span className={s.signinorup__register_contents}>
-                    <label htmlFor="name" className={s.signinorup__register_contents__label}> Name: </label> <br />
-                    <input type="text" id="name" name="name" className={s.signinorup__register_contents__input} required placeholder='Your name here' />
+                    <label htmlFor="name" className={s.signinorup__register_contents__label}> {registerformSTATE[1]} </label> <br />
+                    <input type="text" id="name" name="name" className={s.signinorup__register_contents__input} required placeholder={pholderSTATE[0]} />
                     <br />
-                    <label htmlFor="lastname" className={s.signinorup__register_contents__label}> Lastname: </label> <br />
-                    <input type="text" id="lastname" name="lastname" className={s.signinorup__register_contents__input} required placeholder='Your lastname here' />
+                    <label htmlFor="lastname" className={s.signinorup__register_contents__label}> {registerformSTATE[2]} </label> <br />
+                    <input type="text" id="lastname" name="lastname" className={s.signinorup__register_contents__input} required placeholder={pholderSTATE[1]} />
                     <br />
-                    <label htmlFor="email-registry" className={s.signinorup__register_contents__label}> Email: </label> <br />
-                    <input type="email" id="email-registry" name="email-registry" className={s.signinorup__register_contents__input} required placeholder='Enter your email address' />
+                    <label htmlFor="email-registry" className={s.signinorup__register_contents__label}> {registerformSTATE[3]} </label> <br />
+                    <input type="email" id="email-registry" name="email-registry" className={s.signinorup__register_contents__input} required placeholder={pholderSTATE[2]} />
                     <br />
                     <label htmlFor="radios" className={s.signinorup__register_contents__label}>
-                        Gender:
+                        {registerformSTATE[4]}
                         <br />
                         <input type="radio" id="male" name="genders" className={s.genders_radio} value="male" defaultChecked />
-                        <label htmlFor="male" className={s.genders_label}> Male </label>
+                        <label htmlFor="male" className={s.genders_label}> {registerformSTATE[11]} </label>
                         <input type="radio" id="female" name="genders" className={s.genders_radio} value="female" />
-                        <label htmlFor="female" className={s.genders_label}> Female </label>
+                        <label htmlFor="female" className={s.genders_label}> {registerformSTATE[12]} </label>
                     </label>
                     <br />
-                    <label htmlFor="month" className={s.dateofbirth__label}> Month </label>
+                    <label htmlFor="month" className={s.dateofbirth__label}> {registerformSTATE[5]} </label>
                     <select name="month" id="month" className={s.dateofbirth__input}>
+                        <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ {registerformSTATE[13]} ] - </option>
                         {
-                            monthSTATE.map(
+                            monthallSTATE.map(
                                 (month, index) => <option value={month} className={s.dateofbirth__input_options} key={index}> {month} </option>
                             )
                         }
-                        <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ Choose ] - </option>
                     </select>
-                    <label htmlFor="day" className={s.dateofbirth__label}> Day </label>
+                    <label htmlFor="day" className={s.dateofbirth__label}> {registerformSTATE[6]} </label>
                     <select name="day" id="day" className={s.dateofbirth__input}>
                         {
                             daySTATE.map(
                                 (day, index) => <option value={day} className={s.dateofbirth__input_options} key={index}> {day} </option>
                             )
                         }
-                        <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ Choose ] - </option>
+                        <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ {registerformSTATE[13]} ] - </option>
                     </select>
-                    <label htmlFor="year" className={s.dateofbirth__label}> Year </label>
+                    <label htmlFor="year" className={s.dateofbirth__label}> {registerformSTATE[7]} </label>
                     <select name="year" id="year" className={s.dateofbirth__input}>
                         {
                             yearSTATE.map(
                                 (year, index) => <option value={year} className={s.dateofbirth__input_options} key={index}> {year} </option>
                             )
                         }
-                        <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ Choose ] - </option>
+                        <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ {registerformSTATE[13]} ] - </option>
                     </select>
                     <br />
-                    <label htmlFor="password-registry" className={s.signinorup__register_contents__label}> Password: </label> <br />
-                    <input type="password" id="password-registry" name="password-registry" className={s.signinorup__register_contents__input} required placeholder='Assign a new password' /> {/* type="text/password" */}
+                    <label htmlFor="password-registry" className={s.signinorup__register_contents__label}> {loginformSTATE[2]} </label> <br />
+                    <input type="password" id="password-registry" name="password-registry" className={s.signinorup__register_contents__input} required placeholder={pholderSTATE[3]} /> {/* type="text/password" */}
                     <button className={s.signinorup__register_contents__eyebutton}> <i className='fa-regular fa-eye fa-1x'></i> </button>
                     <br />
                 </span>
                 <label htmlFor="accept" className={s.signinorup__register_accept}>
                     <input type="checkbox" id="accept" name="accept" required className={s.signinorup__register_accept__checkbox} />
-                    I have read and agree to the <i> Terms & Conditions </i>
+                    {registerformSTATE[8]} <i> {registerformSTATE[9]} </i>
                 </label>
-                <input type="submit" className={s.signinorup__register_submit} value="Sign up" />
+                <input type="submit" className={s.signinorup__register_submit} value={registerformSTATE[10]} />
             </form>
 
 
@@ -318,15 +322,15 @@ const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup
             <div className={s.signinorup__bottomside}>
                 <button className={s.signinorup__bottomside_buttons}>
                     <i className='fa-solid fa-house-chimney fa-1x'></i>
-                    <p> Go to Home </p>
+                    <p> {buttonsSTATE[0]} </p>
                 </button>
                 <button className={s.signinorup__bottomside_buttons}>
                     <i className='fa-solid fa-info-circle fa-1x'></i>
-                    <p> Go to About </p>
+                    <p> {buttonsSTATE[1]} </p>
                 </button>
                 <button className={s.signinorup__bottomside_buttons}>
                     <i className='fa-solid fa-location-dot fa-1x'></i>
-                    <p> Go to Contact </p>
+                    <p> {buttonsSTATE[2]} </p>
                 </button>
             </div>
         </main>

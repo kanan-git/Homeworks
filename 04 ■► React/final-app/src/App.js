@@ -54,7 +54,7 @@ function App() {
       {/* header's space */}
       {/* breadcrumb's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <SignInOrUp />   {/* complete forms styles scss, language stuff */}
+      <SignInOrUp />   {/* complete forms styles scss */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* footer's space */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}

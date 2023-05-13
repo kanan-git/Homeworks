@@ -61,7 +61,7 @@
             width: 50%;
             transition: var(--quick-fx);
             &__login {
-                font-size: 40px;
+                font-size: 36px;
                 font-weight: 900;
                 color: rgb(0,128,255);   // rgb(0,128,255)  rgb(64,64,64)
                 cursor: pointer;
@@ -71,12 +71,13 @@
                 align-items: center;
                 justify-content: center;
                 transition: var(--quick-fx);
+                width: fit-content;
                 &:hover {
                     filter: brightness(2.5);
                 }
             }
             &__register {
-                font-size: 40px;
+                font-size: 36px;
                 font-weight: 900;
                 color: rgb(64,64,64);   // rgb(0,128,255)  rgb(64,64,64)
                 cursor: pointer;
@@ -86,6 +87,7 @@
                 align-items: center;
                 justify-content: center;
                 transition: var(--quick-fx);
+                width: fit-content;
                 &:hover {
                     filter: brightness(2.5);
                 }

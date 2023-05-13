@@ -45,7 +45,7 @@
   transition: var(--quick-fx);
 }
 .signinorup__topside_selection__login {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 900;
   color: rgb(0, 128, 255);
   cursor: pointer;
@@ -55,12 +55,14 @@
   align-items: center;
   justify-content: center;
   transition: var(--quick-fx);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .signinorup__topside_selection__login:hover {
   filter: brightness(2.5);
 }
 .signinorup__topside_selection__register {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 900;
   color: rgb(64, 64, 64);
   cursor: pointer;
@@ -70,6 +72,8 @@
   align-items: center;
   justify-content: center;
   transition: var(--quick-fx);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .signinorup__topside_selection__register:hover {
   filter: brightness(2.5);
