@@ -17,7 +17,23 @@ import {useState, useEffect, useRef} from 'react'
 function SuccessfullySigned() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    const [successSTATE, setSuccessSTATE] = useState(dataSource.english.popup_successfullysigned)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#langAuth")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        setSuccessSTATE(dataSource.english.popup_successfullysigned)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        setSuccessSTATE(dataSource.azerbaijani.popup_successfullysigned)
+                    } else if (languageData.value == "Türkçe") {
+                        setSuccessSTATE(dataSource.turkish.popup_successfullysigned)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <>
@@ -27,7 +43,7 @@ function SuccessfullySigned() {
                     <i className='fa-solid fa-check fa-1x'></i>
                 </div>
                 <p className={s.successfullysigned__text}>
-                    You have successfully signed in
+                    {successSTATE}
                 </p>
             </div>
         </>

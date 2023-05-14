@@ -17,7 +17,23 @@ import {useState, useEffect, useRef} from 'react'
 function ItemView() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    const [itemviewSTATE, setItemviewSTATE] = useState(dataSource.english.itemview)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#language")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        setItemviewSTATE(dataSource.english.itemview)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        setItemviewSTATE(dataSource.azerbaijani.itemview)
+                    } else if (languageData.value == "Türkçe") {
+                        setItemviewSTATE(dataSource.turkish.itemview)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.itemview}>
@@ -43,8 +59,8 @@ function ItemView() {
                     <img src="#" alt="selected-img-name" className={s.itemview__container_bigframe__content} />
                 </div>
                 <div className={s.itemview__container_information}>
-                    <h3 className={s.itemview__container_information__title}> Product: HP Pavilion 16-d 1083ci Victus 6X7R2EA </h3>
-                    <h6 className={s.itemview__container_information__category}> Category: Laptops </h6>
+                    <h3 className={s.itemview__container_information__title}> {itemviewSTATE[0]}: HP Pavilion 16-d 1083ci Victus 6X7R2EA </h3>
+                    <h6 className={s.itemview__container_information__category}> {itemviewSTATE[1]}: Laptops </h6>
                     <p className={s.itemview__container_information__description}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptates! </p>
                     <span className={s.itemview__container_information__rating}>
                         <span className={s.itemview__container_information__rating_stars}>
@@ -60,9 +76,9 @@ function ItemView() {
                     </span>
                     <strong className={s.itemview__container_information__price}> $ 999 USD </strong>
                     <span className={s.itemview__container_information__buttons}>
-                        <button className={s.itemview__container_information__buttons_buy}> <i className='fa-regular fa-credit-card fa-1x'></i> Buy </button>
-                        <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> Add to Favorite </button>
-                        <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> Add to Cart </button>
+                        <button className={s.itemview__container_information__buttons_buy}> <i className='fa-regular fa-credit-card fa-1x'></i> {itemviewSTATE[2]} </button>
+                        <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> {itemviewSTATE[3]} </button>
+                        <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> {itemviewSTATE[4]} </button>
                     </span>
                 </div>
 

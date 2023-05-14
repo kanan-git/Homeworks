@@ -17,13 +17,29 @@ import {useState, useEffect, useRef} from 'react'
 function MyCart() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    const [mycartSTATE, setMycartSTATE] = useState(dataSource.english.mycart)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#language")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        setMycartSTATE(dataSource.english.mycart)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        setMycartSTATE(dataSource.azerbaijani.mycart)
+                    } else if (languageData.value == "Türkçe") {
+                        setMycartSTATE(dataSource.turkish.mycart)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.mycart}>
             <div className={s.mycart__topside}>
-                <b className={s.mycart__topside_header}> My Cart: "10" </b>
-                <i className={s.mycart__topside_price}> Total Price: $ "9'999" USD </i>
+                <b className={s.mycart__topside_header}> {mycartSTATE[0]}: "10" </b>
+                <i className={s.mycart__topside_price}> {mycartSTATE[1]}: $ "9'999" USD </i>
             </div>
             <div className={s.mycart__container}>
 

@@ -17,7 +17,23 @@ import {useState, useEffect, useRef} from 'react'
 function FailedMessage() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    const [failSTATE, setFailSTATE] = useState(dataSource.english.popup_failedmessage)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#langAuth")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        setFailSTATE(dataSource.english.popup_failedmessage)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        setFailSTATE(dataSource.azerbaijani.popup_failedmessage)
+                    } else if (languageData.value == "Türkçe") {
+                        setFailSTATE(dataSource.turkish.popup_failedmessage)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <>
@@ -28,7 +44,7 @@ function FailedMessage() {
                     <i className='fa-solid fa-xmark fa-1x'></i>
                 </div>
                 <p className={s.failedmessage__text}>
-                    Your email or password is incorrect
+                    {failSTATE}
                 </p>
             </div>
         </>

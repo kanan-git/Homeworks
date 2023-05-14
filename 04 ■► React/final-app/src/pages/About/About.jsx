@@ -158,6 +158,16 @@ function About() {
                         alt="grid-gallery-6" 
                         className={s.about__container_gallery__image_content}/>
                     </div>
+                    <div className={s.about__container_gallery__image}> {/* additional repeat from 6 */}
+                        <img src={grid_img_6} 
+                        alt="grid-gallery-6" 
+                        className={s.about__container_gallery__image_content}/>
+                    </div>
+                    <div className={s.about__container_gallery__image}> {/* additional repeat from 6 */}
+                        <img src={grid_img_6} 
+                        alt="grid-gallery-6" 
+                        className={s.about__container_gallery__image_content}/>
+                    </div>
                 </div>
 
                 <h3 className={s.about__container_headers}> { headersSTATE[2] } </h3>

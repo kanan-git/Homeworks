@@ -26,33 +26,30 @@ import Loading from './components/Pop-ups/Loading'
 
 function App() {
   // <FilterAside />   {/* part of products page | canceled */} <---------- build filter inside products page
-
-  // <SuccessfullySigned />   {/* language stuff */}
-  // <FailedMessage />   {/* language stuff */}
-  // <TermsAndConditions />   {/* language stuff */}
-  // <PrivacyPolicies />   {/* language stuff */}
-
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Header />   {/* done | NOTE*: which components gets language data from header, dont use them without header, so make new language input in authentication jsx */}
-      <Breadcrumb />   {/* fix language condition,  */}
+      <Header />
+      <Breadcrumb />   {/* fix language condition */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       {/* <Homepage /> */}
-      <About />   {/* carousel fix scaling, infinite loop, gallery grid count or space */}
-      <Contact />   {/* add API map */}
-      <ItemView />   {/* done for now, language stuff, not claimed data, only static texts */}
-      <MyCart />   {/* done for now, language stuff */}
-      <MyFav />   {/* done for now, language stuff */}
+      {/* <About /> */}
+      {/* <Contact />   add API map */}
+      {/* <ItemView />   gather data from clicked productCard with redux toolkit or prop */}
+      {/* <MyCart />   with redux tlk get amounts, replace with static references */}
+      {/* <MyFav />   with redux tlk get amounts, replace with static references */}
       <Purchase />   {/* language stuff, sass style sheets */}
       <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
-      <Products />   {/* map() api data and produce more product cards, filter show/hide function, dataSource languages feature */}
+      <Products />   {/* language stuff, map() api data and produce more product cards, filter show/hide function */}
 
       {/* <SignInOrUp /> */}
-
       {/* <Loading /> */}
+      {/* <SuccessfullySigned /> */}
+      {/* <FailedMessage /> */}
+      {/* <PrivacyPolicies /> */}
+      {/* <TermsAndConditions /> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Footer />
+      {/* <Footer /> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
