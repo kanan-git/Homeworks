@@ -37,6 +37,24 @@ function Products() {
     )
 
     console.log(statusHTMLstate)
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    const [_STATE, set_STATE] = useState(dataSource.english.products)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#language")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        set_STATE(dataSource.english.products)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        set_STATE(dataSource.azerbaijani.products)
+                    } else if (languageData.value == "Türkçe") {
+                        set_STATE(dataSource.turkish.products)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     if (statusHTMLstate == "greenLight") {
         console.log(statusHTMLstate)

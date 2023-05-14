@@ -17,7 +17,23 @@ import {useState, useEffect, useRef} from 'react'
 function Settings() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    const [_STATE, set_STATE] = useState(dataSource.english.settings)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#language")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        set_STATE(dataSource.english.settings)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        set_STATE(dataSource.azerbaijani.settings)
+                    } else if (languageData.value == "Türkçe") {
+                        set_STATE(dataSource.turkish.settings)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.settings}>

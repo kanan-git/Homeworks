@@ -17,7 +17,23 @@ import {useState, useEffect, useRef} from 'react'
 function Purchase() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // ...
+    const [_STATE, set_STATE] = useState(dataSource.english.purchase)
+    useEffect(
+        () => {
+            return () => {
+                var languageData = document.querySelector("#language")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        set_STATE(dataSource.english.purchase)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        set_STATE(dataSource.azerbaijani.purchase)
+                    } else if (languageData.value == "Türkçe") {
+                        set_STATE(dataSource.turkish.purchase)
+                    }
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.purchase}>
