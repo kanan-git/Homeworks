@@ -38,9 +38,10 @@ function App() {
       {/* <ItemView />   gather data from clicked productCard with redux toolkit or prop */}
       {/* <MyCart />   with redux tlk get amounts, replace with static references */}
       {/* <MyFav />   with redux tlk get amounts, replace with static references */}
+
       {/* <Purchase />   sass style sheets */}
       {/* <Settings />   switching menus with buttons function */}
-      <Products />   {/* language stuff, map() api data and produce more product cards, filterAside show/hide function, loadmore transparent button underline */}
+      <Products />   {/* language stuff, map() api data and produce more product cards, filterAside show/hide function, loadmore transparent button underline, width height decrease - productCards */}
 
       {/* <SignInOrUp /> */}
       {/* <Loading /> */}
@@ -49,7 +50,7 @@ function App() {
       {/* <PrivacyPolicies /> */}
       {/* <TermsAndConditions /> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      {/* <Footer /> */}
+      <Footer />
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
