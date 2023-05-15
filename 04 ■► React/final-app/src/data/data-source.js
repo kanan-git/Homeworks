@@ -120,7 +120,66 @@ export const dataSource = {
             "Cart", 
             "Favorites"
         ],
-        settings: {}, // not started ▲
+        settings: {
+            buttons: [
+                "Account", 
+                "Payment", 
+                "Shipping", 
+                "Order", 
+                "Notification", 
+                "Security"
+            ],
+            titles: [
+                "Account Settings", 
+                "Payment Settings", 
+                "Shipping Settings", 
+                "Order Settings", 
+                "Notification Settings", 
+                "Security Settings"
+            ],
+            headers: [
+                "Profile Information", 
+                "Change Password", 
+                "Communication Preferences", 
+                "Privacy Settings", 
+                "Payment Methods", 
+                "Billing Information", 
+                "Auto-Payment Setup", 
+                "Shipping Addresses", 
+                "Preferred Shipping Method", 
+                "Tracking Notifications", 
+                "Order History", 
+                "Order Notifications", 
+                "Returns and Refunds", 
+                "General Notifications", 
+                "Price Drop Notifications", 
+                "Stock Availability Notifications", 
+                "Two-Factor Authentication", 
+                "Connected Devices", 
+                "Account Activity"
+            ],
+            text_contents: [
+                "Allows users to update their personal information such as name, email address, and contact details.", 
+                "Enables users to change their account password.", 
+                "Allows users to manage their email subscriptions and notification settings.", 
+                "Provides options for users to control their privacy preferences, such as opting out of targeted advertising.", 
+                "Allows users to add, edit, or remove payment methods, such as credit cards or PayPal accounts.", 
+                "Provides a form for users to enter or update their billing address and other relevant details.", 
+                "Enables users to set up automatic recurring payments for subscription-based services if applicable.", 
+                "Allows users to add, edit, or remove shipping addresses for different delivery locations.", 
+                "Enables users to select their preferred shipping method, such as standard or express delivery.", 
+                "Provides options for users to choose whether they want to receive shipping status updates via email or text messages.", 
+                "Displays a comprehensive list of past orders, including order details, tracking information, and invoices.", 
+                "Allows users to manage their preferences for receiving order confirmation emails and updates.", 
+                "Provides information and guidelines for initiating returns and refunds, along with tracking the progress of ongoing return requests.", 
+                "Enables users to control their preferences for receiving general notifications, such as promotions or new product alerts.", 
+                "Allows users to opt-in for notifications when the prices of specific items drop.", 
+                "Provides options for users to subscribe to notifications when out-of-stock items become available again.", 
+                "Allows users to enable or disable two-factor authentication for added account security.", 
+                "Displays a list of devices currently logged into the user's account and provides the option to log out from any unrecognized devices.", 
+                "Provides a log of recent account activity, including login attempts and password changes."
+            ]
+        },
         signinorup: {
             selections: ["Login", "Register"], 
             loginform: ["Welcome to ShopNet", "Email:", "Password:", "Sign in"], 
@@ -317,7 +376,66 @@ export const dataSource = {
             "Səbət", 
             "Favorilər"
         ],
-        settings: {},
+        settings: {
+            buttons: [
+                "Hesab", 
+                "Ödəniş", 
+                "Göndərmə", 
+                "Sifariş verin", 
+                "Bildiriş", 
+                "Təhlükəsizlik"
+            ],
+            titles: [
+                "Hesab Parametrləri", 
+                "Ödəniş Parametrləri", 
+                "Göndərmə Parametrləri", 
+                "Sifariş Parametrləri", 
+                "Bildiriş Parametrləri", 
+                "Təhlükəsizlik Parametrləri"
+            ],
+            headers: [
+                "Profil Məlumatı", 
+                "Parolun dəyişdirilməsi", 
+                "Ünsiyyət üstünlükləri", 
+                "Məxfilik Parametrləri", 
+                "Ödəmə metodları", 
+                "Ödəmə məlumatı", 
+                "Avtomatik Ödəniş Quraşdırması", 
+                "Çatdırılma Ünvanları", 
+                "Üstünlük Verilən Göndərmə Metodu", 
+                "İzləmə Bildirişləri", 
+                "Sifariş Tarixi", 
+                "Sifariş bildirişləri", 
+                "Qaytarmalar və Geri Ödənişlər", 
+                "Ümumi Bildirişlər", 
+                "Qiymət Düşüşü Bildirişləri", 
+                "Ehtiyatların mövcudluğu haqqında bildirişlər", 
+                "İki faktorlu autentifikasiya", 
+                "Qoşulmuş Cihazlar", 
+                "Hesab Fəaliyyəti"
+            ],
+            text_contents: [
+                "İstifadəçilərə ad, e-poçt ünvanı və əlaqə məlumatları kimi şəxsi məlumatlarını yeniləməyə imkan verir.", 
+                "İstifadəçilərə hesab parollarını dəyişməyə imkan verir.", 
+                "İstifadəçilərə e-poçt abunəliklərini və bildiriş parametrlərini idarə etməyə imkan verir.", 
+                "İstifadəçilərə hədəflənmiş reklamdan imtina kimi məxfilik seçimlərinə nəzarət etmək üçün seçimlər təqdim edir.", 
+                "İstifadəçilərə kredit kartları və ya PayPal hesabları kimi ödəniş üsullarını əlavə etmək, redaktə etmək və ya silmək imkanı verir.", 
+                "İstifadəçilər üçün faktura ünvanlarını və digər müvafiq təfərrüatları daxil etmək və ya yeniləmək üçün forma təqdim edir.", 
+                "Mümkünsə, istifadəçilərə abunə əsaslı xidmətlər üçün avtomatik təkrarlanan ödənişlər qurmağa imkan verir.", 
+                "İstifadəçilərə müxtəlif çatdırılma yerləri üçün göndərmə ünvanlarını əlavə etmək, redaktə etmək və ya silmək imkanı verir.", 
+                "İstifadəçilərə standart və ya sürətli çatdırılma kimi üstünlük verilən göndərmə üsulunu seçmək imkanı verir.", 
+                "İstifadəçilərə e-poçt və ya mətn mesajları vasitəsilə göndərmə statusu yeniləmələrini almaq istəmədiklərini seçmək üçün seçimlər təqdim edir.", 
+                "Sifariş təfərrüatları, izləmə məlumatları və fakturalar daxil olmaqla keçmiş sifarişlərin hərtərəfli siyahısını göstərir.", 
+                "İstifadəçilərə sifariş təsdiqi e-poçtları və yeniləmələri almaq üçün öz seçimlərini idarə etməyə imkan verir.", 
+                "Davam edən geri qaytarma sorğularının gedişatını izləməklə yanaşı, geri qaytarma və geri ödəmələrə başlamaq üçün məlumat və təlimatlar təqdim edir.", 
+                "İstifadəçilərə promosyonlar və ya yeni məhsul xəbərdarlığı kimi ümumi bildirişlər almaq üçün seçimlərinə nəzarət etməyə imkan verir.", 
+                "İstifadəçilərə xüsusi əşyaların qiymətləri düşdüyü zaman bildirişlərə qoşulmağa imkan verir.", 
+                "Ehtiyatda olmayan məhsullar yenidən əlçatan olduqda istifadəçilər üçün bildirişlərə abunə olmaq üçün seçimlər təqdim edir.", 
+                "İstifadəçilərə əlavə hesab təhlükəsizliyi üçün iki faktorlu autentifikasiyanı aktivləşdirməyə və ya söndürməyə imkan verir.", 
+                "Hazırda istifadəçinin hesabına daxil olan cihazların siyahısını göstərir və hər hansı tanınmayan cihazlardan çıxmaq seçimini təmin edir.", 
+                "Giriş cəhdləri və parol dəyişiklikləri daxil olmaqla, son hesab fəaliyyətinin jurnalını təmin edir."
+            ]
+        },
         signinorup: {
             selections: ["Daxil ol", "Qeydiyyatdan keçin"], 
             loginform: ["ShopNet-ə xoş gəlmisiniz", "E-poçt:", "Parol:", "Daxil ol"], 
@@ -514,7 +632,66 @@ export const dataSource = {
             "Sepet", 
             "Favoriler"
         ],
-        settings: {},
+        settings: {
+            buttons: [
+                "Hesap", 
+                "Ödeme", 
+                "Nakliye", 
+                "Satın alma", 
+                "Bildiri", 
+                "Güvenlik"
+            ],
+            titles: [
+                "Hesap Ayarları", 
+                "Ödeme Ayarları", 
+                "Nakliye Ayarları", 
+                "Satın alma Ayarları", 
+                "Bildiri Ayarları", 
+                "Güvenlik Ayarları"
+            ],
+            headers: [
+                "Profil bilgisi", 
+                "Şifre değiştir", 
+                "İletişim Tercihleri", 
+                "Gizlilik ayarları", 
+                "Ödeme metodları", 
+                "Fatura bilgileri", 
+                "Otomatik Ödeme Kurulumu", 
+                "Teslimat Adresleri", 
+                "Tercih Edilen Nakliye Yöntemi", 
+                "İzleme Bildirimleri", 
+                "Sipariş Geçmişi", 
+                "Sipariş Bildirimleri", 
+                "İade ve Geri Ödemeler", 
+                "Genel Bildirimler", 
+                "Fiyat Düşüş Bildirimleri", 
+                "Stok Durumu Bildirimleri", 
+                "İki Faktörlü Kimlik Doğrulama", 
+                "Bağlı cihazlar", 
+                "Hesap haraketliliği"
+            ],
+            text_contents: [
+                "Kullanıcıların ad, e-posta adresi ve iletişim bilgileri gibi kişisel bilgilerini güncellemesine izin verir.", 
+                "Kullanıcıların hesap şifrelerini değiştirmelerini sağlar.", 
+                "Kullanıcıların e-posta aboneliklerini ve bildirim ayarlarını yönetmelerine izin verir.", 
+                "Kullanıcılara, hedefli reklamları devre dışı bırakmak gibi gizlilik tercihlerini kontrol etmeleri için seçenekler sunar.", 
+                "Kullanıcıların, kredi kartları veya PayPal hesapları gibi ödeme yöntemlerini eklemesine, düzenlemesine veya kaldırmasına izin verir.", 
+                "Kullanıcıların fatura adreslerini ve diğer ilgili ayrıntıları girmesi veya güncellemesi için bir form sağlar.", 
+                "Kullanıcıların, mümkünse abonelik tabanlı hizmetler için otomatik yinelenen ödemeler ayarlamasına olanak tanır.", 
+                "Kullanıcıların farklı teslimat yerleri için gönderi adresleri eklemesine, düzenlemesine veya kaldırmasına izin verir.", 
+                "Kullanıcıların standart veya ekspres teslimat gibi tercih ettikleri nakliye yöntemini seçmelerine olanak tanır.", 
+                "Kullanıcılara, gönderi durumu güncellemelerini e-posta veya kısa mesaj yoluyla almak isteyip istemediklerini seçmeleri için seçenekler sunar.", 
+                "Sipariş ayrıntıları, izleme bilgileri ve faturalar dahil olmak üzere geçmiş siparişlerin kapsamlı bir listesini görüntüler.", 
+                "Kullanıcıların, sipariş onayı e-postaları ve güncellemeleri alma tercihlerini yönetmelerine olanak tanır.", 
+                "Devam eden iade taleplerinin ilerleyişini izlemenin yanı sıra iadeleri ve geri ödemeleri başlatmak için bilgi ve yönergeler sağlar.", 
+                "Kullanıcıların, promosyonlar veya yeni ürün uyarıları gibi genel bildirimleri alma tercihlerini kontrol etmelerini sağlar.", 
+                "Kullanıcıların, belirli öğelerin fiyatları düştüğünde bildirim almayı etkinleştirmesine olanak tanır.", 
+                "Kullanıcılara, stokta olmayan ürünler tekrar kullanılabilir olduğunda bildirimlere abone olma seçenekleri sunar.", 
+                "Ek hesap güvenliği için kullanıcıların iki faktörlü kimlik doğrulamayı etkinleştirmesine veya devre dışı bırakmasına izin verir.", 
+                "Kullanıcının hesabında oturum açmış olan cihazların bir listesini görüntüler ve tanınmayan cihazlardan çıkış yapma seçeneği sunar.", 
+                "Giriş denemeleri ve şifre değişiklikleri de dahil olmak üzere son hesap etkinliğinin günlüğünü sağlar."
+            ]
+        },
         signinorup: {
             selections: ["Giriş yap", "Kayıt ol"], 
             loginform: ["ShopNet'e hoş geldiniz", "E-posta:", "Şifre:", "Giriş yap"], 

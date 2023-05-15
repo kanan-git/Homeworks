@@ -39,8 +39,8 @@ function App() {
       {/* <MyCart />   with redux tlk get amounts, replace with static references */}
       {/* <MyFav />   with redux tlk get amounts, replace with static references */}
       {/* <Purchase />   sass style sheets */}
-      <Settings />   language stuff, switching menus
-      <Products />   {/* language stuff, map() api data and produce more product cards, filter show/hide function */}
+      {/* <Settings />   switching menus with buttons function */}
+      <Products />   {/* language stuff, map() api data and produce more product cards, filterAside show/hide function, loadmore transparent button underline */}
 
       {/* <SignInOrUp /> */}
       {/* <Loading /> */}

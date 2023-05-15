@@ -17,18 +17,30 @@ import {useState, useEffect, useRef} from 'react'
 function Settings() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [_STATE, set_STATE] = useState(dataSource.english.settings)
+    const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.settings.buttons)
+    const [titlesSTATE, setTitlesSTATE] = useState(dataSource.english.settings.titles)
+    const [headersSTATE, setHeadersSTATE] = useState(dataSource.english.settings.headers)
+    const [textSTATE, setTextSTATE] = useState(dataSource.english.settings.text_contents)
     useEffect(
         () => {
             return () => {
                 var languageData = document.querySelector("#language")
                 languageData.addEventListener("change", () => {
                     if (languageData.value == "English") {
-                        set_STATE(dataSource.english.settings)
+                        setButtonsSTATE(dataSource.english.settings.buttons)
+                        setTitlesSTATE(dataSource.english.settings.titles)
+                        setHeadersSTATE(dataSource.english.settings.headers)
+                        setTextSTATE(dataSource.english.settings.text_contents)
                     } else if (languageData.value == "Azərbaycan dili") {
-                        set_STATE(dataSource.azerbaijani.settings)
+                        setButtonsSTATE(dataSource.azerbaijani.settings.buttons)
+                        setTitlesSTATE(dataSource.azerbaijani.settings.titles)
+                        setHeadersSTATE(dataSource.azerbaijani.settings.headers)
+                        setTextSTATE(dataSource.azerbaijani.settings.text_contents)
                     } else if (languageData.value == "Türkçe") {
-                        set_STATE(dataSource.turkish.settings)
+                        setButtonsSTATE(dataSource.turkish.settings.buttons)
+                        setTitlesSTATE(dataSource.turkish.settings.titles)
+                        setHeadersSTATE(dataSource.turkish.settings.headers)
+                        setTextSTATE(dataSource.turkish.settings.text_contents)
                     }
                 })
             }
@@ -38,74 +50,74 @@ function Settings() {
     return (
         <main className={s.settings}>
             <ul className={s.settings__menu}>
-                <li className={s.settings__menu_buttons}> Account </li>
-                <li className={s.settings__menu_buttons}> Payment </li>
-                <li className={s.settings__menu_buttons}> Shipping </li>
-                <li className={s.settings__menu_buttons}> Order </li>
-                <li className={s.settings__menu_buttons}> Notification </li>
-                <li className={s.settings__menu_buttons}> Security </li>
+                <li className={s.settings__menu_buttons} id="menu-btn-account"> {buttonsSTATE[0]} </li>
+                <li className={s.settings__menu_buttons} id="menu-btn-payment"> {buttonsSTATE[1]} </li>
+                <li className={s.settings__menu_buttons} id="menu-btn-shipping"> {buttonsSTATE[2]} </li>
+                <li className={s.settings__menu_buttons} id="menu-btn-order"> {buttonsSTATE[3]} </li>
+                <li className={s.settings__menu_buttons} id="menu-btn-notification"> {buttonsSTATE[4]} </li>
+                <li className={s.settings__menu_buttons} id="menu-btn-security"> {buttonsSTATE[5]} </li>
             </ul>
             <div className={s.settings__container}>
                 <div className={s.settings__container_section} id={s.setting_section_1}>
-                    <h1 className={s.settings__container_section__title}> Account Settings </h1>
-                    <h3 className={s.settings__container_section__headers}> Profile Information </h3>
-                    Allows users to update their personal information such as name, email address, and contact details.
-                    <h3 className={s.settings__container_section__headers}> Change Password </h3>
-                    Enables users to change their account password.
-                    <h3 className={s.settings__container_section__headers}> Communication Preferences </h3>
-                    Allows users to manage their email subscriptions and notification settings.
-                    <h3 className={s.settings__container_section__headers}> Privacy Settings </h3>
-                    Provides options for users to control their privacy preferences, such as opting out of targeted advertising.
+                    <h1 className={s.settings__container_section__title}> {titlesSTATE[0]} </h1>
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[0]} </h3>
+                    {textSTATE[0]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[1]} </h3>
+                    {textSTATE[1]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[2]} </h3>
+                    {textSTATE[2]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[3]} </h3>
+                    {textSTATE[3]}
                 </div>
 
                 <div className={s.settings__container_section} id={s.setting_section_2}>
-                    <h1 className={s.settings__container_section__title}> Payment Settings </h1>
-                    <h3 className={s.settings__container_section__headers}> Payment Methods </h3>
-                    Allows users to add, edit, or remove payment methods, such as credit cards or PayPal accounts.
-                    <h3 className={s.settings__container_section__headers}> Billing Information </h3>
-                    Provides a form for users to enter or update their billing address and other relevant details.
-                    <h3 className={s.settings__container_section__headers}> Auto-Payment Setup </h3>
-                    Enables users to set up automatic recurring payments for subscription-based services if applicable.
+                    <h1 className={s.settings__container_section__title}> {titlesSTATE[1]} </h1>
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[4]} </h3>
+                    {textSTATE[4]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[5]} </h3>
+                    {textSTATE[5]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[6]} </h3>
+                    {textSTATE[6]}
                 </div>
 
                 <div className={s.settings__container_section} id={s.setting_section_3}>
-                    <h1 className={s.settings__container_section__title}> Shipping Settings </h1>
-                    <h3 className={s.settings__container_section__headers}> Shipping Addresses </h3>
-                    Allows users to add, edit, or remove shipping addresses for different delivery locations.
-                    <h3 className={s.settings__container_section__headers}> Preferred Shipping Method </h3>
-                    Enables users to select their preferred shipping method, such as standard or express delivery.
-                    <h3 className={s.settings__container_section__headers}> Tracking Notifications </h3>
-                    Provides options for users to choose whether they want to receive shipping status updates via email or text messages.
+                    <h1 className={s.settings__container_section__title}> {titlesSTATE[2]} </h1>
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[7]} </h3>
+                    {textSTATE[7]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[8]} </h3>
+                    {textSTATE[8]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[9]} </h3>
+                    {textSTATE[9]}
                 </div>
 
                 <div className={s.settings__container_section} id={s.setting_section_4}>
-                    <h1 className={s.settings__container_section__title}> Order Settings </h1>
-                    <h3 className={s.settings__container_section__headers}> Order History </h3>
-                    Displays a comprehensive list of past orders, including order details, tracking information, and invoices.
-                    <h3 className={s.settings__container_section__headers}> Order Notifications </h3>
-                    Allows users to manage their preferences for receiving order confirmation emails and updates.
-                    <h3 className={s.settings__container_section__headers}> Returns and Refunds </h3>
-                    Provides information and guidelines for initiating returns and refunds, along with tracking the progress of ongoing return requests.
+                    <h1 className={s.settings__container_section__title}> {titlesSTATE[3]} </h1>
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[10]} </h3>
+                    {textSTATE[10]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[11]} </h3>
+                    {textSTATE[11]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[12]} </h3>
+                    {textSTATE[12]}
                 </div>
 
                 <div className={s.settings__container_section} id={s.setting_section_5}>
-                    <h1 className={s.settings__container_section__title}> Notification Settings </h1>
-                    <h3 className={s.settings__container_section__headers}> General Notifications </h3>
-                    Enables users to control their preferences for receiving general notifications, such as promotions or new product alerts.
-                    <h3 className={s.settings__container_section__headers}> Price Drop Notifications </h3>
-                    Allows users to opt-in for notifications when the prices of specific items drop.
-                    <h3 className={s.settings__container_section__headers}> Stock Availability Notifications </h3>
-                    Provides options for users to subscribe to notifications when out-of-stock items become available again.
+                    <h1 className={s.settings__container_section__title}> {titlesSTATE[4]} </h1>
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[13]} </h3>
+                    {textSTATE[13]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[14]} </h3>
+                    {textSTATE[14]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[15]} </h3>
+                    {textSTATE[15]}
                 </div>
 
                 <div className={s.settings__container_section} id={s.setting_section_6}>
-                    <h1 className={s.settings__container_section__title}> Security Settings </h1>
-                    <h3 className={s.settings__container_section__headers}> Two-Factor Authentication </h3>
-                    Allows users to enable or disable two-factor authentication for added account security.
-                    <h3 className={s.settings__container_section__headers}> Connected Devices </h3>
-                    Displays a list of devices currently logged into the user's account and provides the option to log out from any unrecognized devices.
-                    <h3 className={s.settings__container_section__headers}> Account Activity </h3>
-                    Provides a log of recent account activity, including login attempts and password changes.
+                    <h1 className={s.settings__container_section__title}> {titlesSTATE[5]} </h1>
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[16]} </h3>
+                    {textSTATE[16]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[17]} </h3>
+                    {textSTATE[17]}
+                    <h3 className={s.settings__container_section__headers}> {headersSTATE[18]} </h3>
+                    {textSTATE[18]}
                 </div>
                 
 
