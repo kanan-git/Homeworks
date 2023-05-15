@@ -109,7 +109,17 @@ export const dataSource = {
         ],
         myfav: "My Favorites",
         products: {}, // not started ▲
-        purchase: {}, // not started ▲
+        purchase: [
+            "Your purchase has been successfully completed", 
+            "Product Name", 
+            "Category", 
+            "Description", 
+            "Price", 
+            "Back to", 
+            "Homepage", 
+            "Cart", 
+            "Favorites"
+        ],
         settings: {}, // not started ▲
         signinorup: {
             selections: ["Login", "Register"], 
@@ -296,7 +306,17 @@ export const dataSource = {
         ],
         myfav: "Favorilərim",
         products: {},
-        purchase: {},
+        purchase: [
+            "Sifarişiniz uğurla tamamlandı", 
+            "Məhsulun adı", 
+            "Kateqoriya", 
+            "Ətraflı", 
+            "Qiyməti", 
+            "Geriyə", 
+            "Əsas səhifə", 
+            "Səbət", 
+            "Favorilər"
+        ],
         settings: {},
         signinorup: {
             selections: ["Daxil ol", "Qeydiyyatdan keçin"], 
@@ -483,7 +503,17 @@ export const dataSource = {
         ],
         myfav: "Favorilerim",
         products: {},
-        purchase: {},
+        purchase: [
+            "Satın alma işleminiz başarıyla tamamlandı", 
+            "Ürün adı", 
+            "Kategori", 
+            "Detaylar", 
+            "Fiyatı", 
+            "Geri dön", 
+            "Anasayfa", 
+            "Sepet", 
+            "Favoriler"
+        ],
         settings: {},
         signinorup: {
             selections: ["Giriş yap", "Kayıt ol"], 

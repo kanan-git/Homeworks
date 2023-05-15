@@ -38,8 +38,8 @@ function App() {
       {/* <ItemView />   gather data from clicked productCard with redux toolkit or prop */}
       {/* <MyCart />   with redux tlk get amounts, replace with static references */}
       {/* <MyFav />   with redux tlk get amounts, replace with static references */}
-      <Purchase />   {/* language stuff, sass style sheets */}
-      <Settings />   {/* language stuff, complete inside of containers, headers, inputs, buttons, sections, sass style sheets */}
+      {/* <Purchase />   sass style sheets */}
+      <Settings />   language stuff, switching menus
       <Products />   {/* language stuff, map() api data and produce more product cards, filter show/hide function */}
 
       {/* <SignInOrUp /> */}

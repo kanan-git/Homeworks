@@ -46,42 +46,66 @@ function Settings() {
                 <li className={s.settings__menu_buttons}> Security </li>
             </ul>
             <div className={s.settings__container}>
-                <div className={s.settings__container_section}>
-                    Account Settings:
-                    Profile Information: Allows users to update their personal information such as name, email address, and contact details.
-                    Change Password: Enables users to change their account password.
-                    Communication Preferences: Allows users to manage their email subscriptions and notification settings.
-                    Privacy Settings: Provides options for users to control their privacy preferences, such as opting out of targeted advertising.
+                <div className={s.settings__container_section} id={s.setting_section_1}>
+                    <h1 className={s.settings__container_section__title}> Account Settings </h1>
+                    <h3 className={s.settings__container_section__headers}> Profile Information </h3>
+                    Allows users to update their personal information such as name, email address, and contact details.
+                    <h3 className={s.settings__container_section__headers}> Change Password </h3>
+                    Enables users to change their account password.
+                    <h3 className={s.settings__container_section__headers}> Communication Preferences </h3>
+                    Allows users to manage their email subscriptions and notification settings.
+                    <h3 className={s.settings__container_section__headers}> Privacy Settings </h3>
+                    Provides options for users to control their privacy preferences, such as opting out of targeted advertising.
                 </div>
-                <div className={s.settings__container_section}>
-                    Payment Settings:
-                    Payment Methods: Allows users to add, edit, or remove payment methods, such as credit cards or PayPal accounts.
-                    Billing Information: Provides a form for users to enter or update their billing address and other relevant details.
-                    Auto-Payment Setup: Enables users to set up automatic recurring payments for subscription-based services if applicable.
+
+                <div className={s.settings__container_section} id={s.setting_section_2}>
+                    <h1 className={s.settings__container_section__title}> Payment Settings </h1>
+                    <h3 className={s.settings__container_section__headers}> Payment Methods </h3>
+                    Allows users to add, edit, or remove payment methods, such as credit cards or PayPal accounts.
+                    <h3 className={s.settings__container_section__headers}> Billing Information </h3>
+                    Provides a form for users to enter or update their billing address and other relevant details.
+                    <h3 className={s.settings__container_section__headers}> Auto-Payment Setup </h3>
+                    Enables users to set up automatic recurring payments for subscription-based services if applicable.
                 </div>
-                <div className={s.settings__container_section}>
-                    Shipping Settings:
-                    Shipping Addresses: Allows users to add, edit, or remove shipping addresses for different delivery locations.
-                    Preferred Shipping Method: Enables users to select their preferred shipping method, such as standard or express delivery.
-                    Tracking Notifications: Provides options for users to choose whether they want to receive shipping status updates via email or text messages.
+
+                <div className={s.settings__container_section} id={s.setting_section_3}>
+                    <h1 className={s.settings__container_section__title}> Shipping Settings </h1>
+                    <h3 className={s.settings__container_section__headers}> Shipping Addresses </h3>
+                    Allows users to add, edit, or remove shipping addresses for different delivery locations.
+                    <h3 className={s.settings__container_section__headers}> Preferred Shipping Method </h3>
+                    Enables users to select their preferred shipping method, such as standard or express delivery.
+                    <h3 className={s.settings__container_section__headers}> Tracking Notifications </h3>
+                    Provides options for users to choose whether they want to receive shipping status updates via email or text messages.
                 </div>
-                <div className={s.settings__container_section}>
-                    Order Settings:
-                    Order History: Displays a comprehensive list of past orders, including order details, tracking information, and invoices.
-                    Order Notifications: Allows users to manage their preferences for receiving order confirmation emails and updates.
-                    Returns and Refunds: Provides information and guidelines for initiating returns and refunds, along with tracking the progress of ongoing return requests.
+
+                <div className={s.settings__container_section} id={s.setting_section_4}>
+                    <h1 className={s.settings__container_section__title}> Order Settings </h1>
+                    <h3 className={s.settings__container_section__headers}> Order History </h3>
+                    Displays a comprehensive list of past orders, including order details, tracking information, and invoices.
+                    <h3 className={s.settings__container_section__headers}> Order Notifications </h3>
+                    Allows users to manage their preferences for receiving order confirmation emails and updates.
+                    <h3 className={s.settings__container_section__headers}> Returns and Refunds </h3>
+                    Provides information and guidelines for initiating returns and refunds, along with tracking the progress of ongoing return requests.
                 </div>
-                <div className={s.settings__container_section}>
-                    Notification Settings:
-                    General Notifications: Enables users to control their preferences for receiving general notifications, such as promotions or new product alerts.
-                    Price Drop Notifications: Allows users to opt-in for notifications when the prices of specific items drop.
-                    Stock Availability Notifications: Provides options for users to subscribe to notifications when out-of-stock items become available again.
+
+                <div className={s.settings__container_section} id={s.setting_section_5}>
+                    <h1 className={s.settings__container_section__title}> Notification Settings </h1>
+                    <h3 className={s.settings__container_section__headers}> General Notifications </h3>
+                    Enables users to control their preferences for receiving general notifications, such as promotions or new product alerts.
+                    <h3 className={s.settings__container_section__headers}> Price Drop Notifications </h3>
+                    Allows users to opt-in for notifications when the prices of specific items drop.
+                    <h3 className={s.settings__container_section__headers}> Stock Availability Notifications </h3>
+                    Provides options for users to subscribe to notifications when out-of-stock items become available again.
                 </div>
-                <div className={s.settings__container_section}>
-                    Security Settings:
-                    Two-Factor Authentication: Allows users to enable or disable two-factor authentication for added account security.
-                    Connected Devices: Displays a list of devices currently logged into the user's account and provides the option to log out from any unrecognized devices.
-                    Account Activity: Provides a log of recent account activity, including login attempts and password changes.
+
+                <div className={s.settings__container_section} id={s.setting_section_6}>
+                    <h1 className={s.settings__container_section__title}> Security Settings </h1>
+                    <h3 className={s.settings__container_section__headers}> Two-Factor Authentication </h3>
+                    Allows users to enable or disable two-factor authentication for added account security.
+                    <h3 className={s.settings__container_section__headers}> Connected Devices </h3>
+                    Displays a list of devices currently logged into the user's account and provides the option to log out from any unrecognized devices.
+                    <h3 className={s.settings__container_section__headers}> Account Activity </h3>
+                    Provides a log of recent account activity, including login attempts and password changes.
                 </div>
                 
 

@@ -17,18 +17,18 @@ import {useState, useEffect, useRef} from 'react'
 function Purchase() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [_STATE, set_STATE] = useState(dataSource.english.purchase)
+    const [purchaseSTATE, setPurchaseSTATE] = useState(dataSource.english.purchase)
     useEffect(
         () => {
             return () => {
                 var languageData = document.querySelector("#language")
                 languageData.addEventListener("change", () => {
                     if (languageData.value == "English") {
-                        set_STATE(dataSource.english.purchase)
+                        setPurchaseSTATE(dataSource.english.purchase)
                     } else if (languageData.value == "Azərbaycan dili") {
-                        set_STATE(dataSource.azerbaijani.purchase)
+                        setPurchaseSTATE(dataSource.azerbaijani.purchase)
                     } else if (languageData.value == "Türkçe") {
-                        set_STATE(dataSource.turkish.purchase)
+                        setPurchaseSTATE(dataSource.turkish.purchase)
                     }
                 })
             }
@@ -38,21 +38,21 @@ function Purchase() {
     return (
         <main className={s.purchase}>
             {/* ordered message */}
-            <p className={s.purchase__status}> Your purchase has been successfully completed </p>
+            <p className={s.purchase__status}> {purchaseSTATE[0]} </p>
             {/* ordered product info */}
             <ul className={s.purchase__infolist}>
-                <li className={s.purchase__infolist_items}> Product Name Here </li>
-                <li className={s.purchase__infolist_items}> Category </li>
-                <li className={s.purchase__infolist_items}> Describe </li>
-                <li className={s.purchase__infolist_items}> Price here $ 9'999.99 USD </li>
+                <li className={s.purchase__infolist_items}> {purchaseSTATE[1]}: HERE </li>
+                <li className={s.purchase__infolist_items}> {purchaseSTATE[2]}: HERE </li>
+                <li className={s.purchase__infolist_items}> {purchaseSTATE[3]}: HERE </li>
+                <li className={s.purchase__infolist_items}> {purchaseSTATE[4]}: $ HERE USD </li>
             </ul>
             {/* back to circle buttons */}
             <div className={s.purchase__buttons}>
-                <h4 className={s.purchase__buttons_header}> Back to: </h4>
+                <h4 className={s.purchase__buttons_header}> {purchaseSTATE[5]}: </h4>
                 <span className={s.purchase__buttons_list}>
-                    <button className={s.purchase__buttons_list__items}> Homepage </button>
-                    <button className={s.purchase__buttons_list__items}> Cart </button>
-                    <button className={s.purchase__buttons_list__items}> Favorites </button>
+                    <button className={s.purchase__buttons_list__items}> {purchaseSTATE[6]} </button>
+                    <button className={s.purchase__buttons_list__items}> {purchaseSTATE[7]} </button>
+                    <button className={s.purchase__buttons_list__items}> {purchaseSTATE[8]} </button>
                 </span>
             </div>
         </main>
