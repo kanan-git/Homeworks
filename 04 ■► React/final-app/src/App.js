@@ -34,7 +34,7 @@ function App() {
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Homepage />
       <About />
-      <Contact />   {/* add API map */}
+      <Contact />   {/* add API map with coordinates in frame like iframe */}
       <ItemView />   {/* gather data from clicked productCard with redux toolkit or prop */}
       <MyCart />   {/* with redux tlk get amounts, replace with static references */}
       <MyFav />   {/* with redux tlk get amounts, replace with static references */}

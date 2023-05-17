@@ -5,7 +5,7 @@ REACT FINAL PROJECT SHOPNET
 2 + components (filterAside complete with scss, make height same), butun popup window lari tamamla (failed, loading, 
 overlay, success, privacy policy, terms and condition)
 3 ~ component, page, popup lardaki eksiklikleri tamamla
-4 - routing install ve usage, oyren ve tetbiq et (stack overflow, chatgpt, youtube, mdn, w3)
+4 ~ routing install ve usage, oyren ve tetbiq et (stack overflow, chatgpt, youtube, mdn, w3)
 5 - dataflow - redux toolkit qos (store js, use also props somewhere which only require 1 place)
 6 - qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header)
 7 - guide txt (sass mobile responsivity, overall width scroll issue, sessionStorage, sign in up input writing rule and 
