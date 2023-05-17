@@ -38,18 +38,26 @@ function Products() {
 
     console.log(statusHTMLstate)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
-    const [_STATE, set_STATE] = useState(dataSource.english.products)
+    const [filterSTATE, setFilterSTATE] = useState(dataSource.english.products.filter)
+    const [sortSTATE, setSortSTATE] = useState(dataSource.english.products.sort)
+    const [buttonSTATE, setButtonSTATE] = useState(dataSource.english.products.button)
     useEffect(
         () => {
             return () => {
                 var languageData = document.querySelector("#language")
                 languageData.addEventListener("change", () => {
                     if (languageData.value == "English") {
-                        set_STATE(dataSource.english.products)
+                        setFilterSTATE(dataSource.english.products.filter)
+                        setSortSTATE(dataSource.english.products.sort)
+                        setButtonSTATE(dataSource.english.products.button)
                     } else if (languageData.value == "Azərbaycan dili") {
-                        set_STATE(dataSource.azerbaijani.products)
+                        setFilterSTATE(dataSource.azerbaijani.products.filter)
+                        setSortSTATE(dataSource.azerbaijani.products.sort)
+                        setButtonSTATE(dataSource.azerbaijani.products.button)
                     } else if (languageData.value == "Türkçe") {
-                        set_STATE(dataSource.turkish.products)
+                        setFilterSTATE(dataSource.turkish.products.filter)
+                        setSortSTATE(dataSource.turkish.products.sort)
+                        setButtonSTATE(dataSource.turkish.products.button)
                     }
                 })
             }
@@ -62,30 +70,92 @@ function Products() {
             <main className={s.products}>
                 {/* topside of product page - contains: filter show/hide (container 1100/1400 px) button, sort input select */}
                 <div className={s.products__topside}>
-                    <button className={s.products__topside_filterbtn}> Filter </button>
+                    <button className={s.products__topside_filterbtn}> {filterSTATE[0]} </button>
+                    <span className={s.products__topside_filtertags}>
+                        <button className={s.products__topside_filtertags__selected}>
+                            sample
+                            <button className={s.xmark}>
+                                <i className='fa-regular fa-circle-xmark fa-1x'></i>
+                            </button>
+                        </button>
+                    </span>
                     <select name="sorting" id="sorting" className={s.products__topside_sort}>
-                        <option value="Most purchased"> Most purchased </option>
-                        <option value="Price low to high"> Price low to high </option>
-                        <option value="Price high to low"> Price high to low </option>
-                        <option value="Rating low to high"> Rating low to high </option>
-                        <option value="Rating high to low"> Rating high to low </option>
+                        <option value="Most purchased"> {sortSTATE[0]} </option>
+                        <option value="Price low to high"> {sortSTATE[1]} </option>
+                        <option value="Price high to low"> {sortSTATE[2]} </option>
+                        <option value="Rating low to high"> {sortSTATE[3]} </option>
+                        <option value="Rating high to low"> {sortSTATE[4]} </option>
                     </select>
                 </div>
 
                 {/* <FilterAside /> */}
                 <form className={s.filteraside}>
+                    <h2 className={s.filteraside__header}> {filterSTATE[0]} </h2>
+
+                    <label htmlFor="price" className={s.filteraside__categories_label}> {filterSTATE[1]} </label>
+                    <span className={s.filteraside__categories}>
+                        <button className={s.filteraside__categories_buttons}> {filterSTATE[4]} </button>
+                        <button className={s.filteraside__categories_buttons}> {filterSTATE[5]} </button>
+                        <button className={s.filteraside__categories_buttons}> {filterSTATE[6]} </button>
+                        <button className={s.filteraside__categories_buttons}> {filterSTATE[7]} </button>
+                    </span>
                     
-                    <label htmlFor=""></label>
-                    <input type="text" />
+                    <label htmlFor="price" className={s.filteraside__price_label}> {filterSTATE[2]} </label>
+                    <span className={s.filteraside__price_container}>
+                        <input type="number" id="price" name="price" className={s.filteraside__price_container__input} placeholder="min. $ 0" min="0" max="999999" step="1" />
+                        <input type="number" id="price" name="price" className={s.filteraside__price_container__input} placeholder="max. $ 999'999" min="0" max="999999" step="1" />
+                    </span>
+                    {/* <span className={s.filteraside__price_sliders}>
+                        <input type="range" id={s.toMin} name="price" className={s.filteraside__price_sliders__input} min="0" max="100" step="1" defaultValue="10" />
+                        <input type="range" id={s.toMax} name="price" className={s.filteraside__price_sliders__input} min="0" max="100" step="1" defaultValue="90" />
+                    </span> */}
+                    <label htmlFor="rating" className={s.filteraside__rating_label}> {filterSTATE[3]} </label>
+                    <span className={s.filteraside__rating_container}>
+                        <span className={s.filteraside__rating_container__buttons}>
+                            <button className={s.filteraside__rating_container__buttons_item}>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
 
-                    - popular category buttons (electronics, men's clothing, women's clothing, jewelery ...)
-                    <br />
-                    - price range and input bars (min/max)
-                    <br />
-                    - by rating limit
-                    <br /> <br /> <br />
-                    "apply onChange, without submit, real-time"
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 4.5 {filterSTATE[8]} </i>
+                            </button>
+                        </span>
+                        <span className={s.filteraside__rating_container__buttons}>
+                            <button className={s.filteraside__rating_container__buttons_item}>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-regular fa-star fa-1x'></i>
 
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 4.0 {filterSTATE[8]} </i>
+                            </button>
+                        </span>
+                        <span className={s.filteraside__rating_container__buttons}>
+                            <button className={s.filteraside__rating_container__buttons_item}>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                <i className='fa-regular fa-star fa-1x'></i>
+
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 3.5 {filterSTATE[8]} </i>
+                            </button>
+                        </span>
+                        <span className={s.filteraside__rating_container__buttons}>
+                            <button className={s.filteraside__rating_container__buttons_item}>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-solid fa-star fa-1x'></i>
+                                <i className='fa-regular fa-star fa-1x'></i>
+                                <i className='fa-regular fa-star fa-1x'></i>
+
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 3.0 {filterSTATE[8]} </i>
+                            </button>
+                        </span>
+                    </span>
                 </form>
 
                 {/* container of product cards */}
@@ -124,6 +194,8 @@ function Products() {
                             </div>
                         )
                     }
+                    {/* button for load more items from API */}
+                    <button className={s.loadmore}> {buttonSTATE} </button>
                 </div>
             </main>
         )

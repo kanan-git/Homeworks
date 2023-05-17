@@ -41,7 +41,7 @@ function App() {
       {/* <Purchase />   gather data from purchased product */}
       {/* <Settings />   switching menus with buttons function, selected bg - buttons-active-bg */}
 
-      <Products />   language stuff, request more objects from API (learn how, try), filterAside inputs and its show/hide function, load more when scroll, load more button, sass style sheets
+      <Products />   sass style sheets, request more objects from API (learn how, try), filterAside inputs and its show/hide function
 
       {/* <SignInOrUp /> */}
       {/* <Loading /> */}

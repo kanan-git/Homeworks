@@ -62,6 +62,11 @@
                 color: var(--link-active-color);
             }
         }
+        &_filtertags {
+            &__selected {
+                .xmark {}
+            }
+        }
         &_sort {
             border: none;
             outline: none;
@@ -88,6 +93,24 @@
         opacity: 1.0; // 1.0 0.0
         transform: translateX(-0%); // -0% -100%
         flex-direction: column;
+        &__header {}
+        &__categories_label {}
+        &__categories {
+            &_buttons {}
+        }
+        &__price_label {}
+        &__price_container {
+            &__input {}
+        }
+        &__rating_label {}
+        &__rating_container {
+            &__buttons {
+                &_item {
+                    .fa-star {}
+                    &__text {}
+                }
+            }
+        }
     }
 
     .container {
@@ -209,6 +232,7 @@
                 }
             }
         }
+        .loadmore {}
     }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

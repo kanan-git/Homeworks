@@ -108,7 +108,27 @@ export const dataSource = {
             "My Cart", "Total Price"
         ],
         myfav: "My Favorites",
-        products: {}, // not started ▲
+        products: {
+            filter: [
+                "Filter", // 0
+                "by Categories", // 1
+                "by Price", // 2
+                "by Rating", // 3
+                "Electronics", // 4
+                "Men's clothing", // 5
+                "Women's clothing", // 6
+                "Jewelery", // 7
+                "or more" // 8
+            ],
+            sort: [
+                "Most sold", 
+                "Price low to high", 
+                "Price high to low", 
+                "Rating low to high", 
+                "Rating high to low"
+            ],
+            button: "Load More"
+        },
         purchase: [
             "Your purchase has been successfully completed", 
             "Product Name", 
@@ -364,7 +384,27 @@ export const dataSource = {
             "Səbətim", "Yekun məbləğ"
         ],
         myfav: "Favorilərim",
-        products: {},
+        products: {
+            filter: [
+                "Filtr", 
+                "Kateqoriyalar üzrə", 
+                "Qiymətə görə", 
+                "Reytinqi ilə", 
+                "Elektronika", 
+                "Kişi geyimləri", 
+                "Qadın geyimləri", 
+                "Zərgərlik", 
+                "və ya daha çox"
+            ],
+            sort: [
+                "Ən çox satılan", 
+                "Qiymət aşağıdan yuxarıya", 
+                "Qiymət yüksəkdən aşağıya", 
+                "Aşağıdan yuxarıya reytinq", 
+                "Yüksəkdən aşağıya reytinq"
+            ],
+            button: "Daha Çox"
+        },
         purchase: [
             "Sifarişiniz uğurla tamamlandı", 
             "Məhsulun adı", 
@@ -620,7 +660,27 @@ export const dataSource = {
             "Sepet", "Toplam fiyatı"
         ],
         myfav: "Favorilerim",
-        products: {},
+        products: {
+            filter: [
+                "Filtre", 
+                "Kategorilere göre", 
+                "Fiyata göre", 
+                "Değerlendirmeye göre", 
+                "Elektronik", 
+                "Erkek giyim", 
+                "Bayan giyimi", 
+                "Mücevher", 
+                "yada daha fazla"
+            ],
+            sort: [
+                "En çok satılan", 
+                "Fiyat düşükten yükseğe", 
+                "Fiyat pahalıdan ucuza", 
+                "Düşükten yükseğe derecelendirme", 
+                "Yüksekten düşüğe derecelendirme"
+            ],
+            button: "Daha Fazla"
+        },
         purchase: [
             "Satın alma işleminiz başarıyla tamamlandı", 
             "Ürün adı", 
