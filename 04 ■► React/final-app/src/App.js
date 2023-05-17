@@ -29,28 +29,27 @@ function App() {
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Header />   {/* add credit card amount-$ to userpanel under signed nickname */}
+      <Header />   {/* add credit card amount-$ to userpanel under signed nickname, routing, searching, authentication, profiles LorD lang in sessionStorage */}
       <Breadcrumb />   {/* fix language condition */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      {/* <Homepage /> */}
-      {/* <About /> */}
-      {/* <Contact />   add API map */}
-      {/* <ItemView />   gather data from clicked productCard with redux toolkit or prop */}
-      {/* <MyCart />   with redux tlk get amounts, replace with static references */}
-      {/* <MyFav />   with redux tlk get amounts, replace with static references */}
-      {/* <Purchase />   gather data from purchased product */}
-      {/* <Settings />   switching menus with buttons function, selected bg - buttons-active-bg */}
+      <Homepage />
+      <About />
+      <Contact />   {/* add API map */}
+      <ItemView />   {/* gather data from clicked productCard with redux toolkit or prop */}
+      <MyCart />   {/* with redux tlk get amounts, replace with static references */}
+      <MyFav />   {/* with redux tlk get amounts, replace with static references */}
+      <Purchase />   {/* gather data from purchased product */}
+      <Settings />   {/* switching menus with buttons function, selected bg - buttons-active-bg */}
+      <Products />   {/* request more objects from API (learn how, try), filterAside inputs and its show/hide function, sorting, filtering, routing */}
 
-      <Products />   sass style sheets, request more objects from API (learn how, try), filterAside inputs and its show/hide function
-
-      {/* <SignInOrUp /> */}
+      <SignInOrUp />
       {/* <Loading /> */}
       {/* <SuccessfullySigned /> */}
       {/* <FailedMessage /> */}
       {/* <PrivacyPolicies /> */}
       {/* <TermsAndConditions /> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Footer />
+      <Footer /> {/* routing */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
