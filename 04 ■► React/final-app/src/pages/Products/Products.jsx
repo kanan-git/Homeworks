@@ -32,11 +32,12 @@ function Products() {
     
     useEffect(
         () => {
-            getDataFromAPI()
+            return () => {
+                getDataFromAPI()
+                // console.log(statusHTMLstate)
+            }
         }, []
     )
-
-    console.log(statusHTMLstate)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [filterSTATE, setFilterSTATE] = useState(dataSource.english.products.filter)
     const [sortSTATE, setSortSTATE] = useState(dataSource.english.products.sort)
@@ -63,6 +64,40 @@ function Products() {
             }
         }, []
     )
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    const [fstatSTATE, setFstatSTATE] = useState("disabled")
+
+    function temName() {
+        var filterSection = document.querySelector("#filter-section")
+        var productsContainer = document.querySelector("#products-container")
+
+        // console.log(filterSection)
+        // console.log(productsContainer)
+
+        if (fstatSTATE == "disabled") {
+            // ---------- filter styles
+            filterSection.style.width = `300px` // 300px 0px
+            filterSection.style.visibility = `visible` // visible hidden
+            filterSection.style.opacity = `1.0` // 1.0 0.0
+            filterSection.style.transform = `translateX(-0%)` // -0% -100%
+            // ---------- container styles
+            productsContainer.style.width = `1100px` // 1100px 1400px
+            productsContainer.style.gap = `20px 12px` // 20px 12px  20px 28px
+            // console.log(productsContainer.style.width)
+            setFstatSTATE("enabled")
+        } else {
+            // ---------- filter styles
+            filterSection.style.width = `0px` // 300px 0px
+            filterSection.style.visibility = `hidden` // visible hidden
+            filterSection.style.opacity = `0.0` // 1.0 0.0
+            filterSection.style.transform = `translateX(-100%)` // -0% -100%
+            // ---------- container styles
+            productsContainer.style.width = `1400px` // 1100px 1400px
+            productsContainer.style.gap = `20px 28px` // 20px 12px  20px 28px
+            // console.log(productsContainer.style.width)
+            setFstatSTATE("disabled")
+        }
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     if (statusHTMLstate == "greenLight") {
         console.log(statusHTMLstate)
@@ -70,7 +105,7 @@ function Products() {
             <main className={s.products}>
                 {/* topside of product page - contains: filter show/hide (container 1100/1400 px) button, sort input select */}
                 <div className={s.products__topside}>
-                    <button className={s.products__topside_filterbtn}> {filterSTATE[0]} </button>
+                    <button className={s.products__topside_filterbtn} id="filter-button" onClick={temName}> {filterSTATE[0]} </button>
                     <span className={s.products__topside_filtertags}>
                         <button className={s.products__topside_filtertags__selected}>
                             sample
@@ -89,7 +124,7 @@ function Products() {
                 </div>
 
                 {/* <FilterAside /> */}
-                <form className={s.filteraside}>
+                <form className={s.filteraside} id="filter-section">
                     <h2 className={s.filteraside__header}> {filterSTATE[0]} </h2>
 
                     <label htmlFor="price" className={s.filteraside__categories_label}> {filterSTATE[1]} </label>
@@ -102,8 +137,8 @@ function Products() {
                     
                     <label htmlFor="price" className={s.filteraside__price_label}> {filterSTATE[2]} </label>
                     <span className={s.filteraside__price_container}>
-                        <input type="number" id="price" name="price" className={s.filteraside__price_container__input} placeholder="min. $ 0" min="0" max="999999" step="1" />
-                        <input type="number" id="price" name="price" className={s.filteraside__price_container__input} placeholder="max. $ 999'999" min="0" max="999999" step="1" />
+                        <input type="number" id="price_min" name="price" className={s.filteraside__price_container__input} placeholder="min. $ 0" min="0" max="999999" step="1" />
+                        <input type="number" id="price_max" name="price" className={s.filteraside__price_container__input} placeholder="max. $ 999'999" min="0" max="999999" step="1" />
                     </span>
                     {/* <span className={s.filteraside__price_sliders}>
                         <input type="range" id={s.toMin} name="price" className={s.filteraside__price_sliders__input} min="0" max="100" step="1" defaultValue="10" />
@@ -159,7 +194,7 @@ function Products() {
                 </form>
 
                 {/* container of product cards */}
-                <div className={s.container}>
+                <div className={s.container} id="products-container">
                     {/* ----- product cards ----- */}
                     {
                         apiSTATE.map(

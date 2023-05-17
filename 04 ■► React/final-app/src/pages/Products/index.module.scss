@@ -119,7 +119,7 @@
     // temporary component which FilterAside will replace it
     .filteraside {
         margin: 80px 0px 0px 0px; // top right bottom left
-        width: 300px; // 0px 300px
+        width: 0px; // 0px 300px
         height: 600px;
         border: none;
         border-right: 2px solid var(--borders-color);
@@ -127,9 +127,9 @@
         justify-content: flex-start;
         align-items: flex-start;
         transition: var(--slow-fx);
-        visibility: visible; // visible hidden
-        opacity: 1.0; // 1.0 0.0
-        transform: translateX(-0%); // -0% -100%
+        visibility: hidden; // visible hidden
+        opacity: 0.0; // 1.0 0.0
+        transform: translateX(-100%); // -0% -100%
         flex-direction: column;
         padding: 40px 0px 0px 0px; // top right bottom left
         &__header {
@@ -235,12 +235,12 @@
 
     .container {
         margin: 80px 0px 0px 0px; // top right bottom left
-        width: 1100px; // 1400px 1100px
+        width: 1400px; // 1400px 1100px
         height: auto;
         display: flex; // flex table-cell
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 20px 12px; // 20px 12px | 20px 28px
+        gap: 20px 28px; // 20px 12px | 20px 28px
         flex-wrap: wrap;
         border: none;
         padding: 20px;
@@ -363,7 +363,8 @@
             outline: none;
             transition: var(--quick-fx);
             position: relative;
-            width: fit-content;
+            // width: fit-content;
+            width: 100%;
             bottom: 0%;
             left: 50%;
             transform: translateX(-50%);

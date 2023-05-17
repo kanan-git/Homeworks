@@ -30,17 +30,17 @@ function App() {
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
       <Header />   {/* add credit card amount-$ to userpanel under signed nickname, routing, searching, authentication, profiles LorD lang in sessionStorage */}
-      <Breadcrumb />   {/* fix language condition */}
+      <Breadcrumb />   {/* add links from routing with store (redux tlk) */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Homepage />
-      <About />
+      <Homepage />   {/* done for now */}
+      <About />   {/* done for now */}
       <Contact />   {/* add API map with coordinates in frame like iframe */}
       <ItemView />   {/* gather data from clicked productCard with redux toolkit or prop */}
       <MyCart />   {/* with redux tlk get amounts, replace with static references */}
       <MyFav />   {/* with redux tlk get amounts, replace with static references */}
       <Purchase />   {/* gather data from purchased product */}
-      <Settings />   {/* switching menus with buttons function, selected bg - buttons-active-bg */}
-      <Products />   {/* request more objects from API (learn how, try), filterAside inputs and its show/hide function, sorting, filtering, routing */}
+      <Settings />   {/* done for now */}
+      <Products />   {/* request more objects from API (learn how, try), sorting, filtering, routing */}
 
       <SignInOrUp />
       {/* <Loading /> */}

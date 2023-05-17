@@ -16,6 +16,120 @@ import {useState, useEffect, useRef} from 'react'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Settings() {
     // ...
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    useEffect(
+        () => {
+            return () => {
+                var accountButton = document.querySelector("#menu-btn-account")
+                var paymentButton = document.querySelector("#menu-btn-payment")
+                var shippingButton = document.querySelector("#menu-btn-shipping")
+                var orderButton = document.querySelector("#menu-btn-order")
+                var notificationButton = document.querySelector("#menu-btn-notification")
+                var securityButton = document.querySelector("#menu-btn-security")
+                var settingsSections = Array.from(document.querySelectorAll(`.${s.settings__container_section}`))
+                // console.log(accountButton, paymentButton, shippingButton, orderButton, notificationButton, securityButton)
+                // console.log(settingsSections)
+                accountButton.style.backgroundColor = `var(--buttons-active-color)`
+                
+                accountButton.addEventListener("click", () => {
+                    // -------------------- selected buttons bg color
+                    accountButton.style.backgroundColor = `var(--buttons-active-color)`
+                    paymentButton.style.backgroundColor = `var(--buttons-color)`
+                    shippingButton.style.backgroundColor = `var(--buttons-color)`
+                    orderButton.style.backgroundColor = `var(--buttons-color)`
+                    notificationButton.style.backgroundColor = `var(--buttons-color)`
+                    securityButton.style.backgroundColor = `var(--buttons-color)`
+                    // -------------------- sections visibilities
+                    settingsSections[0].style.display = `flex`
+                    settingsSections[1].style.display = `none`
+                    settingsSections[2].style.display = `none`
+                    settingsSections[3].style.display = `none`
+                    settingsSections[4].style.display = `none`
+                    settingsSections[5].style.display = `none`
+                })
+                paymentButton.addEventListener("click", () => {
+                    // -------------------- selected buttons bg color
+                    accountButton.style.backgroundColor = `var(--buttons-color)`
+                    paymentButton.style.backgroundColor = `var(--buttons-active-color)`
+                    shippingButton.style.backgroundColor = `var(--buttons-color)`
+                    orderButton.style.backgroundColor = `var(--buttons-color)`
+                    notificationButton.style.backgroundColor = `var(--buttons-color)`
+                    securityButton.style.backgroundColor = `var(--buttons-color)`
+                    // -------------------- sections visibilities
+                    settingsSections[0].style.display = `none`
+                    settingsSections[1].style.display = `flex`
+                    settingsSections[2].style.display = `none`
+                    settingsSections[3].style.display = `none`
+                    settingsSections[4].style.display = `none`
+                    settingsSections[5].style.display = `none`
+                })
+                shippingButton.addEventListener("click", () => {
+                    // -------------------- selected buttons bg color
+                    accountButton.style.backgroundColor = `var(--buttons-color)`
+                    paymentButton.style.backgroundColor = `var(--buttons-color)`
+                    shippingButton.style.backgroundColor = `var(--buttons-active-color)`
+                    orderButton.style.backgroundColor = `var(--buttons-color)`
+                    notificationButton.style.backgroundColor = `var(--buttons-color)`
+                    securityButton.style.backgroundColor = `var(--buttons-color)`
+                    // -------------------- sections visibilities
+                    settingsSections[0].style.display = `none`
+                    settingsSections[1].style.display = `none`
+                    settingsSections[2].style.display = `flex`
+                    settingsSections[3].style.display = `none`
+                    settingsSections[4].style.display = `none`
+                    settingsSections[5].style.display = `none`
+                })
+                orderButton.addEventListener("click", () => {
+                    // -------------------- selected buttons bg color
+                    accountButton.style.backgroundColor = `var(--buttons-color)`
+                    paymentButton.style.backgroundColor = `var(--buttons-color)`
+                    shippingButton.style.backgroundColor = `var(--buttons-color)`
+                    orderButton.style.backgroundColor = `var(--buttons-active-color)`
+                    notificationButton.style.backgroundColor = `var(--buttons-color)`
+                    securityButton.style.backgroundColor = `var(--buttons-color)`
+                    // -------------------- sections visibilities
+                    settingsSections[0].style.display = `none`
+                    settingsSections[1].style.display = `none`
+                    settingsSections[2].style.display = `none`
+                    settingsSections[3].style.display = `flex`
+                    settingsSections[4].style.display = `none`
+                    settingsSections[5].style.display = `none`
+                })
+                notificationButton.addEventListener("click", () => {
+                    // -------------------- selected buttons bg color
+                    accountButton.style.backgroundColor = `var(--buttons-color)`
+                    paymentButton.style.backgroundColor = `var(--buttons-color)`
+                    shippingButton.style.backgroundColor = `var(--buttons-color)`
+                    orderButton.style.backgroundColor = `var(--buttons-color)`
+                    notificationButton.style.backgroundColor = `var(--buttons-active-color)`
+                    securityButton.style.backgroundColor = `var(--buttons-color)`
+                    // -------------------- sections visibilities
+                    settingsSections[0].style.display = `none`
+                    settingsSections[1].style.display = `none`
+                    settingsSections[2].style.display = `none`
+                    settingsSections[3].style.display = `none`
+                    settingsSections[4].style.display = `flex`
+                    settingsSections[5].style.display = `none`
+                })
+                securityButton.addEventListener("click", () => {
+                    // -------------------- selected buttons bg color
+                    accountButton.style.backgroundColor = `var(--buttons-color)`
+                    paymentButton.style.backgroundColor = `var(--buttons-color)`
+                    shippingButton.style.backgroundColor = `var(--buttons-color)`
+                    orderButton.style.backgroundColor = `var(--buttons-color)`
+                    notificationButton.style.backgroundColor = `var(--buttons-color)`
+                    securityButton.style.backgroundColor = `var(--buttons-active-color)`
+                    // -------------------- sections visibilities
+                    settingsSections[0].style.display = `none`
+                    settingsSections[1].style.display = `none`
+                    settingsSections[2].style.display = `none`
+                    settingsSections[3].style.display = `none`
+                    settingsSections[4].style.display = `none`
+                    settingsSections[5].style.display = `flex`
+                })
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.settings.buttons)
     const [titlesSTATE, setTitlesSTATE] = useState(dataSource.english.settings.titles)

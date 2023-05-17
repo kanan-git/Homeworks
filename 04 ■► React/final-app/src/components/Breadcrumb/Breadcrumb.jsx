@@ -20,14 +20,17 @@ function Breadcrumb() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     useEffect(
         () => {
-            // fake condition for now which will be replaced with input select language data with store (redux tlk)
-            var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
-            if (languageData == "English") {
-                setDataBC(dataSource.english.breadcrumb)
-            } else if (languageData == "Azərbaycan dili") {
-                setDataBC(dataSource.azerbaijani.breadcrumb)
-            } else if (languageData == "Türkçe") {
-                setDataBC(dataSource.turkish.breadcrumb)
+            return () => {
+                var languageData = document.querySelector("#language")
+                languageData.addEventListener("change", () => {
+                    if (languageData.value == "English") {
+                        setDataBC(dataSource.english.breadcrumb)
+                    } else if (languageData.value == "Azərbaycan dili") {
+                        setDataBC(dataSource.azerbaijani.breadcrumb)
+                    } else if (languageData.value == "Türkçe") {
+                        setDataBC(dataSource.turkish.breadcrumb)
+                    }
+                })
             }
         }, []
     )
@@ -36,10 +39,10 @@ function Breadcrumb() {
         <div className={s.breadcrumb}>
             <p className={s.breadcrumb__contents}>
                 ShopNet | {dataBC} → '
-                <a href="#" className={s.breadcrumb__contents_links}>Homepage</a>/
-                <a href="#" className={s.breadcrumb__contents_links}>Products</a>/
-                <a href="#" className={s.breadcrumb__contents_links}>Item view</a>/
-                <a href="#" className={s.breadcrumb__contents_links}>Purchase</a>
+                <a href="#" className={s.breadcrumb__contents_links}> Homepage </a>/
+                <a href="#" className={s.breadcrumb__contents_links}> Products </a>/
+                <a href="#" className={s.breadcrumb__contents_links}> Item view </a>/
+                <a href="#" className={s.breadcrumb__contents_links}> Purchase </a>
                 '
             </p>
         </div>
