@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 // import { store } from './app/store';
 import App from './App';
 // import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -19,6 +20,21 @@ root.render(
             {/* <Route path="/about" element={<About />} /> */}
             {/* <Route path="/products/view" element={<ItemView />} /> */}
             <App />
+
+            {/* <Router>
+              <Switch>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </Router> */}
+            
           {/* </Route> */}
         {/* </Routes> */}
       {/* </BrowserRouter> */}
@@ -34,4 +50,12 @@ root.render(
 // npm start (for starting react live server on port 3000)
 // update github: 1) git add .; 2) git commit -m "comment here"; 3) git push origin master
 // npm install react-router-dom
+// cd 04\ ■►\ React/final-app
+// npm start
+// *** watch sass *** //
+// git add .
+// git commit -m "."
+// git push origin master
+// git status
+// clear
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

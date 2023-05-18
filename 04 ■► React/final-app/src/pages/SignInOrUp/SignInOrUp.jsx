@@ -13,6 +13,7 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SignInOrUp() {
     const root = document.documentElement;
@@ -237,7 +238,7 @@ function SignInOrUp() {
                 <button className={s.signinorup__topside_lord}>  </button> {/* sun / moon     <i className='fa-solid fa-sun fa-1x'></i> */}
             </div>
 
-
+            
 
             {/* login (sign in) form window */}
             <form className={s.signinorup__login}>
@@ -332,6 +333,11 @@ function SignInOrUp() {
                     <i className='fa-solid fa-location-dot fa-1x'></i>
                     <p> {buttonsSTATE[2]} </p>
                 </button>
+
+                {/* <Router>
+                    <Link to="/">Homepage</Link>
+                </Router> */}
+
             </div>
         </main>
     )
