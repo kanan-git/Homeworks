@@ -15,6 +15,7 @@ root.render(
     {/* <Provider store={store}> */}
       {/* <BrowserRouter> */}
         {/* <Routes> */}
+        <Router>
           {/* <Route path="/" element={<App />}> */}
             {/* <Route path="/" element={<Homepage />} /> */}
             {/* <Route path="/about" element={<About />} /> */}
@@ -34,8 +35,9 @@ root.render(
                 </Route>
               </Switch>
             </Router> */}
-            
+
           {/* </Route> */}
+        </Router>
         {/* </Routes> */}
       {/* </BrowserRouter> */}
     {/* </Provider> */}

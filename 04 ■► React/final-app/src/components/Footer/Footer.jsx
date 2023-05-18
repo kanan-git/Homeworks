@@ -43,6 +43,19 @@ function Footer() {
             })
         }, []
     )
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // USE THEESE IN ALL COMPONENT AND PAGES WHICH THEY HAVE A BRIDGE, WHITH CONDITIONS, OPEN AND CLOSE FUNCTIONS
+
+    // import FailedMessage from './components/Pop-ups/FailedMessage'
+    // import SuccessfullySigned from './components/Pop-ups/SuccessfullySigned'
+    // import TermsAndConditions from './components/Pop-ups/TermsAndConditions'
+    // import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies'
+    // import Loading from './components/Pop-ups/Loading'
+    // // {/* <Loading /> */}
+    // // {/* <SuccessfullySigned /> */}
+    // // {/* <FailedMessage /> */}
+    // // {/* <PrivacyPolicies /> */}
+    // // {/* <TermsAndConditions /> */}
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <footer className={s.footer}>

@@ -27,39 +27,111 @@ import Loading from './components/Pop-ups/Loading'
 
 function App() {
   // <FilterAside />   {/* part of products page | canceled */} <---------- build filter inside products page
+  // {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
+  // <Header />   {/* add credit card amount-$ to userpanel under signed nickname, routing, searching, authentication, profiles LorD lang in sessionStorage */}
+  // <Breadcrumb />   {/* add links from routing with store (redux tlk) */}
+  // {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
+  // <Homepage />   {/* done for now */}
+  // <About />   {/* done for now */}
+  // <Contact />   {/* add API map with coordinates in frame like iframe */}
+  // <ItemView />   {/* gather data from clicked productCard with redux toolkit or prop */}
+  // <MyCart />   {/* with redux tlk get amounts, replace with static references */}
+  // <MyFav />   {/* with redux tlk get amounts, replace with static references */}
+  // <Purchase />   {/* gather data from purchased product */}
+  // <Settings />   {/* done for now */}
+  // <Products />   {/* request more objects from API (learn how, try), sorting, filtering, routing */}
+
+  // <SignInOrUp {/* while login, request from user-data, while register, send data object to user-data */} />
+
+  // {/* <Loading /> */}
+  // {/* <SuccessfullySigned /> */}
+  // {/* <FailedMessage /> */}
+  // {/* <PrivacyPolicies /> */}
+  // {/* <TermsAndConditions /> */}
+  // {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
+  // <Footer /> {/* routing */}
+  // {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Header />   {/* add credit card amount-$ to userpanel under signed nickname, routing, searching, authentication, profiles LorD lang in sessionStorage */}
-      <Breadcrumb />   {/* add links from routing with store (redux tlk) */}
-      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Homepage />   {/* done for now */}
-      <About />   {/* done for now */}
-      <Contact />   {/* add API map with coordinates in frame like iframe */}
-      <ItemView />   {/* gather data from clicked productCard with redux toolkit or prop */}
-      <MyCart />   {/* with redux tlk get amounts, replace with static references */}
-      <MyFav />   {/* with redux tlk get amounts, replace with static references */}
-      <Purchase />   {/* gather data from purchased product */}
-      <Settings />   {/* done for now */}
-      <Products />   {/* request more objects from API (learn how, try), sorting, filtering, routing */}
-
-      <SignInOrUp />
-      {/* <Loading /> */}
-      {/* <SuccessfullySigned /> */}
-      {/* <FailedMessage /> */}
-      {/* <PrivacyPolicies /> */}
-      {/* <TermsAndConditions /> */}
-      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-      <Footer /> {/* routing */}
-      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
-
-      {/* <Router>
+      {/* <Router> */}
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <Homepage />
+              <Footer />
+            </>
+          } />
+          <Route path="/about" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <About />
+              <Footer />
+            </>
+          } />
+          <Route path="/contact" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <Contact />
+              <Footer />
+            </>
+          } />
+          <Route path="/products/item_view" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <ItemView />
+              <Footer />
+            </>
+          } />
+          <Route path="/my_cart" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <MyCart />
+              <Footer />
+            </>
+          } />
+          <Route path="/my_favorites" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <MyFav />
+              <Footer />
+            </>
+          } />
+          <Route path="/products/item_view/purchase_completed" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <Purchase />
+              <Footer />
+            </>
+          } />
+          <Route path="/user_settings" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <Settings />
+              <Footer />
+            </>
+          } />
+          <Route path="/products" element={
+            <>
+              <Header />
+              <Breadcrumb />
+              <Products />
+              <Footer />
+            </>
+          } />
+          <Route path="/authentication" element={<SignInOrUp />} />
         </Routes>
-      </Router> */}
+      {/* </Router> */}
+      {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
     </div>
   );
 }

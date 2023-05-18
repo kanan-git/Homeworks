@@ -13,7 +13,7 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SignInOrUp() {
     const root = document.documentElement;
@@ -321,19 +321,24 @@ function SignInOrUp() {
 
 
             <div className={s.signinorup__bottomside}>
-                <button className={s.signinorup__bottomside_buttons}>
+                {/* <button className={s.signinorup__bottomside_buttons}>
                     <i className='fa-solid fa-house-chimney fa-1x'></i>
                     <p> {buttonsSTATE[0]} </p>
-                </button>
-                <button className={s.signinorup__bottomside_buttons}>
+                </button> */}
+
+                <Link className={s.signinorup__bottomside_buttons} to="/">
+                    <i className='fa-solid fa-house-chimney fa-1x'></i>
+                    <p> {buttonsSTATE[0]} </p>
+                </Link>
+                <Link className={s.signinorup__bottomside_buttons} to="/about">
                     <i className='fa-solid fa-info-circle fa-1x'></i>
                     <p> {buttonsSTATE[1]} </p>
-                </button>
-                <button className={s.signinorup__bottomside_buttons}>
+                </Link>
+                <Link className={s.signinorup__bottomside_buttons} to="/contact">
                     <i className='fa-solid fa-location-dot fa-1x'></i>
                     <p> {buttonsSTATE[2]} </p>
-                </button>
-
+                </Link>
+                
                 {/* <Router>
                     <Link to="/">Homepage</Link>
                 </Router> */}
