@@ -118,7 +118,8 @@ export const dataSource = {
                 "Men's clothing", // 5
                 "Women's clothing", // 6
                 "Jewelery", // 7
-                "or more" // 8
+                "or more", // 8
+                "Refresh" // 9
             ],
             sort: [
                 "Most sold", 
@@ -394,7 +395,8 @@ export const dataSource = {
                 "Kişi geyimləri", 
                 "Qadın geyimləri", 
                 "Zərgərlik", 
-                "və ya daha çox"
+                "və ya daha çox", 
+                "Yenilə"
             ],
             sort: [
                 "Ən çox satılan", 
@@ -670,7 +672,8 @@ export const dataSource = {
                 "Erkek giyim", 
                 "Bayan giyimi", 
                 "Mücevher", 
-                "yada daha fazla"
+                "yada daha fazla", 
+                "Yenile"
             ],
             sort: [
                 "En çok satılan", 

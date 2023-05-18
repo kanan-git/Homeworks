@@ -181,6 +181,7 @@
         &__price_container {
             padding-left: 20px;
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             &__input {
                 width: 120px;
@@ -192,6 +193,23 @@
                 border-radius: 4px;
                 outline: none;
                 background-color: var(--searchbar-bg);
+            }
+            &__submit {
+                width: 250px;
+                height: 24px;
+                border: 1px solid var(--borders-color);
+                color: var(--text-color);
+                font-weight: 600;
+                border-radius: 4px;
+                background-color: var(--buttons-color);
+                transition: var(--quick-fx);
+                &:hover {
+                    background-color: var(--buttons-hover-color);
+                }
+                &:active {
+                    transition: var(--instant-fx);
+                    background-color: var(--buttons-active-color);
+                }
             }
         }
         &__rating_label {

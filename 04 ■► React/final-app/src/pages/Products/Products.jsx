@@ -139,6 +139,7 @@ function Products() {
                     <span className={s.filteraside__price_container}>
                         <input type="number" id="price_min" name="price" className={s.filteraside__price_container__input} placeholder="min. $ 0" min="0" max="999999" step="1" />
                         <input type="number" id="price_max" name="price" className={s.filteraside__price_container__input} placeholder="max. $ 999'999" min="0" max="999999" step="1" />
+                        <button className={s.filteraside__price_container__submit}> {filterSTATE[9]} </button>
                     </span>
                     {/* <span className={s.filteraside__price_sliders}>
                         <input type="range" id={s.toMin} name="price" className={s.filteraside__price_sliders__input} min="0" max="100" step="1" defaultValue="10" />
