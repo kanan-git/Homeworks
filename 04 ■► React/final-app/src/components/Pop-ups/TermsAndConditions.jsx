@@ -20,28 +20,28 @@ function TermsAndConditions() {
     const [tcTitleSTATE, setTcTitleSTATE] = useState(dataSource.english.popup_termsandconditions.title)
     const [tcHeadersSTATE, setTcHeadersSTATE] = useState(dataSource.english.popup_termsandconditions.headers)
     const [tcContentsSTATE, setTcContentsSTATE] = useState(dataSource.english.popup_termsandconditions.contents)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#langAuth")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
-                        setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
-                        setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
-                        setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
-                        setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
-                    } else if (languageData.value == "Türkçe") {
-                        setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
-                        setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
-                        setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
-                    }
-                })
-            }
-        }, []
-    )
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#langAuth")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
+    //                     setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
+    //                     setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
+    //                     setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
+    //                     setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
+    //                     setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
+    //                     setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <>

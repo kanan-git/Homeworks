@@ -1,10 +1,12 @@
 .purchase {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--default-bg-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 150px;
 }
 .purchase__status {
   width: 1400px;

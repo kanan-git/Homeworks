@@ -13,27 +13,31 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Breadcrumb() {
     
     const [dataBC, setDataBC] = useState(dataSource.english.breadcrumb)
+
+    // create not <a></a>, <Link to=""> {storeData} </Link> tag which data get from selected component info with redux toolkit
+    
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#language")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setDataBC(dataSource.english.breadcrumb)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setDataBC(dataSource.azerbaijani.breadcrumb)
-                    } else if (languageData.value == "Türkçe") {
-                        setDataBC(dataSource.turkish.breadcrumb)
-                    }
-                })
-            }
-        }, []
-    )
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#language")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setDataBC(dataSource.english.breadcrumb)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setDataBC(dataSource.azerbaijani.breadcrumb)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setDataBC(dataSource.turkish.breadcrumb)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <div className={s.breadcrumb}>

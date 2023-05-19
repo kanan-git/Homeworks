@@ -13,27 +13,28 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Purchase() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [purchaseSTATE, setPurchaseSTATE] = useState(dataSource.english.purchase)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#language")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setPurchaseSTATE(dataSource.english.purchase)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setPurchaseSTATE(dataSource.azerbaijani.purchase)
-                    } else if (languageData.value == "Türkçe") {
-                        setPurchaseSTATE(dataSource.turkish.purchase)
-                    }
-                })
-            }
-        }, []
-    )
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#language")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setPurchaseSTATE(dataSource.english.purchase)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setPurchaseSTATE(dataSource.azerbaijani.purchase)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setPurchaseSTATE(dataSource.turkish.purchase)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.purchase}>
@@ -50,9 +51,9 @@ function Purchase() {
             <div className={s.purchase__buttons}>
                 <h4 className={s.purchase__buttons_header}> {purchaseSTATE[5]}: </h4>
                 <span className={s.purchase__buttons_list}>
-                    <button className={s.purchase__buttons_list__items}> {purchaseSTATE[6]} </button>
-                    <button className={s.purchase__buttons_list__items}> {purchaseSTATE[7]} </button>
-                    <button className={s.purchase__buttons_list__items}> {purchaseSTATE[8]} </button>
+                    <Link className={s.purchase__buttons_list__items} to="/"> {purchaseSTATE[6]} </Link>
+                    <Link className={s.purchase__buttons_list__items} to="/my_cart"> {purchaseSTATE[7]} </Link>
+                    <Link className={s.purchase__buttons_list__items} to="/my_favorites"> {purchaseSTATE[8]} </Link>
                 </span>
             </div>
         </main>

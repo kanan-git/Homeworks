@@ -15,6 +15,7 @@ import {useState, useEffect, useRef} from 'react'
 import {userData} from '../../data/user-data'
 import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Header() {
     // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
@@ -166,35 +167,61 @@ function Header() {
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // useEffect for call function once
-    useEffect(
-        () => {
-            var langSelector = document.querySelector("#language")
-            langSelector.addEventListener( "change", () => {
-                if(langSelector.value == "English") {
-                    setMenuElements(dataSource.english.header.topside)
-                    setNavItems(dataSource.english.header.mainside.navbar)
-                    setUserDropDown(dataSource.english.header.mainside.userdropdown)
-                    setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
-                    setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
-                    setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
-                } else if(langSelector.value == "Türkçe") {
-                    setMenuElements(dataSource.turkish.header.topside)
-                    setNavItems(dataSource.turkish.header.mainside.navbar)
-                    setUserDropDown(dataSource.turkish.header.mainside.userdropdown)
-                    setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
-                    setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
-                    setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
-                } else {
-                    setMenuElements(dataSource.azerbaijani.header.topside)
-                    setNavItems(dataSource.azerbaijani.header.mainside.navbar)
-                    setUserDropDown(dataSource.azerbaijani.header.mainside.userdropdown)
-                    setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
-                    setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
-                    setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
-                }
-            })
-        }, []
-    )
+    // useEffect(
+    //     () => {
+    //         var langSelector = document.querySelector("#language")
+    //         langSelector.addEventListener( "change", () => {
+    //             if(langSelector.value == "English") {
+    //                 setMenuElements(dataSource.english.header.topside)
+    //                 setNavItems(dataSource.english.header.mainside.navbar)
+    //                 setUserDropDown(dataSource.english.header.mainside.userdropdown)
+    //                 setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
+    //                 setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
+    //                 setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
+    //             } else if(langSelector.value == "Türkçe") {
+    //                 setMenuElements(dataSource.turkish.header.topside)
+    //                 setNavItems(dataSource.turkish.header.mainside.navbar)
+    //                 setUserDropDown(dataSource.turkish.header.mainside.userdropdown)
+    //                 setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
+    //                 setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
+    //                 setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
+    //             } else {
+    //                 setMenuElements(dataSource.azerbaijani.header.topside)
+    //                 setNavItems(dataSource.azerbaijani.header.mainside.navbar)
+    //                 setUserDropDown(dataSource.azerbaijani.header.mainside.userdropdown)
+    //                 setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
+    //                 setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
+    //                 setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
+    //             }
+    //         })
+    //     }, []
+    // )
+
+    function handleMainLang() {
+        var langSelector = document.querySelector("#language")
+        if(langSelector.value == "English") {
+            setMenuElements(dataSource.english.header.topside)
+            setNavItems(dataSource.english.header.mainside.navbar)
+            setUserDropDown(dataSource.english.header.mainside.userdropdown)
+            setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
+            setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
+            setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
+        } else if(langSelector.value == "Türkçe") {
+            setMenuElements(dataSource.turkish.header.topside)
+            setNavItems(dataSource.turkish.header.mainside.navbar)
+            setUserDropDown(dataSource.turkish.header.mainside.userdropdown)
+            setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
+            setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
+            setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
+        } else {
+            setMenuElements(dataSource.azerbaijani.header.topside)
+            setNavItems(dataSource.azerbaijani.header.mainside.navbar)
+            setUserDropDown(dataSource.azerbaijani.header.mainside.userdropdown)
+            setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
+            setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
+            setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
+        }
+    }
 
     // console log for testing is working or not
     // console.log(menuElements, navItems)
@@ -234,7 +261,7 @@ function userpanelDDfuncClose() {
             {/* top side of the header as navbar */}
             <nav className={s.header__list}>
                 {/* menu elements */}
-                {
+                {/* {
                     menuElements.map(
                         (element, index) => <button key={index} className={s.header__list_buttons} onMouseEnter={ () => {
                             if(index == 1) {
@@ -263,7 +290,23 @@ function userpanelDDfuncClose() {
                             {index == 1 ? (<i className='fa-solid fa-caret-right fa-1x fa-rotate-90' id={s.fa_caret} ref={dd_arrow}></i>) : ""}
                         </button>
                     )
-                }
+                } */}
+
+                <Link className={s.header__list_buttons} to="/"> {menuElements[0]} </Link>
+                <Link className={s.header__list_buttons} to="/products" onMouseEnter={ () => {
+                            topDropDownSTATE.current.style.visibility = `visible`
+                            topDropDownSTATE.current.style.opacity = `1.0`
+                            topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
+                            topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+                        } } onMouseLeave={ () => {
+                            topDropDownSTATE.current.style.visibility = `hidden`
+                            topDropDownSTATE.current.style.opacity = `0.0`
+                            topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
+                            topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+                        } }
+                > {menuElements[1]} <i className='fa-solid fa-caret-right fa-1x fa-rotate-90'></i> </Link>
+                <Link className={s.header__list_buttons} to="/about"> {menuElements[2]} </Link>
+                <Link className={s.header__list_buttons} to="/contact"> {menuElements[3]} </Link>
 
                 {/* dropdown menu for userpanel */}
                 <div className={s.header__list_productsdropdown} ref={topDropDown} onMouseEnter={ () => {
@@ -348,7 +391,7 @@ function userpanelDDfuncClose() {
                 {/* temporary static elements for reference | LANGUAGE BAR */}
                 <div className={s.header__main_langbar}>
                     <i className='fa-solid fa-globe fa-1x' id={s.fa_globe}></i>
-                    <select name="language" id="language" className={s.header__main_langbar__selector}>
+                    <select name="language" id="language" className={s.header__main_langbar__selector} onChange={handleMainLang}>
                         <option value="English" className={s.header__main_langbar__selector_options}> English </option>
                         <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}> Azərbaycan dili </option>
                         <option value="Türkçe" className={s.header__main_langbar__selector_options}> Türkçe </option>
@@ -380,11 +423,12 @@ function userpanelDDfuncClose() {
 
                     {/* dropdown menu for userpanel */}
                     <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
-                        <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </li>
-                        <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </li>
+                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication"> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
+                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication"> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
                         {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </li> */}
                         {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </li> */}
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </li> */}
+                        <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>
+                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li> */}
                     </ul>
                 </div>
             </div>

@@ -14,6 +14,7 @@ import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 // import api from '../../data/fake-api'
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Products() {
     // ...
@@ -200,7 +201,7 @@ function Products() {
                     {
                         apiSTATE.map(
                             (elements, index) => 
-                            <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
+                            <Link className={s.products__cards} key={elements.id} to="/products/item_view"> {/* apiSTATE[0].id */}
                                 {/* image */}
                                 <div className={s.products__cards_image}>
                                     <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
@@ -227,7 +228,7 @@ function Products() {
                                     {/* <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span> */}
                                     <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     }
                     {/* button for load more items from API */}

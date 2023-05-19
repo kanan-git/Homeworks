@@ -13,6 +13,7 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function ItemView() {
     // ...
@@ -76,7 +77,7 @@ function ItemView() {
                     </span>
                     <strong className={s.itemview__container_information__price}> $ 999 USD </strong>
                     <span className={s.itemview__container_information__buttons}>
-                        <button className={s.itemview__container_information__buttons_buy}> <i className='fa-regular fa-credit-card fa-1x'></i> {itemviewSTATE[2]} </button>
+                        <Link className={s.itemview__container_information__buttons_buy} to="/products/item_view/purchase_completed"> <i className='fa-regular fa-credit-card fa-1x'></i> {itemviewSTATE[2]} </Link>
                         <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> {itemviewSTATE[3]} </button>
                         <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> {itemviewSTATE[4]} </button>
                     </span>

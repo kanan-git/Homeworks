@@ -47,11 +47,16 @@
             border: none;
             // border-bottom: 1px solid var(--text-negative-color);
             background-color: transparent;
+            cursor: pointer;
             color: var(--text-negative-color);
             font-size: 14px;
             font-weight: 600;
             text-transform: capitalize;
             transition: var(--quick-fx);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
             #fa_caret {
                 color: var(--text-negative-color);
                 margin: 0px 0px 0px 5px; // top right bottom left
@@ -171,6 +176,8 @@
             overflow: hidden;
             display: flex;
             align-items: center;
+            scale: 1.5;
+            margin-right: 10px;
             &__content {
                 width: 100%;
                 object-fit: cover;

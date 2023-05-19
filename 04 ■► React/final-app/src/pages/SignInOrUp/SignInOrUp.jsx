@@ -14,6 +14,12 @@ import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
+
+import Loading from '../../components/Pop-ups/Loading'
+import SuccessfullySigned from '../../components/Pop-ups/SuccessfullySigned'
+import FailedMessage from '../../components/Pop-ups/FailedMessage'
+import PrivacyPolicies from '../../components/Pop-ups/PrivacyPolicies'
+import TermsAndConditions from '../../components/Pop-ups/TermsAndConditions'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SignInOrUp() {
     const root = document.documentElement;
@@ -430,6 +436,12 @@ function SignInOrUp() {
                 </Router> */}
 
             </div>
+
+            {/* <Loading /> */}
+            {/* <SuccessfullySigned /> */}
+            {/* <FailedMessage /> */}
+            {/* <PrivacyPolicies /> */}
+            {/* <TermsAndConditions /> */}
         </main>
     )
 }

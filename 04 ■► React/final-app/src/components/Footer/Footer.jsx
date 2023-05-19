@@ -9,6 +9,10 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect} from 'react'
+import Loading from "../Pop-ups/Loading"
+import PrivacyPolicies from "../Pop-ups/PrivacyPolicies"
+import TermsAndConditions from "../Pop-ups/TermsAndConditions"
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Footer() {
     const [footerCol1data, setFooterCol1data] = useState(dataSource.english.footer.about)
@@ -16,6 +20,21 @@ function Footer() {
     const [footerCol3data, setFooterCol3data] = useState(dataSource.english.footer.links)
     const [footerCol4data, setFooterCol4data] = useState(dataSource.english.footer.followus)
     const [footerBottom, setFooterBottom] = useState(dataSource.english.footer.bottomside)
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    const [termsSTATE, setTermsSTATE] = useState(false)
+    const [privacySTATE, setPrivacySTATE] = useState(false)
+    function handleOpenTerms() {
+        setTermsSTATE(true)
+    }
+    function handleCloseTerms() {
+        setTermsSTATE(false)
+    }
+    function handleOpenPrivacy() {
+        setPrivacySTATE(true)
+    }
+    function handleClosePrivacy() {
+        setPrivacySTATE(false)
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     useEffect(
         () => {
@@ -72,18 +91,18 @@ function Footer() {
 
                 <ul className={s.footer__top_column}>
                     <h3 className={s.footer__top_column__header}> {footerCol2data[0]} </h3>
-                    <li className={s.footer__top_column__items}> {footerCol2data[1]} </li>
-                    <li className={s.footer__top_column__items}> {footerCol2data[2]} </li>
-                    <li className={s.footer__top_column__items}> {footerCol2data[3]} </li>
-                    <li className={s.footer__top_column__items}> {footerCol2data[4]} </li>
+                    <Link className={s.footer__top_column__items} to="/authentication"> {footerCol2data[1]} </Link>
+                    <Link className={s.footer__top_column__items} to="/my_favorites"> {footerCol2data[2]} </Link>
+                    <Link className={s.footer__top_column__items} to="/my_cart"> {footerCol2data[3]} </Link>
+                    {/* <li className={s.footer__top_column__items}> {footerCol2data[4]} </li> */}
                 </ul>
 
                 <ul className={s.footer__top_column}>
                     <h3 className={s.footer__top_column__header}> {footerCol3data[0]} </h3>
-                    <li className={s.footer__top_column__items}> {footerCol3data[1]} </li>
-                    <li className={s.footer__top_column__items}> {footerCol3data[2]} </li>
-                    <li className={s.footer__top_column__items}> {footerCol3data[3]} </li>
-                    <li className={s.footer__top_column__items}> {footerCol3data[4]} </li>
+                    <Link className={s.footer__top_column__items} to="/products"> {footerCol3data[1]} </Link>
+                    <Link className={s.footer__top_column__items} to="/contact"> {footerCol3data[2]} </Link>
+                    <Link className={s.footer__top_column__items} to="/about"> {footerCol3data[3]} </Link>
+                    {/* <li className={s.footer__top_column__items}> {footerCol3data[4]} </li> */}
                 </ul>
 
                 <ul className={s.footer__top_column}>
@@ -105,8 +124,17 @@ function Footer() {
             <div className={s.footer__bottom}>
                 <p className={s.footer__bottom_text}> {footerBottom[0]} </p>
                 <span className={s.footer__bottom_group}>
-                    <p className={s.footer__bottom_group__items}> {footerBottom[1]} </p>
-                    <p className={s.footer__bottom_group__items}> {footerBottom[2]} </p>
+                    <p className={s.footer__bottom_group__items} onClick={handleOpenTerms}> {footerBottom[1]} </p>   {termsSTATE && (
+                        <div className={s.overlay} onClick={handleCloseTerms}> <TermsAndConditions /> </div>
+                    )}
+                    <p className={s.footer__bottom_group__items} onClick={handleOpenPrivacy}> {footerBottom[2]} </p>   {privacySTATE && (
+                        <div className={s.overlay} onClick={handleClosePrivacy}> <PrivacyPolicies /> </div>
+                    )}
+
+                    {/* <Loading /> */}
+                    {/* <PrivacyPolicies /> */}
+                    {/* <TermsAndConditions /> */}
+                    {/* <Overlay /> */}
                 </span>
             </div>
         </footer>

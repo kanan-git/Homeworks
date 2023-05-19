@@ -27,11 +27,16 @@
   height: 100%;
   border: none;
   background-color: transparent;
+  cursor: pointer;
   color: var(--text-negative-color);
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
   transition: var(--quick-fx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 .header__list_buttons #fa_caret {
   color: var(--text-negative-color);
@@ -152,6 +157,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  scale: 1.5;
+  margin-right: 10px;
 }
 .header__main_logo__content {
   width: 100%;

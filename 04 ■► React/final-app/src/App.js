@@ -106,10 +106,10 @@ function App() {
           } />
           <Route path="/products/item_view/purchase_completed" element={
             <>
-              <Header />
-              <Breadcrumb />
+              {/* <Header /> */}
+              {/* <Breadcrumb /> */}
               <Purchase />
-              <Footer />
+              {/* <Footer /> */}
             </>
           } />
           <Route path="/user_settings" element={

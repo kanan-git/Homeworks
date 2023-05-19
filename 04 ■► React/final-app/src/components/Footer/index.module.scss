@@ -28,13 +28,18 @@
         color: var(--text-negative-color);
         display: flex;
         justify-content: center;
-        gap: 50px;
+        gap: 10px;
         border: none;
         border-bottom: 1px solid var(--borders-color);
         &_column {
             width: 250px;
             height: auto;
             margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            &:first-of-type {
+                margin-right: 200px;
+            }
             &__header {
                 text-transform: uppercase;
                 color: var(--text-negative-color);
