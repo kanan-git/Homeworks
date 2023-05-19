@@ -24,39 +24,36 @@ function SignInOrUp() {
     const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.signinorup.buttons)
     const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup.month)
     const [pholderSTATE, setPholderSTATE] = useState(dataSource.english.signinorup.placeholders)
-    useEffect(
-        () => {
-            return () => {
-                // language
-                var langDataAuth = document.querySelector("#langAuth")
-                langDataAuth.addEventListener("change", () => {
-                    // console.log(langDataAuth.value)
-                    if (langDataAuth.value == "English") {
-                        setSelectionsSTATE(dataSource.english.signinorup.selections)
-                        setLoginformSTATE(dataSource.english.signinorup.loginform)
-                        setRegisterformSTATE(dataSource.english.signinorup.registerform)
-                        setButtonsSTATE(dataSource.english.signinorup.buttons)
-                        setMonthallSTATE(dataSource.english.signinorup.month)
-                        setPholderSTATE(dataSource.english.signinorup.placeholders)
-                    } else if (langDataAuth.value == "Azərbaycan dili") {
-                        setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
-                        setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
-                        setRegisterformSTATE(dataSource.azerbaijani.signinorup.registerform)
-                        setButtonsSTATE(dataSource.azerbaijani.signinorup.buttons)
-                        setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
-                        setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
-                    } else if (langDataAuth.value == "Türkçe") {
-                        setSelectionsSTATE(dataSource.turkish.signinorup.selections)
-                        setLoginformSTATE(dataSource.turkish.signinorup.loginform)
-                        setRegisterformSTATE(dataSource.turkish.signinorup.registerform)
-                        setButtonsSTATE(dataSource.turkish.signinorup.buttons)
-                        setMonthallSTATE(dataSource.turkish.signinorup.month)
-                        setPholderSTATE(dataSource.turkish.signinorup.placeholders)
-                    }
-                })
-            }
-        }, []
-    )
+    
+    function handleLanguage() {
+        // language
+        var langDataAuth = document.querySelector("#langAuth")
+        if (langDataAuth.value == "English") {
+            setSelectionsSTATE(dataSource.english.signinorup.selections)
+            setLoginformSTATE(dataSource.english.signinorup.loginform)
+            setRegisterformSTATE(dataSource.english.signinorup.registerform)
+            setButtonsSTATE(dataSource.english.signinorup.buttons)
+            setMonthallSTATE(dataSource.english.signinorup.month)
+            setPholderSTATE(dataSource.english.signinorup.placeholders)
+            console.log(langDataAuth.value)
+        } else if (langDataAuth.value == "Azərbaycan dili") {
+            setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
+            setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
+            setRegisterformSTATE(dataSource.azerbaijani.signinorup.registerform)
+            setButtonsSTATE(dataSource.azerbaijani.signinorup.buttons)
+            setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
+            setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
+            console.log(langDataAuth.value)
+        } else if (langDataAuth.value == "Türkçe") {
+            setSelectionsSTATE(dataSource.turkish.signinorup.selections)
+            setLoginformSTATE(dataSource.turkish.signinorup.loginform)
+            setRegisterformSTATE(dataSource.turkish.signinorup.registerform)
+            setButtonsSTATE(dataSource.turkish.signinorup.buttons)
+            setMonthallSTATE(dataSource.turkish.signinorup.month)
+            setPholderSTATE(dataSource.turkish.signinorup.placeholders)
+            console.log(langDataAuth.value)
+        }
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     useEffect(
         () => {
@@ -313,7 +310,7 @@ function SignInOrUp() {
     return (
         <main className={s.signinorup}>
             <div className={s.signinorup__topside}>
-                <select name="langAuth" id="langAuth" className={s.signinorup__topside_language}>
+                <select name="langAuth" id="langAuth" className={s.signinorup__topside_language} onChange={handleLanguage}>
                     <option value="English" className={s.signinorup__topside_language__options}> English </option>
                     <option value="Azərbaycan dili" className={s.signinorup__topside_language__options}> Azərbaycan dili </option>
                     <option value="Türkçe" className={s.signinorup__topside_language__options}> Türkçe </option>
