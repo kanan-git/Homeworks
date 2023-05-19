@@ -4,8 +4,8 @@ import { createRoot } from 'react-dom/client';
 // import { Provider } from 'react-redux';
 // import { store } from './app/store';
 import App from './App';
-// import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -13,9 +13,9 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     {/* <Provider store={store}> */}
-      {/* <BrowserRouter> */}
+      <BrowserRouter>
         {/* <Routes> */}
-        <Router>
+        {/* <Router> */}
           {/* <Route path="/" element={<App />}> */}
             {/* <Route path="/" element={<Homepage />} /> */}
             {/* <Route path="/about" element={<About />} /> */}
@@ -37,9 +37,9 @@ root.render(
             </Router> */}
 
           {/* </Route> */}
-        </Router>
+        {/* </Router> */}
         {/* </Routes> */}
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
     {/* </Provider> */}
   </StrictMode>
 );
