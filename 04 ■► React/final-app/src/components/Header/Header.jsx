@@ -425,8 +425,8 @@ function userpanelDDfuncClose() {
                     <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
                         <Link className={s.header__main_userpanel_dropdown__items} to="/authentication"> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
                         <Link className={s.header__main_userpanel_dropdown__items} to="/authentication"> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </li> */}
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </li> */}
+                        {/* <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites"> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </Link> */}
+                        {/* <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart"> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </Link> */}
                         <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>
                         {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li> */}
                     </ul>

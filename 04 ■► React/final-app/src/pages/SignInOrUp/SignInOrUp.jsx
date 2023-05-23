@@ -79,7 +79,7 @@ function SignInOrUp() {
             //     overlayLogin.innerHTML, 
             //     overlayRegister.innerHTML
             // )
-
+            
             switchLogin.addEventListener("click", () => {
                 loginWindow.style.top = `53%`
                 loginWindow.style.left = `50%`

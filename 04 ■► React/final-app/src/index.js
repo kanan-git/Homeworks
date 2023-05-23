@@ -52,6 +52,7 @@ root.render(
 // npm start (for starting react live server on port 3000)
 // update github: 1) git add .; 2) git commit -m "comment here"; 3) git push origin master
 // npm install react-router-dom
+// npm install @reduxjs/toolkit react-redux
 // cd 04\ ■►\ React/final-app
 // npm start
 // *** watch sass *** //
