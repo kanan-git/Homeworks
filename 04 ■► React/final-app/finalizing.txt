@@ -6,9 +6,37 @@ REACT FINAL PROJECT SHOPNET
 overlay, success, privacy policy, terms and condition)
 3 + component, page, popup lardaki eksiklikleri tamamla
 4 + routing install ve usage, oyren ve tetbiq et (stack overflow, chatgpt, youtube, mdn, w3)
-5 ~ dataflow - redux toolkit qos (store js, use also props somewhere which only require 1 place)
-6 - qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header)
+5 ~ dataflow* - redux toolkit qos (store js, use also props somewhere which only require 1 place)
+6 - qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header), 
+add xmark button to myfav and mycart page itemcards, buy all button to my_cart
 7 - guide txt (sass mobile responsivity, overall width scroll issue, sessionStorage, sign in up input writing rule and 
-look 994 50 123 45 67)
-8 - butun jsx ve scss fayllarini header daki kimi seliqeye sal, sector lara ayir
+look 994 50 123 45 67, fix horizontal scroll issue css)
+8 - load more button API request function on Products, map on Contact
+9 - butun jsx ve scss fayllarini header daki kimi seliqeye sal, sector lara ayir
+
+
+
+*
+1. with preventDefault(), language to all components, popups, pages
+2. light or dark mode to all components, popups, pages
+3. authentication selected login or register (both switch buttons and form windows) by click buttons
+4. filtering - from header popup to products
+5. filtering - from homepage cards to products
+6. clicked productCard to itemView
+7. itemView to purchaseCompleted when click to buy button
+8. itemView to favorite & cart when click to their own buttons (gather products info from userData with id)
+9. products to favorite & cart when click their buttons
+
+
+
+cd 04\ ■►\ React/final-app
+npm start
+
+
+
+git add .
+git commit -m "."
+git push origin master
+git status
+clear
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
