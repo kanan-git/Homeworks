@@ -1,6 +1,8 @@
 function Footer() {
     return (
-        <div>
+        <div style={
+            {backgroundColor: "greenyellow"}
+        }>
             Footer component
         </div>
     )
