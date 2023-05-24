@@ -1,14 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  fakeConditionX: "login", // Initial value
+};
 
 const authSlice = createSlice({
-  name: 'auth',
-  initialState: '',
+  name: "auth",
+  initialState,
   reducers: {
-    setAuthValue: (state, action) => {
-      return action.payload;
+    setFakeConditionX: (state, action) => {
+      state.fakeConditionX = action.payload;
     },
   },
-})
+});
 
-export const { setAuthValue } = authSlice.actions
-export default authSlice.reducer
+export const { setFakeConditionX } = authSlice.actions;
+export default authSlice.reducer;

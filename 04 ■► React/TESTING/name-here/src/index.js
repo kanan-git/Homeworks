@@ -17,5 +17,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 )
-
-// testing redux toolkit store component logic how it works, then apply on main project

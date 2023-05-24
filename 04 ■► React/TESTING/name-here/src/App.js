@@ -1,5 +1,4 @@
 import React from 'react'
-import { Counter } from './features/counter/counterSlice'
 import {BrowserRouter, Router, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'

@@ -1,25 +1,25 @@
 import { useEffect, useState } from 'react'
 import {BrowserRouter, Router, Routes, Route, Link} from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { setAuthValue } from '../features/counter/authSlice'
+import { useDispatch } from 'react-redux';
+import { setFakeConditionX } from '../features/counter/authSlice';
 
 function Header() {
     const dispatch = useDispatch()
 
-    const [fakeCstate, setFakeCstate] = useState()
+    // const [fakeCstate, setFakeCstate] = useState()
 
     function handleLogin() {
-        var fakeConditionX = "login"
-        setFakeCstate(fakeConditionX)
-        dispatch(setAuthValue(fakeCstate))
+        // var fakeConditionX = "login"
+        // setFakeCstate(fakeConditionX)
+        dispatch(setFakeConditionX("login"))
     }
     function handleRegister() {
-        var fakeConditionX = "register"
-        setFakeCstate(fakeConditionX)
-        dispatch(setAuthValue(fakeCstate))
+        // var fakeConditionX = "register"
+        // setFakeCstate(fakeConditionX)
+        dispatch(setFakeConditionX("register"))
     }
 
-    console.log(fakeCstate)
+    // console.log(fakeCstate)
 
     return (
         <ul style={
