@@ -1,8 +1,8 @@
 import React, { StrictMode } from 'react';
-// import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
 import { createRoot } from 'react-dom/client';
-// import { Provider } from 'react-redux';
-// import { store } from './app/store';
+import { Provider } from 'react-redux';
+import store from './app/store';
 import App from './App';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ const root = createRoot(container);
 
 root.render(
   <StrictMode>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
       <BrowserRouter>
         {/* <Routes> */}
         {/* <Router> */}
@@ -40,7 +40,7 @@ root.render(
         {/* </Router> */}
         {/* </Routes> */}
       </BrowserRouter>
-    {/* </Provider> */}
+    </Provider>
   </StrictMode>
 );
 

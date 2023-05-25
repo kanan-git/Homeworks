@@ -6,9 +6,9 @@ REACT FINAL PROJECT SHOPNET
 overlay, success, privacy policy, terms and condition)
 3 + component, page, popup lardaki eksiklikleri tamamla
 4 + routing install ve usage, oyren ve tetbiq et (stack overflow, chatgpt, youtube, mdn, w3)
-5 ~ dataflow* - redux toolkit qos (store js, use also props somewhere which only require 1 place)
+5 ~ dataflow*** - redux toolkit qos (store js, use also props somewhere which only require 1 place)
 6 - qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header), 
-add xmark button to myfav and mycart page itemcards, buy all button to my_cart
+add xmark button to myfav and mycart page itemcards, buy all button to my_cart, if logged a user, show logout settings ...
 7 - guide txt (sass mobile responsivity, overall width scroll issue, sessionStorage, sign in up input writing rule and 
 look 994 50 123 45 67, fix horizontal scroll issue css)
 8 - load more button API request function on Products, map on Contact
@@ -16,16 +16,37 @@ look 994 50 123 45 67, fix horizontal scroll issue css)
 
 
 
-*
-1. with preventDefault(), language to all components, popups, pages
-2. light or dark mode to all components, popups, pages
-3. authentication selected login or register (both switch buttons and form windows) by click buttons
-4. filtering - from header popup to products
-5. filtering - from homepage cards to products
-6. clicked productCard to itemView
-7. itemView to purchaseCompleted when click to buy button
-8. itemView to favorite & cart when click to their own buttons (gather products info from userData with id)
-9. products to favorite & cart when click their buttons
+***
+~ 1. language to all "components, popups, pages"***** | use e.preventDefault() after all completed
+~ 2. light or dark mode to all components, popups, pages
+- 3. authentication selected login or register (both switch buttons and form windows) by click buttons
+- 4. filtering - from header popup to products
+- 5. filtering - from homepage cards to products
+- 6. clicked productCard to itemView
+- 7. itemView to purchaseCompleted when click to buy button
+- 8. itemView to favorite & cart when click to their own buttons (gather products info from userData with id)
+- 9. products to favorite & cart when click their buttons
+
+
+
+*****
+cm - header
+cm - footer
+cm - breadcrumb
+pu - failedMessage
+pu - successMessage
+pu - termsAndConditions
+pu - privacyPolicies
+pg - about
+pg - contact
+pg - homepage
+pg - itemview
+pg - mycart
+pg - myfav
+pg - products
+pg - purchase
+pg - settings
+pg - signinorup
 
 
 

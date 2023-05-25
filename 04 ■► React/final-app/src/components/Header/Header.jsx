@@ -16,6 +16,8 @@ import {userData} from '../../data/user-data'
 import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { setCurrentLanguage } from '../../features/counter/counterSlice'
+import { useDispatch } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Header() {
     // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
@@ -197,6 +199,8 @@ function Header() {
     //     }, []
     // )
 
+    const dispatch = useDispatch()
+
     function handleMainLang() {
         var langSelector = document.querySelector("#language")
         if(langSelector.value == "English") {
@@ -206,6 +210,7 @@ function Header() {
             setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
             setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
             setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
+            dispatch(setCurrentLanguage("English"))
         } else if(langSelector.value == "Türkçe") {
             setMenuElements(dataSource.turkish.header.topside)
             setNavItems(dataSource.turkish.header.mainside.navbar)
@@ -213,6 +218,7 @@ function Header() {
             setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
             setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
             setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
+            dispatch(setCurrentLanguage("Türkçe"))
         } else {
             setMenuElements(dataSource.azerbaijani.header.topside)
             setNavItems(dataSource.azerbaijani.header.mainside.navbar)
@@ -220,6 +226,7 @@ function Header() {
             setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
             setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
             setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
+            dispatch(setCurrentLanguage("Azərbaycan dili"))
         }
     }
 
