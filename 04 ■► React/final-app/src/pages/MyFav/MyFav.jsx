@@ -13,32 +13,36 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function MyFav() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [myfavSTATE, setMyfavSTATE] = useState(dataSource.english.myfav)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#language")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setMyfavSTATE(dataSource.english.myfav)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setMyfavSTATE(dataSource.azerbaijani.myfav)
-                    } else if (languageData.value == "Türkçe") {
-                        setMyfavSTATE(dataSource.turkish.myfav)
-                    }
-                })
-            }
-        }, []
-    )
+    // const [myfavSTATE, setMyfavSTATE] = useState(dataSource.english.myfav)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.myfav)
+
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#language")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setMyfavSTATE(dataSource.english.myfav)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setMyfavSTATE(dataSource.azerbaijani.myfav)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setMyfavSTATE(dataSource.turkish.myfav)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.myfav}>
             <div className={s.myfav__topside}>
-                <b className={s.myfav__topside_header}> {myfavSTATE}: "25" </b>
+                <b className={s.myfav__topside_header}> {languageData}: "25" </b>
             </div>
             <div className={s.myfav__container}>
 

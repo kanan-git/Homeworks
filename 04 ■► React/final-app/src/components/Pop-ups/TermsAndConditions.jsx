@@ -13,13 +13,17 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function TermsAndConditions() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [tcTitleSTATE, setTcTitleSTATE] = useState(dataSource.english.popup_termsandconditions.title)
-    const [tcHeadersSTATE, setTcHeadersSTATE] = useState(dataSource.english.popup_termsandconditions.headers)
-    const [tcContentsSTATE, setTcContentsSTATE] = useState(dataSource.english.popup_termsandconditions.contents)
+    // const [tcTitleSTATE, setTcTitleSTATE] = useState(dataSource.english.popup_termsandconditions.title)
+    // const [tcHeadersSTATE, setTcHeadersSTATE] = useState(dataSource.english.popup_termsandconditions.headers)
+    // const [tcContentsSTATE, setTcContentsSTATE] = useState(dataSource.english.popup_termsandconditions.contents)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.popup_termsandconditions)
+
     // useEffect(
     //     () => {
     //         return () => {
@@ -47,24 +51,24 @@ function TermsAndConditions() {
         <>
             <div className={s.termsandconditions__overlay}></div>
             <div className={s.termsandconditions}>
-                <h1 className={s.termsandconditions__title}> {tcTitleSTATE} </h1>
-                {tcContentsSTATE[0]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[0]} </h3>
-                {tcContentsSTATE[1]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[1]} </h3>
-                {tcContentsSTATE[2]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[2]} </h3>
-                {tcContentsSTATE[3]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[3]} </h3>
-                {tcContentsSTATE[4]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[4]} </h3>
-                {tcContentsSTATE[5]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[5]} </h3>
-                {tcContentsSTATE[6]}
-                <h3 className={s.termsandconditions__headers}> {tcHeadersSTATE[6]} </h3>
-                {tcContentsSTATE[7]}
+                <h1 className={s.termsandconditions__title}> {languageData.title} </h1>
+                {languageData.contents[0]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[0]} </h3>
+                {languageData.contents[1]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[1]} </h3>
+                {languageData.contents[2]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[2]} </h3>
+                {languageData.contents[3]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[3]} </h3>
+                {languageData.contents[4]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[4]} </h3>
+                {languageData.contents[5]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[5]} </h3>
+                {languageData.contents[6]}
+                <h3 className={s.termsandconditions__headers}> {languageData.headers[6]} </h3>
+                {languageData.contents[7]}
                 <br />
-                {tcContentsSTATE[8]}
+                {languageData.contents[8]}
             </div>
         </>
     )

@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {dataSource} from '../../data/data-source'
 
 const initialState = {
-    currentLanguage: "English", // "English" | "Azərbaycan dili" | "Turkçe"
+    currentLanguage: dataSource.english, // "English" | "Azərbaycan dili" | "Turkçe" | dataSource
 }
 
 const langSlice = createSlice(

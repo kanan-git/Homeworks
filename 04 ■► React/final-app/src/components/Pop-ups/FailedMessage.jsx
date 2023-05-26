@@ -13,27 +13,31 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function FailedMessage() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [failSTATE, setFailSTATE] = useState(dataSource.english.popup_failedmessage)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#langAuth")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setFailSTATE(dataSource.english.popup_failedmessage)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setFailSTATE(dataSource.azerbaijani.popup_failedmessage)
-                    } else if (languageData.value == "Türkçe") {
-                        setFailSTATE(dataSource.turkish.popup_failedmessage)
-                    }
-                })
-            }
-        }, []
-    )
+    // const [failSTATE, setFailSTATE] = useState(dataSource.english.popup_failedmessage)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.popup_failedmessage)
+
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#langAuth")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setFailSTATE(dataSource.english.popup_failedmessage)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setFailSTATE(dataSource.azerbaijani.popup_failedmessage)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setFailSTATE(dataSource.turkish.popup_failedmessage)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <>
@@ -44,7 +48,7 @@ function FailedMessage() {
                     <i className='fa-solid fa-xmark fa-1x'></i>
                 </div>
                 <p className={s.failedmessage__text}>
-                    {failSTATE}
+                    {languageData}
                 </p>
             </div>
         </>

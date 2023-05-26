@@ -2,6 +2,7 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 
 import grid_img_1 from './about assets/grid/img_1.png'
 import grid_img_2 from './about assets/grid/img_2.png'
@@ -29,27 +30,31 @@ function About() {
     const btnLeft = useRef()
     const btnRight = useRef()
 
-    useEffect(
-        () => {
-            var languageData = document.querySelector("#language")
-            // fake condition for now which will be replaced with input select language data with store (redux tlk)
-            // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
-            // var languageData = "Azərbaycan dili" // "English", "Azərbaycan dili", "Türkçe"
-            // var languageData = "Türkçe" // "English", "Azərbaycan dili", "Türkçe"
-            languageData.addEventListener("change", () => {
-                if (languageData.value == "English") {
-                    setTextSTATE(dataSource.english.about.text)
-                    setHeadersSTATE(dataSource.english.about.headers) // english azerbaijani turkish
-                } else if (languageData.value == "Azərbaycan dili") {
-                    setTextSTATE(dataSource.azerbaijani.about.text)
-                    setHeadersSTATE(dataSource.azerbaijani.about.headers)
-                } else if (languageData.value == "Türkçe") {
-                    setTextSTATE(dataSource.turkish.about.text)
-                    setHeadersSTATE(dataSource.turkish.about.headers)
-                }
-            })
-        }, []
+    const languageData = useSelector(
+        (state) => state.language.currentLanguage.about
     )
+
+    // useEffect(
+    //     () => {
+    //         var languageData = document.querySelector("#language")
+    //         // fake condition for now which will be replaced with input select language data with store (redux tlk)
+    //         // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+    //         // var languageData = "Azərbaycan dili" // "English", "Azərbaycan dili", "Türkçe"
+    //         // var languageData = "Türkçe" // "English", "Azərbaycan dili", "Türkçe"
+    //         languageData.addEventListener("change", () => {
+    //             if (languageData.value == "English") {
+    //                 setTextSTATE(dataSource.english.about.text)
+    //                 setHeadersSTATE(dataSource.english.about.headers) // english azerbaijani turkish
+    //             } else if (languageData.value == "Azərbaycan dili") {
+    //                 setTextSTATE(dataSource.azerbaijani.about.text)
+    //                 setHeadersSTATE(dataSource.azerbaijani.about.headers)
+    //             } else if (languageData.value == "Türkçe") {
+    //                 setTextSTATE(dataSource.turkish.about.text)
+    //                 setHeadersSTATE(dataSource.turkish.about.headers)
+    //             }
+    //         })
+    //     }, []
+    // )
 
     function carouselGallery() {
         const carouselImages = Array.from(document.querySelectorAll(`.${s.about__container_carousel__image}`))
@@ -113,19 +118,19 @@ function About() {
             carouselGallery()
         }, []
     )
-
+    
     return (
         <main className={s.about}>
             <div className={s.about__container}>
-                <h3 className={s.about__container_headers}> { headersSTATE[0] } </h3>
+                <h3 className={s.about__container_headers}> { languageData.headers[0] } </h3>
                 <div className={s.about__container_text}>
                     {/* text content 2/5 paragraph from chatgpt */}
-                    { textSTATE[0] }
+                    { languageData.text[0] }
                     <br /> <br />
-                    { textSTATE[1] }
+                    { languageData.text[1] }
                 </div>
 
-                <h3 className={s.about__container_headers}> { headersSTATE[1] } </h3>
+                <h3 className={s.about__container_headers}> { languageData.headers[1] } </h3>
                 <div className={s.about__container_gallery}>
                     {/* grid 6 image gallery */}
                     <div className={s.about__container_gallery__image}> {/* 1 of 6 */}
@@ -170,17 +175,17 @@ function About() {
                     </div>
                 </div>
 
-                <h3 className={s.about__container_headers}> { headersSTATE[2] } </h3>
+                <h3 className={s.about__container_headers}> { languageData.headers[2] } </h3>
                 <div className={s.about__container_text}>
                     {/* text content 3/5 paragraph from chatgpt */}
-                    { textSTATE[2] }
+                    { languageData.text[2] }
                     <br /> <br />
-                    { textSTATE[3] }
+                    { languageData.text[3] }
                     <br /> <br />
-                    { textSTATE[4] }
+                    { languageData.text[4] }
                 </div>
 
-                <h3 className={s.about__container_headers}> { headersSTATE[3] } </h3>
+                <h3 className={s.about__container_headers}> { languageData.headers[3] } </h3>
                 <div className={s.about__container_carousel}>
                     {/* centered infinite carousel 7 image gallery */}
                     <div className={s.about__container_carousel__image}> {/* 1 of 7 */}

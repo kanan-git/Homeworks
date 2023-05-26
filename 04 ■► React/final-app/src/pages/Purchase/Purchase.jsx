@@ -14,11 +14,15 @@ import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Purchase() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [purchaseSTATE, setPurchaseSTATE] = useState(dataSource.english.purchase)
+    // const [purchaseSTATE, setPurchaseSTATE] = useState(dataSource.english.purchase)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.purchase)
+
     // useEffect(
     //     () => {
     //         return () => {
@@ -39,21 +43,21 @@ function Purchase() {
     return (
         <main className={s.purchase}>
             {/* ordered message */}
-            <p className={s.purchase__status}> {purchaseSTATE[0]} </p>
+            <p className={s.purchase__status}> {languageData[0]} </p>
             {/* ordered product info */}
             <ul className={s.purchase__infolist}>
-                <li className={s.purchase__infolist_items}> {purchaseSTATE[1]}: HERE </li>
-                <li className={s.purchase__infolist_items}> {purchaseSTATE[2]}: HERE </li>
-                <li className={s.purchase__infolist_items}> {purchaseSTATE[3]}: HERE </li>
-                <li className={s.purchase__infolist_items}> {purchaseSTATE[4]}: $ HERE USD </li>
+                <li className={s.purchase__infolist_items}> {languageData[1]}: HERE </li>
+                <li className={s.purchase__infolist_items}> {languageData[2]}: HERE </li>
+                <li className={s.purchase__infolist_items}> {languageData[3]}: HERE </li>
+                <li className={s.purchase__infolist_items}> {languageData[4]}: $ HERE USD </li>
             </ul>
             {/* back to circle buttons */}
             <div className={s.purchase__buttons}>
-                <h4 className={s.purchase__buttons_header}> {purchaseSTATE[5]}: </h4>
+                <h4 className={s.purchase__buttons_header}> {languageData[5]}: </h4>
                 <span className={s.purchase__buttons_list}>
-                    <Link className={s.purchase__buttons_list__items} to="/"> {purchaseSTATE[6]} </Link>
-                    <Link className={s.purchase__buttons_list__items} to="/my_cart"> {purchaseSTATE[7]} </Link>
-                    <Link className={s.purchase__buttons_list__items} to="/my_favorites"> {purchaseSTATE[8]} </Link>
+                    <Link className={s.purchase__buttons_list__items} to="/"> {languageData[6]} </Link>
+                    <Link className={s.purchase__buttons_list__items} to="/my_cart"> {languageData[7]} </Link>
+                    <Link className={s.purchase__buttons_list__items} to="/my_favorites"> {languageData[8]} </Link>
                 </span>
             </div>
         </main>

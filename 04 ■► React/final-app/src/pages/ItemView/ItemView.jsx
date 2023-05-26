@@ -14,27 +14,31 @@ import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function ItemView() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [itemviewSTATE, setItemviewSTATE] = useState(dataSource.english.itemview)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#language")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setItemviewSTATE(dataSource.english.itemview)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setItemviewSTATE(dataSource.azerbaijani.itemview)
-                    } else if (languageData.value == "Türkçe") {
-                        setItemviewSTATE(dataSource.turkish.itemview)
-                    }
-                })
-            }
-        }, []
-    )
+    // const [itemviewSTATE, setItemviewSTATE] = useState(dataSource.english.itemview)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.itemview)
+
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#language")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setItemviewSTATE(dataSource.english.itemview)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setItemviewSTATE(dataSource.azerbaijani.itemview)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setItemviewSTATE(dataSource.turkish.itemview)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.itemview}>
@@ -60,8 +64,8 @@ function ItemView() {
                     <img src="#" alt="selected-img-name" className={s.itemview__container_bigframe__content} />
                 </div>
                 <div className={s.itemview__container_information}>
-                    <h3 className={s.itemview__container_information__title}> {itemviewSTATE[0]}: HP Pavilion 16-d 1083ci Victus 6X7R2EA </h3>
-                    <h6 className={s.itemview__container_information__category}> {itemviewSTATE[1]}: Laptops </h6>
+                    <h3 className={s.itemview__container_information__title}> {languageData[0]}: HP Pavilion 16-d 1083ci Victus 6X7R2EA </h3>
+                    <h6 className={s.itemview__container_information__category}> {languageData[1]}: Laptops </h6>
                     <p className={s.itemview__container_information__description}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptates! </p>
                     <span className={s.itemview__container_information__rating}>
                         <span className={s.itemview__container_information__rating_stars}>
@@ -77,9 +81,9 @@ function ItemView() {
                     </span>
                     <strong className={s.itemview__container_information__price}> $ 999 USD </strong>
                     <span className={s.itemview__container_information__buttons}>
-                        <Link className={s.itemview__container_information__buttons_buy} to="/products/item_view/purchase_completed"> <i className='fa-regular fa-credit-card fa-1x'></i> {itemviewSTATE[2]} </Link>
-                        <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> {itemviewSTATE[3]} </button>
-                        <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> {itemviewSTATE[4]} </button>
+                        <Link className={s.itemview__container_information__buttons_buy} to="/products/item_view/purchase_completed"> <i className='fa-regular fa-credit-card fa-1x'></i> {languageData[2]} </Link>
+                        <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> {languageData[3]} </button>
+                        <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> {languageData[4]} </button>
                     </span>
                 </div>
 

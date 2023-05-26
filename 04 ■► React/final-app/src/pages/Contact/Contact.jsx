@@ -13,49 +13,70 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Contact() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [textSTATE, setTextSTATE] = useState(dataSource.english.contact.text)
-    const [headerSTATE, setHeaderSTATE] = useState(dataSource.english.contact.headers)
-
-
-    useEffect(
-        () => {
-            var languageData = document.querySelector("#language")
-            languageData.addEventListener("change", () => {
-                if(languageData.value == "English") {
-                    setTextSTATE(dataSource.english.contact.text)
-                    setHeaderSTATE(dataSource.english.contact.headers)
-                } else if(languageData.value == "Azərbaycan dili") {
-                    setTextSTATE(dataSource.azerbaijani.contact.text)
-                    setHeaderSTATE(dataSource.azerbaijani.contact.headers)
-                } else if(languageData.value == "Türkçe") {
-                    setTextSTATE(dataSource.turkish.contact.text)
-                    setHeaderSTATE(dataSource.turkish.contact.headers)
-                }
-            })
-        }, []
+    // const [textSTATE, setTextSTATE] = useState(dataSource.english.contact.text)
+    // const [headerSTATE, setHeaderSTATE] = useState(dataSource.english.contact.headers)
+    
+    const languageData = useSelector(
+        (state) => state.language.currentLanguage.contact
     )
+
+    // useEffect(
+    //     () => {
+    //         var languageData = document.querySelector("#language")
+    //         languageData.addEventListener("change", () => {
+    //             if(languageData.value == "English") {
+    //                 setTextSTATE(dataSource.english.contact.text)
+    //                 setHeaderSTATE(dataSource.english.contact.headers)
+    //             } else if(languageData.value == "Azərbaycan dili") {
+    //                 setTextSTATE(dataSource.azerbaijani.contact.text)
+    //                 setHeaderSTATE(dataSource.azerbaijani.contact.headers)
+    //             } else if(languageData.value == "Türkçe") {
+    //                 setTextSTATE(dataSource.turkish.contact.text)
+    //                 setHeaderSTATE(dataSource.turkish.contact.headers)
+    //             }
+    //         })
+    //     }, []
+    // )
+
+    const temporaryMapWindow = useRef()
+    
+    function tempFunction() {
+        var temAnimation = temporaryMapWindow.current.animate(
+            [
+                {backgroundColor: "rgb(255,0,0)", filter: "drop-shadow(0 0 40px rgb(255,0,0))"},
+                {backgroundColor: "rgb(255,128,0)", filter: "drop-shadow(0 0 40px rgb(255,128,0))"},
+                {backgroundColor: "rgb(255,255,0)", filter: "drop-shadow(0 0 40px rgb(255,255,0))"},
+                {backgroundColor: "rgb(0,255,0)", filter: "drop-shadow(0 0 40px rgb(0,255,0))"},
+                {backgroundColor: "rgb(0,128,255)", filter: "drop-shadow(0 0 40px rgb(0,128,255))"},
+                {backgroundColor: "rgb(0,0,255)", filter: "drop-shadow(0 0 40px rgb(0,0,255))"},
+                {backgroundColor: "rgb(128,0,255)", filter: "drop-shadow(0 0 40px rgb(128,0,255))"},
+                {backgroundColor: "rgb(255,0,0)", filter: "drop-shadow(0 0 40px rgb(255,0,0))"}
+            ], {duration: 1000, easing: 'ease-in-out', delay: 0, iterations: Infinity}
+        )
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.contact}>
             <div className={s.contact__container}>
-                <h3 className={s.contact__container_headers}> { headerSTATE[0] } </h3>
+                <h3 className={s.contact__container_headers}> { languageData.headers[0] } </h3>
                 <div className={s.contact__container_text}>
-                    { textSTATE[0] }
+                    { languageData.text[0] }
                     <br /> <br />
-                    { textSTATE[1] }
+                    { languageData.text[1] }
                     <br />
-                    { textSTATE[2] }
+                    { languageData.text[2] }
                     <br />
-                    { textSTATE[3] }
+                    { languageData.text[3] }
                     <br /> <br />
-                    { textSTATE[4] }
+                    { languageData.text[4] }
                 </div>
-                <h3 className={s.contact__container_headers}> { headerSTATE[1] } </h3>
-                <div className={s.contact__container_map}>
+                <h3 className={s.contact__container_headers}> { languageData.headers[1] } </h3>
+                <div className={s.contact__container_map} ref={temporaryMapWindow} onMouseEnter={tempFunction}>
                     add map and currentLocationDot here (with API or any way)
                 </div>
             </div>

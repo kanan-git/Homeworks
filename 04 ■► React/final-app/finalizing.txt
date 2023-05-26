@@ -13,23 +13,24 @@ add xmark button to myfav and mycart page itemcards, buy all button to my_cart, 
 look 994 50 123 45 67, fix horizontal scroll issue css)
 8 - load more button API request function on Products, map on Contact
 9 - butun jsx ve scss fayllarini header daki kimi seliqeye sal, sector lara ayir
+0 - if language="English" after change pages (authentication for example), language input set defaultValue="English" property
 
 
 
 ***
-~ 1. language to all "components, popups, pages"***** | use e.preventDefault() after all completed
-~ 2. light or dark mode to all components, popups, pages
-- 3. authentication selected login or register (both switch buttons and form windows) by click buttons
++ 1. language to all "components, popups, pages"***** | use e.preventDefault() after all completed
++ 2. light or dark mode to all components, popups, pages
++ 3. authentication selected login or register (both switch buttons and form windows) by click buttons
 - 4. filtering - from header popup to products
 - 5. filtering - from homepage cards to products
-- 6. clicked productCard to itemView
+~ 6. clicked productCard to itemView
 - 7. itemView to purchaseCompleted when click to buy button
 - 8. itemView to favorite & cart when click to their own buttons (gather products info from userData with id)
 - 9. products to favorite & cart when click their buttons
 
 
 
-*****
+***** work in progress | task: .
 cm - header
 cm - footer
 cm - breadcrumb

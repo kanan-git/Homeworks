@@ -15,6 +15,7 @@ import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 // import api from '../../data/fake-api'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Products() {
     // ...
@@ -40,31 +41,34 @@ function Products() {
         }, []
     )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
-    const [filterSTATE, setFilterSTATE] = useState(dataSource.english.products.filter)
-    const [sortSTATE, setSortSTATE] = useState(dataSource.english.products.sort)
-    const [buttonSTATE, setButtonSTATE] = useState(dataSource.english.products.button)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#language")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setFilterSTATE(dataSource.english.products.filter)
-                        setSortSTATE(dataSource.english.products.sort)
-                        setButtonSTATE(dataSource.english.products.button)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setFilterSTATE(dataSource.azerbaijani.products.filter)
-                        setSortSTATE(dataSource.azerbaijani.products.sort)
-                        setButtonSTATE(dataSource.azerbaijani.products.button)
-                    } else if (languageData.value == "Türkçe") {
-                        setFilterSTATE(dataSource.turkish.products.filter)
-                        setSortSTATE(dataSource.turkish.products.sort)
-                        setButtonSTATE(dataSource.turkish.products.button)
-                    }
-                })
-            }
-        }, []
-    )
+    // const [filterSTATE, setFilterSTATE] = useState(dataSource.english.products.filter)
+    // const [sortSTATE, setSortSTATE] = useState(dataSource.english.products.sort)
+    // const [buttonSTATE, setButtonSTATE] = useState(dataSource.english.products.button)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.products)
+
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#language")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setFilterSTATE(dataSource.english.products.filter)
+    //                     setSortSTATE(dataSource.english.products.sort)
+    //                     setButtonSTATE(dataSource.english.products.button)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setFilterSTATE(dataSource.azerbaijani.products.filter)
+    //                     setSortSTATE(dataSource.azerbaijani.products.sort)
+    //                     setButtonSTATE(dataSource.azerbaijani.products.button)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setFilterSTATE(dataSource.turkish.products.filter)
+    //                     setSortSTATE(dataSource.turkish.products.sort)
+    //                     setButtonSTATE(dataSource.turkish.products.button)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [fstatSTATE, setFstatSTATE] = useState("disabled")
 
@@ -101,12 +105,12 @@ function Products() {
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     if (statusHTMLstate == "greenLight") {
-        console.log(statusHTMLstate)
+        // console.log(statusHTMLstate)
         return (
             <main className={s.products}>
                 {/* topside of product page - contains: filter show/hide (container 1100/1400 px) button, sort input select */}
                 <div className={s.products__topside}>
-                    <button className={s.products__topside_filterbtn} id="filter-button" onClick={temName}> {filterSTATE[0]} </button>
+                    <button className={s.products__topside_filterbtn} id="filter-button" onClick={temName}> {languageData.filter[0]} </button>
                     <span className={s.products__topside_filtertags}>
                         <button className={s.products__topside_filtertags__selected}>
                             sample
@@ -116,37 +120,37 @@ function Products() {
                         </button>
                     </span>
                     <select name="sorting" id="sorting" className={s.products__topside_sort}>
-                        <option value="Most purchased"> {sortSTATE[0]} </option>
-                        <option value="Price low to high"> {sortSTATE[1]} </option>
-                        <option value="Price high to low"> {sortSTATE[2]} </option>
-                        <option value="Rating low to high"> {sortSTATE[3]} </option>
-                        <option value="Rating high to low"> {sortSTATE[4]} </option>
+                        <option value="Most purchased"> {languageData.sort[0]} </option>
+                        <option value="Price low to high"> {languageData.sort[1]} </option>
+                        <option value="Price high to low"> {languageData.sort[2]} </option>
+                        <option value="Rating low to high"> {languageData.sort[3]} </option>
+                        <option value="Rating high to low"> {languageData.sort[4]} </option>
                     </select>
                 </div>
 
                 {/* <FilterAside /> */}
                 <form className={s.filteraside} id="filter-section">
-                    <h2 className={s.filteraside__header}> {filterSTATE[0]} </h2>
+                    <h2 className={s.filteraside__header}> {languageData.filter[0]} </h2>
 
-                    <label htmlFor="price" className={s.filteraside__categories_label}> {filterSTATE[1]} </label>
+                    <label htmlFor="price" className={s.filteraside__categories_label}> {languageData.filter[1]} </label>
                     <span className={s.filteraside__categories}>
-                        <button className={s.filteraside__categories_buttons}> {filterSTATE[4]} </button>
-                        <button className={s.filteraside__categories_buttons}> {filterSTATE[5]} </button>
-                        <button className={s.filteraside__categories_buttons}> {filterSTATE[6]} </button>
-                        <button className={s.filteraside__categories_buttons}> {filterSTATE[7]} </button>
+                        <button className={s.filteraside__categories_buttons}> {languageData.filter[4]} </button>
+                        <button className={s.filteraside__categories_buttons}> {languageData.filter[5]} </button>
+                        <button className={s.filteraside__categories_buttons}> {languageData.filter[6]} </button>
+                        <button className={s.filteraside__categories_buttons}> {languageData.filter[7]} </button>
                     </span>
                     
-                    <label htmlFor="price" className={s.filteraside__price_label}> {filterSTATE[2]} </label>
+                    <label htmlFor="price" className={s.filteraside__price_label}> {languageData.filter[2]} </label>
                     <span className={s.filteraside__price_container}>
                         <input type="number" id="price_min" name="price" className={s.filteraside__price_container__input} placeholder="min. $ 0" min="0" max="999999" step="1" />
                         <input type="number" id="price_max" name="price" className={s.filteraside__price_container__input} placeholder="max. $ 999'999" min="0" max="999999" step="1" />
-                        <button className={s.filteraside__price_container__submit}> {filterSTATE[9]} </button>
+                        <button className={s.filteraside__price_container__submit}> {languageData.filter[9]} </button>
                     </span>
                     {/* <span className={s.filteraside__price_sliders}>
                         <input type="range" id={s.toMin} name="price" className={s.filteraside__price_sliders__input} min="0" max="100" step="1" defaultValue="10" />
                         <input type="range" id={s.toMax} name="price" className={s.filteraside__price_sliders__input} min="0" max="100" step="1" defaultValue="90" />
                     </span> */}
-                    <label htmlFor="rating" className={s.filteraside__rating_label}> {filterSTATE[3]} </label>
+                    <label htmlFor="rating" className={s.filteraside__rating_label}> {languageData.filter[3]} </label>
                     <span className={s.filteraside__rating_container}>
                         <span className={s.filteraside__rating_container__buttons}>
                             <button className={s.filteraside__rating_container__buttons_item}>
@@ -156,7 +160,7 @@ function Products() {
                                 <i className='fa-solid fa-star fa-1x'></i>
                                 <i className='fa-solid fa-star-half-stroke fa-1x'></i>
 
-                                <i className={s.filteraside__rating_container__buttons_item__text}> 4.5 {filterSTATE[8]} </i>
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 4.5 {languageData.filter[8]} </i>
                             </button>
                         </span>
                         <span className={s.filteraside__rating_container__buttons}>
@@ -167,7 +171,7 @@ function Products() {
                                 <i className='fa-solid fa-star fa-1x'></i>
                                 <i className='fa-regular fa-star fa-1x'></i>
 
-                                <i className={s.filteraside__rating_container__buttons_item__text}> 4.0 {filterSTATE[8]} </i>
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 4.0 {languageData.filter[8]} </i>
                             </button>
                         </span>
                         <span className={s.filteraside__rating_container__buttons}>
@@ -178,7 +182,7 @@ function Products() {
                                 <i className='fa-solid fa-star-half-stroke fa-1x'></i>
                                 <i className='fa-regular fa-star fa-1x'></i>
 
-                                <i className={s.filteraside__rating_container__buttons_item__text}> 3.5 {filterSTATE[8]} </i>
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 3.5 {languageData.filter[8]} </i>
                             </button>
                         </span>
                         <span className={s.filteraside__rating_container__buttons}>
@@ -189,7 +193,7 @@ function Products() {
                                 <i className='fa-regular fa-star fa-1x'></i>
                                 <i className='fa-regular fa-star fa-1x'></i>
 
-                                <i className={s.filteraside__rating_container__buttons_item__text}> 3.0 {filterSTATE[8]} </i>
+                                <i className={s.filteraside__rating_container__buttons_item__text}> 3.0 {languageData.filter[8]} </i>
                             </button>
                         </span>
                     </span>
@@ -232,7 +236,7 @@ function Products() {
                         )
                     }
                     {/* button for load more items from API */}
-                    <button className={s.loadmore}> {buttonSTATE} </button>
+                    <button className={s.loadmore}> {languageData.button} </button>
                 </div>
             </main>
         )

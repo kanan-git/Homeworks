@@ -40,6 +40,9 @@ function Footer() {
     const languageData = useSelector(
         (state) => state.language.currentLanguage
     )
+
+    // console.log("from Footer.jsx", languageData.breadcrumb)
+
     // console.log(languageData.footer.about[0])
     // useEffect(
     //     () => {

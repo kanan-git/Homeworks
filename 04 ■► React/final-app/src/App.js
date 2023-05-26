@@ -59,7 +59,7 @@ function App() {
           <Route path="/" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/" />
               <Homepage />
               <Footer />
             </>
@@ -67,7 +67,7 @@ function App() {
           <Route path="/about" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/about" />
               <About />
               <Footer />
             </>
@@ -75,7 +75,7 @@ function App() {
           <Route path="/contact" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/contact" />
               <Contact />
               <Footer />
             </>
@@ -83,7 +83,7 @@ function App() {
           <Route path="/products/item_view" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/products/item_view" />
               <ItemView />
               <Footer />
             </>
@@ -91,7 +91,7 @@ function App() {
           <Route path="/my_cart" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/my_cart" />
               <MyCart />
               <Footer />
             </>
@@ -99,7 +99,7 @@ function App() {
           <Route path="/my_favorites" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/my_cart" />
               <MyFav />
               <Footer />
             </>
@@ -115,7 +115,7 @@ function App() {
           <Route path="/user_settings" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/user_settings" />
               <Settings />
               <Footer />
             </>
@@ -123,7 +123,7 @@ function App() {
           <Route path="/products" element={
             <>
               <Header />
-              <Breadcrumb />
+              <Breadcrumb currentPath="/products" />
               <Products />
               <Footer />
             </>

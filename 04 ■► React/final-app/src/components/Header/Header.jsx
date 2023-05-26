@@ -17,6 +17,7 @@ import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { setCurrentLanguage } from '../../features/counter/counterSlice'
+import { setCurrentAuthType } from '../../features/counter/switchAuthType'
 import { useDispatch } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Header() {
@@ -200,7 +201,11 @@ function Header() {
     // )
 
     const dispatch = useDispatch()
-    dispatch(setCurrentLanguage(dataSource.english))
+
+    // function callBeginningValues() {
+    //     dispatch(setCurrentLanguage(dataSource.english))
+    //     console.log("working +")
+    // }
 
     function handleMainLang() {
         var langSelector = document.querySelector("#language")
@@ -213,6 +218,7 @@ function Header() {
             setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
             // dispatch(setCurrentLanguage("English"))
             dispatch(setCurrentLanguage(dataSource.english))
+            // dispatch(setCurrentLanguage(dataSource))
         } else if(langSelector.value == "Türkçe") {
             setMenuElements(dataSource.turkish.header.topside)
             setNavItems(dataSource.turkish.header.mainside.navbar)
@@ -222,6 +228,7 @@ function Header() {
             setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
             // dispatch(setCurrentLanguage("Türkçe"))
             dispatch(setCurrentLanguage(dataSource.turkish))
+            // dispatch(setCurrentLanguage(dataSource))
         } else {
             setMenuElements(dataSource.azerbaijani.header.topside)
             setNavItems(dataSource.azerbaijani.header.mainside.navbar)
@@ -231,6 +238,7 @@ function Header() {
             setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
             // dispatch(setCurrentLanguage("Azərbaycan dili"))
             dispatch(setCurrentLanguage(dataSource.azerbaijani))
+            // dispatch(setCurrentLanguage(dataSource))
         }
     }
 
@@ -265,6 +273,13 @@ function userpanelDDfuncClose() {
 //         console.log("false | 0")
 //     }
 // }
+
+function selectAuthIn() {
+    dispatch(setCurrentAuthType("login"))
+}
+function selectAuthUp() {
+    dispatch(setCurrentAuthType("register"))
+}
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
     // returning result
     return (
@@ -420,7 +435,7 @@ function userpanelDDfuncClose() {
                 {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}
                 <div className={s.header__main_switch}>
                     <i className='fa-solid fa-sun fa-1x' id={s.fa_sun} ref={switchSun} ></i>
-                    <button className={s.header__main_switch__slider} id="switchlord" onClick={handleSwitchLorD}>
+                    <button className={s.header__main_switch__slider} id="switchlord" onClick={handleSwitchLorD} > {/* onLoad={callBeginningValues} */}
                     {/* <button className={s.header__main_switch__slider} id="switchlord" ref={switchButtonRef}> */}
                         <div className={s.header__main_switch__slider_button} id={s.switch_btn} ref={switchSliderBtn} ></div>
                     </button>
@@ -434,8 +449,8 @@ function userpanelDDfuncClose() {
 
                     {/* dropdown menu for userpanel */}
                     <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
-                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication"> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
-                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication"> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
+                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
+                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
                         {/* <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites"> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </Link> */}
                         {/* <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart"> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </Link> */}
                         <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>

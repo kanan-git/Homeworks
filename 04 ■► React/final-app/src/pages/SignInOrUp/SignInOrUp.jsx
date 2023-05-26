@@ -14,6 +14,7 @@ import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Loading from '../../components/Pop-ups/Loading'
 import SuccessfullySigned from '../../components/Pop-ups/SuccessfullySigned'
@@ -23,6 +24,9 @@ import TermsAndConditions from '../../components/Pop-ups/TermsAndConditions'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SignInOrUp() {
     const root = document.documentElement;
+
+    const authTypeData = useSelector((state) => state.authtype.currentAuthType)
+    // console.log(authTypeData)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
     const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
@@ -30,6 +34,8 @@ function SignInOrUp() {
     const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.signinorup.buttons)
     const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup.month)
     const [pholderSTATE, setPholderSTATE] = useState(dataSource.english.signinorup.placeholders)
+
+    // const languageData = useSelector((state) => state.language.currentLanguage)
     
     function handleLanguage() {
         // language
@@ -41,7 +47,7 @@ function SignInOrUp() {
             setButtonsSTATE(dataSource.english.signinorup.buttons)
             setMonthallSTATE(dataSource.english.signinorup.month)
             setPholderSTATE(dataSource.english.signinorup.placeholders)
-            console.log(langDataAuth.value)
+            // console.log(langDataAuth.value)
         } else if (langDataAuth.value == "Azərbaycan dili") {
             setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
             setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
@@ -49,7 +55,7 @@ function SignInOrUp() {
             setButtonsSTATE(dataSource.azerbaijani.signinorup.buttons)
             setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
             setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
-            console.log(langDataAuth.value)
+            // console.log(langDataAuth.value)
         } else if (langDataAuth.value == "Türkçe") {
             setSelectionsSTATE(dataSource.turkish.signinorup.selections)
             setLoginformSTATE(dataSource.turkish.signinorup.loginform)
@@ -57,7 +63,7 @@ function SignInOrUp() {
             setButtonsSTATE(dataSource.turkish.signinorup.buttons)
             setMonthallSTATE(dataSource.turkish.signinorup.month)
             setPholderSTATE(dataSource.turkish.signinorup.placeholders)
-            console.log(langDataAuth.value)
+            // console.log(langDataAuth.value)
         }
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
@@ -79,6 +85,42 @@ function SignInOrUp() {
             //     overlayLogin.innerHTML, 
             //     overlayRegister.innerHTML
             // )
+
+            if(authTypeData == "login") {
+                loginWindow.style.top = `53%`
+                loginWindow.style.left = `50%`
+                loginWindow.style.scale = `1.0`
+                loginWindow.style.opacity = `1.0`
+                registerWindow.style.top = `40%`
+                registerWindow.style.left = `80%`
+                registerWindow.style.scale = `0.6`
+                registerWindow.style.opacity = `0.5`
+                switchLogin.style.color = `rgb(0,128,255)`
+                switchLogin.style.scale = `1.2`
+                switchLogin.style.opacity = `1.0`
+                switchRegister.style.color = `rgb(64,64,64)`
+                switchRegister.style.scale = `0.8`
+                switchRegister.style.opacity = `0.75`
+                overlayLogin.style.zIndex = `-1`
+                overlayRegister.style.zIndex = `1`
+            } else if(authTypeData == "register") {
+                loginWindow.style.top = `40%`
+                loginWindow.style.left = `-4%`
+                loginWindow.style.scale = `0.6`
+                loginWindow.style.opacity = `0.5`
+                registerWindow.style.top = `53%`
+                registerWindow.style.left = `50%`
+                registerWindow.style.scale = `1.0`
+                registerWindow.style.opacity = `1.0`
+                switchLogin.style.color = `rgb(64,64,64)`
+                switchLogin.style.scale = `0.8`
+                switchLogin.style.opacity = `0.75`
+                switchRegister.style.color = `rgb(0,128,255)`
+                switchRegister.style.scale = `1.2`
+                switchRegister.style.opacity = `1.0`
+                overlayLogin.style.zIndex = `1`
+                overlayRegister.style.zIndex = `-1`
+            }
             
             switchLogin.addEventListener("click", () => {
                 loginWindow.style.top = `53%`

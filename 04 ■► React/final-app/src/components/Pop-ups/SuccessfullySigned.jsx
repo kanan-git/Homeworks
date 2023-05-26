@@ -13,27 +13,31 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SuccessfullySigned() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    const [successSTATE, setSuccessSTATE] = useState(dataSource.english.popup_successfullysigned)
-    useEffect(
-        () => {
-            return () => {
-                var languageData = document.querySelector("#langAuth")
-                languageData.addEventListener("change", () => {
-                    if (languageData.value == "English") {
-                        setSuccessSTATE(dataSource.english.popup_successfullysigned)
-                    } else if (languageData.value == "Azərbaycan dili") {
-                        setSuccessSTATE(dataSource.azerbaijani.popup_successfullysigned)
-                    } else if (languageData.value == "Türkçe") {
-                        setSuccessSTATE(dataSource.turkish.popup_successfullysigned)
-                    }
-                })
-            }
-        }, []
-    )
+    // const [successSTATE, setSuccessSTATE] = useState(dataSource.english.popup_successfullysigned)
+
+    const languageData = useSelector((state) => state.language.currentLanguage.popup_successfullysigned)
+
+    // useEffect(
+    //     () => {
+    //         return () => {
+    //             var languageData = document.querySelector("#langAuth")
+    //             languageData.addEventListener("change", () => {
+    //                 if (languageData.value == "English") {
+    //                     setSuccessSTATE(dataSource.english.popup_successfullysigned)
+    //                 } else if (languageData.value == "Azərbaycan dili") {
+    //                     setSuccessSTATE(dataSource.azerbaijani.popup_successfullysigned)
+    //                 } else if (languageData.value == "Türkçe") {
+    //                     setSuccessSTATE(dataSource.turkish.popup_successfullysigned)
+    //                 }
+    //             })
+    //         }
+    //     }, []
+    // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <>
@@ -43,7 +47,7 @@ function SuccessfullySigned() {
                     <i className='fa-solid fa-check fa-1x'></i>
                 </div>
                 <p className={s.successfullysigned__text}>
-                    {successSTATE}
+                    {languageData}
                 </p>
             </div>
         </>

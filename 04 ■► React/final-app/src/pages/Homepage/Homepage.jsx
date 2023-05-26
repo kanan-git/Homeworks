@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
+import { useSelector } from 'react-redux'
 
 import categ_001 from './homepage assets/categories/1.png'
 import categ_002 from './homepage assets/categories/2.png'
@@ -34,35 +35,39 @@ function Homepage() {
     const [categCards, setCategCards] = useState(dataSource.english.homepage.category_cards)
     const [brandCards, setBrandCards] = useState(dataSource.english.homepage.brand_cards)
     // const [discntCards, setDiscntCards] = useState(dataSource.english.homepage.discount_cards)
-    
-    useEffect(
-        () => {
-            var languageData = document.querySelector("#language")
-            // fake condition for now which will be replaced with input select language data with store (redux tlk)
-            // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
-            languageData.addEventListener("change", () => {
-                if (languageData.value == "English") {
-                    setHpHeaders(dataSource.english.homepage.headers)
-                    setCategCards(dataSource.english.homepage.category_cards)
-                    setBrandCards(dataSource.english.homepage.brand_cards)
-                    // setDiscntCards(dataSource.english.homepage.discount_cards)
-                    // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-                } else if (languageData.value == "Azərbaycan dili") {
-                    setHpHeaders(dataSource.azerbaijani.homepage.headers)
-                    setCategCards(dataSource.azerbaijani.homepage.category_cards)
-                    setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
-                    // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
-                    // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-                } else if (languageData.value == "Türkçe") {
-                    setHpHeaders(dataSource.turkish.homepage.headers)
-                    setCategCards(dataSource.turkish.homepage.category_cards)
-                    setBrandCards(dataSource.turkish.homepage.brand_cards)
-                    // setDiscntCards(dataSource.turkish.homepage.discount_cards)
-                    // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-                }
-            })
-        }, []
+
+    const languageData = useSelector(
+        (state) => state.language.currentLanguage.homepage
     )
+    
+    // useEffect(
+    //     () => {
+    //         var languageData = document.querySelector("#language")
+    //         // fake condition for now which will be replaced with input select language data with store (redux tlk)
+    //         // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+    //         languageData.addEventListener("change", () => {
+    //             if (languageData.value == "English") {
+    //                 setHpHeaders(dataSource.english.homepage.headers)
+    //                 setCategCards(dataSource.english.homepage.category_cards)
+    //                 setBrandCards(dataSource.english.homepage.brand_cards)
+    //                 // setDiscntCards(dataSource.english.homepage.discount_cards)
+    //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+    //             } else if (languageData.value == "Azərbaycan dili") {
+    //                 setHpHeaders(dataSource.azerbaijani.homepage.headers)
+    //                 setCategCards(dataSource.azerbaijani.homepage.category_cards)
+    //                 setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
+    //                 // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
+    //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+    //             } else if (languageData.value == "Türkçe") {
+    //                 setHpHeaders(dataSource.turkish.homepage.headers)
+    //                 setCategCards(dataSource.turkish.homepage.category_cards)
+    //                 setBrandCards(dataSource.turkish.homepage.brand_cards)
+    //                 // setDiscntCards(dataSource.turkish.homepage.discount_cards)
+    //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+    //             }
+    //         })
+    //     }, []
+    // )
 
     // filterCards.map(
     //     (items, index) => {console.log("element: ", items, ", ", "id: ", index)}
@@ -229,13 +234,13 @@ function Homepage() {
     // Now you can use images like this:
     // <img src={images["./image-01.png"]} alt="Image 01" />
     // used ChatGPT <------------------------------------------------------------------------------- END ■
-
+    
     return (
         <main className={s.homepage}>
             <section className={s.homepage__sections}>
                 {/* container which holds header and buttons */}
                 <div className={s.homepage__sections_topside}>
-                    <h3 className={s.homepage__sections_topside__header}> {hpHeaders[0]} </h3>
+                    <h3 className={s.homepage__sections_topside__header}> {languageData.headers[0]} </h3>
                     <span className={s.homepage__sections_topside__box}>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left}> ◄ </button>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right}> ► </button>
@@ -248,77 +253,77 @@ function Homepage() {
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_001} alt="categ_001" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[0]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[0]} </p>
                     </div>
                     {/* cards --- card-002 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_002} alt="categ_002" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[1]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[1]} </p>
                     </div>
                     {/* cards --- card-003 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_003} alt="categ_003" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[2]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[2]} </p>
                     </div>
                     {/* cards --- card-004 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_004} alt="categ_004" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[3]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[3]} </p>
                     </div>
                     {/* cards --- card-005 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_005} alt="categ_005" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[4]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[4]} </p>
                     </div>
                     {/* cards --- card-006 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_006} alt="categ_006" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[5]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[5]} </p>
                     </div>
                     {/* cards --- card-007 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_007} alt="categ_007" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[6]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[6]} </p>
                     </div>
                     {/* cards --- card-008 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_008} alt="categ_008" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[7]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[7]} </p>
                     </div>
                     {/* cards --- card-009 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_009} alt="categ_009" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[8]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[8]} </p>
                     </div>
                     {/* cards --- card-010 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_010} alt="categ_010" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[9]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[9]} </p>
                     </div>
                     {/* cards --- card-011 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={categ_011} alt="categ_011" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {categCards[10]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[10]} </p>
                     </div>
                 </div>
             </section>
@@ -326,7 +331,7 @@ function Homepage() {
             <section className={s.homepage__sections}>
                 {/* container which holds header and buttons */}
                 <div className={s.homepage__sections_topside}>
-                    <h3 className={s.homepage__sections_topside__header}> {hpHeaders[1]} </h3>
+                    <h3 className={s.homepage__sections_topside__header}> {languageData.headers[1]} </h3>
                     <span className={s.homepage__sections_topside__box}>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.brand__arrow_left}> ◄ </button>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.brand__arrow_right}> ► </button>
@@ -339,77 +344,77 @@ function Homepage() {
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_001} alt="brands_001" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[0]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[0]} </p>
                     </div>
                     {/* cards --- card-002 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_002} alt="brands_002" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[1]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[1]} </p>
                     </div>
                     {/* cards --- card-003 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_003} alt="brands_003" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[2]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[2]} </p>
                     </div>
                     {/* cards --- card-004 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_004} alt="brands_004" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[3]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[3]} </p>
                     </div>
                     {/* cards --- card-005 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_005} alt="brands_005" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[4]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[4]} </p>
                     </div>
                     {/* cards --- card-006 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_006} alt="brands_006" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[5]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[5]} </p>
                     </div>
                     {/* cards --- card-007 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_007} alt="brands_007" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[6]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[6]} </p>
                     </div>
                     {/* cards --- card-008 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_008} alt="brands_008" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[7]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[7]} </p>
                     </div>
                     {/* cards --- card-009 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_009} alt="brands_009" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[8]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[8]} </p>
                     </div>
                     {/* cards --- card-010 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_010} alt="brands_010" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[9]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[9]} </p>
                     </div>
                     {/* cards --- card-011 */}
                     <div className={s.homepage__sections_container__cards}>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_011} alt="brands_011" className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {brandCards[10]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[10]} </p>
                     </div>
                 </div>
             </section>
