@@ -200,6 +200,7 @@ function Header() {
     // )
 
     const dispatch = useDispatch()
+    dispatch(setCurrentLanguage(dataSource.english))
 
     function handleMainLang() {
         var langSelector = document.querySelector("#language")
@@ -210,7 +211,8 @@ function Header() {
             setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
             setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
             setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
-            dispatch(setCurrentLanguage("English"))
+            // dispatch(setCurrentLanguage("English"))
+            dispatch(setCurrentLanguage(dataSource.english))
         } else if(langSelector.value == "Türkçe") {
             setMenuElements(dataSource.turkish.header.topside)
             setNavItems(dataSource.turkish.header.mainside.navbar)
@@ -218,7 +220,8 @@ function Header() {
             setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
             setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
             setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
-            dispatch(setCurrentLanguage("Türkçe"))
+            // dispatch(setCurrentLanguage("Türkçe"))
+            dispatch(setCurrentLanguage(dataSource.turkish))
         } else {
             setMenuElements(dataSource.azerbaijani.header.topside)
             setNavItems(dataSource.azerbaijani.header.mainside.navbar)
@@ -226,7 +229,8 @@ function Header() {
             setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
             setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
             setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
-            dispatch(setCurrentLanguage("Azərbaycan dili"))
+            // dispatch(setCurrentLanguage("Azərbaycan dili"))
+            dispatch(setCurrentLanguage(dataSource.azerbaijani))
         }
     }
 
