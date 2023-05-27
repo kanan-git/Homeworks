@@ -7,7 +7,7 @@ overlay, success, privacy policy, terms and condition)
 3 + component, page, popup lardaki eksiklikleri tamamla
 4 + routing install ve usage, oyren ve tetbiq et (stack overflow, chatgpt, youtube, mdn, w3)
 5 ~ dataflow*** - redux toolkit qos (store js, use also props somewhere which only require 1 place)
-6 - qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header), 
+6 ~ qalan funksiyalar (search, sorting, filters, authentication - also signed profile money amount near nickname in header), 
 add xmark button to myfav and mycart page itemcards, buy all button to my_cart, if logged a user, show logout settings ...
 7 - guide txt (sass mobile responsivity, overall width scroll issue, sessionStorage, sign in up input writing rule and 
 look 994 50 123 45 67, fix horizontal scroll issue css)
@@ -63,7 +63,7 @@ npm start
 
 
 git add .
-git commit -m "."
+git commit -m "ShopNet day 39/60 | May 27, 2023 at 06:42"
 git push origin master
 git status
 clear
