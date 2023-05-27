@@ -14,19 +14,25 @@ look 994 50 123 45 67, fix horizontal scroll issue css)
 8 - load more button API request function on Products, map on Contact
 9 - butun jsx ve scss fayllarini header daki kimi seliqeye sal, sector lara ayir
 0 - if language="English" after change pages (authentication for example), language input set defaultValue="English" property
+0 - fix issue itemView no scroll because to extended content, new image items, fix to scroll on axis Y only + onClick, present in bigScreen div
 
 
 
-***
+*** rdk store
+- 0. from userData to header (logged in or guest, logged id amount, profImg, username, dropdown), mycart, myfav, settings, itemview(if guest, buttons inactive)
 + 1. language to all "components, popups, pages"***** | use e.preventDefault() after all completed
 + 2. light or dark mode to all components, popups, pages
 + 3. authentication selected login or register (both switch buttons and form windows) by click buttons
 - 4. filtering - from header popup to products
 - 5. filtering - from homepage cards to products
-~ 6. clicked productCard to itemView
+- 6. filter tags from filterAside, header topside dropdown, homepage cards
 - 7. itemView to purchaseCompleted when click to buy button
 - 8. itemView to favorite & cart when click to their own buttons (gather products info from userData with id)
 - 9. products to favorite & cart when click their buttons
+*** props
+- 1. clicked productCard to itemView
+- 2. searching header input to products
+- 3. authentication object from signinorup to userData
 
 
 
