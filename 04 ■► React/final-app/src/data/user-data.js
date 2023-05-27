@@ -5,10 +5,16 @@ export const userData = {
         lastname: "Ipsum",
         nick: "loremipsum",
         date_of_birth: "mm.dd.yyyy",
+        gender: "male",
         email: "example@gmail.com",
-        phone_number: "+994501234567",
         password: "seriouslydifficultpasstoguess123",
-        country: "Azerbaijan"
+
+        budget_amount_from_creditcard: "500",
+        profile_img: "", // get random image from an API while register, set link here for login
+
+        favorites: [],
+        cart: [],
+        orders: []
     },
     user_002: {
         id: "1",
@@ -16,10 +22,16 @@ export const userData = {
         lastname: "Uiop",
         nick: "qwertyuiop",
         date_of_birth: "mm.dd.yyyy",
+        gender: "female",
         email: "example@mail.ru",
-        phone_number: "+994501234567",
         password: "seriouslydifficultpasstoguess456",
-        country: "United States of America"
+
+        budget_amount_from_creditcard: "1000",
+        profile_img: "", // get random image from an API while register, set link here for login
+
+        favorites: [],
+        cart: [],
+        orders: []
     },
     user_003: {
         id: "1",
@@ -27,9 +39,15 @@ export const userData = {
         lastname: "Qorquud",
         nick: "dedeqorquudmarkq123",
         date_of_birth: "mm.dd.yyyy",
+        gender: "male",
         email: "example@hotmail.com",
-        phone_number: "+994501234567",
         password: "seriouslydifficultpasstoguess789",
-        country: "Turkey"
+
+        budget_amount_from_creditcard: "15000",
+        profile_img: "", // get random image from an API while register, set link here for login
+
+        favorites: [],
+        cart: [],
+        orders: []
     }
 }
