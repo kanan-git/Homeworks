@@ -15,6 +15,8 @@ import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setUserObject } from '../../features/counter/newuserSlice';
 
 import Loading from '../../components/Pop-ups/Loading'
 import SuccessfullySigned from '../../components/Pop-ups/SuccessfullySigned'
@@ -331,6 +333,68 @@ function SignInOrUp() {
     //         }
     //     }, []
     // )
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
+    const dispatch = useDispatch()
+
+    const [genderSTATE, setGenderSTATE] = useState("male")
+    const [dateofbirthSTATE, setDateofbirthSTATE] = useState("")
+
+    var submitRegisterBtn = document.querySelector(`.${s.signinorup__register_submit}`)
+
+    var registryInputName = document.querySelector("#name")
+    var registryInputLastname = document.querySelector("#lastname")
+    var registryInputEmail = document.querySelector("#email-registry")
+    var registryInputPassword = document.querySelector("#password-registry")
+
+    function setDateOfBirth() {
+        var registryInputMonth = document.querySelector("#month")
+        var registryInputDay = document.querySelector("#day")
+        var registryInputYear = document.querySelector("#year")
+
+        var month = registryInputMonth.value
+        var day = registryInputDay.value
+        var year = registryInputYear.value
+
+        var dateOfBirth = month + "." + day + "." + year
+
+        // var dateOfBirth = "mm.dd.yyyy" // mm-01 .-2 dd-34 .-5 yyyy-6789
+        // for(var i=0; i<10; i++) {
+        //     console.log(dateOfBirth[i])
+        // }
+
+        // console.log(dateOfBirth)
+
+        setDateofbirthSTATE(dateOfBirth)
+    }
+
+    function regPassVisibility() {
+        if(registryInputPassword.type == "password") {
+            registryInputPassword.type = `text`
+        } else if (registryInputPassword.type == "text") {
+            registryInputPassword.type = `password`
+        }
+    }
+
+    function submitRegistration() {
+        // 
+        
+        // 
+
+        var user = {
+            name: registryInputName.value,
+            lastname: registryInputLastname.value,
+            email: registryInputEmail.value,
+            password: registryInputPassword.value,
+            gender: genderSTATE,
+            date_of_birth: dateofbirthSTATE,
+    
+            budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
+        }
+
+        // console.log(user)
+
+        dispatch(setUserObject(user))
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // const [monthSTATE, setMonthSTATE] = useState([])
     const [daySTATE, setDaySTATE] = useState([])
@@ -406,14 +470,18 @@ function SignInOrUp() {
                     <label htmlFor="radios" className={s.signinorup__register_contents__label}>
                         {registerformSTATE[4]}
                         <br />
-                        <input type="radio" id="male" name="genders" className={s.genders_radio} value="male" defaultChecked />
+                        <input type="radio" id="male" name="genders" className={s.genders_radio} value="male" defaultChecked onClick={
+                            () => {setGenderSTATE("male")}
+                        } />
                         <label htmlFor="male" className={s.genders_label}> {registerformSTATE[11]} </label>
-                        <input type="radio" id="female" name="genders" className={s.genders_radio} value="female" />
+                        <input type="radio" id="female" name="genders" className={s.genders_radio} value="female" onClick={
+                            () => {setGenderSTATE("female")}
+                        } />
                         <label htmlFor="female" className={s.genders_label}> {registerformSTATE[12]} </label>
                     </label>
                     <br />
                     <label htmlFor="month" className={s.dateofbirth__label}> {registerformSTATE[5]} </label>
-                    <select name="month" id="month" className={s.dateofbirth__input}>
+                    <select name="month" id="month" className={s.dateofbirth__input} onChange={setDateOfBirth}>
                         <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ {registerformSTATE[13]} ] - </option>
                         {
                             monthallSTATE.map(
@@ -422,7 +490,7 @@ function SignInOrUp() {
                         }
                     </select>
                     <label htmlFor="day" className={s.dateofbirth__label}> {registerformSTATE[6]} </label>
-                    <select name="day" id="day" className={s.dateofbirth__input}>
+                    <select name="day" id="day" className={s.dateofbirth__input} onChange={setDateOfBirth}>
                         {
                             daySTATE.map(
                                 (day, index) => <option value={day} className={s.dateofbirth__input_options} key={index}> {day} </option>
@@ -431,7 +499,7 @@ function SignInOrUp() {
                         <option defaultValue={false} style={{display: "none"}} className={s.dateofbirth__input_options}> - [ {registerformSTATE[13]} ] - </option>
                     </select>
                     <label htmlFor="year" className={s.dateofbirth__label}> {registerformSTATE[7]} </label>
-                    <select name="year" id="year" className={s.dateofbirth__input}>
+                    <select name="year" id="year" className={s.dateofbirth__input} onChange={setDateOfBirth}>
                         {
                             yearSTATE.map(
                                 (year, index) => <option value={year} className={s.dateofbirth__input_options} key={index}> {year} </option>
@@ -442,14 +510,14 @@ function SignInOrUp() {
                     <br />
                     <label htmlFor="password-registry" className={s.signinorup__register_contents__label}> {loginformSTATE[2]} </label> <br />
                     <input type="password" id="password-registry" name="password-registry" className={s.signinorup__register_contents__input} required placeholder={pholderSTATE[3]} /> {/* type="text/password" */}
-                    <button className={s.signinorup__register_contents__eyebutton}> <i className='fa-regular fa-eye fa-1x'></i> </button>
+                    <button className={s.signinorup__register_contents__eyebutton} onClick={regPassVisibility}> <i className='fa-regular fa-eye fa-1x'></i> </button>
                     <br />
                 </span>
                 <label htmlFor="accept" className={s.signinorup__register_accept}>
                     <input type="checkbox" id="accept" name="accept" required className={s.signinorup__register_accept__checkbox} />
                     {registerformSTATE[8]} <i> {registerformSTATE[9]} </i>
                 </label>
-                <input type="submit" className={s.signinorup__register_submit} value={registerformSTATE[10]} />
+                <input type="submit" className={s.signinorup__register_submit} value={registerformSTATE[10]} onClick={submitRegistration} />
             </form>
 
 
