@@ -372,52 +372,88 @@ function SignInOrUp() {
             registryInputPassword.type = `password`
         }
     }
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
+    function submitRegistration(event) {
+        event.preventDefault(); // Prevents the default form submission | from ChatGPT
 
-    function submitRegistration() {
-        // 
-        // 
+        // console.log(new_user, usersContainer)
+        // setUserDataSTATE(usersContainer)
+        // var userStringTemplate = "user_000000001" // 4 letters, 1 symbol, 9 digits = 14 characters
+
+        var userIndex = 1 // character count 1 - 9
+        // var indexTemplate = "00000000"
+        // var indexString = indexTemplate + userIndex
+        // if(indexString.length > 9) {
+        //     var z = indexString.length - 9
+        //     var indexTemplate = indexTemplate.slice(z, 7) + "0"
+        //     var indexString = indexTemplate + userIndex
+        //     // console.log(z)
+        //     // console.log(indexTemplate)
+        //     // console.log(userIndex)
+        //     // console.log(indexString)
+        // } else {
+        //     var indexTemplate = "00000000"
+        //     var indexString = indexTemplate + userIndex
+        //     // console.log(z)
+        //     // console.log(indexTemplate)
+        //     // console.log(userIndex)
+        //     // console.log(indexString)
+        // }
+        // var userStringTemplate = "user_" // character count 5
+        // var userName = userStringTemplate + indexString
+
+        // var newData = {
+        //     id: userIndex,
+        //     name: registryInputName.value,
+        //     lastname: registryInputLastname.value,
+        //     email: registryInputEmail.value,
+        //     password: registryInputPassword.value,
+        //     gender: genderSTATE,
+        //     date_of_birth: dateofbirthSTATE,
+    
+        //     budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
+        // }
+
+        // localStorage.setItem(userName, JSON.stringify(newData))
+
         var user = {
+            id: userIndex,
             name: registryInputName.value,
             lastname: registryInputLastname.value,
             email: registryInputEmail.value,
             password: registryInputPassword.value,
             gender: genderSTATE,
             date_of_birth: dateofbirthSTATE,
-    
             budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
         }
-        // console.log(user)
-        setUserDataSTATE(user)
+
+        var keysOfLocalStorage = Object.keys(localStorage)
+        keysOfLocalStorage.forEach(
+            (e) => {
+                console.log(e)
+            }
+        )
+
+        localStorage.setItem(userIndex, JSON.stringify(user))
     }
 
-    function holdUsersData() {
-        console.log(userDataSTATE)
-        // var userData = {
-        //     user_000000: {
-        //         id: "0",
-        //         name: "Lorem",
-        //         lastname: "Ipsum",
-        //         date_of_birth: "mm.dd.yyyy",
-        //         gender: "male",
-        //         email: "example@gmail.com",
-        //         password: "seriouslydifficultpasstoguess123",
-        
-        //         budget_amount_from_creditcard: "1000",
-        
-        //         favorites: [],
-        //         cart: [],
-        //         orders: []
-        //     },
-        // }
-    }
-
-    useEffect(
-        () => {
-            setTimeout(
-                holdUsersData(), 1000
-            )
-        }, []
-    )
+    // ------------------------->>>>>>>>>>>>> put data into localStorage
+    // var testData = {
+    //     name: "123"
+    // }
+    // localStorage.setItem("testiin", JSON.stringify(testData))
+    // ------------------------->>>>>>>>>>>>> get data from localStorage
+    // var gatheringData = JSON.parse(localStorage.getItem("testiin"));
+    // console.log(gatheringData.name)
+    // ------------------------->>>>>>>>>>>>> Existing object
+    // var existingObject = {
+    //     key1: 'Value 1',
+    //     key2: 'Value 2'
+    // };
+    // ------------------------->>>>>>>>>>>>> Add new values to the existing object
+    // existingObject.newKey1 = 'New Value 1';
+    // existingObject.newKey2 = 'New Value 2';
+    // console.log(existingObject);
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // const [monthSTATE, setMonthSTATE] = useState([])
     const [daySTATE, setDaySTATE] = useState([])
