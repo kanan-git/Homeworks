@@ -338,6 +338,7 @@ function SignInOrUp() {
 
     const [genderSTATE, setGenderSTATE] = useState("male")
     const [dateofbirthSTATE, setDateofbirthSTATE] = useState("")
+    const [userDataSTATE, setUserDataSTATE] = useState({})
 
     var submitRegisterBtn = document.querySelector(`.${s.signinorup__register_submit}`)
 
@@ -356,14 +357,11 @@ function SignInOrUp() {
         var year = registryInputYear.value
 
         var dateOfBirth = month + "." + day + "." + year
-
         // var dateOfBirth = "mm.dd.yyyy" // mm-01 .-2 dd-34 .-5 yyyy-6789
         // for(var i=0; i<10; i++) {
         //     console.log(dateOfBirth[i])
         // }
-
         // console.log(dateOfBirth)
-
         setDateofbirthSTATE(dateOfBirth)
     }
 
@@ -377,9 +375,7 @@ function SignInOrUp() {
 
     function submitRegistration() {
         // 
-        
         // 
-
         var user = {
             name: registryInputName.value,
             lastname: registryInputLastname.value,
@@ -390,11 +386,38 @@ function SignInOrUp() {
     
             budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
         }
-
         // console.log(user)
-
-        dispatch(setUserObject(user))
+        setUserDataSTATE(user)
     }
+
+    function holdUsersData() {
+        console.log(userDataSTATE)
+        // var userData = {
+        //     user_000000: {
+        //         id: "0",
+        //         name: "Lorem",
+        //         lastname: "Ipsum",
+        //         date_of_birth: "mm.dd.yyyy",
+        //         gender: "male",
+        //         email: "example@gmail.com",
+        //         password: "seriouslydifficultpasstoguess123",
+        
+        //         budget_amount_from_creditcard: "1000",
+        
+        //         favorites: [],
+        //         cart: [],
+        //         orders: []
+        //     },
+        // }
+    }
+
+    useEffect(
+        () => {
+            setTimeout(
+                holdUsersData(), 1000
+            )
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // const [monthSTATE, setMonthSTATE] = useState([])
     const [daySTATE, setDaySTATE] = useState([])
