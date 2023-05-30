@@ -69,8 +69,33 @@ npm start
 
 
 git add .
-git commit -m "ShopNet day 39/60 | May 27, 2023 at 06:42"
+git commit -m "ShopNet day 42/60 | May 30, 2023 at 13:24"
 git push origin master
 git status
 clear
+
+
+
+01 - CREATE USERS: react js registration data how to keep (without JSON & API), how to edit text inside js database file with js (not backend) if its not necessary, 
+put it into localStorage and use e.preventDefault() + figure out how to get new user registration into new object, not replace previous one
+02 - SIGN IN FEATURE: login algoritm, when user logged, show different profile image, print name, balance on header, change menus on userpanel dropdown
+03 - LOG OUT FEATURE: write log out algoritm, when user logged out, back to guest mode
+04 - FAVORITE AND CART ARRAY OF USERS: add to favorites algoritm, it must work for individual user which each one keep only their clicked favorite button products
+05 - PURCHASE: when user buy all cart items, clear all cart array, decrease user's balance amount, if balance is not enough to buy product or all cart items, print it 
+with alert, use alert on favorite and cart pages too when they are empty, also in search result no found, final thing, when user click Buy button inside ItemView 
+component, return data to Purchase Completed component
+06 - POPUPS: when user registered, show Loading.jsx with setTimeout, alert you successfully signed up, then swap to login automaticly, when user click sign in, if 
+information is correct show success popup, else failed popup
+07 - SEARCHING: with redux toolkit, return searched keyword from Header.jsx to Products.jsx
+08 - SORTING AND FILTER PRICE RANGE: write sorting algoritm, apply to API results
+09 - FILTER TAGS: when user click to Products filter or Header topside dropdown or Homepage tags, return its value to Products component and filter products API 
+result with category property
+10 - REQUEST MORE DATA: in Products.jsx, when click "load more" button, fetch more 20 products object, if its not working with current API, find new website which 
+give API
+11 - PRODUCT IMAGE: in ItemView.jsx, remove leftside image thumbnails, fix css, show product data which clicked on Products.jsx
+12 - MOBILE RESPONSIVITY: hide header and make it seems with a menu button, full screen and transformX from left, add 4 responsivity to each component and to their 
+sections
+13 - FIXES AND VERCEL: language data, light or dark mode, all of registered users, save in localStorage or sessionStorage, when pages change especially between 
+authentication and rest of pages, gather language and LorD info from storage, fix authentication and product error to make them seem on Vercel, may also create 
+Settings contents, changing password, edit other information
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
