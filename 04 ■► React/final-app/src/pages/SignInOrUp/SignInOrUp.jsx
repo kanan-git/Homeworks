@@ -28,6 +28,7 @@ function SignInOrUp() {
     const root = document.documentElement;
 
     const authTypeData = useSelector((state) => state.authtype.currentAuthType)
+    // localStorage.setItem("Auth State", JSON.stringify(authTypeData))
     // console.log(authTypeData)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
@@ -373,87 +374,188 @@ function SignInOrUp() {
         }
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
+    const [isLoading, setIsLoading] = useState(false)
+
     function submitRegistration(event) {
+        
+        // { // failed codes
+        //     // event.preventDefault(); // Prevents the default form submission | from ChatGPT
+
+        //     // console.log(new_user, usersContainer)
+        //     // setUserDataSTATE(usersContainer)
+        //     // var userStringTemplate = "user_000000001" // 4 letters, 1 symbol, 9 digits = 14 characters
+
+        //     // var userIndex = 1 // character count 1 - 9
+        //     // var indexTemplate = "00000000"
+        //     // var indexString = indexTemplate + userIndex
+        //     // if(indexString.length > 9) {
+        //     //     var z = indexString.length - 9
+        //     //     var indexTemplate = indexTemplate.slice(z, 7) + "0"
+        //     //     var indexString = indexTemplate + userIndex
+        //     //     // console.log(z)
+        //     //     // console.log(indexTemplate)
+        //     //     // console.log(userIndex)
+        //     //     // console.log(indexString)
+        //     // } else {
+        //     //     var indexTemplate = "00000000"
+        //     //     var indexString = indexTemplate + userIndex
+        //     //     // console.log(z)
+        //     //     // console.log(indexTemplate)
+        //     //     // console.log(userIndex)
+        //     //     // console.log(indexString)
+        //     // }
+        //     // var userStringTemplate = "user_" // character count 5
+        //     // var userName = userStringTemplate + indexString
+
+        //     // var newData = {
+        //     //     id: userIndex,
+        //     //     name: registryInputName.value,
+        //     //     lastname: registryInputLastname.value,
+        //     //     email: registryInputEmail.value,
+        //     //     password: registryInputPassword.value,
+        //     //     gender: genderSTATE,
+        //     //     date_of_birth: dateofbirthSTATE,
+        
+        //     //     budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
+        //     // }
+
+        //     // localStorage.setItem(userName, JSON.stringify(newData))
+
+        //     // keysOfLocalStorage.forEach(
+        //     //     (e) => {
+        //     //         console.log(e)
+        //     //     }
+        //     // )
+
+        //     // ------------------------->>>>>>>>>>>>> put data into localStorage
+        //     // var testData = {
+        //     //     name: "123"
+        //     // }
+        //     // localStorage.setItem("testiin", JSON.stringify(testData))
+        //     // ------------------------->>>>>>>>>>>>> get data from localStorage
+        //     // var gatheringData = JSON.parse(localStorage.getItem("testiin"));
+        //     // console.log(gatheringData.name)
+        //     // ------------------------->>>>>>>>>>>>> Existing object
+        //     // var existingObject = {
+        //     //     key1: 'Value 1',
+        //     //     key2: 'Value 2'
+        //     // };
+        //     // ------------------------->>>>>>>>>>>>> Add new values to the existing object
+        //     // existingObject.newKey1 = 'New Value 1';
+        //     // existingObject.newKey2 = 'New Value 2';
+        //     // console.log(existingObject);
+        // }
+
         event.preventDefault(); // Prevents the default form submission | from ChatGPT
-
-        // console.log(new_user, usersContainer)
-        // setUserDataSTATE(usersContainer)
-        // var userStringTemplate = "user_000000001" // 4 letters, 1 symbol, 9 digits = 14 characters
-
-        var userIndex = 1 // character count 1 - 9
-        // var indexTemplate = "00000000"
-        // var indexString = indexTemplate + userIndex
-        // if(indexString.length > 9) {
-        //     var z = indexString.length - 9
-        //     var indexTemplate = indexTemplate.slice(z, 7) + "0"
-        //     var indexString = indexTemplate + userIndex
-        //     // console.log(z)
-        //     // console.log(indexTemplate)
-        //     // console.log(userIndex)
-        //     // console.log(indexString)
-        // } else {
-        //     var indexTemplate = "00000000"
-        //     var indexString = indexTemplate + userIndex
-        //     // console.log(z)
-        //     // console.log(indexTemplate)
-        //     // console.log(userIndex)
-        //     // console.log(indexString)
-        // }
-        // var userStringTemplate = "user_" // character count 5
-        // var userName = userStringTemplate + indexString
-
-        // var newData = {
-        //     id: userIndex,
-        //     name: registryInputName.value,
-        //     lastname: registryInputLastname.value,
-        //     email: registryInputEmail.value,
-        //     password: registryInputPassword.value,
-        //     gender: genderSTATE,
-        //     date_of_birth: dateofbirthSTATE,
-    
-        //     budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
-        // }
-
-        // localStorage.setItem(userName, JSON.stringify(newData))
-
-        var user = {
-            id: userIndex,
-            name: registryInputName.value,
-            lastname: registryInputLastname.value,
-            email: registryInputEmail.value,
-            password: registryInputPassword.value,
-            gender: genderSTATE,
-            date_of_birth: dateofbirthSTATE,
-            budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
-        }
-
         var keysOfLocalStorage = Object.keys(localStorage)
-        keysOfLocalStorage.forEach(
-            (e) => {
-                console.log(e)
+        if(keysOfLocalStorage.length === 0) {
+            // create first element if there is no user data
+            var user = {
+                id: 0,
+                name: registryInputName.value,
+                lastname: registryInputLastname.value,
+                email: registryInputEmail.value,
+                password: registryInputPassword.value,
+                gender: genderSTATE,
+                date_of_birth: dateofbirthSTATE,
+                budget_amount_from_creditcard: "1000" // temporary point system because there is no payment info from backend
             }
-        )
-
-        localStorage.setItem(userIndex, JSON.stringify(user))
+            localStorage.setItem(0, JSON.stringify(user))
+            alert("Welcome " + user.name + " " + user.lastname + ", " + "you successfully signed up, please go back to Login window.")
+            setIsLoading(true)
+            setTimeout(
+                () => {
+                    setIsLoading(false)
+                    // localStorage.setItem("Auth State", JSON.stringify("login"))
+                    var loginWindow = document.querySelector(`.${s.signinorup__login}`)
+                    var registerWindow = document.querySelector(`.${s.signinorup__register}`)
+                    var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
+                    var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
+                    var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
+                    var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
+                    if(authTypeData == "login") {
+                        loginWindow.style.top = `53%`
+                        loginWindow.style.left = `50%`
+                        loginWindow.style.scale = `1.0`
+                        loginWindow.style.opacity = `1.0`
+                        registerWindow.style.top = `40%`
+                        registerWindow.style.left = `80%`
+                        registerWindow.style.scale = `0.6`
+                        registerWindow.style.opacity = `0.5`
+                        switchLogin.style.color = `rgb(0,128,255)`
+                        switchLogin.style.scale = `1.2`
+                        switchLogin.style.opacity = `1.0`
+                        switchRegister.style.color = `rgb(64,64,64)`
+                        switchRegister.style.scale = `0.8`
+                        switchRegister.style.opacity = `0.75`
+                        overlayLogin.style.zIndex = `-1`
+                        overlayRegister.style.zIndex = `1`
+                    }
+                }, 1000
+            )
+        } else {
+            // generate new user
+            var array4converting = []
+            keysOfLocalStorage.forEach(
+                (indexStrings) => {
+                    array4converting.push(+indexStrings)
+                }
+            )
+            for (var i=0; i<999999999; i++) {
+                // checking exist (if) and generate new if this number is not exist (else) then put into localStorage
+                if(array4converting.includes(i)) {
+                    // do nothing
+                    // console.log(i)
+                } else {
+                    var user = {
+                        id: i,
+                        name: registryInputName.value,
+                        lastname: registryInputLastname.value,
+                        email: registryInputEmail.value,
+                        password: registryInputPassword.value,
+                        gender: genderSTATE,
+                        date_of_birth: dateofbirthSTATE,
+                        budget_amount_from_creditcard: "1000" // temporary point system because there is no payment info from backend
+                    }
+                    // console.log(i)
+                    localStorage.setItem(i, JSON.stringify(user))
+                    alert("Welcome " + user.name + " " + user.lastname + ", " + "you successfully signed up, please go back to Login window.")
+                    setIsLoading(true)
+                    setTimeout(
+                        () => {
+                            setIsLoading(false)
+                            // localStorage.setItem("Auth State", JSON.stringify("login"))
+                            var loginWindow = document.querySelector(`.${s.signinorup__login}`)
+                            var registerWindow = document.querySelector(`.${s.signinorup__register}`)
+                            var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
+                            var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
+                            var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
+                            var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
+                            if(authTypeData == "login") {
+                                loginWindow.style.top = `53%`
+                                loginWindow.style.left = `50%`
+                                loginWindow.style.scale = `1.0`
+                                loginWindow.style.opacity = `1.0`
+                                registerWindow.style.top = `40%`
+                                registerWindow.style.left = `80%`
+                                registerWindow.style.scale = `0.6`
+                                registerWindow.style.opacity = `0.5`
+                                switchLogin.style.color = `rgb(0,128,255)`
+                                switchLogin.style.scale = `1.2`
+                                switchLogin.style.opacity = `1.0`
+                                switchRegister.style.color = `rgb(64,64,64)`
+                                switchRegister.style.scale = `0.8`
+                                switchRegister.style.opacity = `0.75`
+                                overlayLogin.style.zIndex = `-1`
+                                overlayRegister.style.zIndex = `1`
+                            }
+                        }, 1000
+                    )
+                    break
+                }
+            }
+        }
     }
-
-    // ------------------------->>>>>>>>>>>>> put data into localStorage
-    // var testData = {
-    //     name: "123"
-    // }
-    // localStorage.setItem("testiin", JSON.stringify(testData))
-    // ------------------------->>>>>>>>>>>>> get data from localStorage
-    // var gatheringData = JSON.parse(localStorage.getItem("testiin"));
-    // console.log(gatheringData.name)
-    // ------------------------->>>>>>>>>>>>> Existing object
-    // var existingObject = {
-    //     key1: 'Value 1',
-    //     key2: 'Value 2'
-    // };
-    // ------------------------->>>>>>>>>>>>> Add new values to the existing object
-    // existingObject.newKey1 = 'New Value 1';
-    // existingObject.newKey2 = 'New Value 2';
-    // console.log(existingObject);
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // const [monthSTATE, setMonthSTATE] = useState([])
     const [daySTATE, setDaySTATE] = useState([])
@@ -480,6 +582,8 @@ function SignInOrUp() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.signinorup}>
+            {isLoading && <Loading />}
+
             <div className={s.signinorup__topside}>
                 <select name="langAuth" id="langAuth" className={s.signinorup__topside_language} onChange={handleLanguage}>
                     <option value="English" className={s.signinorup__topside_language__options}> English </option>
