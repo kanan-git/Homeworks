@@ -25,6 +25,14 @@ function Header() {
     // const switchButtonRef = useRef()
     const root = document.documentElement;
     const isHovered = "nope"
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    var userOrGuest = JSON.parse(localStorage.getItem("isLogged"))
+    if(userOrGuest == true) {
+        // change userpanel dropdown items, balance amount of user, change different user image, etc
+    } else {
+        localStorage.setItem("isLogged", JSON.stringify(false))
+    }
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     // const switchSliderBtn = document.querySelector("#switch_btn")
     // const switchSun = document.querySelector("#fa_sun")
     // const switchMoon = document.querySelector("#fa_moon")

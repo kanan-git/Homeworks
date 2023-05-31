@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-rout
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setUserObject } from '../../features/counter/newuserSlice';
+import { useNavigate } from 'react-router-dom';
 
 import Loading from '../../components/Pop-ups/Loading'
 import SuccessfullySigned from '../../components/Pop-ups/SuccessfullySigned'
@@ -26,10 +27,15 @@ import TermsAndConditions from '../../components/Pop-ups/TermsAndConditions'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SignInOrUp() {
     const root = document.documentElement;
-
     const authTypeData = useSelector((state) => state.authtype.currentAuthType)
     // localStorage.setItem("Auth State", JSON.stringify(authTypeData))
     // console.log(authTypeData)
+    var userOrGuest = JSON.parse(localStorage.getItem("isLogged"))
+    if(userOrGuest == true) {
+        // do nothing for now
+    } else {
+        localStorage.setItem("isLogged", JSON.stringify(false))
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
     const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
@@ -348,6 +354,9 @@ function SignInOrUp() {
     var registryInputEmail = document.querySelector("#email-registry")
     var registryInputPassword = document.querySelector("#password-registry")
 
+    var inputEmail = document.querySelector("#email-login")
+    var inputPassword = document.querySelector("#password-login")
+
     function setDateOfBirth() {
         var registryInputMonth = document.querySelector("#month")
         var registryInputDay = document.querySelector("#day")
@@ -458,7 +467,10 @@ function SignInOrUp() {
                 password: registryInputPassword.value,
                 gender: genderSTATE,
                 date_of_birth: dateofbirthSTATE,
-                budget_amount_from_creditcard: "1000" // temporary point system because there is no payment info from backend
+                budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
+                orders: [],
+                basket: [],
+                favorites: []
             }
             localStorage.setItem(0, JSON.stringify(user))
             alert("Welcome " + user.name + " " + user.lastname + ", " + "you successfully signed up, please go back to Login window.")
@@ -515,7 +527,10 @@ function SignInOrUp() {
                         password: registryInputPassword.value,
                         gender: genderSTATE,
                         date_of_birth: dateofbirthSTATE,
-                        budget_amount_from_creditcard: "1000" // temporary point system because there is no payment info from backend
+                        budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
+                        orders: [],
+                        basket: [],
+                        favorites: []
                     }
                     // console.log(i)
                     localStorage.setItem(i, JSON.stringify(user))
@@ -556,6 +571,100 @@ function SignInOrUp() {
             }
         }
     }
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
+    const [trueInfo, setTrueInfo] = useState(false)
+    const [falseInfo, setFalseInfo] = useState(false)
+    const navigate = useNavigate()
+
+    function submitLogin(event) {
+        event.preventDefault() // stop refreshing the page i guess :)
+        var email = inputEmail.value
+        var pass = inputPassword.value
+
+        for (var i=0; i<localStorage.length; i++) { // loop to check all user data inside localStorage for authentication
+            var keyE = JSON.parse(localStorage.getItem(i)).email
+            var keyP = JSON.parse(localStorage.getItem(i)).password
+            
+            if(email == keyE) {
+                if(pass == keyP) {
+                    // alert("You successfully signed in.")
+                    setTrueInfo(true)
+                    localStorage.setItem("isLogged", JSON.stringify(true))
+                    setTimeout(
+                        () => {
+                            setTrueInfo(false)
+                            setIsLoading(true)
+                        }, 1500
+                    )
+                    setTimeout(
+                        () => {
+                            setIsLoading(false)
+                            navigate("/")
+                        }, 2000
+                    )
+                    break
+                } else {
+                    // do nothing
+                }
+                
+            } else {
+                // console.log("Your email or password is incorrect. Please check information again.")
+                setFalseInfo(true)
+                setTimeout(
+                    () => {
+                        setFalseInfo(false)
+                        setIsLoading(true)
+                    }, 1500
+                )
+                setTimeout(
+                    () => {setIsLoading(false)}, 2000
+                )
+            }
+        }
+
+
+        { // failed codes
+            // for(var j=0; j<999999999; j++) { // loop to check all user data inside localStorage for authentication
+            //     var customsControl = JSON.parse(localStorage.getItem(j))
+            //     console.log(customsControl.email, "+", email, pass)
+            //     if(email === customsControl.email && pass == customsControl.password) {
+            //         console.log("i got it")
+            //         break
+            //     } else {
+            //         alert("Your email or password is incorrect, please try again.")
+            //     }
+            // }
+
+            // for(var j=0; j<999999999; j++) { // loop to check all user data inside localStorage for authentication
+                // var customsControl = JSON.parse(localStorage.getItem(j))
+                // var email = inputEmail.value
+                // var pass = inputPassword.value
+                // var currentInspectingUserData_email = customsControl[j].email
+                // var currentInspectingUserData_pass = customsControl[j].password
+
+                // console.log(email, pass)
+                // console.log(currentInspectingUserData_email, currentInspectingUserData_pass)
+
+                // if(email === currentInspectingUserData_email && pass === currentInspectingUserData_pass) { // authentication
+                //     localStorage.setItem("isLogged", JSON.stringify(true))
+
+                //     console.log(inputEmail.value, inputPassword.value)
+                //     console.log(customsControl[j].email, customsControl[j].password)
+
+                //     console.log("Welcome " + inputEmail + ", you successfully signed in.")
+                //     break
+                // } else {
+                //     alert("Your email or password is incorrect, please try again.")
+                // }
+
+                // if(Object.keys(localStorage).includes(customsControl[j])) {
+                //     console.log(j)
+                // } else {
+                //     "nnooouup"
+                // }
+            // }
+        }
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     // const [monthSTATE, setMonthSTATE] = useState([])
     const [daySTATE, setDaySTATE] = useState([])
@@ -583,6 +692,8 @@ function SignInOrUp() {
     return (
         <main className={s.signinorup}>
             {isLoading && <Loading />}
+            {trueInfo && <SuccessfullySigned />}
+            {falseInfo && <FailedMessage />}
 
             <div className={s.signinorup__topside}>
                 <select name="langAuth" id="langAuth" className={s.signinorup__topside_language} onChange={handleLanguage}>
@@ -613,7 +724,7 @@ function SignInOrUp() {
                     <input type="password" id="password-login" name="password-login" className={s.signinorup__login_contents__input} required placeholder={pholderSTATE[1]} /> {/* type="text/password" */}
                     <button className={s.signinorup__login_contents__eyebutton}> <i className='fa-regular fa-eye fa-1x'></i> </button>
                 </span>
-                <input type="submit" className={s.signinorup__login_submit} value={loginformSTATE[3]} />
+                <input type="submit" className={s.signinorup__login_submit} value={loginformSTATE[3]} onClick={submitLogin} />
             </form>
 
             {/* register (sign up) form window */}
