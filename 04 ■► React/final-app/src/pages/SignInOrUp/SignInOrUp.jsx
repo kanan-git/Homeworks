@@ -582,7 +582,7 @@ function SignInOrUp() {
         var pass = inputPassword.value
 
         for (var i=0; i<localStorage.length; i++) { // loop to check all user data inside localStorage for authentication
-            var keyE = JSON.parse(localStorage.getItem(i)).email
+            var keyE = JSON.parse(localStorage.getItem(i)).email // if any user registered, fix this issue .email makes problem or create always default user 0 as admin
             var keyP = JSON.parse(localStorage.getItem(i)).password
             
             if(email == keyE) {
