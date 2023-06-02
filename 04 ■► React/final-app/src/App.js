@@ -141,7 +141,7 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/authentication" element={dynamicElement} />
+          <Route path="/authentication_shopnet" element={dynamicElement} />
         </Routes>
       {/* </Router> */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}

@@ -520,8 +520,8 @@ function Header() {
                             <li onClick={handleLogout} className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li>
                         </>}
                         {!userOrGuestSTATE && <>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
                         </>}
                     </ul>
                 </div>
