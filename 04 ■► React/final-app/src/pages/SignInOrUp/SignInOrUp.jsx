@@ -75,6 +75,7 @@ function SignInOrUp() {
             setMonthallSTATE(dataSource.english.signinorup.month)
             setPholderSTATE(dataSource.english.signinorup.placeholders)
             // console.log(langDataAuth.value)
+            localStorage.setItem("language", JSON.stringify("english"))
         } else if (e.target.value == "Azərbaycan dili") {
             setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
             setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
@@ -83,6 +84,7 @@ function SignInOrUp() {
             setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
             setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
             // console.log(langDataAuth.value)
+            localStorage.setItem("language", JSON.stringify("azerbaijani"))
         } else if (e.target.value == "Türkçe") {
             setSelectionsSTATE(dataSource.turkish.signinorup.selections)
             setLoginformSTATE(dataSource.turkish.signinorup.loginform)
@@ -91,6 +93,7 @@ function SignInOrUp() {
             setMonthallSTATE(dataSource.turkish.signinorup.month)
             setPholderSTATE(dataSource.turkish.signinorup.placeholders)
             // console.log(langDataAuth.value)
+            localStorage.setItem("language", JSON.stringify("turkish"))
         }
         // console.log(e.target.value)
     }

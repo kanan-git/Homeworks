@@ -43,6 +43,7 @@ function Header() {
         profile_img_color: "rgb(255,128,0)"
     }
     localStorage.setItem(0, JSON.stringify(user))
+    localStorage.setItem("language", JSON.stringify("english"))
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [userName, setUserName] = useState()
     const [userColor, setUsercolor] = useState()
@@ -263,6 +264,7 @@ function Header() {
             // dispatch(setCurrentLanguage("English"))
             dispatch(setCurrentLanguage(dataSource.english))
             // dispatch(setCurrentLanguage(dataSource))
+            localStorage.setItem("language", JSON.stringify("english"))
         } else if(langSelector.value == "Türkçe") {
             setMenuElements(dataSource.turkish.header.topside)
             setNavItems(dataSource.turkish.header.mainside.navbar)
@@ -273,6 +275,7 @@ function Header() {
             // dispatch(setCurrentLanguage("Türkçe"))
             dispatch(setCurrentLanguage(dataSource.turkish))
             // dispatch(setCurrentLanguage(dataSource))
+            localStorage.setItem("language", JSON.stringify("azerbaijani"))
         } else {
             setMenuElements(dataSource.azerbaijani.header.topside)
             setNavItems(dataSource.azerbaijani.header.mainside.navbar)
@@ -283,47 +286,54 @@ function Header() {
             // dispatch(setCurrentLanguage("Azərbaycan dili"))
             dispatch(setCurrentLanguage(dataSource.azerbaijani))
             // dispatch(setCurrentLanguage(dataSource))
+            localStorage.setItem("language", JSON.stringify("turkish"))
         }
     }
 
     // console log for testing is working or not
     // console.log(menuElements, navItems)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
-// function for userpanel dropdown menu
-function userpanelDDfuncOpen() {
-    // userpanelDropDownSTATE.current.style.display = `flex`
-    userpanelDropDownSTATE.current.style.visibility = `visible`
-    userpanelDropDownSTATE.current.style.opacity = `1.0`
-    userpanelDropDownSTATE.current.style.transform = `translate(-50%, 0%)`
-    userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-    // console.log(userpanelDropDownSTATE.current.style.display)
-}
-function userpanelDDfuncClose() {
-    // userpanelDropDownSTATE.current.style.display = `none`
-    userpanelDropDownSTATE.current.style.visibility = `hidden`
-    userpanelDropDownSTATE.current.style.opacity = `0.0`
-    userpanelDropDownSTATE.current.style.transform = `translate(-50%, -100%)`
-    userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-    // console.log(userpanelDropDownSTATE.current.style.display)
-}
-// function testTopDropdown() {
-//     if(isHoveredSTATE == "yup") {
-//         ddarrowSTATE.current.style.rotate = `0deg`
-//         // document.querySelector("#fa_caret").style.rotate = `0deg`
-//         console.log("true | 1")
-//     } else if(isHoveredSTATE == "nope") {
-//         ddarrowSTATE.current.style.rotate = `180deg`
-//         // document.querySelector("#fa_caret").style.rotate = `180deg`
-//         console.log("false | 0")
-//     }
-// }
+    // function for userpanel dropdown menu
+    function userpanelDDfuncOpen() {
+        // userpanelDropDownSTATE.current.style.display = `flex`
+        userpanelDropDownSTATE.current.style.visibility = `visible`
+        userpanelDropDownSTATE.current.style.opacity = `1.0`
+        userpanelDropDownSTATE.current.style.transform = `translate(-50%, 0%)`
+        userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+        // console.log(userpanelDropDownSTATE.current.style.display)
+    }
+    function userpanelDDfuncClose() {
+        // userpanelDropDownSTATE.current.style.display = `none`
+        userpanelDropDownSTATE.current.style.visibility = `hidden`
+        userpanelDropDownSTATE.current.style.opacity = `0.0`
+        userpanelDropDownSTATE.current.style.transform = `translate(-50%, -100%)`
+        userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+        // console.log(userpanelDropDownSTATE.current.style.display)
+    }
+    // function testTopDropdown() {
+    //     if(isHoveredSTATE == "yup") {
+    //         ddarrowSTATE.current.style.rotate = `0deg`
+    //         // document.querySelector("#fa_caret").style.rotate = `0deg`
+    //         console.log("true | 1")
+    //     } else if(isHoveredSTATE == "nope") {
+    //         ddarrowSTATE.current.style.rotate = `180deg`
+    //         // document.querySelector("#fa_caret").style.rotate = `180deg`
+    //         console.log("false | 0")
+    //     }
+    // }
 
-function selectAuthIn() {
-    dispatch(setCurrentAuthType("login"))
-}
-function selectAuthUp() {
-    dispatch(setCurrentAuthType("register"))
-}
+    function selectAuthIn() {
+        dispatch(setCurrentAuthType("login"))
+    }
+    function selectAuthUp() {
+        dispatch(setCurrentAuthType("register"))
+    }
+
+    function handleLogout() {
+        localStorage.setItem("isLogged", JSON.stringify(false))
+        localStorage.setItem("signedUser", JSON.stringify("guest"))
+        window.location.reload()
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
     // returning result
     return (
@@ -507,7 +517,7 @@ function selectAuthUp() {
                             <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites"> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </Link>
                             <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart"> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </Link>
                             <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>
-                            <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li>
+                            <li onClick={handleLogout} className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li>
                         </>}
                         {!userOrGuestSTATE && <>
                             <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
