@@ -152,46 +152,61 @@ function SignInOrUp() {
                 overlayLogin.style.zIndex = `1`
                 overlayRegister.style.zIndex = `-1`
             }
-            
-            switchLogin.addEventListener("click", () => {
-                loginWindow.style.top = `53%`
-                loginWindow.style.left = `50%`
-                loginWindow.style.scale = `1.0`
-                loginWindow.style.opacity = `1.0`
-                registerWindow.style.top = `40%`
-                registerWindow.style.left = `80%`
-                registerWindow.style.scale = `0.6`
-                registerWindow.style.opacity = `0.5`
-                switchLogin.style.color = `rgb(0,128,255)`
-                switchLogin.style.scale = `1.2`
-                switchLogin.style.opacity = `1.0`
-                switchRegister.style.color = `rgb(64,64,64)`
-                switchRegister.style.scale = `0.8`
-                switchRegister.style.opacity = `0.75`
-                overlayLogin.style.zIndex = `-1`
-                overlayRegister.style.zIndex = `1`
-            })
-            switchRegister.addEventListener("click", () => {
-                loginWindow.style.top = `40%`
-                loginWindow.style.left = `-4%`
-                loginWindow.style.scale = `0.6`
-                loginWindow.style.opacity = `0.5`
-                registerWindow.style.top = `53%`
-                registerWindow.style.left = `50%`
-                registerWindow.style.scale = `1.0`
-                registerWindow.style.opacity = `1.0`
-                switchLogin.style.color = `rgb(64,64,64)`
-                switchLogin.style.scale = `0.8`
-                switchLogin.style.opacity = `0.75`
-                switchRegister.style.color = `rgb(0,128,255)`
-                switchRegister.style.scale = `1.2`
-                switchRegister.style.opacity = `1.0`
-                overlayLogin.style.zIndex = `1`
-                overlayRegister.style.zIndex = `-1`
-            })
             // return () => {}
         }, []
-    )        
+    )
+
+    function switch2login() {
+        var loginWindow = document.querySelector(`.${s.signinorup__login}`)
+        var registerWindow = document.querySelector(`.${s.signinorup__register}`)
+        var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
+        var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
+        var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
+        var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
+
+        loginWindow.style.top = `53%`
+        loginWindow.style.left = `50%`
+        loginWindow.style.scale = `1.0`
+        loginWindow.style.opacity = `1.0`
+        registerWindow.style.top = `40%`
+        registerWindow.style.left = `80%`
+        registerWindow.style.scale = `0.6`
+        registerWindow.style.opacity = `0.5`
+        switchLogin.style.color = `rgb(0,128,255)`
+        switchLogin.style.scale = `1.2`
+        switchLogin.style.opacity = `1.0`
+        switchRegister.style.color = `rgb(64,64,64)`
+        switchRegister.style.scale = `0.8`
+        switchRegister.style.opacity = `0.75`
+        overlayLogin.style.zIndex = `-1`
+        overlayRegister.style.zIndex = `1`
+    }
+    
+    function switch2register() {
+        var loginWindow = document.querySelector(`.${s.signinorup__login}`)
+        var registerWindow = document.querySelector(`.${s.signinorup__register}`)
+        var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
+        var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
+        var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
+        var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
+
+        loginWindow.style.top = `40%`
+        loginWindow.style.left = `-4%`
+        loginWindow.style.scale = `0.6`
+        loginWindow.style.opacity = `0.5`
+        registerWindow.style.top = `53%`
+        registerWindow.style.left = `50%`
+        registerWindow.style.scale = `1.0`
+        registerWindow.style.opacity = `1.0`
+        switchLogin.style.color = `rgb(64,64,64)`
+        switchLogin.style.scale = `0.8`
+        switchLogin.style.opacity = `0.75`
+        switchRegister.style.color = `rgb(0,128,255)`
+        switchRegister.style.scale = `1.2`
+        switchRegister.style.opacity = `1.0`
+        overlayLogin.style.zIndex = `1`
+        overlayRegister.style.zIndex = `-1`
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [ldAuthSTATE, setLdAuthSTATE] = useState("light")    
     useEffect(
@@ -801,8 +816,8 @@ function SignInOrUp() {
                     <option value="Türkçe" className={s.signinorup__topside_language__options}> Türkçe </option>
                 </select>
                 <span className={s.signinorup__topside_selection}>
-                    <h3 className={s.signinorup__topside_selection__login}> {selectionsSTATE[0]} </h3>
-                    <h3 className={s.signinorup__topside_selection__register}> {selectionsSTATE[1]} </h3>
+                    <h3 className={s.signinorup__topside_selection__login} onClick={switch2login}> {selectionsSTATE[0]} </h3>
+                    <h3 className={s.signinorup__topside_selection__register} onClick={switch2register}> {selectionsSTATE[1]} </h3>
                 </span>
                 <button className={s.signinorup__topside_lord} onClick={handleLorD}>
                     <i className='fa-solid fa-sun fa-1x'></i>
