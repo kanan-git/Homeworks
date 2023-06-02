@@ -223,9 +223,9 @@ function SignInOrUp() {
         }, []
     )
 
-    function handleLorD() {
+    function handleLorD(e) {
         // light or dark mode (lord)
-        var LorD = document.querySelector(`.${s.signinorup__topside_lord}`)
+        // var LorD = document.querySelector(`.${s.signinorup__topside_lord}`)
         var iconLorD = document.querySelector(".fa-solid")
         if (ldAuthSTATE == "light") {
             iconLorD.classList.remove("fa-solid", "fa-sun", "fa-1x")
@@ -274,7 +274,11 @@ function SignInOrUp() {
             root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
             setLdAuthSTATE("light")
         }
-        var spinningButton = LorD.animate(
+        // var spinningButton = LorD.animate(
+        //     [{transform: 'rotateY(0deg)', scale: 1.0}, {transform: 'rotateY(180deg)', scale: 1.5}, {transform: 'rotateY(360deg)', scale: 1.0}], 
+        //     {duration: 750, easing: 'ease-in-out', delay: 0, iterations: 1}
+        // )
+        var spinningButton = e.target.animate(
             [{transform: 'rotateY(0deg)', scale: 1.0}, {transform: 'rotateY(180deg)', scale: 1.5}, {transform: 'rotateY(360deg)', scale: 1.0}], 
             {duration: 750, easing: 'ease-in-out', delay: 0, iterations: 1}
         )
@@ -369,7 +373,7 @@ function SignInOrUp() {
     const [dateofbirthSTATE, setDateofbirthSTATE] = useState("")
     const [userDataSTATE, setUserDataSTATE] = useState({})
 
-    var submitRegisterBtn = document.querySelector(`.${s.signinorup__register_submit}`)
+    // var submitRegisterBtn = document.querySelector(`.${s.signinorup__register_submit}`)
 
     var registryInputName = document.querySelector("#name")
     var registryInputLastname = document.querySelector("#lastname")
