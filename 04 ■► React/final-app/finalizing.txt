@@ -76,6 +76,10 @@ clear
 
 
 
+after complete all, archivate project to gdrive & testing>archive folder for git, delete failed codes and additional useless //notes, make sectors in all components and css, deploy to git
+
+
+
 01 - CREATE USERS: react js registration data how to keep (without JSON & API), how to edit text inside js database file with js (not backend) if its not necessary, 
 put it into localStorage and use e.preventDefault() + figure out how to get new user registration into new object, not replace previous one
 02 - SIGN IN FEATURE: login algoritm, when user logged, show different profile image, print name, balance on header, change menus on userpanel dropdown

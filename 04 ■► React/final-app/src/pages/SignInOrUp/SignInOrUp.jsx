@@ -26,6 +26,23 @@ import PrivacyPolicies from '../../components/Pop-ups/PrivacyPolicies'
 import TermsAndConditions from '../../components/Pop-ups/TermsAndConditions'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function SignInOrUp() {
+    // create first element if there is no user data
+    var user = {
+        id: 0,
+        name: "Kanan",
+        lastname: "Bakhshaliyev",
+        email: "Admin",
+        password: "seriouslyDifficultPassword2Guess123",
+        gender: "male",
+        date_of_birth: "December.15.1997",
+        budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
+        orders: [],
+        basket: [],
+        favorites: [],
+        profile_img_color: "rgb(255,128,0)"
+    }
+    localStorage.setItem(0, JSON.stringify(user))
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const root = document.documentElement;
     const authTypeData = useSelector((state) => state.authtype.currentAuthType)
     // localStorage.setItem("Auth State", JSON.stringify(authTypeData))
@@ -35,6 +52,7 @@ function SignInOrUp() {
         // do nothing for now
     } else {
         localStorage.setItem("isLogged", JSON.stringify(false))
+        localStorage.setItem("signedUser", JSON.stringify("guest"))
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
@@ -386,8 +404,57 @@ function SignInOrUp() {
     const [isLoading, setIsLoading] = useState(false)
 
     function submitRegistration(event) {
-        
         // { // failed codes
+
+            // create first element if there is no user data
+            // var user = {
+            //     id: 0,
+            //     name: registryInputName.value,
+            //     lastname: registryInputLastname.value,
+            //     email: registryInputEmail.value,
+            //     password: registryInputPassword.value,
+            //     gender: genderSTATE,
+            //     date_of_birth: dateofbirthSTATE,
+            //     budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
+            //     orders: [],
+            //     basket: [],
+            //     favorites: [],
+            //     profile_img_color: "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")"
+            // }
+            // localStorage.setItem(0, JSON.stringify(user))
+            // alert("Welcome " + user.name + " " + user.lastname + ", " + "you successfully signed up, please go back to Login window.")
+            // setIsLoading(true)
+            // setTimeout(
+            //     () => {
+            //         setIsLoading(false)
+            //         // localStorage.setItem("Auth State", JSON.stringify("login"))
+            //         var loginWindow = document.querySelector(`.${s.signinorup__login}`)
+            //         var registerWindow = document.querySelector(`.${s.signinorup__register}`)
+            //         var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
+            //         var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
+            //         var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
+            //         var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
+            //         if(authTypeData == "login") {
+            //             loginWindow.style.top = `53%`
+            //             loginWindow.style.left = `50%`
+            //             loginWindow.style.scale = `1.0`
+            //             loginWindow.style.opacity = `1.0`
+            //             registerWindow.style.top = `40%`
+            //             registerWindow.style.left = `80%`
+            //             registerWindow.style.scale = `0.6`
+            //             registerWindow.style.opacity = `0.5`
+            //             switchLogin.style.color = `rgb(0,128,255)`
+            //             switchLogin.style.scale = `1.2`
+            //             switchLogin.style.opacity = `1.0`
+            //             switchRegister.style.color = `rgb(64,64,64)`
+            //             switchRegister.style.scale = `0.8`
+            //             switchRegister.style.opacity = `0.75`
+            //             overlayLogin.style.zIndex = `-1`
+            //             overlayRegister.style.zIndex = `1`
+            //         }
+            //     }, 1000
+            // )
+
         //     // event.preventDefault(); // Prevents the default form submission | from ChatGPT
 
         //     // console.log(new_user, usersContainer)
@@ -457,54 +524,8 @@ function SignInOrUp() {
 
         event.preventDefault(); // Prevents the default form submission | from ChatGPT
         var keysOfLocalStorage = Object.keys(localStorage)
-        if(keysOfLocalStorage.length === 0) {
-            // create first element if there is no user data
-            var user = {
-                id: 0,
-                name: registryInputName.value,
-                lastname: registryInputLastname.value,
-                email: registryInputEmail.value,
-                password: registryInputPassword.value,
-                gender: genderSTATE,
-                date_of_birth: dateofbirthSTATE,
-                budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
-                orders: [],
-                basket: [],
-                favorites: []
-            }
-            localStorage.setItem(0, JSON.stringify(user))
-            alert("Welcome " + user.name + " " + user.lastname + ", " + "you successfully signed up, please go back to Login window.")
-            setIsLoading(true)
-            setTimeout(
-                () => {
-                    setIsLoading(false)
-                    // localStorage.setItem("Auth State", JSON.stringify("login"))
-                    var loginWindow = document.querySelector(`.${s.signinorup__login}`)
-                    var registerWindow = document.querySelector(`.${s.signinorup__register}`)
-                    var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
-                    var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
-                    var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
-                    var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
-                    if(authTypeData == "login") {
-                        loginWindow.style.top = `53%`
-                        loginWindow.style.left = `50%`
-                        loginWindow.style.scale = `1.0`
-                        loginWindow.style.opacity = `1.0`
-                        registerWindow.style.top = `40%`
-                        registerWindow.style.left = `80%`
-                        registerWindow.style.scale = `0.6`
-                        registerWindow.style.opacity = `0.5`
-                        switchLogin.style.color = `rgb(0,128,255)`
-                        switchLogin.style.scale = `1.2`
-                        switchLogin.style.opacity = `1.0`
-                        switchRegister.style.color = `rgb(64,64,64)`
-                        switchRegister.style.scale = `0.8`
-                        switchRegister.style.opacity = `0.75`
-                        overlayLogin.style.zIndex = `-1`
-                        overlayRegister.style.zIndex = `1`
-                    }
-                }, 1000
-            )
+        if(keysOfLocalStorage.length === 1) {
+            // do nothing
         } else {
             // generate new user
             var array4converting = []
@@ -530,7 +551,8 @@ function SignInOrUp() {
                         budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
                         orders: [],
                         basket: [],
-                        favorites: []
+                        favorites: [],
+                        profile_img_color: "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")"
                     }
                     // console.log(i)
                     localStorage.setItem(i, JSON.stringify(user))
@@ -581,15 +603,25 @@ function SignInOrUp() {
         var email = inputEmail.value
         var pass = inputPassword.value
 
-        for (var i=0; i<localStorage.length; i++) { // loop to check all user data inside localStorage for authentication
-            var keyE = JSON.parse(localStorage.getItem(i)).email // if any user registered, fix this issue .email makes problem or create always default user 0 as admin
-            var keyP = JSON.parse(localStorage.getItem(i)).password
-            
-            if(email == keyE) {
-                if(pass == keyP) {
-                    // alert("You successfully signed in.")
+        if(email == "") {
+            alert("Please enter your email adress.")
+            return
+        } else if(pass == "") {
+            alert("Please enter your password.")
+            return
+        } else {
+            // do nothing
+        }
+
+        for (var i=0; i<localStorage.length; i++) {
+            if(JSON.parse(localStorage.getItem(i)) !== null) {
+                var keyE = JSON.parse(localStorage.getItem(i)).email
+                var keyP = JSON.parse(localStorage.getItem(i)).password
+                // alert(i + ' ' + keyE + ' ' + keyP)
+                if(email === keyE && pass === keyP) {
                     setTrueInfo(true)
                     localStorage.setItem("isLogged", JSON.stringify(true))
+                    localStorage.setItem("signedUser", JSON.stringify(i))
                     setTimeout(
                         () => {
                             setTrueInfo(false)
@@ -603,27 +635,86 @@ function SignInOrUp() {
                         }, 2000
                     )
                     break
-                } else {
-                    // do nothing
+                } else if(email === keyE || pass === keyP) {
+                    setFalseInfo(true)
+                    setTimeout(
+                        () => {
+                            setFalseInfo(false)
+                            setIsLoading(true)
+                        }, 1500
+                    )
+                    setTimeout(
+                        () => {setIsLoading(false)}, 2000
+                    )
+                    break
+                } else if(i == localStorage.length-1) {
+                    alert("No match found. Please try again.")
                 }
-                
             } else {
-                // console.log("Your email or password is incorrect. Please check information again.")
-                setFalseInfo(true)
-                setTimeout(
-                    () => {
-                        setFalseInfo(false)
-                        setIsLoading(true)
-                    }, 1500
-                )
-                setTimeout(
-                    () => {setIsLoading(false)}, 2000
-                )
+                // do nothing
+                // alert(i + " null")
             }
         }
 
-
         { // failed codes
+
+            // Object.keys(localStorage).includes('0') ? console.log(true) : false
+
+            // for (var i=0; i<localStorage.length+1; i++) { // loop to check all user data inside localStorage for authentication
+            //     if(isNaN(+Object.keys(localStorage)[i])) {
+            //         // do nothing for now
+            //         // console.log(Object.keys(localStorage)[i])
+            //         other_storage_data++
+            //         alert(i)
+            //     } else {
+            //         var keyE = JSON.parse(localStorage.getItem(i)).email
+            //         var keyP = JSON.parse(localStorage.getItem(i)).password
+            //         console.log(keyE, keyP)
+            //         if(email == keyE) {
+            //             if(pass == keyP) {
+            //                 // alert("You successfully signed in.")
+            //                 setTrueInfo(true)
+            //                 localStorage.setItem("isLogged", JSON.stringify(true))
+            //                 localStorage.setItem("signedUser", JSON.stringify(i))
+            //                 setTimeout(
+            //                     () => {
+            //                         setTrueInfo(false)
+            //                         setIsLoading(true)
+            //                     }, 1500
+            //                 )
+            //                 setTimeout(
+            //                     () => {
+            //                         setIsLoading(false)
+            //                         navigate("/")
+            //                     }, 2000
+            //                 )
+            //                 break
+            //             } else {
+            //                 // console.log("Your email or password is incorrect. Please check information again.")
+            //                 setFalseInfo(true)
+            //                 setTimeout(
+            //                     () => {
+            //                         setFalseInfo(false)
+            //                         setIsLoading(true)
+            //                     }, 1500
+            //                 )
+            //                 setTimeout(
+            //                     () => {setIsLoading(false)}, 2000
+            //                 )
+            //             }
+            //             checked_user_emails++
+            //             if(checked_user_emails == Object.keys(localStorage).length - other_storage_data) {
+            //                 console.log("no match found")
+            //             } else {
+            //                 console.log("proceed")
+            //             }
+            //         } else {
+            //             // do nothing
+            //         }
+            //         alert(i)
+            //     }
+            // }
+
             // for(var j=0; j<999999999; j++) { // loop to check all user data inside localStorage for authentication
             //     var customsControl = JSON.parse(localStorage.getItem(j))
             //     console.log(customsControl.email, "+", email, pass)

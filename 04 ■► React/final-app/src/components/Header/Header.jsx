@@ -15,6 +15,7 @@ import {useState, useEffect, useRef} from 'react'
 import {userData} from '../../data/user-data'
 import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
+import userX_X from './user-transparent.png'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { setCurrentLanguage } from '../../features/counter/counterSlice'
 import { setCurrentAuthType } from '../../features/counter/switchAuthType'
@@ -26,12 +27,47 @@ function Header() {
     const root = document.documentElement;
     const isHovered = "nope"
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
-    var userOrGuest = JSON.parse(localStorage.getItem("isLogged"))
-    if(userOrGuest == true) {
-        // change userpanel dropdown items, balance amount of user, change different user image, etc
-    } else {
-        localStorage.setItem("isLogged", JSON.stringify(false))
+    // create first element if there is no user data
+    var user = {
+        id: 0,
+        name: "Kanan",
+        lastname: "Bakhshaliyev",
+        email: "Admin",
+        password: "seriouslyDifficultPassword2Guess123",
+        gender: "male",
+        date_of_birth: "December.15.1997",
+        budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
+        orders: [],
+        basket: [],
+        favorites: [],
+        profile_img_color: "rgb(255,128,0)"
     }
+    localStorage.setItem(0, JSON.stringify(user))
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    const [userName, setUserName] = useState()
+    const [userColor, setUsercolor] = useState()
+    const [userBudget, setUserBudget] = useState()
+    const [userOrGuestSTATE, setUserOrGuestSTATE] = useState()
+
+    useEffect(
+        () => {
+            var userOrGuest = JSON.parse(localStorage.getItem("isLogged"))
+            setUserOrGuestSTATE(userOrGuest)
+            if(userOrGuest == true) {
+                // change userpanel dropdown items, balance amount of user, change different user image, etc
+                var currentUser = JSON.parse(localStorage.getItem('signedUser'))
+                var uName = JSON.parse(localStorage.getItem(currentUser)).name + " " + JSON.parse(localStorage.getItem(currentUser)).lastname
+                var uColor = JSON.parse(localStorage.getItem(currentUser)).profile_img_color
+                var uBudget = JSON.parse(localStorage.getItem(currentUser)).budget_amount_from_creditcard
+                setUserName(uName)
+                setUsercolor(uColor)
+                setUserBudget(uBudget)
+            } else {
+                localStorage.setItem("isLogged", JSON.stringify(false))
+                localStorage.setItem("signedUser", JSON.stringify("guest"))
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     // const switchSliderBtn = document.querySelector("#switch_btn")
     // const switchSun = document.querySelector("#fa_sun")
@@ -452,17 +488,31 @@ function selectAuthUp() {
 
                 {/* temporary static elements for reference | USER PANEL */}
                 <div className={s.header__main_userpanel} onMouseEnter={userpanelDDfuncOpen} onMouseLeave={userpanelDDfuncClose}>
-                    <img src={userQuest} alt="user-profile" className={s.header__main_userpanel__image} />
-                    <p className={s.header__main_userpanel__status}> {navItems[1]} </p>
+                    {userOrGuestSTATE && <>
+                        <img src={userX_X} alt={userName} className={s.header__main_userpanel__image} style={{backgroundColor: userColor}} />
+                        <p className={s.header__main_userpanel__status}> {userName} </p>
+                        <b style={{
+                            fontSize: "12px", marginLeft: "10px", fontWeight: "600", color: "var(--text-color)"
+                        }}> Balance: $ <i style={{fontStyle: "normal", color: "var(--link-active-color)"}}>{userBudget}</i> USD </b>
+                    </>}
+                    {!userOrGuestSTATE && <>
+                        <img src={userQuest} alt="user-profile" className={s.header__main_userpanel__image} style={{filter: "blur(0px) brightness(1.0)"}} />
+                        <p className={s.header__main_userpanel__status}> {navItems[1]} </p>
+                        
+                    </>}
 
                     {/* dropdown menu for userpanel */}
                     <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
-                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
-                        <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
-                        {/* <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites"> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </Link> */}
-                        {/* <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart"> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </Link> */}
-                        <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>
-                        {/* <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li> */}
+                        {userOrGuestSTATE && <>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites"> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart"> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>
+                            <li className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li>
+                        </>}
+                        {!userOrGuestSTATE && <>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
+                        </>}
                     </ul>
                 </div>
             </div>
