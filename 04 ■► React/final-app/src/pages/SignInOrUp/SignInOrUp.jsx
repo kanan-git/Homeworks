@@ -64,10 +64,10 @@ function SignInOrUp() {
 
     // const languageData = useSelector((state) => state.language.currentLanguage)
     
-    function handleLanguage() {
+    function handleLanguage(e) {
         // language
-        var langDataAuth = document.querySelector("#langAuth")
-        if (langDataAuth.value == "English") {
+        // var langDataAuth = document.querySelector("#langAuth")
+        if (e.target.value == "English") {
             setSelectionsSTATE(dataSource.english.signinorup.selections)
             setLoginformSTATE(dataSource.english.signinorup.loginform)
             setRegisterformSTATE(dataSource.english.signinorup.registerform)
@@ -75,7 +75,7 @@ function SignInOrUp() {
             setMonthallSTATE(dataSource.english.signinorup.month)
             setPholderSTATE(dataSource.english.signinorup.placeholders)
             // console.log(langDataAuth.value)
-        } else if (langDataAuth.value == "Azərbaycan dili") {
+        } else if (e.target.value == "Azərbaycan dili") {
             setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
             setLoginformSTATE(dataSource.azerbaijani.signinorup.loginform)
             setRegisterformSTATE(dataSource.azerbaijani.signinorup.registerform)
@@ -83,7 +83,7 @@ function SignInOrUp() {
             setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
             setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
             // console.log(langDataAuth.value)
-        } else if (langDataAuth.value == "Türkçe") {
+        } else if (e.target.value == "Türkçe") {
             setSelectionsSTATE(dataSource.turkish.signinorup.selections)
             setLoginformSTATE(dataSource.turkish.signinorup.loginform)
             setRegisterformSTATE(dataSource.turkish.signinorup.registerform)
@@ -92,6 +92,7 @@ function SignInOrUp() {
             setPholderSTATE(dataSource.turkish.signinorup.placeholders)
             // console.log(langDataAuth.value)
         }
+        // console.log(e.target.value)
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     useEffect(
