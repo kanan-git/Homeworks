@@ -74,12 +74,22 @@ function Products() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     function handleFavoriteBtnVisual() {
         var currentUser = JSON.parse(localStorage.getItem("signedUser"))
-        var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser))
-        arrOfActiveBtns.map(
+        var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
+
+        arrOfActiveBtns.forEach(
             (productID) => {
-                // if(productID == e.target)
+                var thisButton = document.querySelector("#product_" + productID.toString())
+                thisButton.style.transition = `var(--instant-fx)`
+                thisButton.style.backgroundColor = `var(--buttons-active-color)`
+                thisButton.style.opacity = `1.0`
+                thisButton.style.color = `var(--link-active-color)`
             }
         )
+
+        // console.log(arrOfActiveBtns)
+
+        // var thisButton = document.querySelector("" + productID)
+        // console.log(thisButton)
         
         // e.target.style. ???
         // e.target.style. ???
@@ -98,6 +108,27 @@ function Products() {
 
         // ~~~if product exist in favArray, make it active onLoad or onChange~~~ //
     }
+
+    // useEffect(
+    //     () => {
+    //         handleFavoriteBtnVisual()
+    //     }, []
+    // )
+
+    document.addEventListener("mouseover", () => {
+        var currentUser = JSON.parse(localStorage.getItem("signedUser"))
+        var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
+        console.log("loading event working")
+        arrOfActiveBtns.forEach(
+            (productID) => {
+                var thisButton = document.querySelector("#product_" + productID.toString())
+                thisButton.style.transition = `var(--instant-fx)`
+                thisButton.style.backgroundColor = `var(--buttons-active-color)`
+                thisButton.style.opacity = `1.0`
+                thisButton.style.color = `var(--link-active-color)`
+            }
+        )
+    })
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [fstatSTATE, setFstatSTATE] = useState("disabled")
 
@@ -265,12 +296,17 @@ return (
                 apiSTATE.map(
                     (elements, index) => 
                         <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
-                            <button className={s.products__cards_image__favbtn} onClick={
-                                () => {
+                            <button className={s.products__cards_image__favbtn} id={"product_" + elements.id.toString()} onClick={
+                                (e) => {
                                     var currentUserIs = JSON.parse(localStorage.getItem("signedUser")) // get info from storage who is current user
                                     var arr = JSON.parse(localStorage.getItem(currentUserIs)) // get favorites array of current user
                                     var restOfIDs = [] // empty array for unfav action will contain all favorites except clicked one
                                     var newProduct = elements.id // current product id which clicked it's favorite button
+
+                                    e.target.style.transition = `var(--instant-fx)`
+                                    e.target.style.backgroundColor = `var(--buttons-active-color)`
+                                    e.target.style.opacity = `1.0`
+                                    e.target.style.color = `var(--link-active-color)`
 
                                     if(arr.favorites.length == 0) {
                                         var doesExist = false
@@ -280,10 +316,18 @@ return (
                                             if(newProduct == arr.favorites[i]) {
                                                 var doesExist = true
                                                 // console.log("Yes, this product is added to favorites before")
+                                                e.target.style.transition = `var(--quick-fx)`
+                                                e.target.style.backgroundColor = `var(--buttons-color)`
+                                                e.target.style.opacity = `0.5;`
+                                                e.target.style.color = `var(--link-color)`
                                                 break
                                             } else {
-                                                // console.log("This product not your favorite")
                                                 var doesExist = false
+                                                // console.log("This product not your favorite")
+                                                e.target.style.transition = `var(--instant-fx)`
+                                                e.target.style.backgroundColor = `var(--buttons-active-color)`
+                                                e.target.style.opacity = `1.0`
+                                                e.target.style.color = `var(--link-active-color)`
                                             }
                                         }
                                     }
@@ -301,6 +345,7 @@ return (
                                     }
 
                                     // console.log(restOfIDs)
+                                    // console.log(e.target)
 
                                     if(doesExist == false) {
                                         arr.favorites.push(newProduct)
