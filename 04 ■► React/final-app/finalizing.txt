@@ -69,7 +69,7 @@ npm start
 
 
 git add .
-git commit -m "ShopNet day 42/60 | May 30, 2023 at 13:24"
+git commit -m "ShopNet day 46/60 | June 3, 2023 at 09:58"
 git push origin master
 git status
 clear
@@ -103,4 +103,23 @@ sections
 13 - FIXES AND VERCEL: language data, light or dark mode, all of registered users, save in localStorage or sessionStorage, when pages change especially between 
 authentication and rest of pages, gather language and LorD info from storage, fix authentication and product error to make them seem on Vercel, may also create 
 Settings contents, changing password, edit other information
+
+
+
+01 - CREATE USERS: +
+02 - SIGN IN FEATURE: +
+03 - LOG OUT FEATURE: +
+04 - FAVORITE AND CART ARRAY OF USERS: ~~~add to favorites algoritm, it must work for individual user which each one keep only their clicked favorite button products, its remote to itemview because of productCard pathTo, place selected product id into userID.favorites~~~
+05 - PURCHASE: when user buy all cart items, clear all cart array, decrease user's balance amount, if balance is not enough to buy product or all cart items, print it with alert, use alert on favorite and cart pages too when they are empty, also in search result no found, final thing, when user click Buy button inside ItemView component, return data to Purchase Completed component
+06 - POPUPS: +
+07 - SEARCHING: with redux toolkit, return searched keyword from Header.jsx to Products.jsx
+08 - SORTING AND FILTER PRICE RANGE: write sorting algoritm, apply to API results
+09 - FILTER TAGS: when user click to Products filter or Header topside dropdown or Homepage tags, return its value to Products component and filter products API result with category property
+10 - REQUEST MORE DATA: x
+11 - PRODUCT IMAGE: in ItemView.jsx, remove leftside image thumbnails, fix css, show product data which clicked on Products.jsx
+12 - MOBILE RESPONSIVITY: hide header and make it seems with a menu button, full screen and transformX from left, add 4 responsivity to each component and to their sections
+13 - FIXES AND VERCEL: language data, light or dark mode, all of registered users, save in localStorage or sessionStorage, when pages change especially between authentication and rest of pages, gather language and LorD info from storage, fix authentication and product error to make them seem on Vercel, may also create Settings contents, changing password, edit other information, add logged in or not to localStorage too
+
+00 - fix homepage cards fit to api categories or other properties
+00 - after complete all, archivate project to gdrive & testing>archive folder for git, delete failed codes and additional useless //notes, make sectors in all components and css, deploy to git
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈

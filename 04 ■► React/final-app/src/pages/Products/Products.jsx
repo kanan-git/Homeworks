@@ -16,6 +16,7 @@ import {useState, useEffect, useRef} from 'react'
 // import api from '../../data/fake-api'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Fragment } from 'react';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Products() {
     // ...
@@ -240,143 +241,144 @@ return (
             {
                 apiSTATE.map(
                     (elements, index) => 
-                    <Link className={s.products__cards} key={elements.id} to="/products/item_view"> {/* apiSTATE[0].id */}
-                        {/* image */}
-                        <div className={s.products__cards_image}>
-                            <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
-                            <button className={s.products__cards_image__favbtn} 
-                            // onMouseEnter={
-                            //     () => {
-                            //         let currentUserIs = localStorage.getItem("signedUser")
-                            //         let cUserFavs = JSON.parse(currentUserIs)
-                            //         // JSON.parse(localStorage.getItem(currentUserIs)).favorites.push[elements.id]
-                            //         console.log("added", cUserFavs)
-                            //     }
-                            // }
-                            > <i className='fa-solid fa-heart fa-1x'></i> </button>
-                        </div>
-                        {/* information */}
-                        <div className={s.products__cards_information}>
-                            {/* title & category */}
-                            <span className={s.products__cards_information__titleandcateg}>
-                                <p className={s.products__cards_information__titleandcateg_title}> {elements.title} </p>
-                                <i className={s.products__cards_information__titleandcateg_categ}> {elements.category} </i> {/* opacity 0.5, smaller text under title */}
-                            </span>
-                            {/* rating */}
-                            <span className={s.products__cards_information__rating}>
-                                <span className={s.products__cards_information__rating_stars}>
-                                    {
-                                        elements.rating.rate==5 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=4.5 && elements.rating.rate<5 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=4 && elements.rating.rate<4.5 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=3.5 && elements.rating.rate<4 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=3 && elements.rating.rate<3.5 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=2.5 && elements.rating.rate<3 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=2 && elements.rating.rate<2.5 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=1.5 && elements.rating.rate<2 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=1 && elements.rating.rate<1.5 && <>
-                                            <i className='fa-solid fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=0.5 && elements.rating.rate<1 && <>
-                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-                                    {
-                                        elements.rating.rate>=0 && elements.rating.rate<0.5 && <>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                            <i className='fa-regular fa-star fa-1x'></i>
-                                        </>
-                                    }
-
-                                    {/* <i className='fa-solid fa-star fa-1x'></i>
-                                    <i className='fa-solid fa-star fa-1x'></i>
-                                    <i className='fa-solid fa-star fa-1x'></i>
-                                    <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                    <i className='fa-regular fa-star fa-1x'></i> */}
+                        <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
+                            <button className={s.products__cards_image__favbtn}> <i className='fa-solid fa-heart fa-1x'></i> </button>
+                            {/* image */}
+                            <Link className={s.products__cards_image} to="/products/item_view">
+                                <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
+                                {/* <button className={s.products__cards_image__favbtn}
+                                // onMouseEnter={
+                                //     () => {
+                                //         let currentUserIs = localStorage.getItem("signedUser")
+                                //         let cUserFavs = JSON.parse(currentUserIs)
+                                //         // JSON.parse(localStorage.getItem(currentUserIs)).favorites.push[elements.id]
+                                //         console.log("added", cUserFavs)
+                                //     }
+                                // }
+                                > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
+                            </Link>
+                            {/* information */}
+                            <Link className={s.products__cards_information} to="/products/item_view">
+                                {/* title & category */}
+                                <span className={s.products__cards_information__titleandcateg}>
+                                    <p className={s.products__cards_information__titleandcateg_title}> {elements.title} </p>
+                                    <i className={s.products__cards_information__titleandcateg_categ}> {elements.category} </i> {/* opacity 0.5, smaller text under title */}
                                 </span>
-                                <span className={s.products__cards_information__rating_point}> {elements.rating.rate} / 5 </span> {/* 5 or 10 */}
-                            </span>
-                            {/* <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span> */}
-                            <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
+                                {/* rating */}
+                                <span className={s.products__cards_information__rating}>
+                                    <span className={s.products__cards_information__rating_stars}>
+                                        {
+                                            elements.rating.rate==5 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=4.5 && elements.rating.rate<5 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=4 && elements.rating.rate<4.5 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=3.5 && elements.rating.rate<4 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=3 && elements.rating.rate<3.5 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=2.5 && elements.rating.rate<3 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=2 && elements.rating.rate<2.5 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=1.5 && elements.rating.rate<2 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=1 && elements.rating.rate<1.5 && <>
+                                                <i className='fa-solid fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=0.5 && elements.rating.rate<1 && <>
+                                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+                                        {
+                                            elements.rating.rate>=0 && elements.rating.rate<0.5 && <>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                                <i className='fa-regular fa-star fa-1x'></i>
+                                            </>
+                                        }
+
+                                        {/* <i className='fa-solid fa-star fa-1x'></i>
+                                        <i className='fa-solid fa-star fa-1x'></i>
+                                        <i className='fa-solid fa-star fa-1x'></i>
+                                        <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                        <i className='fa-regular fa-star fa-1x'></i> */}
+                                    </span>
+                                    <span className={s.products__cards_information__rating_point}> {elements.rating.rate} / 5 </span> {/* 5 or 10 */}
+                                </span>
+                                {/* <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span> */}
+                                <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
+                            </Link>
                         </div>
-                    </Link>
                 )
             }
             {/* button for load more items from API */}
