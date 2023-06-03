@@ -115,7 +115,7 @@ function Products() {
     //     }, []
     // )
 
-    document.addEventListener("mouseover", () => {
+    document.addEventListener("mouseenter", () => {
         var currentUser = JSON.parse(localStorage.getItem("signedUser"))
         var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
         console.log("loading event working")
