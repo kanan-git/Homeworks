@@ -40,41 +40,40 @@ function MyFav() {
     // )
 
     // cancel fetch data, get data with store redux toolkit from products to my_fav
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    function handleCards() {
+        var currentUserIs = JSON.parse(localStorage.getItem("signedUser"))
+        var arrayOfFavoriteProducts = JSON.parse(localStorage.getItem(currentUserIs)).favorites
 
+        return arrayOfFavoriteProducts.map(
+            (index) => 
+            <div className={s.myfav__container_cards} key={index}>
+                <div className={s.myfav__container_cards__image}>
+                    <img src="" alt={"image-favorites-" + index} 
+                    className={s.myfav__container_cards__image_content} />
+                </div>
+                <p className={s.myfav__container_cards__title}> {index} </p>
+                <strong className={s.myfav__container_cards__price}> $ {index} USD </strong>
+                {console.log(index)}
+            </div>
+        )
+    }
+
+    function handleFavCounter() {
+        var currentUserIs = JSON.parse(localStorage.getItem("signedUser"))
+        var productCounter = JSON.parse(localStorage.getItem(currentUserIs)).favorites.length
+
+        return <b className={s.myfav__topside_header}> {languageData}: {productCounter} </b>
+    }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.myfav}>
             <div className={s.myfav__topside}>
-                <b className={s.myfav__topside_header}> {languageData}: "25" </b>
+                { handleFavCounter() }
             </div>
-            <div className={s.myfav__container} 
-            // onMouseEnter={
-            //     () => {
-            //         var currentUserIs = JSON.parse(localStorage.getItem("signedUser"))
-            //         var arrayOfFavoriteProducts = JSON.parse(localStorage.getItem(currentUserIs)).favorites
-            //         arrayOfFavoriteProducts.forEach(
-            //             async (index) => {
-            //                 var productIDfromArr = index-1
-            //                 await fetch('https://fakestoreapi.com/products')
-            //                 .then(res => res.json())
-            //                 .then(json => {return (
-            //                     <div className={s.myfav__container_cards} key={json[productIDfromArr].id}>
-            //                         <div className={s.myfav__container_cards__image}>
-            //                             <img src={json[productIDfromArr].image} alt={"image-favorites"+json[productIDfromArr].id} 
-            //                             className={s.myfav__container_cards__image_content} />
-            //                         </div>
-            //                         <p className={s.myfav__container_cards__title}> {json[productIDfromArr].title} </p>
-            //                         <strong className={s.myfav__container_cards__price}> $ {json[productIDfromArr].price} USD </strong>
-            //                         {console.log(index-1)}
-            //                         {json[productIDfromArr].price}
-            //                     </div>
-            //                 )})
-            //             }
-            //         )
-            //     }
-            // }
-        >
+            <div className={s.myfav__container}>
 
+                { handleCards() }
 
                 {/* product card in favorites 001 */}
                 {/* <div className={s.myfav__container_cards}>
