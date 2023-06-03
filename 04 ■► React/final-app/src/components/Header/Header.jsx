@@ -28,21 +28,21 @@ function Header() {
     const isHovered = "nope"
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     // create first element if there is no user data
-    var user = {
-        id: 0,
-        name: "Kanan",
-        lastname: "Bakhshaliyev",
-        email: "Admin",
-        password: "seriouslyDifficultPassword2Guess123",
-        gender: "male",
-        date_of_birth: "December.15.1997",
-        budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
-        orders: [],
-        basket: [],
-        favorites: [],
-        profile_img_color: "rgb(255,128,0)"
-    }
-    localStorage.setItem(0, JSON.stringify(user))
+    // var user = {
+    //     id: 0,
+    //     name: "Kanan",
+    //     lastname: "Bakhshaliyev",
+    //     email: "Admin",
+    //     password: "seriouslyDifficultPassword2Guess123",
+    //     gender: "male",
+    //     date_of_birth: "December.15.1997",
+    //     budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
+    //     orders: [],
+    //     basket: [],
+    //     favorites: [],
+    //     profile_img_color: "rgb(255,128,0)"
+    // }
+    // localStorage.setItem(0, JSON.stringify(user))
     localStorage.setItem("language", JSON.stringify("english"))
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [userName, setUserName] = useState()

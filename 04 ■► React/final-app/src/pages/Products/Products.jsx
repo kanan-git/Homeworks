@@ -72,8 +72,31 @@ function Products() {
     //     }, []
     // )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
-    function handleFavorites() {
-        console.log("added")
+    function handleFavoriteBtnVisual() {
+        var currentUser = JSON.parse(localStorage.getItem("signedUser"))
+        var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser))
+        arrOfActiveBtns.map(
+            (productID) => {
+                // if(productID == e.target)
+            }
+        )
+        
+        // e.target.style. ???
+        // e.target.style. ???
+        // e.target.style. ???
+
+        // if exist
+        // .style.transition = `var(--instant-fx)`
+        // .style.backgroundColor = `var(--buttons-active-color)`
+        // .style.opacity = `1.0`
+        // .style.color = `var(--link-active-color)`
+        // else
+        // .style.transition = `var(--quick-fx)`
+        // .style.backgroundColor = `var(--buttons-color)`
+        // .style.opacity = `0.5;`
+        // .style.color = `var(--link-color)`
+
+        // ~~~if product exist in favArray, make it active onLoad or onChange~~~ //
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [fstatSTATE, setFstatSTATE] = useState("disabled")
@@ -242,7 +265,54 @@ return (
                 apiSTATE.map(
                     (elements, index) => 
                         <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
-                            <button className={s.products__cards_image__favbtn}> <i className='fa-solid fa-heart fa-1x'></i> </button>
+                            <button className={s.products__cards_image__favbtn} onClick={
+                                () => {
+                                    var currentUserIs = JSON.parse(localStorage.getItem("signedUser")) // get info from storage who is current user
+                                    var arr = JSON.parse(localStorage.getItem(currentUserIs)) // get favorites array of current user
+                                    var restOfIDs = [] // empty array for unfav action will contain all favorites except clicked one
+                                    var newProduct = elements.id // current product id which clicked it's favorite button
+
+                                    if(arr.favorites.length == 0) {
+                                        var doesExist = false
+                                        // console.log("Ofcourse its not added")
+                                    } else {
+                                        for(var i=0; i<arr.favorites.length; i++) { // loop inside user's favorite products
+                                            if(newProduct == arr.favorites[i]) {
+                                                var doesExist = true
+                                                // console.log("Yes, this product is added to favorites before")
+                                                break
+                                            } else {
+                                                // console.log("This product not your favorite")
+                                                var doesExist = false
+                                            }
+                                        }
+                                    }
+
+                                    if(arr.favorites.length == 0) {
+                                        var restOfIDs = []
+                                    } else {
+                                        for(var j=0; j<arr.favorites.length; j++) {
+                                            if(newProduct != arr.favorites[j]) {
+                                                restOfIDs.push(arr.favorites[j])
+                                            } else {
+                                                // do nothing
+                                            }
+                                        }
+                                    }
+
+                                    // console.log(restOfIDs)
+
+                                    if(doesExist == false) {
+                                        arr.favorites.push(newProduct)
+                                        localStorage.setItem(currentUserIs, JSON.stringify(arr))
+                                        // alert("Added new product ID: " + elements.id)
+                                    } else {
+                                        arr.favorites = restOfIDs
+                                        localStorage.setItem(currentUserIs, JSON.stringify(arr))
+                                        // alert("You already have this product on Favorites - ID: " + elements.id)
+                                    }
+                                }
+                            }> <i className='fa-solid fa-heart fa-1x'></i> </button>
                             {/* image */}
                             <Link className={s.products__cards_image} to="/products/item_view">
                                 <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
