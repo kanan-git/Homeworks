@@ -114,21 +114,6 @@ function Products() {
     //         handleFavoriteBtnVisual()
     //     }, []
     // )
-
-    document.addEventListener("mouseenter", () => {
-        var currentUser = JSON.parse(localStorage.getItem("signedUser"))
-        var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
-        console.log("loading event working")
-        arrOfActiveBtns.forEach(
-            (productID) => {
-                var thisButton = document.querySelector("#product_" + productID.toString())
-                thisButton.style.transition = `var(--instant-fx)`
-                thisButton.style.backgroundColor = `var(--buttons-active-color)`
-                thisButton.style.opacity = `1.0`
-                thisButton.style.color = `var(--link-active-color)`
-            }
-        )
-    })
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [fstatSTATE, setFstatSTATE] = useState("disabled")
 
@@ -197,7 +182,22 @@ function Products() {
     // }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
 return (
-    <main className={s.products}>
+    <main className={s.products} onMouseEnter={
+        () => {
+            var currentUser = JSON.parse(localStorage.getItem("signedUser"))
+            var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
+            console.log("loading event working")
+            arrOfActiveBtns.forEach(
+                (productID) => {
+                    var thisButton = document.querySelector("#product_" + productID.toString())
+                    thisButton.style.transition = `var(--instant-fx)`
+                    thisButton.style.backgroundColor = `var(--buttons-active-color)`
+                    thisButton.style.opacity = `1.0`
+                    thisButton.style.color = `var(--link-active-color)`
+                }
+            )
+        }
+    }>
         {/* topside of product page - contains: filter show/hide (container 1100/1400 px) button, sort input select */}
         <div className={s.products__topside}>
             <button className={s.products__topside_filterbtn} id="filter-button" onClick={temName}> {languageData.filter[0]} </button>
