@@ -17,12 +17,15 @@ import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Fragment } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrentProduct } from '../../features/counter/selectedProduct';
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Products() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [apiSTATE, setApiSTATE] = useState([])
     const [statusHTMLstate, setStatusHTMLstate] = useState("redLight")
+    const dispatch = useDispatch()
 
     async function getDataFromAPI() {
         await fetch('https://fakestoreapi.com/products')
@@ -186,7 +189,7 @@ return (
         () => {
             var currentUser = JSON.parse(localStorage.getItem("signedUser"))
             var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
-            console.log("loading event working")
+            // console.log("loading event working")
             arrOfActiveBtns.forEach(
                 (productID) => {
                     var thisButton = document.querySelector("#product_" + productID.toString())
@@ -292,6 +295,7 @@ return (
         {/* container of product cards */}
         {statusHTMLstate == "greenLight" && <div className={s.container} id="products-container">
             {/* ----- product cards ----- */}
+            {/* { getDataFromAPI() } */}
             {
                 apiSTATE.map(
                     (elements, index) => 
@@ -359,7 +363,20 @@ return (
                                 }
                             }> <i className='fa-solid fa-heart fa-1x'></i> </button>
                             {/* image */}
-                            <Link className={s.products__cards_image} to="/products/item_view">
+                            <Link className={s.products__cards_image} to="/products/item_view" onClick={
+                                () => {
+                                    var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
+                                    {dispatch(setCurrentProduct({
+                                        id: elements.id,
+                                        image: elements.image,
+                                        title: elements.title,
+                                        category: elements.category,
+                                        price: elements.price,
+                                        rating: elements.rating.rate,
+                                        stars: rateStars
+                                    }))}
+                                }
+                            }>
                                 <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
                                 {/* <button className={s.products__cards_image__favbtn}
                                 // onMouseEnter={
@@ -373,7 +390,20 @@ return (
                                 > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
                             </Link>
                             {/* information */}
-                            <Link className={s.products__cards_information} to="/products/item_view">
+                            <Link className={s.products__cards_information} to="/products/item_view" onClick={
+                                () => {
+                                    var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
+                                    {dispatch(setCurrentProduct({
+                                        id: elements.id,
+                                        image: elements.image,
+                                        title: elements.title,
+                                        category: elements.category,
+                                        price: elements.price,
+                                        rating: elements.rating.rate,
+                                        stars: rateStars
+                                    }))}
+                                }
+                            }>
                                 {/* title & category */}
                                 <span className={s.products__cards_information__titleandcateg}>
                                     <p className={s.products__cards_information__titleandcateg_title}> {elements.title} </p>

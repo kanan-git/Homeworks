@@ -39,8 +39,8 @@
 }
 .itemview__container_bigframe {
   border: 1px solid var(--borders-color);
-  width: 450px;
-  height: 450px;
+  width: 550px;
+  height: 550px;
 }
 .itemview__container_bigframe__content {
   width: 100%;
