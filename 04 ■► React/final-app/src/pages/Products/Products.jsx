@@ -39,12 +39,84 @@ function Products() {
     
     useEffect(
         () => {
-            return () => {
-                getDataFromAPI()
-                // console.log(statusHTMLstate)
-            }
+            getDataFromAPI()
+            console.log(statusHTMLstate)
         }, []
     )
+
+    const [pricesSTATE, setPricesSTATE] = useState([])
+    const [ratingSTATE, setRatingSTATE] = useState([])
+
+    function gatheringData4prices() {
+        var pricesArray = []
+        apiSTATE.forEach(
+            (productObj) => {
+                pricesArray.push(productObj.price)
+            }
+        )
+        setPricesSTATE(pricesArray)
+    }
+    function gatheringData4rating() {
+        var ratingArray = []
+        apiSTATE.forEach(
+            (productObj) => {
+                ratingArray.push(productObj.rating.rate)
+            }
+        )
+        setRatingSTATE(ratingArray)
+    }
+
+    useEffect(
+        () => {
+            gatheringData4prices()
+            gatheringData4rating()
+            console.log(pricesSTATE)
+            console.log(ratingSTATE)
+        }, []
+    )
+// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    const [sortTypeSTATE, setSortTypeSTATE] = useState("Most sold")
+    // bubble sorting from ChatGPT
+    // var sampleArray = [10, 9, 2, 7, 5, 6, 18, 55, 51, 100, 8]
+    // var sortType = "low2high" // low2high high2low
+    // var sortType = "Price low to high" // "Price low to high"   "Price high to low"
+    function bubleSorting(array) {
+        // console.log(sortTypeSTATE)
+        if(sortTypeSTATE == "Price low to high") {
+            for(var j=0; j<array.length-1; j++) {
+                for(var i=0; i<array.length-j-1; i++) {
+                    if(array[i] > array[i+1]) {
+                        var temp = array[i]
+                        array[i] = array[i+1]
+                        array[i+1] = temp
+                        // console.log(sampleArray)
+                    } else {
+                        // do nothing
+                    }
+                }
+                // console.log(sampleArray)
+            }
+        } else if(sortTypeSTATE == "Price high to low") {
+            for(var j=0; j<array.length-1; j++) {
+                for(var i=0; i<array.length-j-1; i++) {
+                    if(array[i] < array[i+1]) {
+                        var temp = array[i]
+                        array[i] = array[i+1]
+                        array[i+1] = temp
+                        // console.log(sampleArray)
+                    } else {
+                        // do nothing
+                    }
+                }
+                // console.log(sampleArray)
+            }
+        } else {
+            // do nothing for now
+        }
+        console.log(array)
+        // console.log("-------------------------------------------")
+    }
+    // bubleSorting(sampleArray)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     // const [filterSTATE, setFilterSTATE] = useState(dataSource.english.products.filter)
     // const [sortSTATE, setSortSTATE] = useState(dataSource.english.products.sort)
@@ -188,17 +260,21 @@ return (
     <main className={s.products} onMouseEnter={
         () => {
             var currentUser = JSON.parse(localStorage.getItem("signedUser"))
-            var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
-            // console.log("loading event working")
-            arrOfActiveBtns.forEach(
-                (productID) => {
-                    var thisButton = document.querySelector("#product_" + productID.toString())
-                    thisButton.style.transition = `var(--instant-fx)`
-                    thisButton.style.backgroundColor = `var(--buttons-active-color)`
-                    thisButton.style.opacity = `1.0`
-                    thisButton.style.color = `var(--link-active-color)`
-                }
-            )
+            if(currentUser == "guest") {
+                // do nothing
+            } else {
+                var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
+                // console.log("loading event working")
+                arrOfActiveBtns.forEach(
+                    (productID) => {
+                        var thisButton = document.querySelector("#product_" + productID.toString())
+                        thisButton.style.transition = `var(--instant-fx)`
+                        thisButton.style.backgroundColor = `var(--buttons-active-color)`
+                        thisButton.style.opacity = `1.0`
+                        thisButton.style.color = `var(--link-active-color)`
+                    }
+                )
+            }
         }
     }>
         {/* topside of product page - contains: filter show/hide (container 1100/1400 px) button, sort input select */}
@@ -212,7 +288,15 @@ return (
                     </button>
                 </button>
             </span>
-            <select name="sorting" id="sorting" className={s.products__topside_sort}>
+            <select name="sorting" id="sorting" className={s.products__topside_sort} onClick={
+                () => {
+                    bubleSorting(pricesSTATE)
+                }
+            } onChange={
+                (e) => {
+                    setSortTypeSTATE(e.target.value)
+                }
+            }>
                 <option value="Most purchased"> {languageData.sort[0]} </option>
                 <option value="Price low to high"> {languageData.sort[1]} </option>
                 <option value="Price high to low"> {languageData.sort[2]} </option>
