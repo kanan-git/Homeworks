@@ -13,8 +13,9 @@ import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
-import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCurrentProduct } from '../../features/counter/selectedProduct'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function ItemView() {
     // ...
@@ -23,6 +24,10 @@ function ItemView() {
 
     const languageData = useSelector((state) => state.language.currentLanguage.itemview)
     const productInfo = useSelector((state) => state.selectedProduct.productData)
+
+    const dispatch = useDispatch()
+
+    function unFavorite() {}
 
     // useEffect(
     //     () => {
@@ -120,7 +125,7 @@ function ItemView() {
                 <div className={s.itemview__container_information}>
                     <h3 className={s.itemview__container_information__title}> {languageData[0]}: {productInfo.title} </h3>
                     <h6 className={s.itemview__container_information__category}> {languageData[1]}: {productInfo.category} </h6>
-                    <p className={s.itemview__container_information__description}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptates! </p>
+                    <p className={s.itemview__container_information__description}> {productInfo.desc} </p>
                     <span className={s.itemview__container_information__rating}>
                         <span className={s.itemview__container_information__rating_stars}>
                             
@@ -231,8 +236,22 @@ function ItemView() {
                     </span>
                     <strong className={s.itemview__container_information__price}> $ {productInfo.price} USD </strong>
                     <span className={s.itemview__container_information__buttons}>
-                        <Link className={s.itemview__container_information__buttons_buy} to="/products/item_view/purchase_completed"> <i className='fa-regular fa-credit-card fa-1x'></i> {languageData[2]} </Link>
-                        <button className={s.itemview__container_information__buttons_2fav}> <i className='fa-solid fa-heart fa-1x'></i> {languageData[3]} </button>
+                        <Link className={s.itemview__container_information__buttons_buy} 
+                        to="/products/item_view/purchase_completed" 
+                        onClick={() => {
+                                dispatch(setCurrentProduct({
+                                title: productInfo.title,
+                                category: productInfo.category,
+                                price: productInfo.price,
+                                desc: productInfo.desc
+                            }))
+                            console.log(productInfo.price)
+                        }}>
+                            <i className='fa-regular fa-credit-card fa-1x'></i> {languageData[2]}
+                        </Link>
+                        <button className={s.itemview__container_information__buttons_2fav} onClick={unFavorite}>
+                            <i className='fa-solid fa-heart fa-1x'></i> {languageData[3]}
+                        </button>
                         <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> {languageData[4]} </button>
                     </span>
                 </div>

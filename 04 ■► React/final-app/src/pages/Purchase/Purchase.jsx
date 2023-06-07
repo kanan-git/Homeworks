@@ -22,6 +22,7 @@ function Purchase() {
     // const [purchaseSTATE, setPurchaseSTATE] = useState(dataSource.english.purchase)
 
     const languageData = useSelector((state) => state.language.currentLanguage.purchase)
+    const productInfo = useSelector((state) => state.selectedProduct.productData)
 
     // useEffect(
     //     () => {
@@ -46,10 +47,10 @@ function Purchase() {
             <p className={s.purchase__status}> {languageData[0]} </p>
             {/* ordered product info */}
             <ul className={s.purchase__infolist}>
-                <li className={s.purchase__infolist_items}> {languageData[1]}: HERE </li>
-                <li className={s.purchase__infolist_items}> {languageData[2]}: HERE </li>
-                <li className={s.purchase__infolist_items}> {languageData[3]}: HERE </li>
-                <li className={s.purchase__infolist_items}> {languageData[4]}: $ HERE USD </li>
+                <li className={s.purchase__infolist_items}> {languageData[1]}: {productInfo.title} </li>
+                <li className={s.purchase__infolist_items}> {languageData[2]}: {productInfo.category} </li>
+                <li className={s.purchase__infolist_items}> {languageData[3]}: {productInfo.desc} </li>
+                <li className={s.purchase__infolist_items}> {languageData[4]}: $ {productInfo.price} USD </li>
             </ul>
             {/* back to circle buttons */}
             <div className={s.purchase__buttons}>

@@ -125,6 +125,7 @@ function MyFav() {
     
             return arrayOfFavoriteProducts.map(
                 (index) => 
+                    // {fetch("https://fakestoreapi.com/products/"+index)}
                     <Link className={s.myfav__container_cards} to="/products/item_view" 
                     key={index} 
                     onClick={
@@ -134,7 +135,8 @@ function MyFav() {
                             title: fakeStoreAPI[index-1].title,
                             category: fakeStoreAPI[index-1].category,
                             price: fakeStoreAPI[index-1].price,
-                            rating: fakeStoreAPI[index-1].rating.rate
+                            rating: fakeStoreAPI[index-1].rating.rate,
+                            desc: fakeStoreAPI[index-1].description
                         }))}}
                     >
                         <div className={s.myfav__container_cards__image}>

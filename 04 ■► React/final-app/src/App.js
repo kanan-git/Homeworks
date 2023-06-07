@@ -28,7 +28,13 @@ import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies'
 import Loading from './components/Pop-ups/Loading'
 
 function App() {
-  var authDataFromLocalStorage =  JSON.parse(localStorage.getItem('signedUser'))
+  var authDataFromLocalStorage = JSON.parse(localStorage.getItem('signedUser'))
+
+  if(authDataFromLocalStorage == null) {
+    var authDataFromLocalStorage = localStorage.setItem('signedUser', JSON.stringify('guest'))
+  } else {
+    // do nothing
+  }
 
   if(authDataFromLocalStorage == 'guest') {
     var dynamicElement = <SignInOrUp />

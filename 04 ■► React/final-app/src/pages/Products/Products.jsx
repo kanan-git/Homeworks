@@ -373,6 +373,7 @@ return (
                                         category: elements.category,
                                         price: elements.price,
                                         rating: elements.rating.rate,
+                                        desc: elements.description,
                                         stars: rateStars
                                     }))}
                                 }
