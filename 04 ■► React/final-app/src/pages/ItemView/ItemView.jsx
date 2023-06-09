@@ -27,7 +27,80 @@ function ItemView() {
 
     const dispatch = useDispatch()
 
-    function unFavorite() {}
+    const [accessState, setAccessState] = useState("")
+    useEffect(
+        () => {
+            var currentUserIs = JSON.parse(localStorage.getItem('signedUser'))
+            var currentUserData = JSON.parse(localStorage.getItem(currentUserIs))
+            if(currentUserData.budget_amount_from_creditcard > productInfo.price) {
+                var access2purchCompleteComponent = "/products/item_view/purchase_completed"
+                setAccessState(access2purchCompleteComponent)
+            } else {
+                var access2purchCompleteComponent = null
+                setAccessState(access2purchCompleteComponent)
+            }
+        }, []
+    )
+
+    function onLoadButtonEffect() {
+        JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem('signedUser')))).favorites.forEach(
+            (elements) => {
+                var favBtn = document.querySelector("#add2favBtnIV")
+                if(elements == productInfo.id) {
+                    favBtn.style.backgroundColor = `var(--buttons-active-color)`
+                    favBtn.style.color = `var(--link-active-color)`
+                    // console.log(favBtn.style)
+                } else {
+                    // do nothing
+                }
+                // console.log(elements, productInfo.id)
+            }
+        )
+    }
+    // onLoadButtonEffect()
+
+    function unFavorite(e) {
+        e.preventDefault()
+
+        var currentUserIs = JSON.parse(localStorage.getItem('signedUser'))
+        var currentUserData = JSON.parse(localStorage.getItem(currentUserIs))
+        var currentFavoritesArray = currentUserData.favorites
+
+        var restOfProducts = []
+        for(var j=0; j<currentFavoritesArray.length; j++) {
+            if(productInfo.id == currentFavoritesArray[j]) {
+                // do nothing
+            } else {
+                restOfProducts.push(currentFavoritesArray[j])
+            }
+        }
+
+        for(var i=0; i<currentFavoritesArray.length; i++) {
+            var status = false
+            if(productInfo.id == currentFavoritesArray[i]) {
+                // console.log(productInfo.id)
+                // alert("Yup, you added this product to favorites before.")
+                e.target.style.backgroundColor = `var(--buttons-color)`
+                e.target.style.color = `var(--link-color)`
+                currentUserData.favorites = restOfProducts
+                localStorage.setItem(currentUserIs, JSON.stringify(currentUserData))
+                var status = true
+                break
+            } else {
+                // do nothing
+            }
+        }
+
+        if(status == true) {
+            // do nothing for now
+        } else {
+            // alert("Nope, this product is not your favorite")
+            currentUserData.favorites.push(productInfo.id)
+            localStorage.setItem(currentUserIs, JSON.stringify(currentUserData))
+            e.target.style.backgroundColor = `var(--buttons-active-color)`
+            e.target.style.color = `var(--link-active-color)`
+        }
+    }
 
     // useEffect(
     //     () => {
@@ -100,7 +173,7 @@ function ItemView() {
     // }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
-        <main className={s.itemview}>
+        <main className={s.itemview} onMouseEnter={onLoadButtonEffect}>
             <section className={s.itemview__container}>
                 {/* <div className={s.itemview__container_thumbnails}>
                     <button className={s.itemview__container_thumbnails__buttons}>
@@ -237,7 +310,7 @@ function ItemView() {
                     <strong className={s.itemview__container_information__price}> $ {productInfo.price} USD </strong>
                     <span className={s.itemview__container_information__buttons}>
                         <Link className={s.itemview__container_information__buttons_buy} 
-                        to="/products/item_view/purchase_completed" 
+                        to={accessState} 
                         onClick={() => {
                                 dispatch(setCurrentProduct({
                                 title: productInfo.title,
@@ -245,11 +318,21 @@ function ItemView() {
                                 price: productInfo.price,
                                 desc: productInfo.desc
                             }))
-                            console.log(productInfo.price)
+                            // console.log(productInfo.price)
+                            var currentUserIs = JSON.parse(localStorage.getItem('signedUser'))
+                            var currentUserData = JSON.parse(localStorage.getItem(currentUserIs))
+                            if(currentUserData.budget_amount_from_creditcard - productInfo.price > 0) {
+                                currentUserData.budget_amount_from_creditcard -= productInfo.price
+                                localStorage.setItem(currentUserIs, JSON.stringify(currentUserData))
+                                alert("Your order successully completed.")
+                            } else {
+                                alert("Oops. You don't have enough budget.")
+                            }
+                            // console.log(currentUserData.budget_amount_from_creditcard)
                         }}>
                             <i className='fa-regular fa-credit-card fa-1x'></i> {languageData[2]}
                         </Link>
-                        <button className={s.itemview__container_information__buttons_2fav} onClick={unFavorite}>
+                        <button className={s.itemview__container_information__buttons_2fav} id="add2favBtnIV" onClick={unFavorite}>
                             <i className='fa-solid fa-heart fa-1x'></i> {languageData[3]}
                         </button>
                         <button className={s.itemview__container_information__buttons_2fcart}> <i className='fa-solid fa-shopping-cart fa-1x'></i> {languageData[4]} </button>
