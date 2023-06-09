@@ -19,6 +19,7 @@ import userX_X from './user-transparent.png'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { setCurrentLanguage } from '../../features/counter/counterSlice'
 import { setCurrentAuthType } from '../../features/counter/switchAuthType'
+import { setCurrentSearchValue } from '../../features/counter/searchValueSlice'
 import { useDispatch } from 'react-redux'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Header() {
@@ -43,6 +44,7 @@ function Header() {
     //     profile_img_color: "rgb(255,128,0)"
     // }
     // localStorage.setItem(0, JSON.stringify(user))
+
     localStorage.setItem("language", JSON.stringify("english"))
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [userName, setUserName] = useState()
@@ -105,6 +107,95 @@ function Header() {
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     // function for switching Light or Dark mode
 
+    useEffect(
+        () => {
+            const doesExistLorDstat = JSON.parse(localStorage.getItem("lightMode"))
+            if(doesExistLorDstat == "light") {
+                root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
+                root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
+                root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
+                root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
+                root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
+                root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
+                root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
+                root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
+                root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
+                root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
+                root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
+                switchSliderBtnSTATE.current.style.left = `0%`
+                switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
+                switchSunSTATE.current.style.scale = `1.8`
+                switchSunSTATE.current.style.opacity = `0.9`
+                switchMoonSTATE.current.style.scale = `1.0`
+                switchMoonSTATE.current.style.opacity = `0.5`
+                logoSTATE.current.style.filter = `invert(0)`
+            } else if(doesExistLorDstat == "dark") {
+                root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
+                root.style.setProperty('--text-color', 'rgb(205,205,205)'); // DARK mode default color
+                root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
+                root.style.setProperty('--link-color', 'rgb(255,255,255)'); // DARK mode default color
+                root.style.setProperty('--link-hover-color', 'rgb(5,145,255)'); // DARK mode default color
+                root.style.setProperty('--link-active-color', 'rgb(5,205,255)'); // DARK mode default color
+                root.style.setProperty('--default-bg-color', 'rgb(30,30,30)'); // DARK mode default color
+                root.style.setProperty('--footer-bg-color', 'rgb(15,15,15)'); // DARK mode default color
+                root.style.setProperty('--footer-bottom-color', 'rgb(10,10,10)'); // DARK mode default color
+                root.style.setProperty('--header-bg-color', 'rgba(5,5,5,0.5)'); // DARK mode default color
+                root.style.setProperty('--header-top-color', 'rgb(20,20,20)'); // DARK mode default color
+                root.style.setProperty('--buttons-color', 'rgb(55,55,55)'); // DARK mode default color
+                root.style.setProperty('--buttons-hover-color', 'rgb(45,5,245)'); // DARK mode default color
+                root.style.setProperty('--buttons-active-color', 'rgb(115,15,255)'); // DARK mode default color
+                root.style.setProperty('--filter-shadow-color', 'rgb(255,255,255)'); // DARK mode default color
+                root.style.setProperty('--borders-color', 'rgb(200,200,200)'); // DARK mode default color
+                root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(70,10,250), rgb(200,10,10))'); // DARK mode default color
+                root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
+                root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
+                switchSliderBtnSTATE.current.style.left = `100%`
+                switchSliderBtnSTATE.current.style.transform = `translateX(-95%)`
+                switchSunSTATE.current.style.scale = `1.0`
+                switchSunSTATE.current.style.opacity = `0.5`
+                switchMoonSTATE.current.style.scale = `1.8`
+                switchMoonSTATE.current.style.opacity = `0.9`
+                logoSTATE.current.style.filter = `invert(1)`
+            } else {
+                localStorage.setItem("lightMode", JSON.stringify("light"))
+                root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
+                root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
+                root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
+                root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
+                root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
+                root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
+                root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
+                root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
+                root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
+                root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
+                root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
+                switchSliderBtnSTATE.current.style.left = `0%`
+                switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
+                switchSunSTATE.current.style.scale = `1.8`
+                switchSunSTATE.current.style.opacity = `0.9`
+                switchMoonSTATE.current.style.scale = `1.0`
+                switchMoonSTATE.current.style.opacity = `0.5`
+                logoSTATE.current.style.filter = `invert(0)`
+            }
+        }, []
+    )
+
     // document.querySelector(".header__main_switch__slider").addEventListener("click", () => {console.log("+")})
     useState(
         () => {
@@ -118,6 +209,7 @@ function Header() {
         }, [])
 
     function handleSwitchLorD() {
+        var LorDstatus = JSON.parse(localStorage.getItem("lightMode"))
         // console.log(
         //     switchSliderBtnSTATE.current.style.left, 
         //     switchSliderBtnSTATE.current.style.transform, 
@@ -126,7 +218,8 @@ function Header() {
         //     switchMoonSTATE.current.style.scale, 
         //     switchMoonSTATE.current.style.opacity
         // )
-        if(isLightMode == true) {
+        // if(isLightMode == true) {
+        if(LorDstatus == "light") {
             // enable LIGHT mode
             setIsLightMode(false)
             // add isLightMode & language data to sessionStorage (localStorage?) & make it preventDefault to keep it ? or just no reload page ?
@@ -151,6 +244,8 @@ function Header() {
             root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
             root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
 
+            localStorage.setItem("lightMode", JSON.stringify("dark"))
+
             switchSliderBtnSTATE.current.style.left = `100%`
             switchSliderBtnSTATE.current.style.transform = `translateX(-95%)`
             switchSunSTATE.current.style.scale = `1.0`
@@ -168,7 +263,8 @@ function Header() {
             //     switchMoonSTATE.current.style.opacity
             // )
         }
-        else if(isLightMode == false) {
+        // else if(isLightMode == false) {
+        else if(LorDstatus == "dark") {
             // enable DARK mode
             setIsLightMode(true)
             // console.log(isLightMode, "LIGHT mode enabled")
@@ -192,6 +288,8 @@ function Header() {
             root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
             root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
 
+            localStorage.setItem("lightMode", JSON.stringify("light"))
+
             switchSliderBtnSTATE.current.style.left = `0%`
             switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
             switchSunSTATE.current.style.scale = `1.8`
@@ -210,7 +308,7 @@ function Header() {
             // )
         }
         else {
-            console.log("function is not working correctly", isLightMode)
+            // console.log("function is not working correctly", isLightMode)
         }
     }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
@@ -480,10 +578,20 @@ function Header() {
 
                 {/* temporary static elements for reference | SEARCHBAR */}
                 <div className={s.header__main_search}>
-                    <input type="search" placeholder={navItems[0]} className={s.header__main_search__input} />
-                    <button className={s.header__main_search__button}>
+                    <input type="search" placeholder={navItems[0]} className={s.header__main_search__input} id="searcbar" />
+                    <Link className={s.header__main_search__button} to="/products" onClick={
+                        () => {
+                            var searchValue = document.querySelector("#searcbar").value
+                            if(searchValue == "") {
+                                // console.log("empty")
+                            } else {
+                                // console.log(searchValue)
+                            }
+                            dispatch( setCurrentSearchValue(searchValue) )
+                        }
+                    }>
                         <i className='fa-solid fa-magnifying-glass fa-1x fa-bounce' id={s.fa_glass}></i>
-                    </button>
+                    </Link>
                 </div>
 
                 {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}

@@ -228,6 +228,12 @@ function Products() {
     // const [buttonSTATE, setButtonSTATE] = useState(dataSource.english.products.button)
 
     const languageData = useSelector((state) => state.language.currentLanguage.products)
+    const searchedElement = useSelector((state )=> state.searching.currentSearchValue)
+
+    // const [searchSTATE, setSearchSTATE] = useState("")
+    
+    
+
 
     // useEffect(
     //     () => {
@@ -491,234 +497,474 @@ return (
                 apiSTATE.map(
                     (elements, index) => 
                         {
-                            return (
-                                <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
-                                    <button className={s.products__cards_image__favbtn} id={"product_" + elements.id.toString()} onClick={
-                                        (e) => {
-                                            var currentUserIs = JSON.parse(localStorage.getItem("signedUser")) // get info from storage who is current user
-                                            var arr = JSON.parse(localStorage.getItem(currentUserIs)) // get favorites array of current user
-                                            var restOfIDs = [] // empty array for unfav action will contain all favorites except clicked one
-                                            var newProduct = elements.id // current product id which clicked it's favorite button
+                            if(searchedElement == "") {
+                                // console.log(elements.title.includes(searchedElement))
+                            } else {
+                                // console.log(elements.title.includes(searchedElement))
+                                if(elements.title.includes(searchedElement)) {
+                                    // console.log(elements)
+                                }
+                            }
 
-                                            e.target.style.transition = `var(--instant-fx)`
-                                            e.target.style.backgroundColor = `var(--buttons-active-color)`
-                                            e.target.style.opacity = `1.0`
-                                            e.target.style.color = `var(--link-active-color)`
+                            if(searchedElement == "") {
+                                return (
+                                    <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
+                                        <button className={s.products__cards_image__favbtn} id={"product_" + elements.id.toString()} onClick={
+                                            (e) => {
+                                                var currentUserIs = JSON.parse(localStorage.getItem("signedUser")) // get info from storage who is current user
+                                                var arr = JSON.parse(localStorage.getItem(currentUserIs)) // get favorites array of current user
+                                                var restOfIDs = [] // empty array for unfav action will contain all favorites except clicked one
+                                                var newProduct = elements.id // current product id which clicked it's favorite button
 
-                                            if(arr.favorites.length == 0) {
-                                                var doesExist = false
-                                                // console.log("Ofcourse its not added")
-                                            } else {
-                                                for(var i=0; i<arr.favorites.length; i++) { // loop inside user's favorite products
-                                                    if(newProduct == arr.favorites[i]) {
-                                                        var doesExist = true
-                                                        // console.log("Yes, this product is added to favorites before")
-                                                        e.target.style.transition = `var(--quick-fx)`
-                                                        e.target.style.backgroundColor = `var(--buttons-color)`
-                                                        e.target.style.opacity = `0.5;`
-                                                        e.target.style.color = `var(--link-color)`
-                                                        break
-                                                    } else {
-                                                        var doesExist = false
-                                                        // console.log("This product not your favorite")
-                                                        e.target.style.transition = `var(--instant-fx)`
-                                                        e.target.style.backgroundColor = `var(--buttons-active-color)`
-                                                        e.target.style.opacity = `1.0`
-                                                        e.target.style.color = `var(--link-active-color)`
+                                                e.target.style.transition = `var(--instant-fx)`
+                                                e.target.style.backgroundColor = `var(--buttons-active-color)`
+                                                e.target.style.opacity = `1.0`
+                                                e.target.style.color = `var(--link-active-color)`
+
+                                                if(arr.favorites.length == 0) {
+                                                    var doesExist = false
+                                                    // console.log("Ofcourse its not added")
+                                                } else {
+                                                    for(var i=0; i<arr.favorites.length; i++) { // loop inside user's favorite products
+                                                        if(newProduct == arr.favorites[i]) {
+                                                            var doesExist = true
+                                                            // console.log("Yes, this product is added to favorites before")
+                                                            e.target.style.transition = `var(--quick-fx)`
+                                                            e.target.style.backgroundColor = `var(--buttons-color)`
+                                                            e.target.style.opacity = `0.5;`
+                                                            e.target.style.color = `var(--link-color)`
+                                                            break
+                                                        } else {
+                                                            var doesExist = false
+                                                            // console.log("This product not your favorite")
+                                                            e.target.style.transition = `var(--instant-fx)`
+                                                            e.target.style.backgroundColor = `var(--buttons-active-color)`
+                                                            e.target.style.opacity = `1.0`
+                                                            e.target.style.color = `var(--link-active-color)`
+                                                        }
                                                     }
                                                 }
-                                            }
 
-                                            if(arr.favorites.length == 0) {
-                                                var restOfIDs = []
-                                            } else {
-                                                for(var j=0; j<arr.favorites.length; j++) {
-                                                    if(newProduct != arr.favorites[j]) {
-                                                        restOfIDs.push(arr.favorites[j])
-                                                    } else {
-                                                        // do nothing
+                                                if(arr.favorites.length == 0) {
+                                                    var restOfIDs = []
+                                                } else {
+                                                    for(var j=0; j<arr.favorites.length; j++) {
+                                                        if(newProduct != arr.favorites[j]) {
+                                                            restOfIDs.push(arr.favorites[j])
+                                                        } else {
+                                                            // do nothing
+                                                        }
                                                     }
                                                 }
+
+                                                // console.log(restOfIDs)
+                                                // console.log(e.target)
+
+                                                if(doesExist == false) {
+                                                    arr.favorites.push(newProduct)
+                                                    localStorage.setItem(currentUserIs, JSON.stringify(arr))
+                                                    // alert("Added new product ID: " + elements.id)
+                                                } else {
+                                                    arr.favorites = restOfIDs
+                                                    localStorage.setItem(currentUserIs, JSON.stringify(arr))
+                                                    // alert("You already have this product on Favorites - ID: " + elements.id)
+                                                }
                                             }
-
-                                            // console.log(restOfIDs)
-                                            // console.log(e.target)
-
-                                            if(doesExist == false) {
-                                                arr.favorites.push(newProduct)
-                                                localStorage.setItem(currentUserIs, JSON.stringify(arr))
-                                                // alert("Added new product ID: " + elements.id)
-                                            } else {
-                                                arr.favorites = restOfIDs
-                                                localStorage.setItem(currentUserIs, JSON.stringify(arr))
-                                                // alert("You already have this product on Favorites - ID: " + elements.id)
+                                        }> <i className='fa-solid fa-heart fa-1x'></i> </button>
+                                        {/* image */}
+                                        <Link className={s.products__cards_image} to="/products/item_view" onClick={
+                                            () => {
+                                                var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
+                                                {dispatch(setCurrentProduct({
+                                                    id: elements.id,
+                                                    image: elements.image,
+                                                    title: elements.title,
+                                                    category: elements.category,
+                                                    price: elements.price,
+                                                    rating: elements.rating.rate,
+                                                    desc: elements.description,
+                                                    stars: rateStars
+                                                }))}
                                             }
-                                        }
-                                    }> <i className='fa-solid fa-heart fa-1x'></i> </button>
-                                    {/* image */}
-                                    <Link className={s.products__cards_image} to="/products/item_view" onClick={
-                                        () => {
-                                            var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
-                                            {dispatch(setCurrentProduct({
-                                                id: elements.id,
-                                                image: elements.image,
-                                                title: elements.title,
-                                                category: elements.category,
-                                                price: elements.price,
-                                                rating: elements.rating.rate,
-                                                desc: elements.description,
-                                                stars: rateStars
-                                            }))}
-                                        }
-                                    }>
-                                        <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
-                                        {/* <button className={s.products__cards_image__favbtn}
-                                        // onMouseEnter={
-                                        //     () => {
-                                        //         let currentUserIs = localStorage.getItem("signedUser")
-                                        //         let cUserFavs = JSON.parse(currentUserIs)
-                                        //         // JSON.parse(localStorage.getItem(currentUserIs)).favorites.push[elements.id]
-                                        //         console.log("added", cUserFavs)
-                                        //     }
-                                        // }
-                                        > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
-                                    </Link>
-                                    {/* information */}
-                                    <Link className={s.products__cards_information} to="/products/item_view" onClick={
-                                        () => {
-                                            var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
-                                            {dispatch(setCurrentProduct({
-                                                id: elements.id,
-                                                image: elements.image,
-                                                title: elements.title,
-                                                category: elements.category,
-                                                price: elements.price,
-                                                rating: elements.rating.rate,
-                                                stars: rateStars
-                                            }))}
-                                        }
-                                    }>
-                                        {/* title & category */}
-                                        <span className={s.products__cards_information__titleandcateg}>
-                                            <p className={s.products__cards_information__titleandcateg_title}> {elements.title} </p>
-                                            <i className={s.products__cards_information__titleandcateg_categ}> {elements.category} </i> {/* opacity 0.5, smaller text under title */}
-                                        </span>
-                                        {/* rating */}
-                                        <span className={s.products__cards_information__rating}>
-                                            <span className={s.products__cards_information__rating_stars}>
-                                                {
-                                                    elements.rating.rate==5 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=4.5 && elements.rating.rate<5 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=4 && elements.rating.rate<4.5 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=3.5 && elements.rating.rate<4 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=3 && elements.rating.rate<3.5 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=2.5 && elements.rating.rate<3 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=2 && elements.rating.rate<2.5 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=1.5 && elements.rating.rate<2 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=1 && elements.rating.rate<1.5 && <>
-                                                        <i className='fa-solid fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=0.5 && elements.rating.rate<1 && <>
-                                                        <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-                                                {
-                                                    elements.rating.rate>=0 && elements.rating.rate<0.5 && <>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                        <i className='fa-regular fa-star fa-1x'></i>
-                                                    </>
-                                                }
-
-                                                {/* <i className='fa-solid fa-star fa-1x'></i>
-                                                <i className='fa-solid fa-star fa-1x'></i>
-                                                <i className='fa-solid fa-star fa-1x'></i>
-                                                <i className='fa-solid fa-star-half-stroke fa-1x'></i>
-                                                <i className='fa-regular fa-star fa-1x'></i> */}
+                                        }>
+                                            <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
+                                            {/* <button className={s.products__cards_image__favbtn}
+                                            // onMouseEnter={
+                                            //     () => {
+                                            //         let currentUserIs = localStorage.getItem("signedUser")
+                                            //         let cUserFavs = JSON.parse(currentUserIs)
+                                            //         // JSON.parse(localStorage.getItem(currentUserIs)).favorites.push[elements.id]
+                                            //         console.log("added", cUserFavs)
+                                            //     }
+                                            // }
+                                            > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
+                                        </Link>
+                                        {/* information */}
+                                        <Link className={s.products__cards_information} to="/products/item_view" onClick={
+                                            () => {
+                                                var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
+                                                {dispatch(setCurrentProduct({
+                                                    id: elements.id,
+                                                    image: elements.image,
+                                                    title: elements.title,
+                                                    category: elements.category,
+                                                    price: elements.price,
+                                                    rating: elements.rating.rate,
+                                                    stars: rateStars
+                                                }))}
+                                            }
+                                        }>
+                                            {/* title & category */}
+                                            <span className={s.products__cards_information__titleandcateg}>
+                                                <p className={s.products__cards_information__titleandcateg_title}> {elements.title} </p>
+                                                <i className={s.products__cards_information__titleandcateg_categ}> {elements.category} </i> {/* opacity 0.5, smaller text under title */}
                                             </span>
-                                            <span className={s.products__cards_information__rating_point}> {elements.rating.rate} / 5 </span> {/* 5 or 10 */}
-                                        </span>
-                                        {/* <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span> */}
-                                        <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
-                                    </Link>
-                                </div>
-                            )
+                                            {/* rating */}
+                                            <span className={s.products__cards_information__rating}>
+                                                <span className={s.products__cards_information__rating_stars}>
+                                                    {
+                                                        elements.rating.rate==5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=4.5 && elements.rating.rate<5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=4 && elements.rating.rate<4.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=3.5 && elements.rating.rate<4 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=3 && elements.rating.rate<3.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=2.5 && elements.rating.rate<3 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=2 && elements.rating.rate<2.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=1.5 && elements.rating.rate<2 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=1 && elements.rating.rate<1.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=0.5 && elements.rating.rate<1 && <>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=0 && elements.rating.rate<0.5 && <>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+
+                                                    {/* <i className='fa-solid fa-star fa-1x'></i>
+                                                    <i className='fa-solid fa-star fa-1x'></i>
+                                                    <i className='fa-solid fa-star fa-1x'></i>
+                                                    <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                    <i className='fa-regular fa-star fa-1x'></i> */}
+                                                </span>
+                                                <span className={s.products__cards_information__rating_point}> {elements.rating.rate} / 5 </span> {/* 5 or 10 */}
+                                            </span>
+                                            {/* <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span> */}
+                                            <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
+                                        </Link>
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
+                                        <button className={s.products__cards_image__favbtn} id={"product_" + elements.id.toString()} onClick={
+                                            (e) => {
+                                                var currentUserIs = JSON.parse(localStorage.getItem("signedUser")) // get info from storage who is current user
+                                                var arr = JSON.parse(localStorage.getItem(currentUserIs)) // get favorites array of current user
+                                                var restOfIDs = [] // empty array for unfav action will contain all favorites except clicked one
+                                                var newProduct = elements.id // current product id which clicked it's favorite button
+
+                                                e.target.style.transition = `var(--instant-fx)`
+                                                e.target.style.backgroundColor = `var(--buttons-active-color)`
+                                                e.target.style.opacity = `1.0`
+                                                e.target.style.color = `var(--link-active-color)`
+
+                                                if(arr.favorites.length == 0) {
+                                                    var doesExist = false
+                                                    // console.log("Ofcourse its not added")
+                                                } else {
+                                                    for(var i=0; i<arr.favorites.length; i++) { // loop inside user's favorite products
+                                                        if(newProduct == arr.favorites[i]) {
+                                                            var doesExist = true
+                                                            // console.log("Yes, this product is added to favorites before")
+                                                            e.target.style.transition = `var(--quick-fx)`
+                                                            e.target.style.backgroundColor = `var(--buttons-color)`
+                                                            e.target.style.opacity = `0.5;`
+                                                            e.target.style.color = `var(--link-color)`
+                                                            break
+                                                        } else {
+                                                            var doesExist = false
+                                                            // console.log("This product not your favorite")
+                                                            e.target.style.transition = `var(--instant-fx)`
+                                                            e.target.style.backgroundColor = `var(--buttons-active-color)`
+                                                            e.target.style.opacity = `1.0`
+                                                            e.target.style.color = `var(--link-active-color)`
+                                                        }
+                                                    }
+                                                }
+
+                                                if(arr.favorites.length == 0) {
+                                                    var restOfIDs = []
+                                                } else {
+                                                    for(var j=0; j<arr.favorites.length; j++) {
+                                                        if(newProduct != arr.favorites[j]) {
+                                                            restOfIDs.push(arr.favorites[j])
+                                                        } else {
+                                                            // do nothing
+                                                        }
+                                                    }
+                                                }
+
+                                                // console.log(restOfIDs)
+                                                // console.log(e.target)
+
+                                                if(doesExist == false) {
+                                                    arr.favorites.push(newProduct)
+                                                    localStorage.setItem(currentUserIs, JSON.stringify(arr))
+                                                    // alert("Added new product ID: " + elements.id)
+                                                } else {
+                                                    arr.favorites = restOfIDs
+                                                    localStorage.setItem(currentUserIs, JSON.stringify(arr))
+                                                    // alert("You already have this product on Favorites - ID: " + elements.id)
+                                                }
+                                            }
+                                        }> <i className='fa-solid fa-heart fa-1x'></i> </button>
+                                        {/* image */}
+                                        <Link className={s.products__cards_image} to="/products/item_view" onClick={
+                                            () => {
+                                                var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
+                                                {dispatch(setCurrentProduct({
+                                                    id: elements.id,
+                                                    image: elements.image,
+                                                    title: elements.title,
+                                                    category: elements.category,
+                                                    price: elements.price,
+                                                    rating: elements.rating.rate,
+                                                    desc: elements.description,
+                                                    stars: rateStars
+                                                }))}
+                                            }
+                                        }>
+                                            <img src={elements.image} alt={"product-"+index} className={s.products__cards_image__content} />
+                                            {/* <button className={s.products__cards_image__favbtn}
+                                            // onMouseEnter={
+                                            //     () => {
+                                            //         let currentUserIs = localStorage.getItem("signedUser")
+                                            //         let cUserFavs = JSON.parse(currentUserIs)
+                                            //         // JSON.parse(localStorage.getItem(currentUserIs)).favorites.push[elements.id]
+                                            //         console.log("added", cUserFavs)
+                                            //     }
+                                            // }
+                                            > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
+                                        </Link>
+                                        {/* information */}
+                                        <Link className={s.products__cards_information} to="/products/item_view" onClick={
+                                            () => {
+                                                var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
+                                                {dispatch(setCurrentProduct({
+                                                    id: elements.id,
+                                                    image: elements.image,
+                                                    title: elements.title,
+                                                    category: elements.category,
+                                                    price: elements.price,
+                                                    rating: elements.rating.rate,
+                                                    stars: rateStars
+                                                }))}
+                                            }
+                                        }>
+                                            {/* title & category */}
+                                            <span className={s.products__cards_information__titleandcateg}>
+                                                <p className={s.products__cards_information__titleandcateg_title}> {elements.title} </p>
+                                                <i className={s.products__cards_information__titleandcateg_categ}> {elements.category} </i> {/* opacity 0.5, smaller text under title */}
+                                            </span>
+                                            {/* rating */}
+                                            <span className={s.products__cards_information__rating}>
+                                                <span className={s.products__cards_information__rating_stars}>
+                                                    {
+                                                        elements.rating.rate==5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=4.5 && elements.rating.rate<5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=4 && elements.rating.rate<4.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=3.5 && elements.rating.rate<4 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=3 && elements.rating.rate<3.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=2.5 && elements.rating.rate<3 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=2 && elements.rating.rate<2.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=1.5 && elements.rating.rate<2 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=1 && elements.rating.rate<1.5 && <>
+                                                            <i className='fa-solid fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=0.5 && elements.rating.rate<1 && <>
+                                                            <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+                                                    {
+                                                        elements.rating.rate>=0 && elements.rating.rate<0.5 && <>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                            <i className='fa-regular fa-star fa-1x'></i>
+                                                        </>
+                                                    }
+
+                                                    {/* <i className='fa-solid fa-star fa-1x'></i>
+                                                    <i className='fa-solid fa-star fa-1x'></i>
+                                                    <i className='fa-solid fa-star fa-1x'></i>
+                                                    <i className='fa-solid fa-star-half-stroke fa-1x'></i>
+                                                    <i className='fa-regular fa-star fa-1x'></i> */}
+                                                </span>
+                                                <span className={s.products__cards_information__rating_point}> {elements.rating.rate} / 5 </span> {/* 5 or 10 */}
+                                            </span>
+                                            {/* <span className={s.products__cards_information__description}> {apiSTATE[0].description} </span> */}
+                                            <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
+                                        </Link>
+                                    </div>
+                                )
+                            }
                         }
                 )
             }

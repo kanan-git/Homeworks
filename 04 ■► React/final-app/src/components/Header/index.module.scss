@@ -245,6 +245,9 @@
                 background-color: var(--buttons-color);
                 border: 1px solid var(--link-color);
                 transition: var(--quick-fx);
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 #fa_glass {
                     color: var(--link-color);
                 }
