@@ -46,6 +46,8 @@ function Products() {
         }, []
     )
 
+    // console.log(apiSTATE)
+
     // const [pricesSTATE, setPricesSTATE] = useState([])
     // const [ratingSTATE, setRatingSTATE] = useState([])
 
