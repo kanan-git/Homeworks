@@ -579,7 +579,8 @@ function Header() {
                 {/* temporary static elements for reference | SEARCHBAR */}
                 <div className={s.header__main_search}>
                     <input type="search" placeholder={navItems[0]} className={s.header__main_search__input} id="searcbar" />
-                    <Link className={s.header__main_search__button} to="/products" onClick={
+                    <Link className={s.header__main_search__button} to="/products" 
+                    onClick={
                         () => {
                             var searchValue = document.querySelector("#searcbar").value
                             if(searchValue == "") {
@@ -589,7 +590,8 @@ function Header() {
                             }
                             dispatch( setCurrentSearchValue(searchValue) )
                         }
-                    }>
+                    }
+                    >
                         <i className='fa-solid fa-magnifying-glass fa-1x fa-bounce' id={s.fa_glass}></i>
                     </Link>
                 </div>
