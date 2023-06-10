@@ -45,7 +45,13 @@ function Header() {
     // }
     // localStorage.setItem(0, JSON.stringify(user))
 
-    localStorage.setItem("language", JSON.stringify("english"))
+    useEffect(
+        () => {
+            if(JSON.parse(localStorage.getItem("language")) == null) {
+                localStorage.setItem("language", JSON.stringify("english"))
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [userName, setUserName] = useState()
     const [userColor, setUsercolor] = useState()
@@ -574,6 +580,9 @@ function Header() {
                         <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}> Azərbaycan dili </option>
                         <option value="Türkçe" className={s.header__main_langbar__selector_options}> Türkçe </option>
                     </select>
+                    {/* {document.querySelector("#language").value = "English"} */}
+                    {/* {document.querySelector("#language").value = "Azərbaycan dili"} */}
+                    {/* {document.querySelector("#language").value = "Türkçe"} */}
                 </div>
 
                 {/* temporary static elements for reference | SEARCHBAR */}

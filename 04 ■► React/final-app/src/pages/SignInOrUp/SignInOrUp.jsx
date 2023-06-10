@@ -54,6 +54,13 @@ function SignInOrUp() {
         localStorage.setItem("isLogged", JSON.stringify(false))
         localStorage.setItem("signedUser", JSON.stringify("guest"))
     }
+    useEffect(
+        () => {
+            if(JSON.parse(localStorage.getItem("language")) == null) {
+                localStorage.setItem("language", JSON.stringify("english"))
+            }
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
     const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
@@ -216,25 +223,75 @@ function SignInOrUp() {
             // var iconLorD = document.createElement("i")
             // iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
             // LorD.appendChild(iconLorD)
-            root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
-            root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
-            root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
-            root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
-            root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
-            root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
-            root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
-            root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
-            root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
-            root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
-            root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
-            root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
-            root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
-            root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
-            root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
-            root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
-            root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
-            root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
-            root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
+            var iconLorD = document.querySelector(".fa-solid")
+            if(JSON.parse(localStorage.getItem("lightMode")) == "dark") {
+                root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
+                root.style.setProperty('--text-color', 'rgb(205,205,205)'); // DARK mode default color
+                root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
+                root.style.setProperty('--link-color', 'rgb(255,255,255)'); // DARK mode default color
+                root.style.setProperty('--link-hover-color', 'rgb(5,145,255)'); // DARK mode default color
+                root.style.setProperty('--link-active-color', 'rgb(5,205,255)'); // DARK mode default color
+                root.style.setProperty('--default-bg-color', 'rgb(30,30,30)'); // DARK mode default color
+                root.style.setProperty('--footer-bg-color', 'rgb(15,15,15)'); // DARK mode default color
+                root.style.setProperty('--footer-bottom-color', 'rgb(10,10,10)'); // DARK mode default color
+                root.style.setProperty('--header-bg-color', 'rgba(5,5,5,0.5)'); // DARK mode default color
+                root.style.setProperty('--header-top-color', 'rgb(20,20,20)'); // DARK mode default color
+                root.style.setProperty('--buttons-color', 'rgb(55,55,55)'); // DARK mode default color
+                root.style.setProperty('--buttons-hover-color', 'rgb(45,5,245)'); // DARK mode default color
+                root.style.setProperty('--buttons-active-color', 'rgb(115,15,255)'); // DARK mode default color
+                root.style.setProperty('--filter-shadow-color', 'rgb(255,255,255)'); // DARK mode default color
+                root.style.setProperty('--borders-color', 'rgb(200,200,200)'); // DARK mode default color
+                root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(70,10,250), rgb(200,10,10))'); // DARK mode default color
+                root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
+                root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
+                iconLorD.classList.remove("fa-solid", "fa-sun", "fa-1x")
+                iconLorD.classList.add("fa-solid", "fa-moon", "fa-1x")
+            } else if(JSON.parse(localStorage.getItem("lightMode")) == "light") {
+                root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
+                root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
+                root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
+                root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
+                root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
+                root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
+                root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
+                root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
+                root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
+                root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
+                root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
+                iconLorD.classList.remove("fa-solid", "fa-moon", "fa-1x")
+                iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
+            } else if(JSON.parse(localStorage.getItem("lightMode")) == null) {
+                root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
+                root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
+                root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
+                root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
+                root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
+                root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
+                root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
+                root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
+                root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
+                root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
+                root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
+                root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
+                root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
+                root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
+                root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
+                iconLorD.classList.remove("fa-solid", "fa-moon", "fa-1x")
+                iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
+            }
+            
         }, []
     )
 
@@ -242,7 +299,7 @@ function SignInOrUp() {
         // light or dark mode (lord)
         // var LorD = document.querySelector(`.${s.signinorup__topside_lord}`)
         var iconLorD = document.querySelector(".fa-solid")
-        if (ldAuthSTATE == "light") {
+        if (JSON.parse(localStorage.getItem("lightMode")) == "light") {
             iconLorD.classList.remove("fa-solid", "fa-sun", "fa-1x")
             iconLorD.classList.add("fa-solid", "fa-moon", "fa-1x")
             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
@@ -265,7 +322,8 @@ function SignInOrUp() {
             root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
             root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
             setLdAuthSTATE("dark")
-        } else if (ldAuthSTATE == "dark") {
+            localStorage.setItem("lightMode", JSON.stringify("dark"))
+        } else if (JSON.parse(localStorage.getItem("lightMode")) == "dark") {
             iconLorD.classList.remove("fa-solid", "fa-moon", "fa-1x")
             iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
@@ -288,6 +346,7 @@ function SignInOrUp() {
             root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
             root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
             setLdAuthSTATE("light")
+            localStorage.setItem("lightMode", JSON.stringify("light"))
         }
         // var spinningButton = LorD.animate(
         //     [{transform: 'rotateY(0deg)', scale: 1.0}, {transform: 'rotateY(180deg)', scale: 1.5}, {transform: 'rotateY(360deg)', scale: 1.0}], 
