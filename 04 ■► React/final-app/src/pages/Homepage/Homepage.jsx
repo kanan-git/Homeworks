@@ -49,11 +49,15 @@ import brands_11 from './homepage assets/brands/Opna.jpg'
 import brands_12 from './homepage assets/brands/DANVOUY.jpg'
 
 function Homepage() {
+
     // states and variables
     const [hpHeaders, setHpHeaders] = useState(dataSource.english.homepage.headers)
     const [brandCards, setBrandCards] = useState(dataSource.english.homepage.brand_cards)
     const [clothCards, setClothCards] = useState(dataSource.english.homepage.clothing_cards)
     const [categCards, setCategCards] = useState(dataSource.english.homepage.category_cards)
+
+    const clothImages = [cloth_1, cloth_2, cloth_3, cloth_4, cloth_5]
+    const brandImages = [brands_1, brands_2, brands_3, brands_4, brands_5, brands_6, brands_7, brands_8, brands_9, brands_10, brands_11, brands_12]
     
     // const [discntCards, setDiscntCards] = useState(dataSource.english.homepage.discount_cards)
 
@@ -128,239 +132,239 @@ function Homepage() {
     //     }, []
     // )
 
+    const [currentIndexBrandState, setCurrentIndexBrandState] = useState(0)
+    const [filterCardsBrandSTATE, setFilterCardsBrandSTATE] = useState([])
+
+    const [currentIndexClothingState, setCurrentIndexClothingState] = useState(0)
+    const [filterCardsClothingSTATE, setFilterCardsClothingSTATE] = useState([])
+
+    const [currentIndexCategoryState, setCurrentIndexCategoryState] = useState(0)
+    const [filterCardsCategorySTATE, setFilterCardsCategorySTATE] = useState([])
+
     function funcTest() {
         // variables
-        const filterCards = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`))
-        const filterCards_Categ = filterCards.slice(0, 11)
-        const filterCards_Brand = filterCards.slice(11, 22)
-        const sectionsBtn = Array.from(document.querySelectorAll(`.${s.homepage__sections_topside__box_buttons}`))
-        const categBtn_left = sectionsBtn[0]
-        const categBtn_right = sectionsBtn[1]
-        const brandsBtn_left = sectionsBtn[2]
-        const brandsBtn_right = sectionsBtn[3]
+        const filterCards_Brand = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`)).slice(0, 12)
+        setFilterCardsBrandSTATE(filterCards_Brand)
+        const filterCards_Cloth = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`)).slice(12, 18)
+        setFilterCardsClothingSTATE(filterCards_Cloth)
+        const filterCards_Categ = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`)).slice(17, 22)
+        setFilterCardsCategorySTATE(filterCards_Categ)
+        // const filterCards_Categ = filterCards.slice(0, 12)
+        // const filterCards_Brand = filterCards.slice(0, 12)
+        // const brandsBtn_left = Array.from(document.querySelectorAll(`.${s.homepage__sections_topside__box_buttons}`))[2]
+        // const brandsBtn_right = Array.from(document.querySelectorAll(`.${s.homepage__sections_topside__box_buttons}`))[3]
+        // const categBtn_left = sectionsBtn[0]
+        // const categBtn_right = sectionsBtn[1]
         // current index of section cards
-        var currentIndexCateg = 0
-        var currentIndexBrand = 0
+        // var currentIndexCateg = 0
+        // var currentIndexBrand = 0
         // spreading cards by their index numbers
-        filterCards_Categ.forEach(
-            (element, index) => {
-                element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
-            }
-        )
+        // filterCards_Categ.forEach(
+        //     (element, index) => {
+        //         element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
+        //     }
+        // )
         filterCards_Brand.forEach(
             (element, index) => {
-                element.style.transform = `translateX(${(index - currentIndexBrand) * 110}%)`
+                element.style.transform = `translateX(${(index - currentIndexBrandState) * 110}%)`
             }
         )
-        // events for carousel slider buttons
-        categBtn_left.addEventListener("click", () => {
-            if(currentIndexCateg == 0) {
-                currentIndexCateg = filterCards_Categ.length-1
-            } else {
-                currentIndexCateg--
+        filterCards_Cloth.forEach(
+            (element, index) => {
+                element.style.transform = `translateX(${(index - currentIndexClothingState) * 110}%)`
             }
-            // console.log(currentIndexCateg, "categories left button is working", filterCards_Categ.length)
-            filterCards_Categ.forEach(
-                (element, index) => {
-                    element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
-                }
-            )
-        })
-        categBtn_right.addEventListener("click", () => {
-            if(currentIndexCateg == filterCards_Categ.length-1) {
-                currentIndexCateg = 0
-            } else {
-                currentIndexCateg++
+        )
+        filterCards_Categ.forEach(
+            (element, index) => {
+                element.style.transform = `translateX(${(index - currentIndexCategoryState) * 110}%)`
             }
-            // console.log(currentIndexCateg, "categories right button is working", filterCards_Categ.length)
-            filterCards_Categ.forEach(
-                (element, index) => {
-                    element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
-                }
-            )
-        })
-        brandsBtn_left.addEventListener("click", () => {
-            if(currentIndexBrand == 0) {
-                currentIndexBrand = filterCards_Brand.length-1
-            } else {
-                currentIndexBrand--
-            }
-            // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
-            filterCards_Brand.forEach(
-                (element, index) => {
-                    element.style.transform = `translateX(${(index - currentIndexBrand) * 110}%)`
-                }
-            )
-        })
-        brandsBtn_right.addEventListener("click", () => {
-            if(currentIndexBrand == filterCards_Brand.length-1) {
-                currentIndexBrand = 0
-            } else {
-                currentIndexBrand++
-            }
-            // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
-            filterCards_Brand.forEach(
-                (element, index) => {
-                    element.style.transform = `translateX(${(index - currentIndexBrand) * 110}%)`
-                }
-            )
-        })
+        )
+        // console.log(currentIndexBrandState)
+        // // events for carousel slider buttons
+        // categBtn_left.addEventListener("click", () => {
+        //     if(currentIndexCateg == 0) {
+        //         currentIndexCateg = filterCards_Categ.length-1
+        //     } else {
+        //         currentIndexCateg--
+        //     }
+        //     // console.log(currentIndexCateg, "categories left button is working", filterCards_Categ.length)
+        //     filterCards_Categ.forEach(
+        //         (element, index) => {
+        //             element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
+        //         }
+        //     )
+        // })
+        // categBtn_right.addEventListener("click", () => {
+        //     if(currentIndexCateg == filterCards_Categ.length-1) {
+        //         currentIndexCateg = 0
+        //     } else {
+        //         currentIndexCateg++
+        //     }
+        //     // console.log(currentIndexCateg, "categories right button is working", filterCards_Categ.length)
+        //     filterCards_Categ.forEach(
+        //         (element, index) => {
+        //             element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
+        //         }
+        //     )
+        // })
         // console.log("Categories: ", filterCards_Categ, ", ", "Brands: ", filterCards_Brand, filterCards_Categ)
         // console.log(categBtn_left, categBtn_right, brandsBtn_left, brandsBtn_right)
     }
     // use function in useEffect
     useEffect(
         () => {
-            // funcTest()
+            funcTest()
         }, []
     )
 
-    // used ChatGPT -------------------------------------------------------------------------------> START ■
-    // const [categoryLinksArraySTATE, setCategoryLinksArraySTATE] = useState([])
-    // function generateCategories() {
-    //     const categoryLinksArray = []
-    //     // var myObject = {}
-    //     // const cardsArray = []
-    //     for(var i=1; i<=11; i++) {
-    //         var nameCategory = "category_" + (("00" + i).slice(-3)) // pad the index with leading zeros
-    //         var linkCategory = "./homepage assets/categories/" + i + ".png"
-    //         // console.log(nameCategory, "—", linkCategory)
-    //         // myObject[nameCategory] = linkCategory
-    //         categoryLinksArray.push(linkCategory)
-    //     }
-    //     // console.log(myObject.category_001)
-    //     // for (const names in myObject) {
-    //     //     // console.log(names, myObject[names])
-    //     //     cardsArray.push(
-    //     //         <div className={s.homepage__categories_container__cards} key={i}>
-    //     //             <img src={myObject[names]} alt={names} className={s.homepage__categories_container__cards_image} />
-    //     //             <p className={s.homepage__categories_container__cards_title}> Groceries {console.log(i)} </p>
-    //     //         </div>
-    //     //     )
-    //     // }
-    //     setCategoryLinksArraySTATE(categoryLinksArray)
-    // }
-    // useEffect(
-    //     () => {
-    //         generateCategories()
-    //     }, []
-    // )
-    // -------------------------------------------------------------------------------------------------
-    // const images = {};
-    // function importAll(r) {
-    //     r.keys().forEach((key) => (images[key] = r(key)));
-    // }
-    // importAll(require.context("./path/to/images/directory", false, /\.png$/));
-    // importAll(require.context("./hompage assets/categories", false, /\.png$/));
-    // Now you can use images like this:
-    // <img src={images["./image-01.png"]} alt="Image 01" />
-    // used ChatGPT <------------------------------------------------------------------------------- END ■
+    { // useless codes
+        // used ChatGPT -------------------------------------------------------------------------------> START ■
+        // const [categoryLinksArraySTATE, setCategoryLinksArraySTATE] = useState([])
+        // function generateCategories() {
+        //     const categoryLinksArray = []
+        //     // var myObject = {}
+        //     // const cardsArray = []
+        //     for(var i=1; i<=11; i++) {
+        //         var nameCategory = "category_" + (("00" + i).slice(-3)) // pad the index with leading zeros
+        //         var linkCategory = "./homepage assets/categories/" + i + ".png"
+        //         // console.log(nameCategory, "—", linkCategory)
+        //         // myObject[nameCategory] = linkCategory
+        //         categoryLinksArray.push(linkCategory)
+        //     }
+        //     // console.log(myObject.category_001)
+        //     // for (const names in myObject) {
+        //     //     // console.log(names, myObject[names])
+        //     //     cardsArray.push(
+        //     //         <div className={s.homepage__categories_container__cards} key={i}>
+        //     //             <img src={myObject[names]} alt={names} className={s.homepage__categories_container__cards_image} />
+        //     //             <p className={s.homepage__categories_container__cards_title}> Groceries {console.log(i)} </p>
+        //     //         </div>
+        //     //     )
+        //     // }
+        //     setCategoryLinksArraySTATE(categoryLinksArray)
+        // }
+        // useEffect(
+        //     () => {
+        //         generateCategories()
+        //     }, []
+        // )
+        // -------------------------------------------------------------------------------------------------
+        // const images = {};
+        // function importAll(r) {
+        //     r.keys().forEach((key) => (images[key] = r(key)));
+        // }
+        // importAll(require.context("./path/to/images/directory", false, /\.png$/));
+        // importAll(require.context("./hompage assets/categories", false, /\.png$/));
+        // Now you can use images like this:
+        // <img src={images["./image-01.png"]} alt="Image 01" />
+        // used ChatGPT <------------------------------------------------------------------------------- END ■
 
-    // <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_001} alt="categ_001" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[0]} </p>
-    // </div>
-    // {/* cards --- card-002 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_002} alt="categ_002" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[1]} </p>
-    // </div>
-    // {/* cards --- card-003 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_003} alt="categ_003" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[2]} </p>
-    // </div>
-    // {/* cards --- card-004 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_004} alt="categ_004" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[3]} </p>
-    // </div>
-    // {/* cards --- card-005 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_005} alt="categ_005" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[4]} </p>
-    // </div>
-    // {/* cards --- card-006 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_006} alt="categ_006" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[5]} </p>
-    // </div>
-    // {/* cards --- card-007 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_007} alt="categ_007" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[6]} </p>
-    // </div>
-    // {/* cards --- card-008 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_008} alt="categ_008" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[7]} </p>
-    // </div>
-    // {/* cards --- card-009 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_009} alt="categ_009" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[8]} </p>
-    // </div>
-    // {/* cards --- card-010 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_010} alt="categ_010" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[9]} </p>
-    // </div>
-    // {/* cards --- card-011 */}
-    // <div className={s.homepage__sections_container__cards}>
-    //     <div className={s.homepage__sections_container__cards_image__content}>
-    //         <img src={categ_011} alt="categ_011" className={s.homepage__sections_container__cards_image__content} />
-    //     </div>
-    //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[10]} </p>
-    // </div>
+        // <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_001} alt="categ_001" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[0]} </p>
+        // </div>
+        // {/* cards --- card-002 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_002} alt="categ_002" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[1]} </p>
+        // </div>
+        // {/* cards --- card-003 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_003} alt="categ_003" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[2]} </p>
+        // </div>
+        // {/* cards --- card-004 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_004} alt="categ_004" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[3]} </p>
+        // </div>
+        // {/* cards --- card-005 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_005} alt="categ_005" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[4]} </p>
+        // </div>
+        // {/* cards --- card-006 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_006} alt="categ_006" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[5]} </p>
+        // </div>
+        // {/* cards --- card-007 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_007} alt="categ_007" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[6]} </p>
+        // </div>
+        // {/* cards --- card-008 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_008} alt="categ_008" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[7]} </p>
+        // </div>
+        // {/* cards --- card-009 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_009} alt="categ_009" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[8]} </p>
+        // </div>
+        // {/* cards --- card-010 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_010} alt="categ_010" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[9]} </p>
+        // </div>
+        // {/* cards --- card-011 */}
+        // <div className={s.homepage__sections_container__cards}>
+        //     <div className={s.homepage__sections_container__cards_image__content}>
+        //         <img src={categ_011} alt="categ_011" className={s.homepage__sections_container__cards_image__content} />
+        //     </div>
+        //     <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[10]} </p>
+        // </div>
 
-    // --------------------> carousel category: 4x
-    // electronics   <i class="fa-solid fa-microchip fa-1x"></i>
-    // jewelery   <i class="fa-solid fa-gem fa-1x"></i>
-    // men's clothing   <i class="fa-solid fa-mars fa-1x"></i>
-    // women's clothing   <i class="fa-solid fa-venus fa-1x"></i>
-    // --------------------> most review products: 10x
-    // products with rating count
-    // --------------------> most rated products: 10x
-    // products with rating rate
-    // --------------------> brands: 12x
-    // Fjallraven - img imported
-    // John Hardy - img imported
-    // WD - img imported
-    // SanDisk - img imported
-    // Silicon Power - img imported
-    // Acer - img imported
-    // Samsung - img imported
-    // BIYLACLESEN - img imported
-    // Lock and Love - img imported
-    // MBJ - img imported
-    // Opna - img imported
-    // DANVOUY - img imported
-    // --------------------> clothing: 5x
-    // jacket   +
-    // coats   +
-    // sleeve   +
-    // shirt   +
-    // casual   +
+        // --------------------> carousel category: 4x
+        // electronics   <i class="fa-solid fa-microchip fa-1x"></i>
+        // jewelery   <i class="fa-solid fa-gem fa-1x"></i>
+        // men's clothing   <i class="fa-solid fa-mars fa-1x"></i>
+        // women's clothing   <i class="fa-solid fa-venus fa-1x"></i>
+        // --------------------> most review products: 10x
+        // products with rating count
+        // --------------------> most rated products: 10x
+        // products with rating rate
+        // --------------------> brands: 12x
+        // Fjallraven - img imported
+        // John Hardy - img imported
+        // WD - img imported
+        // SanDisk - img imported
+        // Silicon Power - img imported
+        // Acer - img imported
+        // Samsung - img imported
+        // BIYLACLESEN - img imported
+        // Lock and Love - img imported
+        // MBJ - img imported
+        // Opna - img imported
+        // DANVOUY - img imported
+        // --------------------> clothing: 5x
+        // jacket   +
+        // coats   +
+        // sleeve   +
+        // shirt   +
+        // casual   +
+    }
 
     return (
         <main className={s.homepage}>
@@ -370,27 +374,123 @@ function Homepage() {
                 <div className={s.homepage__sections_topside}>
                     <h3 className={s.homepage__sections_topside__header}> {languageData.headers[0]} </h3>
                     <span className={s.homepage__sections_topside__box}>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left}> ◄ </button>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right}> ► </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
+                            () => {
+                                if(currentIndexBrandState == 0) {
+                                    // currentIndexBrandState = filterCardsBrandSTATE.length-1
+                                    setCurrentIndexBrandState(filterCardsBrandSTATE.length-1)
+                                    var tempValueOfCurrentIndex = filterCardsBrandSTATE.length-1
+                                } else {
+                                    // currentIndexBrandState--
+                                    setCurrentIndexBrandState(currentIndexBrandState-1)
+                                    var tempValueOfCurrentIndex = currentIndexBrandState-1
+                                }
+                                // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
+                                filterCardsBrandSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
+                            () => {
+                                if(currentIndexBrandState == filterCardsBrandSTATE.length-1) {
+                                    // currentIndexBrandState = 0
+                                    setCurrentIndexBrandState(0)
+                                    var tempValueOfCurrentIndex = 0
+                                } else {
+                                    // currentIndexBrandState++
+                                    setCurrentIndexBrandState(currentIndexBrandState+1)
+                                    var tempValueOfCurrentIndex = currentIndexBrandState+1
+                                }
+                                // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
+                                filterCardsBrandSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ► </button>
                     </span>
                 </div>
 
-                {languageData.brand_cards.map(
-                    (index) => {
-                        return (
-                            // container which holds cards
-                            <div className={s.homepage__sections_container}>
-                            {/* cards --- card-001 */}
-                            <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
-                                <div className={s.homepage__sections_container__cards_image__content}>
-                                    <img src={brands_1} alt={languageData.brand_cards[index]} className={s.homepage__sections_container__cards_image__content} />
-                                </div>
-                                <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[index]} </p>
-                            </div>
-                            </div>
-                        )
-                    }
-                )}
+                <div className={s.homepage__sections_container}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_1} alt="brand-01" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[0]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_2} alt="brand-02" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[1]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_3} alt="brand-03" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[2]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_4} alt="brand-04" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[3]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_5} alt="brand-05" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[4]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_6} alt="brand-06" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[5]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_7} alt="brand-07" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[6]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_8} alt="brand-08" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[7]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_9} alt="brand-09" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[8]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_10} alt="brand-10" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[9]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_11} alt="brand-11" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[10]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={brands_12} alt="brand-12" className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[11]} </p>
+                    </div>
+                </div>
             </section>
 
             {/* SECTION: CLOTHING */}
@@ -399,108 +499,307 @@ function Homepage() {
                 <div className={s.homepage__sections_topside}>
                     <h3 className={s.homepage__sections_topside__header}> {languageData.headers[1]} </h3>
                     <span className={s.homepage__sections_topside__box}>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.brand__arrow_left}> ◄ </button>
-                        <button className={s.homepage__sections_topside__box_buttons} id={s.brand__arrow_right}> ► </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
+                            () => {
+                                if(currentIndexClothingState == 0) {
+                                    // currentIndexBrandState = filterCardsBrandSTATE.length-1
+                                    setCurrentIndexClothingState(filterCardsClothingSTATE.length-1)
+                                    var tempValueOfCurrentIndex = filterCardsClothingSTATE.length-1
+                                } else {
+                                    // currentIndexBrandState--
+                                    setCurrentIndexClothingState(currentIndexClothingState-1)
+                                    var tempValueOfCurrentIndex = currentIndexClothingState-1
+                                }
+                                // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
+                                filterCardsClothingSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
+                            () => {
+                                if(currentIndexClothingState == filterCardsClothingSTATE.length-1) {
+                                    // currentIndexBrandState = 0
+                                    setCurrentIndexClothingState(0)
+                                    var tempValueOfCurrentIndex = 0
+                                } else {
+                                    // currentIndexBrandState++
+                                    setCurrentIndexClothingState(currentIndexClothingState+1)
+                                    var tempValueOfCurrentIndex = currentIndexClothingState+1
+                                }
+                                // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
+                                filterCardsClothingSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ► </button>
                     </span>
                 </div>
-                {/* container which holds cards */}
-                <div className={s.homepage__sections_container}>
-                    {/* cards --- card-001 */}
-                    <div className={s.homepage__sections_container__cards}>
+
+                <div className={s.homepage__sections_container}>   {/* container which holds cards */}
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_001} alt="brands_001" className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[0]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
                     </div>
-                    {/* cards --- card-002 */}
-                    <div className={s.homepage__sections_container__cards}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_002} alt="brands_002" className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_2} alt={"cloth-02"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[1]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[1]} </p>
                     </div>
-                    {/* cards --- card-003 */}
-                    <div className={s.homepage__sections_container__cards}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_003} alt="brands_003" className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_3} alt={"cloth-03"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[2]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[2]} </p>
                     </div>
-                    {/* cards --- card-004 */}
-                    <div className={s.homepage__sections_container__cards}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_004} alt="brands_004" className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_4} alt={"cloth-04"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[3]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[3]} </p>
                     </div>
-                    {/* cards --- card-005 */}
-                    <div className={s.homepage__sections_container__cards}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_005} alt="brands_005" className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_5} alt={"cloth-05"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[4]} </p>
-                    </div>
-                    {/* cards --- card-006 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_006} alt="brands_006" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[5]} </p>
-                    </div>
-                    {/* cards --- card-007 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_007} alt="brands_007" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[6]} </p>
-                    </div>
-                    {/* cards --- card-008 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_008} alt="brands_008" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[7]} </p>
-                    </div>
-                    {/* cards --- card-009 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_009} alt="brands_009" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[8]} </p>
-                    </div>
-                    {/* cards --- card-010 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_010} alt="brands_010" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[9]} </p>
-                    </div>
-                    {/* cards --- card-011 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_011} alt="brands_011" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[10]} </p>
-                    </div>
-                    {/* cards --- card-011 */}
-                    <div className={s.homepage__sections_container__cards}>
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={brands_012} alt="brands_012" className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[10]} </p>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[4]} </p>
                     </div>
                 </div>
             </section>
 
             {/* SECTION: CATEGORIES */}
-            <section className={s.homepage__discount}>
+            <section className={s.homepage__sections}>
+                <div className={s.homepage__sections_topside}>
+                    <h3 className={s.homepage__sections_topside__header}> {languageData.headers[2]} </h3>
+                    <span className={s.homepage__sections_topside__box}>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
+                            () => {
+                                // if(currentIndexBrandState == 0) {
+                                //     // currentIndexBrandState = filterCardsBrandSTATE.length-1
+                                //     setCurrentIndexBrandState(filterCardsBrandSTATE.length-1)
+                                //     var tempValueOfCurrentIndex = filterCardsBrandSTATE.length-1
+                                // } else {
+                                //     // currentIndexBrandState--
+                                //     setCurrentIndexBrandState(currentIndexBrandState-1)
+                                //     var tempValueOfCurrentIndex = currentIndexBrandState-1
+                                // }
+                                // // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
+                                // filterCardsBrandSTATE.forEach(
+                                //     (element, index) => {
+                                //         element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                //     }
+                                // )
+                                // // console.log(currentIndexBrandState)
+                            }
+                        }> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
+                            () => {
+                                // if(currentIndexBrandState == filterCardsBrandSTATE.length-1) {
+                                //     // currentIndexBrandState = 0
+                                //     setCurrentIndexBrandState(0)
+                                //     var tempValueOfCurrentIndex = 0
+                                // } else {
+                                //     // currentIndexBrandState++
+                                //     setCurrentIndexBrandState(currentIndexBrandState+1)
+                                //     var tempValueOfCurrentIndex = currentIndexBrandState+1
+                                // }
+                                // // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
+                                // filterCardsBrandSTATE.forEach(
+                                //     (element, index) => {
+                                //         element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                //     }
+                                // )
+                                // // console.log(currentIndexBrandState)
+                            }
+                        }> ► </button>
+                    </span>
+                </div>
+                <div className={s.homepage__sections_container}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
+                            <i class="fa-solid fa-microchip fa-10x" style={{
+                                position: "absolute", 
+                                opacity: "0.8", 
+                                justifySelf: "center", 
+                                alignSelf: "center", 
+                                left: "50%", 
+                                top: "40%", 
+                                transform: "translate(-50%, -50%)"
+                                }}></i>
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[0]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
+                            <i class="fa-solid fa-gem fa-10x" style={{
+                                position: "absolute", 
+                                opacity: "0.8", 
+                                justifySelf: "center", 
+                                alignSelf: "center", 
+                                left: "50%", 
+                                top: "40%", 
+                                transform: "translate(-50%, -50%)"
+                                }}></i>
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[1]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
+                            <i class="fa-solid fa-mars fa-10x" style={{
+                                position: "absolute", 
+                                opacity: "0.8", 
+                                justifySelf: "center", 
+                                alignSelf: "center", 
+                                left: "50%", 
+                                top: "40%", 
+                                transform: "translate(-50%, -50%)"
+                                }}></i>
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[2]} </p>
+                    </div>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
+                            <i class="fa-solid fa-venus fa-10x" style={{
+                                position: "absolute", 
+                                opacity: "0.8", 
+                                justifySelf: "center", 
+                                alignSelf: "center", 
+                                left: "50%", 
+                                top: "40%", 
+                                transform: "translate(-50%, -50%)"
+                                }}></i>
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[3]} </p>
+                    </div>
+                </div>
             </section>
 
             {/* SECTION: TOP RATED */}
-            
+            <section className={s.homepage__sections}>
+                <div className={s.homepage__sections_topside}>
+                    <h3 className={s.homepage__sections_topside__header}> {languageData.headers[3]} </h3>
+                    <span className={s.homepage__sections_topside__box}>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
+                            () => {
+                                if(currentIndexBrandState == 0) {
+                                    // currentIndexBrandState = filterCardsBrandSTATE.length-1
+                                    setCurrentIndexBrandState(filterCardsBrandSTATE.length-1)
+                                    var tempValueOfCurrentIndex = filterCardsBrandSTATE.length-1
+                                } else {
+                                    // currentIndexBrandState--
+                                    setCurrentIndexBrandState(currentIndexBrandState-1)
+                                    var tempValueOfCurrentIndex = currentIndexBrandState-1
+                                }
+                                // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
+                                filterCardsBrandSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
+                            () => {
+                                if(currentIndexBrandState == filterCardsBrandSTATE.length-1) {
+                                    // currentIndexBrandState = 0
+                                    setCurrentIndexBrandState(0)
+                                    var tempValueOfCurrentIndex = 0
+                                } else {
+                                    // currentIndexBrandState++
+                                    setCurrentIndexBrandState(currentIndexBrandState+1)
+                                    var tempValueOfCurrentIndex = currentIndexBrandState+1
+                                }
+                                // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
+                                filterCardsBrandSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ► </button>
+                    </span>
+                </div>
+                <div className={s.homepage__sections_container}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
+                    </div>
+                </div>
+            </section>
 
             {/* SECTION: MOST REVIEW */}
-
+            <section className={s.homepage__sections}>
+                <div className={s.homepage__sections_topside}>
+                    <h3 className={s.homepage__sections_topside__header}> {languageData.headers[4]} </h3>
+                    <span className={s.homepage__sections_topside__box}>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
+                            () => {
+                                if(currentIndexBrandState == 0) {
+                                    // currentIndexBrandState = filterCardsBrandSTATE.length-1
+                                    setCurrentIndexBrandState(filterCardsBrandSTATE.length-1)
+                                    var tempValueOfCurrentIndex = filterCardsBrandSTATE.length-1
+                                } else {
+                                    // currentIndexBrandState--
+                                    setCurrentIndexBrandState(currentIndexBrandState-1)
+                                    var tempValueOfCurrentIndex = currentIndexBrandState-1
+                                }
+                                // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
+                                filterCardsBrandSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ◄ </button>
+                        <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
+                            () => {
+                                if(currentIndexBrandState == filterCardsBrandSTATE.length-1) {
+                                    // currentIndexBrandState = 0
+                                    setCurrentIndexBrandState(0)
+                                    var tempValueOfCurrentIndex = 0
+                                } else {
+                                    // currentIndexBrandState++
+                                    setCurrentIndexBrandState(currentIndexBrandState+1)
+                                    var tempValueOfCurrentIndex = currentIndexBrandState+1
+                                }
+                                // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
+                                filterCardsBrandSTATE.forEach(
+                                    (element, index) => {
+                                        element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
+                                    }
+                                )
+                                // console.log(currentIndexBrandState)
+                            }
+                        }> ► </button>
+                    </span>
+                </div>
+                <div className={s.homepage__sections_container}>
+                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                        <div className={s.homepage__sections_container__cards_image__content}>
+                            <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
+                        </div>
+                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
+                    </div>
+                </div>
+            </section>
         </main>
     )
 }

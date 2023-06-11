@@ -35,7 +35,7 @@
     transition: var(--quick-fx);
     &__sections {
         z-index: 0;
-        width: 1400px;
+        width: 1400px; // 1400px
         display: flex;
         justify-content: center;
         align-items: center;
@@ -86,7 +86,7 @@
             }
         }
         &_container {
-            width: 100%;
+            width: 62.5%;
             height: 240px;
             display: flex;
             flex-wrap: wrap;
