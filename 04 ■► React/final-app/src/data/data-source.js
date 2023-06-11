@@ -44,34 +44,36 @@ export const dataSource = {
             bottomside: ["© Copyright 2023 CODERS.EDU.AZ | All Rights Reserved.", "Terms & Conditions", "Privacy Policy"]
         },
         homepage: {
-            headers: ["Categories", "Brands", "Discounts"],
-            category_cards: [
-                "Groceries", 
-                "Assembly Elements", 
-                "Cutting", 
-                "Chemical Products", 
-                "Job Protection", 
-                "Tools", 
-                "Oils Other", 
-                "Conveyor System", 
-                "FMCG Products", 
-                "Auto Care Tools", 
-                "Reserve Parts"
-            ],
+            headers: ["Brands", "Clothing", "Categories", "Top Rated", "Most Review"],
             brand_cards: [
-                "BERNER", 
-                "CTP", 
-                "FERM", 
-                "HOGERT", 
-                "MATRİX", 
-                "BOLL", 
-                "RHODİUS", 
-                "MOJE AUTO", 
-                "REMA TİP TOP", 
-                "MAXMO", 
-                "STATUS"
+                "Fjallraven", 
+                "John Hardy", 
+                "WD", 
+                "SanDisk", 
+                "Silicon Power", 
+                "Acer", 
+                "Samsung", 
+                "BIYLACLESEN", 
+                "Lock and Love", 
+                "MBJ", 
+                "Opna", 
+                "DANVOUY"
             ],
-            discount_cards: []
+            clothing_cards: [
+                "Jacket", 
+                "Coats", 
+                "Sleeve", 
+                "Shirt", 
+                "Casual"
+            ],
+            category_cards: [
+                "Electronics", 
+                "Jewelery", 
+                "Men's Clothing", 
+                "Women's Clothing"
+            ],
+            top_rated_cards: [],
+            most_review_cards: []
         },
         about: {
             text: [
@@ -321,34 +323,36 @@ export const dataSource = {
             bottomside: ["© Müəllif hüququ 2023 CODERS.EDU.AZ | Bütün Hüquqları Qorunur.", "Qaydalar və Şərtlər", "Gizlilik Siyasəti"]
         },
         homepage: {
-            headers: ["Kateqoriyalar", "Brendlər", "Endirimli məhsullar"],
-            category_cards: [
-                "Xırdavat", 
-                "Montaj Elementləri", 
-                "Kəsmə Deşmə", 
-                "Kimyəvi Məhsullar", 
-                "İş Təhlükəsizlik", 
-                "Alətlər", 
-                "Yağlar Digər", 
-                "Konveyer Sistemi", 
-                "FMCG Mallar", 
-                "Avto Qulluq Vasitələri", 
-                "Ehtiyyat Hissəsi"
-            ],
+            headers: ["Brendlər", "Geyim", "Kateqoriyalar", "Tövsiyə Olunan", "Ən Çox Rəy Alan"],
             brand_cards: [
-                "BERNER", 
-                "CTP", 
-                "FERM", 
-                "HOGERT", 
-                "MATRİX", 
-                "BOLL", 
-                "RHODİUS", 
-                "MOJE AUTO", 
-                "REMA TİP TOP", 
-                "MAXMO", 
-                "STATUS"
+                "Fjallraven", 
+                "John Hardy", 
+                "WD", 
+                "SanDisk", 
+                "Silicon Power", 
+                "Acer", 
+                "Samsung", 
+                "BIYLACLESEN", 
+                "Lock and Love", 
+                "MBJ", 
+                "Opna", 
+                "DANVOUY"
             ],
-            discount_cards: []
+            clothing_cards: [
+                "Gödəkçə", 
+                "Palto", 
+                "Uzunqol", 
+                "Köynək", 
+                "Gündəlik"
+            ],
+            category_cards: [
+                "Elektronika", 
+                "Zərgərlik", 
+                "Kişi Geyimləri", 
+                "Qadın Geyimləri"
+            ],
+            top_rated_cards: [],
+            most_review_cards: []
         },
         about: {
             text: [
@@ -598,34 +602,36 @@ export const dataSource = {
             bottomside: ["© Copyright 2023 CODERS.EDU.AZ | Tüm Haklar Saklıdır.", "Şartlar ve Koşullar", "Gizlilik Politikası"]
         },
         homepage: {
-            headers: ["Kategoriler", "Markalar", "Indirimli ürünler"],
-            category_cards: [
-                "Bakkaliye", 
-                "Montaj Ekipmanlari", 
-                "Kesme", 
-                "Kimyasal Ürünler", 
-                "İş Güvenlik", 
-                "Aletler", 
-                "Yağlar Diger", 
-                "Konveyör Sistemi", 
-                "FMCG Ürünler", 
-                "Oto Bakım Araçları", 
-                "Yedek Parçalar"
-            ],
+            headers: ["Markalar", "Giyim", "Kategoriler", "En Çok Oy Alan", "En Çok İnceleme"],
             brand_cards: [
-                "BERNER", 
-                "CTP", 
-                "FERM", 
-                "HOGERT", 
-                "MATRİX", 
-                "BOLL", 
-                "RHODİUS", 
-                "MOJE AUTO", 
-                "REMA TİP TOP", 
-                "MAXMO", 
-                "STATUS"
+                "Fjallraven", 
+                "John Hardy", 
+                "WD", 
+                "SanDisk", 
+                "Silicon Power", 
+                "Acer", 
+                "Samsung", 
+                "BIYLACLESEN", 
+                "Lock and Love", 
+                "MBJ", 
+                "Opna", 
+                "DANVOUY"
             ],
-            discount_cards: []
+            clothing_cards: [
+                "Ceket", 
+                "Mont", 
+                "Uzun Kollu", 
+                "Gömlek", 
+                "Gündelik"
+            ],
+            category_cards: [
+                "Elektronik", 
+                "Mücevher", 
+                "Erkek giyim", 
+                "Bayan giyimi"
+            ],
+            top_rated_cards: [],
+            most_review_cards: []
         },
         about: {
             text: [
