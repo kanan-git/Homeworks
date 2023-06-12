@@ -541,7 +541,7 @@ function Header() {
                                 return (
                                     <Link to="/products" onClick={
                                         () => {
-                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown[index]))
+                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header1[index]))
                                         }
                                     } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
                                 )
@@ -569,7 +569,7 @@ function Header() {
                                 return (
                                     <Link to="/products" onClick={
                                         () => {
-                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown[index]))
+                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header2[index]))
                                         }
                                     } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
                                 )
