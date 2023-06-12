@@ -438,6 +438,12 @@ function Header() {
         localStorage.setItem("signedUser", JSON.stringify("guest"))
         window.location.reload()
     }
+
+    // try {
+    //     fetch("link")
+    // } catch (error) {
+    //     console.log(error)
+    // }
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
     // returning result
     return (
@@ -532,7 +538,13 @@ function Header() {
                             if(index == 0) {
                                 return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
                             } else {
-                                return (<li className={s.header__list_productsdropdown__columns_items} key={index}> {item} </li>)
+                                return (
+                                    <Link to="/products" onClick={
+                                        () => {
+                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown[index]))
+                                        }
+                                    } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
+                                )
                             }
                         } ) }
                     </ul>
@@ -554,14 +566,20 @@ function Header() {
                             if(index == 0) {
                                 return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
                             } else {
-                                return (<li className={s.header__list_productsdropdown__columns_items} key={index}> {item} </li>)
+                                return (
+                                    <Link to="/products" onClick={
+                                        () => {
+                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown[index]))
+                                        }
+                                    } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
+                                )
                             }
                         } ) }
                     </ul>
 
-                    <ul className={s.header__list_productsdropdown__columns}>
+                    {/* <ul className={s.header__list_productsdropdown__columns}>
                         <li className={s.header__list_productsdropdown__columns_discount}> {productsDD3[0]} </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </nav>
 

@@ -453,7 +453,12 @@ return (
                 {searchedElement != "" && (
                     <button className={s.products__topside_filtertags__selected}>
                     {searchedElement}
-                    <button className={s.xmark}>
+                    <button className={s.xmark} onClick={
+                        () => {
+                            dispatch(setCurrentProduct(""))
+                            window.location.reload()
+                        }
+                    }>
                         <i className='fa-regular fa-circle-xmark fa-1x'></i>
                     </button>
                 </button>

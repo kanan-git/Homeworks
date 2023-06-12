@@ -31,7 +31,7 @@
     align-items: center;
     flex-direction: column;
     gap: 150px;
-    padding: 140px 0px 0px 0px;
+    padding: 140px 0px 80px 0px; // top right bottom left
     transition: var(--quick-fx);
     &__sections {
         z-index: 0;

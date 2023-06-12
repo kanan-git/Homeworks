@@ -9,7 +9,7 @@
   align-items: center;
   flex-direction: column;
   gap: 150px;
-  padding: 140px 0px 0px 0px;
+  padding: 140px 0px 80px 0px;
   transition: var(--quick-fx);
 }
 .homepage__sections {

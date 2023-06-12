@@ -79,8 +79,8 @@
   transition: ease-in-out 0.2s;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px 20px;
-  gap: 40px;
+  padding: 20px 60px 20px 20px;
+  gap: 80px;
   border: 1px solid var(--borders-color);
   background-color: var(--default-bg-color);
   filter: drop-shadow(0 0 2px var(--filter-shadow-color));

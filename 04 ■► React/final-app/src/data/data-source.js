@@ -7,9 +7,23 @@ export const dataSource = {
                 navbar: ["Search for any products you want ...", "Login"], // if a user logged in, get data from 'userData' not from 'dataSource' (login)
                 userdropdown: ["Sign in", "Register", "Favorites", "My Cart", "Settings", "Log Out"],
                 productsddown: {
-                    header1: ["Categories", "Groceries", "Assembly Elements", "Cutting", "Chemical Products", "Job Protection", "Tools", "Oils Other", "Conveyor System", "FMCG Products", "Auto Care Tools", "Reserve Parts"], 
-                    header2: ["Brands", "BERNER", "CTP", "FERM", "HOGERT", "MATRİX", "BOLL", "RHODİUS", "MOJE AUTO", "REMA TİP TOP", "MAXMO", "STATUS"], 
-                    header3: ["Discount products"]
+                    header1: [
+                        "Brands", 
+                        "Fjallraven", 
+                        "John Hardy", 
+                        "WD", 
+                        "SanDisk", 
+                        "Silicon Power", 
+                        "Acer", 
+                        "Samsung", 
+                        "BIYLACLESEN", 
+                        "Lock and Love", 
+                        "MBJ", 
+                        "Opna", 
+                        "DANVOUY"
+                    ], 
+                    header2: ["Clothing", "Jacket", "Coats", "Sleeve", "Shirt", "Casual"], 
+                    header3: ["Categories"]
                 }
             }
         },
@@ -286,8 +300,29 @@ export const dataSource = {
                 navbar: ["İstədiyiniz məhsulları axtarın ...", "Daxil ol"], 
                 userdropdown: ["Daxil ol", "Qeydiyyat", "Favorilər", "Səbət", "Parametrlər", "Çıxış et"],
                 productsddown: {
-                    header1: ["Kateqoriyalar", "Xırdavat", "Montaj Elementləri", "Kəsmə Deşmə", "Kimyəvi Məhsullar", "İş Təhlükəsizlik", "Alətlər", "Yağlar Digər", "Konveyer Sistemi", "FMCG Mallar", "Avto Qulluq Vasitələri", "Ehtiyyat Hissəsi"], 
-                    header2: ["Brendlər", "BERNER", "CTP", "FERM", "HOGERT", "MATRİX", "BOLL", "RHODİUS", "MOJE AUTO", "REMA TİP TOP", "MAXMO", "STATUS"], 
+                    header1: [
+                        "Brendlər", 
+                        "Fjallraven", 
+                        "John Hardy", 
+                        "WD", 
+                        "SanDisk", 
+                        "Silicon Power", 
+                        "Acer", 
+                        "Samsung", 
+                        "BIYLACLESEN", 
+                        "Lock and Love", 
+                        "MBJ", 
+                        "Opna", 
+                        "DANVOUY"
+                    ], 
+                    header2: [
+                        "Geyim", 
+                        "Gödəkçə", 
+                        "Palto", 
+                        "Uzunqol", 
+                        "Köynək", 
+                        "Gündəlik"
+                    ], 
                     header3: ["Endirimli məhsullar"]
                 }
             }
@@ -565,8 +600,26 @@ export const dataSource = {
                 navbar: ["İstediğiniz ürünleri arayın ...", "Giriş"],
                 userdropdown: ["Giriş", "Kayıt ol", "Favoriler", "Sepetim", "Ayarlar", "Çıkış yap"],
                 productsddown: {
-                    header1: ["Kategoriler", "Bakkaliye", "Montaj Ekipmanlari", "Kesme", "Kimyasal Ürünler", "İş Güvenlik", "Aletler", "Yağlar Diger", "Konveyör Sistemi", "FMCG Ürünler", "Oto Bakım Araçları", "Yedek Parçalar"], 
-                    header2: ["Markalar", "BERNER", "CTP", "FERM", "HOGERT", "MATRİX", "BOLL", "RHODİUS", "MOJE AUTO", "REMA TİP TOP", "MAXMO", "STATUS"], 
+                    header1: [
+                        "Markalar", 
+                        "Fjallraven", 
+                        "John Hardy", 
+                        "WD", 
+                        "SanDisk", 
+                        "Silicon Power", 
+                        "Acer", 
+                        "Samsung", 
+                        "BIYLACLESEN", 
+                        "Lock and Love", 
+                        "MBJ", 
+                        "Opna", 
+                        "DANVOUY"
+                    ], 
+                    header2: ["Giyim", "Ceket", 
+                    "Mont", 
+                    "Uzun Kollu", 
+                    "Gömlek", 
+                    "Gündelik"], 
                     header3: ["Indirimli ürünler"]
                 }
             }
