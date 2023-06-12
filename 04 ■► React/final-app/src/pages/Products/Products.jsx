@@ -19,12 +19,14 @@ import { useSelector } from 'react-redux';
 import { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCurrentProduct } from '../../features/counter/selectedProduct';
+import { setCurrentSearchValue } from '../../features/counter/searchValueSlice'
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
 function Products() {
     // ...
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const [apiSTATE, setApiSTATE] = useState([])
     const [statusHTMLstate, setStatusHTMLstate] = useState("redLight")
+    const [ratingFilterState, setRatingFilterState] = useState(0)
     const dispatch = useDispatch()
 
     // var sortByTag = "?price=desc" // mostSold-"" | descending-"?sort=desc" | ascending-"?sort=asc"
@@ -489,10 +491,10 @@ return (
 
             <label htmlFor="price" className={s.filteraside__categories_label}> {languageData.filter[1]} </label>
             <span className={s.filteraside__categories}>
-                <button className={s.filteraside__categories_buttons}> {languageData.filter[4]} </button>
-                <button className={s.filteraside__categories_buttons}> {languageData.filter[5]} </button>
-                <button className={s.filteraside__categories_buttons}> {languageData.filter[6]} </button>
-                <button className={s.filteraside__categories_buttons}> {languageData.filter[7]} </button>
+                <button className={s.filteraside__categories_buttons} onClick={(e) => {dispatch(setCurrentSearchValue(dataSource.english.products.filter[4])); e.preventDefault()}}> {languageData.filter[4]} </button>
+                <button className={s.filteraside__categories_buttons} onClick={(e) => {dispatch(setCurrentSearchValue(dataSource.english.products.filter[5])); e.preventDefault()}}> {languageData.filter[5]} </button>
+                <button className={s.filteraside__categories_buttons} onClick={(e) => {dispatch(setCurrentSearchValue(dataSource.english.products.filter[6])); e.preventDefault()}}> {languageData.filter[6]} </button>
+                <button className={s.filteraside__categories_buttons} onClick={(e) => {dispatch(setCurrentSearchValue(dataSource.english.products.filter[7])); e.preventDefault()}}> {languageData.filter[7]} </button>
             </span>
             
             <label htmlFor="price" className={s.filteraside__price_label}> {languageData.filter[2]} </label>
@@ -588,7 +590,18 @@ return (
             </span> */}
             <label htmlFor="rating" className={s.filteraside__rating_label}> {languageData.filter[3]} </label>
             <span className={s.filteraside__rating_container}>
-                <span className={s.filteraside__rating_container__buttons}>
+                <span className={s.filteraside__rating_container__buttons} onClick={
+                    (e) => {
+                        if(ratingFilterState == 4.5) {
+                            e.preventDefault()
+                            setRatingFilterState(0)
+                        } else {
+                            e.preventDefault()
+                            setRatingFilterState(4.5)
+                            // console.log(ratingFilterState)
+                        }
+                    }
+                }>
                     <button className={s.filteraside__rating_container__buttons_item}>
                         <i className='fa-solid fa-star fa-1x'></i>
                         <i className='fa-solid fa-star fa-1x'></i>
@@ -599,7 +612,18 @@ return (
                         <i className={s.filteraside__rating_container__buttons_item__text}> 4.5 {languageData.filter[8]} </i>
                     </button>
                 </span>
-                <span className={s.filteraside__rating_container__buttons}>
+                <span className={s.filteraside__rating_container__buttons} onClick={
+                    (e) => {
+                        if(ratingFilterState == 4) {
+                            e.preventDefault()
+                            setRatingFilterState(0)
+                        } else {
+                            e.preventDefault()
+                            setRatingFilterState(4)
+                            // console.log(ratingFilterState)
+                        }
+                    }
+                }>
                     <button className={s.filteraside__rating_container__buttons_item}>
                         <i className='fa-solid fa-star fa-1x'></i>
                         <i className='fa-solid fa-star fa-1x'></i>
@@ -610,7 +634,18 @@ return (
                         <i className={s.filteraside__rating_container__buttons_item__text}> 4.0 {languageData.filter[8]} </i>
                     </button>
                 </span>
-                <span className={s.filteraside__rating_container__buttons}>
+                <span className={s.filteraside__rating_container__buttons} onClick={
+                    (e) => {
+                        if(ratingFilterState == 3.5) {
+                            e.preventDefault()
+                            setRatingFilterState(0)
+                        } else {
+                            e.preventDefault()
+                            setRatingFilterState(3.5)
+                            // console.log(ratingFilterState)
+                        }
+                    }
+                }>
                     <button className={s.filteraside__rating_container__buttons_item}>
                         <i className='fa-solid fa-star fa-1x'></i>
                         <i className='fa-solid fa-star fa-1x'></i>
@@ -621,7 +656,18 @@ return (
                         <i className={s.filteraside__rating_container__buttons_item__text}> 3.5 {languageData.filter[8]} </i>
                     </button>
                 </span>
-                <span className={s.filteraside__rating_container__buttons}>
+                <span className={s.filteraside__rating_container__buttons} onClick={
+                    (e) => {
+                        if(ratingFilterState == 3) {
+                            e.preventDefault()
+                            setRatingFilterState(0)
+                        } else {
+                            e.preventDefault()
+                            setRatingFilterState(3)
+                            // console.log(ratingFilterState)
+                        }
+                    }
+                }>
                     <button className={s.filteraside__rating_container__buttons_item}>
                         <i className='fa-solid fa-star fa-1x'></i>
                         <i className='fa-solid fa-star fa-1x'></i>
@@ -691,8 +737,9 @@ return (
                             //     }
                             // }
                             if(searchedElement.toLowerCase() == "" && priceRangeStatus == true) {
+                                // console.log(ratingFilterState)
                                 // var resultStatus = true
-                                return (
+                                if(elements.rating.rate >= ratingFilterState) {return (
                                     <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
                                         <button className={s.products__cards_image__favbtn} id={"product_" + elements.id.toString()} onClick={
                                             (e) => {
@@ -919,10 +966,10 @@ return (
                                             <strong className={s.products__cards_information__price}> $ {elements.price} USD </strong>
                                         </Link>
                                     </div>
-                                )
+                                )}
                             } else if(elements.title.toLowerCase().includes(searchedElement.toLowerCase()) || elements.description.toLowerCase().includes(searchedElement.toLowerCase()) || elements.category.toLowerCase().includes(searchedElement.toLowerCase())) {
                                 // var resultStatus = true
-                                if(priceRangeStatus == true) {
+                                if(priceRangeStatus == true && elements.rating.rate >= ratingFilterState) {
                                     return (
                                         <div className={s.products__cards} key={elements.id}> {/* apiSTATE[0].id */}
                                             <button className={s.products__cards_image__favbtn} id={"product_" + elements.id.toString()} onClick={
