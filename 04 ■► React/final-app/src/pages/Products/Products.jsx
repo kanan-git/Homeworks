@@ -231,6 +231,7 @@ function Products() {
 
     const languageData = useSelector((state) => state.language.currentLanguage.products)
     const searchedElement = useSelector((state )=> state.searching.currentSearchValue)
+    const productInfo = useSelector((state) => state.selectedProduct.productData)
 
     const [fprMinSTATE, setFprMinSTATE] = useState(0)
     const [fprMaxSTATE, setFprMaxSTATE] = useState(999999)
@@ -449,12 +450,14 @@ return (
         <div className={s.products__topside}>
             <button className={s.products__topside_filterbtn} id="filter-button" onClick={temName}> {languageData.filter[0]} </button>
             <span className={s.products__topside_filtertags}>
-                <button className={s.products__topside_filtertags__selected}>
-                    sample
+                {searchedElement != "" && (
+                    <button className={s.products__topside_filtertags__selected}>
+                    {searchedElement}
                     <button className={s.xmark}>
                         <i className='fa-regular fa-circle-xmark fa-1x'></i>
                     </button>
                 </button>
+                )}
             </span>
             <select name="sorting" id="sorting" className={s.products__topside_sort} 
             // onClick={
@@ -749,7 +752,7 @@ return (
                                             }
                                         }> <i className='fa-solid fa-heart fa-1x'></i> </button>
                                         {/* image */}
-                                        <Link className={s.products__cards_image} to="/products/item_view" onClick={
+                                        <Link className={s.products__cards_image} to={"/products/item_view_id="+elements.id} onClick={
                                             () => {
                                                 var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
                                                 {dispatch(setCurrentProduct({
@@ -777,7 +780,7 @@ return (
                                             > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
                                         </Link>
                                         {/* information */}
-                                        <Link className={s.products__cards_information} to="/products/item_view" onClick={
+                                        <Link className={s.products__cards_information} to={"/products/item_view_id="+elements.id} onClick={
                                             () => {
                                                 var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
                                                 {dispatch(setCurrentProduct({
@@ -980,7 +983,7 @@ return (
                                                 }
                                             }> <i className='fa-solid fa-heart fa-1x'></i> </button>
                                             {/* image */}
-                                            <Link className={s.products__cards_image} to="/products/item_view" onClick={
+                                            <Link className={s.products__cards_image} to={"/products/item_view_id="+elements.id} onClick={
                                                 () => {
                                                     var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
                                                     {dispatch(setCurrentProduct({
@@ -1008,7 +1011,7 @@ return (
                                                 > <i className='fa-solid fa-heart fa-1x'></i> </button> */}
                                             </Link>
                                             {/* information */}
-                                            <Link className={s.products__cards_information} to="/products/item_view" onClick={
+                                            <Link className={s.products__cards_information} to={"/products/item_view_id="+elements.id} onClick={
                                                 () => {
                                                     var rateStars = document.querySelector(`.${s.products__cards_information__rating_stars}`).innerHTML
                                                     {dispatch(setCurrentProduct({

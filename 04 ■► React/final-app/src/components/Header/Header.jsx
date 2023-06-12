@@ -16,7 +16,7 @@ import {userData} from '../../data/user-data'
 import logo from './logo-shopnet.png'
 import userQuest from './user-quest.png'
 import userX_X from './user-transparent.png'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import { setCurrentLanguage } from '../../features/counter/counterSlice'
 import { setCurrentAuthType } from '../../features/counter/switchAuthType'
 import { setCurrentSearchValue } from '../../features/counter/searchValueSlice'

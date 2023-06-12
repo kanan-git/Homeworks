@@ -4,30 +4,10 @@ import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { useSelector } from 'react-redux'
-
-// import categ_001 from './homepage assets/categories/1.png'
-// import categ_002 from './homepage assets/categories/2.png'
-// import categ_003 from './homepage assets/categories/3.png'
-// import categ_004 from './homepage assets/categories/4.png'
-// import categ_005 from './homepage assets/categories/5.png'
-// import categ_006 from './homepage assets/categories/6.png'
-// import categ_007 from './homepage assets/categories/7.png'
-// import categ_008 from './homepage assets/categories/8.png'
-// import categ_009 from './homepage assets/categories/9.png'
-// import categ_010 from './homepage assets/categories/10.png'
-// import categ_011 from './homepage assets/categories/11.png'
-
-// import brands_001 from './homepage assets/brands/1.png'
-// import brands_002 from './homepage assets/brands/2.png'
-// import brands_003 from './homepage assets/brands/3.png'
-// import brands_004 from './homepage assets/brands/4.png'
-// import brands_005 from './homepage assets/brands/5.png'
-// import brands_006 from './homepage assets/brands/6.png'
-// import brands_007 from './homepage assets/brands/7.png'
-// import brands_008 from './homepage assets/brands/8.png'
-// import brands_009 from './homepage assets/brands/9.png'
-// import brands_010 from './homepage assets/brands/10.png'
-// import brands_011 from './homepage assets/brands/11.png'
+import { useDispatch } from 'react-redux'
+import searchValueSlice, { setCurrentSearchValue } from '../../features/counter/searchValueSlice'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import { setCurrentProduct } from '../../features/counter/selectedProduct'
 
 import cloth_1 from './homepage assets/clothing/casual.jpg'
 import cloth_2 from './homepage assets/clothing/shirt.jpg'
@@ -49,7 +29,7 @@ import brands_11 from './homepage assets/brands/Opna.jpg'
 import brands_12 from './homepage assets/brands/DANVOUY.jpg'
 
 function Homepage() {
-
+    const dispatch = useDispatch()
     // states and variables
     const [hpHeaders, setHpHeaders] = useState(dataSource.english.homepage.headers)
     const [brandCards, setBrandCards] = useState(dataSource.english.homepage.brand_cards)
@@ -64,91 +44,190 @@ function Homepage() {
     const languageData = useSelector(
         (state) => state.language.currentLanguage.homepage
     )
+
+    const [productsArraySTATE, setProductsArraySTATE] = useState([])
+    const [topRatesArrSTATE, setTopRatesArrSTATE] = useState([])
+    const [reviewCountArrSTATE, setReviewCountArrSTATE] = useState([])
+
+    async function fetchApiForHome() {
+        const apiData = await fetch('https://fakestoreapi.com/products')
+        const productsArray = await apiData.json()
+        setProductsArraySTATE(productsArray)
+        // console.log(productsArray)
+        const topRatesArr = []
+        const reviewCountArr = []
+        for(var i=0; i<productsArray.length-1; i++) {
+            topRatesArr.push(productsArray[i].rating.rate)
+            reviewCountArr.push(productsArray[i].rating.count)
+        }
+        // console.log(topRatesArr, reviewCountArr)
+        for(var k=0; k<topRatesArr.length-1; k++) {
+            for( var j=0; j<topRatesArr.length-k-1; j++) {
+                if(topRatesArr[j] < topRatesArr[j+1]) {
+                    var temp = topRatesArr[j]
+                    topRatesArr[j] = topRatesArr[j+1]
+                    topRatesArr[j+1] = temp
+                }
+            }
+        }
+        for(var k=0; k<reviewCountArr.length-1; k++) {
+            for( var j=0; j<reviewCountArr.length-k-1; j++) {
+                if(reviewCountArr[j] < reviewCountArr[j+1]) {
+                    var temp = reviewCountArr[j]
+                    reviewCountArr[j] = reviewCountArr[j+1]
+                    reviewCountArr[j+1] = temp
+                }
+            }
+        }
+        // console.log(topRatesArr.slice(0, 10))
+        // console.log(reviewCountArr.slice(0, 10))
+        setTopRatesArrSTATE(topRatesArr.slice(0, 10))
+        setReviewCountArrSTATE(reviewCountArr.slice(0, 10))
+        // topRatesArr.map(
+        //     (ratingRate) => {
+        //         for(var x=0; x<productsArray.length-1; x++) {
+        //             if(productsArray[x].rating.rate == ratingRate) {
+        //                 // console.log(productsArray[x])
+        //                 return (
+        //                     <div className={`${s.homepage__sections_container__cards} additionalClassForTopRated`}>
+        //                         <div className={s.homepage__sections_container__cards_image__content}>
+        //                             <img src={productsArray[x].image} alt={productsArray[x].id} className={s.homepage__sections_container__cards_image__content} />
+        //                         </div>
+        //                         <p className={s.homepage__sections_container__cards_title}> {productsArray[x].rating.rate} </p>
+        //                     </div>
+        //                 )
+        //             }
+        //         }
+        //     }
+        // )
+        // reviewCountArr.map(
+        //     (ratingCount) => {
+        //         for(var x=0; x<productsArray.length-1; x++) {
+        //             if(productsArray[x].rating.count == ratingCount) {
+        //                 // console.log(productsArray[x])
+        //                 return (
+        //                     <div className={`${s.homepage__sections_container__cards} additionalClassForMostReview`}>
+        //                         <div className={s.homepage__sections_container__cards_image__content}>
+        //                             <img src={productsArray[x].image} alt={productsArray[x].id} className={s.homepage__sections_container__cards_image__content} />
+        //                         </div>
+        //                         <p className={s.homepage__sections_container__cards_title}> {productsArray[x].rating.count} </p>
+        //                     </div>
+        //                 )
+        //             }
+        //         }
+        //     }
+        // )
+    }
+    // fetchApiForHome()
+    useEffect(
+        () => {
+            fetchApiForHome()
+        }, []
+    )
     
-    // useEffect(
-    //     () => {
-    //         var languageData = document.querySelector("#language")
-    //         // fake condition for now which will be replaced with input select language data with store (redux tlk)
-    //         // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
-    //         languageData.addEventListener("change", () => {
-    //             if (languageData.value == "English") {
-    //                 setHpHeaders(dataSource.english.homepage.headers)
-    //                 setCategCards(dataSource.english.homepage.category_cards)
-    //                 setBrandCards(dataSource.english.homepage.brand_cards)
-    //                 // setDiscntCards(dataSource.english.homepage.discount_cards)
-    //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-    //             } else if (languageData.value == "Azərbaycan dili") {
-    //                 setHpHeaders(dataSource.azerbaijani.homepage.headers)
-    //                 setCategCards(dataSource.azerbaijani.homepage.category_cards)
-    //                 setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
-    //                 // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
-    //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-    //             } else if (languageData.value == "Türkçe") {
-    //                 setHpHeaders(dataSource.turkish.homepage.headers)
-    //                 setCategCards(dataSource.turkish.homepage.category_cards)
-    //                 setBrandCards(dataSource.turkish.homepage.brand_cards)
-    //                 // setDiscntCards(dataSource.turkish.homepage.discount_cards)
-    //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
-    //             }
-    //         })
-    //     }, []
-    // )
+    { // useless codes
+        // useEffect(
+        //     () => {
+        //         var languageData = document.querySelector("#language")
+        //         // fake condition for now which will be replaced with input select language data with store (redux tlk)
+        //         // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
+        //         languageData.addEventListener("change", () => {
+        //             if (languageData.value == "English") {
+        //                 setHpHeaders(dataSource.english.homepage.headers)
+        //                 setCategCards(dataSource.english.homepage.category_cards)
+        //                 setBrandCards(dataSource.english.homepage.brand_cards)
+        //                 // setDiscntCards(dataSource.english.homepage.discount_cards)
+        //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+        //             } else if (languageData.value == "Azərbaycan dili") {
+        //                 setHpHeaders(dataSource.azerbaijani.homepage.headers)
+        //                 setCategCards(dataSource.azerbaijani.homepage.category_cards)
+        //                 setBrandCards(dataSource.azerbaijani.homepage.brand_cards)
+        //                 // setDiscntCards(dataSource.azerbaijani.homepage.discount_cards)
+        //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+        //             } else if (languageData.value == "Türkçe") {
+        //                 setHpHeaders(dataSource.turkish.homepage.headers)
+        //                 setCategCards(dataSource.turkish.homepage.category_cards)
+        //                 setBrandCards(dataSource.turkish.homepage.brand_cards)
+        //                 // setDiscntCards(dataSource.turkish.homepage.discount_cards)
+        //                 // console.log(hpHeaders[1], categCards, brandCards, discntCards)
+        //             }
+        //         })
+        //     }, []
+        // )
 
-    // filterCards.map(
-    //     (items, index) => {console.log("element: ", items, ", ", "id: ", index)}
-    // )
-    // console.log(filterCards.length)
+        // filterCards.map(
+        //     (items, index) => {console.log("element: ", items, ", ", "id: ", index)}
+        // )
+        // console.log(filterCards.length)
 
-    // const filterCards = useRef([])
-    // const fcArray = filterCards.current.querySelectorAll(".homepage__sections_container__cards")
-    // fcArray.map(
-    //     (item) => {console.log(item)}, []
-    // )
+        // const filterCards = useRef([])
+        // const fcArray = filterCards.current.querySelectorAll(".homepage__sections_container__cards")
+        // fcArray.map(
+        //     (item) => {console.log(item)}, []
+        // )
 
-    // useEffect(
-    //     () => {
-    //         const filterCards = document.querySelector(".homepage__sections_container__cards") // querySelectorAll
-    //         console.log(filterCards)
-    //     }, []
-    // )
+        // useEffect(
+        //     () => {
+        //         const filterCards = document.querySelector(".homepage__sections_container__cards") // querySelectorAll
+        //         console.log(filterCards)
+        //     }, []
+        // )
 
 
 
-    // const filterCards = document.querySelectorAll(".homepage__sections_container__cards") // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
-    // useEffect(
-    //     () => {
-    //         function funcTest() {
-    //             const filterCards = document.querySelectorAll(".homepage__sections_container__cards")
-    //             console.log(filterCards)
-    //         }
-    //         // const filterCards = Array.from(document.querySelectorAll(".homepage__sections_container__cards"))
-    //         // const filterCards = Array.from( document.querySelectorAll(`.${s.test123}`) )
-    //         // className={s.classname} use querySelectorAll
-    //         // filterCards.map(
-    //         //     (element) => {
-    //         //         console.log(element)
-    //         //     }
-    //         // )
-    //     }, []
-    // )
+        // const filterCards = document.querySelectorAll(".homepage__sections_container__cards") // for transform effect to filterCards for carousel, fix this issue, useRef takes only 1 (last one)
+        // useEffect(
+        //     () => {
+        //         function funcTest() {
+        //             const filterCards = document.querySelectorAll(".homepage__sections_container__cards")
+        //             console.log(filterCards)
+        //         }
+        //         // const filterCards = Array.from(document.querySelectorAll(".homepage__sections_container__cards"))
+        //         // const filterCards = Array.from( document.querySelectorAll(`.${s.test123}`) )
+        //         // className={s.classname} use querySelectorAll
+        //         // filterCards.map(
+        //         //     (element) => {
+        //         //         console.log(element)
+        //         //     }
+        //         // )
+        //     }, []
+        // )
+    }
 
+    // BRANDS STATE
     const [currentIndexBrandState, setCurrentIndexBrandState] = useState(0)
     const [filterCardsBrandSTATE, setFilterCardsBrandSTATE] = useState([])
-
+    // CLOTHING STATE
     const [currentIndexClothingState, setCurrentIndexClothingState] = useState(0)
     const [filterCardsClothingSTATE, setFilterCardsClothingSTATE] = useState([])
-
+    // CATEGORIES STATE
     const [currentIndexCategoryState, setCurrentIndexCategoryState] = useState(0)
     const [filterCardsCategorySTATE, setFilterCardsCategorySTATE] = useState([])
+    // // TOP RATED STATE
+    const [currentIndexTopRatedState, setCurrentIndexTopRatedState] = useState(0)
+    // const [filterCardsTopRatedSTATE, setFilterCardsTopRatedSTATE] = useState([])
+    // // MOST REVIEW STATE
+    const [currentIndexMostReviewState, setCurrentIndexMostReviewState] = useState(0)
+    // const [filterCardsMostReviewSTATE, setFilterCardsMostReviewSTATE] = useState([])
 
     function funcTest() {
-        // variables
-        const filterCards_Brand = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`)).slice(0, 12)
+        // BRANDS
+        const filterCards_Brand = Array.from(document.querySelectorAll(".additionalClassForBrands"))
         setFilterCardsBrandSTATE(filterCards_Brand)
-        const filterCards_Cloth = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`)).slice(12, 18)
+        // CLOTHING
+        const filterCards_Cloth = Array.from(document.querySelectorAll(".additionalClassForClothes"))
         setFilterCardsClothingSTATE(filterCards_Cloth)
-        const filterCards_Categ = Array.from(document.querySelectorAll(`.${s.homepage__sections_container__cards}`)).slice(17, 22)
+        // CATEGORIES
+        const filterCards_Categ = Array.from(document.querySelectorAll(".additionalClassForCategories"))
         setFilterCardsCategorySTATE(filterCards_Categ)
+        // // TOP RATED
+        // const filterCards_Top = Array.from(document.querySelectorAll(".additionalClassForTopRated"))
+        // setFilterCardsTopRatedSTATE(filterCards_Top)
+        // // MOST REVIEW
+        // const filterCards_Most = Array.from(document.querySelectorAll(".additionalClassForMostReview"))
+        // setFilterCardsMostReviewSTATE(filterCards_Most)
+        
+        
         // const filterCards_Categ = filterCards.slice(0, 12)
         // const filterCards_Brand = filterCards.slice(0, 12)
         // const brandsBtn_left = Array.from(document.querySelectorAll(`.${s.homepage__sections_topside__box_buttons}`))[2]
@@ -164,21 +243,40 @@ function Homepage() {
         //         element.style.transform = `translateX(${(index - currentIndexCateg) * 110}%)`
         //     }
         // )
+
+
+        // BRANDS
         filterCards_Brand.forEach(
             (element, index) => {
                 element.style.transform = `translateX(${(index - currentIndexBrandState) * 110}%)`
             }
         )
+        // CLOTHING
         filterCards_Cloth.forEach(
             (element, index) => {
                 element.style.transform = `translateX(${(index - currentIndexClothingState) * 110}%)`
             }
         )
+        // CATEGORIES
         filterCards_Categ.forEach(
             (element, index) => {
                 element.style.transform = `translateX(${(index - currentIndexCategoryState) * 110}%)`
             }
         )
+        // // TOP RATED
+        // filterCards_Top.forEach(
+        //     (element, index) => {
+        //         element.style.transform = `translateX(${(index - currentIndexTopRatedState) * 110}%)`
+        //     }
+        // )
+        // // MOST REVIEW
+        // filterCards_Most.forEach(
+        //     (element, index) => {
+        //         element.style.transform = `translateX(${(index - currentIndexMostReviewState) * 110}%)`
+        //     }
+        // )
+
+
         // console.log(currentIndexBrandState)
         // // events for carousel slider buttons
         // categBtn_left.addEventListener("click", () => {
@@ -366,6 +464,8 @@ function Homepage() {
         // casual   +
     }
 
+
+// -----------------------> NOTE FOR AN ISSUE: IN TOPRATED & MOST SECTIONS MAKE CONDITION, IF SAME RATE/COUNT WILL REPEAT, CHECK ID MUST BE DIFFERENT ! <------------- //
     return (
         <main className={s.homepage}>
             {/* SECTION: BRANDS */}
@@ -418,78 +518,102 @@ function Homepage() {
                 </div>
 
                 <div className={s.homepage__sections_container}>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[0]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_1} alt="brand-01" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[0]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[1]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_2} alt="brand-02" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[1]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[2]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_3} alt="brand-03" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[2]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[3]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_4} alt="brand-04" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[3]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[4]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_5} alt="brand-05" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[4]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[5]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_6} alt="brand-06" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[5]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[6]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_7} alt="brand-07" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[6]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[7]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_8} alt="brand-08" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[7]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[8]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_9} alt="brand-09" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[8]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[9]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_10} alt="brand-10" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[9]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[10]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_11} alt="brand-11" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[10]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForBrands`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.brand_cards[11]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={brands_12} alt="brand-12" className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.brand_cards[11]} </p>
-                    </div>
+                    </Link>
                 </div>
             </section>
 
@@ -543,36 +667,46 @@ function Homepage() {
                 </div>
 
                 <div className={s.homepage__sections_container}>   {/* container which holds cards */}
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForClothes`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[0]))}
+                    }>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForClothes`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[1]))}
+                    }>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={cloth_2} alt={"cloth-02"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[1]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForClothes`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[2]))}
+                    }>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={cloth_3} alt={"cloth-03"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[2]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForClothes`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[3]))}
+                    }>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={cloth_4} alt={"cloth-04"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[3]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForClothes`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[4]))}
+                    }>
                         <div className={s.homepage__sections_container__cards_image__content}>
                             <img src={cloth_5} alt={"cloth-05"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[4]} </p>
-                    </div>
+                    </Link>
                 </div>
             </section>
 
@@ -624,7 +758,9 @@ function Homepage() {
                     </span>
                 </div>
                 <div className={s.homepage__sections_container}>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForCategories`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.category_cards[0]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
                             <i class="fa-solid fa-microchip fa-10x" style={{
@@ -638,8 +774,10 @@ function Homepage() {
                                 }}></i>
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[0]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForCategories`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.category_cards[1]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
                             <i class="fa-solid fa-gem fa-10x" style={{
@@ -653,8 +791,10 @@ function Homepage() {
                                 }}></i>
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[1]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForCategories`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.category_cards[2]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
                             <i class="fa-solid fa-mars fa-10x" style={{
@@ -668,8 +808,10 @@ function Homepage() {
                                 }}></i>
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[2]} </p>
-                    </div>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
+                    </Link>
+                    <Link to="/products" className={`${s.homepage__sections_container__cards} additionalClassForCategories`} onClick={
+                        () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.category_cards[3]))}
+                    }>     {/* ref={filterCardsRef} */}
                         <div className={s.homepage__sections_container__cards_image__content}>
                             {/* <img src={cloth_1} alt={"category-01"} className={s.homepage__sections_container__cards_image__content} /> */}
                             <i class="fa-solid fa-venus fa-10x" style={{
@@ -683,7 +825,7 @@ function Homepage() {
                                 }}></i>
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.category_cards[3]} </p>
-                    </div>
+                    </Link>
                 </div>
             </section>
 
@@ -694,53 +836,84 @@ function Homepage() {
                     <span className={s.homepage__sections_topside__box}>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
                             () => {
-                                if(currentIndexBrandState == 0) {
-                                    // currentIndexBrandState = filterCardsBrandSTATE.length-1
-                                    setCurrentIndexBrandState(filterCardsBrandSTATE.length-1)
-                                    var tempValueOfCurrentIndex = filterCardsBrandSTATE.length-1
+                                var topRatedCards = document.querySelectorAll(".additionalClassForTopRated")
+                                if(currentIndexTopRatedState == 0) {
+                                    // currentIndexTopRatedState = topRatesArrSTATE.length-1
+                                    setCurrentIndexTopRatedState(topRatesArrSTATE.length-1)
+                                    var tempValueOfCurrentIndex = topRatesArrSTATE.length-1
                                 } else {
-                                    // currentIndexBrandState--
-                                    setCurrentIndexBrandState(currentIndexBrandState-1)
-                                    var tempValueOfCurrentIndex = currentIndexBrandState-1
+                                    // currentIndexTopRatedState--
+                                    setCurrentIndexTopRatedState(currentIndexTopRatedState-1)
+                                    var tempValueOfCurrentIndex = currentIndexTopRatedState-1
                                 }
                                 // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
-                                filterCardsBrandSTATE.forEach(
+                                topRatedCards.forEach(
                                     (element, index) => {
                                         element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
                                     }
                                 )
-                                // console.log(currentIndexBrandState)
+                                // console.log(currentIndexTopRatedState)
                             }
                         }> ◄ </button>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
                             () => {
-                                if(currentIndexBrandState == filterCardsBrandSTATE.length-1) {
-                                    // currentIndexBrandState = 0
-                                    setCurrentIndexBrandState(0)
+                                var topRatedCards = document.querySelectorAll(".additionalClassForTopRated")
+                                if(currentIndexTopRatedState == topRatesArrSTATE.length-1) {
+                                    // currentIndexTopRatedState = 0
+                                    setCurrentIndexTopRatedState(0)
                                     var tempValueOfCurrentIndex = 0
                                 } else {
-                                    // currentIndexBrandState++
-                                    setCurrentIndexBrandState(currentIndexBrandState+1)
-                                    var tempValueOfCurrentIndex = currentIndexBrandState+1
+                                    // currentIndexTopRatedState++
+                                    setCurrentIndexTopRatedState(currentIndexTopRatedState+1)
+                                    var tempValueOfCurrentIndex = currentIndexTopRatedState+1
                                 }
                                 // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
-                                filterCardsBrandSTATE.forEach(
+                                topRatedCards.forEach(
                                     (element, index) => {
                                         element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
                                     }
                                 )
-                                // console.log(currentIndexBrandState)
+                                // console.log(currentIndexTopRatedState)
                             }
                         }> ► </button>
                     </span>
                 </div>
                 <div className={s.homepage__sections_container}>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
-                    </div>
+                    {
+                        topRatesArrSTATE.map(
+                            (ratingRate, index) => {
+                                for(var x=0; x<productsArraySTATE.length-1; x++) {
+                                    if(productsArraySTATE[x].rating.rate == ratingRate) {
+                                        return (
+                                            <Link to={"/products/item_view_id=" + productsArraySTATE[x].id} 
+                                            className={`${s.homepage__sections_container__cards} additionalClassForTopRated`} 
+                                            key={index} 
+                                            style={{
+                                                transform: `translateX(${(index - currentIndexTopRatedState) * 110}%)`
+                                            }} onClick={
+                                                () => {
+                                                    {dispatch(setCurrentProduct({
+                                                        id: productsArraySTATE[x].id,
+                                                        image: productsArraySTATE[x].image,
+                                                        title: productsArraySTATE[x].title,
+                                                        category: productsArraySTATE[x].category,
+                                                        price: productsArraySTATE[x].price,
+                                                        rating: productsArraySTATE[x].rating.rate,
+                                                        desc: productsArraySTATE[x].description
+                                                    }))}
+                                                }
+                                            }>
+                                                <div className={s.homepage__sections_container__cards_image__content}>
+                                                    <img src={productsArraySTATE[x].image} alt={productsArraySTATE[x].id} className={s.homepage__sections_container__cards_image__content} />
+                                                </div>
+                                                <p className={s.homepage__sections_container__cards_title}> {productsArraySTATE[x].rating.rate} point </p>
+                                            </Link>
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    }
                 </div>
             </section>
 
@@ -751,53 +924,84 @@ function Homepage() {
                     <span className={s.homepage__sections_topside__box}>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_left} onClick={
                             () => {
-                                if(currentIndexBrandState == 0) {
-                                    // currentIndexBrandState = filterCardsBrandSTATE.length-1
-                                    setCurrentIndexBrandState(filterCardsBrandSTATE.length-1)
-                                    var tempValueOfCurrentIndex = filterCardsBrandSTATE.length-1
+                                var mostReviewCards = document.querySelectorAll(".additionalClassForMostReview")
+                                if(currentIndexMostReviewState == 0) {
+                                    // currentIndexMostReviewState = reviewCountArrSTATE.length-1
+                                    setCurrentIndexMostReviewState(reviewCountArrSTATE.length-1)
+                                    var tempValueOfCurrentIndex = reviewCountArrSTATE.length-1
                                 } else {
-                                    // currentIndexBrandState--
-                                    setCurrentIndexBrandState(currentIndexBrandState-1)
-                                    var tempValueOfCurrentIndex = currentIndexBrandState-1
+                                    // currentIndexMostReviewState--
+                                    setCurrentIndexMostReviewState(currentIndexMostReviewState-1)
+                                    var tempValueOfCurrentIndex = currentIndexMostReviewState-1
                                 }
                                 // console.log(currentIndexBrand, "brands left button is working", filterCards_Brand.length)
-                                filterCardsBrandSTATE.forEach(
+                                mostReviewCards.forEach(
                                     (element, index) => {
                                         element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
                                     }
                                 )
-                                // console.log(currentIndexBrandState)
+                                // console.log(currentIndexMostReviewState)
                             }
                         }> ◄ </button>
                         <button className={s.homepage__sections_topside__box_buttons} id={s.categ__arrow_right} onClick={
                             () => {
-                                if(currentIndexBrandState == filterCardsBrandSTATE.length-1) {
-                                    // currentIndexBrandState = 0
-                                    setCurrentIndexBrandState(0)
+                                var mostReviewCards = document.querySelectorAll(".additionalClassForMostReview")
+                                if(currentIndexMostReviewState == reviewCountArrSTATE.length-1) {
+                                    // currentIndexMostReviewState = 0
+                                    setCurrentIndexMostReviewState(0)
                                     var tempValueOfCurrentIndex = 0
                                 } else {
-                                    // currentIndexBrandState++
-                                    setCurrentIndexBrandState(currentIndexBrandState+1)
-                                    var tempValueOfCurrentIndex = currentIndexBrandState+1
+                                    // currentIndexMostReviewState++
+                                    setCurrentIndexMostReviewState(currentIndexMostReviewState+1)
+                                    var tempValueOfCurrentIndex = currentIndexMostReviewState+1
                                 }
                                 // console.log(currentIndexBrand, "brands right button is working", filterCards_Brand.length)
-                                filterCardsBrandSTATE.forEach(
+                                mostReviewCards.forEach(
                                     (element, index) => {
                                         element.style.transform = `translateX(${(index - tempValueOfCurrentIndex) * 110}%)`
                                     }
                                 )
-                                // console.log(currentIndexBrandState)
+                                // console.log(currentIndexMostReviewState)
                             }
                         }> ► </button>
                     </span>
                 </div>
                 <div className={s.homepage__sections_container}>
-                    <div className={s.homepage__sections_container__cards}>     {/* ref={filterCardsRef} */}
-                        <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
-                        </div>
-                        <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
-                    </div>
+                    {
+                        reviewCountArrSTATE.map(
+                            (ratingCount, index) => {
+                                for(var x=0; x<productsArraySTATE.length-1; x++) {
+                                    if(productsArraySTATE[x].rating.count == ratingCount) {
+                                        return (
+                                            <Link to={"/products/item_view_id=" + productsArraySTATE[x].id} 
+                                            className={`${s.homepage__sections_container__cards} additionalClassForMostReview`} 
+                                            key={index} 
+                                            style={{
+                                                transform: `translateX(${(index - currentIndexMostReviewState) * 110}%)`
+                                            }} onClick={
+                                                () => {
+                                                    {dispatch(setCurrentProduct({
+                                                        id: productsArraySTATE[x].id,
+                                                        image: productsArraySTATE[x].image,
+                                                        title: productsArraySTATE[x].title,
+                                                        category: productsArraySTATE[x].category,
+                                                        price: productsArraySTATE[x].price,
+                                                        rating: productsArraySTATE[x].rating.rate,
+                                                        desc: productsArraySTATE[x].description
+                                                    }))}
+                                                }
+                                            }>
+                                                <div className={s.homepage__sections_container__cards_image__content}>
+                                                    <img src={productsArraySTATE[x].image} alt={productsArraySTATE[x].id} className={s.homepage__sections_container__cards_image__content} />
+                                                </div>
+                                                <p className={s.homepage__sections_container__cards_title}> {productsArraySTATE[x].rating.count} user rated </p>
+                                            </Link>
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    }
                 </div>
             </section>
         </main>

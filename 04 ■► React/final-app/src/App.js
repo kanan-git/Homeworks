@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 // import { Counter } from './features/counter/Counter';
 import './global.css';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
@@ -28,6 +29,8 @@ import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies'
 import Loading from './components/Pop-ups/Loading'
 
 function App() {
+  const productInfo = useSelector((state) => state.selectedProduct.productData)
+
   var authDataFromLocalStorage = JSON.parse(localStorage.getItem('signedUser'))
 
   if(authDataFromLocalStorage == null) {
@@ -70,6 +73,7 @@ function App() {
   //   // {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
   // }
   
+  
   return (
     <div className="App">   {/* overall fix width issue, must be seems without scroll */}
       {/* ————— ————— ————— ————— ————— ————— ————— ————— ————— */}
@@ -99,7 +103,7 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/products/item_view" element={
+          <Route path={"/products/item_view_id=" + productInfo.id} element={
             <>
               <Header />
               <Breadcrumb currentPath="/products/item_view" />
