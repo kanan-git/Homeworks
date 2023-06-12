@@ -69,7 +69,7 @@ npm start
 
 
 git add .
-git commit -m "ShopNet day 46/60 | June 3, 2023 at 09:58"
+git commit -m "ShopNet day 55/60 | June 12, 2023 at 16:03"
 git push origin master
 git status
 clear
@@ -122,4 +122,21 @@ Settings contents, changing password, edit other information
 
 00 - fix homepage cards fit to api categories or other properties
 00 - after complete all, archivate project to gdrive & testing>archive folder for git, delete failed codes and additional useless //notes, make sectors in all components and css, deploy to git
+
+
+June 12, 2023 I - ShopNet day 55/60 | complete last task packs 3/3 left | 11/11 tasks
+________________________________________________________________________P A C K   # 1   ( 5   t a s k s )________________________________________________________________________
+FOOTER CONDITION: footer fav/cart return with different route path because of different conditions or full of tag without to="/", ALSO CHECK, EVERYTING (ALL COMPONENT-PAGE-POPUP CONTENTS) MUST USE WITH LOCAL STORAGE CONDITION WHICH RETURN DIFFERENT VALUE FOR GUEST/USER
+MY CART: myCart buy all button > purcaseCompleted + > headerBalance, myCart product cards from localStorage array of current user, use main codes copy from myFavorites component + ALSO FAV BTN MUST BE WORK IF USER SIGNED
+SOME TASKS WHICH NOT NECESSARY: fix horizontal scrollbar problem, cancel orders array
+VISUAL ADDS: with ChatGPT, write more content for About and Contact pages, put data and translate also for dataSource
+ITEMVIEW: page add related products container by selected product's category, show 4 item if exist (<=4), if its = 0, do not create ( {condition != 0 && <Related />} )
+________________________________________________________________________P A C K   # 2   ( 4   t a s k s )________________________________________________________________________
+RED INFO: add small position absolute red texts for some places, make it all at once (please enter your name-email-pass, incorrect, itemView under the price show how much will decrease and how much will left, header user dropdown, how much favorite and how much cart item). If cart or favorite, one of them are 0<, add red circle notification dot to bottom-right of profile image
+SETTINGS: create delete my account, change password, edit name lastname and other user information and some features
+CLEAN UP CODES: after complete all tasks, make all jsx, js and scsss files sectors, archive project and deploy 2 git & cloud, then delete all "// useless codes" parts
+MOBILE RESPONSIVITY: hide header and make it seems with a menu button, full screen and transformX from left, add 4 responsivity to each component and to their sections
+________________________________________________________________________P A C K   # 3   ( 2   t a s k s )________________________________________________________________________
+LANGUAGE: gather info about language status from localStorage and change condition, input select current option ... both page (auth and general)
+FIXES & VERCEL: try to fix vercel issues on products and authentication pages, language data, light or dark mode, all of registered users, save in localStorage or sessionStorage, when pages change especially between authentication and rest of pages, gather language and LorD info from storage, fix authentication and product error to make them seem on Vercel, may also create Settings contents, changing password, edit other information, add logged in or not to localStorage too, if vercel issue not repairable, use localhost, vercel is not necessary, just try write function inside { () => {} } and juse json.map(), cancel useState and useEffect, eventListeners ... try after dublicate project files, auth page too, +settings vercel issue about active button. ALSO CHECK THEM ALL, IF YOU SEE ERROR OR WRONG (localhost or vercel), FIX IT (deploy to git +++ if isLogged == true, footer myfav mycart & products page add2fav & purchase too)
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
