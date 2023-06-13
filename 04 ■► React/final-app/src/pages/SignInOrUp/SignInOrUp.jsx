@@ -1,14 +1,3 @@
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
-// SECTOR 01:  importing elements
-// SECTOR 02:  variables, props and states
-// SECTOR 03:  ...
-// SECTOR 04:  ...
-// SECTOR 05:  ...
-// SECTOR 06:  return XML side
-// SECTOR 07:  export default function
-// ????????????????????        EDIT !!!!!!!!!!!!!!!!!!!!!!!!!
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
-// imported elements
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
@@ -18,13 +7,12 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setUserObject } from '../../features/counter/newuserSlice';
 import { useNavigate } from 'react-router-dom';
-
 import Loading from '../../components/Pop-ups/Loading'
 import SuccessfullySigned from '../../components/Pop-ups/SuccessfullySigned'
 import FailedMessage from '../../components/Pop-ups/FailedMessage'
 import PrivacyPolicies from '../../components/Pop-ups/PrivacyPolicies'
 import TermsAndConditions from '../../components/Pop-ups/TermsAndConditions'
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
+
 function SignInOrUp() {
     // create first element if there is no user data
     var user = {
@@ -42,11 +30,9 @@ function SignInOrUp() {
         profile_img_color: "rgb(255,128,0)"
     }
     localStorage.setItem(0, JSON.stringify(user))
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+
     const root = document.documentElement;
     const authTypeData = useSelector((state) => state.authtype.currentAuthType)
-    // localStorage.setItem("Auth State", JSON.stringify(authTypeData))
-    // console.log(authTypeData)
     var userOrGuest = JSON.parse(localStorage.getItem("isLogged"))
     if(userOrGuest == true) {
         // do nothing for now
@@ -61,7 +47,7 @@ function SignInOrUp() {
             }
         }, []
     )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
+
     const [selectionsSTATE, setSelectionsSTATE] = useState(dataSource.english.signinorup.selections)
     const [loginformSTATE, setLoginformSTATE] = useState(dataSource.english.signinorup.loginform)
     const [registerformSTATE, setRegisterformSTATE] = useState(dataSource.english.signinorup.registerform)
@@ -69,11 +55,8 @@ function SignInOrUp() {
     const [monthallSTATE, setMonthallSTATE] = useState(dataSource.english.signinorup.month)
     const [pholderSTATE, setPholderSTATE] = useState(dataSource.english.signinorup.placeholders)
 
-    // const languageData = useSelector((state) => state.language.currentLanguage)
-    
     function handleLanguage(e) {
         // language
-        // var langDataAuth = document.querySelector("#langAuth")
         if (e.target.value == "English") {
             setSelectionsSTATE(dataSource.english.signinorup.selections)
             setLoginformSTATE(dataSource.english.signinorup.loginform)
@@ -81,7 +64,6 @@ function SignInOrUp() {
             setButtonsSTATE(dataSource.english.signinorup.buttons)
             setMonthallSTATE(dataSource.english.signinorup.month)
             setPholderSTATE(dataSource.english.signinorup.placeholders)
-            // console.log(langDataAuth.value)
             localStorage.setItem("language", JSON.stringify("english"))
         } else if (e.target.value == "Azərbaycan dili") {
             setSelectionsSTATE(dataSource.azerbaijani.signinorup.selections)
@@ -90,7 +72,6 @@ function SignInOrUp() {
             setButtonsSTATE(dataSource.azerbaijani.signinorup.buttons)
             setMonthallSTATE(dataSource.azerbaijani.signinorup.month)
             setPholderSTATE(dataSource.azerbaijani.signinorup.placeholders)
-            // console.log(langDataAuth.value)
             localStorage.setItem("language", JSON.stringify("azerbaijani"))
         } else if (e.target.value == "Türkçe") {
             setSelectionsSTATE(dataSource.turkish.signinorup.selections)
@@ -99,12 +80,10 @@ function SignInOrUp() {
             setButtonsSTATE(dataSource.turkish.signinorup.buttons)
             setMonthallSTATE(dataSource.turkish.signinorup.month)
             setPholderSTATE(dataSource.turkish.signinorup.placeholders)
-            // console.log(langDataAuth.value)
             localStorage.setItem("language", JSON.stringify("turkish"))
         }
-        // console.log(e.target.value)
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+
     useEffect(
         () => {
             // login or register form windows switching
@@ -114,15 +93,6 @@ function SignInOrUp() {
             var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
             var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
             var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
-
-            // console.log(
-            //     loginWindow.innerHTML, 
-            //     registerWindow.innerHTML, 
-            //     switchLogin.innerHTML, 
-            //     switchRegister.innerHTML, 
-            //     overlayLogin.innerHTML, 
-            //     overlayRegister.innerHTML
-            // )
 
             if(authTypeData == "login") {
                 loginWindow.style.top = `53%`
@@ -159,7 +129,6 @@ function SignInOrUp() {
                 overlayLogin.style.zIndex = `1`
                 overlayRegister.style.zIndex = `-1`
             }
-            // return () => {}
         }, []
     )
 
@@ -214,15 +183,10 @@ function SignInOrUp() {
         overlayLogin.style.zIndex = `1`
         overlayRegister.style.zIndex = `-1`
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+
     const [ldAuthSTATE, setLdAuthSTATE] = useState("light")    
     useEffect(
         () => {
-            // light or dark mode (lord)
-            // var LorD = document.querySelector(`.${s.signinorup__topside_lord}`)
-            // var iconLorD = document.createElement("i")
-            // iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
-            // LorD.appendChild(iconLorD)
             var iconLorD = document.querySelector(".fa-solid")
             if(JSON.parse(localStorage.getItem("lightMode")) == "dark") {
                 root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
@@ -297,7 +261,6 @@ function SignInOrUp() {
 
     function handleLorD(e) {
         // light or dark mode (lord)
-        // var LorD = document.querySelector(`.${s.signinorup__topside_lord}`)
         var iconLorD = document.querySelector(".fa-solid")
         if (JSON.parse(localStorage.getItem("lightMode")) == "light") {
             iconLorD.classList.remove("fa-solid", "fa-sun", "fa-1x")
@@ -348,106 +311,17 @@ function SignInOrUp() {
             setLdAuthSTATE("light")
             localStorage.setItem("lightMode", JSON.stringify("light"))
         }
-        // var spinningButton = LorD.animate(
-        //     [{transform: 'rotateY(0deg)', scale: 1.0}, {transform: 'rotateY(180deg)', scale: 1.5}, {transform: 'rotateY(360deg)', scale: 1.0}], 
-        //     {duration: 750, easing: 'ease-in-out', delay: 0, iterations: 1}
-        // )
         var spinningButton = e.target.animate(
             [{transform: 'rotateY(0deg)', scale: 1.0}, {transform: 'rotateY(180deg)', scale: 1.5}, {transform: 'rotateY(360deg)', scale: 1.0}], 
             {duration: 750, easing: 'ease-in-out', delay: 0, iterations: 1}
         )
     }
 
-    // useEffect(
-    //     () => {
-    //         return () => {
-    //             // light or dark mode (lord)
-    //             var LorD = document.querySelector(`.${s.signinorup__topside_lord}`)
-    //             var iconLorD = document.createElement("i")
-    //             iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
-    //             LorD.appendChild(iconLorD)
-    //             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
-    //             root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
-    //             root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
-    //             root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
-    //             root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
-    //             root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
-    //             root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
-    //             root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
-    //             root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
-    //             root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
-    //             root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
-    //             root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
-    //             root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
-    //             root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
-    //             root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
-    //             root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
-    //             root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
-    //             root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
-    //             root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
-
-    //             LorD.addEventListener("click", () => {
-    //                 if (iconLorD.classList.contains("fa-sun")) {
-    //                     iconLorD.classList.remove("fa-solid", "fa-sun", "fa-1x")
-    //                     iconLorD.classList.add("fa-solid", "fa-moon", "fa-1x")
-    //                     root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
-    //                     root.style.setProperty('--text-color', 'rgb(205,205,205)'); // DARK mode default color
-    //                     root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
-    //                     root.style.setProperty('--link-color', 'rgb(255,255,255)'); // DARK mode default color
-    //                     root.style.setProperty('--link-hover-color', 'rgb(5,145,255)'); // DARK mode default color
-    //                     root.style.setProperty('--link-active-color', 'rgb(5,205,255)'); // DARK mode default color
-    //                     root.style.setProperty('--default-bg-color', 'rgb(30,30,30)'); // DARK mode default color
-    //                     root.style.setProperty('--footer-bg-color', 'rgb(15,15,15)'); // DARK mode default color
-    //                     root.style.setProperty('--footer-bottom-color', 'rgb(10,10,10)'); // DARK mode default color
-    //                     root.style.setProperty('--header-bg-color', 'rgba(5,5,5,0.5)'); // DARK mode default color
-    //                     root.style.setProperty('--header-top-color', 'rgb(20,20,20)'); // DARK mode default color
-    //                     root.style.setProperty('--buttons-color', 'rgb(55,55,55)'); // DARK mode default color
-    //                     root.style.setProperty('--buttons-hover-color', 'rgb(45,5,245)'); // DARK mode default color
-    //                     root.style.setProperty('--buttons-active-color', 'rgb(115,15,255)'); // DARK mode default color
-    //                     root.style.setProperty('--filter-shadow-color', 'rgb(255,255,255)'); // DARK mode default color
-    //                     root.style.setProperty('--borders-color', 'rgb(200,200,200)'); // DARK mode default color
-    //                     root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(70,10,250), rgb(200,10,10))'); // DARK mode default color
-    //                     root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
-    //                     root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
-    //                 } else if (iconLorD.classList.contains("fa-moon")) {
-    //                     iconLorD.classList.remove("fa-solid", "fa-moon", "fa-1x")
-    //                     iconLorD.classList.add("fa-solid", "fa-sun", "fa-1x")
-    //                     root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
-    //                     root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
-    //                     root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
-    //                     root.style.setProperty('--link-color', 'rgb(25,25,25)'); // LIGHT mode default color
-    //                     root.style.setProperty('--link-hover-color', 'rgb(250,150,50)'); // LIGHT mode default color
-    //                     root.style.setProperty('--link-active-color', 'rgb(255,75,0)'); // LIGHT mode default color
-    //                     root.style.setProperty('--default-bg-color', 'rgb(215,215,215)'); // LIGHT mode default color
-    //                     root.style.setProperty('--footer-bg-color', 'rgb(12,24,48)'); // LIGHT mode default color
-    //                     root.style.setProperty('--footer-bottom-color', 'rgb(35,35,35)'); // LIGHT mode default color
-    //                     root.style.setProperty('--header-bg-color', 'rgba(185,185,185,0.7)'); // LIGHT mode default color
-    //                     root.style.setProperty('--header-top-color', 'rgb(45,45,45)'); // LIGHT mode default color
-    //                     root.style.setProperty('--buttons-color', 'rgb(200,200,200)'); // LIGHT mode default color
-    //                     root.style.setProperty('--buttons-hover-color', 'rgb(255,255,100)'); // LIGHT mode default color
-    //                     root.style.setProperty('--buttons-active-color', 'rgb(125,255,5)'); // LIGHT mode default color
-    //                     root.style.setProperty('--filter-shadow-color', 'rgb(10,10,10)'); // LIGHT mode default color
-    //                     root.style.setProperty('--borders-color', 'rgb(45,45,45)'); // LIGHT mode default color
-    //                     root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
-    //                     root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
-    //                     root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
-    //                 }
-    //                 var spinningButton = LorD.animate(
-    //                     [{transform: 'rotateY(0deg)', scale: 1.0}, {transform: 'rotateY(180deg)', scale: 1.5}, {transform: 'rotateY(360deg)', scale: 1.0}], 
-    //                     {duration: 750, easing: 'ease-in-out', delay: 0, iterations: 1}
-    //                 )
-    //             })
-    //         }
-    //     }, []
-    // )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
     const dispatch = useDispatch()
 
     const [genderSTATE, setGenderSTATE] = useState("male")
     const [dateofbirthSTATE, setDateofbirthSTATE] = useState("")
     const [userDataSTATE, setUserDataSTATE] = useState({})
-
-    // var submitRegisterBtn = document.querySelector(`.${s.signinorup__register_submit}`)
 
     var registryInputName = document.querySelector("#name")
     var registryInputLastname = document.querySelector("#lastname")
@@ -467,11 +341,6 @@ function SignInOrUp() {
         var year = registryInputYear.value
 
         var dateOfBirth = month + "." + day + "." + year
-        // var dateOfBirth = "mm.dd.yyyy" // mm-01 .-2 dd-34 .-5 yyyy-6789
-        // for(var i=0; i<10; i++) {
-        //     console.log(dateOfBirth[i])
-        // }
-        // console.log(dateOfBirth)
         setDateofbirthSTATE(dateOfBirth)
     }
 
@@ -482,128 +351,10 @@ function SignInOrUp() {
             registryInputPassword.type = `password`
         }
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
+
     const [isLoading, setIsLoading] = useState(false)
 
     function submitRegistration(event) {
-        // { // failed codes
-
-            // create first element if there is no user data
-            // var user = {
-            //     id: 0,
-            //     name: registryInputName.value,
-            //     lastname: registryInputLastname.value,
-            //     email: registryInputEmail.value,
-            //     password: registryInputPassword.value,
-            //     gender: genderSTATE,
-            //     date_of_birth: dateofbirthSTATE,
-            //     budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
-            //     orders: [],
-            //     basket: [],
-            //     favorites: [],
-            //     profile_img_color: "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")"
-            // }
-            // localStorage.setItem(0, JSON.stringify(user))
-            // alert("Welcome " + user.name + " " + user.lastname + ", " + "you successfully signed up, please go back to Login window.")
-            // setIsLoading(true)
-            // setTimeout(
-            //     () => {
-            //         setIsLoading(false)
-            //         // localStorage.setItem("Auth State", JSON.stringify("login"))
-            //         var loginWindow = document.querySelector(`.${s.signinorup__login}`)
-            //         var registerWindow = document.querySelector(`.${s.signinorup__register}`)
-            //         var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
-            //         var switchRegister = document.querySelector(`.${s.signinorup__topside_selection__register}`)
-            //         var overlayLogin = document.querySelector(`.${s.signinorup__login_overlay}`)
-            //         var overlayRegister = document.querySelector(`.${s.signinorup__register_overlay}`)
-            //         if(authTypeData == "login") {
-            //             loginWindow.style.top = `53%`
-            //             loginWindow.style.left = `50%`
-            //             loginWindow.style.scale = `1.0`
-            //             loginWindow.style.opacity = `1.0`
-            //             registerWindow.style.top = `40%`
-            //             registerWindow.style.left = `80%`
-            //             registerWindow.style.scale = `0.6`
-            //             registerWindow.style.opacity = `0.5`
-            //             switchLogin.style.color = `rgb(0,128,255)`
-            //             switchLogin.style.scale = `1.2`
-            //             switchLogin.style.opacity = `1.0`
-            //             switchRegister.style.color = `rgb(64,64,64)`
-            //             switchRegister.style.scale = `0.8`
-            //             switchRegister.style.opacity = `0.75`
-            //             overlayLogin.style.zIndex = `-1`
-            //             overlayRegister.style.zIndex = `1`
-            //         }
-            //     }, 1000
-            // )
-
-        //     // event.preventDefault(); // Prevents the default form submission | from ChatGPT
-
-        //     // console.log(new_user, usersContainer)
-        //     // setUserDataSTATE(usersContainer)
-        //     // var userStringTemplate = "user_000000001" // 4 letters, 1 symbol, 9 digits = 14 characters
-
-        //     // var userIndex = 1 // character count 1 - 9
-        //     // var indexTemplate = "00000000"
-        //     // var indexString = indexTemplate + userIndex
-        //     // if(indexString.length > 9) {
-        //     //     var z = indexString.length - 9
-        //     //     var indexTemplate = indexTemplate.slice(z, 7) + "0"
-        //     //     var indexString = indexTemplate + userIndex
-        //     //     // console.log(z)
-        //     //     // console.log(indexTemplate)
-        //     //     // console.log(userIndex)
-        //     //     // console.log(indexString)
-        //     // } else {
-        //     //     var indexTemplate = "00000000"
-        //     //     var indexString = indexTemplate + userIndex
-        //     //     // console.log(z)
-        //     //     // console.log(indexTemplate)
-        //     //     // console.log(userIndex)
-        //     //     // console.log(indexString)
-        //     // }
-        //     // var userStringTemplate = "user_" // character count 5
-        //     // var userName = userStringTemplate + indexString
-
-        //     // var newData = {
-        //     //     id: userIndex,
-        //     //     name: registryInputName.value,
-        //     //     lastname: registryInputLastname.value,
-        //     //     email: registryInputEmail.value,
-        //     //     password: registryInputPassword.value,
-        //     //     gender: genderSTATE,
-        //     //     date_of_birth: dateofbirthSTATE,
-        
-        //     //     budget_amount_from_creditcard: "1000" // temporary point system because there is no payment system yet
-        //     // }
-
-        //     // localStorage.setItem(userName, JSON.stringify(newData))
-
-        //     // keysOfLocalStorage.forEach(
-        //     //     (e) => {
-        //     //         console.log(e)
-        //     //     }
-        //     // )
-
-        //     // ------------------------->>>>>>>>>>>>> put data into localStorage
-        //     // var testData = {
-        //     //     name: "123"
-        //     // }
-        //     // localStorage.setItem("testiin", JSON.stringify(testData))
-        //     // ------------------------->>>>>>>>>>>>> get data from localStorage
-        //     // var gatheringData = JSON.parse(localStorage.getItem("testiin"));
-        //     // console.log(gatheringData.name)
-        //     // ------------------------->>>>>>>>>>>>> Existing object
-        //     // var existingObject = {
-        //     //     key1: 'Value 1',
-        //     //     key2: 'Value 2'
-        //     // };
-        //     // ------------------------->>>>>>>>>>>>> Add new values to the existing object
-        //     // existingObject.newKey1 = 'New Value 1';
-        //     // existingObject.newKey2 = 'New Value 2';
-        //     // console.log(existingObject);
-        // }
-
         event.preventDefault(); // Prevents the default form submission | from ChatGPT
         var keysOfLocalStorage = Object.keys(localStorage)
         if(keysOfLocalStorage.length === 1) {
@@ -643,7 +394,6 @@ function SignInOrUp() {
                     setTimeout(
                         () => {
                             setIsLoading(false)
-                            // localStorage.setItem("Auth State", JSON.stringify("login"))
                             var loginWindow = document.querySelector(`.${s.signinorup__login}`)
                             var registerWindow = document.querySelector(`.${s.signinorup__register}`)
                             var switchLogin = document.querySelector(`.${s.signinorup__topside_selection__login}`)
@@ -675,7 +425,7 @@ function SignInOrUp() {
             }
         }
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ??
+
     const [trueInfo, setTrueInfo] = useState(false)
     const [falseInfo, setFalseInfo] = useState(false)
     const navigate = useNavigate()
@@ -738,116 +488,12 @@ function SignInOrUp() {
             }
         }
 
-        { // failed codes
-
-            // Object.keys(localStorage).includes('0') ? console.log(true) : false
-
-            // for (var i=0; i<localStorage.length+1; i++) { // loop to check all user data inside localStorage for authentication
-            //     if(isNaN(+Object.keys(localStorage)[i])) {
-            //         // do nothing for now
-            //         // console.log(Object.keys(localStorage)[i])
-            //         other_storage_data++
-            //         alert(i)
-            //     } else {
-            //         var keyE = JSON.parse(localStorage.getItem(i)).email
-            //         var keyP = JSON.parse(localStorage.getItem(i)).password
-            //         console.log(keyE, keyP)
-            //         if(email == keyE) {
-            //             if(pass == keyP) {
-            //                 // alert("You successfully signed in.")
-            //                 setTrueInfo(true)
-            //                 localStorage.setItem("isLogged", JSON.stringify(true))
-            //                 localStorage.setItem("signedUser", JSON.stringify(i))
-            //                 setTimeout(
-            //                     () => {
-            //                         setTrueInfo(false)
-            //                         setIsLoading(true)
-            //                     }, 1500
-            //                 )
-            //                 setTimeout(
-            //                     () => {
-            //                         setIsLoading(false)
-            //                         navigate("/")
-            //                     }, 2000
-            //                 )
-            //                 break
-            //             } else {
-            //                 // console.log("Your email or password is incorrect. Please check information again.")
-            //                 setFalseInfo(true)
-            //                 setTimeout(
-            //                     () => {
-            //                         setFalseInfo(false)
-            //                         setIsLoading(true)
-            //                     }, 1500
-            //                 )
-            //                 setTimeout(
-            //                     () => {setIsLoading(false)}, 2000
-            //                 )
-            //             }
-            //             checked_user_emails++
-            //             if(checked_user_emails == Object.keys(localStorage).length - other_storage_data) {
-            //                 console.log("no match found")
-            //             } else {
-            //                 console.log("proceed")
-            //             }
-            //         } else {
-            //             // do nothing
-            //         }
-            //         alert(i)
-            //     }
-            // }
-
-            // for(var j=0; j<999999999; j++) { // loop to check all user data inside localStorage for authentication
-            //     var customsControl = JSON.parse(localStorage.getItem(j))
-            //     console.log(customsControl.email, "+", email, pass)
-            //     if(email === customsControl.email && pass == customsControl.password) {
-            //         console.log("i got it")
-            //         break
-            //     } else {
-            //         alert("Your email or password is incorrect, please try again.")
-            //     }
-            // }
-
-            // for(var j=0; j<999999999; j++) { // loop to check all user data inside localStorage for authentication
-                // var customsControl = JSON.parse(localStorage.getItem(j))
-                // var email = inputEmail.value
-                // var pass = inputPassword.value
-                // var currentInspectingUserData_email = customsControl[j].email
-                // var currentInspectingUserData_pass = customsControl[j].password
-
-                // console.log(email, pass)
-                // console.log(currentInspectingUserData_email, currentInspectingUserData_pass)
-
-                // if(email === currentInspectingUserData_email && pass === currentInspectingUserData_pass) { // authentication
-                //     localStorage.setItem("isLogged", JSON.stringify(true))
-
-                //     console.log(inputEmail.value, inputPassword.value)
-                //     console.log(customsControl[j].email, customsControl[j].password)
-
-                //     console.log("Welcome " + inputEmail + ", you successfully signed in.")
-                //     break
-                // } else {
-                //     alert("Your email or password is incorrect, please try again.")
-                // }
-
-                // if(Object.keys(localStorage).includes(customsControl[j])) {
-                //     console.log(j)
-                // } else {
-                //     "nnooouup"
-                // }
-            // }
-        }
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
-    // const [monthSTATE, setMonthSTATE] = useState([])
+
     const [daySTATE, setDaySTATE] = useState([])
     const [yearSTATE, setYearSTATE] = useState([])
     useEffect(
         () => {
-            // month data will came from dataSource
-            // var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-            // setMonthSTATE(monthArray)
-            // array for days
             var daysArray = []
             for(var i=1; i<=31; i++) {
                 daysArray.push(i)
@@ -861,7 +507,7 @@ function SignInOrUp() {
             setYearSTATE(yearsArray)
         }, []
     )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
+
     return (
         <main className={s.signinorup}>
             {isLoading && <Loading />}
@@ -970,11 +616,6 @@ function SignInOrUp() {
 
 
             <div className={s.signinorup__bottomside}>
-                {/* <button className={s.signinorup__bottomside_buttons}>
-                    <i className='fa-solid fa-house-chimney fa-1x'></i>
-                    <p> {buttonsSTATE[0]} </p>
-                </button> */}
-
                 <Link className={s.signinorup__bottomside_buttons} to="/">
                     <i className='fa-solid fa-house-chimney fa-1x'></i>
                     <p> {buttonsSTATE[0]} </p>
@@ -987,11 +628,6 @@ function SignInOrUp() {
                     <i className='fa-solid fa-location-dot fa-1x'></i>
                     <p> {buttonsSTATE[2]} </p>
                 </Link>
-                
-                {/* <Router>
-                    <Link to="/">Homepage</Link>
-                </Router> */}
-
             </div>
 
             {/* <Loading /> */}
@@ -1002,6 +638,5 @@ function SignInOrUp() {
         </main>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+
 export default SignInOrUp
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

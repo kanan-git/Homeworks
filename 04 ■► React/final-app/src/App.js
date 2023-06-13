@@ -160,12 +160,3 @@ function App() {
 }
 
 export default App;
-
-// cd 04\ ■►\ React/final-app
-// npm start
-// *** watch sass *** //
-// git add .
-// git commit -m "."
-// git push origin master
-// git status
-// clear
