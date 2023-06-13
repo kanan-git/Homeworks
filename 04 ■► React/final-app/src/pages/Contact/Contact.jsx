@@ -1,47 +1,12 @@
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
-// SECTOR 01:  importing elements
-// SECTOR 02:  variables, props and states
-// SECTOR 03:  ...
-// SECTOR 04:  ...
-// SECTOR 05:  ...
-// SECTOR 06:  return XML side
-// SECTOR 07:  export default function
-// ????????????????????        EDIT !!!!!!!!!!!!!!!!!!!!!!!!!
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
-// imported elements
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { useSelector } from 'react-redux'
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
-function Contact() {
-    // ...
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // const [textSTATE, setTextSTATE] = useState(dataSource.english.contact.text)
-    // const [headerSTATE, setHeaderSTATE] = useState(dataSource.english.contact.headers)
-    
-    const languageData = useSelector(
+
+function Contact() {const languageData = useSelector(
         (state) => state.language.currentLanguage.contact
     )
-
-    // useEffect(
-    //     () => {
-    //         var languageData = document.querySelector("#language")
-    //         languageData.addEventListener("change", () => {
-    //             if(languageData.value == "English") {
-    //                 setTextSTATE(dataSource.english.contact.text)
-    //                 setHeaderSTATE(dataSource.english.contact.headers)
-    //             } else if(languageData.value == "Azərbaycan dili") {
-    //                 setTextSTATE(dataSource.azerbaijani.contact.text)
-    //                 setHeaderSTATE(dataSource.azerbaijani.contact.headers)
-    //             } else if(languageData.value == "Türkçe") {
-    //                 setTextSTATE(dataSource.turkish.contact.text)
-    //                 setHeaderSTATE(dataSource.turkish.contact.headers)
-    //             }
-    //         })
-    //     }, []
-    // )
 
     const temporaryMapWindow = useRef()
     
@@ -59,7 +24,7 @@ function Contact() {
             ], {duration: 1000, easing: 'ease-in-out', delay: 0, iterations: Infinity}
         )
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
+
     return (
         <main className={s.contact}>
             <div className={s.contact__container}>
@@ -91,12 +56,5 @@ function Contact() {
         </main>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+
 export default Contact
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //
-
-
-
-
-
-// Our dedicated customer service team is available to assist you Monday through Friday, 9:00 AM to 5:00 PM. We strive to respond to all inquiries within 24 hours.

@@ -1,12 +1,3 @@
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
-// SECTOR 01:  importing elements
-// SECTOR 02:  variables, props and states
-// SECTOR 03:  switching light and dark mode
-// SECTOR 04:  changing language
-// SECTOR 05:  dropdown events
-// SECTOR 06:  return XML side
-// SECTOR 07:  export default function
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
 // imported elements
 import React from 'react'
 import s from './index.module.css'
@@ -21,29 +12,10 @@ import { setCurrentLanguage } from '../../features/counter/counterSlice'
 import { setCurrentAuthType } from '../../features/counter/switchAuthType'
 import { setCurrentSearchValue } from '../../features/counter/searchValueSlice'
 import { useDispatch } from 'react-redux'
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
+
 function Header() {
-    // userRef for using XML element like querySelector JS (import hook useRef, create const like useState, add like id ref={constYouCreatedForRefHere})
-    // const switchButtonRef = useRef()
     const root = document.documentElement;
     const isHovered = "nope"
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
-    // create first element if there is no user data
-    // var user = {
-    //     id: 0,
-    //     name: "Kanan",
-    //     lastname: "Bakhshaliyev",
-    //     email: "Admin",
-    //     password: "seriouslyDifficultPassword2Guess123",
-    //     gender: "male",
-    //     date_of_birth: "December.15.1997",
-    //     budget_amount_from_creditcard: "1000", // temporary point system because there is no payment info from backend
-    //     orders: [],
-    //     basket: [],
-    //     favorites: [],
-    //     profile_img_color: "rgb(255,128,0)"
-    // }
-    // localStorage.setItem(0, JSON.stringify(user))
 
     useEffect(
         () => {
@@ -52,7 +24,7 @@ function Header() {
             }
         }, []
     )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+
     const [userName, setUserName] = useState()
     const [userColor, setUsercolor] = useState()
     const [userBudget, setUserBudget] = useState()
@@ -77,10 +49,7 @@ function Header() {
             }
         }, []
     )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
-    // const switchSliderBtn = document.querySelector("#switch_btn")
-    // const switchSun = document.querySelector("#fa_sun")
-    // const switchMoon = document.querySelector("#fa_moon")
+
     const switchSliderBtn = useRef()
     const switchSun = useRef()
     const switchMoon = useRef()
@@ -110,8 +79,6 @@ function Header() {
     const [productsDD1, setProductsDD1] = useState(dataSource.english.header.mainside.productsddown.header1)
     const [productsDD2, setProductsDD2] = useState(dataSource.english.header.mainside.productsddown.header2)
     const [productsDD3, setProductsDD3] = useState(dataSource.english.header.mainside.productsddown.header3)
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // function for switching Light or Dark mode
 
     useEffect(
         () => {
@@ -202,7 +169,6 @@ function Header() {
         }, []
     )
 
-    // document.querySelector(".header__main_switch__slider").addEventListener("click", () => {console.log("+")})
     useState(
         () => {
             setSwitchSliderBtnSTATE(switchSliderBtn)
@@ -216,20 +182,9 @@ function Header() {
 
     function handleSwitchLorD() {
         var LorDstatus = JSON.parse(localStorage.getItem("lightMode"))
-        // console.log(
-        //     switchSliderBtnSTATE.current.style.left, 
-        //     switchSliderBtnSTATE.current.style.transform, 
-        //     switchSunSTATE.current.style.scale, 
-        //     switchSunSTATE.current.style.opacity, 
-        //     switchMoonSTATE.current.style.scale, 
-        //     switchMoonSTATE.current.style.opacity
-        // )
-        // if(isLightMode == true) {
         if(LorDstatus == "light") {
             // enable LIGHT mode
             setIsLightMode(false)
-            // add isLightMode & language data to sessionStorage (localStorage?) & make it preventDefault to keep it ? or just no reload page ?
-            // console.log(isLightMode, "DARK mode enabled")
             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // DARK mode default color
             root.style.setProperty('--text-color', 'rgb(205,205,205)'); // DARK mode default color
             root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
@@ -249,9 +204,7 @@ function Header() {
             root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(70,10,250), rgb(200,10,10))'); // DARK mode default color
             root.style.setProperty('--searchbar-bg', 'rgb(50,50,50)'); // DARK mode default color
             root.style.setProperty('--searchbar-color', 'rgb(250,250,250)'); // DARK mode default color
-
             localStorage.setItem("lightMode", JSON.stringify("dark"))
-
             switchSliderBtnSTATE.current.style.left = `100%`
             switchSliderBtnSTATE.current.style.transform = `translateX(-95%)`
             switchSunSTATE.current.style.scale = `1.0`
@@ -259,21 +212,10 @@ function Header() {
             switchMoonSTATE.current.style.scale = `1.8`
             switchMoonSTATE.current.style.opacity = `0.9`
             logoSTATE.current.style.filter = `invert(1)`
-
-            // console.log(
-            //     switchSliderBtnSTATE.current.style.left, 
-            //     switchSliderBtnSTATE.current.style.transform, 
-            //     switchSunSTATE.current.style.scale, 
-            //     switchSunSTATE.current.style.opacity, 
-            //     switchMoonSTATE.current.style.scale, 
-            //     switchMoonSTATE.current.style.opacity
-            // )
         }
-        // else if(isLightMode == false) {
         else if(LorDstatus == "dark") {
             // enable DARK mode
             setIsLightMode(true)
-            // console.log(isLightMode, "LIGHT mode enabled")
             root.style.setProperty('--default-color', 'rgb(155,155,155)'); // LIGHT mode default color
             root.style.setProperty('--text-color', 'rgb(5,5,5)'); // LIGHT mode default color
             root.style.setProperty('--text-negative-color', 'rgb(205,205,205)'); // LIGHT mode default color
@@ -293,9 +235,7 @@ function Header() {
             root.style.setProperty('--body-bg', 'linear-gradient(to right, rgb(250,150,10), rgb(10,250,150))'); // LIGHT mode default color
             root.style.setProperty('--searchbar-bg', 'rgb(250,250,250)'); // LIGHT mode default color
             root.style.setProperty('--searchbar-color', 'rgb(50,50,50)'); // LIGHT mode default color
-
             localStorage.setItem("lightMode", JSON.stringify("light"))
-
             switchSliderBtnSTATE.current.style.left = `0%`
             switchSliderBtnSTATE.current.style.transform = `translateX(0%)`
             switchSunSTATE.current.style.scale = `1.8`
@@ -303,58 +243,13 @@ function Header() {
             switchMoonSTATE.current.style.scale = `1.0`
             switchMoonSTATE.current.style.opacity = `0.5`
             logoSTATE.current.style.filter = `invert(0)`
-
-            // console.log(
-            //     switchSliderBtnSTATE.current.style.left, 
-            //     switchSliderBtnSTATE.current.style.transform, 
-            //     switchSunSTATE.current.style.scale, 
-            //     switchSunSTATE.current.style.opacity, 
-            //     switchMoonSTATE.current.style.scale, 
-            //     switchMoonSTATE.current.style.opacity
-            // )
         }
         else {
-            // console.log("function is not working correctly", isLightMode)
+            // .
         }
     }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
-    // useEffect for call function once
-    // useEffect(
-    //     () => {
-    //         var langSelector = document.querySelector("#language")
-    //         langSelector.addEventListener( "change", () => {
-    //             if(langSelector.value == "English") {
-    //                 setMenuElements(dataSource.english.header.topside)
-    //                 setNavItems(dataSource.english.header.mainside.navbar)
-    //                 setUserDropDown(dataSource.english.header.mainside.userdropdown)
-    //                 setProductsDD1(dataSource.english.header.mainside.productsddown.header1)
-    //                 setProductsDD2(dataSource.english.header.mainside.productsddown.header2)
-    //                 setProductsDD3(dataSource.english.header.mainside.productsddown.header3)
-    //             } else if(langSelector.value == "Türkçe") {
-    //                 setMenuElements(dataSource.turkish.header.topside)
-    //                 setNavItems(dataSource.turkish.header.mainside.navbar)
-    //                 setUserDropDown(dataSource.turkish.header.mainside.userdropdown)
-    //                 setProductsDD1(dataSource.turkish.header.mainside.productsddown.header1)
-    //                 setProductsDD2(dataSource.turkish.header.mainside.productsddown.header2)
-    //                 setProductsDD3(dataSource.turkish.header.mainside.productsddown.header3)
-    //             } else {
-    //                 setMenuElements(dataSource.azerbaijani.header.topside)
-    //                 setNavItems(dataSource.azerbaijani.header.mainside.navbar)
-    //                 setUserDropDown(dataSource.azerbaijani.header.mainside.userdropdown)
-    //                 setProductsDD1(dataSource.azerbaijani.header.mainside.productsddown.header1)
-    //                 setProductsDD2(dataSource.azerbaijani.header.mainside.productsddown.header2)
-    //                 setProductsDD3(dataSource.azerbaijani.header.mainside.productsddown.header3)
-    //             }
-    //         })
-    //     }, []
-    // )
 
     const dispatch = useDispatch()
-
-    // function callBeginningValues() {
-    //     dispatch(setCurrentLanguage(dataSource.english))
-    //     console.log("working +")
-    // }
 
     function handleMainLang() {
         var langSelector = document.querySelector("#language")
@@ -393,38 +288,19 @@ function Header() {
             localStorage.setItem("language", JSON.stringify("turkish"))
         }
     }
-
-    // console log for testing is working or not
-    // console.log(menuElements, navItems)
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
-    // function for userpanel dropdown menu
+    
     function userpanelDDfuncOpen() {
-        // userpanelDropDownSTATE.current.style.display = `flex`
         userpanelDropDownSTATE.current.style.visibility = `visible`
         userpanelDropDownSTATE.current.style.opacity = `1.0`
         userpanelDropDownSTATE.current.style.transform = `translate(-50%, 0%)`
         userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-        // console.log(userpanelDropDownSTATE.current.style.display)
     }
     function userpanelDDfuncClose() {
-        // userpanelDropDownSTATE.current.style.display = `none`
         userpanelDropDownSTATE.current.style.visibility = `hidden`
         userpanelDropDownSTATE.current.style.opacity = `0.0`
         userpanelDropDownSTATE.current.style.transform = `translate(-50%, -100%)`
         userpanelDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-        // console.log(userpanelDropDownSTATE.current.style.display)
     }
-    // function testTopDropdown() {
-    //     if(isHoveredSTATE == "yup") {
-    //         ddarrowSTATE.current.style.rotate = `0deg`
-    //         // document.querySelector("#fa_caret").style.rotate = `0deg`
-    //         console.log("true | 1")
-    //     } else if(isHoveredSTATE == "nope") {
-    //         ddarrowSTATE.current.style.rotate = `180deg`
-    //         // document.querySelector("#fa_caret").style.rotate = `180deg`
-    //         console.log("false | 0")
-    //     }
-    // }
 
     function selectAuthIn() {
         dispatch(setCurrentAuthType("login"))
@@ -439,49 +315,11 @@ function Header() {
         window.location.reload()
     }
 
-    // try {
-    //     fetch("link")
-    // } catch (error) {
-    //     console.log(error)
-    // }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 06 //
-    // returning result
     return (
         <header className={s.header}>
             {/* top side of the header as navbar */}
             <nav className={s.header__list}>
                 {/* menu elements */}
-                {/* {
-                    menuElements.map(
-                        (element, index) => <button key={index} className={s.header__list_buttons} onMouseEnter={ () => {
-                            if(index == 1) {
-                                // topDropDownSTATE.current.style.display = `flex`
-                                topDropDownSTATE.current.style.visibility = `visible`
-                                topDropDownSTATE.current.style.opacity = `1.0`
-                                topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
-                                topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                                // console.log(topDropDownSTATE.current.style.display)
-                                // setIsHoveredSTATE("yup")
-                                // console.log(isHoveredSTATE, "from menu items sector")
-                            }
-                        } } onMouseLeave={ () => {
-                            if(index == 1) {
-                                // topDropDownSTATE.current.style.display = `none`
-                                topDropDownSTATE.current.style.visibility = `hidden`
-                                topDropDownSTATE.current.style.opacity = `0.0`
-                                topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
-                                topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                                // console.log(topDropDownSTATE.current.style.display)
-                                // setIsHoveredSTATE("nope")
-                                // console.log(isHoveredSTATE, "from menu items sector")
-                            }
-                        } }>
-                            {element}
-                            {index == 1 ? (<i className='fa-solid fa-caret-right fa-1x fa-rotate-90' id={s.fa_caret} ref={dd_arrow}></i>) : ""}
-                        </button>
-                    )
-                } */}
-
                 <Link className={s.header__list_buttons} to="/"> {menuElements[0]} </Link>
                 <Link className={s.header__list_buttons} to="/products" onMouseEnter={ () => {
                             topDropDownSTATE.current.style.visibility = `visible`
@@ -497,43 +335,20 @@ function Header() {
                 > {menuElements[1]} <i className='fa-solid fa-caret-right fa-1x fa-rotate-90'></i> </Link>
                 <Link className={s.header__list_buttons} to="/about"> {menuElements[2]} </Link>
                 <Link className={s.header__list_buttons} to="/contact"> {menuElements[3]} </Link>
-
                 {/* dropdown menu for userpanel */}
                 <div className={s.header__list_productsdropdown} ref={topDropDown} onMouseEnter={ () => {
-                    // topDropDownSTATE.current.style.display = `flex`
                     topDropDownSTATE.current.style.visibility = `visible`
                     topDropDownSTATE.current.style.opacity = `1.0`
                     topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
                     topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                    // console.log(topDropDownSTATE.current.style.display)
-                    // setIsHoveredSTATE("yup")
-                    // console.log(isHoveredSTATE, "from dropdown menu sector")
-                    // testTopDropdown()
                 } } onMouseLeave={ () => {
-                    // topDropDownSTATE.current.style.display = `none`
                     topDropDownSTATE.current.style.visibility = `hidden`
                     topDropDownSTATE.current.style.opacity = `0.0`
                     topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
                     topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                    // console.log(topDropDownSTATE.current.style.display)
-                    // setIsHoveredSTATE("nope")
-                    // console.log(isHoveredSTATE, "from dropdown menu sector")
-                    // testTopDropdown()
                 } }>
 
                     <ul className={s.header__list_productsdropdown__columns}>
-                        {/* <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD1[0]} </h4>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[1]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[2]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[3]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[4]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[5]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[6]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[7]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[8]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[9]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[10]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD1[11]} </li> */}
                         { productsDD1.map( (item, index) => {
                             if(index == 0) {
                                 return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
@@ -550,18 +365,6 @@ function Header() {
                     </ul>
 
                     <ul className={s.header__list_productsdropdown__columns}>
-                        {/* <h4 className={s.header__list_productsdropdown__columns_header}> {productsDD2[0]} </h4>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[1]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[2]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[3]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[4]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[5]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[6]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[7]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[8]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[9]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[10]} </li>
-                        <li className={s.header__list_productsdropdown__columns_items}> {productsDD2[11]} </li> */}
                         { productsDD2.map( (item, index) => {
                             if(index == 0) {
                                 return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
@@ -576,20 +379,14 @@ function Header() {
                             }
                         } ) }
                     </ul>
-
-                    {/* <ul className={s.header__list_productsdropdown__columns}>
-                        <li className={s.header__list_productsdropdown__columns_discount}> {productsDD3[0]} </li>
-                    </ul> */}
                 </div>
             </nav>
-
             {/* bottom main side of the header contains logo, searchbar, language bar, userpanel */}
             <div className={s.header__main}>
                 {/* temporary static elements for reference | LOGO */}
                 <div className={s.header__main_logo}>
                     <img src={logo} alt="website-logo" className={s.header__main_logo__content} ref={logo_img} />
                 </div>
-
                 {/* temporary static elements for reference | LANGUAGE BAR */}
                 <div className={s.header__main_langbar}>
                     <i className='fa-solid fa-globe fa-1x' id={s.fa_globe}></i>
@@ -598,11 +395,7 @@ function Header() {
                         <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}> Azərbaycan dili </option>
                         <option value="Türkçe" className={s.header__main_langbar__selector_options}> Türkçe </option>
                     </select>
-                    {/* {document.querySelector("#language").value = "English"} */}
-                    {/* {document.querySelector("#language").value = "Azərbaycan dili"} */}
-                    {/* {document.querySelector("#language").value = "Türkçe"} */}
                 </div>
-
                 {/* temporary static elements for reference | SEARCHBAR */}
                 <div className={s.header__main_search}>
                     <input type="search" placeholder={navItems[0]} className={s.header__main_search__input} id="searcbar" />
@@ -622,7 +415,6 @@ function Header() {
                         <i className='fa-solid fa-magnifying-glass fa-1x fa-bounce' id={s.fa_glass}></i>
                     </Link>
                 </div>
-
                 {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}
                 <div className={s.header__main_switch}>
                     <i className='fa-solid fa-sun fa-1x' id={s.fa_sun} ref={switchSun} ></i>
@@ -632,7 +424,6 @@ function Header() {
                     </button>
                     <i className='fa-solid fa-moon fa-1x' id={s.fa_moon} ref={switchMoon} ></i>
                 </div>
-
                 {/* temporary static elements for reference | USER PANEL */}
                 <div className={s.header__main_userpanel} onMouseEnter={userpanelDDfuncOpen} onMouseLeave={userpanelDDfuncClose}>
                     {userOrGuestSTATE && <>
@@ -647,7 +438,6 @@ function Header() {
                         <p className={s.header__main_userpanel__status}> {navItems[1]} </p>
                         
                     </>}
-
                     {/* dropdown menu for userpanel */}
                     <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
                         {userOrGuestSTATE && <>
@@ -666,6 +456,5 @@ function Header() {
         </header>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 07 //
+
 export default Header
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

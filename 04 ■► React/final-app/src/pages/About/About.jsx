@@ -19,10 +19,6 @@ import carousel_img_5 from './about assets/carousel/img_5.png'
 import carousel_img_6 from './about assets/carousel/img_6.png'
 import carousel_img_7 from './about assets/carousel/img_7.png'
 
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (1) make infinite loop on carousel (1)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (2) add a rotateY with keyframe animation to headers (2)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
-// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■>>>   (3) fix transform + scale issue for carousel (3)   <<<■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ //
-
 function About() {
     const [textSTATE, setTextSTATE] = useState(dataSource.english.about.text)
     const [headersSTATE, setHeadersSTATE] = useState(dataSource.english.about.headers)
@@ -33,28 +29,6 @@ function About() {
     const languageData = useSelector(
         (state) => state.language.currentLanguage.about
     )
-
-    // useEffect(
-    //     () => {
-    //         var languageData = document.querySelector("#language")
-    //         // fake condition for now which will be replaced with input select language data with store (redux tlk)
-    //         // var languageData = "English" // "English", "Azərbaycan dili", "Türkçe"
-    //         // var languageData = "Azərbaycan dili" // "English", "Azərbaycan dili", "Türkçe"
-    //         // var languageData = "Türkçe" // "English", "Azərbaycan dili", "Türkçe"
-    //         languageData.addEventListener("change", () => {
-    //             if (languageData.value == "English") {
-    //                 setTextSTATE(dataSource.english.about.text)
-    //                 setHeadersSTATE(dataSource.english.about.headers) // english azerbaijani turkish
-    //             } else if (languageData.value == "Azərbaycan dili") {
-    //                 setTextSTATE(dataSource.azerbaijani.about.text)
-    //                 setHeadersSTATE(dataSource.azerbaijani.about.headers)
-    //             } else if (languageData.value == "Türkçe") {
-    //                 setTextSTATE(dataSource.turkish.about.text)
-    //                 setHeadersSTATE(dataSource.turkish.about.headers)
-    //             }
-    //         })
-    //     }, []
-    // )
 
     function carouselGallery() {
         const carouselImages = Array.from(document.querySelectorAll(`.${s.about__container_carousel__image}`))

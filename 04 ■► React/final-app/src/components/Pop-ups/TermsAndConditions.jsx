@@ -1,52 +1,13 @@
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
-// SECTOR 01:  importing elements
-// SECTOR 02:  variables, props and states
-// SECTOR 03:  ...
-// SECTOR 04:  ...
-// SECTOR 05:  ...
-// SECTOR 06:  return XML side
-// SECTOR 07:  export default function
-// ????????????????????        EDIT !!!!!!!!!!!!!!!!!!!!!!!!!
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
 // imported elements
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { useSelector } from 'react-redux'
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
-function TermsAndConditions() {
-    // ...
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // const [tcTitleSTATE, setTcTitleSTATE] = useState(dataSource.english.popup_termsandconditions.title)
-    // const [tcHeadersSTATE, setTcHeadersSTATE] = useState(dataSource.english.popup_termsandconditions.headers)
-    // const [tcContentsSTATE, setTcContentsSTATE] = useState(dataSource.english.popup_termsandconditions.contents)
 
+function TermsAndConditions() {
     const languageData = useSelector((state) => state.language.currentLanguage.popup_termsandconditions)
 
-    // useEffect(
-    //     () => {
-    //         return () => {
-    //             var languageData = document.querySelector("#langAuth")
-    //             languageData.addEventListener("change", () => {
-    //                 if (languageData.value == "English") {
-    //                     setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
-    //                     setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
-    //                     setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
-    //                 } else if (languageData.value == "Azərbaycan dili") {
-    //                     setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
-    //                     setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
-    //                     setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
-    //                 } else if (languageData.value == "Türkçe") {
-    //                     setTcTitleSTATE(dataSource.english.popup_termsandconditions.title)
-    //                     setTcHeadersSTATE(dataSource.english.popup_termsandconditions.headers)
-    //                     setTcContentsSTATE(dataSource.english.popup_termsandconditions.contents)
-    //                 }
-    //             })
-    //         }
-    //     }, []
-    // )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <>
             <div className={s.termsandconditions__overlay}></div>
@@ -73,6 +34,5 @@ function TermsAndConditions() {
         </>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+
 export default TermsAndConditions
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

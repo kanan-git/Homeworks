@@ -39,8 +39,6 @@ function Homepage() {
     const clothImages = [cloth_1, cloth_2, cloth_3, cloth_4, cloth_5]
     const brandImages = [brands_1, brands_2, brands_3, brands_4, brands_5, brands_6, brands_7, brands_8, brands_9, brands_10, brands_11, brands_12]
     
-    // const [discntCards, setDiscntCards] = useState(dataSource.english.homepage.discount_cards)
-
     const languageData = useSelector(
         (state) => state.language.currentLanguage.homepage
     )

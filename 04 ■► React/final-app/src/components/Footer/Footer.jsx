@@ -1,10 +1,3 @@
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
-// SECTOR 01:  importing elements
-// SECTOR 02:  variables, props and states
-// SECTOR 03:  changing language
-// SECTOR 04:  return XML side
-// SECTOR 05:  export default function
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
@@ -14,14 +7,8 @@ import PrivacyPolicies from "../Pop-ups/PrivacyPolicies"
 import TermsAndConditions from "../Pop-ups/TermsAndConditions"
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
+
 function Footer() {
-    // const [footerCol1data, setFooterCol1data] = useState(dataSource.english.footer.about)
-    // const [footerCol2data, setFooterCol2data] = useState(dataSource.english.footer.profile)
-    // const [footerCol3data, setFooterCol3data] = useState(dataSource.english.footer.links)
-    // const [footerCol4data, setFooterCol4data] = useState(dataSource.english.footer.followus)
-    // const [footerBottom, setFooterBottom] = useState(dataSource.english.footer.bottomside)
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     const [isUserSTATE, setIsUserSTATE] = useState(false)
     const [termsSTATE, setTermsSTATE] = useState(false)
     const [privacySTATE, setPrivacySTATE] = useState(false)
@@ -43,59 +30,11 @@ function Footer() {
             setIsUserSTATE(JSON.parse(localStorage.getItem("isLogged")))
         }, []
     )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
+
     const languageData = useSelector(
         (state) => state.language.currentLanguage
     )
 
-    // console.log("from Footer.jsx", languageData.breadcrumb)
-
-    // console.log(languageData.footer.about[0])
-    // useEffect(
-    //     () => {
-    //         var langSelector = document.querySelector("#language")
-    //         langSelector.addEventListener( "change", () => {
-    //             if(langSelector.value == "English") {
-    //                 setFooterCol1data(dataSource.english.footer.about)
-    //                 setFooterCol2data(dataSource.english.footer.profile)
-    //                 setFooterCol3data(dataSource.english.footer.links)
-    //                 setFooterCol4data(dataSource.english.footer.followus)
-    //                 setFooterBottom(dataSource.english.footer.bottomside)
-    //             } else if(langSelector.value == "Türkçe") {
-    //                 setFooterCol1data(dataSource.turkish.footer.about)
-    //                 setFooterCol2data(dataSource.turkish.footer.profile)
-    //                 setFooterCol3data(dataSource.turkish.footer.links)
-    //                 setFooterCol4data(dataSource.turkish.footer.followus)
-    //                 setFooterBottom(dataSource.turkish.footer.bottomside)
-    //             } else {
-    //                 setFooterCol1data(dataSource.azerbaijani.footer.about)
-    //                 setFooterCol2data(dataSource.azerbaijani.footer.profile)
-    //                 setFooterCol3data(dataSource.azerbaijani.footer.links)
-    //                 setFooterCol4data(dataSource.azerbaijani.footer.followus)
-    //                 setFooterBottom(dataSource.azerbaijani.footer.bottomside)
-    //             }
-    //         })
-    //     }, []
-    // )
-    // languageData.footer.about // setFooterCol1data
-    // languageData.footer.profile // setFooterCol2data
-    // languageData.footer.links // setFooterCol3data
-    // languageData.footer.followus // setFooterCol4data
-    // languageData.footer.bottomside // setFooterBottom
-// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    // USE THEESE IN ALL COMPONENT AND PAGES WHICH THEY HAVE A BRIDGE, WHITH CONDITIONS, OPEN AND CLOSE FUNCTIONS
-
-    // import FailedMessage from './components/Pop-ups/FailedMessage'
-    // import SuccessfullySigned from './components/Pop-ups/SuccessfullySigned'
-    // import TermsAndConditions from './components/Pop-ups/TermsAndConditions'
-    // import PrivacyPolicies from './components/Pop-ups/PrivacyPolicies'
-    // import Loading from './components/Pop-ups/Loading'
-    // // {/* <Loading /> */}
-    // // {/* <SuccessfullySigned /> */}
-    // // {/* <FailedMessage /> */}
-    // // {/* <PrivacyPolicies /> */}
-    // // {/* <TermsAndConditions /> */}
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <footer className={s.footer}>
             {/* top side columns of the footer */}
@@ -171,6 +110,5 @@ function Footer() {
         </footer>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+
 export default Footer
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

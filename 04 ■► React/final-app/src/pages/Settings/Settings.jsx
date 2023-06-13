@@ -1,23 +1,10 @@
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ STARTING LINE //
-// SECTOR 01:  importing elements
-// SECTOR 02:  variables, props and states
-// SECTOR 03:  ...
-// SECTOR 04:  ...
-// SECTOR 05:  ...
-// SECTOR 06:  return XML side
-// SECTOR 07:  export default function
-// ????????????????????        EDIT !!!!!!!!!!!!!!!!!!!!!!!!!
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 01 //
-// imported elements
 import React from 'react'
 import s from './index.module.css'
 import {dataSource} from '../../data/data-source'
 import {useState, useEffect, useRef} from 'react'
 import { useSelector } from 'react-redux'
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 02 //
+
 function Settings() {
-    // ...
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
     useEffect(
         () => {
             return () => {
@@ -131,40 +118,9 @@ function Settings() {
             }
         }, []
     )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
-    // const [buttonsSTATE, setButtonsSTATE] = useState(dataSource.english.settings.buttons)
-    // const [titlesSTATE, setTitlesSTATE] = useState(dataSource.english.settings.titles)
-    // const [headersSTATE, setHeadersSTATE] = useState(dataSource.english.settings.headers)
-    // const [textSTATE, setTextSTATE] = useState(dataSource.english.settings.text_contents)
 
     const languageData = useSelector((state) => state.language.currentLanguage.settings)
 
-    // useEffect(
-    //     () => {
-    //         return () => {
-    //             var languageData = document.querySelector("#language")
-    //             languageData.addEventListener("change", () => {
-    //                 if (languageData.value == "English") {
-    //                     setButtonsSTATE(dataSource.english.settings.buttons)
-    //                     setTitlesSTATE(dataSource.english.settings.titles)
-    //                     setHeadersSTATE(dataSource.english.settings.headers)
-    //                     setTextSTATE(dataSource.english.settings.text_contents)
-    //                 } else if (languageData.value == "Azərbaycan dili") {
-    //                     setButtonsSTATE(dataSource.azerbaijani.settings.buttons)
-    //                     setTitlesSTATE(dataSource.azerbaijani.settings.titles)
-    //                     setHeadersSTATE(dataSource.azerbaijani.settings.headers)
-    //                     setTextSTATE(dataSource.azerbaijani.settings.text_contents)
-    //                 } else if (languageData.value == "Türkçe") {
-    //                     setButtonsSTATE(dataSource.turkish.settings.buttons)
-    //                     setTitlesSTATE(dataSource.turkish.settings.titles)
-    //                     setHeadersSTATE(dataSource.turkish.settings.headers)
-    //                     setTextSTATE(dataSource.turkish.settings.text_contents)
-    //                 }
-    //             })
-    //         }
-    //     }, []
-    // )
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 04 //
     return (
         <main className={s.settings}>
             <ul className={s.settings__menu}>
@@ -237,21 +193,9 @@ function Settings() {
                     <h3 className={s.settings__container_section__headers}> {languageData.headers[18]} </h3>
                     {languageData.text_contents[18]}
                 </div>
-                
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
             </div>
         </main>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+
 export default Settings
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //
