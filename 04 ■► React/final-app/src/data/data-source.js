@@ -40,7 +40,7 @@ export const dataSource = {
                 "Sign in", 
                 "Favorites", 
                 "My Cart", 
-                "My Orders"
+                "Settings"
             ],
             links: [
                 "Links", 
@@ -95,7 +95,14 @@ export const dataSource = {
                 "At ShopNet, we understand the convenience and simplicity of online shopping, and we are committed to providing our customers with a seamless and enjoyable shopping experience. Our website is easy to navigate, and our product listings are detailed and informative, providing you with all the information you need to make an informed purchase decision.",
                 "Our product range includes everything from fashion and beauty products to electronics, home appliances, and more, all sourced from trusted manufacturers and suppliers. We also offer fast and reliable shipping to anywhere in Azerbaijan, ensuring that you receive your order quickly and hassle-free.", 
                 "At ShopNet, we believe that customer satisfaction is our top priority, and we are dedicated to providing you with excellent customer service and support. If you have any questions or concerns, our friendly and knowledgeable customer service team is available to assist you.", 
-                "Thank you for choosing ShopNet as your preferred online shopping destination. We look forward to serving you and making your shopping experience a great one!"
+                "Thank you for choosing ShopNet as your preferred online shopping destination. We look forward to serving you and making your shopping experience a great one!",
+                "At ShopNet, we are constantly expanding our product range to meet the evolving needs and desires of our customers. Whether you're searching for the latest fashion trends, high-performance electronics, or innovative home solutions, we have a wide selection of products to cater to your preferences.",
+                "Our fashion collection features a diverse range of styles, from casual wear to formal attire, ensuring that you stay on top of the latest fashion trends. Browse through our extensive catalog of clothing, shoes, and accessories to find the perfect ensemble for any occasion.",
+                "In the electronics category, we offer a comprehensive range of devices to enhance your digital lifestyle. From smartphones and tablets to laptops and gaming consoles, our collection showcases the most sought-after brands and cutting-edge technologies. Stay connected and enjoy immersive entertainment experiences with our top-of-the-line electronics.",
+                "Creating a comfortable and stylish living space is made easy with our home and living section. Discover a variety of furniture, decor, and home appliances that will transform your house into a personalized haven. Whether you're looking for functional kitchen appliances, cozy bedding, or chic home decor, ShopNet has you covered.",
+                "We understand the importance of providing reliable customer service and support. Our dedicated team is available to assist you with any inquiries or concerns you may have. We strive to ensure that every interaction with our customer service representatives is prompt, courteous, and helpful. Your satisfaction is our priority.",
+                "ShopNet is proud to offer fast and reliable shipping throughout Azerbaijan. We partner with trusted delivery services to ensure that your orders reach you in a timely manner. You can track your shipments and receive updates along the way, giving you peace of mind knowing that your purchases are in safe hands.",
+                "Thank you for choosing ShopNet as your preferred online shopping destination. We are committed to providing you with a delightful shopping experience and look forward to serving you with excellence. Start exploring our extensive product range today and discover the joy of effortless online shopping at ShopNet!"
             ], 
             headers: [
                 "Welcome to ShopNet", 
@@ -110,7 +117,11 @@ export const dataSource = {
                 "Address: 28 May, Baku, Azerbaijan", 
                 "Phone: (+994) 50 123 45 67", 
                 "Email: sales@shopnet.az", 
-                "Our dedicated customer service team is available to assist you Monday through Friday, 9:00 AM to 5:00 PM. We strive to respond to all inquiries within 24 hours."
+                "Our dedicated customer service team is available to assist you Monday through Friday, 9:00 AM to 5:00 PM. We strive to respond to all inquiries within 24 hours.",
+                "In addition to our contact information, you can also reach out to us through our social media channels. Follow us on Facebook, Instagram, and Twitter to stay updated on the latest promotions, new arrivals, and exciting offers. Feel free to send us a direct message or leave a comment, and our social media team will be delighted to assist you.",
+                "We value your feedback and suggestions, as they help us improve our services and provide you with an even better shopping experience. If you have any recommendations or ideas, please don't hesitate to share them with us. We appreciate your input and are constantly looking for ways to enhance our offerings to meet your needs.",
+                "At ShopNet, your satisfaction is our priority, and we are committed to ensuring that you have a seamless and enjoyable shopping experience. Whether you have a question about a product, need assistance with an order, or simply want to provide feedback, our customer service team is here to help. We genuinely appreciate your business and look forward to serving you with excellence.",
+                "Don't hesitate to contact us; we are here to assist you every step of the way."
             ], 
             headers: [
                 "Contact Information", 
@@ -340,7 +351,7 @@ export const dataSource = {
                 "Daxil ol", 
                 "Favorilər", 
                 "Səbət", 
-                "Sifarişlərim"
+                "Parametrlər"
             ],
             links: [
                 "Faydalı linklər", 
@@ -395,7 +406,14 @@ export const dataSource = {
                 "ShopNet-də biz onlayn alış-verişin rahatlığını və sadəliyini başa düşürük və müştərilərimizə qüsursuz və zövqlü alış-veriş təcrübəsi təqdim etməyə sadiqik. Veb saytımızda naviqasiya etmək asandır və məhsul siyahılarımız təfərrüatlı və məlumatlıdır və məlumatlı satınalma qərarı vermək üçün sizə lazım olan bütün məlumatları təqdim edir.",
                 "Bizim məhsul çeşidimizə dəb və gözəllik məhsullarından tutmuş elektronika, məişət texnikası və s. kimi hər şey daxildir, bunların hamısı etibarlı istehsalçılardan və təchizatçılardan alınır. Biz həmçinin Azərbaycanın istənilən yerinə sürətli və etibarlı çatdırılma təklif edirik ki, sifarişinizi tez və əngəlsiz qəbul edəsiniz.", 
                 "ShopNet-də biz müştəri məmnuniyyətinin əsas prioritetimiz olduğuna inanırıq və biz sizə mükəmməl müştəri xidməti və dəstəyi təqdim etməyə çalışırıq. Hər hansı bir sualınız və ya narahatlığınız varsa, mehriban və məlumatlı müştəri xidməti komandamız sizə kömək etmək üçün hazırdır.", 
-                "Seçdiyiniz onlayn alış-veriş məkanı kimi ShopNet-i seçdiyiniz üçün təşəkkür edirik. Sizə xidmət göstərməyi və alış-veriş təcrübənizi möhtəşəm hala gətirməyi səbirsizliklə gözləyirik!"
+                "Seçdiyiniz onlayn alış-veriş məkanı kimi ShopNet-i seçdiyiniz üçün təşəkkür edirik. Sizə xidmət göstərməyi və alış-veriş təcrübənizi möhtəşəm hala gətirməyi səbirsizliklə gözləyirik!",
+                "ShopNet olaraq, müştərilərimizin dəyişən ehtiyaclarını və arzularını qarşılamak üçün məhsul çeşidlərimizi sürekli olaraq genişləndiririk. Ən son moda trendlərindən, yüksək performanslı elektronika mallarına və yenilikçi ev həllərinə olan tələblərinizə cavab verən geniş bir məhsul çeşidimiz mövcuddur.",
+                "Moda kolleksiyamız, günlük geyimdən şərq kostyumlarına qədər müxtəlif üslublarda olan məhsullarla doludur. Hər bir tədbir üçün mükəmməl kombinlər tapmaq üçün geyim, ayaqqabı və aksesuarlarımızın yer aldığı geniş kataloqlarımızı gözələndirə bilərsiniz.",
+                "Elektronika kateqoriyasında, digər elektronika cihazları ilə birgə digər digər smartfonlardan planşetlərə, laptoplardan oyun konsollarına kimi bir çox istifadəçinin tələblərinə cavab verən çeşitli cihazları təklif edirik. Ən yüksək səviyyədə olan elektronika məhsullarımız ilə əlaqəni qoruyun və sürükleyici əyləncə təcrübələrinin keyfini çıxarın.",
+                "Ev və yaşayış bölməmizdə rahat və şık bir yaşayış mühiti yaratmaq asandır. Ev mətbəxinizi funksional mətbəx avadanlıqları, rahat yataq dəsti və şəhərli ev dekorasyonu kimi bir çox ürün seçimi ilə dəkorasiya edə bilərsiniz. ShopNet, funksional mətbəx avadanlıqları, rahat yataq dəsti və şəhərli ev dekorasyonu kimi bir çox ürün seçimi ilə evinizə cavab verir.",
+                "Güvənəlayiq müştəri xidməti və dəstək təmin etmənin əhəmiyyətini başa düşürük. Bizim dədiyimiz bir ekip her hansı sual və endişənizdə size yardım etmək üçün həmişə hazırdır. Müştəri xidməti nümayəndələrimizlə olan hər bir əlaqə tez, hörmətli və yardımsevər şəkildə baş verməlidir. Sizin razılığınız bizim üstünlüyümüzdür.",
+                "ShopNet olaraq, Azərbaycan üzrə sürətli və etibarlı çatdırma xidməti təqdim etməkdən qürur duyuruz. Sifarişlərinizin vaxtında size çatmasını təmin etmək üçün etibarlı çatdırma xidmətləri ilə tərəfdaşlıq edirik. Göndərişlərinizi izləyə və yol boyu yeniliklər ala bilərsiniz, beləliklə alış-verişlərinizin təhlükəsiz olduğunu bilərək həmirəhmətliklə rahat hiss edə bilərsiniz.",
+                "Səhifədəki seçdiyiniz onlayn alış-veriş mərkəzi kimi ShopNet'i seçdiyiniz üçün təşəkkür edirik. Sizi məmnun etmək üçün səy göstərərək şad alış-veriş təcrübəsi təklif etməyi öhdəlik edirik. Geniş məhsul çeşidlərimizi araşdırmaya başlayın və ShopNet'də asan və zövqlü onlayn alış-verişin tadını çıxarın!"
             ], 
             headers: [
                 "ShopNet-ə xoş gəlmisiniz", 
@@ -410,7 +428,11 @@ export const dataSource = {
                 "Ünvan: 28 May, Bakı, Azərbaycan", 
                 "Telefon: (+994) 50 123 45 67", 
                 "Email: sales@shopnet.az", 
-                "Xüsusi müştəri xidmətləri komandamız bazar ertəsindən cümə gününə qədər, səhər saat 9:00-dan axşam 17:00-dək sizə kömək etmək üçün hazırdır. Biz bütün sorğulara 24 saat ərzində cavab verməyə çalışırıq."
+                "Xüsusi müştəri xidmətləri komandamız bazar ertəsindən cümə gününə qədər, səhər saat 9:00-dan axşam 17:00-dək sizə kömək etmək üçün hazırdır. Biz bütün sorğulara 24 saat ərzində cavab verməyə çalışırıq.",
+                "Əlaqə məlumatlarımızın yanı sıra, bizə sosial media kanallarımız vasitəsilə də əlaqə yarada bilərsiniz. Yeni kampaniyaları, son gəlişmələri və maraqlı təklifləri izləmək üçün Facebook, Instagram və Twitter səhifələrimizi izləyin. Bizə doğrudan mesaj göndərmək və ya şərh yazmaqdan çəkinməyin, sosial media komandamız sizə kömək etməkdən məmnun olacaq.",
+                "Sizin fikirlərinizə və tövsiyələrinizə dəyər veririk, çünki bu, xidmətlərimizi yaxşılaşdırmaq və sizə daha yaxşı bir alış-veriş təcrübəsi təmin etmək üçün bize kömək edir. Tövsiyələrinizi və fikirlərinizi bizimlə bölüşməkdən çəkinməyin. Görüşlərinizi qiymətləndirir və tələbatlarınıza cavab verən təkliflərimizi inkişaf etdirmək üçün sürekli yollar axtarıram.                ",
+                "ShopNet olaraq, sizin memnuniyyətiniz bizim üstünlüyümüzdür və sizə səmərəli və sevincləndirici bir alış-veriş təcrübəsi təmin etmək üçün özümüzü həsr edirik. Məhsullarla bağlı sualınız olsa, sifarişlərdə kömək lazım gəlsə, ya sadəcə geri bildirim vermək istəsəniz, müştəri xidməti komandamız yardım etmək üçün buradadır. Bizə olan marağınızı təşəkkür edir və sizə üstün xidmət göstərməyə dəvət edirik.                ",
+                "Hər addımda sizə kömək etmək üçün çəkinməyin; biz buradayıq."
             ], 
             headers: [
                 "Əlaqə məlumatı", 
@@ -637,7 +659,7 @@ export const dataSource = {
                 "Giriş", 
                 "Favoriler", 
                 "Sepetim", 
-                "Siparişlerim"
+                "Ayarlar"
             ],
             links: [
                 "Bağlantılar", 
@@ -692,7 +714,14 @@ export const dataSource = {
                 "ShopNet'te çevrimiçi alışverişin kolaylığını ve basitliğini anlıyoruz ve kendimizi müşterilerimize sorunsuz ve keyifli bir alışveriş deneyimi sunmaya adadık. Web sitemizde gezinmek kolaydır ve ürün listelerimiz ayrıntılı ve bilgilendirici olup, bilinçli bir satın alma kararı vermeniz için ihtiyacınız olan tüm bilgileri sağlar.",
                 "Ürün yelpazemiz, tamamı güvenilir üreticilerden ve tedarikçilerden temin edilen moda ve güzellik ürünlerinden elektronik cihazlara, ev aletlerine ve daha fazlasına kadar her şeyi içerir. Ayrıca siparişinizi hızlı ve sorunsuz bir şekilde almanızı sağlamak için Azerbaycan'ın her yerine hızlı ve güvenilir nakliye hizmeti sunuyoruz.", 
                 "ShopNet'te müşteri memnuniyetinin en büyük önceliğimiz olduğuna inanıyoruz ve kendimizi size mükemmel müşteri hizmeti ve desteği sunmaya adadık. Herhangi bir sorunuz veya endişeniz varsa, güler yüzlü ve bilgili müşteri hizmetleri ekibimiz size yardımcı olmaya hazırdır.", 
-                "Tercih ettiğiniz çevrimiçi alışveriş yeri olarak ShopNet'i seçtiğiniz için teşekkür ederiz. Size hizmet etmeyi ve alışveriş deneyiminizi harika bir hale getirmeyi dört gözle bekliyoruz!"
+                "Tercih ettiğiniz çevrimiçi alışveriş yeri olarak ShopNet'i seçtiğiniz için teşekkür ederiz. Size hizmet etmeyi ve alışveriş deneyiminizi harika bir hale getirmeyi dört gözle bekliyoruz!",
+                "ShopNet olarak, müşterilerimizin değişen ihtiyaçları ve beklentilerini karşılamak için ürün yelpazemizi sürekli genişletiyoruz. En son moda trendlerini, yüksek performanslı elektronik ürünleri veya yenilikçi ev çözümlerini arıyorsanız, tercihlerinize uygun geniş bir ürün seçeneğimiz bulunmaktadır.",
+                "Moda koleksiyonumuz, günlük giyimden şık davet kıyafetlerine kadar çeşitli tarzlara sahip ürünlerle doludur. Herhangi bir davet için mükemmel bir kombin bulmak için giyim, ayakkabı ve aksesuarlarımızın yer aldığı geniş katalogumuzu gözden geçirebilirsiniz.",
+                "Elektronik kategorisinde, dijital yaşam tarzınızı geliştirecek çeşitli cihazlar sunuyoruz. Akıllı telefonlardan tabletlere, dizüstü bilgisayarlardan oyun konsollarına kadar koleksiyonumuz, en çok aranan markaları ve en son teknolojileri sergilemektedir. En üst düzey elektronik ürünlerimizle bağlantıda kalın ve sürükleyici eğlence deneyimlerinin keyfini çıkarın.",
+                "Ev ve yaşam bölümümüzde, rahat ve şık bir yaşam alanı yaratmak kolaylaşıyor. Mobilyalar, dekorasyon ürünleri ve ev aletlerinin çeşitliliğini keşfederek evinizi kişiselleştirilmiş bir sığınağa dönüştürebilirsiniz. Fonksiyonel mutfak aletleri, rahatlatıcı yatak takımları veya şık ev dekorasyon ürünleri arıyorsanız, ShopNet her ihtiyacınıza cevap vermektedir.",
+                "Güvenilir müşteri hizmeti ve destek sağlamanın önemini biliyoruz. Uzman ekibimiz, herhangi bir soru veya endişenizde size yardımcı olmak için her zaman hazırdır. Müşteri hizmeti temsilcilerimizle olan her etkileşimimizin hızlı, nazik ve yardımcı olabilecek şekilde gerçekleşmesini sağlamak için çaba gösteriyoruz. Memnuniyetiniz bizim önceliğimizdir.",
+                "ShopNet olarak, Azerbaycan genelinde hızlı ve güvenilir bir şekilde teslimat yapmaktan gurur duyuyoruz. Güvenilir teslimat hizmetleriyle ortaklık kurarak siparişlerinizin zamanında size ulaşmasını sağlıyoruz. Gönderilerinizi takip edebilir ve yol boyunca güncellemeler alabilirsiniz, böylece satın alımlarınızın güvende olduğunu bilerek huzur içinde olabilirsiniz.",
+                "Tercih ettiğiniz online alışveriş noktası olarak ShopNet'i seçtiğiniz için teşekkür ederiz. Sizi memnun etmek için çaba göstererek keyifli bir alışveriş deneyimi sunmayı taahhüt ediyoruz. Geniş ürün yelpazemizi keşfetmeye başlayın ve ShopNet'te kolay ve keyifli online alışverişin tadını çıkarın!"
             ], 
             headers: [
                 "ShopNet'e hoş geldiniz", 
@@ -707,7 +736,11 @@ export const dataSource = {
                 "Adres: 28 Mayıs, Bakü, Azerbaycan", 
                 "Telefon: (+994) 50 123 45 67", 
                 "E-posta: sales@shopnet.az", 
-                "Özel müşteri hizmetleri ekibimiz, Pazartesi'den Cuma'ya 09:00 - 17:00 saatleri arasında size yardımcı olmaya hazırdır. Tüm sorulara 24 saat içinde yanıt vermeye çalışıyoruz."
+                "Özel müşteri hizmetleri ekibimiz, Pazartesi'den Cuma'ya 09:00 - 17:00 saatleri arasında size yardımcı olmaya hazırdır. Tüm sorulara 24 saat içinde yanıt vermeye çalışıyoruz.",
+                "İletişim bilgilerimize ek olarak, bizi sosyal medya kanallarımızdan da takip edebilirsiniz. Facebook, Instagram ve Twitter'da bizi takip ederek en güncel promosyonlarımızı, yeni ürünlerimizi ve heyecan verici tekliflerimizi takip edebilirsiniz. Bize doğrudan mesaj göndermek veya yorum yapmak konusunda özgürsünüz ve sosyal medya ekibimiz size yardımcı olmaktan mutluluk duyacaktır.",
+                "Geri bildiriminizi ve önerilerinizi değerli buluyoruz, çünkü bize hizmetlerimizi geliştirmek ve size daha iyi bir alışveriş deneyimi sunmak konusunda yardımcı olurlar. Herhangi bir öneriniz veya fikriniz varsa, lütfen bizimle paylaşmaktan çekinmeyin. Görüşleriniz bizim için önemlidir ve ihtiyaçlarınızı karşılamak için tekliflerimizi sürekli olarak geliştirmek için çaba sarf ediyoruz.",
+                "ShopNet olarak, memnuniyetiniz bizim önceliğimizdir ve sorunsuz ve keyifli bir alışveriş deneyimine sahip olmanızı sağlamak için taahhütte bulunuyoruz. Bir ürünle ilgili sorunuz mu var, bir siparişle ilgili yardıma mı ihtiyacınız var yoksa sadece geri bildirimde bulunmak mı istiyorsunuz, müşteri hizmetleri ekibimiz yardımcı olmak için burada. İşinize gerçekten değer veriyoruz ve mükemmellikle hizmet etmek için sabırsızlıkla bekliyoruz.",
+                "Bize ulaşmaktan çekinmeyin; her adımda size yardımcı olmak için buradayız."
             ], 
             headers: [
                 "İletişim bilgileri", 

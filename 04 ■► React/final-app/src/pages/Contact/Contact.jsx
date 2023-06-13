@@ -74,6 +74,14 @@ function Contact() {
                     { languageData.text[3] }
                     <br /> <br />
                     { languageData.text[4] }
+                    <br /> <br />
+                    { languageData.text[5] }
+                    <br /> <br />
+                    { languageData.text[6] }
+                    <br /> <br />
+                    { languageData.text[7] }
+                    <br /> <br />
+                    { languageData.text[8] }
                 </div>
                 <h3 className={s.contact__container_headers}> { languageData.headers[1] } </h3>
                 <div className={s.contact__container_map} ref={temporaryMapWindow} onMouseEnter={tempFunction}>

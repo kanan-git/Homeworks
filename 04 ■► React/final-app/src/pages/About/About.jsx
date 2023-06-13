@@ -128,6 +128,10 @@ function About() {
                     { languageData.text[0] }
                     <br /> <br />
                     { languageData.text[1] }
+                    <br /> <br />
+                    { languageData.text[5] }
+                    <br /> <br />
+                    { languageData.text[6] }
                 </div>
 
                 <h3 className={s.about__container_headers}> { languageData.headers[1] } </h3>
@@ -183,6 +187,16 @@ function About() {
                     { languageData.text[3] }
                     <br /> <br />
                     { languageData.text[4] }
+                    <br /> <br />
+                    { languageData.text[7] }
+                    <br /> <br />
+                    { languageData.text[8] }
+                    <br /> <br />
+                    { languageData.text[9] }
+                    <br /> <br />
+                    { languageData.text[10] }
+                    <br /> <br />
+                    { languageData.text[11] }
                 </div>
 
                 <h3 className={s.about__container_headers}> { languageData.headers[3] } </h3>

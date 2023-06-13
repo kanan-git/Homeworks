@@ -671,7 +671,7 @@ function Homepage() {
                         () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[0]))}
                     }>
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={cloth_1} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_5} alt={"cloth-01"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[0]} </p>
                     </Link>
@@ -703,7 +703,7 @@ function Homepage() {
                         () => {dispatch(setCurrentSearchValue(dataSource.english.homepage.clothing_cards[4]))}
                     }>
                         <div className={s.homepage__sections_container__cards_image__content}>
-                            <img src={cloth_5} alt={"cloth-05"} className={s.homepage__sections_container__cards_image__content} />
+                            <img src={cloth_1} alt={"cloth-05"} className={s.homepage__sections_container__cards_image__content} />
                         </div>
                         <p className={s.homepage__sections_container__cards_title}> {languageData.clothing_cards[4]} </p>
                     </Link>

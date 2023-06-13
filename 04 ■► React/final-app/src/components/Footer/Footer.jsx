@@ -22,6 +22,7 @@ function Footer() {
     // const [footerCol4data, setFooterCol4data] = useState(dataSource.english.footer.followus)
     // const [footerBottom, setFooterBottom] = useState(dataSource.english.footer.bottomside)
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR ?? //
+    const [isUserSTATE, setIsUserSTATE] = useState(false)
     const [termsSTATE, setTermsSTATE] = useState(false)
     const [privacySTATE, setPrivacySTATE] = useState(false)
     function handleOpenTerms() {
@@ -36,6 +37,12 @@ function Footer() {
     function handleClosePrivacy() {
         setPrivacySTATE(false)
     }
+
+    useEffect(
+        () => {
+            setIsUserSTATE(JSON.parse(localStorage.getItem("isLogged")))
+        }, []
+    )
 // ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 03 //
     const languageData = useSelector(
         (state) => state.language.currentLanguage
@@ -102,13 +109,24 @@ function Footer() {
                     <li className={s.footer__top_column__items_static}> <i className='fa-solid fa-envelope fa-1x' id={s.fa_envelope}></i> {languageData.footer.about[4]} </li>
                 </ul>
 
-                <ul className={s.footer__top_column}>
-                    <h3 className={s.footer__top_column__header}> {languageData.footer.profile[0]} </h3>
-                    <Link className={s.footer__top_column__items} to="/authentication"> {languageData.footer.profile[1]} </Link>
-                    <Link className={s.footer__top_column__items} to="/my_favorites"> {languageData.footer.profile[2]} </Link>
-                    <Link className={s.footer__top_column__items} to="/my_cart"> {languageData.footer.profile[3]} </Link>
-                    {/* <li className={s.footer__top_column__items}> {footerCol2data[4]} </li> */}
-                </ul>
+                {isUserSTATE && (
+                    <ul className={s.footer__top_column}>
+                        <h3 className={s.footer__top_column__header}> {languageData.footer.profile[0]} </h3>
+                        {/* <Link className={s.footer__top_column__items} to="/authentication_shopnet"> {languageData.footer.profile[1]} </Link> */}
+                        <Link className={s.footer__top_column__items} to="/my_favorites"> {languageData.footer.profile[2]} </Link>
+                        <Link className={s.footer__top_column__items} to="/my_cart"> {languageData.footer.profile[3]} </Link>
+                        <Link className={s.footer__top_column__items} to="/user_settings"> {languageData.footer.profile[4]} </Link>
+                    </ul>
+                )}
+                {!isUserSTATE && (
+                    <ul className={s.footer__top_column}>
+                        <h3 className={s.footer__top_column__header}> {languageData.footer.profile[0]} </h3>
+                        <Link className={s.footer__top_column__items} to="/authentication_shopnet"> {languageData.footer.profile[1]} </Link>
+                        <Link className={s.footer__top_column__items} to="/authentication_shopnet"> {languageData.footer.profile[2]} </Link>
+                        <Link className={s.footer__top_column__items} to="/authentication_shopnet"> {languageData.footer.profile[3]} </Link>
+                        <Link className={s.footer__top_column__items} to="/authentication_shopnet"> {languageData.footer.profile[4]} </Link>
+                    </ul>
+                )}
 
                 <ul className={s.footer__top_column}>
                     <h3 className={s.footer__top_column__header}> {languageData.footer.links[0]} </h3>
@@ -138,10 +156,10 @@ function Footer() {
                 <p className={s.footer__bottom_text}> {languageData.footer.bottomside[0]} </p>
                 <span className={s.footer__bottom_group}>
                     <p className={s.footer__bottom_group__items} onClick={handleOpenTerms}> {languageData.footer.bottomside[1]} </p>   {termsSTATE && (
-                        <div className={s.overlay} onClick={handleCloseTerms}> <TermsAndConditions /> </div>
+                        <div className={s.overlay} onDoubleClick={handleCloseTerms}> <TermsAndConditions /> </div>
                     )}
                     <p className={s.footer__bottom_group__items} onClick={handleOpenPrivacy}> {languageData.footer.bottomside[2]} </p>   {privacySTATE && (
-                        <div className={s.overlay} onClick={handleClosePrivacy}> <PrivacyPolicies /> </div>
+                        <div className={s.overlay} onDoubleClick={handleClosePrivacy}> <PrivacyPolicies /> </div>
                     )}
 
                     {/* <Loading /> */}
