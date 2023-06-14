@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: flex-start;
     // flex-direction: column;
-    padding: 00px 10px 40px 10px; // top right bottom left
+    padding: 0px 10px 40px 10px; // top right bottom left
     transition: var(--quick-fx);
     flex-wrap: wrap;
 
@@ -23,7 +23,7 @@
         gap: 100px;
         border: none;
         border-bottom: 1px solid var(--borders-color);
-        margin-bottom: 10px;
+        margin-bottom: 50px;
         padding: 10px;
         &_filterbtn {
             width: 60px;
