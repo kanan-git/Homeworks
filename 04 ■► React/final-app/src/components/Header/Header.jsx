@@ -444,10 +444,20 @@ function Header() {
                     {/* dropdown menu for userpanel */}
                     <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
                         {userOrGuestSTATE && <>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites"> <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]} </Link>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart"> <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]} </Link>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings"> <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]} </Link>
-                            <li onClick={handleLogout} className={s.header__main_userpanel_dropdown__items}> <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]} </li>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites">
+                                <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]}
+                                <p className={s.header__main_userpanel_dropdown__items_fav}> {JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).favorites.length} </p>
+                            </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart">
+                                <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]}
+                                <p className={s.header__main_userpanel_dropdown__items_cart}> {JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).basket.length} </p>
+                            </Link>
+                            <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings">
+                                <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]}
+                            </Link>
+                            <li onClick={handleLogout} className={s.header__main_userpanel_dropdown__items}>
+                                <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]}
+                            </li>
                         </>}
                         {!userOrGuestSTATE && <>
                             <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>

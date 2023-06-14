@@ -343,6 +343,7 @@
   transition: var(--quick-fx);
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
 }
 .header__main_userpanel_dropdown__items #fa_symbols {
   margin-right: 5px;
@@ -359,4 +360,20 @@
 }
 .header__main_userpanel_dropdown__items:active #fa_symbols {
   color: var(--link-active-color);
+}
+.header__main_userpanel_dropdown__items_fav {
+  position: absolute;
+  bottom: 0px;
+  left: -10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(255, 0, 0);
+}
+.header__main_userpanel_dropdown__items_cart {
+  position: absolute;
+  bottom: 0px;
+  left: -10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(255, 0, 0);
 }/*# sourceMappingURL=index.module.css.map */
