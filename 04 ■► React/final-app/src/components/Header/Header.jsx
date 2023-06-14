@@ -12,6 +12,7 @@ import { setCurrentLanguage } from '../../features/counter/counterSlice'
 import { setCurrentAuthType } from '../../features/counter/switchAuthType'
 import { setCurrentSearchValue } from '../../features/counter/searchValueSlice'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
     const root = document.documentElement;
@@ -250,6 +251,7 @@ function Header() {
     }
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     function handleMainLang() {
         var langSelector = document.querySelector("#language")
@@ -312,6 +314,7 @@ function Header() {
     function handleLogout() {
         localStorage.setItem("isLogged", JSON.stringify(false))
         localStorage.setItem("signedUser", JSON.stringify("guest"))
+        navigate("/")
         window.location.reload()
     }
 

@@ -175,21 +175,25 @@ function Products() {
     return (
         <main className={s.products} onMouseEnter={
             () => {
-                var currentUser = JSON.parse(localStorage.getItem("signedUser"))
-                if(currentUser == "guest") {
-                    // do nothing
-                } else {
-                    var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
-                    // console.log("loading event working")
-                    arrOfActiveBtns.forEach(
-                        (productID) => {
-                            var thisButton = document.querySelector("#product_" + productID.toString())
-                            thisButton.style.transition = `var(--instant-fx)`
-                            thisButton.style.backgroundColor = `var(--buttons-active-color)`
-                            thisButton.style.opacity = `1.0`
-                            thisButton.style.color = `var(--link-active-color)`
-                        }
-                    )
+                try {
+                    var currentUser = JSON.parse(localStorage.getItem("signedUser"))
+                    if(currentUser == "guest") {
+                        // do nothing
+                    } else {
+                        var arrOfActiveBtns = JSON.parse(localStorage.getItem(currentUser)).favorites
+                        // console.log("loading event working")
+                        arrOfActiveBtns.forEach(
+                            (productID) => {
+                                var thisButton = document.querySelector("#product_" + productID.toString())
+                                thisButton.style.transition = `var(--instant-fx)`
+                                thisButton.style.backgroundColor = `var(--buttons-active-color)`
+                                thisButton.style.opacity = `1.0`
+                                thisButton.style.color = `var(--link-active-color)`
+                            }
+                        )
+                    }
+                } catch(error) {
+                    console.log(error)
                 }
             }
         }>

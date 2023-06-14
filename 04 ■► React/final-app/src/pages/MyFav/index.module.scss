@@ -75,7 +75,10 @@
             }
             &_title {
                 width: 100%;
+                font-size: 14px;
                 font-weight: 600;
+                height: 14px;
+                overflow: auto;
             }
             &__price {
                 width: 100%;

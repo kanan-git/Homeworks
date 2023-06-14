@@ -18,7 +18,7 @@ function ItemView() {
             if(JSON.parse(localStorage.getItem("isLogged")) == true) {
                 var currentUserIs = JSON.parse(localStorage.getItem('signedUser'))
                 var currentUserData = JSON.parse(localStorage.getItem(currentUserIs))
-                if(currentUserData.budget_amount_from_creditcard > productInfo.price) {
+                if(currentUserData.budget_amount_from_creditcard >= productInfo.price) {
                     var access2purchCompleteComponent = "/products/item_view/purchase_completed"
                     setAccessState(access2purchCompleteComponent)
                 } else {

@@ -40,7 +40,7 @@ function MyFav() {
             return arrayOfFavoriteProducts.map(
                 (index) => 
                     // {fetch("https://fakestoreapi.com/products/"+index)}
-                    <Link className={s.myfav__container_cards} to="/products/item_view" 
+                    <Link className={s.myfav__container_cards} to={"/products/item_view_id="+fakeStoreAPI[index-1].id} 
                     key={index} 
                     onClick={
                         () => {dispatch(setCurrentProduct({
@@ -86,6 +86,5 @@ function MyFav() {
         </main>
     )
 }
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ SECTOR 05 //
+
 export default MyFav
-// ▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬|▬▬▬▬▬ ENDING LINE //

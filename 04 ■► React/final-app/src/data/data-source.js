@@ -132,7 +132,7 @@ export const dataSource = {
             "Product", "Category", "Buy", "Add to Favorite", "Add to Cart"
         ],
         mycart: [
-            "My Cart", "Total Price"
+            "My Cart", "Total Price", "Purchase all"
         ],
         myfav: "My Favorites",
         products: {
@@ -443,7 +443,7 @@ export const dataSource = {
             "Məhsul", "Kateqoriya", "Sifariş et", "Favorilərə əlavə et", "Səbətə əlavə et"
         ],
         mycart: [
-            "Səbətim", "Yekun məbləğ"
+            "Səbətim", "Yekun məbləğ", "Hamısını al"
         ],
         myfav: "Favorilərim",
         products: {
@@ -751,7 +751,7 @@ export const dataSource = {
             "Ürün", "Kategori", "Satın al", "Favorilere ekle", "Sepete ekle"
         ],
         mycart: [
-            "Sepet", "Toplam fiyatı"
+            "Sepet", "Toplam fiyatı", "Hepsini satın al"
         ],
         myfav: "Favorilerim",
         products: {

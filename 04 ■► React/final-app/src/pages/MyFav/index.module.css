@@ -77,7 +77,10 @@
 }
 .myfav__container_cards_title {
   width: 100%;
+  font-size: 14px;
   font-weight: 600;
+  height: 14px;
+  overflow: auto;
 }
 .myfav__container_cards__price {
   width: 100%;
