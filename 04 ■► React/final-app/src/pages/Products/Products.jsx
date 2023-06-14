@@ -20,6 +20,8 @@ function Products() {
         .then(res => res.json())
         .then(json => {setApiSTATE(json)})
         setStatusHTMLstate("greenLight")
+        // if product exist in favorites array, activate favBtn, not onMouseEnter to main section
+        // on ItemView.jsx too, dispatch favorite/cart element or not with store (redux toolkit) before, make condition for button should be active or not
     }
     
     useEffect(

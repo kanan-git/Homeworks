@@ -5,10 +5,40 @@ import {useState, useEffect, useRef} from 'react'
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentProduct } from '../../features/counter/selectedProduct'
+import { useNavigate } from 'react-router-dom'
 
 function ItemView() {
+    const navigate = useNavigate()
+
     const languageData = useSelector((state) => state.language.currentLanguage.itemview)
     const productInfo = useSelector((state) => state.selectedProduct.productData)
+
+    const [favOrNotStatusSTATE, setFavOrNotStatusSTATE] = useState(false)
+
+    const [relatedSTATE, setRelatedSTATE] = useState([])
+    async function fakeStoreAPI() {
+        var request = await fetch("https://fakestoreapi.com/products")
+        var result = await request.json()
+        var counter4relatedProducts = 0
+        var newArrayForRelatedSection = []
+        for(var i=0; i<result.length-1; i++) {
+            if(result[i].category == productInfo.category && result[i].id != productInfo.id) {
+                newArrayForRelatedSection.push(result[i])
+                // console.log(result[i])
+                if(counter4relatedProducts == 3) {
+                    break
+                } else {
+                    counter4relatedProducts++
+                }
+            }
+        }
+        setRelatedSTATE(newArrayForRelatedSection)
+    }
+    useEffect(
+        () => {
+            fakeStoreAPI()
+        }, []
+    )
 
     const dispatch = useDispatch()
 
@@ -39,8 +69,17 @@ function ItemView() {
                             favBtn.style.backgroundColor = `var(--buttons-active-color)`
                             favBtn.style.color = `var(--link-active-color)`
                             // console.log(favBtn.style)
+                            // console.log(favOrNotStatusSTATE)
                         } else {
-                            // do nothing
+                            if(favOrNotStatusSTATE == true) {
+                                favBtn.style.backgroundColor = `var(--buttons-active-color)`
+                                favBtn.style.color = `var(--link-active-color)`
+                            } else {
+                                favBtn.style.backgroundColor = `var(--buttons-color)`
+                                favBtn.style.color = `var(--link-color)`
+                            }
+                            // console.log(favOrNotStatusSTATE, productInfo.favOrNot)
+                            // console.log(favOrNotStatusSTATE)
                         }
                         // console.log(elements, productInfo.id)
                     }
@@ -264,6 +303,55 @@ function ItemView() {
                             </Link>
                         )}
                     </span>
+                </div>
+            </section>
+            <section className={s.itemview__related}>
+                <h3 className={s.itemview__related_header}> {languageData[5]} </h3>
+                <div className={s.itemview__related_container}>
+                    {
+                        relatedSTATE.map(
+                            (product) => {
+                                if(relatedSTATE.length == 0) {
+                                    return <p className={s.itemview__related_container__alert}> {languageData[5]} </p>
+                                } else {
+                                    return (
+                                        <div className={s.itemview__related_container__card} onClick={
+                                            () => {
+                                                const userFav = JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).favorites
+                                                userFav.map(
+                                                    (favoriteID) => {
+                                                        var favOrNotStatus = false
+                                                        if(favoriteID == product.id-1) {
+                                                            var favOrNotStatus = true
+                                                        }
+                                                        setFavOrNotStatusSTATE(favOrNotStatus)
+                                                    }
+                                                )
+                                                dispatch(setCurrentProduct({
+                                                    id: product.id,
+                                                    image: product.image,
+                                                    title: product.title,
+                                                    category: product.category,
+                                                    price: product.price,
+                                                    rating: product.rating.rate,
+                                                    desc: product.description,
+                                                    favOrNot: favOrNotStatusSTATE
+                                                }))
+                                                navigate("/products/item_view_id=" + product.id)
+                                            }
+                                        }>
+                                            <div className={s.itemview__related_container__card_image}>
+                                                <img src={product.image} alt={product.id} className={s.itemview__related_container__card_image__content} />
+                                            </div>
+                                            <p className={s.itemview__related_container__card_title}>
+                                                {product.title}
+                                            </p>
+                                        </div>
+                                    )
+                                }
+                            }
+                        )
+                    }
                 </div>
             </section>
         </main>

@@ -129,7 +129,7 @@ export const dataSource = {
             ]
         },
         itemview: [
-            "Product", "Category", "Buy", "Add to Favorite", "Add to Cart"
+            "Product", "Category", "Buy", "Add to Favorite", "Add to Cart", "RELATED PRODUCTS BY CATEGORY", "NO RESULT"
         ],
         mycart: [
             "My Cart", "Total Price", "Purchase all"
@@ -440,7 +440,7 @@ export const dataSource = {
             ]
         },
         itemview: [
-            "Məhsul", "Kateqoriya", "Sifariş et", "Favorilərə əlavə et", "Səbətə əlavə et"
+            "Məhsul", "Kateqoriya", "Sifariş et", "Favorilərə əlavə et", "Səbətə əlavə et", "KATEQORİYAYA GÖRƏ ƏLAQƏLİ MƏHSULLAR", "NƏTİCƏ YOXDUR"
         ],
         mycart: [
             "Səbətim", "Yekun məbləğ", "Hamısını al"
@@ -748,7 +748,7 @@ export const dataSource = {
             ]
         },
         itemview: [
-            "Ürün", "Kategori", "Satın al", "Favorilere ekle", "Sepete ekle"
+            "Ürün", "Kategori", "Satın al", "Favorilere ekle", "Sepete ekle", "KATEGORİYE GÖRE İLGİLİ ÜRÜNLER", "SONUÇ YOK"
         ],
         mycart: [
             "Sepet", "Toplam fiyatı", "Hepsini satın al"
