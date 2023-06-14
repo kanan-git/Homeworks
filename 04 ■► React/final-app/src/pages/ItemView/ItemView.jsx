@@ -14,6 +14,7 @@ function ItemView() {
     const productInfo = useSelector((state) => state.selectedProduct.productData)
 
     const [favOrNotStatusSTATE, setFavOrNotStatusSTATE] = useState(false)
+    const [cartOrNotStatusSTATE, setCartOrNotStatusSTATE] = useState(false)
 
     const [relatedSTATE, setRelatedSTATE] = useState([])
     async function fakeStoreAPI() {
@@ -85,6 +86,30 @@ function ItemView() {
                     }
                 }
             )
+            JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem('signedUser')))).basket.forEach(
+                (elements) => {
+                    if(JSON.parse(localStorage.getItem("isLogged")) == true) {
+                        var cartBtn = document.querySelector("#add2cartBtnIV")
+                        if(elements == productInfo.id) {
+                            cartBtn.style.backgroundColor = `var(--buttons-active-color)`
+                            cartBtn.style.color = `var(--link-active-color)`
+                            // console.log(favBtn.style)
+                            // console.log(favOrNotStatusSTATE)
+                        } else {
+                            if(cartOrNotStatusSTATE == true) {
+                                cartBtn.style.backgroundColor = `var(--buttons-active-color)`
+                                cartBtn.style.color = `var(--link-active-color)`
+                            } else {
+                                cartBtn.style.backgroundColor = `var(--buttons-color)`
+                                cartBtn.style.color = `var(--link-color)`
+                            }
+                            // console.log(favOrNotStatusSTATE, productInfo.favOrNot)
+                            // console.log(favOrNotStatusSTATE)
+                        }
+                        // console.log(elements, productInfo.id)
+                    }
+                }
+            )
         }
     }
     // onLoadButtonEffect()
@@ -127,6 +152,51 @@ function ItemView() {
             } else {
                 // alert("Nope, this product is not your favorite")
                 currentUserData.favorites.push(productInfo.id)
+                localStorage.setItem(currentUserIs, JSON.stringify(currentUserData))
+                e.target.style.backgroundColor = `var(--buttons-active-color)`
+                e.target.style.color = `var(--link-active-color)`
+            }
+        }
+    }
+
+    function unBasket(e) {
+        e.preventDefault()
+
+        if(JSON.parse(localStorage.getItem("isLogged")) == true) {
+            var currentUserIs = JSON.parse(localStorage.getItem('signedUser'))
+            var currentUserData = JSON.parse(localStorage.getItem(currentUserIs))
+            var currentBasketArray = currentUserData.basket
+    
+            var restOfProducts = []
+            for(var j=0; j<currentBasketArray.length; j++) {
+                if(productInfo.id == currentBasketArray[j]) {
+                    // do nothing
+                } else {
+                    restOfProducts.push(currentBasketArray[j])
+                }
+            }
+    
+            for(var i=0; i<currentBasketArray.length; i++) {
+                var status = false
+                if(productInfo.id == currentBasketArray[i]) {
+                    // console.log(productInfo.id)
+                    // alert("Yup, you added this product to favorites before.")
+                    e.target.style.backgroundColor = `var(--buttons-color)`
+                    e.target.style.color = `var(--link-color)`
+                    currentUserData.basket = restOfProducts
+                    localStorage.setItem(currentUserIs, JSON.stringify(currentUserData))
+                    var status = true
+                    break
+                } else {
+                    // do nothing
+                }
+            }
+    
+            if(status == true) {
+                // do nothing for now
+            } else {
+                // alert("Nope, this product is not your favorite")
+                currentUserData.basket.push(productInfo.id)
                 localStorage.setItem(currentUserIs, JSON.stringify(currentUserData))
                 e.target.style.backgroundColor = `var(--buttons-active-color)`
                 e.target.style.color = `var(--link-active-color)`
@@ -293,7 +363,7 @@ function ItemView() {
 
 
                         {JSON.parse(localStorage.getItem("isLogged")) && (
-                            <button className={s.itemview__container_information__buttons_2fcart}>
+                            <button className={s.itemview__container_information__buttons_2fcart} id="add2cartBtnIV" onClick={unBasket}>
                                 <i className='fa-solid fa-shopping-cart fa-1x'></i> {languageData[4]}
                             </button>
                         )}
@@ -327,6 +397,16 @@ function ItemView() {
                                                         setFavOrNotStatusSTATE(favOrNotStatus)
                                                     }
                                                 )
+                                                const userBasket = JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).basket
+                                                userBasket.map(
+                                                    (cartItemID) => {
+                                                        var cartOrNotStatus = false
+                                                        if(cartItemID == product.id-1) {
+                                                            var cartOrNotStatus = true
+                                                        }
+                                                        setCartOrNotStatusSTATE(cartOrNotStatus)
+                                                    }
+                                                )
                                                 dispatch(setCurrentProduct({
                                                     id: product.id,
                                                     image: product.image,
@@ -335,7 +415,8 @@ function ItemView() {
                                                     price: product.price,
                                                     rating: product.rating.rate,
                                                     desc: product.description,
-                                                    favOrNot: favOrNotStatusSTATE
+                                                    favOrNot: favOrNotStatusSTATE,
+                                                    cartOrNot: cartOrNotStatusSTATE
                                                 }))
                                                 navigate("/products/item_view_id=" + product.id)
                                             }

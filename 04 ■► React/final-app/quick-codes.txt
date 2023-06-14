@@ -10,7 +10,7 @@ npm start
 
 
 git add .
-git commit -m "ShopNet day 56/60 | June 13, 2023 at 11:53"
+git commit -m "ShopNet day 57/60 | June 14, 2023 at 17:31"
 git push origin master
 git status
 clear
@@ -20,29 +20,13 @@ clear
 npx create-react-app name-here --template redux
 npm install axios (install axios library) && import axios from 'axios'
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
-June 14, 2023 - ShopNet day 57/60 | complete last 7/8 tasks left
+June 14, 2023 I - ShopNet day 57/60 | complete last 4/8 tasks left
 
-• ITEMVIEW: page add related products container by selected product's category, show 4 item if exist (<=4), if its = 0, do 
-not create ( {condition != 0 && <Related />} ), fix dropdown z-index issue with itemView category text, add2mycart or 
-unBasket functions as like as favorite
-• RED INFO: add small position absolute red texts for some places, make it all at once (please enter your name-email-pass, 
-incorrect, itemView under the price show how much will decrease and how much will left, header user dropdown, how much 
-favorite and how much cart item). If cart or favorite, one of them are 0<, add red circle notification dot to bottom-right 
-of profile image | + IN TOPRATED & MOST SECTIONS MAKE CONDITION, IF SAME RATE/COUNT WILL REPEAT, CHECK ID MUST BE DIFFERENT
-• SETTINGS: create delete my account, change password, edit name lastname and other user information and some features
 • SASS: fix horizontal scrollbar problem | width scrool fix - sections and breadcrumb
 • MOBILE RESPONSIVITY: hide header and make it seems with a menu button, full screen and transformX from left, add 4 
 responsivity to each component and to their sections | WHEN SLIDE FROM LEFT TO RIGHT HEADER MENU WITH BUTTON, SLIDE MAIN 
 AND FOOTER TO RIGHT TOO | CHECK ALL PAGES FOR HEADER_USERDROPDOWN & HEADER_TOPSIDEDROPDOWN CLIPPING ISSUE: contact, 
 homepage, about, itemview, mycart, myfav, products, purchase, settings
 • LANGUAGE: gather info about language status from localStorage and change condition, input select current option ... 
-both page (auth and general)
-• FIXES & VERCEL: try to fix vercel issues on products and authentication pages, language data, light or dark mode, all 
-of registered users, save in localStorage or sessionStorage, when pages change especially between authentication and rest 
-of pages, gather language and LorD info from storage, fix authentication and product error to make them seem on Vercel, 
-may also create Settings contents, changing password, edit other information, add logged in or not to localStorage too, 
-if vercel issue not repairable, use localhost, vercel is not necessary, just try write function inside { () => {} } and 
-juse json.map(), cancel useState and useEffect, eventListeners ... try after dublicate project files, auth page too, 
-+settings vercel issue about active button. ALSO CHECK THEM ALL, IF YOU SEE ERROR OR WRONG (localhost or vercel), FIX IT 
-(deploy to git +++ if isLogged == true, footer myfav mycart & products page add2fav & purchase too)
+both page (auth and general) + overall check issues, troubles, console log error
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
