@@ -25,7 +25,7 @@
     --quick-fx: ease 0.15s;
     --instant-fx: linear 0s;
 
-    // responsivity sizes ( use with @media only screen and (max-width: var(--mobile-device) {...}; )
+    // responsivity sizes ( use with @media only screen and (max-width: var(--mobile-device)) {}; )
     --extra-small-device: 575px;
     --mobile-device: 767px;
     --tablet-device: 991px;

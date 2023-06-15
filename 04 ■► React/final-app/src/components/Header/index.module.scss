@@ -6,6 +6,34 @@
     background-color: var(--header-bg-color);
     backdrop-filter: blur(5px);
     border: none;
+    @media only screen and (max-width: var(--extra-small-device)) {
+        .header {
+            width: var(--extra-small-device);
+            background-color: red;
+            display: none;
+        }
+    };
+    @media only screen and (max-width: var(--mobile-device)) {
+        .header {
+            width: var(--mobile-device);
+            background-color: red;
+            display: none;
+        }
+    };
+    @media only screen and (max-width: var(--tablet-device)) {
+        .header {
+            width: var(--tablet-device);
+            background-color: red;
+            display: none;
+        }
+    };
+    @media only screen and (max-width: var(--desktop-device)) {
+        .header {
+            width: var(--desktop-device);
+            background-color: red;
+            display: none;
+        }
+    };
     // top navbar side of the header
     &__list {
         z-index: 2;

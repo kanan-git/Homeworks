@@ -19,4 +19,11 @@ clear
 
 npx create-react-app name-here --template redux
 npm install axios (install axios library) && import axios from 'axios'
+
+
+
+@media only screen and (max-width: var(--extra-small-device)) {};
+@media only screen and (max-width: var(--mobile-device)) {};
+@media only screen and (max-width: var(--tablet-device)) {};
+@media only screen and (max-width: var(--desktop-device)) {};
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
