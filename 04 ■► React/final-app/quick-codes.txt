@@ -10,7 +10,7 @@ npm start
 
 
 git add .
-git commit -m "ShopNet day 57/60 | June 14, 2023 at 17:31"
+git commit -m "ShopNet day 58/60 | June 15, 2023 at 17:50"
 git push origin master
 git status
 clear
@@ -19,14 +19,4 @@ clear
 
 npx create-react-app name-here --template redux
 npm install axios (install axios library) && import axios from 'axios'
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
-June 14, 2023 I - ShopNet day 57/60 | complete last 4/8 tasks left
-
-• SASS: fix horizontal scrollbar problem | width scrool fix - sections and breadcrumb
-• MOBILE RESPONSIVITY: hide header and make it seems with a menu button, full screen and transformX from left, add 4 
-responsivity to each component and to their sections | WHEN SLIDE FROM LEFT TO RIGHT HEADER MENU WITH BUTTON, SLIDE MAIN 
-AND FOOTER TO RIGHT TOO | CHECK ALL PAGES FOR HEADER_USERDROPDOWN & HEADER_TOPSIDEDROPDOWN CLIPPING ISSUE: contact, 
-homepage, about, itemview, mycart, myfav, products, purchase, settings
-• LANGUAGE: gather info about language status from localStorage and change condition, input select current option ... 
-both page (auth and general) + overall check issues, troubles, console log error
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
