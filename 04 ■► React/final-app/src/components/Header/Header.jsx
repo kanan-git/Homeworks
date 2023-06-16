@@ -335,7 +335,7 @@ function Header() {
 
     return (
         <>
-            <button className={s.header_mobile_button} onClick={
+            {/* <button className={s.header_mobile_button} onClick={
                 () => {
                     try {
                         const headerList = document.querySelector(`.${s.header__list}`)
@@ -359,7 +359,7 @@ function Header() {
             }>
                 {headerMobileBtn == "bars" && <i className='fa-solid fa-bars fa-1x'></i>}
                 {headerMobileBtn == "cross" && <i className='fa-solid fa-xmark fa-1x'></i>}
-            </button>
+            </button> */}
 
             {/* <button className={s.header_mobile_dropdown_btn} onClick={
                 () => {
@@ -369,7 +369,7 @@ function Header() {
                 <i className='fa-solid fa-chevron-left fa-1x'></i>
             </button> */}
 
-            {headerDropBtnStatus && (
+            {/* {headerDropBtnStatus && (
                 <button className={s.header_mobile_dropdown_btn} onClick={
                     () => {
                         try {
@@ -383,7 +383,7 @@ function Header() {
                 }>
                     <i className='fa-solid fa-chevron-left fa-1x'></i>
                 </button>
-            )}
+            )} */}
 
             <header className={s.header}>
                 {/* top side of the header as navbar */}
@@ -391,15 +391,15 @@ function Header() {
                     {/* menu elements */}
                     <button className={s.header__list_buttons} onClick={
                         () => {
-                            try {
-                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
-                                headerList.style.display = `none`
-                                setHeaderMobileBtn("bars")
-                                setHeaderDropBtnStatus(false)
-                                navigate("/")
-                            } catch (error) {
-                                console.log(error)
-                            }
+                            // try {
+                            //     document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                            //     headerList.style.display = `none`
+                            //     setHeaderMobileBtn("bars")
+                            //     setHeaderDropBtnStatus(false)
+                            //     navigate("/")
+                            // } catch (error) {
+                            //     console.log(error)
+                            // }
                             navigate("/")
                         }
                     }> {menuElements[0]} </button>
@@ -415,41 +415,41 @@ function Header() {
                         topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
                         topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
                     } } onClick={ () => {
-                        try {
-                            const headerDropdownMenu = document.querySelector(`.${s.header__list_productsdropdown}`)
-                            setHeaderDropBtnStatus(true)
-                            // headerDropdownMenu.style.display = `flex`
-                            topDropDownSTATE.current.style.display = `flex`
-                        } catch (error) {
-                            console.log(error)
-                        }
+                        // try {
+                        //     const headerDropdownMenu = document.querySelector(`.${s.header__list_productsdropdown}`)
+                        //     setHeaderDropBtnStatus(true)
+                        //     // headerDropdownMenu.style.display = `flex`
+                        //     topDropDownSTATE.current.style.display = `flex`
+                        // } catch (error) {
+                        //     console.log(error)
+                        // }
                     } }
                     > {menuElements[1]} <i className='fa-solid fa-caret-right fa-1x fa-rotate-90'></i> </button>
                     <button className={s.header__list_buttons} onClick={
                         () => {
-                            try {
-                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
-                                headerList.style.display = `none`
-                                setHeaderMobileBtn("bars")
-                                setHeaderDropBtnStatus(false)
-                                navigate("/about")
-                            } catch (error) {
-                                console.log(error)
-                            }
+                            // try {
+                            //     document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                            //     headerList.style.display = `none`
+                            //     setHeaderMobileBtn("bars")
+                            //     setHeaderDropBtnStatus(false)
+                            //     navigate("/about")
+                            // } catch (error) {
+                            //     console.log(error)
+                            // }
                             navigate("/about")
                         }
                     }> {menuElements[2]} </button>
                     <button className={s.header__list_buttons} onClick={
                         () => {
-                            try {
-                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
-                                headerList.style.display = `none`
-                                setHeaderMobileBtn("bars")
-                                setHeaderDropBtnStatus(false)
-                                navigate("/contact")
-                            } catch (error) {
-                                console.log(error)
-                            }
+                            // try {
+                            //     document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                            //     headerList.style.display = `none`
+                            //     setHeaderMobileBtn("bars")
+                            //     setHeaderDropBtnStatus(false)
+                            //     navigate("/contact")
+                            // } catch (error) {
+                            //     console.log(error)
+                            // }
                             navigate("/contact")
                         }
                     }> {menuElements[3]} </button>
@@ -476,10 +476,10 @@ function Header() {
                                             () => {
                                                 dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header1[index]))
                                                 // document.querySelector(`.${s.header_mobile_button}`).style.display = `none`
-                                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
-                                                document.querySelector(`.${s.header__list}`).style.display = `none`
-                                                setHeaderMobileBtn("bars")
-                                                setHeaderDropBtnStatus(false)
+                                                // document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                                // document.querySelector(`.${s.header__list}`).style.display = `none`
+                                                // setHeaderMobileBtn("bars")
+                                                // setHeaderDropBtnStatus(false)
                                             }
                                         } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
                                     )
@@ -497,10 +497,10 @@ function Header() {
                                             () => {
                                                 dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header2[index]))
                                                 // document.querySelector(`.${s.header_mobile_button}`).style.display = `none`
-                                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
-                                                document.querySelector(`.${s.header__list}`).style.display = `none`
-                                                setHeaderMobileBtn("bars")
-                                                setHeaderDropBtnStatus(false)
+                                                // document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                                // document.querySelector(`.${s.header__list}`).style.display = `none`
+                                                // setHeaderMobileBtn("bars")
+                                                // setHeaderDropBtnStatus(false)
                                             }
                                         } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
                                     )

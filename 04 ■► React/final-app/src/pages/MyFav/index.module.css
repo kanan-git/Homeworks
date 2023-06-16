@@ -10,6 +10,26 @@
   flex-direction: column;
   padding: 140px 0px 10px 0px;
 }
+@media only screen and (max-width: 1199px) {
+  .myfav {
+    width: 1199px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .myfav {
+    width: 991px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .myfav {
+    width: 767px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .myfav {
+    width: 575px;
+  }
+}
 .myfav__topside {
   width: 1300px;
   height: 50px;
@@ -19,6 +39,26 @@
   justify-content: center;
   align-items: center;
   padding: 10px 0px 10px 0px;
+}
+@media only screen and (max-width: 1199px) {
+  .myfav__topside {
+    width: 1199px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .myfav__topside {
+    width: 991px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .myfav__topside {
+    width: 767px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .myfav__topside {
+    width: 575px;
+  }
 }
 .myfav__topside_header {
   font-size: 24px;
@@ -37,6 +77,38 @@
   justify-content: flex-start;
   gap: 20px;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 1199px) {
+  .myfav__container {
+    width: 891px;
+    padding: 20px 10px 20px 10px;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .myfav__container {
+    width: 891px;
+    padding: 20px 10px 20px 10px;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .myfav__container {
+    width: 667px;
+    padding: 20px 5px 20px 5px;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .myfav__container {
+    width: 475px;
+    padding: 20px 15px 20px 15px;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
 }
 .myfav__container_cards {
   width: 200px;

@@ -13,6 +13,26 @@
     flex-direction: column;
     gap: 150px;
     padding: 140px 0px 80px 0px; // top right bottom left
+    @media only screen and (max-width: 1199px) {
+        width: 1199px;
+        gap: 150px;
+        padding: 100px 0px 60px 0px; // top right bottom left
+    };
+    @media only screen and (max-width: 991px) {
+        width: 991px;
+        gap: 150px;
+        padding: 100px 0px 60px 0px; // top right bottom left
+    };
+    @media only screen and (max-width: 767px) {
+        width: 767px;
+        gap: 150px;
+        padding: 100px 0px 60px 0px; // top right bottom left
+    };
+    @media only screen and (max-width: 575px) {
+        width: 575px;
+        gap: 150px;
+        padding: 100px 0px 60px 0px; // top right bottom left
+    };
     transition: var(--quick-fx);
     &__sections {
         z-index: 0;
@@ -25,6 +45,18 @@
         // border: 1px solid red;
         margin: 10px 0px;
         padding: 0px 10px;
+        @media only screen and (max-width: 1199px) {
+            width: 1199px;
+        };
+        @media only screen and (max-width: 991px) {
+            width: 991px;
+        };
+        @media only screen and (max-width: 767px) {
+            width: 767px;
+        };
+        @media only screen and (max-width: 575px) {
+            width: 575px;
+        };
         &_topside {
             width: 100%;
             height: 40px;
@@ -78,6 +110,18 @@
             border: none;
             border-left: 3px solid var(--borders-color);
             border-right: 3px solid var(--borders-color);
+            @media only screen and (max-width: 1199px) {
+                width: 73%;
+            };
+            @media only screen and (max-width: 991px) {
+                width: 89%;
+            };
+            @media only screen and (max-width: 767px) {
+                width: 86%;
+            };
+            @media only screen and (max-width: 575px) {
+                width: 76%;
+            };
             &__cards {
                 width: 200px;
                 height: 240px;

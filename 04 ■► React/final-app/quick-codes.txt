@@ -30,5 +30,6 @@ npm install axios (install axios library) && import axios from 'axios'
 
 
 SASS:
-header, footer, breadcrumb, popups, about, contact, homepage, itemview, cart, fav, products, purchase, settings, signinorup
+about, contact
+itemview, products, purchase, signinorup, popups
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈

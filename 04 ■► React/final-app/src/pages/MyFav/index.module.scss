@@ -11,6 +11,18 @@
     align-items: center;
     flex-direction: column;
     padding: 140px 0px 10px 0px; // top right bottom left
+    @media only screen and (max-width: 1199px) {
+        width: 1199px;
+    };
+    @media only screen and (max-width: 991px) {
+        width: 991px;
+    };
+    @media only screen and (max-width: 767px) {
+        width: 767px;
+    };
+    @media only screen and (max-width: 575px) {
+        width: 575px;
+    };
     &__topside {
         width: 1300px;
         height: 50px;
@@ -21,6 +33,18 @@
         align-items: center;
         // opacity: 0.9;
         padding: 10px 0px 10px 0px; // top right bottom left
+        @media only screen and (max-width: 1199px) {
+            width: 1199px;
+        };
+        @media only screen and (max-width: 991px) {
+            width: 991px;
+        };
+        @media only screen and (max-width: 767px) {
+            width: 767px;
+        };
+        @media only screen and (max-width: 575px) {
+            width: 575px;
+        };
         &_header {
             font-size: 24px;
             font-weight: 600;
@@ -39,6 +63,30 @@
         justify-content: flex-start;
         gap: 20px;
         flex-wrap: wrap;
+        @media only screen and (max-width: 1199px) {
+            width: 891px;
+            padding: 20px 10px 20px 10px; // top right bottom left
+            gap: 20px;
+            margin-bottom: 40px;
+        };
+        @media only screen and (max-width: 991px) {
+            width: 891px;
+            padding: 20px 10px 20px 10px; // top right bottom left
+            gap: 20px;
+            margin-bottom: 40px;
+        };
+        @media only screen and (max-width: 767px) {
+            width: 667px;
+            padding: 20px 5px 20px 5px; // top right bottom left
+            gap: 20px;
+            margin-bottom: 40px;
+        };
+        @media only screen and (max-width: 575px) {
+            width: 475px;
+            padding: 20px 15px 20px 15px; // top right bottom left
+            gap: 25px;
+            margin-bottom: 40px;
+        };
         &_cards {
             width: 200px;
             height: 260px;
