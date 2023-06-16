@@ -10,7 +10,7 @@ npm start
 
 
 git add .
-git commit -m "ShopNet day 58/60 | June 15, 2023 at 17:50"
+git commit -m "ShopNet day 59/60 | June 16, 2023 at 08:59"
 git push origin master
 git status
 clear
@@ -26,4 +26,9 @@ npm install axios (install axios library) && import axios from 'axios'
 @media only screen and (max-width: var(--mobile-device)) {};
 @media only screen and (max-width: var(--tablet-device)) {};
 @media only screen and (max-width: var(--desktop-device)) {};
+
+
+
+SASS:
+header, footer, breadcrumb, popups, about, contact, homepage, itemview, cart, fav, products, purchase, settings, signinorup
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
