@@ -31,6 +31,9 @@ function Header() {
     const [userBudget, setUserBudget] = useState()
     const [userOrGuestSTATE, setUserOrGuestSTATE] = useState()
 
+    const [headerMobileBtn, setHeaderMobileBtn] = useState("bars")
+    const [headerDropBtnStatus, setHeaderDropBtnStatus] = useState(false)
+
     useEffect(
         () => {
             var userOrGuest = JSON.parse(localStorage.getItem("isLogged"))
@@ -58,6 +61,7 @@ function Header() {
     const userpanelDropDown = useRef()
     const dd_arrow = useRef()
     const logo_img = useRef()
+    const headerList = useRef()
 
     const [switchSliderBtnSTATE, setSwitchSliderBtnSTATE] = useState(switchSliderBtn)
     const [switchSunSTATE, setSwitchSunSTATE] = useState(switchSun)
@@ -318,155 +322,277 @@ function Header() {
         window.location.reload()
     }
 
+    // useEffect(
+    //     () => {
+    //         const headerDropdownMenu = document.querySelector(`.${s.header__list_productsdropdown}`)
+    //         if(headerDropBtnStatus == true) {
+    //             headerDropdownMenu.style.display = `flex`
+    //         } else {
+    //             headerDropdownMenu.style.display = `none`
+    //         }
+    //     }
+    // )
+
     return (
-        <header className={s.header}>
-            {/* top side of the header as navbar */}
-            <nav className={s.header__list}>
-                {/* menu elements */}
-                <Link className={s.header__list_buttons} to="/"> {menuElements[0]} </Link>
-                <Link className={s.header__list_buttons} to="/products" onMouseEnter={ () => {
-                            topDropDownSTATE.current.style.visibility = `visible`
-                            topDropDownSTATE.current.style.opacity = `1.0`
-                            topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
-                            topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                        } } onMouseLeave={ () => {
-                            topDropDownSTATE.current.style.visibility = `hidden`
-                            topDropDownSTATE.current.style.opacity = `0.0`
-                            topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
-                            topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                        } }
-                > {menuElements[1]} <i className='fa-solid fa-caret-right fa-1x fa-rotate-90'></i> </Link>
-                <Link className={s.header__list_buttons} to="/about"> {menuElements[2]} </Link>
-                <Link className={s.header__list_buttons} to="/contact"> {menuElements[3]} </Link>
-                {/* dropdown menu for userpanel */}
-                <div className={s.header__list_productsdropdown} ref={topDropDown} onMouseEnter={ () => {
-                    topDropDownSTATE.current.style.visibility = `visible`
-                    topDropDownSTATE.current.style.opacity = `1.0`
-                    topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
-                    topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                } } onMouseLeave={ () => {
-                    topDropDownSTATE.current.style.visibility = `hidden`
-                    topDropDownSTATE.current.style.opacity = `0.0`
-                    topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
-                    topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
-                } }>
+        <>
+            <button className={s.header_mobile_button} onClick={
+                () => {
+                    try {
+                        const headerList = document.querySelector(`.${s.header__list}`)
+                        const headerDropdownMenu = document.querySelector(`.${s.header__list_productsdropdown}`)
+                        if(headerList.style.display == "none") {
+                            headerList.style.display = `block`
+                            setHeaderMobileBtn("cross")
+                        } else if(headerList.style.display == "block") {
+                            headerList.style.display = `none`
+                            setHeaderMobileBtn("bars")
+                            setHeaderDropBtnStatus(false)
+                            headerDropdownMenu.style.display = `none`
+                        } else {
+                            headerList.style.display = 'block'
+                            setHeaderMobileBtn("cross")
+                        }
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }
+            }>
+                {headerMobileBtn == "bars" && <i className='fa-solid fa-bars fa-1x'></i>}
+                {headerMobileBtn == "cross" && <i className='fa-solid fa-xmark fa-1x'></i>}
+            </button>
 
-                    <ul className={s.header__list_productsdropdown__columns}>
-                        { productsDD1.map( (item, index) => {
-                            if(index == 0) {
-                                return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
-                            } else {
-                                return (
-                                    <Link to="/products" onClick={
-                                        () => {
-                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header1[index]))
-                                        }
-                                    } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
-                                )
-                            }
-                        } ) }
-                    </ul>
+            {/* <button className={s.header_mobile_dropdown_btn} onClick={
+                () => {
+                    setHeaderDropBtnStatus(false)
+                }
+            }>
+                <i className='fa-solid fa-chevron-left fa-1x'></i>
+            </button> */}
 
-                    <ul className={s.header__list_productsdropdown__columns}>
-                        { productsDD2.map( (item, index) => {
-                            if(index == 0) {
-                                return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
-                            } else {
-                                return (
-                                    <Link to="/products" onClick={
-                                        () => {
-                                            dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header2[index]))
-                                        }
-                                    } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
-                                )
-                            }
-                        } ) }
-                    </ul>
-                </div>
-            </nav>
-            {/* bottom main side of the header contains logo, searchbar, language bar, userpanel */}
-            <div className={s.header__main}>
-                {/* temporary static elements for reference | LOGO */}
-                <div className={s.header__main_logo}>
-                    <img src={logo} alt="website-logo" className={s.header__main_logo__content} ref={logo_img} />
-                </div>
-                {/* temporary static elements for reference | LANGUAGE BAR */}
-                <div className={s.header__main_langbar}>
-                    <i className='fa-solid fa-globe fa-1x' id={s.fa_globe}></i>
-                    <select name="language" id="language" className={s.header__main_langbar__selector} onChange={handleMainLang}>
-                        <option value="English" className={s.header__main_langbar__selector_options}> English </option>
-                        <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}> Azərbaycan dili </option>
-                        <option value="Türkçe" className={s.header__main_langbar__selector_options}> Türkçe </option>
-                    </select>
-                </div>
-                {/* temporary static elements for reference | SEARCHBAR */}
-                <div className={s.header__main_search}>
-                    <input type="search" placeholder={navItems[0]} className={s.header__main_search__input} id="searcbar" />
-                    <Link className={s.header__main_search__button} to="/products" 
-                    onClick={
-                        () => {
-                            var searchValue = document.querySelector("#searcbar").value
-                            if(searchValue == "") {
-                                // console.log("empty")
-                            } else {
-                                // console.log(searchValue)
-                            }
-                            dispatch( setCurrentSearchValue(searchValue) )
+            {headerDropBtnStatus && (
+                <button className={s.header_mobile_dropdown_btn} onClick={
+                    () => {
+                        try {
+                            const headerDropdownMenu = document.querySelector(`.${s.header__list_productsdropdown}`)
+                            setHeaderDropBtnStatus(false)
+                            headerDropdownMenu.style.display = `none`
+                        } catch (error) {
+                            console.log(error)
                         }
                     }
-                    >
-                        <i className='fa-solid fa-magnifying-glass fa-1x fa-bounce' id={s.fa_glass}></i>
-                    </Link>
-                </div>
-                {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}
-                <div className={s.header__main_switch}>
-                    <i className='fa-solid fa-sun fa-1x' id={s.fa_sun} ref={switchSun} ></i>
-                    <button className={s.header__main_switch__slider} id="switchlord" onClick={handleSwitchLorD} > {/* onLoad={callBeginningValues} */}
-                    {/* <button className={s.header__main_switch__slider} id="switchlord" ref={switchButtonRef}> */}
-                        <div className={s.header__main_switch__slider_button} id={s.switch_btn} ref={switchSliderBtn} ></div>
-                    </button>
-                    <i className='fa-solid fa-moon fa-1x' id={s.fa_moon} ref={switchMoon} ></i>
-                </div>
-                {/* temporary static elements for reference | USER PANEL */}
-                <div className={s.header__main_userpanel} onMouseEnter={userpanelDDfuncOpen} onMouseLeave={userpanelDDfuncClose}>
-                    {userOrGuestSTATE && <>
-                        <img src={userX_X} alt={userName} className={s.header__main_userpanel__image} style={{backgroundColor: userColor}} />
-                        <p className={s.header__main_userpanel__status}> {userName} </p>
-                        <b style={{
-                            fontSize: "12px", marginLeft: "10px", fontWeight: "600", color: "var(--text-color)"
-                        }}> Balance: $ <i style={{fontStyle: "normal", color: "var(--link-active-color)"}}>{userBudget}</i> USD </b>
-                    </>}
-                    {!userOrGuestSTATE && <>
-                        <img src={userQuest} alt="user-profile" className={s.header__main_userpanel__image} style={{filter: "blur(0px) brightness(1.0)"}} />
-                        <p className={s.header__main_userpanel__status}> {navItems[1]} </p>
-                        
-                    </>}
+                }>
+                    <i className='fa-solid fa-chevron-left fa-1x'></i>
+                </button>
+            )}
+
+            <header className={s.header}>
+                {/* top side of the header as navbar */}
+                <nav className={s.header__list} ref={headerList}>
+                    {/* menu elements */}
+                    <button className={s.header__list_buttons} onClick={
+                        () => {
+                            try {
+                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                headerList.style.display = `none`
+                                setHeaderMobileBtn("bars")
+                                setHeaderDropBtnStatus(false)
+                                navigate("/")
+                            } catch (error) {
+                                console.log(error)
+                            }
+                            navigate("/")
+                        }
+                    }> {menuElements[0]} </button>
+                    <button className={s.header__list_buttons} 
+                    onMouseEnter={ () => {
+                        topDropDownSTATE.current.style.visibility = `visible`
+                        topDropDownSTATE.current.style.opacity = `1.0`
+                        topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
+                        topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+                    } } onMouseLeave={ () => {
+                        topDropDownSTATE.current.style.visibility = `hidden`
+                        topDropDownSTATE.current.style.opacity = `0.0`
+                        topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
+                        topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+                    } } onClick={ () => {
+                        try {
+                            const headerDropdownMenu = document.querySelector(`.${s.header__list_productsdropdown}`)
+                            setHeaderDropBtnStatus(true)
+                            // headerDropdownMenu.style.display = `flex`
+                            topDropDownSTATE.current.style.display = `flex`
+                        } catch (error) {
+                            console.log(error)
+                        }
+                    } }
+                    > {menuElements[1]} <i className='fa-solid fa-caret-right fa-1x fa-rotate-90'></i> </button>
+                    <button className={s.header__list_buttons} onClick={
+                        () => {
+                            try {
+                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                headerList.style.display = `none`
+                                setHeaderMobileBtn("bars")
+                                setHeaderDropBtnStatus(false)
+                                navigate("/about")
+                            } catch (error) {
+                                console.log(error)
+                            }
+                            navigate("/about")
+                        }
+                    }> {menuElements[2]} </button>
+                    <button className={s.header__list_buttons} onClick={
+                        () => {
+                            try {
+                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                headerList.style.display = `none`
+                                setHeaderMobileBtn("bars")
+                                setHeaderDropBtnStatus(false)
+                                navigate("/contact")
+                            } catch (error) {
+                                console.log(error)
+                            }
+                            navigate("/contact")
+                        }
+                    }> {menuElements[3]} </button>
                     {/* dropdown menu for userpanel */}
-                    <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
+                    <div className={s.header__list_productsdropdown} ref={topDropDown} onMouseEnter={ () => {
+                        topDropDownSTATE.current.style.visibility = `visible`
+                        topDropDownSTATE.current.style.opacity = `1.0`
+                        topDropDownSTATE.current.style.transform = `translate(0%, 0%)`
+                        topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+                    } } onMouseLeave={ () => {
+                        topDropDownSTATE.current.style.visibility = `hidden`
+                        topDropDownSTATE.current.style.opacity = `0.0`
+                        topDropDownSTATE.current.style.transform = `translate(0%, -100%)`
+                        topDropDownSTATE.current.style.transition = `ease-in-out 0.2s`
+                    } }>
+
+                        <ul className={s.header__list_productsdropdown__columns}>
+                            { productsDD1.map( (item, index) => {
+                                if(index == 0) {
+                                    return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
+                                } else {
+                                    return (
+                                        <Link to="/products" onClick={
+                                            () => {
+                                                dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header1[index]))
+                                                // document.querySelector(`.${s.header_mobile_button}`).style.display = `none`
+                                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                                document.querySelector(`.${s.header__list}`).style.display = `none`
+                                                setHeaderMobileBtn("bars")
+                                                setHeaderDropBtnStatus(false)
+                                            }
+                                        } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
+                                    )
+                                }
+                            } ) }
+                        </ul>
+
+                        <ul className={s.header__list_productsdropdown__columns}>
+                            { productsDD2.map( (item, index) => {
+                                if(index == 0) {
+                                    return (<h4 className={s.header__list_productsdropdown__columns_header} key={index}> {item} </h4>)
+                                } else {
+                                    return (
+                                        <Link to="/products" onClick={
+                                            () => {
+                                                dispatch(setCurrentSearchValue(dataSource.english.header.mainside.productsddown.header2[index]))
+                                                // document.querySelector(`.${s.header_mobile_button}`).style.display = `none`
+                                                document.querySelector(`.${s.header_mobile_dropdown_btn}`).style.display = `none`
+                                                document.querySelector(`.${s.header__list}`).style.display = `none`
+                                                setHeaderMobileBtn("bars")
+                                                setHeaderDropBtnStatus(false)
+                                            }
+                                        } className={s.header__list_productsdropdown__columns_items} key={index}> {item} </Link>
+                                    )
+                                }
+                            } ) }
+                        </ul>
+                    </div>
+                </nav>
+                {/* bottom main side of the header contains logo, searchbar, language bar, userpanel */}
+                <div className={s.header__main}>
+                    {/* temporary static elements for reference | LOGO */}
+                    <div className={s.header__main_logo}>
+                        <img src={logo} alt="website-logo" className={s.header__main_logo__content} ref={logo_img} />
+                    </div>
+                    {/* temporary static elements for reference | LANGUAGE BAR */}
+                    <div className={s.header__main_langbar}>
+                        <i className='fa-solid fa-globe fa-1x' id={s.fa_globe}></i>
+                        <select name="language" id="language" className={s.header__main_langbar__selector} onChange={handleMainLang}>
+                            <option value="English" className={s.header__main_langbar__selector_options}> English </option>
+                            <option value="Azərbaycan dili" className={s.header__main_langbar__selector_options}> Azərbaycan dili </option>
+                            <option value="Türkçe" className={s.header__main_langbar__selector_options}> Türkçe </option>
+                        </select>
+                    </div>
+                    {/* temporary static elements for reference | SEARCHBAR */}
+                    <div className={s.header__main_search}>
+                        <input type="search" placeholder={navItems[0]} className={s.header__main_search__input} id="searcbar" />
+                        <Link className={s.header__main_search__button} to="/products" 
+                        onClick={
+                            () => {
+                                var searchValue = document.querySelector("#searcbar").value
+                                if(searchValue == "") {
+                                    // console.log("empty")
+                                } else {
+                                    // console.log(searchValue)
+                                }
+                                dispatch( setCurrentSearchValue(searchValue) )
+                            }
+                        }
+                        >
+                            <i className='fa-solid fa-magnifying-glass fa-1x fa-bounce' id={s.fa_glass}></i>
+                        </Link>
+                    </div>
+                    {/* temporary static elements for reference | SWITCH BUTTON FOR LIGHT OR DARK MODE */}
+                    <div className={s.header__main_switch}>
+                        <i className='fa-solid fa-sun fa-1x' id={s.fa_sun} ref={switchSun} ></i>
+                        <button className={s.header__main_switch__slider} id="switchlord" onClick={handleSwitchLorD} > {/* onLoad={callBeginningValues} */}
+                        {/* <button className={s.header__main_switch__slider} id="switchlord" ref={switchButtonRef}> */}
+                            <div className={s.header__main_switch__slider_button} id={s.switch_btn} ref={switchSliderBtn} ></div>
+                        </button>
+                        <i className='fa-solid fa-moon fa-1x' id={s.fa_moon} ref={switchMoon} ></i>
+                    </div>
+                    {/* temporary static elements for reference | USER PANEL */}
+                    <div className={s.header__main_userpanel} onMouseEnter={userpanelDDfuncOpen} onMouseLeave={userpanelDDfuncClose}>
                         {userOrGuestSTATE && <>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites">
-                                <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]}
-                                <p className={s.header__main_userpanel_dropdown__items_fav}> {JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).favorites.length} </p>
-                            </Link>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart">
-                                <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]}
-                                <p className={s.header__main_userpanel_dropdown__items_cart}> {JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).basket.length} </p>
-                            </Link>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings">
-                                <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]}
-                            </Link>
-                            <li onClick={handleLogout} className={s.header__main_userpanel_dropdown__items}>
-                                <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]}
-                            </li>
+                            <img src={userX_X} alt={userName} className={s.header__main_userpanel__image} style={{backgroundColor: userColor}} />
+                            <p className={s.header__main_userpanel__status}> {userName} </p>
+                            <b style={{
+                                fontSize: "12px", marginLeft: "10px", fontWeight: "600", color: "var(--text-color)"
+                            }}> Balance: $ <i style={{fontStyle: "normal", color: "var(--link-active-color)"}}>{userBudget}</i> USD </b>
                         </>}
                         {!userOrGuestSTATE && <>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
-                            <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
+                            <img src={userQuest} alt="user-profile" className={s.header__main_userpanel__image} style={{filter: "blur(0px) brightness(1.0)"}} />
+                            <p className={s.header__main_userpanel__status}> {navItems[1]} </p>
+                            
                         </>}
-                    </ul>
+                        {/* dropdown menu for userpanel */}
+                        <ul className={s.header__main_userpanel_dropdown} ref={userpanelDropDown}>
+                            {userOrGuestSTATE && <>
+                                <Link className={s.header__main_userpanel_dropdown__items} to="/my_favorites">
+                                    <i className='fa-solid fa-heart fa-1x' id={s.fa_symbols}></i> {userDropDown[2]}
+                                    <p className={s.header__main_userpanel_dropdown__items_fav}> {JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).favorites.length} </p>
+                                </Link>
+                                <Link className={s.header__main_userpanel_dropdown__items} to="/my_cart">
+                                    <i className='fa-solid fa-shopping-cart fa-1x' id={s.fa_symbols}></i> {userDropDown[3]}
+                                    <p className={s.header__main_userpanel_dropdown__items_cart}> {JSON.parse(localStorage.getItem( JSON.parse(localStorage.getItem("signedUser")) )).basket.length} </p>
+                                </Link>
+                                <Link className={s.header__main_userpanel_dropdown__items} to="/user_settings">
+                                    <i className='fa-solid fa-gear fa-1x' id={s.fa_symbols}></i> {userDropDown[4]}
+                                </Link>
+                                <li onClick={handleLogout} className={s.header__main_userpanel_dropdown__items}>
+                                    <i className='fa-solid fa-right-from-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[5]}
+                                </li>
+                            </>}
+                            {!userOrGuestSTATE && <>
+                                <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthIn}> <i className='fa-solid fa-arrow-right-to-bracket fa-1x' id={s.fa_symbols}></i> {userDropDown[0]} </Link>
+                                <Link className={s.header__main_userpanel_dropdown__items} to="/authentication_shopnet" onClick={selectAuthUp}> <i className='fa-regular fa-id-card fa-1x' id={s.fa_symbols}></i> {userDropDown[1]} </Link>
+                            </>}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        </>
     )
 }
 

@@ -22,10 +22,10 @@ npm install axios (install axios library) && import axios from 'axios'
 
 
 
-@media only screen and (max-width: var(--extra-small-device)) {};
-@media only screen and (max-width: var(--mobile-device)) {};
-@media only screen and (max-width: var(--tablet-device)) {};
-@media only screen and (max-width: var(--desktop-device)) {};
+@media only screen and (max-width: 1199px) {};
+@media only screen and (max-width: 991px) {};
+@media only screen and (max-width: 767px) {};
+@media only screen and (max-width: 575px) {};
 
 
 
