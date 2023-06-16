@@ -10,6 +10,30 @@
   margin-top: 40px;
   position: relative;
 }
+@media only screen and (max-width: 1199px) {
+  .signinorup {
+    width: 1199px;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup {
+    width: 991px;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup {
+    width: 767px;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup {
+    width: 575px;
+    overflow: hidden;
+  }
+}
 .signinorup__topside {
   width: 1000px;
   height: 100px;
@@ -22,6 +46,26 @@
   padding-right: 70px;
   transition: var(--quick-fx);
 }
+@media only screen and (max-width: 1199px) {
+  .signinorup__topside {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup__topside {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup__topside {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup__topside {
+    width: 400px;
+  }
+}
 .signinorup__topside_language {
   width: 120px;
   outline: none;
@@ -33,6 +77,34 @@
   font-weight: 600;
   transition: var(--quick-fx);
 }
+@media only screen and (max-width: 1199px) {
+  .signinorup__topside_language {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup__topside_language {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup__topside_language {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup__topside_language {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+}
 .signinorup__topside_language__options {
   background-color: var(--default-bg-color);
 }
@@ -43,6 +115,30 @@
   justify-content: center;
   width: 50%;
   transition: var(--quick-fx);
+}
+@media only screen and (max-width: 1199px) {
+  .signinorup__topside_selection {
+    width: 1149px;
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup__topside_selection {
+    width: 941px;
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup__topside_selection {
+    width: 707px;
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup__topside_selection {
+    width: 515px;
+    margin-left: 50px;
+  }
 }
 .signinorup__topside_selection__login {
   font-size: 36px;
@@ -57,6 +153,26 @@
   transition: var(--quick-fx);
   width: -moz-fit-content;
   width: fit-content;
+}
+@media only screen and (max-width: 1199px) {
+  .signinorup__topside_selection__login {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup__topside_selection__login {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup__topside_selection__login {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup__topside_selection__login {
+    font-size: 20px;
+  }
 }
 .signinorup__topside_selection__login:hover {
   filter: brightness(2.5);
@@ -75,6 +191,26 @@
   width: -moz-fit-content;
   width: fit-content;
 }
+@media only screen and (max-width: 1199px) {
+  .signinorup__topside_selection__register {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup__topside_selection__register {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup__topside_selection__register {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup__topside_selection__register {
+    font-size: 20px;
+  }
+}
 .signinorup__topside_selection__register:hover {
   filter: brightness(2.5);
 }
@@ -90,6 +226,34 @@
   border-radius: 50%;
   background-color: var(--default-bg-color);
   transition: var(--quick-fx);
+}
+@media only screen and (max-width: 1199px) {
+  .signinorup__topside_lord {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .signinorup__topside_lord {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .signinorup__topside_lord {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .signinorup__topside_lord {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
 }
 .signinorup__topside_lord:hover {
   filter: drop-shadow(0 0 5px var(--filter-shadow-color));

@@ -95,10 +95,10 @@ function Footer() {
                 <p className={s.footer__bottom_text}> {languageData.footer.bottomside[0]} </p>
                 <span className={s.footer__bottom_group}>
                     <p className={s.footer__bottom_group__items} onClick={handleOpenTerms}> {languageData.footer.bottomside[1]} </p>   {termsSTATE && (
-                        <div className={s.overlay} onDoubleClick={handleCloseTerms}> <TermsAndConditions /> </div>
+                        <div className={s.overlay} onDoubleClick={handleCloseTerms} onWheel={handleCloseTerms}> <TermsAndConditions /> </div>
                     )}
                     <p className={s.footer__bottom_group__items} onClick={handleOpenPrivacy}> {languageData.footer.bottomside[2]} </p>   {privacySTATE && (
-                        <div className={s.overlay} onDoubleClick={handleClosePrivacy}> <PrivacyPolicies /> </div>
+                        <div className={s.overlay} onDoubleClick={handleClosePrivacy} onWheel={handleClosePrivacy}> <PrivacyPolicies /> </div>
                     )}
 
                     {/* <Loading /> */}
