@@ -12,12 +12,52 @@
   padding: 0px 20px 40px 20px;
   transition: var(--quick-fx);
 }
+@media only screen and (max-width: 1199px) {
+  .contact {
+    width: 1199px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .contact {
+    width: 991px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact {
+    width: 767px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .contact {
+    width: 575px;
+  }
+}
 .contact__container {
   width: 1400px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+@media only screen and (max-width: 1199px) {
+  .contact__container {
+    width: 1199px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .contact__container {
+    width: 991px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact__container {
+    width: 767px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .contact__container {
+    width: 575px;
+  }
 }
 .contact__container_headers {
   font-size: 28px;
@@ -31,6 +71,26 @@
   letter-spacing: 2px;
   margin: 100px 0px 20px 25px;
   padding-left: 10px;
+}
+@media only screen and (max-width: 1199px) {
+  .contact__container_headers {
+    margin: 100px 0px 20px 0px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .contact__container_headers {
+    margin: 100px 0px 20px 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact__container_headers {
+    margin: 100px 0px 20px 0px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .contact__container_headers {
+    margin: 100px 0px 20px 0px;
+  }
 }
 .contact__container_text {
   font-size: 20px;
@@ -49,4 +109,28 @@
   padding: 40px;
   display: flex;
   opacity: 0.5;
+}
+@media only screen and (max-width: 1199px) {
+  .contact__container_map {
+    width: 640px;
+    height: 360px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .contact__container_map {
+    width: 640px;
+    height: 360px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact__container_map {
+    width: 640px;
+    height: 360px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .contact__container_map {
+    width: 480px;
+    height: 270px;
+  }
 }/*# sourceMappingURL=index.module.css.map */
