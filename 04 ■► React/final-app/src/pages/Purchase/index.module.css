@@ -8,6 +8,30 @@
   align-items: center;
   padding-top: 150px;
 }
+@media only screen and (max-width: 1199px) {
+  .purchase {
+    width: 1199px;
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .purchase {
+    width: 991px;
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .purchase {
+    width: 767px;
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .purchase {
+    width: 575px;
+    padding-top: 100px;
+  }
+}
 .purchase__status {
   width: 1400px;
   height: 60px;
@@ -20,6 +44,30 @@
   filter: drop-shadow(0 0 1px var(--filter-shadow-color));
   font-weight: 900;
 }
+@media only screen and (max-width: 1199px) {
+  .purchase__status {
+    width: 1199px;
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .purchase__status {
+    width: 991px;
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .purchase__status {
+    width: 767px;
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .purchase__status {
+    width: 575px;
+    font-size: 26px;
+  }
+}
 .purchase__infolist {
   width: 800px;
   height: auto;
@@ -31,6 +79,30 @@
   border: none;
   border-top: 1px solid var(--borders-color);
   border-bottom: 1px solid var(--borders-color);
+}
+@media only screen and (max-width: 1199px) {
+  .purchase__infolist {
+    width: 1099px;
+    padding: 20px 0px 20px 0px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .purchase__infolist {
+    width: 891px;
+    padding: 20px 0px 20px 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .purchase__infolist {
+    width: 667px;
+    padding: 20px 0px 20px 0px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .purchase__infolist {
+    width: 475px;
+    padding: 20px 0px 20px 0px;
+  }
 }
 .purchase__infolist_items {
   font-size: 18px;
@@ -49,6 +121,26 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+}
+@media only screen and (max-width: 1199px) {
+  .purchase__buttons {
+    width: 1099px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .purchase__buttons {
+    width: 891px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .purchase__buttons {
+    width: 667px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .purchase__buttons {
+    width: 475px;
+  }
 }
 .purchase__buttons_header {
   font-size: 18px;
